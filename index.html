@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Plus</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 8px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        .hero button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .grades,
+        .subjects {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px 10px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 30px;
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Study Plus</h1>
+    <p>Learn More • Practice More • Achieve More</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Subjects</a>
+    <a href="#">Exams</a>
+    <a href="#">Practice</a>
+</nav>
+
+<section class="hero">
+    <h2>Welcome to Study Plus 🎓</h2>
+    <p>Learn, practice and prepare for your exams.</p>
+    <button>Start Learning</button>
+</section>
+
+<section class="grades">
+    <h2>🎓 Choose Your Grade</h2>
+
+    <div class="cards">
+        <div class="card" onclick="openGrade9()">📘 Grade 9</div>
+        <div class="card" onclick="openGrade10()">📗 Grade 10</div>
+        <div class="card" onclick="openGrade11()">📙 Grade 11</div>
+        <div class="card" onclick="openGrade12()">📕 Grade 12</div>
+    </div>
+</section>
+
+<section class="subjects">
+    <h2>📖 Subjects</h2>
+
+    <div class="cards">
+        <div class="card">🧮 Mathematics</div>
+        <div class="card">⚛️ Physics</div>
+        <div class="card">🧪 Chemistry</div>
+        <div class="card">🧬 Biology</div>
+        <div class="card">🇬🇧 English</div>
+        <div class="card">💻 Computer Science</div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Study Plus</p>
+</footer>
+
+<script>
+function openGrade9() {
+    window.location.href = "grade9.html";
+}
+</script>
+<script>
+function openGrade11() {
+    window.location.href = "grade11.html";
+}
+</script>
+<script>
+function openGrade10() {
+    window.location.href = "grade10.html";
+}
+</script>
+<script>
+function openGrade12() {
+    window.location.href = "grade12.html";
+}
+</script>
+</body>
+</html>
