@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 9 Mathematics - Study Plus</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            text-align: center;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 25px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            margin: 15px auto;
+            padding: 25px;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧮 Mathematics</h1>
+    <p>Grade 9 • Study Plus</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📚 Notes</h2>
+        <p>Learn Grade 9 Mathematics lessons.</p>
+        <button onclick="openNotes()">Open Notes</button>
+    </div>
+
+    <div class="card">
+        <h2>📝 Questions</h2>
+        <p>Practice Mathematics questions.</p>
+        <button onclick="openQuestions()">Practice</button>
+    </div>
+
+    <div class="card">
+        <h2>✅ Answers</h2>
+        <p>Check your answers and learn from your mistakes.</p>
+        <button onclick="openAnswers()">View Answers</button>
+    </div>
+
+</div>
+
+<script>
+function openNotes() {
+    window.location.href = "notes.html";
+}
+function openQuestions() {
+    window.location.href = "question.html";
+}
+</script>
+<script>
+function openAnswers() {
+    window.location.href = "answers.html";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade 10 Math Practice</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .question {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            margin: 20px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #score {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📝 Grade 10 Math Practice</h1>
+    <p>Study Plus</p>
+</header>
+
+<div class="question">
+    <h3>1. If x + 5 = 12, what is x?</h3>
+    <input id="q1" placeholder="Answer">
+</div>
+
+<div class="question">
+    <h3>2. If x - 3 = 7, what is x?</h3>
+    <input id="q2" placeholder="Answer">
+</div>
+
+<div class="question">
+    <h3>3. What is 5 × 6?</h3>
+    <input id="q3" placeholder="Answer">
+</div>
+
+<div class="question">
+    <h3>4. What is 20 ÷ 5?</h3>
+    <input id="q4" placeholder="Answer">
+</div>
+
+<div class="question">
+    <h3>5. If 2x = 10, what is x?</h3>
+    <input id="q5" placeholder="Answer">
+</div>
+
+<button onclick="calculateScore()">🎯 Submit Quiz</button>
+
+<div id="score"></div>
+
+<script>
+function calculateScore() {
+
+    let answers = [
+        "7",
+        "10",
+        "30",
+        "4",
+        "5"
+    ];
+
+    let score = 0;
+
+    for (let i = 1; i <= 5; i++) {
+
+        let userAnswer = document
+            .getElementById("q" + i)
+            .value
+            .trim();
+
+        if (userAnswer === answers[i - 1]) {
+            score++;
+        }
+    }
+
+    document.getElementById("score").innerHTML =
+        "🎉 Your Score: " + score + "/5";
+}
+</script>
+
+</body>
+</html>

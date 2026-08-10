@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade 11 - Study Plus</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            text-align: center;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 25px;
+        }
+
+        .subjects {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            margin: 15px auto;
+            padding: 20px;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📙 Grade 11</h1>
+    <p>Choose a Subject</p>
+</header>
+
+<section class="subjects">
+
+    <div class="card" onclick="openMath11()">🧮 Mathematics</div>
+
+    <div class="card">⚛️ Physics</div>
+
+    <div class="card">🧪 Chemistry</div>
+
+    <div class="card">🧬 Biology</div>
+
+    <div class="card">🇬🇧 English</div>
+
+    <div class="card">💻 Computer Science</div>
+
+</section>
+
+<script>
+function openMath11() {
+    window.location.href = "math11.html";
+}
+</script>
+</body>
+</html>
