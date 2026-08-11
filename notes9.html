@@ -3,35 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade 9 Math Notes</title>
+
+    <title>Grade 9 Mathematics Notes - Study Plus</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f7fb;
-            line-height: 1.6;
+            color: #222;
         }
 
         header {
             background: #2563eb;
             color: white;
+            padding: 25px 15px;
             text-align: center;
-            padding: 25px;
         }
 
-        .lesson {
-            background: white;
-            margin: 20px;
+        .container {
+            max-width: 800px;
+            margin: auto;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .unit {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        .formula {
+            background: #eef4ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .trick {
+            background: #fff7d6;
+            padding: 12px;
+            border-left: 5px solid #f59e0b;
+            border-radius: 6px;
+            margin: 12px 0;
         }
 
         .example {
-            background: #eef4ff;
-            padding: 15px;
-            border-radius: 8px;
+            background: #f0fdf4;
+            padding: 12px;
+            border-left: 5px solid #16a34a;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -40,36 +85,208 @@
 
 <header>
     <h1>📚 Grade 9 Mathematics</h1>
-    <p>Study Plus Notes</p>
+    <p>Study Plus — Short Notes</p>
 </header>
 
-<div class="lesson">
+<div class="container">
 
-    <h2>📘 Unit 1: Rational Numbers</h2>
+    <!-- UNIT 1 -->
+    <div class="unit">
+        <h2>Unit 1 — Further on Sets</h2>
 
-    <h3>What is a Rational Number?</h3>
+        <h3>1. What is a Set?</h3>
 
-    <p>
-        A rational number is a number that can be written in the form
-        <b>a/b</b>, where <b>a</b> and <b>b</b> are integers and
-        <b>b ≠ 0</b>.
-    </p>
+        <p>
+            A set is a well-defined collection of objects.
+            The objects in a set are called elements.
+        </p>
 
-    <h3>Examples</h3>
+        <div class="example">
+            <b>Example:</b><br>
+            A = {2, 4, 6, 8}
+            <br><br>
+            2, 4, 6 and 8 are elements of A.
+        </div>
 
-    <div class="example">
-        <p>1/2</p>
-        <p>3/4</p>
-        <p>-5/6</p>
-        <p>7 = 7/1</p>
+        <h3>2. Set Notation</h3>
+
+        <p>
+            x ∈ A means x is an element of A.
+        </p>
+
+        <p>
+            x ∉ A means x is not an element of A.
+        </p>
+
+        <h3>3. Types of Sets</h3>
+
+        <p><b>Empty Set:</b> A set with no elements.</p>
+
+        <div class="formula">
+            A = ∅
+        </div>
+
+        <p><b>Finite Set:</b> A set with a limited number of elements.</p>
+
+        <p><b>Infinite Set:</b> A set whose elements continue without end.</p>
+
+        <h3>4. Cardinality</h3>
+
+        <p>
+            Cardinality means the number of elements in a set.
+        </p>
+
+        <div class="example">
+            A = {1, 3, 5, 7}
+            <br><br>
+            n(A) = 4
+        </div>
+
+        <div class="trick">
+            ⚡ <b>Short Trick:</b>
+            Repeated elements are counted only once.
+        </div>
+
+        <h3>5. Subset</h3>
+
+        <p>
+            A is a subset of B if every element of A is also an element of B.
+        </p>
+
+        <div class="formula">
+            A ⊆ B
+        </div>
+
+        <div class="example">
+            A = {1, 2}<br>
+            B = {1, 2, 3, 4}
+            <br><br>
+            Therefore A ⊆ B.
+        </div>
+
+        <h3>6. Power Set</h3>
+
+        <p>
+            The power set is the set containing all subsets of a set.
+        </p>
+
+        <div class="example">
+            A = {a, b}
+            <br><br>
+            P(A) = {∅, {a}, {b}, {a,b}}
+        </div>
+
+        <div class="formula">
+            Number of subsets = 2ⁿ
+        </div>
+
+        <div class="trick">
+            ⚡ If a set has 5 elements:
+            2⁵ = 32 subsets.
+        </div>
+
+        <h3>7. Union</h3>
+
+        <p>
+            Union contains all elements that belong to A or B.
+        </p>
+
+        <div class="formula">
+            A ∪ B
+        </div>
+
+        <div class="example">
+            A = {1,2,3}<br>
+            B = {3,4,5}
+            <br><br>
+            A ∪ B = {1,2,3,4,5}
+        </div>
+
+        <div class="trick">
+            ⚡ Union = OR
+        </div>
+
+        <h3>8. Intersection</h3>
+
+        <p>
+            Intersection contains elements common to both sets.
+        </p>
+
+        <div class="formula">
+            A ∩ B
+        </div>
+
+        <div class="example">
+            A = {1,2,3}<br>
+            B = {3,4,5}
+            <br><br>
+            A ∩ B = {3}
+        </div>
+
+        <div class="trick">
+            ⚡ Intersection = AND
+        </div>
+
+        <h3>9. Difference of Sets</h3>
+
+        <p>
+            A − B contains elements that are in A but not in B.
+        </p>
+
+        <div class="example">
+            A = {1,2,3}<br>
+            B = {3,4,5}
+            <br><br>
+            A − B = {1,2}
+        </div>
+
+        <h3>10. Complement</h3>
+
+        <p>
+            The complement of A contains elements in the universal set
+            that are not in A.
+        </p>
+
+        <div class="formula">
+            Aᶜ = U − A
+        </div>
+
+        <h3>11. Important Formula</h3>
+
+        <div class="formula">
+            n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+        </div>
+
+        <div class="trick">
+            ⚡ <b>Exam Trick:</b><br>
+            Add A + B, then subtract the common part.
+        </div>
+
+        <div class="example">
+            <b>Example:</b><br><br>
+
+            n(A) = 35<br>
+            n(B) = 28<br>
+            n(A ∩ B) = 12
+            <br><br>
+
+            n(A ∪ B)
+            = 35 + 28 − 12
+            = <b>51</b>
+        </div>
+
+        <div class="trick">
+            🎯 <b>Exam Words:</b><br><br>
+            "at least one" → Union<br>
+            "both" → Intersection<br>
+            "neither" → Total − Union
+        </div>
+
     </div>
 
-    <h3>Remember ⭐</h3>
-
-    <p>
-        Every integer is a rational number because it can be written
-        over 1.
-    </p>
+    <a href="maths.html" class="back">
+        ← Back to Mathematics
+    </a>
 
 </div>
 
