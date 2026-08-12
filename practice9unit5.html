@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 5 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📐 Grade 9 Mathematics</h1>
+<p>Unit 5 — Introduction to Trigonometry</p>
+<p>🔥 60 Entrance-Style Practice Questions</p>
+</header>
+
+<div class="container">
+
+<div id="score">Score: 0 / 60</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"In a right-angled triangle, which side is opposite the right angle?",
+o:["Adjacent","Opposite","Hypotenuse","Base"],
+a:2,
+e:"The hypotenuse is always the longest side and is opposite the 90° angle."
+},
+
+{
+q:"What is the Pythagorean theorem?",
+o:["a+b=c","a²+b²=c²","a²−b²=c²","ab=c²"],
+a:1,
+e:"For a right-angled triangle, a² + b² = c²."
+},
+
+{
+q:"If the two shorter sides of a right triangle are 3 cm and 4 cm, find the hypotenuse.",
+o:["5 cm","6 cm","7 cm","12 cm"],
+a:0,
+e:"c²=3²+4²=9+16=25, so c=5 cm."
+},
+
+{
+q:"A right triangle has legs 5 cm and 12 cm. Find the hypotenuse.",
+o:["13 cm","14 cm","15 cm","17 cm"],
+a:0,
+e:"c²=5²+12²=25+144=169, so c=13 cm."
+},
+
+{
+q:"A right triangle has hypotenuse 10 cm and one leg 6 cm. Find the other leg.",
+o:["4 cm","6 cm","8 cm","9 cm"],
+a:2,
+e:"x²=10²−6²=100−36=64, so x=8 cm."
+},
+
+{
+q:"Which trigonometric ratio is opposite/hypotenuse?",
+o:["sin θ","cos θ","tan θ","cot θ"],
+a:0,
+e:"sin θ = opposite / hypotenuse."
+},
+
+{
+q:"Which trigonometric ratio is adjacent/hypotenuse?",
+o:["sin θ","cos θ","tan θ","sec θ"],
+a:1,
+e:"cos θ = adjacent / hypotenuse."
+},
+
+{
+q:"Which trigonometric ratio is opposite/adjacent?",
+o:["sin θ","cos θ","tan θ","sec θ"],
+a:2,
+e:"tan θ = opposite / adjacent."
+},
+
+{
+q:"What is sin 30°?",
+o:["0","1/2","√2/2","1"],
+a:1,
+e:"sin 30° = 1/2."
+},
+
+{
+q:"What is cos 60°?",
+o:["0","1/2","√2/2","1"],
+a:1,
+e:"cos 60° = 1/2."
+},
+
+{
+q:"What is sin 90°?",
+o:["0","1/2","√3/2","1"],
+a:3,
+e:"sin 90° = 1."
+},
+
+{
+q:"What is cos 0°?",
+o:["0","1/2","1","√3/2"],
+a:2,
+e:"cos 0° = 1."
+},
+
+{
+q:"What is tan 45°?",
+o:["0","1/2","1","√3"],
+a:2,
+e:"tan 45° = 1."
+},
+
+{
+q:"What is sin 0°?",
+o:["0","1/2","1","√3/2"],
+a:0,
+e:"sin 0° = 0."
+},
+
+{
+q:"What is cos 90°?",
+o:["0","1/2","1","√3/2"],
+a:0,
+e:"cos 90° = 0."
+},
+
+{
+q:"What is tan 0°?",
+o:["0","1","√3","Undefined"],
+a:0,
+e:"tan 0° = sin 0° / cos 0° = 0/1 = 0."
+},
+
+{
+q:"What is sin 45°?",
+o:["1/2","√2/2","√3/2","1"],
+a:1,
+e:"sin 45° = √2/2."
+},
+
+{
+q:"What is cos 45°?",
+o:["1/2","√2/2","√3/2","1"],
+a:1,
+e:"cos 45° = √2/2."
+},
+
+{
+q:"What is sin 60°?",
+o:["1/2","√2/2","√3/2","1"],
+a:2,
+e:"sin 60° = √3/2."
+},
+
+{
+q:"What is cos 30°?",
+o:["1/2","√2/2","√3/2","1"],
+a:2,
+e:"cos 30° = √3/2."
+},
+
+{
+q:"What is tan 30°?",
+o:["1/√3","1","√3","1/2"],
+a:0,
+e:"tan 30° = 1/√3 = √3/3."
+},
+
+{
+q:"What is tan 60°?",
+o:["1/√3","1","√3","2"],
+a:2,
+e:"tan 60° = √3."
+},
+
+{
+q:"If sin θ = opposite/hypotenuse, opposite = 6 and hypotenuse = 10, find sin θ.",
+o:["3/5","2/3","5/3","3/10"],
+a:0,
+e:"sin θ = 6/10 = 3/5."
+},
+
+{
+q:"If cos θ = adjacent/hypotenuse, adjacent = 8 and hypotenuse = 10, find cos θ.",
+o:["4/5","3/5","5/4","1/2"],
+a:0,
+e:"cos θ = 8/10 = 4/5."
+},
+
+{
+q:"If tan θ = opposite/adjacent, opposite = 6 and adjacent = 8, find tan θ.",
+o:["3/4","4/3","3/8","2"],
+a:0,
+e:"tan θ = 6/8 = 3/4."
+},
+
+{
+q:"In a right triangle, opposite=5 and hypotenuse=13. Find sin θ.",
+o:["5/12","12/13","5/13","13/5"],
+a:2,
+e:"sin θ = opposite/hypotenuse = 5/13."
+},
+
+{
+q:"In a right triangle, adjacent=12 and hypotenuse=13. Find cos θ.",
+o:["5/13","12/13","13/12","12/5"],
+a:1,
+e:"cos θ = adjacent/hypotenuse = 12/13."
+},
+
+{
+q:"In a right triangle, opposite=5 and adjacent=12. Find tan θ.",
+o:["5/12","12/5","5/13","12/13"],
+a:0,
+e:"tan θ = opposite/adjacent = 5/12."
+},
+
+{
+q:"Which side is the longest side of a right-angled triangle?",
+o:["Opposite","Adjacent","Hypotenuse","Vertical"],
+a:2,
+e:"The hypotenuse is always the longest side."
+},
+
+{
+q:"If c=17 and a=8 in a right triangle, find b.",
+o:["9","12","15","16"],
+a:2,
+e:"b²=17²−8²=289−64=225, so b=15."
+},
+
+{
+q:"If a=7 and b=24, find c.",
+o:["25","26","31","32"],
+a:0,
+e:"c²=7²+24²=49+576=625, so c=25."
+},
+
+{
+q:"Which angle is used as the reference angle for trigonometric ratios?",
+o:["Only 90°","An acute angle in the right triangle","Only 180°","Any angle greater than 90°"],
+a:1,
+e:"In a right triangle, trigonometric ratios are normally defined using an acute reference angle."
+},
+
+{
+q:"If θ=30°, which value is correct?",
+o:["sin θ=1/2","sin θ=1","sin θ=√2/2","sin θ=0"],
+a:0,
+e:"sin 30° = 1/2."
+},
+
+{
+q:"If θ=60°, which value is correct?",
+o:["cos θ=√3/2","cos θ=1/2","cos θ=1","cos θ=0"],
+a:1,
+e:"cos 60° = 1/2."
+},
+
+{
+q:"If θ=45°, which value is correct?",
+o:["tan θ=1/2","tan θ=√3","tan θ=1","tan θ=0"],
+a:2,
+e:"tan 45° = 1."
+},
+
+{
+q:"Which statement is correct?",
+o:["sin θ = cos θ for every θ","sin θ = cos(90°−θ)","sin θ = tan θ","cos θ = tan θ"],
+a:1,
+e:"For complementary angles, sin θ = cos(90°−θ)."
+},
+
+{
+q:"If one acute angle in a right triangle is 35°, what is the other acute angle?",
+o:["45°","55°","65°","145°"],
+a:1,
+e:"The two acute angles add to 90°. Therefore 90−35=55°."
+},
+
+{
+q:"If one acute angle is 40°, the other acute angle is:",
+o:["40°","50°","60°","140°"],
+a:1,
+e:"90−40=50°."
+},
+
+{
+q:"Which angle has an undefined tangent?",
+o:["0°","30°","60°","90°"],
+a:3,
+e:"tan θ = sin θ/cos θ. Since cos 90°=0, tan 90° is undefined."
+},
+
+{
+q:"Which is the correct value of tan 60°?",
+o:["1/√3","1","√3","0"],
+a:2,
+e:"tan 60° = √3."
+},
+
+{
+q:"Which is the correct value of tan 30°?",
+o:["√3","1","1/√3","0"],
+a:2,
+e:"tan 30° = 1/√3."
+},
+
+{
+q:"If sin θ = 3/5 in a right triangle, what can be the opposite and hypotenuse?",
+o:["3 and 5","5 and 3","3 and 4","4 and 5"],
+a:0,
+e:"sin θ = opposite/hypotenuse, so opposite:hypotenuse = 3:5."
+},
+
+{
+q:"If cos θ = 4/5, what can be the adjacent and hypotenuse?",
+o:["3 and 5","4 and 5","5 and 4","4 and 3"],
+a:1,
+e:"cos θ = adjacent/hypotenuse, so adjacent:hypotenuse = 4:5."
+},
+
+{
+q:"If tan θ = 3/4, what can be the opposite and adjacent sides?",
+o:["3 and 4","4 and 3","3 and 5","5 and 4"],
+a:0,
+e:"tan θ = opposite/adjacent = 3/4."
+},
+
+{
+q:"A right triangle has sides 6, 8 and 10. Which side is the hypotenuse?",
+o:["6","8","10","Cannot determine"],
+a:2,
+e:"The longest side is 10, and 6²+8²=10²."
+},
+
+{
+q:"A triangle has sides 5, 12 and 13. Is it a right triangle?",
+o:["Yes","No","Only if angle is 60°","Cannot determine"],
+a:0,
+e:"5²+12²=25+144=169=13², so it is a right triangle."
+},
+
+{
+q:"Which theorem is used to find a missing side of a right triangle?",
+o:["Pythagorean theorem","Binomial theorem","Factor theorem","Remainder theorem"],
+a:0,
+e:"The Pythagorean theorem relates the three sides of a right triangle."
+},
+
+{
+q:"For a right triangle, if a=9 and b=12, c equals:",
+o:["13","14","15","21"],
+a:2,
+e:"c²=9²+12²=81+144=225, so c=15."
+},
+
+{
+q:"For a right triangle, if c=25 and a=7, b equals:",
+o:["18","24","25","32"],
+a:1,
+e:"b²=25²−7²=625−49=576, so b=24."
+},
+
+{
+q:"What is the value of sin 60°?",
+o:["1/2","√2/2","√3/2","1"],
+a:2,
+e:"sin 60° = √3/2."
+},
+
+{
+q:"What is the value of cos 30°?",
+o:["1/2","√2/2","√3/2","1"],
+a:2,
+e:"cos 30° = √3/2."
+},
+
+{
+q:"What is the value of sin 45°?",
+o:["1/2","√2/2","√3/2","1"],
+a:1,
+e:"sin 45° = √2/2."
+},
+
+{
+q:"What is the value of cos 45°?",
+o:["0","1/2","√2/2","√3/2"],
+a:2,
+e:"cos 45° = √2/2."
+},
+
+{
+q:"Which ratio does NOT use the hypotenuse?",
+o:["sin","cos","tan","All use it"],
+a:2,
+e:"tan θ = opposite/adjacent, so it does not use the hypotenuse."
+},
+
+{
+q:"Which mnemonic helps remember sin, cos and tan?",
+o:["SOH CAH TOA","ABC XYZ","PEMDAS","FOIL"],
+a:0,
+e:"SOH = Sin Opposite/Hypotenuse; CAH = Cos Adjacent/Hypotenuse; TOA = Tan Opposite/Adjacent."
+},
+
+{
+q:"If tan θ = 1, θ can be:",
+o:["0°","30°","45°","90°"],
+a:2,
+e:"tan 45° = 1."
+},
+
+{
+q:"If sin θ = 0 for an angle between 0° and 90°, θ is:",
+o:["0°","30°","45°","90°"],
+a:0,
+e:"sin 0° = 0."
+},
+
+{
+q:"If cos θ = 0 for an angle between 0° and 90°, θ is:",
+o:["0°","30°","60°","90°"],
+a:3,
+e:"cos 90° = 0."
+},
+
+{
+q:"What is the relationship between the two acute angles of a right triangle?",
+o:["Their sum is 45°","Their sum is 90°","Their sum is 180°","They are always equal"],
+a:1,
+e:"The angles of a triangle total 180°, and one angle is 90°, so the two acute angles total 90°."
+},
+
+{
+q:"Which set represents the three common special angles?",
+o:["15°, 25°, 35°","30°, 45°, 60°","20°, 40°, 80°","10°, 50°, 70°"],
+a:1,
+e:"The common basic trigonometric angles are 30°, 45° and 60°."
+},
+
+{
+q:"What is cos 0° + sin 90°?",
+o:["0","1","2","√2"],
+a:2,
+e:"cos 0°=1 and sin 90°=1. Therefore 1+1=2."
+},
+
+{
+q:"What is sin 30° + cos 60°?",
+o:["0","1/2","1","2"],
+a:2,
+e:"sin 30°=1/2 and cos 60°=1/2. Their sum is 1."
+},
+
+{
+q:"What is tan 45° + sin 0°?",
+o:["0","1","2","√3"],
+a:1,
+e:"tan 45°=1 and sin 0°=0. Therefore the answer is 1."
+},
+
+{
+q:"If opposite=12 and adjacent=5, find the hypotenuse.",
+o:["13","15","17","20"],
+a:0,
+e:"c²=12²+5²=144+25=169, so c=13."
+},
+
+{
+q:"If opposite=8 and hypotenuse=17, find the adjacent side.",
+o:["9","15","16","25"],
+a:1,
+e:"Adjacent²=17²−8²=289−64=225, so adjacent=15."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+const box=document.getElementById("questions");
+
+questions.forEach((item,index)=>{
+
+const num=index+1;
+
+let html=`
+<div class="question">
+<h3>${num}. ${item.q}</h3>
+`;
+
+item.o.forEach((option,i)=>{
+
+html+=`
+<button class="option"
+onclick="checkAnswer(${num},${i},this)">
+${String.fromCharCode(65+i)}. ${option}
+</button>
+`;
+
+});
+
+html+=`
+<div id="result${num}" class="result"></div>
+</div>
+`;
+
+box.innerHTML+=html;
+
+});
+
+}
+
+function checkAnswer(num,selected,button){
+
+if(button.disabled) return;
+
+const item=questions[num-1];
+
+const parent=button.parentElement;
+
+const buttons=parent.querySelectorAll(".option");
+
+buttons.forEach(btn=>{
+btn.disabled=true;
+});
+
+const result=document.getElementById("result"+num);
+
+answered++;
+
+if(selected===item.a){
+
+score++;
+
+result.className="result right";
+
+result.innerHTML=`
+<strong>✅ RIGHT!</strong>
+<div class="explanation">
+<b>Explanation:</b><br>
+${item.e}
+</div>
+`;
+
+}else{
+
+result.className="result wrong";
+
+const correct=String.fromCharCode(65+item.a);
+
+result.innerHTML=`
+<strong>❌ WRONG!</strong><br><br>
+<b>Correct Answer: ${correct}. ${item.o[item.a]}</b>
+
+<div class="explanation">
+<b>Explanation:</b><br>
+${item.e}
+</div>
+`;
+
+}
+
+document.getElementById("score").innerHTML=
+`Score: ${score} / 60`;
+
+if(answered===60){
+
+const percentage=(score/60)*100;
+
+const finish=document.getElementById("finish");
+
+finish.style.display="block";
+
+finish.innerHTML=`
+🎉 <b>Practice Completed!</b>
+<br><br>
+Score: ${score} / 60
+<br>
+Percentage: ${percentage.toFixed(1)}%
+`;
+
+}
+
+}
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
