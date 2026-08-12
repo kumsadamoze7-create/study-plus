@@ -1,149 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="google-site-verification" content="ucVMyANfDso-egpgXxZvNJfECgI9wK2OEmczvkY-npg" />
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Study Plus</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f7fb;
+            color: #222;
         }
 
         header {
-            background: #2563eb;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 55px 20px;
         }
 
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
+        header h1 {
+            font-size: 42px;
+            margin: 0 0 12px;
         }
 
-        nav a {
-            margin: 8px;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: bold;
+        header p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 20px;
         }
 
         .hero {
-            text-align: center;
-            padding: 35px 15px;
-        }
-
-        .hero button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-        }
-
-        .grades,
-        .subjects {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .card {
             background: white;
-            padding: 25px 10px;
+            padding: 30px 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 15px #ccc;
+            margin-top: -25px;
+        }
+
+        .hero h2 {
+            color: #1d4ed8;
+            font-size: 28px;
+        }
+
+        .hero p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .start {
+            width: 100%;
+            padding: 17px;
+            margin-top: 15px;
+            border: none;
             border-radius: 12px;
-            box-shadow: 0 3px 10px #cccccc;
+            background: #16a34a;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .start:hover {
+            opacity: 0.9;
+        }
+
+        .subjects {
+            margin-top: 25px;
+        }
+
+        .subject {
+            background: white;
+            padding: 22px;
+            margin: 15px 0;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        .subject h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+        .subject p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .locked {
+            background: #e5e7eb;
+            color: #777;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
             font-weight: bold;
         }
 
         footer {
-            margin-top: 30px;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
             background: #172554;
             color: white;
-            text-align: center;
-            padding: 20px;
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
     <h1>📚 Study Plus</h1>
-    <p>Learn More • Practice More • Achieve More</p>
+
+    <p>Learn • Practice • Improve</p>
+
+    <p>Prepare yourself for your future</p>
+
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Subjects</a>
-    <a href="#">Exams</a>
-    <a href="#">Practice</a>
-</nav>
 
-<section class="hero">
-    <h2>Welcome to Study Plus 🎓</h2>
-    <p>Learn, practice and prepare for your exams.</p>
-    <button>Start Learning</button>
-</section>
+<!-- MAIN -->
 
-<section class="grades">
-    <h2>🎓 Choose Your Grade</h2>
+<div class="container">
 
-    <div class="cards">
-        <div class="card" onclick="openGrade9()">📘 Grade 9</div>
-        <div class="card" onclick="openGrade10()">📗 Grade 10</div>
-        <div class="card" onclick="openGrade11()">📙 Grade 11</div>
-        <div class="card" onclick="openGrade12()">📕 Grade 12</div>
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <h2>🎓 Welcome to Study Plus</h2>
+
+        <p>
+            Your learning platform for Grade 9 students.
+            Study your lessons, read notes and practice
+            questions step by step.
+        </p>
+
+
+        <!-- START LEARNING -->
+
+        <button
+            class="start"
+            onclick="location.href='grade9.html'">
+
+            🚀 Start Learning
+
+        </button>
+
     </div>
-</section>
 
-<section class="subjects">
-    <h2>📖 Subjects</h2>
 
-    <div class="cards">
-        <div class="card">🧮 Mathematics</div>
-        <div class="card">⚛️ Physics</div>
-        <div class="card">🧪 Chemistry</div>
-        <div class="card">🧬 Biology</div>
-        <div class="card">🇬🇧 English</div>
-        <div class="card">💻 Computer Science</div>
+    <!-- SUBJECTS -->
+
+    <div class="subjects">
+
+
+        <!-- MATHEMATICS -->
+
+        <div class="subject">
+
+            <h3>📐 Grade 9 Mathematics</h3>
+
+            <p>
+                Complete Mathematics lessons from
+                Unit 1 to Unit 9 with notes and practice
+                questions.
+            </p>
+
+            <button
+                class="start"
+                onclick="location.href='grade9.html'">
+
+                📚 Study Mathematics
+
+            </button>
+
+        </div>
+
+
+        <!-- BIOLOGY -->
+
+        <div class="subject">
+
+            <h3>🧬 Grade 9 Biology</h3>
+
+            <p>
+                Biology notes and practice questions
+                will be added soon.
+            </p>
+
+            <div class="locked">
+
+                🔒 Coming Soon
+
+            </div>
+
+        </div>
+
+
+        <!-- PHYSICS -->
+
+        <div class="subject">
+
+            <h3>⚡ Grade 9 Physics</h3>
+
+            <p>
+                Physics lessons, notes and practice
+                questions will be added soon.
+            </p>
+
+            <div class="locked">
+
+                🔒 Coming Soon
+
+            </div>
+
+        </div>
+
+
+        <!-- CHEMISTRY -->
+
+        <div class="subject">
+
+            <h3>🧪 Grade 9 Chemistry</h3>
+
+            <p>
+                Chemistry lessons, notes and practice
+                questions will be added soon.
+            </p>
+
+            <div class="locked">
+
+                🔒 Coming Soon
+
+            </div>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="subject">
+
+            <h3>📖 Grade 9 English</h3>
+
+            <p>
+                English lessons, grammar, vocabulary
+                and practice questions will be added soon.
+            </p>
+
+            <div class="locked">
+
+                🔒 Coming Soon
+
+            </div>
+
+        </div>
+
+
     </div>
-</section>
+
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 Study Plus</p>
+
+    <p>📚 Study Plus</p>
+
+    <p>Learn Today • Succeed Tomorrow 🚀</p>
+
 </footer>
 
-<script>
-function openGrade9() {
-    window.location.href = "grade9.html";
-}
-</script>
-<script>
-function openGrade11() {
-    window.location.href = "grade11.html";
-}
-</script>
-<script>
-function openGrade10() {
-    window.location.href = "grade10.html";
-}
-</script>
-<script>
-function openGrade12() {
-    window.location.href = "grade12.html";
-}
-</script>
+
 </body>
+
 </html>
