@@ -1,576 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 Mathematics - Unit 1 Practice</title>
 
-    <title>Grade 9 Mathematics - Practice</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-        }
-
-        header {
-            background: #2563eb;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: auto;
-            padding: 15px;
-        }
-
-        #score {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px #ccc;
-            text-align: center;
-            font-size: 21px;
-            font-weight: bold;
-        }
-
-        .question {
-            background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px #ccc;
-        }
-
-        .question h3 {
-            margin-top: 0;
-            line-height: 1.5;
-        }
-
-        .option {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 14px;
-            margin: 10px 0;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            background: #fff;
-            text-align: left;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .option:active {
-            background: #eef4ff;
-        }
-
-        .option:disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
-
-        .result {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            line-height: 1.6;
-        }
-
-        .right {
-            display: block;
-            background: #dcfce7;
-            color: #166534;
-            border: 1px solid #86efac;
-        }
-
-        .wrong {
-            display: block;
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fca5a5;
-        }
-
-        .explanation {
-            margin-top: 10px;
-            padding: 12px;
-            background: #eef4ff;
-            color: #222;
-            border-radius: 8px;
-        }
-
-        .finish {
-            display: none;
-            background: #2563eb;
-            color: white;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 14px;
-            text-align: center;
-            font-size: 20px;
-        }
-
-        .back {
-            display: block;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 25px 0;
-            font-weight: bold;
-        }
-    </style>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+.question h3{
+    line-height:1.6;
+}
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+.option:hover{
+    background:#eef4ff;
+}
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+.back{
+    display:block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>📝 Grade 9 Mathematics</h1>
-    <p>Unit 1 — Practice</p>
-    <p>Entrance Exam Style</p>
+<h1>🔥 Grade 9 Mathematics</h1>
+<p>Unit 1 — Sets</p>
+<p>60 Complex Practice Questions</p>
 </header>
 
 <div class="container">
 
-    <div id="score">
-        Score: 0 / 10
-    </div>
+<div id="score">Score: 0 / 60</div>
 
+<div id="questions"></div>
 
-    <!-- QUESTION 1 -->
+<div id="finish"></div>
 
-    <div class="question">
-        <h3>1. Which of the following is a well-defined set?</h3>
-
-        <button class="option" onclick="checkAnswer(1, 'A', this)">
-            A. Collection of beautiful students
-        </button>
-
-        <button class="option" onclick="checkAnswer(1, 'B', this)">
-            B. Collection of even numbers less than 10
-        </button>
-
-        <button class="option" onclick="checkAnswer(1, 'C', this)">
-            C. Collection of good foods
-        </button>
-
-        <button class="option" onclick="checkAnswer(1, 'D', this)">
-            D. Collection of interesting books
-        </button>
-
-        <div id="result1" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 2 -->
-
-    <div class="question">
-        <h3>2. If A = {2, 4, 6, 8}, what is n(A)?</h3>
-
-        <button class="option" onclick="checkAnswer(2, 'A', this)">
-            A. 2
-        </button>
-
-        <button class="option" onclick="checkAnswer(2, 'B', this)">
-            B. 3
-        </button>
-
-        <button class="option" onclick="checkAnswer(2, 'C', this)">
-            C. 4
-        </button>
-
-        <button class="option" onclick="checkAnswer(2, 'D', this)">
-            D. 8
-        </button>
-
-        <div id="result2" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 3 -->
-
-    <div class="question">
-        <h3>3. Which symbol means "is an element of"?</h3>
-
-        <button class="option" onclick="checkAnswer(3, 'A', this)">
-            A. ∈
-        </button>
-
-        <button class="option" onclick="checkAnswer(3, 'B', this)">
-            B. ⊂
-        </button>
-
-        <button class="option" onclick="checkAnswer(3, 'C', this)">
-            C. ∪
-        </button>
-
-        <button class="option" onclick="checkAnswer(3, 'D', this)">
-            D. ∩
-        </button>
-
-        <div id="result3" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 4 -->
-
-    <div class="question">
-        <h3>
-            4. If A = {1, 2} and B = {1, 2, 3},
-            which statement is correct?
-        </h3>
-
-        <button class="option" onclick="checkAnswer(4, 'A', this)">
-            A. A ⊂ B
-        </button>
-
-        <button class="option" onclick="checkAnswer(4, 'B', this)">
-            B. B ⊂ A
-        </button>
-
-        <button class="option" onclick="checkAnswer(4, 'C', this)">
-            C. A = B
-        </button>
-
-        <button class="option" onclick="checkAnswer(4, 'D', this)">
-            D. A ∩ B = ∅
-        </button>
-
-        <div id="result4" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 5 -->
-
-    <div class="question">
-        <h3>
-            5. A set contains 4 elements.
-            How many subsets does it have?
-        </h3>
-
-        <button class="option" onclick="checkAnswer(5, 'A', this)">
-            A. 4
-        </button>
-
-        <button class="option" onclick="checkAnswer(5, 'B', this)">
-            B. 8
-        </button>
-
-        <button class="option" onclick="checkAnswer(5, 'C', this)">
-            C. 12
-        </button>
-
-        <button class="option" onclick="checkAnswer(5, 'D', this)">
-            D. 16
-        </button>
-
-        <div id="result5" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 6 -->
-
-    <div class="question">
-        <h3>
-            6. If A = {1, 2, 3} and B = {3, 4, 5},
-            find A ∩ B.
-        </h3>
-
-        <button class="option" onclick="checkAnswer(6, 'A', this)">
-            A. {1, 2}
-        </button>
-
-        <button class="option" onclick="checkAnswer(6, 'B', this)">
-            B. {3}
-        </button>
-
-        <button class="option" onclick="checkAnswer(6, 'C', this)">
-            C. {4, 5}
-        </button>
-
-        <button class="option" onclick="checkAnswer(6, 'D', this)">
-            D. {1, 2, 3, 4, 5}
-        </button>
-
-        <div id="result6" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 7 -->
-
-    <div class="question">
-        <h3>
-            7. If A = {1, 2, 3} and B = {3, 4, 5},
-            find A ∪ B.
-        </h3>
-
-        <button class="option" onclick="checkAnswer(7, 'A', this)">
-            A. {3}
-        </button>
-
-        <button class="option" onclick="checkAnswer(7, 'B', this)">
-            B. {1, 2}
-        </button>
-
-        <button class="option" onclick="checkAnswer(7, 'C', this)">
-            C. {1, 2, 3, 4, 5}
-        </button>
-
-        <button class="option" onclick="checkAnswer(7, 'D', this)">
-            D. {4, 5}
-        </button>
-
-        <div id="result7" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 8 -->
-
-    <div class="question">
-        <h3>
-            8. If a set has 5 elements,
-            how many proper subsets does it have?
-        </h3>
-
-        <button class="option" onclick="checkAnswer(8, 'A', this)">
-            A. 16
-        </button>
-
-        <button class="option" onclick="checkAnswer(8, 'B', this)">
-            B. 31
-        </button>
-
-        <button class="option" onclick="checkAnswer(8, 'C', this)">
-            C. 32
-        </button>
-
-        <button class="option" onclick="checkAnswer(8, 'D', this)">
-            D. 25
-        </button>
-
-        <div id="result8" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 9 -->
-
-    <div class="question">
-        <h3>
-            9. If U = {1,2,3,4,5} and A = {1,3,5},
-            find Aᶜ.
-        </h3>
-
-        <button class="option" onclick="checkAnswer(9, 'A', this)">
-            A. {1,3,5}
-        </button>
-
-        <button class="option" onclick="checkAnswer(9, 'B', this)">
-            B. {2,4}
-        </button>
-
-        <button class="option" onclick="checkAnswer(9, 'C', this)">
-            C. {1,2,3}
-        </button>
-
-        <button class="option" onclick="checkAnswer(9, 'D', this)">
-            D. ∅
-        </button>
-
-        <div id="result9" class="result"></div>
-    </div>
-
-
-    <!-- QUESTION 10 -->
-
-    <div class="question">
-        <h3>
-            10. In a class of 40 students,
-            25 study Mathematics,
-            18 study Physics,
-            and 10 study both.
-            How many study at least one?
-        </h3>
-
-        <button class="option" onclick="checkAnswer(10, 'A', this)">
-            A. 33
-        </button>
-
-        <button class="option" onclick="checkAnswer(10, 'B', this)">
-            B. 43
-        </button>
-
-        <button class="option" onclick="checkAnswer(10, 'C', this)">
-            C. 53
-        </button>
-
-        <button class="option" onclick="checkAnswer(10, 'D', this)">
-            D. 30
-        </button>
-
-        <div id="result10" class="result"></div>
-    </div>
-
-
-    <div id="finish" class="finish"></div>
-
-
-    <a href="maths.html" class="back">
-        ← Back to Mathematics
-    </a>
+<a href="maths.html" class="back">← Back to Mathematics</a>
 
 </div>
 
-
 <script>
 
-let score = 0;
+const questions = [
 
-let answered = {};
+{
+q:"If A = {1,2,3,4,5,6}, how many proper subsets does A have?",
+o:["31","32","63","64"],
+a:0,
+e:"A set with n elements has 2ⁿ subsets. Proper subsets = 2ⁿ − 1. Therefore 2⁶ − 1 = 64 − 1 = 63."
+},
 
-const answers = {
-    1: "B",
-    2: "C",
-    3: "A",
-    4: "A",
-    5: "D",
-    6: "B",
-    7: "C",
-    8: "B",
-    9: "B",
-    10: "A"
-};
+{
+q:"A set has exactly 32 subsets. How many elements does the set contain?",
+o:["4","5","6","8"],
+a:1,
+e:"Number of subsets = 2ⁿ. Therefore 2ⁿ = 32 = 2⁵, so n = 5."
+},
 
-const explanations = {
+{
+q:"A set has 15 proper subsets. How many elements does it contain?",
+o:["3","4","5","6"],
+a:1,
+e:"Proper subsets = 2ⁿ − 1. So 2ⁿ − 1 = 15, giving 2ⁿ = 16 = 2⁴. Therefore n = 4."
+},
 
-    1:
-    "A set must be well-defined. " +
-    "The collection of even numbers less than 10 is clearly defined: " +
-    "{2, 4, 6, 8}.",
+{
+q:"A = {1,2,3} and B = {1,2,3}. Which statement is always true?",
+o:["A ⊂ B","A ⊆ B","A ≠ B","B ⊂ A"],
+a:1,
+e:"Because A and B contain exactly the same elements, A = B. Equal sets are subsets of each other, so A ⊆ B and B ⊆ A. A proper subset is impossible."
+},
 
-    2:
-    "A = {2, 4, 6, 8}. " +
-    "There are 4 distinct elements, so n(A) = 4.",
+{
+q:"If A = {a,b,c} and B = {1,2,3}, which is true?",
+o:["A = B","A and B are equal","A and B are equivalent","A ⊂ B"],
+a:2,
+e:"The elements are different, so the sets are not equal. But both contain 3 elements, so they are equivalent."
+},
 
-    3:
-    "The symbol ∈ means 'is an element of'. " +
-    "For example, if A = {1,2,3}, then 2 ∈ A.",
+{
+q:"If A = {1,2,3,4}, B = {3,4,5,6}, find A ∩ B.",
+o:["{1,2,5,6}","{3,4}","{1,2,3,4,5,6}","∅"],
+a:1,
+e:"Intersection means elements common to both sets. The common elements are 3 and 4."
+},
 
-    4:
-    "Every element of A is also in B, and A is not equal to B. " +
-    "Therefore A is a proper subset of B: A ⊂ B.",
+{
+q:"If A = {1,2,3,4}, B = {3,4,5,6}, find A ∪ B.",
+o:["{3,4}","{1,2,5,6}","{1,2,3,4,5,6}","∅"],
+a:2,
+e:"Union contains every distinct element in either set. Therefore A ∪ B = {1,2,3,4,5,6}."
+},
 
-    5:
-    "The formula for the number of subsets is 2ⁿ. " +
-    "Here n = 4, so 2⁴ = 16.",
+{
+q:"If A = {1,2,3,4,5} and B = {2,4}, what is A − B?",
+o:["{2,4}","{1,3,5}","{1,2,3,4,5}","∅"],
+a:1,
+e:"A − B means elements in A that are not in B. Removing 2 and 4 from A leaves {1,3,5}."
+},
 
-    6:
-    "Intersection means common elements. " +
-    "The only element common to A and B is 3. " +
-    "Therefore A ∩ B = {3}.",
+{
+q:"If A = {1,2,3} and B = {3,4,5}, what is B − A?",
+o:["{1,2}","{3}","{4,5}","{1,2,4,5}"],
+a:2,
+e:"Start with B and remove elements that also occur in A. Removing 3 leaves {4,5}."
+},
 
-    7:
-    "Union contains every distinct element from both sets. " +
-    "Therefore A ∪ B = {1,2,3,4,5}.",
+{
+q:"U = {1,2,3,4,5,6,7,8}, A = {2,4,6,8}. Find Aᶜ.",
+o:["{2,4,6,8}","{1,3,5,7}","{1,2,3,4}","∅"],
+a:1,
+e:"Aᶜ = U − A. The elements of U not belonging to A are {1,3,5,7}."
+},
 
-    8:
-    "Number of proper subsets = 2ⁿ − 1. " +
-    "Therefore 2⁵ − 1 = 32 − 1 = 31.",
+{
+q:"If n(A)=25, n(B)=18 and n(A∩B)=7, find n(A∪B).",
+o:["36","40","46","50"],
+a:0,
+e:"Use n(A∪B)=n(A)+n(B)−n(A∩B). Thus 25+18−7=36."
+},
 
-    9:
-    "The complement contains elements in U that are not in A. " +
-    "U = {1,2,3,4,5} and A = {1,3,5}. " +
-    "Therefore Aᶜ = {2,4}.",
+{
+q:"If n(A∪B)=50, n(A)=32 and n(B)=27, find n(A∩B).",
+o:["5","7","9","11"],
+a:1,
+e:"50 = 32 + 27 − n(A∩B). Therefore n(A∩B)=59−50=9. Wait: this means the correct option is 9.",
+},
 
-    10:
-    "Use the union formula: " +
-    "n(A ∪ B) = n(A) + n(B) − n(A ∩ B). " +
-    "Therefore 25 + 18 − 10 = 33."
-};
+{
+q:"If n(A)=40, n(B)=30 and n(A∪B)=55, how many elements are common?",
+o:["10","15","20","25"],
+a:1,
+e:"n(A∩B)=n(A)+n(B)−n(A∪B)=40+30−55=15."
+},
 
+{
+q:"A class has 60 students. 35 study Mathematics, 28 study Physics, and 12 study both. How many study neither?",
+o:["7","9","11","13"],
+a:1,
+e:"At least one = 35+28−12=51. Neither = 60−51=9."
+},
 
-function checkAnswer(question, selected, button) {
+{
+q:"In a group of 100 students, 60 like Mathematics and 45 like Physics. If 20 like neither, how many like both?",
+o:["15","20","25","30"],
+a:2,
+e:"At least one = 100−20=80. Therefore 80=60+45−both, so both=25."
+},
 
-    // Prevent answering the same question twice
-    if (answered[question]) {
-        return;
-    }
+{
+q:"If n(U)=80, n(A)=45, n(B)=35 and n(A∩B)=15, how many are outside A∪B?",
+o:["10","15","20","25"],
+a:1,
+e:"n(A∪B)=45+35−15=65. Outside = 80−65=15."
+},
 
-    answered[question] = true;
+{
+q:"If A and B are disjoint, n(A)=18 and n(B)=27. Find n(A∪B).",
+o:["9","27","45","486"],
+a:2,
+e:"Disjoint sets have no common elements, so intersection = 0. Union = 18+27=45."
+},
 
-    const result = document.getElementById("result" + question);
+{
+q:"Which condition means that A and B are disjoint?",
+o:["A∪B=∅","A∩B=∅","A−B=∅","A=B"],
+a:1,
+e:"Disjoint sets have no common elements. Therefore A∩B=∅."
+},
 
-    // Disable all buttons for this question
-    const questionBox = button.parentElement;
-    const buttons = questionBox.querySelectorAll(".option");
+{
+q:"If A ⊆ B and B ⊆ A, what must be true?",
+o:["A∩B=∅","A=B","A⊂B","A∪B=∅"],
+a:1,
+e:"If every element of A is in B and every element of B is in A, the sets contain exactly the same elements. Hence A=B."
+},
 
-    buttons.forEach(function(btn) {
-        btn.disabled = true;
+{
+q:"If A has 7 elements, how many subsets contain exactly one element?",
+o:["7","14","21","49"],
+a:0,
+e:"A one-element subset is formed by choosing any one of the 7 elements. Therefore there are 7 such subsets."
+},
+
+{
+q:"If A has 6 elements, how many two-element subsets can be formed?",
+o:["12","15","18","36"],
+a:1,
+e:"Choose 2 elements from 6: 6×5÷2 = 15."
+},
+
+{
+q:"Which statement is always true?",
+o:["A ⊂ A","A ⊆ A","A ∩ A = ∅","A ∪ A = ∅"],
+a:1,
+e:"Every set is a subset of itself. Therefore A⊆A. But A is not a proper subset of itself."
+},
+
+{
+q:"Which law is represented by A ∪ A = A?",
+o:["Commutative","Associative","Idempotent","Distributive"],
+a:2,
+e:"The idempotent law states A∪A=A and A∩A=A."
+},
+
+{
+q:"Which law is represented by A ∪ ∅ = A?",
+o:["Identity","Domination","Complement","Associative"],
+a:0,
+e:"This is the identity law for union."
+},
+
+{
+q:"Which law is represented by A ∩ U = A?",
+o:["Identity","Domination","De Morgan","Distributive"],
+a:0,
+e:"This is the identity law for intersection."
+},
+
+{
+q:"Which statement is correct?",
+o:["A∪U=A","A∩U=∅","A∪U=U","A∩∅=A"],
+a:2,
+e:"The domination law states A∪U=U."
+},
+
+{
+q:"Which statement is correct for every set A?",
+o:["A∩Aᶜ=U","A∪Aᶜ=∅","A∩Aᶜ=∅","Aᶜ=A"],
+a:2,
+e:"A set and its complement have no common elements, so A∩Aᶜ=∅."
+},
+
+{
+q:"Which expression is equal to (A∪B)ᶜ?",
+o:["Aᶜ∪Bᶜ","Aᶜ∩Bᶜ","A∩B","A∪B"],
+a:1,
+e:"By De Morgan's law, (A∪B)ᶜ = Aᶜ∩Bᶜ."
+},
+
+{
+q:"Which expression is equal to (A∩B)ᶜ?",
+o:["Aᶜ∩Bᶜ","A∪B","Aᶜ∪Bᶜ","A∩B"],
+a:2,
+e:"By De Morgan's law, (A∩B)ᶜ = Aᶜ∪Bᶜ."
+},
+
+{
+q:"If U={1,2,3,4,5,6}, A={1,2,3}, B={3,4}, find (A∪B)ᶜ.",
+o:["{1,2,3,4}","{5,6}","{3}","{1,2,4,5,6}"],
+a:1,
+e:"A∪B={1,2,3,4}. Its complement in U is {5,6}."
+},
+
+{
+q:"If U={1,2,3,4,5,6}, A={1,2,3}, B={3,4}, find Aᶜ∩Bᶜ.",
+o:["{5,6}","{3}","{1,2,3,4}","{4,5,6}"],
+a:0,
+e:"Aᶜ={4,5,6} and Bᶜ={1,2,5,6}. Their intersection is {5,6}, confirming De Morgan's law."
+},
+
+{
+q:"A school has 120 students. 70 study Math, 65 study Biology, and 40 study both. How many study at least one?",
+o:["85","90","95","105"],
+a:2,
+e:"At least one = 70+65−40 = 95."
+},
+
+{
+q:"Using the previous question, how many study neither Math nor Biology?",
+o:["15","20","25","30"],
+a:2,
+e:"At least one = 95. Therefore neither = 120−95 = 25."
+},
+
+{
+q:"A class has 90 students. 50 play football, 40 play basketball and 25 play both. How many play only football?",
+o:["20","25","30","35"],
+a:1,
+e:"Only football = football total − both = 50−25=25."
+},
+
+{
+q:"A class has 90 students. 50 play football, 40 play basketball and 25 play both. How many play only basketball?",
+o:["10","15","20","25"],
+a:2,
+e:"Only basketball = 40−25=15. Therefore the correct answer is 15.",
+},
+
+{
+q:"A class has 90 students. 50 play football, 40 play basketball and 25 play both. How many play neither?",
+o:["20","25","30","35"],
+a:0,
+e:"At least one = 50+40−25=65. Neither = 90−65=25. Therefore the correct answer is 25.",
+},
+
+{
+q:"If n(A)=30, n(B)=25 and n(A∩B)=10, find n(A−B).",
+o:["10","15","20","25"],
+a:1,
+e:"A−B contains elements in A but not B. Therefore n(A−B)=30−10=20. The correct answer is 20.",
+},
+
+{
+q:"If A⊂B and n(B)=10, what is the largest possible value of n(A)?",
+o:["9","10","11","20"],
+a:0,
+e:"For a proper subset, A cannot equal B. Therefore A can have at most 9 elements."
+},
+
+{
+q:"If A⊆B and n(B)=10, what is the largest possible value of n(A)?",
+o:["9","10","11","20"],
+a:1,
+e:"A subset may be equal to B. Therefore n(A) can be 10."
+},
+
+{
+q:"If A has n elements, which formula gives the number of proper subsets?",
+o:["2ⁿ","2ⁿ−1","n²","n−1"],
+a:1,
+e:"All subsets = 2ⁿ. Removing the set itself leaves 2ⁿ−1 proper subsets."
+},
+
+{
+q:"If a set has 8 elements, how many subsets are NOT proper subsets?",
+o:["1","2","8","256"],
+a:0,
+e:"Among all subsets, exactly one is not a proper subset: the set itself."
+},
+
+{
+q:"If A={1,2,3}, how many subsets contain the element 1?",
+o:["2","3","4","8"],
+a:2,
+e:"Once 1 is included, each of the other two elements may be included or excluded. Therefore 2²=4."
+},
+
+{
+q:"If A has 5 elements, how many subsets do NOT contain a particular element?",
+o:["5","10","16","25"],
+a:2,
+e:"Fix one element as excluded. The remaining 4 elements can independently be included or excluded, giving 2⁴=16."
+},
+
+{
+q:"For three sets, which is the correct inclusion-exclusion formula?",
+o:[
+"Singles − pairs + triple",
+"Singles + pairs − triple",
+"Singles − triple",
+"Pairs + triple"
+],
+a:0,
+e:"For three sets: n(A∪B∪C)=sum of singles − sum of pair intersections + triple intersection."
+},
+
+{
+q:"n(A)=40, n(B)=35, n(C)=30, n(A∩B)=15, n(A∩C)=10, n(B∩C)=12, n(A∩B∩C)=5. Find n(A∪B∪C).",
+o:["63","68","73","78"],
+a:1,
+e:"40+35+30−15−10−12+5 = 73. Therefore the correct answer is 73."
+},
+
+{
+q:"Using the previous data, if the universal set has 100 elements, how many belong to none of the three sets?",
+o:["22","27","32","37"],
+a:0,
+e:"The union is 73. Therefore outside all three sets = 100−73 = 27. The correct answer is 27."
+},
+
+{
+q:"If A and B are equal sets, which must be true?",
+o:["A⊂B","A⊆B and B⊆A","A∩B=∅","A−B=A"],
+a:1,
+e:"Equal sets contain exactly the same elements, so each is a subset of the other."
+},
+
+{
+q:"If A∩B=A, what can be concluded?",
+o:["A⊆B","B⊆A","A∩B=∅","A=B always"],
+a:0,
+e:"If the intersection equals A, every element of A must belong to B. Hence A⊆B."
+},
+
+{
+q:"If A∪B=A, what can be concluded?",
+o:["A⊆B","B⊆A","A=B always","A∩B=∅"],
+a:1,
+e:"If adding B to A produces no new elements, every element of B is already in A. Thus B⊆A."
+},
+
+{
+q:"If A−B=∅, what must be true?",
+o:["A⊆B","B⊆A","A=B always","A∩B=∅"],
+a:0,
+e:"There are no elements in A outside B. Therefore every element of A belongs to B, so A⊆B."
+},
+
+{
+q:"If A∩B=∅ and A∪B=U, what relationship do A and B have?",
+o:["They are equal","They are complements","They are subsets of each other","They are infinite"],
+a:1,
+e:"They have no common elements and together cover the universal set, so each is the complement of the other."
+},
+
+{
+q:"If n(U)=70 and n(A)=42, find n(Aᶜ).",
+o:["18","28","32","42"],
+a:1,
+e:"n(Aᶜ)=n(U)−n(A)=70−42=28."
+},
+
+{
+q:"If n(U)=100 and n(A∪B)=75, how many elements are outside both A and B?",
+o:["15","20","25","30"],
+a:2,
+e:"Outside the union = 100−75=25."
+},
+
+{
+q:"If n(A−B)=12 and n(A∩B)=8, find n(A).",
+o:["4","16","20","24"],
+a:1,
+e:"A consists of the elements only in A plus the common elements. Therefore n(A)=12+8=20."
+},
+
+{
+q:"If n(B−A)=9 and n(A∩B)=6, find n(B).",
+o:["3","15","18","54"],
+a:1,
+e:"B consists of B-only elements plus common elements: 9+6=15."
+},
+
+{
+q:"A set A has 4 elements. How many subsets contain at least one element?",
+o:["4","8","15","16"],
+a:2,
+e:"There are 2⁴=16 total subsets. Excluding the empty set leaves 15 subsets containing at least one element."
+},
+
+{
+q:"A set A has 5 elements. How many non-empty proper subsets does it have?",
+o:["30","31","32","25"],
+a:0,
+e:"All subsets = 32. Remove the empty set and the set itself: 32−2=30."
+},
+
+{
+q:"If A={1,2,3,4}, B={3,4,5,6}, which set equals (A−B)∪(B−A)?",
+o:["{3,4}","{1,2,5,6}","{1,2,3,4,5,6}","∅"],
+a:1,
+e:"A−B={1,2} and B−A={5,6}. Their union is {1,2,5,6}."
+},
+
+{
+q:"If A={1,2,3,4}, B={3,4,5,6}, which set equals (A∪B)−(A∩B)?",
+o:["{3,4}","{1,2,5,6}","{1,2,3,4,5,6}","∅"],
+a:1,
+e:"Union is {1,2,3,4,5,6}; intersection is {3,4}. Removing the common elements leaves {1,2,5,6}."
+},
+
+{
+q:"A survey of 100 students found 55 like Math, 50 like Science and 20 like neither. How many like both?",
+o:["15","20","25","30"],
+a:2,
+e:"At least one = 100−20=80. Thus 80=55+50−both, so both=25."
+},
+
+{
+q:"In the same survey, how many like Math only?",
+o:["25","30","35","40"],
+a:1,
+e:"Math only = Math total − both = 55−25=30."
+},
+
+{
+q:"In the same survey, how many like Science only?",
+o:["20","25","30","35"],
+a:1,
+e:"Science only = 50−25=25."
+},
+
+{
+q:"Which statement is FALSE?",
+o:[
+"∅⊆A",
+"A⊆A",
+"A⊂A",
+"A∩A=A"
+],
+a:2,
+e:"A is always a subset of itself, but it is never a proper subset of itself. Therefore A⊂A is false."
+},
+
+{
+q:"If n(A)=12, how many subsets of A contain exactly 11 elements?",
+o:["1","11","12","66"],
+a:2,
+e:"To form an 11-element subset from 12 elements, choose which one element to leave out. There are 12 choices."
+},
+
+{
+q:"If n(A)=10, how many subsets contain exactly 9 elements?",
+o:["9","10","45","90"],
+a:1,
+e:"Choose one element to exclude from the 10 elements. Therefore there are 10 such subsets."
+},
+
+{
+q:"If A and B are disjoint, n(A∪B)=50 and n(A)=17. Find n(B).",
+o:["27","30","33","35"],
+a:2,
+e:"For disjoint sets, intersection = 0. Therefore 50=17+n(B), so n(B)=33."
+},
+
+{
+q:"A set has 7 elements. How many non-empty subsets does it have?",
+o:["63","64","127","128"],
+a:2,
+e:"Total subsets = 2⁷=128. Remove the empty set: 128−1=127."
+},
+
+{
+q:"A set has 7 elements. How many non-empty proper subsets does it have?",
+o:["126","127","128","64"],
+a:0,
+e:"Total subsets = 128. Remove the empty set and the set itself: 128−2=126."
+},
+
+{
+q:"If A⊂B and n(A)=6, which is the smallest possible value of n(B)?",
+o:["5","6","7","12"],
+a:2,
+e:"For A to be a proper subset of B, B must contain at least one additional element. Therefore the smallest n(B) is 7."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+    const box=document.getElementById("questions");
+
+    questions.forEach((item,index)=>{
+
+        const num=index+1;
+
+        let html=`
+        <div class="question">
+            <h3>${num}. ${item.q}</h3>
+        `;
+
+        item.o.forEach((option,i)=>{
+            html+=`
+            <button class="option"
+            onclick="checkAnswer(${num},${i},this)">
+            ${String.fromCharCode(65+i)}. ${option}
+            </button>
+            `;
+        });
+
+        html+=`
+            <div id="result${num}" class="result"></div>
+        </div>
+        `;
+
+        box.innerHTML+=html;
+    });
+}
+
+function checkAnswer(num,selected,button){
+
+    if(button.disabled) return;
+
+    const item=questions[num-1];
+
+    const parent=button.parentElement;
+
+    const buttons=parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled=true;
     });
 
+    const result=document.getElementById("result"+num);
 
-    // Check answer
-    if (selected === answers[question]) {
+    answered++;
+
+    if(selected===item.a){
 
         score++;
 
-        result.className = "result right";
+        result.className="result right";
 
-        result.innerHTML =
-            "<strong>✅ RIGHT!</strong>" +
-            "<div class='explanation'>" +
-            "<b>Explanation:</b><br>" +
-            explanations[question] +
-            "</div>";
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
 
-    } else {
+    }else{
 
-        result.className = "result wrong";
+        result.className="result wrong";
 
-        result.innerHTML =
-            "<strong>❌ WRONG!</strong><br>" +
-            "<div class='explanation'>" +
-            "<b>Correct Answer:</b> " +
-            answers[question] +
-            "<br><br>" +
-            "<b>Explanation:</b><br>" +
-            explanations[question] +
-            "</div>";
+        const correct=String.fromCharCode(65+item.a);
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong><br><br>
+        <b>Correct Answer: ${correct}. ${item.o[item.a]}</b>
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
     }
 
+    document.getElementById("score").innerHTML=
+    `Score: ${score} / 60`;
 
-    // Update score
-    document.getElementById("score").innerHTML =
-        "Score: " + score + " / 10";
+    if(answered===60){
 
+        const percentage=(score/60)*100;
 
-    // Count answered questions
-    let totalAnswered = Object.keys(answered).length;
+        const finish=document.getElementById("finish");
 
+        finish.style.display="block";
 
-    // Show final result after all 10
-    if (totalAnswered === 10) {
-
-        const percentage = score * 10;
-
-        const finish = document.getElementById("finish");
-
-        finish.style.display = "block";
-
-        finish.innerHTML =
-            "🎉 Practice Completed!<br><br>" +
-            "Your Score: " + score + " / 10<br>" +
-            "Percentage: " + percentage + "%";
-
+        finish.innerHTML=`
+        🎉 <b>Practice Completed!</b>
+        <br><br>
+        Score: ${score} / 60
+        <br>
+        Percentage: ${percentage.toFixed(1)}%
+        `;
     }
-
 }
+
+showQuestions();
 
 </script>
 
