@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 7 Notes</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.7;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+.topic{
+    background:white;
+    margin:20px 0;
+    padding:22px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+h2{
+    color:#2563eb;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:8px;
+}
+
+h3{
+    color:#1d4ed8;
+}
+
+.formula{
+    background:#eef4ff;
+    padding:15px;
+    border-left:5px solid #2563eb;
+    border-radius:8px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.example{
+    background:#f0fdf4;
+    padding:15px;
+    border-left:5px solid #16a34a;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.trick{
+    background:#fff7d6;
+    padding:15px;
+    border-left:5px solid #f59e0b;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.important{
+    background:#f3e8ff;
+    padding:15px;
+    border-left:5px solid #9333ea;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.warning{
+    background:#fff1f2;
+    padding:15px;
+    border-left:5px solid #e11d48;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.back{
+    display:block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:30px 0;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📐 Grade 9 Mathematics</h1>
+
+<p>Unit 7 — Congruency and Similarity</p>
+
+<p>Study Plus • Complete Notes</p>
+
+</header>
+
+<div class="container">
+
+
+<!-- 7.1 -->
+
+<div class="topic">
+
+<h2>7.1 Revision on Congruency and Similarity</h2>
+
+<h3>Congruent Figures</h3>
+
+<p>
+Two figures are <b>congruent</b> if they have exactly the same
+shape and exactly the same size.
+</p>
+
+<div class="formula">
+Congruent → Same shape + Same size
+</div>
+
+<p>
+The symbol for congruency is:
+</p>
+
+<div class="formula">
+≅
+</div>
+
+<div class="example">
+
+If triangle ABC and triangle DEF are congruent:
+
+<br><br>
+
+△ABC ≅ △DEF
+
+<br><br>
+
+Corresponding sides and corresponding angles are equal.
+
+</div>
+
+<h3>Similarity</h3>
+
+<p>
+Two figures are similar if they have the same shape but
+their sizes may be different.
+</p>
+
+<div class="formula">
+Similar → Same shape + Corresponding sides proportional
+</div>
+
+<div class="example">
+
+A small triangle and a larger triangle can be similar
+even though their sizes are different.
+
+</div>
+
+<div class="trick">
+
+⚡ Remember:
+
+<br><br>
+
+Congruent = same shape + same size
+
+<br>
+
+Similar = same shape, size may be different.
+
+</div>
+
+</div>
+
+
+<!-- 7.2 -->
+
+<div class="topic">
+
+<h2>7.2 Definition of Similar Figures</h2>
+
+<p>
+Two plane figures are called <b>similar figures</b> when:
+</p>
+
+<ul>
+
+<li>Corresponding angles are equal.</li>
+
+<li>Corresponding sides are proportional.</li>
+
+</ul>
+
+<div class="formula">
+
+Corresponding angles are equal
+
+<br><br>
+
+Corresponding sides have the same ratio.
+
+</div>
+
+<h3>Scale Factor</h3>
+
+<p>
+The scale factor tells us how much one figure has been enlarged
+or reduced compared with another figure.
+</p>
+
+<div class="formula">
+
+Scale Factor =
+Corresponding side of image ÷ Corresponding side of original
+
+</div>
+
+<div class="example">
+
+A triangle has a side of 4 cm.
+
+A similar triangle has the corresponding side 8 cm.
+
+<br><br>
+
+Scale factor = 8 ÷ 4 = 2
+
+<br><br>
+
+Therefore the second triangle is twice as large.
+
+</div>
+
+<div class="important">
+
+If the scale factor is:
+
+<br><br>
+
+<b>k > 1</b> → enlargement
+
+<br>
+
+<b>0 < k < 1</b> → reduction
+
+<br>
+
+<b>k = 1</b> → same size
+
+</div>
+
+</div>
+
+
+<!-- 7.3 -->
+
+<div class="topic">
+
+<h2>7.3 Theorems on Similar Plane Figures</h2>
+
+<h3>Similarity Theorem</h3>
+
+<p>
+If two figures have equal corresponding angles and proportional
+corresponding sides, then the figures are similar.
+</p>
+
+<div class="formula">
+
+Corresponding angles equal
+
+<br><br>
+
+Corresponding sides proportional
+
+<br><br>
+
+Therefore → Similar figures
+
+</div>
+
+
+<h3>SSS Similarity Theorem</h3>
+
+<p>
+SSS means <b>Side-Side-Side</b>.
+</p>
+
+<p>
+Two triangles are similar if their three corresponding sides
+are proportional.
+</p>
+
+<div class="formula">
+
+AB/DE = BC/EF = AC/DF
+
+<br><br>
+
+Therefore:
+
+△ABC ~ △DEF
+
+</div>
+
+<div class="example">
+
+Triangle ABC has sides:
+
+<br>
+
+3 cm, 4 cm, 5 cm
+
+<br><br>
+
+Triangle DEF has sides:
+
+<br>
+
+6 cm, 8 cm, 10 cm
+
+<br><br>
+
+Ratios:
+
+<br>
+
+6/3 = 2
+
+<br>
+
+8/4 = 2
+
+<br>
+
+10/5 = 2
+
+<br><br>
+
+All ratios are equal.
+
+<br><br>
+
+Therefore the triangles are similar by SSS.
+
+</div>
+
+
+<h3>SAS Similarity Theorem</h3>
+
+<p>
+SAS means <b>Side-Angle-Side</b>.
+</p>
+
+<p>
+Two triangles are similar if two corresponding sides are
+proportional and the included angle is equal.
+</p>
+
+<div class="formula">
+
+AB/DE = AC/DF
+
+<br><br>
+
+∠A = ∠D
+
+<br><br>
+
+Therefore:
+
+△ABC ~ △DEF
+
+</div>
+
+<div class="example">
+
+If:
+
+<br>
+
+AB/DE = AC/DF = 2
+
+<br>
+
+and
+
+<br>
+
+∠A = ∠D
+
+<br><br>
+
+then the two triangles are similar by SAS.
+
+</div>
+
+<div class="trick">
+
+🎯 Exam Trick:
+
+<br><br>
+
+SSS → compare 3 sides.
+
+<br>
+
+SAS → compare 2 sides + included angle.
+
+</div>
+
+</div>
+
+
+<!-- 7.4 -->
+
+<div class="topic">
+
+<h2>7.4 Ratio of Perimeters of Similar Plane Figures</h2>
+
+<p>
+For similar figures, the ratio of their perimeters is equal
+to the ratio of their corresponding sides.
+</p>
+
+<div class="formula">
+
+P₁ / P₂ = k
+
+</div>
+
+<p>
+where <b>k</b> is the scale factor.
+</p>
+
+<div class="example">
+
+Two similar triangles have corresponding sides:
+
+<br><br>
+
+4 cm and 8 cm.
+
+<br><br>
+
+Scale factor:
+
+<br>
+
+8/4 = 2
+
+<br><br>
+
+Therefore the ratio of their perimeters is:
+
+<br>
+
+P₂/P₁ = 2
+
+</div>
+
+<div class="important">
+
+⭐ Important:
+
+<br><br>
+
+Length ratio = Perimeter ratio
+
+</div>
+
+</div>
+
+
+<!-- 7.5 -->
+
+<div class="topic">
+
+<h2>7.5 Ratio of Areas of Similar Plane Figures</h2>
+
+<p>
+For similar figures, the ratio of their areas is the square
+of the ratio of their corresponding sides.
+</p>
+
+<div class="formula">
+
+Area ratio = k²
+
+</div>
+
+<div class="example">
+
+Two similar figures have a scale factor of 3.
+
+<br><br>
+
+Area ratio:
+
+<br>
+
+3² = 9
+
+<br><br>
+
+Therefore the larger figure has 9 times the area.
+
+</div>
+
+<div class="important">
+
+⭐ Remember:
+
+<br><br>
+
+Side ratio = k
+
+<br>
+
+Perimeter ratio = k
+
+<br>
+
+Area ratio = k²
+
+</div>
+
+<div class="trick">
+
+⚡ Very Important Exam Trick:
+
+<br><br>
+
+If length doubles:
+
+<br>
+
+Perimeter → doubles
+
+<br>
+
+Area → becomes 4 times
+
+</div>
+
+</div>
+
+
+<!-- 7.6 -->
+
+<div class="topic">
+
+<h2>7.6 Construction of Similar Figures</h2>
+
+<p>
+Similar figures can be constructed by enlarging or reducing
+a given figure using a fixed scale factor.
+</p>
+
+<h3>Steps</h3>
+
+<ol>
+
+<li>Draw the original figure.</li>
+
+<li>Choose the required scale factor.</li>
+
+<li>Multiply every corresponding length by the scale factor.</li>
+
+<li>Construct the new figure using the new lengths.</li>
+
+<li>Make sure corresponding angles remain equal.</li>
+
+</ol>
+
+<div class="example">
+
+Suppose a triangle has sides:
+
+<br><br>
+
+3 cm, 4 cm and 5 cm.
+
+<br><br>
+
+If scale factor = 2:
+
+<br><br>
+
+New sides:
+
+<br>
+
+3 × 2 = 6 cm
+
+<br>
+
+4 × 2 = 8 cm
+
+<br>
+
+5 × 2 = 10 cm
+
+<br><br>
+
+The new triangle is similar to the original.
+
+</div>
+
+<div class="warning">
+
+⚠️ When constructing similar figures, all corresponding
+lengths must be multiplied by the same scale factor.
+
+</div>
+
+</div>
+
+
+<!-- 7.7 -->
+
+<div class="topic">
+
+<h2>7.7 Applications of Similarity</h2>
+
+<p>
+Similarity is useful for finding unknown lengths and heights
+that are difficult to measure directly.
+</p>
+
+<h3>Finding Unknown Lengths</h3>
+
+<div class="formula">
+
+Corresponding sides must have equal ratios.
+
+<br><br>
+
+a/b = c/d
+
+</div>
+
+<div class="example">
+
+A small triangle has:
+
+<br><br>
+
+Height = 3 m
+
+Base = 4 m
+
+<br><br>
+
+A similar triangle has base = 12 m.
+
+Find its height.
+
+<br><br>
+
+3/4 = h/12
+
+<br><br>
+
+4h = 36
+
+<br><br>
+
+h = 9 m
+
+</div>
+
+
+<h3>Using Shadows</h3>
+
+<p>
+Similar triangles can be used to find the height of an object
+using its shadow.
+</p>
+
+<div class="example">
+
+A person is 2 m tall and has a shadow of 3 m.
+
+A tree has a shadow of 12 m.
+
+<br><br>
+
+Using similarity:
+
+<br><br>
+
+2/3 = h/12
+
+<br><br>
+
+3h = 24
+
+<br><br>
+
+h = 8 m
+
+<br><br>
+
+Therefore the tree is 8 m tall.
+
+</div>
+
+
+<h3>Maps and Models</h3>
+
+<p>
+Maps and models use scale factors to represent large objects
+or distances using smaller measurements.
+</p>
+
+<div class="example">
+
+If a map scale is:
+
+<br><br>
+
+1 cm = 5 km
+
+<br><br>
+
+Then 4 cm on the map represents:
+
+<br><br>
+
+4 × 5 = 20 km
+
+</div>
+
+
+<div class="important">
+
+🎯 Real-life applications of similarity include:
+
+<br><br>
+
+• Measuring height of buildings
+
+<br>
+
+• Measuring height of trees
+
+<br>
+
+• Maps
+
+<br>
+
+• Models
+
+<br>
+
+• Engineering drawings
+
+<br>
+
+• Architecture
+
+<br>
+
+• Photography
+
+</div>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="topic">
+
+<h2>⭐ Unit 7 Quick Summary</h2>
+
+<div class="formula">
+
+Congruent → Same shape + Same size
+
+<br><br>
+
+Similar → Same shape + Proportional sides
+
+<br><br>
+
+SSS Similarity → 3 proportional sides
+
+<br><br>
+
+SAS Similarity → 2 proportional sides + included angle
+
+<br><br>
+
+Perimeter ratio = k
+
+<br><br>
+
+Area ratio = k²
+
+</div>
+
+<div class="trick">
+
+🎯 Exam Memory Trick:
+
+<br><br>
+
+<b>Length → k</b>
+
+<br>
+
+<b>Perimeter → k</b>
+
+<br>
+
+<b>Area → k²</b>
+
+<br><br>
+
+SSS → 3 sides
+
+<br>
+
+SAS → 2 sides + angle
+
+</div>
+
+</div>
+
+
+<a href="grade9.html" class="back">
+
+← Back to Grade 9 Mathematics
+
+</a>
+
+</div>
+
+</body>
+</html>
