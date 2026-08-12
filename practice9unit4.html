@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 4 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔥 Grade 9 Mathematics</h1>
+<p>Unit 4 — Solving Inequalities</p>
+<p>60 Entrance-Style Practice Questions</p>
+</header>
+
+<div class="container">
+
+<div id="score">Score: 0 / 60</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Solve: x + 5 > 12",
+o:["x > 7","x < 7","x ≥ 7","x ≤ 7"],
+a:0,
+e:"Subtract 5 from both sides: x > 12 − 5, so x > 7."
+},
+
+{
+q:"Solve: x − 8 ≤ 4",
+o:["x ≤ 12","x ≥ 12","x < 12","x > 12"],
+a:0,
+e:"Add 8 to both sides: x ≤ 12."
+},
+
+{
+q:"Solve: 3x > 15",
+o:["x > 3","x > 5","x < 5","x ≥ 5"],
+a:1,
+e:"Divide both sides by 3: x > 5."
+},
+
+{
+q:"Solve: 4x ≤ 20",
+o:["x ≤ 4","x ≥ 4","x ≤ 5","x ≥ 5"],
+a:2,
+e:"Divide by 4: x ≤ 5."
+},
+
+{
+q:"Solve: −2x > 10",
+o:["x > −5","x < −5","x ≥ −5","x ≤ −5"],
+a:1,
+e:"Divide by −2 and reverse the sign. Therefore x < −5."
+},
+
+{
+q:"Solve: −3x ≤ 12",
+o:["x ≤ −4","x ≥ −4","x < −4","x > −4"],
+a:1,
+e:"Divide by −3 and reverse ≤ to ≥. Therefore x ≥ −4."
+},
+
+{
+q:"Solve: 2x + 3 > 11",
+o:["x > 4","x > 7","x < 4","x ≥ 4"],
+a:0,
+e:"2x > 8, therefore x > 4."
+},
+
+{
+q:"Solve: 5x − 10 ≤ 15",
+o:["x ≤ 3","x ≥ 3","x < 5","x ≤ 5"],
+a:3,
+e:"5x ≤ 25, so x ≤ 5."
+},
+
+{
+q:"Solve: −4x + 8 > 20",
+o:["x > −3","x < −3","x ≥ −3","x ≤ −3"],
+a:1,
+e:"−4x > 12. Divide by −4 and reverse the sign: x < −3."
+},
+
+{
+q:"Which interval represents x > 3?",
+o:["[3,∞)","(3,∞)","(−∞,3)","(−∞,3]"],
+a:1,
+e:"Since 3 is not included, use a parenthesis: (3,∞)."
+},
+
+{
+q:"Which interval represents x ≥ 3?",
+o:["(3,∞)","[3,∞)","(−∞,3)","(−∞,3]"],
+a:1,
+e:"Because equality is included, use a bracket: [3,∞)."
+},
+
+{
+q:"Which interval represents x < 5?",
+o:["(−∞,5)","(−∞,5]","[5,∞)","(5,∞)"],
+a:0,
+e:"5 is not included, so the interval is (−∞,5)."
+},
+
+{
+q:"Which interval represents x ≤ 5?",
+o:["(−∞,5)","(−∞,5]","[5,∞)","(5,∞)"],
+a:1,
+e:"5 is included, so use (−∞,5]."
+},
+
+{
+q:"Solve: 2x + 4 ≥ 14",
+o:["x ≥ 5","x ≤ 5","x > 5","x < 5"],
+a:0,
+e:"2x ≥ 10, so x ≥ 5."
+},
+
+{
+q:"Solve: 7 − x < 3",
+o:["x < 4","x > 4","x ≤ 4","x ≥ 4"],
+a:1,
+e:"−x < −4. Multiplying by −1 reverses the sign: x > 4."
+},
+
+{
+q:"Solve: 3(x − 2) ≥ 12",
+o:["x ≥ 4","x ≤ 4","x > 6","x ≥ 6"],
+a:0,
+e:"3x − 6 ≥ 12, so 3x ≥ 18 and x ≥ 6. Therefore the correct answer is x ≥ 6.",
+},
+
+{
+q:"Solve: 2(x + 3) < 14",
+o:["x < 4","x > 4","x ≤ 4","x ≥ 4"],
+a:0,
+e:"2x + 6 < 14, so 2x < 8 and x < 4."
+},
+
+{
+q:"When solving an inequality, what happens when you divide by a negative number?",
+o:["Nothing","Reverse the inequality sign","Make it an equation","Add 1"],
+a:1,
+e:"The inequality sign must be reversed when multiplying or dividing by a negative number."
+},
+
+{
+q:"Which boundary line is used for y ≥ 2x + 1?",
+o:["Dashed line","Solid line","No line","Vertical line"],
+a:1,
+e:"≥ includes equality, so the boundary line is solid."
+},
+
+{
+q:"Which boundary line is used for y < x + 3?",
+o:["Solid line","Dashed line","Circle","No boundary"],
+a:1,
+e:"< does not include equality, so the boundary line is dashed."
+},
+
+{
+q:"For y > x + 2, which region is shaded?",
+o:["Above the boundary line","Below the boundary line","Only the line","Neither"],
+a:0,
+e:"y greater than the boundary means the region above the line."
+},
+
+{
+q:"For y < x + 2, which region is shaded?",
+o:["Above the line","Below the line","Only the line","Everywhere"],
+a:1,
+e:"y less than the boundary means the region below the line."
+},
+
+{
+q:"What does the overlapping region of two linear inequalities represent?",
+o:["No solution always","The common solution","Only the first inequality","Only the second inequality"],
+a:1,
+e:"The overlapping shaded region satisfies both inequalities."
+},
+
+{
+q:"Which point satisfies y > x + 2?",
+o:["(0,0)","(0,3)","(2,0)","(1,1)"],
+a:1,
+e:"For (0,3): 3 > 0 + 2, so 3 > 2 is true."
+},
+
+{
+q:"Which point satisfies y ≤ x + 1?",
+o:["(0,3)","(1,3)","(2,2)","(0,2)"],
+a:2,
+e:"For (2,2): 2 ≤ 2 + 1, which is true."
+},
+
+{
+q:"Solve |x| < 4.",
+o:["x < −4 or x > 4","−4 < x < 4","−4 ≤ x ≤ 4","x > 4"],
+a:1,
+e:"For |x| < a, the solution is −a < x < a."
+},
+
+{
+q:"Solve |x| ≤ 6.",
+o:["−6 < x < 6","−6 ≤ x ≤ 6","x ≤ −6 or x ≥ 6","x > 6"],
+a:1,
+e:"For |x| ≤ a, the solution is −a ≤ x ≤ a."
+},
+
+{
+q:"Solve |x| > 5.",
+o:["−5 < x < 5","−5 ≤ x ≤ 5","x < −5 or x > 5","x ≤ 5"],
+a:2,
+e:"For |x| > a, the solution is outside the interval: x < −a or x > a."
+},
+
+{
+q:"Solve |x| ≥ 3.",
+o:["−3 < x < 3","x ≤ −3 or x ≥ 3","−3 ≤ x ≤ 3","x < 3"],
+a:1,
+e:"For |x| ≥ a, x ≤ −a or x ≥ a."
+},
+
+{
+q:"What does |x| represent?",
+o:["The square of x","Distance of x from zero","The opposite of x","Only positive x"],
+a:1,
+e:"Absolute value represents distance from zero."
+},
+
+{
+q:"Solve |x − 2| < 3.",
+o:["−1 < x < 5","−3 < x < 3","x < −1 or x > 5","−5 < x < 1"],
+a:0,
+e:"−3 < x − 2 < 3. Add 2: −1 < x < 5."
+},
+
+{
+q:"Solve |x + 1| ≤ 4.",
+o:["−5 ≤ x ≤ 3","−4 ≤ x ≤ 4","−3 ≤ x ≤ 5","x ≤ −5 or x ≥ 3"],
+a:0,
+e:"−4 ≤ x + 1 ≤ 4. Subtract 1: −5 ≤ x ≤ 3."
+},
+
+{
+q:"Solve |x − 4| > 2.",
+o:["2 < x < 6","x < 2 or x > 6","x ≤ 2 or x ≥ 6","−2 < x < 2"],
+a:1,
+e:"x − 4 < −2 or x − 4 > 2. Therefore x < 2 or x > 6."
+},
+
+{
+q:"For y ≥ |x|, which region is shaded?",
+o:["Above the V-shaped graph","Below the V-shaped graph","Only the x-axis","Neither"],
+a:0,
+e:"y ≥ |x| means the region on or above the V-shaped boundary."
+},
+
+{
+q:"For y < |x|, what type of boundary is used?",
+o:["Solid","Dashed","No boundary","Circle"],
+a:1,
+e:"The strict inequality < means the boundary is dashed."
+},
+
+{
+q:"Solve x² − 5x + 6 > 0.",
+o:["2 < x < 3","x < 2 or x > 3","x ≤ 2 or x ≥ 3","x > 2"],
+a:1,
+e:"Factor: (x−2)(x−3)>0. A positive product occurs outside the roots: x<2 or x>3."
+},
+
+{
+q:"Solve x² − 5x + 6 < 0.",
+o:["x < 2 or x > 3","2 < x < 3","x ≤ 2 or x ≥ 3","x > 3"],
+a:1,
+e:"The product is negative between the roots 2 and 3."
+},
+
+{
+q:"Solve (x − 1)(x + 4) ≥ 0.",
+o:["−4 ≤ x ≤ 1","x ≤ −4 or x ≥ 1","x < −4 or x > 1","−4 < x < 1"],
+a:1,
+e:"The roots are −4 and 1. With a positive leading coefficient, the expression is positive outside the roots. Since ≥ includes roots: x≤−4 or x≥1."
+},
+
+{
+q:"Solve (x − 1)(x + 4) < 0.",
+o:["x < −4 or x > 1","−4 < x < 1","−4 ≤ x ≤ 1","x > 1"],
+a:1,
+e:"A product of two linear factors is negative between the two roots."
+},
+
+{
+q:"Solve (x + 2)(x − 3) ≤ 0.",
+o:["x ≤ −2 or x ≥ 3","−2 ≤ x ≤ 3","−2 < x < 3","x ≥ 3"],
+a:1,
+e:"The roots are −2 and 3. The expression is negative between them, and ≤ includes the roots."
+},
+
+{
+q:"What are the critical values of (x − 4)(x + 2)?",
+o:["4 and 2","−4 and −2","4 and −2","−4 and 2"],
+a:2,
+e:"Set each factor to zero: x−4=0 gives 4; x+2=0 gives −2."
+},
+
+{
+q:"Solve (x − 5)(x − 2) > 0.",
+o:["2 < x < 5","x < 2 or x > 5","x ≤ 2 or x ≥ 5","x > 2"],
+a:1,
+e:"The leading coefficient is positive, so the product is positive outside the roots 2 and 5."
+},
+
+{
+q:"Solve (x − 5)(x − 2) < 0.",
+o:["x < 2 or x > 5","2 < x < 5","2 ≤ x ≤ 5","x > 5"],
+a:1,
+e:"The product is negative between the roots."
+},
+
+{
+q:"For a positive-leading quadratic with two distinct real roots, what is the sign pattern?",
+o:["+ , + , +","− , − , −","+ , − , +","− , + , −"],
+a:2,
+e:"A positive-leading quadratic is positive outside the roots and negative between them: +, −, +."
+},
+
+{
+q:"For a negative-leading quadratic with two distinct real roots, what is the sign pattern?",
+o:["+,−,+","−,+,−","+,+,+","−,−,−"],
+a:1,
+e:"A negative-leading quadratic has the opposite pattern: −, +, −."
+},
+
+{
+q:"Solve x² − 9 ≤ 0.",
+o:["x ≤ −3 or x ≥ 3","−3 ≤ x ≤ 3","−3 < x < 3","x ≥ 3"],
+a:1,
+e:"x²−9=(x−3)(x+3). The expression is negative or zero between the roots, including them."
+},
+
+{
+q:"Solve x² − 16 > 0.",
+o:["−4 < x < 4","x < −4 or x > 4","−4 ≤ x ≤ 4","x > 4 only"],
+a:1,
+e:"x²−16=(x−4)(x+4). It is positive outside the roots."
+},
+
+{
+q:"Solve x² − x − 6 ≥ 0.",
+o:["−2 ≤ x ≤ 3","x ≤ −2 or x ≥ 3","−2 < x < 3","x ≥ −2"],
+a:1,
+e:"Factor: (x−3)(x+2)≥0. The solution is outside the roots, including them."
+},
+
+{
+q:"Solve x² − x − 6 < 0.",
+o:["x ≤ −2 or x ≥ 3","−2 < x < 3","−2 ≤ x ≤ 3","x > 3"],
+a:1,
+e:"The quadratic is negative between the roots −2 and 3."
+},
+
+{
+q:"If a quadratic inequality has ≤, should the roots be included when they are real?",
+o:["Yes","No","Only one root","Never"],
+a:0,
+e:"≤ includes equality, so real roots are included."
+},
+
+{
+q:"If a quadratic inequality has >, should the roots be included?",
+o:["Yes","No","Always one root","Only negative roots"],
+a:1,
+e:"> is strict, so the roots are excluded."
+},
+
+{
+q:"Which method is useful for determining signs across intervals?",
+o:["Sign chart","Multiplication table only","Set notation only","Rounding"],
+a:0,
+e:"A sign chart shows whether an expression is positive or negative in each interval."
+},
+
+{
+q:"Solve: 2x − 7 ≥ x + 3.",
+o:["x ≥ 10","x ≤ 10","x > 10","x < 10"],
+a:0,
+e:"Subtract x: x−7≥3. Add 7: x≥10."
+},
+
+{
+q:"Solve: 5 − 2x < 11.",
+o:["x < −3","x > −3","x ≤ −3","x ≥ −3"],
+a:1,
+e:"−2x<6. Divide by −2 and reverse the sign: x>−3."
+},
+
+{
+q:"Solve: 3x + 2 ≤ 2x + 9.",
+o:["x ≤ 7","x ≥ 7","x < 7","x > 7"],
+a:0,
+e:"Subtract 2x: x+2≤9. Subtract 2: x≤7."
+},
+
+{
+q:"Solve: −5x + 10 ≥ 0.",
+o:["x ≥ 2","x ≤ 2","x > 2","x < 2"],
+a:1,
+e:"−5x≥−10. Divide by −5 and reverse the sign: x≤2."
+},
+
+{
+q:"Which statement is correct about x ≥ 4 on a number line?",
+o:["Open circle at 4 and shade left","Closed circle at 4 and shade right","Open circle at 4 and shade right","Closed circle at 4 and shade left"],
+a:1,
+e:"≥ includes 4, so use a closed circle and shade to the right."
+},
+
+{
+q:"Which statement is correct about x < −2 on a number line?",
+o:["Closed circle at −2, shade right","Open circle at −2, shade left","Closed circle at −2, shade left","Open circle at −2, shade right"],
+a:1,
+e:"< excludes −2, so use an open circle and shade left."
+},
+
+{
+q:"Solve |2x| ≤ 8.",
+o:["−8 ≤ x ≤ 8","−4 ≤ x ≤ 4","x ≤ −4 or x ≥ 4","−2 ≤ x ≤ 2"],
+a:1,
+e:"Divide |2x|≤8 by 2: |x|≤4. Therefore −4≤x≤4."
+},
+
+{
+q:"Solve |3x − 6| < 9.",
+o:["−1 < x < 5","−3 < x < 3","1 < x < 5","−5 < x < 1"],
+a:0,
+e:"−9<3x−6<9. Add 6: −3<3x<15. Divide by 3: −1<x<5."
+},
+
+{
+q:"Solve (x + 1)(x − 6) ≥ 0.",
+o:["−1 ≤ x ≤ 6","x ≤ −1 or x ≥ 6","−1 < x < 6","x ≥ −1"],
+a:1,
+e:"Roots are −1 and 6. Positive outside the roots; ≥ includes the roots."
+},
+
+{
+q:"Solve (x + 1)(x − 6) < 0.",
+o:["x ≤ −1 or x ≥ 6","−1 < x < 6","−1 ≤ x ≤ 6","x > 6"],
+a:1,
+e:"The product is negative between the roots."
+},
+
+{
+q:"What is the first step when solving most quadratic inequalities?",
+o:["Round the roots","Find the critical values/roots","Draw a circle","Multiply everything by −1"],
+a:1,
+e:"First solve the related quadratic equation to find the critical values."
+},
+
+{
+q:"What is the solution of x² + 1 > 0 over the real numbers?",
+o:["x > 1","x < −1","All real numbers","No real solution"],
+a:2,
+e:"x² is always ≥0, so x²+1 is always >0. Therefore all real numbers are solutions."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+    const box=document.getElementById("questions");
+
+    questions.forEach((item,index)=>{
+
+        const num=index+1;
+
+        let html=`
+        <div class="question">
+            <h3>${num}. ${item.q}</h3>
+        `;
+
+        item.o.forEach((option,i)=>{
+
+            html+=`
+            <button
+                class="option"
+                onclick="checkAnswer(${num},${i},this)">
+                ${String.fromCharCode(65+i)}. ${option}
+            </button>
+            `;
+
+        });
+
+        html+=`
+            <div id="result${num}" class="result"></div>
+        </div>
+        `;
+
+        box.innerHTML+=html;
+
+    });
+
+}
+
+function checkAnswer(num,selected,button){
+
+    if(button.disabled) return;
+
+    const item=questions[num-1];
+
+    const parent=button.parentElement;
+
+    const buttons=parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled=true;
+    });
+
+    const result=document.getElementById("result"+num);
+
+    answered++;
+
+    if(selected===item.a){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
+
+    }else{
+
+        result.className="result wrong";
+
+        const correct=
+        String.fromCharCode(65+item.a);
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <br><br>
+
+        <b>Correct Answer:</b>
+        ${correct}. ${item.o[item.a]}
+
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
+
+    }
+
+    document.getElementById("score").innerHTML=
+    `Score: ${score} / ${questions.length}`;
+
+    if(answered===questions.length){
+
+        const percentage=
+        (score/questions.length)*100;
+
+        const finish=
+        document.getElementById("finish");
+
+        finish.style.display="block";
+
+        finish.innerHTML=`
+        🎉 <b>Practice Completed!</b>
+
+        <br><br>
+
+        Score: ${score} / ${questions.length}
+
+        <br>
+
+        Percentage: ${percentage.toFixed(1)}%
+
+        <br><br>
+
+        ${
+            percentage >= 80
+            ? "🏆 Excellent! You are ready for harder entrance questions."
+            : percentage >= 60
+            ? "👍 Good job! Review the questions you missed."
+            : "📚 Keep practicing. Review Unit 4 Notes and try again."
+        }
+        `;
+
+    }
+
+}
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
