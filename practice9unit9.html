@@ -2,19 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Grade 9 Unit 9 Practice</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
-}
 
 body {
     margin: 0;
@@ -38,38 +31,37 @@ header {
 
 .question {
     background: white;
-    margin: 18px 0;
-    padding: 22px;
+    margin: 20px 0;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 3px 10px #ccc;
 }
 
-.question h3 {
-    color: #2563eb;
+.option {
+    display: block;
+    background: #f1f5f9;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-input {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-top: 10px;
+.option:hover {
+    background: #e0e7ff;
 }
 
 button {
     width: 100%;
-    padding: 14px;
-    margin-top: 10px;
+    padding: 15px;
+    margin-top: 15px;
     border: none;
-    border-radius: 9px;
+    border-radius: 10px;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
 }
 
-.check {
+.submit {
     background: #16a34a;
 }
 
@@ -81,2073 +73,871 @@ button {
     background: #172554;
 }
 
-.answer {
+.explanation {
     display: none;
-    margin-top: 12px;
-    padding: 15px;
-    border-radius: 10px;
     background: #f3e8ff;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 10px;
 }
 
-.result {
-    font-weight: bold;
-    margin-top: 10px;
+.correct {
+    background: #dcfce7 !important;
 }
 
-.score {
+.wrong {
+    background: #fee2e2 !important;
+}
+
+#result {
     background: white;
     padding: 20px;
     border-radius: 15px;
+    margin: 20px 0;
     text-align: center;
-    box-shadow: 0 3px 10px #ccc;
-    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
 <h1>📊 Grade 9 Mathematics</h1>
 
-<p>Unit 9 — Statistics and Probability</p>
+<h2>Unit 9 — Statistics and Probability</h2>
 
-<p>🔥 60 Practice Questions</p>
+<p>📝 Multiple Choice Practice</p>
 
 </header>
 
-
 <div class="container">
 
-
-<div class="score">
-
-<h2>🎯 Your Score</h2>
-
-<p id="score">0 / 60</p>
-
+<div id="result">
+Answer all questions and press Submit.
 </div>
 
 
-<!-- Q1 -->
+<!-- QUESTION 1 -->
 
 <div class="question">
 
-<h3>1. What is statistical data?</h3>
+<h3>1. What is the mean of 2, 4, 6 and 8?</h3>
 
-<input id="q1">
+<label class="option">
+<input type="radio" name="q1" value="A"> A. 4
+</label>
 
-<button class="check" onclick="check(1,'information')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q1" value="B"> B. 5
+</label>
 
-<button class="explain" onclick="show(1)">
+<label class="option">
+<input type="radio" name="q1" value="C"> C. 6
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="D"> D. 7
+</label>
+
+<button class="explain"
+onclick="explain(1)">
 Explain
 </button>
 
-<div class="answer" id="a1">
-
-<b>Answer:</b> Information collected for analysis.
-
+<div id="e1" class="explanation">
+The sum is 2 + 4 + 6 + 8 = 20.
+There are 4 numbers.
+Mean = 20 ÷ 4 = 5.
 <br><br>
-
-<b>Explanation:</b>
-Statistical data are facts or observations collected
-to study a particular problem or situation.
-
+<b>Answer: B. 5</b>
 </div>
-
-<p class="result" id="r1"></p>
 
 </div>
 
 
-<!-- Q2 -->
+<!-- QUESTION 2 -->
 
 <div class="question">
 
-<h3>2. What are the two main types of data?</h3>
+<h3>2. What is the median of 3, 7, 9, 11 and 15?</h3>
 
-<input id="q2">
+<label class="option">
+<input type="radio" name="q2" value="A"> A. 7
+</label>
 
-<button class="check" onclick="check(2,'primary and secondary')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q2" value="B"> B. 8
+</label>
 
-<button class="explain" onclick="show(2)">
+<label class="option">
+<input type="radio" name="q2" value="C"> C. 9
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="D"> D. 11
+</label>
+
+<button class="explain"
+onclick="explain(2)">
 Explain
 </button>
 
-<div class="answer" id="a2">
-
-<b>Answer:</b> Primary and secondary data.
-
+<div id="e2" class="explanation">
+The numbers are already arranged in order.
+The middle number is 9.
 <br><br>
-
-<b>Explanation:</b>
-Primary data are collected directly by the researcher.
-Secondary data are obtained from existing sources.
-
+<b>Answer: C. 9</b>
 </div>
-
-<p class="result" id="r2"></p>
 
 </div>
 
 
-<!-- Q3 -->
+<!-- QUESTION 3 -->
 
 <div class="question">
 
-<h3>3. What is primary data?</h3>
+<h3>3. What is the mode of 2, 3, 3, 4, 5?</h3>
 
-<input id="q3">
+<label class="option">
+<input type="radio" name="q3" value="A"> A. 2
+</label>
 
-<button class="check" onclick="check(3,'data collected directly')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q3" value="B"> B. 3
+</label>
 
-<button class="explain" onclick="show(3)">
+<label class="option">
+<input type="radio" name="q3" value="C"> C. 4
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="D"> D. 5
+</label>
+
+<button class="explain"
+onclick="explain(3)">
 Explain
 </button>
 
-<div class="answer" id="a3">
-
-<b>Answer:</b> Data collected directly.
-
+<div id="e3" class="explanation">
+The mode is the number that occurs most frequently.
+3 occurs twice.
 <br><br>
-
-<b>Explanation:</b>
-Primary data are obtained firsthand from the original
-source by the researcher.
-
+<b>Answer: B. 3</b>
 </div>
-
-<p class="result" id="r3"></p>
 
 </div>
 
 
-<!-- Q4 -->
+<!-- QUESTION 4 -->
 
 <div class="question">
 
-<h3>4. What is secondary data?</h3>
+<h3>4. What is the range of 4, 7, 10 and 15?</h3>
 
-<input id="q4">
+<label class="option">
+<input type="radio" name="q4" value="A"> A. 9
+</label>
 
-<button class="check" onclick="check(4,'existing source')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q4" value="B"> B. 10
+</label>
 
-<button class="explain" onclick="show(4)">
+<label class="option">
+<input type="radio" name="q4" value="C"> C. 11
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="D"> D. 12
+</label>
+
+<button class="explain"
+onclick="explain(4)">
 Explain
 </button>
 
-<div class="answer" id="a4">
-
-<b>Answer:</b> Data obtained from an existing source.
-
+<div id="e4" class="explanation">
+Range = Maximum − Minimum.
+15 − 4 = 11.
 <br><br>
-
-<b>Explanation:</b>
-Examples include books, reports, websites and previous
-research.
-
+<b>Answer: C. 11</b>
 </div>
-
-<p class="result" id="r4"></p>
 
 </div>
 
 
-<!-- Q5 -->
+<!-- QUESTION 5 -->
 
 <div class="question">
 
-<h3>5. Which method involves asking people questions?</h3>
+<h3>5. Which one is a measure of central tendency?</h3>
 
-<input id="q5">
+<label class="option">
+<input type="radio" name="q5" value="A"> A. Mean
+</label>
 
-<button class="check" onclick="check(5,'interview')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q5" value="B"> B. Range
+</label>
 
-<button class="explain" onclick="show(5)">
+<label class="option">
+<input type="radio" name="q5" value="C"> C. Variance
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="D"> D. Standard deviation
+</label>
+
+<button class="explain"
+onclick="explain(5)">
 Explain
 </button>
 
-<div class="answer" id="a5">
-
-<b>Answer:</b> Interview.
-
+<div id="e5" class="explanation">
+Mean, median and mode are measures of central tendency.
 <br><br>
-
-<b>Explanation:</b>
-An interview collects information by directly asking
-questions to respondents.
-
+<b>Answer: A. Mean</b>
 </div>
-
-<p class="result" id="r5"></p>
 
 </div>
 
 
-<!-- Q6 -->
+<!-- QUESTION 6 -->
 
 <div class="question">
 
-<h3>6. What is direct observation?</h3>
+<h3>6. Which graph is commonly used to represent continuous frequency data?</h3>
 
-<input id="q6">
+<label class="option">
+<input type="radio" name="q6" value="A"> A. Histogram
+</label>
 
-<button class="check" onclick="check(6,'observing')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q6" value="B"> B. Pie chart
+</label>
 
-<button class="explain" onclick="show(6)">
+<label class="option">
+<input type="radio" name="q6" value="C"> C. Line of symmetry
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="D"> D. Number line
+</label>
+
+<button class="explain"
+onclick="explain(6)">
 Explain
 </button>
 
-<div class="answer" id="a6">
-
-<b>Answer:</b> Collecting data by observing directly.
-
+<div id="e6" class="explanation">
+A histogram is used to represent continuous grouped frequency data.
 <br><br>
-
-<b>Explanation:</b>
-The researcher watches an event or behavior and records
-what happens.
-
+<b>Answer: A. Histogram</b>
 </div>
-
-<p class="result" id="r6"></p>
 
 </div>
 
 
-<!-- Q7 -->
+<!-- QUESTION 7 -->
 
 <div class="question">
 
-<h3>7. Find the mean of 4, 6, 8, 10.</h3>
+<h3>7. A pie chart represents data using what?</h3>
 
-<input id="q7">
+<label class="option">
+<input type="radio" name="q7" value="A"> A. Rectangles
+</label>
 
-<button class="check" onclick="check(7,'7')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q7" value="B"> B. Sectors of a circle
+</label>
 
-<button class="explain" onclick="show(7)">
+<label class="option">
+<input type="radio" name="q7" value="C"> C. Squares
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="D"> D. Triangles only
+</label>
+
+<button class="explain"
+onclick="explain(7)">
 Explain
 </button>
 
-<div class="answer" id="a7">
-
-<b>Answer:</b> 7
-
+<div id="e7" class="explanation">
+A pie chart divides a circle into sectors.
 <br><br>
-
-<b>Explanation:</b>
-
-Mean = (4 + 6 + 8 + 10) ÷ 4
-
-<br>
-
-= 28 ÷ 4
-
-<br>
-
-= <b>7</b>
-
+<b>Answer: B. Sectors of a circle</b>
 </div>
-
-<p class="result" id="r7"></p>
 
 </div>
 
 
-<!-- Q8 -->
+<!-- QUESTION 8 -->
 
 <div class="question">
 
-<h3>8. Find the median of 3, 5, 7, 9, 11.</h3>
+<h3>8. What is the probability of getting a head when tossing a fair coin?</h3>
 
-<input id="q8">
+<label class="option">
+<input type="radio" name="q8" value="A"> A. 0
+</label>
 
-<button class="check" onclick="check(8,'7')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q8" value="B"> B. 1/4
+</label>
 
-<button class="explain" onclick="show(8)">
+<label class="option">
+<input type="radio" name="q8" value="C"> C. 1/2
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="D"> D. 1
+</label>
+
+<button class="explain"
+onclick="explain(8)">
 Explain
 </button>
 
-<div class="answer" id="a8">
-
-<b>Answer:</b> 7
-
-<br><br>
-
-<b>Explanation:</b>
-The numbers are already ordered. The middle value is 7,
-so the median is 7.
-
-</div>
-
-<p class="result" id="r8"></p>
-
-</div>
-
-
-<!-- Q9 -->
-
-<div class="question">
-
-<h3>9. Find the mode of 2, 3, 3, 4, 5.</h3>
-
-<input id="q9">
-
-<button class="check" onclick="check(9,'3')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(9)">
-Explain
-</button>
-
-<div class="answer" id="a9">
-
-<b>Answer:</b> 3
-
-<br><br>
-
-<b>Explanation:</b>
-The mode is the value that occurs most frequently.
-The number 3 occurs twice.
-
-</div>
-
-<p class="result" id="r9"></p>
-
-</div>
-
-
-<!-- Q10 -->
-
-<div class="question">
-
-<h3>10. Find the range of 5, 8, 12, 15.</h3>
-
-<input id="q10">
-
-<button class="check" onclick="check(10,'10')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(10)">
-Explain
-</button>
-
-<div class="answer" id="a10">
-
-<b>Answer:</b> 10
-
-<br><br>
-
-<b>Explanation:</b>
-
-Range = Maximum − Minimum
-
-<br>
-
-= 15 − 5
-
-<br>
-
-= <b>10</b>
-
-</div>
-
-<p class="result" id="r10"></p>
-
-</div>
-
-
-<!-- Q11 -->
-
-<div class="question">
-
-<h3>11. What is probability?</h3>
-
-<input id="q11">
-
-<button class="check" onclick="check(11,'chance')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(11)">
-Explain
-</button>
-
-<div class="answer" id="a11">
-
-<b>Answer:</b> The chance of an event occurring.
-
-<br><br>
-
-<b>Explanation:</b>
-Probability measures how likely an event is to happen.
-
-</div>
-
-<p class="result" id="r11"></p>
-
-</div>
-
-
-<!-- Q12 -->
-
-<div class="question">
-
-<h3>12. What is the probability of getting a head when a fair coin is tossed?</h3>
-
-<input id="q12">
-
-<button class="check" onclick="check(12,'1/2')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(12)">
-Explain
-</button>
-
-<div class="answer" id="a12">
-
-<b>Answer:</b> 1/2
-
-<br><br>
-
-<b>Explanation:</b>
-
-There are 2 equally likely outcomes:
+<div id="e8" class="explanation">
+A fair coin has two equally likely outcomes:
 Head and Tail.
-
-Therefore:
-
-P(Head) = 1 ÷ 2 = <b>1/2</b>
-
-</div>
-
-<p class="result" id="r12"></p>
-
-</div>
-
-
-<!-- Q13 -->
-
-<div class="question">
-
-<h3>13. What is a sample space?</h3>
-
-<input id="q13">
-
-<button class="check" onclick="check(13,'all possible outcomes')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(13)">
-Explain
-</button>
-
-<div class="answer" id="a13">
-
-<b>Answer:</b> The set of all possible outcomes.
-
+Therefore P(Head) = 1/2.
 <br><br>
-
-<b>Explanation:</b>
-For a coin toss, the sample space is {H,T}.
-
+<b>Answer: C. 1/2</b>
 </div>
-
-<p class="result" id="r13"></p>
 
 </div>
 
 
-<!-- Q14 -->
+<!-- QUESTION 9 -->
 
 <div class="question">
 
-<h3>14. What is an event in probability?</h3>
+<h3>9. What is the probability of rolling a 6 on a fair die?</h3>
 
-<input id="q14">
+<label class="option">
+<input type="radio" name="q9" value="A"> A. 1/2
+</label>
 
-<button class="check" onclick="check(14,'outcome')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q9" value="B"> B. 1/3
+</label>
 
-<button class="explain" onclick="show(14)">
+<label class="option">
+<input type="radio" name="q9" value="C"> C. 1/6
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="D"> D. 1
+</label>
+
+<button class="explain"
+onclick="explain(9)">
 Explain
 </button>
 
-<div class="answer" id="a14">
-
-<b>Answer:</b> A collection of outcomes of an experiment.
-
+<div id="e9" class="explanation">
+A die has 6 equally likely outcomes.
+Only one outcome is 6.
+Therefore P(6) = 1/6.
 <br><br>
-
-<b>Explanation:</b>
-An event can contain one or more possible outcomes.
-
+<b>Answer: C. 1/6</b>
 </div>
-
-<p class="result" id="r14"></p>
 
 </div>
 
 
-<!-- Q15 -->
+<!-- QUESTION 10 -->
 
 <div class="question">
 
-<h3>15. What is the probability of an impossible event?</h3>
+<h3>10. What is the probability of an impossible event?</h3>
 
-<input id="q15">
+<label class="option">
+<input type="radio" name="q10" value="A"> A. 0
+</label>
 
-<button class="check" onclick="check(15,'0')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q10" value="B"> B. 1/2
+</label>
 
-<button class="explain" onclick="show(15)">
+<label class="option">
+<input type="radio" name="q10" value="C"> C. 1
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="D"> D. 2
+</label>
+
+<button class="explain"
+onclick="explain(10)">
 Explain
 </button>
 
-<div class="answer" id="a15">
-
-<b>Answer:</b> 0
-
+<div id="e10" class="explanation">
+An impossible event can never happen, so its probability is 0.
 <br><br>
-
-<b>Explanation:</b>
-An impossible event cannot occur, therefore its probability
-is zero.
-
+<b>Answer: A. 0</b>
 </div>
-
-<p class="result" id="r15"></p>
 
 </div>
 
 
-<!-- Q16 -->
+<!-- QUESTION 11 -->
 
 <div class="question">
 
-<h3>16. What is the probability of a certain event?</h3>
+<h3>11. What is the probability of a certain event?</h3>
 
-<input id="q16">
+<label class="option">
+<input type="radio" name="q11" value="A"> A. 0
+</label>
 
-<button class="check" onclick="check(16,'1')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q11" value="B"> B. 1/2
+</label>
 
-<button class="explain" onclick="show(16)">
+<label class="option">
+<input type="radio" name="q11" value="C"> C. 1
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="D"> D. 2
+</label>
+
+<button class="explain"
+onclick="explain(11)">
 Explain
 </button>
 
-<div class="answer" id="a16">
-
-<b>Answer:</b> 1
-
+<div id="e11" class="explanation">
+A certain event will definitely happen.
+Therefore its probability is 1.
 <br><br>
-
-<b>Explanation:</b>
-A certain event always occurs, so its probability is 1.
-
+<b>Answer: C. 1</b>
 </div>
-
-<p class="result" id="r16"></p>
 
 </div>
 
 
-<!-- Q17 -->
+<!-- QUESTION 12 -->
 
 <div class="question">
 
-<h3>17. A die has how many possible outcomes?</h3>
+<h3>12. Which of the following is a primary data collection method?</h3>
 
-<input id="q17">
+<label class="option">
+<input type="radio" name="q12" value="A"> A. Interview
+</label>
 
-<button class="check" onclick="check(17,'6')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q12" value="B"> B. Old newspaper
+</label>
 
-<button class="explain" onclick="show(17)">
+<label class="option">
+<input type="radio" name="q12" value="C"> C. Published book
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="D"> D. Government report
+</label>
+
+<button class="explain"
+onclick="explain(12)">
 Explain
 </button>
 
-<div class="answer" id="a17">
-
-<b>Answer:</b> 6
-
+<div id="e12" class="explanation">
+Interviewing people directly is a method of collecting primary data.
 <br><br>
-
-<b>Explanation:</b>
-A standard die has faces numbered 1, 2, 3, 4, 5 and 6.
-
+<b>Answer: A. Interview</b>
 </div>
-
-<p class="result" id="r17"></p>
 
 </div>
 
 
-<!-- Q18 -->
+<!-- QUESTION 13 -->
 
 <div class="question">
 
-<h3>18. What is P(rolling a 6) on a fair die?</h3>
+<h3>13. Which one is secondary data?</h3>
 
-<input id="q18">
+<label class="option">
+<input type="radio" name="q13" value="A"> A. Direct observation
+</label>
 
-<button class="check" onclick="check(18,'1/6')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q13" value="B"> B. Interview
+</label>
 
-<button class="explain" onclick="show(18)">
+<label class="option">
+<input type="radio" name="q13" value="C"> C. Published report
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="D"> D. Personal experiment
+</label>
+
+<button class="explain"
+onclick="explain(13)">
 Explain
 </button>
 
-<div class="answer" id="a18">
-
-<b>Answer:</b> 1/6
-
+<div id="e13" class="explanation">
+Published reports are data collected previously by another source.
 <br><br>
-
-<b>Explanation:</b>
-There is one favorable outcome (6) out of six possible
-outcomes.
-
-P(6) = 1/6
-
+<b>Answer: C. Published report</b>
 </div>
-
-<p class="result" id="r18"></p>
 
 </div>
 
 
-<!-- Q19 -->
+<!-- QUESTION 14 -->
 
 <div class="question">
 
-<h3>19. What is a histogram used to represent?</h3>
+<h3>14. What is the square root of the variance called?</h3>
 
-<input id="q19">
+<label class="option">
+<input type="radio" name="q14" value="A"> A. Mean
+</label>
 
-<button class="check" onclick="check(19,'frequency distribution')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q14" value="B"> B. Median
+</label>
 
-<button class="explain" onclick="show(19)">
+<label class="option">
+<input type="radio" name="q14" value="C"> C. Standard deviation
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="D"> D. Mode
+</label>
+
+<button class="explain"
+onclick="explain(14)">
 Explain
 </button>
 
-<div class="answer" id="a19">
-
-<b>Answer:</b> Frequency distribution.
-
+<div id="e14" class="explanation">
+Standard deviation is the square root of variance.
 <br><br>
-
-<b>Explanation:</b>
-A histogram represents numerical data grouped into
-intervals.
-
+<b>Answer: C. Standard deviation</b>
 </div>
-
-<p class="result" id="r19"></p>
 
 </div>
 
 
-<!-- Q20 -->
+<!-- QUESTION 15 -->
 
 <div class="question">
 
-<h3>20. What graph represents data using sectors of a circle?</h3>
+<h3>15. What does variance measure?</h3>
 
-<input id="q20">
+<label class="option">
+<input type="radio" name="q15" value="A"> A. Center only
+</label>
 
-<button class="check" onclick="check(20,'pie chart')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q15" value="B"> B. Spread of data
+</label>
 
-<button class="explain" onclick="show(20)">
+<label class="option">
+<input type="radio" name="q15" value="C"> C. Number of observations only
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="D"> D. Highest value only
+</label>
+
+<button class="explain"
+onclick="explain(15)">
 Explain
 </button>
 
-<div class="answer" id="a20">
-
-<b>Answer:</b> Pie chart.
-
+<div id="e15" class="explanation">
+Variance measures how spread out the data values are around the mean.
 <br><br>
-
-<b>Explanation:</b>
-A pie chart divides a circle into sectors representing
-different parts of a whole.
-
+<b>Answer: B. Spread of data</b>
 </div>
-
-<p class="result" id="r20"></p>
 
 </div>
 
 
-<!-- Q21 -->
+<!-- QUESTION 16 -->
 
 <div class="question">
 
-<h3>21. What is the sum of all probabilities in a sample space?</h3>
+<h3>16. If the data values are 5, 5, 5, 5, what is the range?</h3>
 
-<input id="q21">
+<label class="option">
+<input type="radio" name="q16" value="A"> A. 0
+</label>
 
-<button class="check" onclick="check(21,'1')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q16" value="B"> B. 1
+</label>
 
-<button class="explain" onclick="show(21)">
+<label class="option">
+<input type="radio" name="q16" value="C"> C. 5
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="D"> D. 10
+</label>
+
+<button class="explain"
+onclick="explain(16)">
 Explain
 </button>
 
-<div class="answer" id="a21">
-
-<b>Answer:</b> 1
-
+<div id="e16" class="explanation">
+Range = maximum − minimum.
+5 − 5 = 0.
 <br><br>
-
-<b>Explanation:</b>
-All possible outcomes together form the complete sample
-space, so their probabilities add to 1.
-
+<b>Answer: A. 0</b>
 </div>
-
-<p class="result" id="r21"></p>
 
 </div>
 
 
-<!-- Q22 -->
+<!-- QUESTION 17 -->
 
 <div class="question">
 
-<h3>22. Find the mean of 10, 20, 30.</h3>
+<h3>17. A sample space contains what?</h3>
 
-<input id="q22">
+<label class="option">
+<input type="radio" name="q17" value="A"> A. All possible outcomes
+</label>
 
-<button class="check" onclick="check(22,'20')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q17" value="B"> B. Only one outcome
+</label>
 
-<button class="explain" onclick="show(22)">
+<label class="option">
+<input type="radio" name="q17" value="C"> C. No outcomes
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="D"> D. Only impossible outcomes
+</label>
+
+<button class="explain"
+onclick="explain(17)">
 Explain
 </button>
 
-<div class="answer" id="a22">
-
-<b>Answer:</b> 20
-
+<div id="e17" class="explanation">
+The sample space is the set of all possible outcomes of an experiment.
 <br><br>
-
-<b>Explanation:</b>
-
-Mean = (10 + 20 + 30) ÷ 3
-
-= 60 ÷ 3
-
-= <b>20</b>
-
+<b>Answer: A. All possible outcomes</b>
 </div>
-
-<p class="result" id="r22"></p>
 
 </div>
 
 
-<!-- Q23 -->
+<!-- QUESTION 18 -->
 
 <div class="question">
 
-<h3>23. Find the median of 2, 4, 6, 8.</h3>
+<h3>18. What is an event in probability?</h3>
 
-<input id="q23">
+<label class="option">
+<input type="radio" name="q18" value="A"> A. A collection of outcomes
+</label>
 
-<button class="check" onclick="check(23,'5')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q18" value="B"> B. A graph only
+</label>
 
-<button class="explain" onclick="show(23)">
+<label class="option">
+<input type="radio" name="q18" value="C"> C. A table only
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="D"> D. A mean
+</label>
+
+<button class="explain"
+onclick="explain(18)">
 Explain
 </button>
 
-<div class="answer" id="a23">
-
-<b>Answer:</b> 5
-
+<div id="e18" class="explanation">
+An event is a set or collection of one or more outcomes from the sample space.
 <br><br>
-
-<b>Explanation:</b>
-
-There are two middle numbers: 4 and 6.
-
-Median = (4 + 6) ÷ 2 = <b>5</b>
-
+<b>Answer: A. A collection of outcomes</b>
 </div>
-
-<p class="result" id="r23"></p>
 
 </div>
 
 
-<!-- Q24 -->
+<!-- QUESTION 19 -->
 
 <div class="question">
 
-<h3>24. Find the range of 2, 7, 10, 15.</h3>
+<h3>19. Experimental probability is based on what?</h3>
 
-<input id="q24">
+<label class="option">
+<input type="radio" name="q19" value="A"> A. Actual experiments
+</label>
 
-<button class="check" onclick="check(24,'13')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q19" value="B"> B. Guessing
+</label>
 
-<button class="explain" onclick="show(24)">
+<label class="option">
+<input type="radio" name="q19" value="C"> C. Algebra only
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="D"> D. Geometry only
+</label>
+
+<button class="explain"
+onclick="explain(19)">
 Explain
 </button>
 
-<div class="answer" id="a24">
-
-<b>Answer:</b> 13
-
+<div id="e19" class="explanation">
+Experimental probability is calculated from the results of an actual experiment.
 <br><br>
-
-Range = 15 − 2 = <b>13</b>
-
+<b>Answer: A. Actual experiments</b>
 </div>
-
-<p class="result" id="r24"></p>
 
 </div>
 
 
-<!-- Q25 -->
+<!-- QUESTION 20 -->
 
 <div class="question">
 
-<h3>25. What is experimental probability?</h3>
+<h3>20. What is the probability of getting an even number when rolling a fair die?</h3>
 
-<input id="q25">
+<label class="option">
+<input type="radio" name="q20" value="A"> A. 1/6
+</label>
 
-<button class="check" onclick="check(25,'observed')">
-Check Answer
-</button>
+<label class="option">
+<input type="radio" name="q20" value="B"> B. 1/3
+</label>
 
-<button class="explain" onclick="show(25)">
+<label class="option">
+<input type="radio" name="q20" value="C"> C. 1/2
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="D"> D. 1
+</label>
+
+<button class="explain"
+onclick="explain(20)">
 Explain
 </button>
 
-<div class="answer" id="a25">
-
-<b>Answer:</b> Probability based on actual experiment results.
-
+<div id="e20" class="explanation">
+Even numbers on a die are 2, 4 and 6.
+There are 3 favorable outcomes out of 6.
+3/6 = 1/2.
 <br><br>
-
-<b>Explanation:</b>
-Experimental probability is calculated using observed
-outcomes.
-
-P(E) = frequency of E ÷ total trials.
-
-</div>
-
-<p class="result" id="r25"></p>
-
-</div>
-
-
-<!-- Q26 -->
-
-<div class="question">
-
-<h3>26. A coin is tossed 20 times and heads appear 12 times. Find experimental P(H).</h3>
-
-<input id="q26">
-
-<button class="check" onclick="check(26,'0.6')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(26)">
-Explain
-</button>
-
-<div class="answer" id="a26">
-
-<b>Answer:</b> 0.6
-
-<br><br>
-
-P(H) = 12 ÷ 20
-
-= <b>0.6</b>
-
-</div>
-
-<p class="result" id="r26"></p>
-
-</div>
-
-
-<!-- Q27 -->
-
-<div class="question">
-
-<h3>27. What is the maximum possible probability?</h3>
-
-<input id="q27">
-
-<button class="check" onclick="check(27,'1')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(27)">
-Explain
-</button>
-
-<div class="answer" id="a27">
-
-<b>Answer:</b> 1
-
-<br><br>
-
-<b>Explanation:</b>
-Probability always lies between 0 and 1 inclusive.
-
-</div>
-
-<p class="result" id="r27"></p>
-
-</div>
-
-
-<!-- Q28 -->
-
-<div class="question">
-
-<h3>28. What is the minimum possible probability?</h3>
-
-<input id="q28">
-
-<button class="check" onclick="check(28,'0')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(28)">
-Explain
-</button>
-
-<div class="answer" id="a28">
-
-<b>Answer:</b> 0
-
-<br><br>
-
-<b>Explanation:</b>
-An impossible event has probability 0.
-
-</div>
-
-<p class="result" id="r28"></p>
-
-</div>
-
-
-<!-- Q29 -->
-
-<div class="question">
-
-<h3>29. What measure of central tendency is most frequent?</h3>
-
-<input id="q29">
-
-<button class="check" onclick="check(29,'mode')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(29)">
-Explain
-</button>
-
-<div class="answer" id="a29">
-
-<b>Answer:</b> Mode
-
-<br><br>
-
-<b>Explanation:</b>
-The mode is the value that occurs most often.
-
-</div>
-
-<p class="result" id="r29"></p>
-
-</div>
-
-
-<!-- Q30 -->
-
-<div class="question">
-
-<h3>30. Which measure is the middle value of ordered data?</h3>
-
-<input id="q30">
-
-<button class="check" onclick="check(30,'median')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(30)">
-Explain
-</button>
-
-<div class="answer" id="a30">
-
-<b>Answer:</b> Median
-
-<br><br>
-
-<b>Explanation:</b>
-The median divides ordered data into two equal parts.
-
-</div>
-
-<p class="result" id="r30"></p>
-
-</div>
-
-
-<!-- Q31 -->
-
-<div class="question">
-
-<h3>31. Which measure is calculated by adding all values and dividing by their number?</h3>
-
-<input id="q31">
-
-<button class="check" onclick="check(31,'mean')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(31)">
-Explain
-</button>
-
-<div class="answer" id="a31">
-
-<b>Answer:</b> Mean
-
-<br><br>
-
-Mean = Sum of values ÷ Number of values.
-
-</div>
-
-<p class="result" id="r31"></p>
-
-</div>
-
-
-<!-- Q32 -->
-
-<div class="question">
-
-<h3>32. What does standard deviation measure?</h3>
-
-<input id="q32">
-
-<button class="check" onclick="check(32,'dispersion')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(32)">
-Explain
-</button>
-
-<div class="answer" id="a32">
-
-<b>Answer:</b> Dispersion or spread of data.
-
-<br><br>
-
-<b>Explanation:</b>
-Standard deviation tells how far data values tend to be
-from the mean.
-
-</div>
-
-<p class="result" id="r32"></p>
-
-</div>
-
-
-<!-- Q33 -->
-
-<div class="question">
-
-<h3>33. What is variance related to?</h3>
-
-<input id="q33">
-
-<button class="check" onclick="check(33,'standard deviation')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(33)">
-Explain
-</button>
-
-<div class="answer" id="a33">
-
-<b>Answer:</b> Standard deviation.
-
-<br><br>
-
-<b>Explanation:</b>
-Variance is the square of the standard deviation.
-
-</div>
-
-<p class="result" id="r33"></p>
-
-</div>
-
-
-<!-- Q34 -->
-
-<div class="question">
-
-<h3>34. If variance is 25, what is standard deviation?</h3>
-
-<input id="q34">
-
-<button class="check" onclick="check(34,'5')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(34)">
-Explain
-</button>
-
-<div class="answer" id="a34">
-
-<b>Answer:</b> 5
-
-<br><br>
-
-Standard deviation = √variance
-
-= √25
-
-= <b>5</b>
-
-</div>
-
-<p class="result" id="r34"></p>
-
-</div>
-
-
-<!-- Q35 -->
-
-<div class="question">
-
-<h3>35. What is a frequency?</h3>
-
-<input id="q35">
-
-<button class="check" onclick="check(35,'number of times')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(35)">
-Explain
-</button>
-
-<div class="answer" id="a35">
-
-<b>Answer:</b> Number of times a value occurs.
-
-</div>
-
-<p class="result" id="r35"></p>
-
-</div>
-
-
-<!-- Q36 -->
-
-<div class="question">
-
-<h3>36. What is a frequency distribution?</h3>
-
-<input id="q36">
-
-<button class="check" onclick="check(36,'frequency')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(36)">
-Explain
-</button>
-
-<div class="answer" id="a36">
-
-<b>Answer:</b> A table showing values and their frequencies.
-
-</div>
-
-<p class="result" id="r36"></p>
-
-</div>
-
-
-<!-- Q37 -->
-
-<div class="question">
-
-<h3>37. What is the total angle of a complete circle?</h3>
-
-<input id="q37">
-
-<button class="check" onclick="check(37,'360')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(37)">
-Explain
-</button>
-
-<div class="answer" id="a37">
-
-<b>Answer:</b> 360°
-
-<br><br>
-
-A full circle contains 360 degrees.
-
-</div>
-
-<p class="result" id="r37"></p>
-
-</div>
-
-
-<!-- Q38 -->
-
-<div class="question">
-
-<h3>38. In a pie chart, what does a sector represent?</h3>
-
-<input id="q38">
-
-<button class="check" onclick="check(38,'part')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(38)">
-Explain
-</button>
-
-<div class="answer" id="a38">
-
-<b>Answer:</b> A part of the whole.
-
-</div>
-
-<p class="result" id="r38"></p>
-
-</div>
-
-
-<!-- Q39 -->
-
-<div class="question">
-
-<h3>39. What is the formula for probability of an event?</h3>
-
-<input id="q39">
-
-<button class="check" onclick="check(39,'favorable outcomes')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(39)">
-Explain
-</button>
-
-<div class="answer" id="a39">
-
-<b>Answer:</b>
-
-P(E) = Favorable outcomes ÷ Total possible outcomes.
-
-</div>
-
-<p class="result" id="r39"></p>
-
-</div>
-
-
-<!-- Q40 -->
-
-<div class="question">
-
-<h3>40. What is a tree diagram used for?</h3>
-
-<input id="q40">
-
-<button class="check" onclick="check(40,'possible outcomes')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(40)">
-Explain
-</button>
-
-<div class="answer" id="a40">
-
-<b>Answer:</b> Showing possible outcomes.
-
-<br><br>
-
-<b>Explanation:</b>
-A tree diagram organizes sequences of events and their
-possible outcomes.
-
-</div>
-
-<p class="result" id="r40"></p>
-
-</div>
-
-
-<!-- Q41 -->
-
-<div class="question">
-
-<h3>41. Find P(even number) when rolling a fair die.</h3>
-
-<input id="q41">
-
-<button class="check" onclick="check(41,'1/2')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(41)">
-Explain
-</button>
-
-<div class="answer" id="a41">
-
-<b>Answer:</b> 1/2
-
-<br><br>
-
-Even outcomes = {2,4,6} → 3 outcomes.
-
-P = 3/6 = <b>1/2</b>
-
-</div>
-
-<p class="result" id="r41"></p>
-
-</div>
-
-
-<!-- Q42 -->
-
-<div class="question">
-
-<h3>42. Find P(odd number) on a fair die.</h3>
-
-<input id="q42">
-
-<button class="check" onclick="check(42,'1/2')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(42)">
-Explain
-</button>
-
-<div class="answer" id="a42">
-
-<b>Answer:</b> 1/2
-
-<br><br>
-
-Odd outcomes = {1,3,5}.
-
-P = 3/6 = <b>1/2</b>
-
-</div>
-
-<p class="result" id="r42"></p>
-
-</div>
-
-
-<!-- Q43 -->
-
-<div class="question">
-
-<h3>43. Find the mean of 5, 5, 10, 10.</h3>
-
-<input id="q43">
-
-<button class="check" onclick="check(43,'7.5')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(43)">
-Explain
-</button>
-
-<div class="answer" id="a43">
-
-<b>Answer:</b> 7.5
-
-<br><br>
-
-Mean = (5+5+10+10) ÷ 4
-
-= 30 ÷ 4
-
-= <b>7.5</b>
-
-</div>
-
-<p class="result" id="r43"></p>
-
-</div>
-
-
-<!-- Q44 -->
-
-<div class="question">
-
-<h3>44. Find the mode of 1, 2, 2, 3, 4.</h3>
-
-<input id="q44">
-
-<button class="check" onclick="check(44,'2')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(44)">
-Explain
-</button>
-
-<div class="answer" id="a44">
-
-<b>Answer:</b> 2
-
-<br><br>
-
-2 occurs twice, more than any other value.
-
-</div>
-
-<p class="result" id="r44"></p>
-
-</div>
-
-
-<!-- Q45 -->
-
-<div class="question">
-
-<h3>45. Find the median of 1, 3, 5, 7, 9.</h3>
-
-<input id="q45">
-
-<button class="check" onclick="check(45,'5')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(45)">
-Explain
-</button>
-
-<div class="answer" id="a45">
-
-<b>Answer:</b> 5
-
-<br><br>
-
-The middle value is 5.
-
-</div>
-
-<p class="result" id="r45"></p>
-
-</div>
-
-
-<!-- Q46 -->
-
-<div class="question">
-
-<h3>46. Find the range of 20, 25, 30, 40.</h3>
-
-<input id="q46">
-
-<button class="check" onclick="check(46,'20')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(46)">
-Explain
-</button>
-
-<div class="answer" id="a46">
-
-<b>Answer:</b> 20
-
-<br><br>
-
-Range = 40 − 20 = <b>20</b>
-
-</div>
-
-<p class="result" id="r46"></p>
-
-</div>
-
-
-<!-- Q47 -->
-
-<div class="question">
-
-<h3>47. If P(A)=0.3, what is P(not A)?</h3>
-
-<input id="q47">
-
-<button class="check" onclick="check(47,'0.7')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(47)">
-Explain
-</button>
-
-<div class="answer" id="a47">
-
-<b>Answer:</b> 0.7
-
-<br><br>
-
-P(not A) = 1 − P(A)
-
-= 1 − 0.3
-
-= <b>0.7</b>
-
-</div>
-
-<p class="result" id="r47"></p>
-
-</div>
-
-
-<!-- Q48 -->
-
-<div class="question">
-
-<h3>48. What is theoretical probability based on?</h3>
-
-<input id="q48">
-
-<button class="check" onclick="check(48,'equally likely')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(48)">
-Explain
-</button>
-
-<div class="answer" id="a48">
-
-<b>Answer:</b> Equally likely possible outcomes.
-
-</div>
-
-<p class="result" id="r48"></p>
-
-</div>
-
-
-<!-- Q49 -->
-
-<div class="question">
-
-<h3>49. What is data interpretation?</h3>
-
-<input id="q49">
-
-<button class="check" onclick="check(49,'meaning')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(49)">
-Explain
-</button>
-
-<div class="answer" id="a49">
-
-<b>Answer:</b> Finding meaning from collected data.
-
-</div>
-
-<p class="result" id="r49"></p>
-
-</div>
-
-
-<!-- Q50 -->
-
-<div class="question">
-
-<h3>50. What is data analysis?</h3>
-
-<input id="q50">
-
-<button class="check" onclick="check(50,'examining')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(50)">
-Explain
-</button>
-
-<div class="answer" id="a50">
-
-<b>Answer:</b> Examining data to find useful information.
-
-</div>
-
-<p class="result" id="r50"></p>
-
-</div>
-
-
-<!-- Q51 -->
-
-<div class="question">
-
-<h3>51. A bag contains 3 red and 2 blue balls. Find P(red).</h3>
-
-<input id="q51">
-
-<button class="check" onclick="check(51,'3/5')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(51)">
-Explain
-</button>
-
-<div class="answer" id="a51">
-
-<b>Answer:</b> 3/5
-
-<br><br>
-
-Total balls = 3 + 2 = 5.
-
-Red balls = 3.
-
-P(red) = 3/5.
-
-</div>
-
-<p class="result" id="r51"></p>
-
-</div>
-
-
-<!-- Q52 -->
-
-<div class="question">
-
-<h3>52. A bag contains 4 green and 6 yellow balls. Find P(green).</h3>
-
-<input id="q52">
-
-<button class="check" onclick="check(52,'2/5')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(52)">
-Explain
-</button>
-
-<div class="answer" id="a52">
-
-<b>Answer:</b> 2/5
-
-<br><br>
-
-P(green) = 4/10 = <b>2/5</b>
-
-</div>
-
-<p class="result" id="r52"></p>
-
-</div>
-
-
-<!-- Q53 -->
-
-<div class="question">
-
-<h3>53. What is the complement of an event?</h3>
-
-<input id="q53">
-
-<button class="check" onclick="check(53,'not')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(53)">
-Explain
-</button>
-
-<div class="answer" id="a53">
-
-<b>Answer:</b> The event that the original event does not occur.
-
-</div>
-
-<p class="result" id="r53"></p>
-
-</div>
-
-
-<!-- Q54 -->
-
-<div class="question">
-
-<h3>54. What is the probability of getting a number greater than 4 on a die?</h3>
-
-<input id="q54">
-
-<button class="check" onclick="check(54,'1/3')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(54)">
-Explain
-</button>
-
-<div class="answer" id="a54">
-
-<b>Answer:</b> 1/3
-
-<br><br>
-
-Numbers greater than 4 are 5 and 6.
-
-P = 2/6 = <b>1/3</b>
-
-</div>
-
-<p class="result" id="r54"></p>
-
-</div>
-
-
-<!-- Q55 -->
-
-<div class="question">
-
-<h3>55. What is the purpose of organizing data?</h3>
-
-<input id="q55">
-
-<button class="check" onclick="check(55,'understand')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(55)">
-Explain
-</button>
-
-<div class="answer" id="a55">
-
-<b>Answer:</b> To make data easier to understand and analyze.
-
-</div>
-
-<p class="result" id="r55"></p>
-
-</div>
-
-
-<!-- Q56 -->
-
-<div class="question">
-
-<h3>56. Which chart is best for showing parts of a whole?</h3>
-
-<input id="q56">
-
-<button class="check" onclick="check(56,'pie chart')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(56)">
-Explain
-</button>
-
-<div class="answer" id="a56">
-
-<b>Answer:</b> Pie chart.
-
-</div>
-
-<p class="result" id="r56"></p>
-
-</div>
-
-
-<!-- Q57 -->
-
-<div class="question">
-
-<h3>57. Which graph uses connected bars for grouped numerical data?</h3>
-
-<input id="q57">
-
-<button class="check" onclick="check(57,'histogram')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(57)">
-Explain
-</button>
-
-<div class="answer" id="a57">
-
-<b>Answer:</b> Histogram.
-
-</div>
-
-<p class="result" id="r57"></p>
-
-</div>
-
-
-<!-- Q58 -->
-
-<div class="question">
-
-<h3>58. If a fair coin is tossed twice, how many outcomes are possible?</h3>
-
-<input id="q58">
-
-<button class="check" onclick="check(58,'4')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(58)">
-Explain
-</button>
-
-<div class="answer" id="a58">
-
-<b>Answer:</b> 4
-
-<br><br>
-
-Sample space:
-
-HH, HT, TH, TT
-
-Therefore there are <b>4</b> outcomes.
-
-</div>
-
-<p class="result" id="r58"></p>
-
-</div>
-
-
-<!-- Q59 -->
-
-<div class="question">
-
-<h3>59. What is the probability of getting two heads when a fair coin is tossed twice?</h3>
-
-<input id="q59">
-
-<button class="check" onclick="check(59,'1/4')">
-Check Answer
-</button>
-
-<button class="explain" onclick="show(59)">
-Explain
-</button>
-
-<div class="answer" id="a59">
-
-<b>Answer:</b> 1/4
-
-<br><br>
-
-Possible outcomes:
-
-HH, HT, TH, TT
-
-Only HH gives two heads.
-
-P = 1/4.
-
+<b>Answer: C. 1/2</b>
 </div>
-
-<p class="result" id="r59"></p>
 
 </div>
 
 
-<!-- Q60 -->
-
-<div class="question">
-
-<h3>60. What is the probability of an event that always occurs?</h3>
-
-<input id="q60">
-
-<button class="check" onclick="check(60,'1')">
-Check Answer
+<button class="submit" onclick="submitQuiz()">
+✅ Submit Answers
 </button>
-
-<button class="explain" onclick="show(60)">
-Explain
-</button>
-
-<div class="answer" id="a60">
-
-<b>Answer:</b> 1
-
-<br><br>
-
-A certain event always occurs, so its probability is 1.
-
-</div>
-
-<p class="result" id="r60"></p>
-
-</div>
-
-
-<button
-class="back"
-onclick="location.href='grade9.html'">
 
+<button class="back" onclick="location.href='grade9.html'">
 ← Back to Grade 9
-
 </button>
-
 
 </div>
 
 
 <script>
 
-let score = 0;
+const answers = {
+    q1:"B",
+    q2:"C",
+    q3:"B",
+    q4:"C",
+    q5:"A",
+    q6:"A",
+    q7:"B",
+    q8:"C",
+    q9:"C",
+    q10:"A",
+    q11:"C",
+    q12:"A",
+    q13:"C",
+    q14:"C",
+    q15:"B",
+    q16:"A",
+    q17:"A",
+    q18:"A",
+    q19:"A",
+    q20:"C"
+};
 
-let answered = {};
+function submitQuiz(){
 
-function check(number, answer) {
+    let score = 0;
 
-    if (answered[number]) {
-        return;
+    for(let i = 1; i <= 20; i++){
+
+        let selected =
+            document.querySelector(
+                'input[name="q' + i + '"]:checked'
+            );
+
+        if(selected){
+
+            if(selected.value === answers["q" + i]){
+                score++;
+                selected.parentElement.classList.add("correct");
+            }else{
+                selected.parentElement.classList.add("wrong");
+            }
+
+        }
+
     }
 
-    let input =
-        document.getElementById("q" + number);
+    document.getElementById("result").innerHTML =
+        "🎯 Your Score: " + score + " / 20";
 
-    let user =
-        input.value.trim().toLowerCase();
-
-    let result =
-        document.getElementById("r" + number);
-
-    if (user.includes(answer.toLowerCase())) {
-
-        result.innerHTML =
-            "✅ Correct!";
-
-        result.style.color = "green";
-
-        score++;
-
-    } else {
-
-        result.innerHTML =
-            "❌ Incorrect. Click Explain to see the answer.";
-
-        result.style.color = "red";
-
-    }
-
-    answered[number] = true;
-
-    document.getElementById("score").innerHTML =
-        score + " / 60";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
-
-function show(number) {
+function explain(number){
 
     let box =
-        document.getElementById("a" + number);
+        document.getElementById("e" + number);
 
-    if (box.style.display === "block") {
-
+    if(box.style.display === "block"){
         box.style.display = "none";
-
-    } else {
-
+    }else{
         box.style.display = "block";
-
     }
 
 }
 
 </script>
 
-
 </body>
-
 </html>
