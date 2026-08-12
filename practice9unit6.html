@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 6 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🔥 Grade 9 Mathematics</h1>
+
+<p>Unit 6 — Regular Polygons</p>
+
+<p>60 Practice Questions</p>
+
+</header>
+
+<div class="container">
+
+<div id="score">
+Score: 0 / 60
+</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"Which polygon has 3 sides?",
+o:["Triangle","Quadrilateral","Pentagon","Hexagon"],
+a:0,
+e:"A triangle has 3 sides."
+},
+
+{
+q:"Which polygon has 5 sides?",
+o:["Triangle","Pentagon","Hexagon","Octagon"],
+a:1,
+e:"A polygon with 5 sides is called a pentagon."
+},
+
+{
+q:"Which polygon has 6 sides?",
+o:["Pentagon","Hexagon","Heptagon","Octagon"],
+a:1,
+e:"A polygon with 6 sides is called a hexagon."
+},
+
+{
+q:"Which polygon has 8 sides?",
+o:["Hexagon","Heptagon","Octagon","Decagon"],
+a:2,
+e:"A polygon with 8 sides is called an octagon."
+},
+
+{
+q:"Which polygon has 10 sides?",
+o:["Octagon","Nonagon","Decagon","Dodecagon"],
+a:2,
+e:"A polygon with 10 sides is called a decagon."
+},
+
+{
+q:"A polygon with all sides and all angles equal is called what?",
+o:["Irregular polygon","Regular polygon","Concave polygon","Open polygon"],
+a:1,
+e:"A regular polygon has equal sides and equal interior angles."
+},
+
+{
+q:"A polygon with an interior angle greater than 180° is called:",
+o:["Convex","Regular","Concave","Equilateral"],
+a:2,
+e:"A concave polygon has at least one interior angle greater than 180°."
+},
+
+{
+q:"In a convex polygon, all interior angles are:",
+o:["Less than 180°","Greater than 180°","Equal to 360°","Always 90°"],
+a:0,
+e:"Every interior angle of a convex polygon is less than 180°."
+},
+
+{
+q:"What is the sum of the interior angles of a triangle?",
+o:["90°","180°","270°","360°"],
+a:1,
+e:"The interior angles of a triangle add up to 180°."
+},
+
+{
+q:"What is the sum of the interior angles of a quadrilateral?",
+o:["180°","270°","360°","540°"],
+a:2,
+e:"For n=4: (4−2)×180° = 360°."
+},
+
+{
+q:"What is the formula for the sum of interior angles of an n-sided polygon?",
+o:["n×180°","(n−2)×180°","(n+2)×180°","360°/n"],
+a:1,
+e:"The sum of interior angles is (n−2)×180°."
+},
+
+{
+q:"Find the sum of the interior angles of a pentagon.",
+o:["360°","540°","720°","900°"],
+a:1,
+e:"(5−2)×180° = 3×180° = 540°."
+},
+
+{
+q:"Find the sum of the interior angles of a hexagon.",
+o:["540°","720°","900°","1080°"],
+a:1,
+e:"(6−2)×180° = 720°."
+},
+
+{
+q:"Find the sum of the interior angles of an octagon.",
+o:["720°","900°","1080°","1260°"],
+a:2,
+e:"(8−2)×180° = 1080°."
+},
+
+{
+q:"Find the sum of the interior angles of a decagon.",
+o:["1080°","1260°","1440°","1620°"],
+a:2,
+e:"(10−2)×180° = 1440°."
+},
+
+{
+q:"A polygon has an interior angle sum of 900°. How many sides does it have?",
+o:["6","7","8","9"],
+a:1,
+e:"(n−2)180=900. Therefore n−2=5 and n=7."
+},
+
+{
+q:"A polygon has an interior angle sum of 1080°. How many sides does it have?",
+o:["6","7","8","9"],
+a:2,
+e:"(n−2)180=1080, so n−2=6 and n=8."
+},
+
+{
+q:"A polygon has an interior angle sum of 1440°. How many sides does it have?",
+o:["8","9","10","12"],
+a:2,
+e:"(n−2)180=1440, so n−2=8 and n=10."
+},
+
+{
+q:"The sum of the exterior angles of any convex polygon is:",
+o:["180°","270°","360°","540°"],
+a:2,
+e:"The sum of one exterior angle at each vertex of any convex polygon is 360°."
+},
+
+{
+q:"What is the formula for each exterior angle of a regular polygon?",
+o:["180°/n","360°/n","n/360°","(n−2)180°"],
+a:1,
+e:"For a regular polygon, each exterior angle is 360°/n."
+},
+
+{
+q:"What is each exterior angle of a regular pentagon?",
+o:["60°","72°","90°","108°"],
+a:1,
+e:"360°÷5 = 72°."
+},
+
+{
+q:"What is each exterior angle of a regular hexagon?",
+o:["45°","60°","72°","90°"],
+a:1,
+e:"360°÷6 = 60°."
+},
+
+{
+q:"What is each exterior angle of a regular octagon?",
+o:["30°","45°","60°","72°"],
+a:1,
+e:"360°÷8 = 45°."
+},
+
+{
+q:"What is each exterior angle of a regular decagon?",
+o:["30°","36°","40°","45°"],
+a:1,
+e:"360°÷10 = 36°."
+},
+
+{
+q:"What is the formula for each interior angle of a regular n-sided polygon?",
+o:["360°/n","180°−360°/n","(n−2)180°","180°/n"],
+a:1,
+e:"Each interior angle = 180° − each exterior angle = 180°−360°/n."
+},
+
+{
+q:"What is each interior angle of a regular triangle?",
+o:["60°","90°","120°","180°"],
+a:0,
+e:"A regular triangle is equilateral, so each angle is 60°."
+},
+
+{
+q:"What is each interior angle of a regular pentagon?",
+o:["72°","90°","108°","120°"],
+a:2,
+e:"180°−72° = 108°."
+},
+
+{
+q:"What is each interior angle of a regular hexagon?",
+o:["90°","108°","120°","135°"],
+a:2,
+e:"180°−60° = 120°."
+},
+
+{
+q:"What is each interior angle of a regular octagon?",
+o:["120°","135°","140°","150°"],
+a:1,
+e:"180°−45° = 135°."
+},
+
+{
+q:"What is each interior angle of a regular decagon?",
+o:["135°","140°","144°","150°"],
+a:2,
+e:"180°−36° = 144°."
+},
+
+{
+q:"A regular polygon has each exterior angle equal to 30°. How many sides does it have?",
+o:["10","12","15","18"],
+a:1,
+e:"n=360°÷30°=12."
+},
+
+{
+q:"A regular polygon has each exterior angle equal to 45°. How many sides does it have?",
+o:["6","8","10","12"],
+a:1,
+e:"n=360°÷45°=8."
+},
+
+{
+q:"A regular polygon has each exterior angle equal to 40°. How many sides does it have?",
+o:["7","8","9","10"],
+a:3,
+e:"n=360°÷40°=9. Therefore the correct answer is 9.",
+},
+
+{
+q:"A regular polygon has each interior angle equal to 120°. How many sides does it have?",
+o:["5","6","7","8"],
+a:1,
+e:"Exterior angle = 180−120=60°. n=360÷60=6."
+},
+
+{
+q:"A regular polygon has each interior angle equal to 135°. How many sides does it have?",
+o:["6","7","8","9"],
+a:2,
+e:"Exterior angle = 45°. Therefore n=360÷45=8."
+},
+
+{
+q:"A regular polygon has each interior angle equal to 144°. How many sides does it have?",
+o:["8","9","10","12"],
+a:2,
+e:"Exterior angle = 36°. Therefore n=360÷36=10."
+},
+
+{
+q:"How many lines of symmetry does a regular pentagon have?",
+o:["3","4","5","10"],
+a:2,
+e:"A regular n-sided polygon has n lines of symmetry. A pentagon has 5."
+},
+
+{
+q:"How many lines of symmetry does a regular hexagon have?",
+o:["3","4","5","6"],
+a:3,
+e:"A regular hexagon has 6 lines of symmetry."
+},
+
+{
+q:"How many lines of symmetry does a regular octagon have?",
+o:["4","6","8","10"],
+a:2,
+e:"A regular octagon has 8 lines of symmetry."
+},
+
+{
+q:"How many lines of symmetry does a regular decagon have?",
+o:["5","8","10","12"],
+a:2,
+e:"A regular decagon has 10 lines of symmetry."
+},
+
+{
+q:"The center angle of a regular polygon is:",
+o:["180°/n","360°/n","(n−2)180°","90°/n"],
+a:1,
+e:"The central angles of a regular polygon divide 360° equally, so each is 360°/n."
+},
+
+{
+q:"What is the central angle of a regular pentagon?",
+o:["60°","72°","90°","108°"],
+a:1,
+e:"360°÷5 = 72°."
+},
+
+{
+q:"What is the central angle of a regular hexagon?",
+o:["45°","60°","72°","90°"],
+a:1,
+e:"360°÷6 = 60°."
+},
+
+{
+q:"What is the central angle of a regular octagon?",
+o:["30°","45°","60°","72°"],
+a:1,
+e:"360°÷8 = 45°."
+},
+
+{
+q:"What is an apothem?",
+o:["A side of a polygon","Distance from center to a vertex","Perpendicular distance from center to a side","The perimeter"],
+a:2,
+e:"The apothem is the perpendicular distance from the center of a regular polygon to one of its sides."
+},
+
+{
+q:"What is the perimeter of a regular polygon with n sides and side length s?",
+o:["n+s","n−s","ns","n/s"],
+a:2,
+e:"Perimeter = number of sides × side length = ns."
+},
+
+{
+q:"A regular hexagon has side length 8 cm. Find its perimeter.",
+o:["40 cm","48 cm","56 cm","64 cm"],
+a:1,
+e:"P=6×8=48 cm."
+},
+
+{
+q:"A regular pentagon has side length 7 cm. Find its perimeter.",
+o:["28 cm","35 cm","42 cm","49 cm"],
+a:1,
+e:"P=5×7=35 cm."
+},
+
+{
+q:"The area of a regular polygon using apothem a and perimeter P is:",
+o:["Pa","Pa/2","2Pa","P/a"],
+a:1,
+e:"Area = 1/2 × perimeter × apothem."
+},
+
+{
+q:"A regular polygon has perimeter 40 cm and apothem 5 cm. Find its area.",
+o:["50 cm²","100 cm²","150 cm²","200 cm²"],
+a:1,
+e:"Area=1/2×40×5=100 cm²."
+},
+
+{
+q:"A regular polygon has perimeter 60 cm and apothem 8 cm. Find its area.",
+o:["120 cm²","180 cm²","240 cm²","480 cm²"],
+a:2,
+e:"Area=1/2×60×8=240 cm²."
+},
+
+{
+q:"A polygon inscribed in a circle has:",
+o:["All vertices on the circle","All sides outside the circle","No vertices on the circle","Only one vertex on the circle"],
+a:0,
+e:"An inscribed polygon has all of its vertices lying on the circumference of the circle."
+},
+
+{
+q:"A circle circumscribed about a regular polygon passes through:",
+o:["The sides only","All vertices","The center only","The apothem only"],
+a:1,
+e:"The circumscribed circle passes through all vertices of the polygon."
+},
+
+{
+q:"A regular hexagon is inscribed in a circle. What is the central angle?",
+o:["30°","45°","60°","90°"],
+a:2,
+e:"360°÷6=60°."
+},
+
+{
+q:"A regular decagon is inscribed in a circle. What is its central angle?",
+o:["30°","36°","40°","45°"],
+a:1,
+e:"360°÷10=36°."
+},
+
+{
+q:"A regular polygon has 12 sides. Find each exterior angle.",
+o:["20°","30°","36°","45°"],
+a:1,
+e:"360°÷12=30°."
+},
+
+{
+q:"A regular polygon has 12 sides. Find each interior angle.",
+o:["120°","135°","150°","160°"],
+a:2,
+e:"Interior angle=180−30=150°."
+},
+
+{
+q:"A regular polygon has 15 sides. Find each exterior angle.",
+o:["20°","24°","30°","36°"],
+a:1,
+e:"360°÷15=24°."
+},
+
+{
+q:"A regular polygon has 15 sides. Find each interior angle.",
+o:["144°","150°","156°","160°"],
+a:2,
+e:"180−24=156°."
+},
+
+{
+q:"Which statement is TRUE?",
+o:[
+"Every concave polygon is regular",
+"Every regular polygon is convex",
+"Every convex polygon is regular",
+"Every polygon has equal sides"
+],
+a:1,
+e:"A regular polygon is convex because all its interior angles are less than 180°."
+},
+
+{
+q:"If a regular polygon has n sides, how many lines of symmetry does it have?",
+o:["n−1","n","2n","360/n"],
+a:1,
+e:"A regular n-gon has n lines of symmetry."
+},
+
+{
+q:"What is the sum of the exterior angles of a regular decagon?",
+o:["180°","360°","720°","1440°"],
+a:1,
+e:"The sum of exterior angles of every convex polygon is 360°."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+
+function showQuestions(){
+
+    const box=document.getElementById("questions");
+
+    questions.forEach((item,index)=>{
+
+        const num=index+1;
+
+        let html=`
+        <div class="question">
+
+        <h3>${num}. ${item.q}</h3>
+        `;
+
+        item.o.forEach((option,i)=>{
+
+            html+=`
+            <button
+            class="option"
+            onclick="checkAnswer(${num},${i},this)">
+
+            ${String.fromCharCode(65+i)}. ${option}
+
+            </button>
+            `;
+
+        });
+
+        html+=`
+        <div id="result${num}" class="result"></div>
+
+        </div>
+        `;
+
+        box.innerHTML+=html;
+
+    });
+
+}
+
+
+function checkAnswer(num,selected,button){
+
+    if(button.disabled) return;
+
+    const item=questions[num-1];
+
+    const parent=button.parentElement;
+
+    const buttons=parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled=true;
+    });
+
+    const result=document.getElementById("result"+num);
+
+    answered++;
+
+
+    if(selected===item.a){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+
+        <strong>✅ RIGHT!</strong>
+
+        <div class="explanation">
+
+        <b>Explanation:</b><br>
+
+        ${item.e}
+
+        </div>
+
+        `;
+
+    }
+
+    else{
+
+        result.className="result wrong";
+
+        const correct=String.fromCharCode(65+item.a);
+
+        result.innerHTML=`
+
+        <strong>❌ WRONG!</strong>
+
+        <br><br>
+
+        <b>
+        Correct Answer:
+        ${correct}. ${item.o[item.a]}
+        </b>
+
+        <div class="explanation">
+
+        <b>Explanation:</b><br>
+
+        ${item.e}
+
+        </div>
+
+        `;
+
+    }
+
+
+    document.getElementById("score").innerHTML=
+    `Score: ${score} / 60`;
+
+
+    if(answered===60){
+
+        const percentage=(score/60)*100;
+
+        const finish=document.getElementById("finish");
+
+        finish.style.display="block";
+
+        finish.innerHTML=`
+
+        🎉 <b>Practice Completed!</b>
+
+        <br><br>
+
+        Score: ${score} / 60
+
+        <br>
+
+        Percentage: ${percentage.toFixed(1)}%
+
+        `;
+
+    }
+
+}
+
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
