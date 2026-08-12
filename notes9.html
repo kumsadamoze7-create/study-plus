@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Grade 9 Mathematics Notes - Study Plus</title>
+    <title>Grade 9 Mathematics - Unit 1 Notes</title>
 
     <style>
         body {
@@ -12,24 +11,25 @@
             font-family: Arial, sans-serif;
             background: #f4f7fb;
             color: #222;
+            line-height: 1.7;
         }
 
         header {
             background: #2563eb;
             color: white;
-            padding: 25px 15px;
             text-align: center;
+            padding: 25px 15px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
-            padding: 20px;
+            padding: 15px;
         }
 
-        .unit {
+        .topic {
             background: white;
-            margin-bottom: 20px;
+            margin: 18px 0;
             padding: 20px;
             border-radius: 14px;
             box-shadow: 0 3px 10px #ccc;
@@ -37,46 +37,71 @@
 
         h2 {
             color: #2563eb;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
         }
 
         h3 {
-            color: #333;
+            color: #1d4ed8;
         }
 
         .formula {
             background: #eef4ff;
             padding: 12px;
+            border-left: 5px solid #2563eb;
             border-radius: 8px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .trick {
-            background: #fff7d6;
-            padding: 12px;
-            border-left: 5px solid #f59e0b;
-            border-radius: 6px;
             margin: 12px 0;
+            font-weight: bold;
         }
 
         .example {
             background: #f0fdf4;
-            padding: 12px;
+            padding: 15px;
             border-left: 5px solid #16a34a;
-            border-radius: 6px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .trick {
+            background: #fff7d6;
+            padding: 15px;
+            border-left: 5px solid #f59e0b;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .warning {
+            background: #fff1f2;
+            padding: 15px;
+            border-left: 5px solid #e11d48;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .important {
+            background: #f3e8ff;
+            padding: 15px;
+            border-left: 5px solid #9333ea;
+            border-radius: 8px;
             margin: 12px 0;
         }
 
         .back {
             display: block;
-            text-align: center;
             background: #2563eb;
             color: white;
             text-decoration: none;
+            text-align: center;
             padding: 14px;
             border-radius: 10px;
-            margin-top: 20px;
+            margin: 25px 0;
             font-weight: bold;
+        }
+
+        code {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -84,209 +109,752 @@
 <body>
 
 <header>
-    <h1>📚 Grade 9 Mathematics</h1>
-    <p>Study Plus — Short Notes</p>
+    <h1>📘 Grade 9 Mathematics</h1>
+    <p>Unit 1 — Further on Sets</p>
+    <p>Study Plus • Complete Short Notes</p>
 </header>
 
 <div class="container">
 
-    <!-- UNIT 1 -->
-    <div class="unit">
-        <h2>Unit 1 — Further on Sets</h2>
+<!-- 1 SETS AND ELEMENTS -->
 
-        <h3>1. What is a Set?</h3>
+<div class="topic">
+    <h2>1. Sets and Elements</h2>
 
-        <p>
-            A set is a well-defined collection of objects.
-            The objects in a set are called elements.
-        </p>
+    <h3>Definition</h3>
 
-        <div class="example">
-            <b>Example:</b><br>
-            A = {2, 4, 6, 8}
-            <br><br>
-            2, 4, 6 and 8 are elements of A.
-        </div>
+    <p>
+        A <b>set</b> is a well-defined collection of distinct objects.
+        The objects belonging to a set are called <b>elements</b> or members.
+    </p>
 
-        <h3>2. Set Notation</h3>
-
-        <p>
-            x ∈ A means x is an element of A.
-        </p>
-
-        <p>
-            x ∉ A means x is not an element of A.
-        </p>
-
-        <h3>3. Types of Sets</h3>
-
-        <p><b>Empty Set:</b> A set with no elements.</p>
-
-        <div class="formula">
-            A = ∅
-        </div>
-
-        <p><b>Finite Set:</b> A set with a limited number of elements.</p>
-
-        <p><b>Infinite Set:</b> A set whose elements continue without end.</p>
-
-        <h3>4. Cardinality</h3>
-
-        <p>
-            Cardinality means the number of elements in a set.
-        </p>
-
-        <div class="example">
-            A = {1, 3, 5, 7}
-            <br><br>
-            n(A) = 4
-        </div>
-
-        <div class="trick">
-            ⚡ <b>Short Trick:</b>
-            Repeated elements are counted only once.
-        </div>
-
-        <h3>5. Subset</h3>
-
-        <p>
-            A is a subset of B if every element of A is also an element of B.
-        </p>
-
-        <div class="formula">
-            A ⊆ B
-        </div>
-
-        <div class="example">
-            A = {1, 2}<br>
-            B = {1, 2, 3, 4}
-            <br><br>
-            Therefore A ⊆ B.
-        </div>
-
-        <h3>6. Power Set</h3>
-
-        <p>
-            The power set is the set containing all subsets of a set.
-        </p>
-
-        <div class="example">
-            A = {a, b}
-            <br><br>
-            P(A) = {∅, {a}, {b}, {a,b}}
-        </div>
-
-        <div class="formula">
-            Number of subsets = 2ⁿ
-        </div>
-
-        <div class="trick">
-            ⚡ If a set has 5 elements:
-            2⁵ = 32 subsets.
-        </div>
-
-        <h3>7. Union</h3>
-
-        <p>
-            Union contains all elements that belong to A or B.
-        </p>
-
-        <div class="formula">
-            A ∪ B
-        </div>
-
-        <div class="example">
-            A = {1,2,3}<br>
-            B = {3,4,5}
-            <br><br>
-            A ∪ B = {1,2,3,4,5}
-        </div>
-
-        <div class="trick">
-            ⚡ Union = OR
-        </div>
-
-        <h3>8. Intersection</h3>
-
-        <p>
-            Intersection contains elements common to both sets.
-        </p>
-
-        <div class="formula">
-            A ∩ B
-        </div>
-
-        <div class="example">
-            A = {1,2,3}<br>
-            B = {3,4,5}
-            <br><br>
-            A ∩ B = {3}
-        </div>
-
-        <div class="trick">
-            ⚡ Intersection = AND
-        </div>
-
-        <h3>9. Difference of Sets</h3>
-
-        <p>
-            A − B contains elements that are in A but not in B.
-        </p>
-
-        <div class="example">
-            A = {1,2,3}<br>
-            B = {3,4,5}
-            <br><br>
-            A − B = {1,2}
-        </div>
-
-        <h3>10. Complement</h3>
-
-        <p>
-            The complement of A contains elements in the universal set
-            that are not in A.
-        </p>
-
-        <div class="formula">
-            Aᶜ = U − A
-        </div>
-
-        <h3>11. Important Formula</h3>
-
-        <div class="formula">
-            n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
-        </div>
-
-        <div class="trick">
-            ⚡ <b>Exam Trick:</b><br>
-            Add A + B, then subtract the common part.
-        </div>
-
-        <div class="example">
-            <b>Example:</b><br><br>
-
-            n(A) = 35<br>
-            n(B) = 28<br>
-            n(A ∩ B) = 12
-            <br><br>
-
-            n(A ∪ B)
-            = 35 + 28 − 12
-            = <b>51</b>
-        </div>
-
-        <div class="trick">
-            🎯 <b>Exam Words:</b><br><br>
-            "at least one" → Union<br>
-            "both" → Intersection<br>
-            "neither" → Total − Union
-        </div>
-
+    <div class="example">
+        <b>Example:</b><br>
+        A = {2, 4, 6, 8}
+        <br><br>
+        2, 4, 6 and 8 are the elements of A.
     </div>
 
-    <a href="maths.html" class="back">
-        ← Back to Mathematics
-    </a>
+    <h3>Symbols</h3>
+
+    <p><b>∈</b> means "is an element of".</p>
+    <p><b>∉</b> means "is not an element of".</p>
+
+    <div class="example">
+        If A = {2, 4, 6, 8}:<br><br>
+
+        4 ∈ A ✅<br>
+        5 ∉ A ✅
+    </div>
+
+    <div class="trick">
+        ⚡ <b>Short Trick:</b>
+        ∈ means "inside the set".
+    </div>
+</div>
+
+
+<!-- 2 SET DESCRIPTION -->
+
+<div class="topic">
+    <h2>2. Set Description</h2>
+
+    <p>
+        A set can be described in different ways. The three important
+        methods are descriptive form, roster form and set-builder form.
+    </p>
+
+    <h3>A. Descriptive Form</h3>
+
+    <p>
+        We describe the members of the set using words.
+    </p>
+
+    <div class="example">
+        <b>Example:</b><br>
+        A = set of even natural numbers less than 10.
+    </div>
+
+    <h3>B. Roster / Tabular Form</h3>
+
+    <p>
+        We list all the elements inside curly brackets.
+    </p>
+
+    <div class="example">
+        A = {2, 4, 6, 8}
+    </div>
+
+    <h3>C. Set-Builder Form</h3>
+
+    <p>
+        We describe a set using a rule or condition.
+    </p>
+
+    <div class="formula">
+        A = {x : x is an even natural number and x &lt; 10}
+    </div>
+
+    <div class="example">
+        <b>Example:</b><br><br>
+
+        B = {1, 2, 3, 4, 5}
+        <br><br>
+
+        Set-builder form:
+        <br>
+        B = {x : x ∈ N, x ≤ 5}
+    </div>
+
+    <div class="trick">
+        ⚡ <b>Exam Trick:</b><br>
+        Roster → list the elements.<br>
+        Set-builder → write the rule.
+    </div>
+</div>
+
+
+<!-- 3 TYPES OF SETS -->
+
+<div class="topic">
+    <h2>3. Types of Sets</h2>
+
+    <h3>1. Empty Set</h3>
+
+    <p>
+        A set containing no element is called an empty or null set.
+    </p>
+
+    <div class="formula">
+        A = ∅
+    </div>
+
+    <p>It can also be written as:</p>
+
+    <div class="formula">
+        A = { }
+    </div>
+
+    <h3>2. Singleton Set</h3>
+
+    <p>
+        A set containing exactly one element.
+    </p>
+
+    <div class="example">
+        A = {5}
+        <br><br>
+        n(A) = 1
+    </div>
+
+    <h3>3. Finite Set</h3>
+
+    <p>
+        A set having a definite number of elements.
+    </p>
+
+    <div class="example">
+        A = {1, 2, 3, 4}
+    </div>
+
+    <h3>4. Infinite Set</h3>
+
+    <p>
+        A set whose elements continue indefinitely.
+    </p>
+
+    <div class="example">
+        N = {1, 2, 3, 4, 5, ...}
+    </div>
+
+    <h3>5. Equal Sets</h3>
+
+    <p>
+        Two sets are equal if they contain exactly the same elements.
+    </p>
+
+    <div class="example">
+        A = {1, 2, 3}<br>
+        B = {3, 2, 1}
+        <br><br>
+        Therefore A = B.
+    </div>
+
+    <div class="trick">
+        ⚡ Order does NOT matter in a set.
+    </div>
+
+    <h3>6. Equivalent Sets</h3>
+
+    <p>
+        Two sets are equivalent if they have the same number of elements.
+    </p>
+
+    <div class="example">
+        A = {1, 2, 3}<br>
+        B = {a, b, c}
+        <br><br>
+        n(A) = n(B) = 3
+        <br>
+        Therefore A and B are equivalent.
+    </div>
+
+    <h3>7. Universal Set</h3>
+
+    <p>
+        The universal set contains all objects under consideration in
+        a particular problem.
+    </p>
+
+    <div class="formula">
+        U = Universal Set
+    </div>
+</div>
+
+
+<!-- 4 SUBSETS -->
+
+<div class="topic">
+    <h2>4. Subsets and Proper Subsets</h2>
+
+    <h3>Subset</h3>
+
+    <p>
+        A is a subset of B if every element of A is also an element of B.
+    </p>
+
+    <div class="formula">
+        A ⊆ B
+    </div>
+
+    <div class="example">
+        A = {1, 2}<br>
+        B = {1, 2, 3, 4}
+        <br><br>
+        A ⊆ B
+    </div>
+
+    <h3>Proper Subset</h3>
+
+    <p>
+        A is a proper subset of B if every element of A is in B,
+        but A and B are not equal.
+    </p>
+
+    <div class="formula">
+        A ⊂ B
+    </div>
+
+    <div class="example">
+        A = {1, 2}<br>
+        B = {1, 2, 3}
+        <br><br>
+        A ⊂ B
+    </div>
+
+    <h3>Subset vs Proper Subset</h3>
+
+    <div class="important">
+        <b>A ⊆ B:</b> A may be equal to B.<br><br>
+        <b>A ⊂ B:</b> A must NOT be equal to B.
+    </div>
+
+    <h3>Number of Subsets</h3>
+
+    <div class="formula">
+        Number of subsets = 2ⁿ
+    </div>
+
+    <p>
+        where n is the number of elements in the set.
+    </p>
+
+    <div class="example">
+        A = {a, b, c}
+        <br><br>
+        n = 3
+        <br>
+        Number of subsets = 2³ = 8
+    </div>
+
+    <h3>Number of Proper Subsets</h3>
+
+    <div class="formula">
+        Number of proper subsets = 2ⁿ − 1
+    </div>
+
+    <div class="example">
+        If n = 4:
+        <br><br>
+        Proper subsets = 2⁴ − 1
+        <br>
+        = 16 − 1
+        <br>
+        = 15
+    </div>
+
+    <div class="trick">
+        ⚡ <b>Remember:</b><br>
+        All subsets → 2ⁿ<br>
+        Proper subsets → 2ⁿ − 1
+    </div>
+
+    <div class="warning">
+        ⚠️ The empty set ∅ is a subset of every set.
+    </div>
+</div>
+
+
+<!-- 5 CARDINALITY -->
+
+<div class="topic">
+    <h2>5. Cardinality of a Set</h2>
+
+    <p>
+        Cardinality means the number of distinct elements in a set.
+    </p>
+
+    <div class="formula">
+        n(A) = number of elements in A
+    </div>
+
+    <div class="example">
+        A = {2, 4, 6, 8}
+        <br><br>
+        n(A) = 4
+    </div>
+
+    <div class="warning">
+        ⚠️ Repeated elements are counted only once.
+        <br><br>
+        A = {1, 1, 2, 2, 3}
+        <br>
+        n(A) = 3
+    </div>
+</div>
+
+
+<!-- 6 UNION -->
+
+<div class="topic">
+    <h2>6. Union of Sets</h2>
+
+    <p>
+        The union of A and B contains every element that belongs to A,
+        B, or both.
+    </p>
+
+    <div class="formula">
+        A ∪ B
+    </div>
+
+    <div class="example">
+        A = {1, 2, 3}<br>
+        B = {3, 4, 5}
+        <br><br>
+        A ∪ B = {1, 2, 3, 4, 5}
+    </div>
+
+    <div class="trick">
+        ⚡ Union = OR
+    </div>
+
+    <h3>Cardinality Formula</h3>
+
+    <div class="formula">
+        n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+    </div>
+
+    <div class="example">
+        n(A) = 20<br>
+        n(B) = 15<br>
+        n(A ∩ B) = 5
+        <br><br>
+        n(A ∪ B) = 20 + 15 − 5
+        <br>
+        = 30
+    </div>
+</div>
+
+
+<!-- 7 INTERSECTION -->
+
+<div class="topic">
+    <h2>7. Intersection of Sets</h2>
+
+    <p>
+        The intersection contains the elements common to both sets.
+    </p>
+
+    <div class="formula">
+        A ∩ B
+    </div>
+
+    <div class="example">
+        A = {1, 2, 3, 4}<br>
+        B = {3, 4, 5, 6}
+        <br><br>
+        A ∩ B = {3, 4}
+    </div>
+
+    <div class="trick">
+        ⚡ Intersection = AND / Common elements
+    </div>
+
+    <div class="important">
+        If two sets have no common element:
+        <br><br>
+        A ∩ B = ∅
+        <br><br>
+        They are called disjoint sets.
+    </div>
+</div>
+
+
+<!-- 8 DIFFERENCE -->
+
+<div class="topic">
+    <h2>8. Difference of Sets</h2>
+
+    <p>
+        A − B contains elements that are in A but not in B.
+    </p>
+
+    <div class="formula">
+        A − B
+    </div>
+
+    <div class="example">
+        A = {1, 2, 3, 4}<br>
+        B = {3, 4, 5, 6}
+        <br><br>
+        A − B = {1, 2}
+        <br><br>
+        B − A = {5, 6}
+    </div>
+
+    <div class="warning">
+        ⚠️ Difference is NOT commutative.
+        <br><br>
+        A − B ≠ B − A in general.
+    </div>
+
+    <div class="trick">
+        ⚡ A − B → Start from A and remove everything that is in B.
+    </div>
+</div>
+
+
+<!-- 9 COMPLEMENT -->
+
+<div class="topic">
+    <h2>9. Complement of a Set</h2>
+
+    <p>
+        The complement of A contains all elements of the universal set
+        that are not in A.
+    </p>
+
+    <div class="formula">
+        Aᶜ = U − A
+    </div>
+
+    <div class="example">
+        U = {1, 2, 3, 4, 5, 6}
+        <br>
+        A = {1, 3, 5}
+        <br><br>
+        Aᶜ = {2, 4, 6}
+    </div>
+
+    <div class="trick">
+        ⚡ Complement = Everything in U except A.
+    </div>
+</div>
+
+
+<!-- 10 SET LAWS -->
+
+<div class="topic">
+    <h2>10. Laws of Sets</h2>
+
+    <h3>Commutative Laws</h3>
+
+    <div class="formula">
+        A ∪ B = B ∪ A
+        <br><br>
+        A ∩ B = B ∩ A
+    </div>
+
+    <h3>Associative Laws</h3>
+
+    <div class="formula">
+        (A ∪ B) ∪ C = A ∪ (B ∪ C)
+        <br><br>
+        (A ∩ B) ∩ C = A ∩ (B ∩ C)
+    </div>
+
+    <h3>Distributive Laws</h3>
+
+    <div class="formula">
+        A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
+        <br><br>
+        A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+    </div>
+
+    <h3>Identity Laws</h3>
+
+    <div class="formula">
+        A ∪ ∅ = A
+        <br><br>
+        A ∩ U = A
+    </div>
+
+    <h3>Domination Laws</h3>
+
+    <div class="formula">
+        A ∪ U = U
+        <br><br>
+        A ∩ ∅ = ∅
+    </div>
+
+    <h3>Idempotent Laws</h3>
+
+    <div class="formula">
+        A ∪ A = A
+        <br><br>
+        A ∩ A = A
+    </div>
+
+    <h3>Complement Laws</h3>
+
+    <div class="formula">
+        A ∪ Aᶜ = U
+        <br><br>
+        A ∩ Aᶜ = ∅
+    </div>
+</div>
+
+
+<!-- 11 DE MORGAN -->
+
+<div class="topic">
+    <h2>11. De Morgan's Laws</h2>
+
+    <p>
+        These laws are very important for solving more complex set problems.
+    </p>
+
+    <div class="formula">
+        (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ
+        <br><br>
+        (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ
+    </div>
+
+    <div class="trick">
+        ⚡ <b>Short Trick:</b><br>
+        When complement enters the bracket:
+        <br><br>
+        ∪ changes to ∩<br>
+        ∩ changes to ∪
+    </div>
+</div>
+
+
+<!-- 12 VENN -->
+
+<div class="topic">
+    <h2>12. Venn Diagram and Applications</h2>
+
+    <p>
+        A Venn diagram represents sets using circles inside a universal set.
+    </p>
+
+    <h3>Two Important Regions</h3>
+
+    <p>
+        The overlapping region represents:
+    </p>
+
+    <div class="formula">
+        A ∩ B
+    </div>
+
+    <p>
+        The complete area belonging to A or B represents:
+    </p>
+
+    <div class="formula">
+        A ∪ B
+    </div>
+
+    <h3>Important Formula</h3>
+
+    <div class="formula">
+        n(A ∪ B)
+        =
+        n(A) + n(B) − n(A ∩ B)
+    </div>
+
+    <div class="example">
+        <b>Complex Example:</b>
+        <br><br>
+
+        In a class of 60 students:<br>
+        35 study Mathematics.<br>
+        28 study Physics.<br>
+        12 study both.
+        <br><br>
+
+        Students studying at least one:
+        <br><br>
+
+        35 + 28 − 12 = 51
+        <br><br>
+
+        Therefore 51 students study at least one subject.
+        <br><br>
+
+        Students studying neither:
+        <br><br>
+
+        60 − 51 = 9
+    </div>
+
+    <div class="trick">
+        🎯 <b>Exam Words:</b><br><br>
+        "both" → A ∩ B<br>
+        "at least one" → A ∪ B<br>
+        "neither" → Total − Union<br>
+        "only A" → A − B<br>
+        "only B" → B − A
+    </div>
+</div>
+
+
+<!-- 13 THREE SETS -->
+
+<div class="topic">
+    <h2>13. Three-Set Formula</h2>
+
+    <p>
+        For three sets, the inclusion-exclusion formula is:
+    </p>
+
+    <div class="formula">
+        n(A ∪ B ∪ C)
+        =
+        n(A)+n(B)+n(C)
+        −n(A∩B)
+        −n(A∩C)
+        −n(B∩C)
+        +n(A∩B∩C)
+    </div>
+
+    <div class="trick">
+        ⚡ <b>Memory Trick:</b><br><br>
+        + singles<br>
+        − pairs<br>
+        + triple
+    </div>
+
+    <div class="example">
+        Suppose:
+        <br><br>
+        n(A)=30<br>
+        n(B)=25<br>
+        n(C)=20<br>
+        n(A∩B)=10<br>
+        n(A∩C)=8<br>
+        n(B∩C)=7<br>
+        n(A∩B∩C)=4
+        <br><br>
+
+        n(A∪B∪C)
+        <br>
+        = 30+25+20−10−8−7+4
+        <br>
+        = <b>54</b>
+    </div>
+</div>
+
+
+<!-- 14 EXAM TRICKS -->
+
+<div class="topic">
+    <h2>14. ⭐ Entrance Exam Short Tricks</h2>
+
+    <div class="trick">
+
+        <b>1.</b> Number of subsets:
+        <br>
+        2ⁿ
+        <br><br>
+
+        <b>2.</b> Number of proper subsets:
+        <br>
+        2ⁿ − 1
+        <br><br>
+
+        <b>3.</b> Two-set union:
+        <br>
+        n(A∪B)=n(A)+n(B)−n(A∩B)
+        <br><br>
+
+        <b>4.</b> Three-set union:
+        <br>
+        + singles − pairs + triple
+        <br><br>
+
+        <b>5.</b> "Both" → Intersection
+        <br><br>
+
+        <b>6.</b> "At least one" → Union
+        <br><br>
+
+        <b>7.</b> "Neither" → Total − Union
+        <br><br>
+
+        <b>8.</b> "Only A" → A − B
+    </div>
+</div>
+
+
+<!-- COMMON MISTAKES -->
+
+<div class="topic">
+    <h2>15. ⚠️ Common Mistakes</h2>
+
+    <div class="warning">
+        <b>❌ Mistake 1:</b>
+        Counting repeated elements twice.
+        <br><br>
+
+        <b>❌ Mistake 2:</b>
+        Thinking A − B = B − A.
+        <br><br>
+
+        <b>❌ Mistake 3:</b>
+        Forgetting to subtract the intersection in a union problem.
+        <br><br>
+
+        <b>❌ Mistake 4:</b>
+        Confusing subset with proper subset.
+        <br><br>
+
+        <b>❌ Mistake 5:</b>
+        Forgetting that ∅ is a subset of every set.
+        <br><br>
+
+        <b>❌ Mistake 6:</b>
+        Forgetting the universal set when finding a complement.
+    </div>
+</div>
+
+
+<a href="maths.html" class="back">
+    ← Back to Grade 9 Mathematics
+</a>
 
 </div>
 
