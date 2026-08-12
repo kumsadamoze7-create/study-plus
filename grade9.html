@@ -53,10 +53,6 @@
             box-shadow: 0 3px 10px #ccc;
         }
 
-        .card h2 {
-            margin-top: 0;
-        }
-
         .math {
             border-left: 6px solid #2563eb;
         }
@@ -77,7 +73,19 @@
             border-left: 6px solid #ea580c;
         }
 
-        .card p {
+        .unit {
+            border-left: 5px solid #2563eb;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #2563eb;
+        }
+
+        p {
             line-height: 1.6;
             color: #555;
         }
@@ -102,14 +110,29 @@
             background: #2563eb;
         }
 
+        .notes {
+            background: #7c3aed;
+        }
+
+        .practice {
+            background: #16a34a;
+        }
+
         .coming {
             background: #9ca3af;
-            cursor: default;
         }
 
         .back {
             background: #172554;
-            margin-top: 10px;
+        }
+
+        #mathUnits {
+            display: none;
+        }
+
+        .title {
+            text-align: center;
+            color: #2563eb;
         }
 
     </style>
@@ -141,17 +164,262 @@
         <h2>📐 Mathematics</h2>
 
         <p>
-            Complete Grade 9 Mathematics.
-            Unit 1–9 Notes and Practice Questions.
+            Complete Grade 9 Mathematics from
+            Unit 1 to Unit 9 with Notes and Practice.
         </p>
 
         <button
             class="open"
-            onclick="location.href='grade9.html'">
+            onclick="openMath()">
 
             📚 Open Mathematics
 
         </button>
+
+    </div>
+
+
+    <!-- MATHEMATICS UNITS -->
+
+    <div id="mathUnits">
+
+        <div class="card">
+
+            <h2 class="title">
+                📐 Grade 9 Mathematics
+            </h2>
+
+            <p>
+                Choose a unit to study Notes or Practice.
+            </p>
+
+        </div>
+
+
+        <!-- UNIT 1 -->
+
+        <div class="card unit">
+
+            <h3>📘 Unit 1 — Further on Sets</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9.html'">
+
+                📖 Unit 1 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9.html'">
+
+                📝 Unit 1 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 2 -->
+
+        <div class="card unit">
+
+            <h3>🔢 Unit 2 — The Number System</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit2.html'">
+
+                📖 Unit 2 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit2.html'">
+
+                📝 Unit 2 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 3 -->
+
+        <div class="card unit">
+
+            <h3>📕 Unit 3 — Solving Equations</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit3.html'">
+
+                📖 Unit 3 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit3unit.html'">
+
+                📝 Unit 3 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 4 -->
+
+        <div class="card unit">
+
+            <h3>📗 Unit 4 — Solving Inequalities</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit4.html'">
+
+                📖 Unit 4 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit4.html'">
+
+                📝 Unit 4 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 5 -->
+
+        <div class="card unit">
+
+            <h3>📐 Unit 5 — Introduction to Trigonometry</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit5.html'">
+
+                📖 Unit 5 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit5.html'">
+
+                📝 Unit 5 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 6 -->
+
+        <div class="card unit">
+
+            <h3>🔷 Unit 6 — Regular Polygons</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit6.html'">
+
+                📖 Unit 6 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit6.html'">
+
+                📝 Unit 6 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 7 -->
+
+        <div class="card unit">
+
+            <h3>🔺 Unit 7 — Congruency and Similarity</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit7.html'">
+
+                📖 Unit 7 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit7.html'">
+
+                📝 Unit 7 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 8 -->
+
+        <div class="card unit">
+
+            <h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit8.html'">
+
+                📖 Unit 8 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit8.html'">
+
+                📝 Unit 8 Practice
+
+            </button>
+
+        </div>
+
+
+        <!-- UNIT 9 -->
+
+        <div class="card unit">
+
+            <h3>📊 Unit 9 — Statistics and Probability</h3>
+
+            <button
+                class="notes"
+                onclick="location.href='notes9unit9.html'">
+
+                📖 Unit 9 Notes
+
+            </button>
+
+            <button
+                class="practice"
+                onclick="location.href='practice9unit9.html'">
+
+                📝 Unit 9 Practice
+
+            </button>
+
+        </div>
+
 
     </div>
 
@@ -163,8 +431,7 @@
         <h2>🧬 Biology</h2>
 
         <p>
-            Grade 9 Biology lessons, notes,
-            examples and practice questions.
+            Grade 9 Biology lessons, Notes and Practice.
         </p>
 
         <button
@@ -185,8 +452,7 @@
         <h2>⚡ Physics</h2>
 
         <p>
-            Grade 9 Physics lessons, notes,
-            examples and practice questions.
+            Grade 9 Physics lessons, Notes and Practice.
         </p>
 
         <button
@@ -207,8 +473,7 @@
         <h2>🧪 Chemistry</h2>
 
         <p>
-            Grade 9 Chemistry lessons, notes,
-            examples and practice questions.
+            Grade 9 Chemistry lessons, Notes and Practice.
         </p>
 
         <button
@@ -230,7 +495,7 @@
 
         <p>
             Grade 9 English grammar, vocabulary,
-            reading and practice questions.
+            reading and practice.
         </p>
 
         <button
@@ -256,6 +521,23 @@
 
 
 </div>
+
+
+<script>
+
+function openMath() {
+
+    var math = document.getElementById("mathUnits");
+
+    math.style.display = "block";
+
+    math.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
 
 
 </body>
