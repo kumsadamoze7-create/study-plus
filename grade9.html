@@ -9,6 +9,10 @@
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -21,6 +25,10 @@
             color: white;
             text-align: center;
             padding: 30px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
         }
 
         .container {
@@ -41,8 +49,12 @@
             border-left: 5px solid #2563eb;
         }
 
-        h2 {
+        .unit h2 {
             color: #1d4ed8;
+        }
+
+        .card p {
+            line-height: 1.6;
         }
 
         button {
@@ -67,10 +79,16 @@
 
         .back {
             background: #172554;
+            margin-top: 25px;
         }
 
         button:hover {
             opacity: 0.9;
+        }
+
+        .coming {
+            color: #777;
+            font-style: italic;
         }
 
     </style>
@@ -95,15 +113,16 @@
 <div class="container">
 
 
-    <!-- UNIT 1 -->
+    <!-- ================= UNIT 1 ================= -->
 
     <div class="card unit">
 
         <h2>📘 Unit 1 — Further on Sets</h2>
 
         <p>
-            Sets, subsets, union, intersection, complement,
-            Venn diagrams and entrance exam tricks.
+            Sets, elements, subsets, proper subsets,
+            union, intersection, difference, complement,
+            Venn diagrams and set laws.
         </p>
 
         <button
@@ -125,14 +144,15 @@
     </div>
 
 
-    <!-- UNIT 2 -->
+    <!-- ================= UNIT 2 ================= -->
 
     <div class="card unit">
 
         <h2>🔢 Unit 2 — The Number System</h2>
 
         <p>
-            Natural numbers, integers, divisibility,
+            Natural numbers, integers, Euclidean division,
+            prime and composite numbers, divisibility,
             GCF, LCM, rational numbers, irrational numbers,
             real numbers, exponents and radicals.
         </p>
@@ -156,16 +176,16 @@
     </div>
 
 
-    <!-- UNIT 3 -->
+    <!-- ================= UNIT 3 ================= -->
 
     <div class="card unit">
 
         <h2>📕 Unit 3 — Solving Equations</h2>
 
         <p>
-            Linear equations, systems of equations,
+            Linear equations, simultaneous equations,
             quadratic equations, absolute value,
-            exponents and radicals.
+            equations involving exponents and radicals.
         </p>
 
         <button
@@ -187,7 +207,7 @@
     </div>
 
 
-    <!-- UNIT 4 -->
+    <!-- ================= UNIT 4 ================= -->
 
     <div class="card unit">
 
@@ -195,7 +215,8 @@
 
         <p>
             Linear inequalities, systems of inequalities,
-            absolute value inequalities and quadratic inequalities.
+            graphical solutions, absolute value inequalities
+            and quadratic inequalities.
         </p>
 
         <button
@@ -217,15 +238,16 @@
     </div>
 
 
-    <!-- UNIT 5 -->
+    <!-- ================= UNIT 5 ================= -->
 
     <div class="card unit">
 
         <h2>📐 Unit 5 — Introduction to Trigonometry</h2>
 
         <p>
-            Right angled triangles, Pythagoras theorem,
-            trigonometric ratios and basic trigonometric values.
+            Right-angled triangles, Pythagoras theorem,
+            trigonometric ratios and trigonometric values
+            of basic angles from 0° to 90°.
         </p>
 
         <button
@@ -247,15 +269,17 @@
     </div>
 
 
-    <!-- UNIT 6 -->
+    <!-- ================= UNIT 6 ================= -->
 
     <div class="card unit">
 
         <h2>🔷 Unit 6 — Regular Polygons</h2>
 
         <p>
-            Interior and exterior angles, convex and concave polygons,
-            regular polygons, symmetry, inscribed and circumscribed polygons,
+            Interior and exterior angles,
+            convex and concave polygons,
+            regular polygons, symmetry,
+            inscribed and circumscribed polygons,
             central angles, perimeter, area and apothem.
         </p>
 
@@ -278,33 +302,66 @@
     </div>
 
 
-    <!-- UNIT 7 -->
+    <!-- ================= UNIT 7 ================= -->
 
-    <div class="card">
+    <div class="card unit">
 
-        <h2>📕 Unit 7</h2>
+        <h2>🔺 Unit 7 — Congruency and Similarity</h2>
 
         <p>
-            Coming soon...
+            Congruent and similar figures,
+            similarity theorems, SSS similarity,
+            SAS similarity, ratios of perimeters,
+            ratios of areas, construction of similar figures
+            and applications of similarity.
         </p>
+
+        <button
+            class="notes"
+            onclick="location.href='notes9unit7.html'">
+
+            📖 Unit 7 Notes
+
+        </button>
+
+        <button
+            class="practice"
+            onclick="location.href='practice9unit7.html'">
+
+            🔥 Unit 7 Practice — 60 Questions
+
+        </button>
 
     </div>
 
 
-    <!-- UNIT 8 -->
+    <!-- ================= UNIT 8 ================= -->
 
     <div class="card">
 
         <h2>📕 Unit 8</h2>
 
-        <p>
+        <p class="coming">
             Coming soon...
         </p>
 
     </div>
 
 
-    <!-- BACK BUTTON -->
+    <!-- ================= UNIT 9 ================= -->
+
+    <div class="card">
+
+        <h2>📕 Unit 9</h2>
+
+        <p class="coming">
+            Coming soon...
+        </p>
+
+    </div>
+
+
+    <!-- ================= BACK ================= -->
 
     <button
         class="back"
