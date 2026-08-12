@@ -82,29 +82,47 @@
             opacity: 0.9;
         }
 
-        .subjects {
+        .grades {
+            display: none;
             margin-top: 25px;
         }
 
-        .subject {
+        .grade {
             background: white;
-            padding: 22px;
+            padding: 25px;
             margin: 15px 0;
             border-radius: 15px;
             box-shadow: 0 3px 10px #ddd;
         }
 
-        .subject h3 {
+        .grade h3 {
             margin-top: 0;
             color: #2563eb;
+            font-size: 23px;
         }
 
-        .subject p {
+        .grade p {
             color: #666;
             line-height: 1.6;
         }
 
-        .locked {
+        .grade-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .grade-button:hover {
+            opacity: 0.9;
+        }
+
+        .coming {
             background: #e5e7eb;
             color: #777;
             padding: 12px;
@@ -116,7 +134,7 @@
         footer {
             text-align: center;
             padding: 25px;
-            margin-top: 20px;
+            margin-top: 30px;
             background: #172554;
             color: white;
         }
@@ -129,42 +147,33 @@
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
     <h1>📚 Study Plus</h1>
 
     <p>Learn • Practice • Improve</p>
 
-    <p>Prepare yourself for your future</p>
+    <p>Prepare Yourself for Your Future 🚀</p>
 
 </header>
 
 
-<!-- MAIN -->
-
 <div class="container">
 
-
-    <!-- HERO -->
 
     <div class="hero">
 
         <h2>🎓 Welcome to Study Plus</h2>
 
         <p>
-            Your learning platform for Grade 9 students.
-            Study your lessons, read notes and practice
-            questions step by step.
+            Your learning platform for Ethiopian students.
+            Choose your grade and start learning.
         </p>
 
 
-        <!-- START LEARNING -->
-
         <button
             class="start"
-            onclick="location.href='grade9.html'">
+            onclick="showGrades()">
 
             🚀 Start Learning
 
@@ -173,46 +182,49 @@
     </div>
 
 
-    <!-- SUBJECTS -->
 
-    <div class="subjects">
+    <!-- GRADES -->
+
+    <div
+        class="grades"
+        id="grades">
 
 
-        <!-- MATHEMATICS -->
+        <!-- GRADE 9 -->
 
-        <div class="subject">
+        <div class="grade">
 
-            <h3>📐 Grade 9 Mathematics</h3>
+            <h3>📘 Grade 9</h3>
 
             <p>
-                Complete Mathematics lessons from
-                Unit 1 to Unit 9 with notes and practice
-                questions.
+                Mathematics, Biology, Physics,
+                Chemistry and English.
             </p>
 
             <button
-                class="start"
+                class="grade-button"
                 onclick="location.href='grade9.html'">
 
-                📚 Study Mathematics
+                📚 Open Grade 9
 
             </button>
 
         </div>
 
 
-        <!-- BIOLOGY -->
 
-        <div class="subject">
+        <!-- GRADE 10 -->
 
-            <h3>🧬 Grade 9 Biology</h3>
+        <div class="grade">
+
+            <h3>📗 Grade 10</h3>
 
             <p>
-                Biology notes and practice questions
-                will be added soon.
+                Grade 10 lessons, notes and
+                practice questions.
             </p>
 
-            <div class="locked">
+            <div class="coming">
 
                 🔒 Coming Soon
 
@@ -221,18 +233,19 @@
         </div>
 
 
-        <!-- PHYSICS -->
 
-        <div class="subject">
+        <!-- GRADE 11 -->
 
-            <h3>⚡ Grade 9 Physics</h3>
+        <div class="grade">
+
+            <h3>📕 Grade 11</h3>
 
             <p>
-                Physics lessons, notes and practice
-                questions will be added soon.
+                Grade 11 Natural Science lessons,
+                notes and practice.
             </p>
 
-            <div class="locked">
+            <div class="coming">
 
                 🔒 Coming Soon
 
@@ -241,38 +254,19 @@
         </div>
 
 
-        <!-- CHEMISTRY -->
 
-        <div class="subject">
+        <!-- GRADE 12 -->
 
-            <h3>🧪 Grade 9 Chemistry</h3>
+        <div class="grade">
 
-            <p>
-                Chemistry lessons, notes and practice
-                questions will be added soon.
-            </p>
-
-            <div class="locked">
-
-                🔒 Coming Soon
-
-            </div>
-
-        </div>
-
-
-        <!-- ENGLISH -->
-
-        <div class="subject">
-
-            <h3>📖 Grade 9 English</h3>
+            <h3>📙 Grade 12</h3>
 
             <p>
-                English lessons, grammar, vocabulary
-                and practice questions will be added soon.
+                Grade 12 preparation, entrance exam
+                practice and complete lessons.
             </p>
 
-            <div class="locked">
+            <div class="coming">
 
                 🔒 Coming Soon
 
@@ -287,8 +281,6 @@
 </div>
 
 
-<!-- FOOTER -->
-
 <footer>
 
     <p>📚 Study Plus</p>
@@ -296,6 +288,22 @@
     <p>Learn Today • Succeed Tomorrow 🚀</p>
 
 </footer>
+
+
+
+<script>
+
+function showGrades() {
+
+    document.getElementById("grades").style.display = "block";
+
+    document.getElementById("grades").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
 
 
 </body>
