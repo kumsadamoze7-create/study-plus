@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 3 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.7;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔥 Grade 9 Mathematics</h1>
+<p>Unit 3 — Solving Equations</p>
+<p>60 Entrance-Style Practice Questions</p>
+</header>
+
+<div class="container">
+
+<div id="score">Score: 0 / 60</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Solve: 3x + 5 = 20",
+o:["3","5","7","10"],
+a:1,
+e:"3x + 5 = 20 → 3x = 15 → x = 5."
+},
+
+{
+q:"Solve: 5x − 7 = 18",
+o:["3","4","5","6"],
+a:2,
+e:"5x − 7 = 18 → 5x = 25 → x = 5."
+},
+
+{
+q:"Solve: 2(x + 3) = 14",
+o:["4","5","6","7"],
+a:0,
+e:"2(x+3)=14 → x+3=7 → x=4."
+},
+
+{
+q:"Solve: 4x − 8 = 2x + 10",
+o:["7","8","9","10"],
+a:2,
+e:"4x−2x=10+8 → 2x=18 → x=9."
+},
+
+{
+q:"Solve: 7x + 2 = 3x + 18",
+o:["3","4","5","6"],
+a:1,
+e:"7x−3x=18−2 → 4x=16 → x=4."
+},
+
+{
+q:"Solve: x/3 + 2 = 6",
+o:["8","10","12","14"],
+a:2,
+e:"x/3=4 → x=12."
+},
+
+{
+q:"Solve: (x − 4)/2 = 5",
+o:["10","12","14","16"],
+a:2,
+e:"x−4=10 → x=14."
+},
+
+{
+q:"If 2x + 3 = 15, find x.",
+o:["4","5","6","7"],
+a:2,
+e:"2x=12 → x=6."
+},
+
+{
+q:"Which equation has x = 4 as its solution?",
+o:["2x+1=7","3x−2=10","5x+2=20","4x−1=12"],
+a:1,
+e:"For x=4: 3(4)−2=10."
+},
+
+{
+q:"Solve: 3(x − 2) + 4 = 16",
+o:["4","5","6","7"],
+a:2,
+e:"3x−6+4=16 → 3x=18 → x=6."
+},
+
+{
+q:"For y = 2x + 1, find y when x = 3.",
+o:["5","6","7","8"],
+a:2,
+e:"y=2(3)+1=7."
+},
+
+{
+q:"For y = 3x − 2, find y when x = 4.",
+o:["8","10","12","14"],
+a:1,
+e:"y=3(4)−2=10."
+},
+
+{
+q:"Which ordered pair satisfies y = x + 3?",
+o:["(1,3)","(1,4)","(2,6)","(3,7)"],
+a:1,
+e:"For (1,4), y=x+3=1+3=4."
+},
+
+{
+q:"Solve: x + y = 10 and x − y = 2.",
+o:["(4,6)","(5,5)","(6,4)","(7,3)"],
+a:2,
+e:"Add the equations: 2x=12 → x=6. Then y=4."
+},
+
+{
+q:"Solve: x + y = 7 and x − y = 1.",
+o:["(3,4)","(4,3)","(5,2)","(6,1)"],
+a:1,
+e:"Adding gives 2x=8 → x=4. Then y=3."
+},
+
+{
+q:"Solve: 2x + y = 9 and x + y = 6.",
+o:["(2,4)","(3,3)","(4,2)","(5,1)"],
+a:1,
+e:"Subtract: (2x+y)−(x+y)=9−6 → x=3. Then y=3."
+},
+
+{
+q:"Solve: x + 2y = 8 and x − y = 2.",
+o:["(3,3)","(4,2)","(5,1)","(6,1)"],
+a:1,
+e:"x=y+2. Substitute: y+2+2y=8 → 3y=6 → y=2, x=4."
+},
+
+{
+q:"Which method replaces one variable with an expression?",
+o:["Graphical","Substitution","Elimination","Table"],
+a:1,
+e:"Substitution replaces one variable using an expression from another equation."
+},
+
+{
+q:"Which method eliminates one variable by adding or subtracting equations?",
+o:["Substitution","Graphical","Elimination","Table"],
+a:2,
+e:"This is the elimination method."
+},
+
+{
+q:"The graphical solution of two linear equations is the:",
+o:["x-axis","y-axis","intersection point","origin"],
+a:2,
+e:"The solution is the point where the two lines intersect."
+},
+
+{
+q:"Solve: |x| = 5.",
+o:["x=5 only","x=−5 only","x=±5","x=0"],
+a:2,
+e:"The distance from zero can be 5 in either direction: x=5 or x=−5."
+},
+
+{
+q:"Solve: |x − 3| = 4.",
+o:["x=7 or −1","x=1 or 7","x=−7 or 1","x=4 or −4"],
+a:0,
+e:"x−3=4 or x−3=−4 → x=7 or x=−1."
+},
+
+{
+q:"Solve: |2x| = 10.",
+o:["x=5 only","x=−5 only","x=±5","x=±10"],
+a:2,
+e:"2x=±10 → x=±5."
+},
+
+{
+q:"Solve: |x + 2| = 6.",
+o:["x=4 or −8","x=8 or −4","x=6 or −2","x=4 or 8"],
+a:0,
+e:"x+2=6 or x+2=−6 → x=4 or x=−8."
+},
+
+{
+q:"Which equation is quadratic?",
+o:["2x+3=0","x²−5x+6=0","3/x=2","|x|=4"],
+a:1,
+e:"A quadratic equation has degree 2."
+},
+
+{
+q:"Solve: x² − 5x + 6 = 0.",
+o:["x=1,6","x=2,3","x=−2,−3","x=0,5"],
+a:1,
+e:"(x−2)(x−3)=0 → x=2 or x=3."
+},
+
+{
+q:"Solve: x² − 9 = 0.",
+o:["x=3 only","x=−3 only","x=±3","x=9"],
+a:2,
+e:"x²=9 → x=±3."
+},
+
+{
+q:"Solve: x² − 7x + 12 = 0.",
+o:["2,6","3,4","−3,−4","1,12"],
+a:1,
+e:"(x−3)(x−4)=0 → x=3 or x=4."
+},
+
+{
+q:"Solve: x² + 5x + 6 = 0.",
+o:["2,3","−2,−3","−1,−6","1,6"],
+a:1,
+e:"(x+2)(x+3)=0 → x=−2 or x=−3."
+},
+
+{
+q:"Solve: x² − 4x − 5 = 0.",
+o:["1,5","−1,5","2,−3","−2,3"],
+a:1,
+e:"(x−5)(x+1)=0 → x=5 or x=−1."
+},
+
+{
+q:"Solve: x² − 6x + 9 = 0.",
+o:["2,4","3,3","−3,−3","1,9"],
+a:1,
+e:"(x−3)²=0 → x=3, a repeated root."
+},
+
+{
+q:"Complete the square: x² + 6x + ?",
+o:["3","6","9","12"],
+a:2,
+e:"Half of 6 is 3. Square it: 3²=9."
+},
+
+{
+q:"Solve: x² + 4x − 5 = 0.",
+o:["1,−5","5,−1","2,−3","−2,3"],
+a:0,
+e:"(x+5)(x−1)=0 → x=−5 or x=1."
+},
+
+{
+q:"What is the quadratic formula?",
+o:[
+"x=(-b±√(b²−4ac))/(2a)",
+"x=(b±√(b²+4ac))/(2a)",
+"x=(-b±√(b²+4ac))/a",
+"x=(b±√(b²−4ac))/a"
+],
+a:0,
+e:"For ax²+bx+c=0, x=(-b±√(b²−4ac))/(2a)."
+},
+
+{
+q:"Find the discriminant of x² − 5x + 6 = 0.",
+o:["1","5","25","49"],
+a:0,
+e:"D=b²−4ac=25−24=1."
+},
+
+{
+q:"If the discriminant is greater than zero, there are:",
+o:["No real roots","One repeated root","Two distinct real roots","Three roots"],
+a:2,
+e:"D>0 means two distinct real roots."
+},
+
+{
+q:"If the discriminant equals zero, there are:",
+o:["Two distinct roots","One repeated real root","No real roots","Three roots"],
+a:1,
+e:"D=0 means the roots are equal."
+},
+
+{
+q:"If the discriminant is less than zero, there are:",
+o:["Two real roots","One real root","No real roots","Four roots"],
+a:2,
+e:"D<0 means there are no real roots."
+},
+
+{
+q:"For x² − 7x + 12 = 0, find the sum of roots.",
+o:["5","7","12","−7"],
+a:1,
+e:"Sum = −b/a = 7."
+},
+
+{
+q:"For x² − 7x + 12 = 0, find the product of roots.",
+o:["−7","7","12","−12"],
+a:2,
+e:"Product = c/a = 12."
+},
+
+{
+q:"For 2x² − 8x + 6 = 0, find the sum of roots.",
+o:["2","4","6","8"],
+a:1,
+e:"Sum = −b/a = 8/2 = 4."
+},
+
+{
+q:"For 2x² − 8x + 6 = 0, find the product of roots.",
+o:["2","3","4","6"],
+a:1,
+e:"Product = c/a = 6/2 = 3."
+},
+
+{
+q:"Solve: 2ˣ = 8.",
+o:["2","3","4","8"],
+a:1,
+e:"8=2³, therefore x=3."
+},
+
+{
+q:"Solve: 3ˣ = 27.",
+o:["2","3","4","9"],
+a:1,
+e:"27=3³, therefore x=3."
+},
+
+{
+q:"Solve: 2ˣ⁺¹ = 16.",
+o:["2","3","4","5"],
+a:1,
+e:"16=2⁴. Therefore x+1=4 → x=3."
+},
+
+{
+q:"Solve: 5²ˣ = 125.",
+o:["1","1.5","2","3"],
+a:1,
+e:"125=5³. Therefore 2x=3 → x=1.5."
+},
+
+{
+q:"Solve: √x = 5.",
+o:["5","10","20","25"],
+a:3,
+e:"Square both sides: x=25."
+},
+
+{
+q:"Solve: √(x+1) = 4.",
+o:["12","15","16","17"],
+a:1,
+e:"Square both sides: x+1=16 → x=15."
+},
+
+{
+q:"Solve: √(2x) = 6.",
+o:["12","18","24","36"],
+a:1,
+e:"Square both sides: 2x=36 → x=18."
+},
+
+{
+q:"Solve: √(x−4) = 3.",
+o:["5","9","13","16"],
+a:2,
+e:"Square both sides: x−4=9 → x=13."
+},
+
+{
+q:"Solve: x² = 49.",
+o:["7 only","−7 only","±7","49"],
+a:2,
+e:"x²=49 → x=±7."
+},
+
+{
+q:"Solve: x² − 16 = 0.",
+o:["4 only","−4 only","±4","16"],
+a:2,
+e:"x²=16 → x=±4."
+},
+
+{
+q:"Which method is useful for transforming a quadratic into a perfect square?",
+o:["Completing the square","Table method","Elimination","Graphical method"],
+a:0,
+e:"Completing the square transforms a quadratic into a perfect-square form."
+},
+
+{
+q:"If the roots of x² − 10x + 21 = 0 are α and β, find α+β.",
+o:["10","−10","21","−21"],
+a:0,
+e:"α+β=−b/a=10."
+},
+
+{
+q:"If α and β are roots of 3x² − 12x + 9 = 0, find αβ.",
+o:["2","3","4","9"],
+a:1,
+e:"αβ=c/a=9/3=3."
+},
+
+{
+q:"Solve: x² + 2x − 8 = 0.",
+o:["2,−4","4,−2","2,4","−2,−4"],
+a:0,
+e:"(x+4)(x−2)=0 → x=−4 or x=2."
+},
+
+{
+q:"A quadratic equation has discriminant 49. How many real roots?",
+o:["0","1","2","3"],
+a:2,
+e:"Since D=49>0, there are two distinct real roots."
+},
+
+{
+q:"Solve: |2x−4| = 6.",
+o:["x=5 or −1","x=4 or −2","x=3 or −1","x=5 or 1"],
+a:0,
+e:"2x−4=6 → x=5. Or 2x−4=−6 → x=−1."
+},
+
+{
+q:"Solve: x² − 2x − 15 = 0.",
+o:["3,−5","5,−3","3,5","−3,−5"],
+a:1,
+e:"(x−5)(x+3)=0 → x=5 or x=−3."
+},
+
+{
+q:"Which statement is TRUE for ax²+bx+c=0?",
+o:[
+"Sum of roots = c/a",
+"Product of roots = −b/a",
+"Sum = −b/a and product = c/a",
+"Discriminant = b²+4ac"
+],
+a:2,
+e:"The relationship is: sum of roots = −b/a and product of roots = c/a."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+    const box=document.getElementById("questions");
+
+    questions.forEach((item,index)=>{
+
+        const num=index+1;
+
+        let html=`
+        <div class="question">
+            <h3>${num}. ${item.q}</h3>
+        `;
+
+        item.o.forEach((option,i)=>{
+
+            html+=`
+            <button
+                class="option"
+                onclick="checkAnswer(${num},${i},this)">
+                ${String.fromCharCode(65+i)}. ${option}
+            </button>
+            `;
+
+        });
+
+        html+=`
+            <div id="result${num}" class="result"></div>
+        </div>
+        `;
+
+        box.innerHTML+=html;
+
+    });
+}
+
+function checkAnswer(num,selected,button){
+
+    const item=questions[num-1];
+
+    if(button.disabled) return;
+
+    const parent=button.parentElement;
+
+    const buttons=parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled=true;
+    });
+
+    const result=document.getElementById("result"+num);
+
+    answered++;
+
+    if(selected===item.a){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
+
+    }else{
+
+        result.className="result wrong";
+
+        const correct=
+        String.fromCharCode(65+item.a);
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <br><br>
+        <b>Correct Answer:</b>
+        ${correct}. ${item.o[item.a]}
+
+        <div class="explanation">
+        <b>Explanation:</b><br>
+        ${item.e}
+        </div>
+        `;
+
+    }
+
+    document.getElementById("score").innerHTML=
+    `Score: ${score} / ${questions.length}`;
+
+    if(answered===questions.length){
+
+        const percentage=
+        (score/questions.length)*100;
+
+        const finish=document.getElementById("finish");
+
+        finish.style.display="block";
+
+        let message="";
+
+        if(percentage>=90){
+            message="🏆 Excellent! Entrance Exam Level!";
+        }
+        else if(percentage>=70){
+            message="🔥 Very Good! Keep practicing!";
+        }
+        else if(percentage>=50){
+            message="👍 Good! Review your notes and try again.";
+        }
+        else{
+            message="📚 Keep studying and practice again!";
+        }
+
+        finish.innerHTML=`
+        🎉 <b>Practice Completed!</b>
+        <br><br>
+        Score: ${score} / ${questions.length}
+        <br>
+        Percentage: ${percentage.toFixed(1)}%
+        <br><br>
+        ${message}
+        `;
+
+        window.scrollTo({
+            top:document.body.scrollHeight,
+            behavior:"smooth"
+        });
+    }
+}
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
