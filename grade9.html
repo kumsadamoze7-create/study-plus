@@ -252,6 +252,12 @@
 
             <h3>📕 Unit 3 — Solving Equations</h3>
 
+            <p>
+                Linear equations, simultaneous equations,
+                quadratic equations, absolute value,
+                exponents and radicals.
+            </p>
+
             <button
                 class="notes"
                 onclick="location.href='notes9unit3.html'">
@@ -262,9 +268,9 @@
 
             <button
                 class="practice"
-                onclick="location.href='practice9unit3unit.html'">
+                onclick="location.href='practice9unit3.html'">
 
-                📝 Unit 3 Practice
+                📝 Unit 3 Practice — 60 Questions
 
             </button>
 
@@ -276,6 +282,12 @@
         <div class="card unit">
 
             <h3>📗 Unit 4 — Solving Inequalities</h3>
+
+            <p>
+                Linear inequalities, systems of linear
+                inequalities, absolute value inequalities
+                and quadratic inequalities.
+            </p>
 
             <button
                 class="notes"
@@ -289,7 +301,7 @@
                 class="practice"
                 onclick="location.href='practice9unit4.html'">
 
-                📝 Unit 4 Practice
+                📝 Unit 4 Practice — 60 Questions
 
             </button>
 
@@ -301,6 +313,11 @@
         <div class="card unit">
 
             <h3>📐 Unit 5 — Introduction to Trigonometry</h3>
+
+            <p>
+                Right angled triangles, Pythagoras theorem,
+                trigonometric ratios and basic angles.
+            </p>
 
             <button
                 class="notes"
@@ -314,7 +331,7 @@
                 class="practice"
                 onclick="location.href='practice9unit5.html'">
 
-                📝 Unit 5 Practice
+                📝 Unit 5 Practice — 60 Questions
 
             </button>
 
@@ -326,6 +343,12 @@
         <div class="card unit">
 
             <h3>🔷 Unit 6 — Regular Polygons</h3>
+
+            <p>
+                Interior and exterior angles, regular polygons,
+                symmetry, inscribed and circumscribed polygons,
+                perimeter, area and apothem.
+            </p>
 
             <button
                 class="notes"
@@ -339,7 +362,7 @@
                 class="practice"
                 onclick="location.href='practice9unit6.html'">
 
-                📝 Unit 6 Practice
+                📝 Unit 6 Practice — 60 Questions
 
             </button>
 
@@ -351,6 +374,12 @@
         <div class="card unit">
 
             <h3>🔺 Unit 7 — Congruency and Similarity</h3>
+
+            <p>
+                Similar figures, similarity theorems,
+                SSS similarity, SAS similarity,
+                ratios of perimeters and areas.
+            </p>
 
             <button
                 class="notes"
@@ -364,7 +393,7 @@
                 class="practice"
                 onclick="location.href='practice9unit7.html'">
 
-                📝 Unit 7 Practice
+                📝 Unit 7 Practice — 60 Questions
 
             </button>
 
@@ -376,6 +405,12 @@
         <div class="card unit">
 
             <h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
+
+            <p>
+                Vector and scalar quantities, representation
+                of vectors, vector operations, position vectors
+                and applications.
+            </p>
 
             <button
                 class="notes"
@@ -389,7 +424,7 @@
                 class="practice"
                 onclick="location.href='practice9unit8.html'">
 
-                📝 Unit 8 Practice
+                📝 Unit 8 Practice — 60 Questions
 
             </button>
 
@@ -401,6 +436,12 @@
         <div class="card unit">
 
             <h3>📊 Unit 9 — Statistics and Probability</h3>
+
+            <p>
+                Statistical data, data collection, tables,
+                graphs, mean, median, mode, range,
+                variance, standard deviation and probability.
+            </p>
 
             <button
                 class="notes"
@@ -414,7 +455,7 @@
                 class="practice"
                 onclick="location.href='practice9unit9.html'">
 
-                📝 Unit 9 Practice
+                📝 Unit 9 Practice — 60 Questions
 
             </button>
 
@@ -529,7 +570,16 @@ function openMath() {
 
     var math = document.getElementById("mathUnits");
 
-    math.style.display = "block";
+    if (math.style.display === "none" ||
+        math.style.display === "") {
+
+        math.style.display = "block";
+
+    } else {
+
+        math.style.display = "none";
+
+    }
 
     math.scrollIntoView({
         behavior: "smooth"
