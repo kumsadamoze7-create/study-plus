@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 7 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.65;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📐 Grade 9 Mathematics</h1>
+
+<p>Unit 7 — Congruency and Similarity</p>
+
+<p>🔥 60 Practice Questions</p>
+
+</header>
+
+<div class="container">
+
+<div id="score">
+Score: 0 / 60
+</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"What does it mean when two figures are congruent?",
+o:[
+"Same shape only",
+"Same size only",
+"Same shape and same size",
+"Different shape and size"
+],
+a:2,
+e:"Congruent figures have exactly the same shape and the same size."
+},
+
+{
+q:"Which symbol represents congruency?",
+o:["~","≅","∈","∝"],
+a:1,
+e:"The symbol ≅ is used to represent congruency."
+},
+
+{
+q:"What is the main difference between similar and congruent figures?",
+o:[
+"Similar figures always have the same size",
+"Congruent figures may have different shapes",
+"Similar figures may have different sizes",
+"There is no difference"
+],
+a:2,
+e:"Similar figures have the same shape but their sizes may be different."
+},
+
+{
+q:"Which statement is true about similar figures?",
+o:[
+"Corresponding angles are equal",
+"All sides must have the same length",
+"Areas must always be equal",
+"Perimeters must always be equal"
+],
+a:0,
+e:"Corresponding angles of similar figures are equal and corresponding sides are proportional."
+},
+
+{
+q:"If two triangles have corresponding sides in the same ratio, which theorem can establish similarity using all three sides?",
+o:["SAS","SSS","ASA","RHS"],
+a:1,
+e:"SSS similarity uses all three pairs of corresponding sides."
+},
+
+{
+q:"What does SSS stand for?",
+o:[
+"Side-Side-Side",
+"Side-Sum-Side",
+"Same-Side-Same",
+"Side-Side-Sum"
+],
+a:0,
+e:"SSS means Side-Side-Side."
+},
+
+{
+q:"What does SAS stand for?",
+o:[
+"Side-Angle-Side",
+"Side-Area-Side",
+"Same-Angle-Same",
+"Side-Angle-Sum"
+],
+a:0,
+e:"SAS means Side-Angle-Side."
+},
+
+{
+q:"For SAS similarity, which angle must be equal?",
+o:[
+"Any angle",
+"The included angle between the two sides",
+"The smallest angle only",
+"The largest angle only"
+],
+a:1,
+e:"In SAS similarity, the included angles between the proportional sides must be equal."
+},
+
+{
+q:"Triangle ABC has sides 3, 4 and 5. Triangle DEF has sides 6, 8 and 10. Are they similar?",
+o:["Yes","No","Only if their areas are equal","Cannot determine"],
+a:0,
+e:"6/3 = 8/4 = 10/5 = 2, so the triangles are similar by SSS."
+},
+
+{
+q:"If a figure is enlarged by scale factor 3, what happens to each corresponding length?",
+o:[
+"It becomes 3 times larger",
+"It becomes 3 times smaller",
+"It stays the same",
+"It becomes 9 times larger"
+],
+a:0,
+e:"Every corresponding length is multiplied by the scale factor 3."
+},
+
+{
+q:"If the original side is 5 cm and the corresponding side is 15 cm, what is the scale factor?",
+o:["2","3","5","10"],
+a:1,
+e:"Scale factor = 15 ÷ 5 = 3."
+},
+
+{
+q:"If the scale factor from figure A to figure B is 4, what is the ratio of corresponding lengths B:A?",
+o:["1:4","2:4","4:1","4:4"],
+a:2,
+e:"If B is 4 times A, the length ratio B:A is 4:1."
+},
+
+{
+q:"Two similar figures have corresponding sides 6 cm and 9 cm. What is the scale factor from the first to the second?",
+o:["1.5","2","3","6"],
+a:0,
+e:"Scale factor = 9 ÷ 6 = 1.5."
+},
+
+{
+q:"If two similar figures have a side ratio of 2:5, what is their perimeter ratio?",
+o:["2:5","4:25","5:2","25:4"],
+a:0,
+e:"The ratio of perimeters of similar figures equals the ratio of corresponding sides."
+},
+
+{
+q:"If the scale factor is 3, what is the ratio of the perimeters?",
+o:["3","6","9","12"],
+a:0,
+e:"Perimeter ratio = scale factor = 3."
+},
+
+{
+q:"Two similar triangles have perimeters 12 cm and 36 cm. What is their side ratio?",
+o:["1:2","1:3","2:3","3:1"],
+a:1,
+e:"The side ratio equals the perimeter ratio: 12:36 = 1:3."
+},
+
+{
+q:"If corresponding sides of two similar figures are in ratio 1:4, their areas are in what ratio?",
+o:["1:4","1:8","1:16","4:16"],
+a:2,
+e:"Area ratio is the square of the side ratio: 1²:4² = 1:16."
+},
+
+{
+q:"If the scale factor is 5, what is the area scale factor?",
+o:["5","10","15","25"],
+a:3,
+e:"Area scale factor = 5² = 25."
+},
+
+{
+q:"Two similar figures have side ratio 2:3. What is their area ratio?",
+o:["2:3","4:9","6:9","8:27"],
+a:1,
+e:"Area ratio = 2²:3² = 4:9."
+},
+
+{
+q:"If two similar figures have areas 25 cm² and 100 cm², what is the ratio of corresponding sides?",
+o:["1:2","1:4","1:5","2:5"],
+a:0,
+e:"Side ratio is the square root of area ratio: √(25:100) = 5:10 = 1:2."
+},
+
+{
+q:"If the side ratio of two similar figures is 3:5, what is the area ratio?",
+o:["3:5","6:10","9:25","15:25"],
+a:2,
+e:"Area ratio = 3²:5² = 9:25."
+},
+
+{
+q:"A triangle has sides 4, 6 and 8. A similar triangle has corresponding side 6 instead of 4. What is the scale factor?",
+o:["1.5","2","2.5","3"],
+a:0,
+e:"Scale factor = 6 ÷ 4 = 1.5."
+},
+
+{
+q:"Using the previous question, what is the corresponding side to 6 cm?",
+o:["7 cm","8 cm","9 cm","12 cm"],
+a:2,
+e:"6 × 1.5 = 9 cm."
+},
+
+{
+q:"Using the same scale factor 1.5, what is the corresponding side to 8 cm?",
+o:["10 cm","12 cm","14 cm","16 cm"],
+a:1,
+e:"8 × 1.5 = 12 cm."
+},
+
+{
+q:"If triangle ABC ~ triangle DEF, which side corresponds to AB?",
+o:["EF","DF","DE","EDC"],
+a:2,
+e:"From ABC ~ DEF, A corresponds to D, B to E, and C to F. Therefore AB corresponds to DE."
+},
+
+{
+q:"If △ABC ~ △DEF, which angle corresponds to ∠C?",
+o:["∠D","∠E","∠F","∠A"],
+a:2,
+e:"From the order ABC ~ DEF, C corresponds to F."
+},
+
+{
+q:"If △ABC ~ △DEF and AB = 4, DE = 8, what is the scale factor from ABC to DEF?",
+o:["1/2","2","4","8"],
+a:1,
+e:"8 ÷ 4 = 2."
+},
+
+{
+q:"If BC = 5 in the previous problem, what is EF?",
+o:["5","8","10","12"],
+a:2,
+e:"Scale factor is 2, so EF = 5 × 2 = 10."
+},
+
+{
+q:"If two similar figures have corresponding lengths 10 cm and 20 cm, what is the perimeter ratio?",
+o:["1:2","1:4","2:1","4:1"],
+a:0,
+e:"Perimeter ratio equals side ratio: 10:20 = 1:2."
+},
+
+{
+q:"If two similar figures have corresponding lengths 10 cm and 20 cm, what is the area ratio?",
+o:["1:2","1:4","2:4","4:1"],
+a:1,
+e:"Area ratio = 10²:20² = 100:400 = 1:4."
+},
+
+{
+q:"A rectangle is 4 cm by 6 cm. A similar rectangle has scale factor 2. What are its dimensions?",
+o:[
+"6 cm by 8 cm",
+"8 cm by 12 cm",
+"4 cm by 12 cm",
+"10 cm by 12 cm"
+],
+a:1,
+e:"Multiply both dimensions by 2: 4×2=8 and 6×2=12."
+},
+
+{
+q:"What is the area of the original rectangle in the previous question?",
+o:["10 cm²","20 cm²","24 cm²","48 cm²"],
+a:2,
+e:"Area = 4 × 6 = 24 cm²."
+},
+
+{
+q:"What is the area of the enlarged rectangle in the previous question?",
+o:["48 cm²","72 cm²","96 cm²","120 cm²"],
+a:2,
+e:"New area = 8 × 12 = 96 cm². This is 4 times the original area."
+},
+
+{
+q:"If two similar figures have scale factor 1/2, what happens to their area?",
+o:[
+"It becomes 1/2",
+"It becomes 1/4",
+"It becomes 2 times",
+"It stays the same"
+],
+a:1,
+e:"Area factor = (1/2)² = 1/4."
+},
+
+{
+q:"If a figure is reduced by scale factor 1/3, what is the perimeter factor?",
+o:["1/3","1/6","1/9","3"],
+a:0,
+e:"Perimeter changes directly with length, so the factor is 1/3."
+},
+
+{
+q:"If a figure is reduced by scale factor 1/3, what is the area factor?",
+o:["1/3","1/6","1/9","3"],
+a:2,
+e:"Area factor = (1/3)² = 1/9."
+},
+
+{
+q:"A 2 m tall person casts a 3 m shadow. A tree casts a 12 m shadow. What is the tree's height?",
+o:["6 m","8 m","10 m","12 m"],
+a:1,
+e:"Using similar triangles: 2/3 = h/12. Therefore 3h=24 and h=8 m."
+},
+
+{
+q:"A building 10 m tall casts a 5 m shadow. A pole casts a 2 m shadow. What is the pole's height?",
+o:["2 m","4 m","5 m","10 m"],
+a:1,
+e:"10/5 = h/2. Therefore h = 4 m."
+},
+
+{
+q:"A map uses the scale 1 cm = 5 km. What real distance does 7 cm represent?",
+o:["12 km","25 km","35 km","40 km"],
+a:2,
+e:"7 × 5 = 35 km."
+},
+
+{
+q:"A model car is made at a scale factor of 1:20. If the real car is 4 m long, how long is the model?",
+o:["5 cm","10 cm","20 cm","40 cm"],
+a:2,
+e:"4 m = 400 cm. 400 ÷ 20 = 20 cm."
+},
+
+{
+q:"Which of the following is NOT necessarily true for similar figures?",
+o:[
+"Corresponding angles are equal",
+"Corresponding sides are proportional",
+"Corresponding lengths have the same ratio",
+"Their areas are always equal"
+],
+a:3,
+e:"Similar figures can have different areas, so their areas are not necessarily equal."
+},
+
+{
+q:"Which condition is sufficient for SSS similarity?",
+o:[
+"All three corresponding sides are proportional",
+"Only one side is equal",
+"One angle is equal",
+"Areas are equal"
+],
+a:0,
+e:"SSS similarity requires all three pairs of corresponding sides to be proportional."
+},
+
+{
+q:"Which condition is required for SAS similarity?",
+o:[
+"Three equal sides",
+"Two proportional sides and equal included angle",
+"Equal areas",
+"Equal perimeters"
+],
+a:1,
+e:"SAS requires two pairs of proportional sides and the included angle equal."
+},
+
+{
+q:"If two triangles have side ratios 2:3, 4:6 and 6:9, are they similar by SSS?",
+o:["Yes","No","Only if their areas are equal","Cannot determine"],
+a:0,
+e:"All three ratios simplify to 2:3, so the triangles are similar by SSS."
+},
+
+{
+q:"If AB/DE = AC/DF = 3/5 and ∠A = ∠D, which theorem proves similarity?",
+o:["SSS","SAS","AAA only","Pythagoras"],
+a:1,
+e:"Two proportional sides and the included equal angle give SAS similarity."
+},
+
+{
+q:"If two similar triangles have side ratio 4:7, what is their perimeter ratio?",
+o:["4:7","16:49","8:14","7:4"],
+a:0,
+e:"Perimeter ratio is the same as the corresponding side ratio: 4:7."
+},
+
+{
+q:"If two similar triangles have side ratio 4:7, what is their area ratio?",
+o:["4:7","8:14","16:49","12:21"],
+a:2,
+e:"Area ratio = 4²:7² = 16:49."
+},
+
+{
+q:"Two similar squares have side lengths 3 cm and 9 cm. What is their perimeter ratio?",
+o:["1:3","1:9","3:9","9:3"],
+a:0,
+e:"Perimeters are 12 cm and 36 cm, so the ratio is 1:3."
+},
+
+{
+q:"The areas of two similar squares are 16 cm² and 64 cm². What is their side ratio?",
+o:["1:2","1:4","2:4","4:1"],
+a:0,
+e:"Side lengths are 4 cm and 8 cm, so the ratio is 1:2."
+},
+
+{
+q:"A triangle has perimeter 18 cm. A similar triangle has scale factor 2. What is its perimeter?",
+o:["20 cm","30 cm","36 cm","40 cm"],
+a:2,
+e:"Perimeter = 18 × 2 = 36 cm."
+},
+
+{
+q:"A triangle has area 20 cm². A similar triangle has scale factor 3. What is its area?",
+o:["60 cm²","90 cm²","120 cm²","180 cm²"],
+a:3,
+e:"Area factor = 3² = 9. Therefore 20 × 9 = 180 cm²."
+},
+
+{
+q:"A similar figure has area 100 cm² and the original has area 25 cm². What is the scale factor?",
+o:["2","3","4","5"],
+a:0,
+e:"Scale factor = √(100/25) = √4 = 2."
+},
+
+{
+q:"If the area ratio of two similar figures is 9:16, what is their side ratio?",
+o:["3:4","9:16","81:256","2:3"],
+a:0,
+e:"Take square roots: √9:√16 = 3:4."
+},
+
+{
+q:"A rectangle has dimensions 5 cm × 8 cm. A similar rectangle has a corresponding 10 cm side for the original 5 cm side. What is the other dimension?",
+o:["10 cm","12 cm","16 cm","20 cm"],
+a:2,
+e:"Scale factor = 10/5 = 2. Therefore 8 × 2 = 16 cm."
+},
+
+{
+q:"What is the main purpose of constructing similar figures?",
+o:[
+"To change the shape",
+"To enlarge or reduce a figure while preserving its shape",
+"To make all angles different",
+"To remove proportionality"
+],
+a:1,
+e:"Construction of similar figures allows enlargement or reduction while preserving the same shape."
+},
+
+{
+q:"When constructing a similar figure with scale factor 2, what must happen to every corresponding side?",
+o:[
+"Multiply by 2",
+"Divide by 2",
+"Add 2",
+"Subtract 2"
+],
+a:0,
+e:"Every corresponding length must be multiplied by the same scale factor."
+},
+
+{
+q:"Which real-life situation commonly uses similarity?",
+o:[
+"Measuring a tree using its shadow",
+"Counting students",
+"Adding integers",
+"Finding prime numbers"
+],
+a:0,
+e:"Similar triangles can compare the height of an object with its shadow."
+},
+
+{
+q:"A 1.5 m stick casts a 2 m shadow. A building casts an 8 m shadow. What is the building's height?",
+o:["4 m","5 m","6 m","8 m"],
+a:1,
+e:"1.5/2 = h/8. Thus 2h = 12, so h = 6 m. The correct calculation gives 6 m."
+},
+
+{
+q:"A map distance is 3 cm and represents 15 km. What does 1 cm represent?",
+o:["3 km","5 km","10 km","15 km"],
+a:1,
+e:"15 ÷ 3 = 5 km per cm."
+},
+
+{
+q:"If 1 cm on a map represents 5 km, what map distance represents 45 km?",
+o:["5 cm","7 cm","9 cm","10 cm"],
+a:2,
+e:"45 ÷ 5 = 9 cm."
+},
+
+{
+q:"Which statement about the area ratio of similar figures is correct?",
+o:[
+"It equals the scale factor",
+"It equals the square of the scale factor",
+"It equals twice the scale factor",
+"It is always 1"
+],
+a:1,
+e:"The area ratio is the square of the corresponding side ratio."
+},
+
+{
+q:"Which statement about the perimeter ratio of similar figures is correct?",
+o:[
+"It equals the square of the scale factor",
+"It equals the scale factor",
+"It is always 1",
+"It equals the cube of the scale factor"
+],
+a:1,
+e:"The perimeter ratio equals the corresponding length ratio, which is the scale factor."
+},
+
+{
+q:"If two figures are congruent, are they also similar?",
+o:["Yes","No","Only sometimes","Only if they are triangles"],
+a:0,
+e:"Congruent figures have the same shape and size, so their corresponding sides are proportional with scale factor 1. Therefore they are also similar."
+},
+
+{
+q:"If two figures are similar, must they be congruent?",
+o:["Yes","No","Always","Only for squares"],
+a:1,
+e:"Similar figures can have different sizes, so they do not have to be congruent."
+},
+
+{
+q:"Two similar triangles have side ratio 5:2. What is their area ratio?",
+o:["5:2","10:4","25:4","20:25"],
+a:2,
+e:"Area ratio = 5²:2² = 25:4."
+},
+
+{
+q:"A figure has perimeter 30 cm. A similar figure has scale factor 0.5. What is its perimeter?",
+o:["10 cm","15 cm","20 cm","60 cm"],
+a:1,
+e:"30 × 0.5 = 15 cm."
+},
+
+{
+q:"A figure has area 80 cm². A similar figure has scale factor 0.5. What is its area?",
+o:["20 cm²","30 cm²","40 cm²","160 cm²"],
+a:0,
+e:"Area factor = 0.5² = 0.25. Therefore 80 × 0.25 = 20 cm²."
+},
+
+{
+q:"If △ABC ~ △PQR, which vertex corresponds to B?",
+o:["P","Q","R","A"],
+a:1,
+e:"The order ABC ~ PQR means A↔P, B↔Q, C↔R."
+},
+
+{
+q:"If △ABC ~ △PQR, which side corresponds to AC?",
+o:["PQ","QR","PR","QP"],
+a:2,
+e:"A corresponds to P and C corresponds to R, so AC corresponds to PR."
+},
+
+{
+q:"If two similar figures have corresponding sides 12 cm and 18 cm, what is the scale factor from the first to the second?",
+o:["1.25","1.5","2","3"],
+a:1,
+e:"18 ÷ 12 = 1.5."
+},
+
+{
+q:"For the previous figures, what is the area scale factor?",
+o:["1.5","2","2.25","3"],
+a:2,
+e:"Area factor = 1.5² = 2.25."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+const box=document.getElementById("questions");
+
+questions.forEach((item,index)=>{
+
+const num=index+1;
+
+let html=`
+
+<div class="question">
+
+<h3>${num}. ${item.q}</h3>
+
+`;
+
+item.o.forEach((option,i)=>{
+
+html+=`
+
+<button
+class="option"
+onclick="checkAnswer(${num},${i},this)">
+
+${String.fromCharCode(65+i)}. ${option}
+
+</button>
+
+`;
+
+});
+
+html+=`
+
+<div id="result${num}" class="result"></div>
+
+</div>
+
+`;
+
+box.innerHTML+=html;
+
+});
+
+}
+
+function checkAnswer(num,selected,button){
+
+if(button.disabled) return;
+
+const item=questions[num-1];
+
+const parent=button.parentElement;
+
+const buttons=parent.querySelectorAll(".option");
+
+buttons.forEach(btn=>{
+btn.disabled=true;
+});
+
+const result=document.getElementById("result"+num);
+
+answered++;
+
+if(selected===item.a){
+
+score++;
+
+result.className="result right";
+
+result.innerHTML=`
+
+<strong>✅ CORRECT!</strong>
+
+<div class="explanation">
+
+<b>Explanation:</b><br>
+
+${item.e}
+
+</div>
+
+`;
+
+}else{
+
+result.className="result wrong";
+
+const correct=String.fromCharCode(65+item.a);
+
+result.innerHTML=`
+
+<strong>❌ WRONG!</strong>
+
+<br><br>
+
+<b>Correct Answer:
+${correct}. ${item.o[item.a]}</b>
+
+<div class="explanation">
+
+<b>Explanation:</b><br>
+
+${item.e}
+
+</div>
+
+`;
+
+}
+
+document.getElementById("score").innerHTML=
+`Score: ${score} / 60`;
+
+if(answered===60){
+
+const percentage=(score/60)*100;
+
+const finish=document.getElementById("finish");
+
+finish.style.display="block";
+
+finish.innerHTML=`
+
+🎉 <b>Practice Completed!</b>
+
+<br><br>
+
+Score: ${score} / 60
+
+<br>
+
+Percentage: ${percentage.toFixed(1)}%
+
+<br><br>
+
+${percentage >= 80
+? "🏆 Excellent work!"
+: percentage >= 60
+? "👍 Good work! Keep practicing."
+: "📚 Review Unit 7 notes and try again."}
+
+`;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+}
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
