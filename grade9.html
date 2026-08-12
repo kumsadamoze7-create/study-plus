@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Grade 9 Mathematics - Study Plus</title>
+    <title>Grade 9 - Study Plus</title>
 
     <style>
 
@@ -24,19 +24,19 @@
         }
 
         header {
-            background: #2563eb;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: white;
             text-align: center;
-            padding: 30px 15px;
+            padding: 35px 15px;
         }
 
         header h1 {
-            margin: 0 0 10px;
-            font-size: 28px;
+            margin: 0;
+            font-size: 30px;
         }
 
         header p {
-            margin: 6px 0;
+            margin: 8px 0 0;
         }
 
         .container {
@@ -49,27 +49,43 @@
             background: white;
             margin: 18px 0;
             padding: 22px;
-            border-radius: 15px;
+            border-radius: 16px;
             box-shadow: 0 3px 10px #ccc;
         }
 
-        .unit {
-            border-left: 5px solid #2563eb;
+        .card h2 {
+            margin-top: 0;
         }
 
-        .card h2 {
-            color: #1d4ed8;
-            margin-top: 0;
+        .math {
+            border-left: 6px solid #2563eb;
+        }
+
+        .biology {
+            border-left: 6px solid #16a34a;
+        }
+
+        .physics {
+            border-left: 6px solid #dc2626;
+        }
+
+        .chemistry {
+            border-left: 6px solid #9333ea;
+        }
+
+        .english {
+            border-left: 6px solid #ea580c;
         }
 
         .card p {
             line-height: 1.6;
+            color: #555;
         }
 
         button {
             width: 100%;
             padding: 15px;
-            margin: 8px 0;
+            margin-top: 10px;
             border: none;
             border-radius: 10px;
             color: white;
@@ -79,23 +95,21 @@
         }
 
         button:hover {
-            opacity: 0.88;
+            opacity: 0.9;
         }
 
-        .notes {
-            background: #7c3aed;
+        .open {
+            background: #2563eb;
         }
 
-        .practice {
-            background: #16a34a;
+        .coming {
+            background: #9ca3af;
+            cursor: default;
         }
 
         .back {
             background: #172554;
-        }
-
-        .coming {
-            color: #777;
+            margin-top: 10px;
         }
 
     </style>
@@ -108,302 +122,128 @@
 
 <header>
 
-    <h1>📚 Grade 9 Mathematics</h1>
+    <h1>📚 Grade 9</h1>
 
     <p>Study Plus</p>
 
-    <p>
-        Learn • Practice • Prepare for Entrance Exam
-    </p>
+    <p>Learn • Practice • Prepare</p>
 
 </header>
+
 
 
 <div class="container">
 
 
-    <!-- UNIT 1 -->
+    <!-- MATHEMATICS -->
 
-    <div class="card unit">
+    <div class="card math">
 
-        <h2>📘 Unit 1 — Further on Sets</h2>
+        <h2>📐 Mathematics</h2>
 
         <p>
-            Sets, subsets, union, intersection,
-            complement, Venn diagrams and set operations.
+            Complete Grade 9 Mathematics.
+            Unit 1–9 Notes and Practice Questions.
         </p>
 
         <button
-            class="notes"
-            onclick="location.href='notes9.html'">
+            class="open"
+            onclick="location.href='grade9math.html'">
 
-            📖 Unit 1 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9.html'">
-
-            📝 Unit 1 Practice — 60 Questions
+            📚 Open Mathematics
 
         </button>
 
     </div>
 
 
-    <!-- UNIT 2 -->
 
-    <div class="card unit">
+    <!-- BIOLOGY -->
 
-        <h2>🔢 Unit 2 — The Number System</h2>
+    <div class="card biology">
+
+        <h2>🧬 Biology</h2>
 
         <p>
-            Natural numbers, integers, Euclid division,
-            prime and composite numbers, divisibility,
-            GCF, LCM, rational numbers, irrational numbers,
-            real numbers, exponents and radicals.
+            Grade 9 Biology lessons, notes,
+            examples and practice questions.
         </p>
 
         <button
-            class="notes"
-            onclick="location.href='notes9unit2.html'">
+            class="coming">
 
-            📖 Unit 2 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit2.html'">
-
-            🔥 Unit 2 Practice — 60 Questions
+            🔒 Coming Soon
 
         </button>
 
     </div>
 
 
-    <!-- UNIT 3 -->
 
-    <div class="card unit">
+    <!-- PHYSICS -->
 
-        <h2>📕 Unit 3 — Solving Equations</h2>
+    <div class="card physics">
+
+        <h2>⚡ Physics</h2>
 
         <p>
-            Linear equations, systems of linear equations,
-            quadratic equations, absolute value equations,
-            equations involving exponents and radicals.
+            Grade 9 Physics lessons, notes,
+            examples and practice questions.
         </p>
 
         <button
-            class="notes"
-            onclick="location.href='notes9unit3.html'">
+            class="coming">
 
-            📖 Unit 3 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit3unit.html'">
-
-            🔥 Unit 3 Practice — 60 Questions
+            🔒 Coming Soon
 
         </button>
 
     </div>
 
 
-    <!-- UNIT 4 -->
 
-    <div class="card unit">
+    <!-- CHEMISTRY -->
 
-        <h2>📗 Unit 4 — Solving Inequalities</h2>
+    <div class="card chemistry">
+
+        <h2>🧪 Chemistry</h2>
 
         <p>
-            Linear inequalities, systems of inequalities,
-            graphical solutions, absolute value inequalities
-            and quadratic inequalities.
+            Grade 9 Chemistry lessons, notes,
+            examples and practice questions.
         </p>
 
         <button
-            class="notes"
-            onclick="location.href='notes9unit4.html'">
+            class="coming">
 
-            📖 Unit 4 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit4.html'">
-
-            🔥 Unit 4 Practice — 60 Questions
+            🔒 Coming Soon
 
         </button>
 
     </div>
 
 
-    <!-- UNIT 5 -->
 
-    <div class="card unit">
+    <!-- ENGLISH -->
 
-        <h2>📐 Unit 5 — Introduction to Trigonometry</h2>
+    <div class="card english">
+
+        <h2>📖 English</h2>
 
         <p>
-            Right-angled triangles, Pythagoras theorem,
-            trigonometric ratios, basic angles and
-            trigonometric ratios from 0° to 90°.
+            Grade 9 English grammar, vocabulary,
+            reading and practice questions.
         </p>
 
         <button
-            class="notes"
-            onclick="location.href='notes9unit5.html'">
+            class="coming">
 
-            📖 Unit 5 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit5.html'">
-
-            🔥 Unit 5 Practice — 60 Questions
+            🔒 Coming Soon
 
         </button>
 
     </div>
 
-
-    <!-- UNIT 6 -->
-
-    <div class="card unit">
-
-        <h2>🔷 Unit 6 — Regular Polygons</h2>
-
-        <p>
-            Interior and exterior angles, convex and concave
-            polygons, regular polygons, symmetry, pentagon,
-            hexagon, octagon, decagon, inscribed polygons,
-            perimeter, area and apothem.
-        </p>
-
-        <button
-            class="notes"
-            onclick="location.href='notes9unit6.html'">
-
-            📖 Unit 6 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit6.html'">
-
-            🔥 Unit 6 Practice — 60 Questions
-
-        </button>
-
-    </div>
-
-
-    <!-- UNIT 7 -->
-
-    <div class="card unit">
-
-        <h2>🔺 Unit 7 — Congruency and Similarity</h2>
-
-        <p>
-            Congruent and similar figures, similarity theorems,
-            SSS similarity, SAS similarity, ratios of perimeters,
-            ratios of areas and applications of similarity.
-        </p>
-
-        <button
-            class="notes"
-            onclick="location.href='notes9unit7.html'">
-
-            📖 Unit 7 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit7.html'">
-
-            🔥 Unit 7 Practice — 60 Questions
-
-        </button>
-
-    </div>
-
-
-    <!-- UNIT 8 -->
-
-    <div class="card unit">
-
-        <h2>➡️ Unit 8 — Vectors in Two Dimensions</h2>
-
-        <p>
-            Vector and scalar quantities, representation of vectors,
-            equality, opposite and parallel vectors, column vectors,
-            magnitude, direction, vector addition and subtraction,
-            scalar multiplication, position vectors and applications.
-        </p>
-
-        <button
-            class="notes"
-            onclick="location.href='notes9unit8.html'">
-
-            📖 Unit 8 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit8.html'">
-
-            🔥 Unit 8 Practice — 60 Questions
-
-        </button>
-
-    </div>
-
-
-    <!-- UNIT 9 -->
-
-    <div class="card unit">
-
-        <h2>📊 Unit 9 — Statistics and Probability</h2>
-
-        <p>
-            Statistical data, data collection, primary and secondary
-            data, interviews, observation, organization and presentation
-            of data, pie charts, frequency distributions, histograms,
-            mean, median, mode, range, variance, standard deviation,
-            experimental probability, sample space, events, tree diagrams
-            and theoretical probability.
-        </p>
-
-        <button
-            class="notes"
-            onclick="location.href='notes9unit9.html'">
-
-            📖 Unit 9 Notes
-
-        </button>
-
-        <button
-            class="practice"
-            onclick="location.href='practice9unit9.html'">
-
-            🔥 Unit 9 Practice — 60 Questions
-
-        </button>
-
-    </div>
 
 
     <!-- BACK -->
@@ -412,7 +252,7 @@
         class="back"
         onclick="location.href='index.html'">
 
-        ← Back to Study Plus
+        ← Back to Grades
 
     </button>
 
