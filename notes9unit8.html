@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade 9 Mathematics - Unit 8 Notes</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .topic {
+            background: white;
+            margin: 18px 0;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #1d4ed8;
+        }
+
+        .formula {
+            background: #eef4ff;
+            padding: 12px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f0fdf4;
+            padding: 15px;
+            border-left: 5px solid #16a34a;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .trick {
+            background: #fff7d6;
+            padding: 15px;
+            border-left: 5px solid #f59e0b;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .important {
+            background: #f3e8ff;
+            padding: 15px;
+            border-left: 5px solid #9333ea;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .warning {
+            background: #fff1f2;
+            padding: 15px;
+            border-left: 5px solid #e11d48;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .back {
+            display: block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-weight: bold;
+        }
+
+        code {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>➡️ Grade 9 Mathematics</h1>
+
+    <p>Unit 8 — Vectors in Two Dimensions</p>
+
+    <p>Study Plus • Complete Notes</p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- 8.1 -->
+
+<div class="topic">
+
+    <h2>8.1 Vector and Scalar Quantities</h2>
+
+    <h3>Scalar Quantity</h3>
+
+    <p>
+        A scalar quantity has <b>magnitude only</b>.
+    </p>
+
+    <div class="example">
+        Examples:
+        <br><br>
+        Mass = 5 kg
+        <br>
+        Time = 10 seconds
+        <br>
+        Temperature = 25°C
+        <br>
+        Distance = 20 m
+        <br>
+        Speed = 60 km/h
+    </div>
+
+
+    <h3>Vector Quantity</h3>
+
+    <p>
+        A vector quantity has both <b>magnitude and direction</b>.
+    </p>
+
+    <div class="example">
+        Examples:
+        <br><br>
+        Displacement
+        <br>
+        Velocity
+        <br>
+        Acceleration
+        <br>
+        Force
+    </div>
+
+
+    <div class="important">
+
+        <b>Scalar:</b> Magnitude only.
+
+        <br><br>
+
+        <b>Vector:</b> Magnitude + Direction.
+
+    </div>
+
+
+    <div class="trick">
+
+        ⚡ <b>Memory Trick:</b>
+
+        <br><br>
+
+        Scalar → Size only.
+
+        <br>
+
+        Vector → Size + Direction.
+
+    </div>
+
+</div>
+
+
+<!-- 8.2 -->
+
+<div class="topic">
+
+    <h2>8.2 Representation of a Vector</h2>
+
+    <p>
+        A vector is commonly represented by a directed line segment.
+        The arrow shows the direction of the vector.
+    </p>
+
+    <div class="formula">
+
+        Vector AB = <b>→AB</b>
+
+    </div>
+
+    <p>
+        A is called the initial point and B is called the terminal point.
+    </p>
+
+
+    <h3>Equality of Vectors</h3>
+
+    <p>
+        Two vectors are equal if they have the same magnitude
+        and the same direction.
+    </p>
+
+    <div class="formula">
+
+        <b>a = b</b>
+
+    </div>
+
+
+    <h3>Opposite Vectors</h3>
+
+    <p>
+        Opposite vectors have the same magnitude but opposite directions.
+    </p>
+
+    <div class="formula">
+
+        <b>−a</b>
+
+    </div>
+
+    <div class="example">
+
+        If:
+
+        <br>
+
+        a = 5 m east
+
+        <br><br>
+
+        then:
+
+        <br>
+
+        −a = 5 m west.
+
+    </div>
+
+
+    <h3>Parallel Vectors</h3>
+
+    <p>
+        Vectors are parallel if they have the same or opposite direction
+        along parallel lines.
+    </p>
+
+    <div class="formula">
+
+        a ∥ b
+
+    </div>
+
+</div>
+
+
+<!-- COLUMN VECTOR -->
+
+<div class="topic">
+
+    <h2>Column Vector in Two Dimensions</h2>
+
+    <p>
+        A vector in two dimensions can be represented using a column vector.
+    </p>
+
+    <div class="formula">
+
+        <b>
+        a =
+        <br>
+        ⎡ x ⎤
+        <br>
+        ⎣ y ⎦
+        </b>
+
+    </div>
+
+    <p>
+        x represents the horizontal component and y represents
+        the vertical component.
+    </p>
+
+
+    <div class="example">
+
+        Example:
+
+        <br><br>
+
+        <b>
+        a =
+        <br>
+        ⎡ 3 ⎤
+        <br>
+        ⎣ 4 ⎦
+        </b>
+
+        <br><br>
+
+        This means:
+
+        <br>
+
+        3 units horizontally
+
+        <br>
+
+        4 units vertically.
+
+    </div>
+
+</div>
+
+
+<!-- MAGNITUDE -->
+
+<div class="topic">
+
+    <h2>Magnitude of a Vector</h2>
+
+    <p>
+        The magnitude of a vector is its length.
+    </p>
+
+    <div class="formula">
+
+        |a| = √(x² + y²)
+
+    </div>
+
+
+    <div class="example">
+
+        Given:
+
+        <br>
+
+        a =
+        ⎡3⎤
+        <br>
+        ⎣4⎦
+
+        <br><br>
+
+        |a| = √(3² + 4²)
+
+        <br>
+
+        = √(9 + 16)
+
+        <br>
+
+        = √25
+
+        <br>
+
+        = <b>5</b>
+
+    </div>
+
+
+    <div class="trick">
+
+        ⚡ Think of the magnitude formula as the
+        Pythagorean theorem.
+
+    </div>
+
+</div>
+
+
+<!-- DIRECTION -->
+
+<div class="topic">
+
+    <h2>Direction of a Vector</h2>
+
+    <p>
+        The direction of a vector can be measured using an angle θ
+        from the positive x-axis.
+    </p>
+
+    <div class="formula">
+
+        tan θ = y / x
+
+    </div>
+
+    <p>
+        Therefore:
+    </p>
+
+    <div class="formula">
+
+        θ = tan⁻¹(y/x)
+
+    </div>
+
+
+    <div class="example">
+
+        For:
+
+        <br>
+
+        x = 3
+
+        <br>
+
+        y = 4
+
+        <br><br>
+
+        tan θ = 4/3
+
+        <br>
+
+        θ ≈ 53.1°
+
+    </div>
+
+</div>
+
+
+<!-- 8.3 -->
+
+<div class="topic">
+
+    <h2>8.3 Vector Operations</h2>
+
+    <h3>Addition of Vectors</h3>
+
+    <p>
+        Vectors can be added by combining their corresponding components.
+    </p>
+
+    <div class="formula">
+
+        a + b =
+        <br><br>
+        ⎡a₁⎤ + ⎡b₁⎤
+        <br>
+        ⎣a₂⎦   ⎣b₂⎦
+        <br><br>
+        =
+        <br>
+        ⎡a₁+b₁⎤
+        <br>
+        ⎣a₂+b₂⎦
+
+    </div>
+
+
+    <div class="example">
+
+        a =
+        ⎡2⎤
+        <br>
+        ⎣3⎦
+
+        <br><br>
+
+        b =
+        ⎡4⎤
+        <br>
+        ⎣1⎦
+
+        <br><br>
+
+        a + b =
+
+        <br>
+
+        ⎡6⎤
+        <br>
+        ⎣4⎦
+
+    </div>
+
+
+    <h3>Triangle Law of Vector Addition</h3>
+
+    <p>
+        If two vectors are placed head-to-tail,
+        the vector from the starting point to the final point
+        represents their sum.
+    </p>
+
+
+    <h3>Parallelogram Law of Vector Addition</h3>
+
+    <p>
+        When two vectors start from the same point,
+        the diagonal of the parallelogram represents their sum.
+    </p>
+
+</div>
+
+
+<!-- SUBTRACTION -->
+
+<div class="topic">
+
+    <h2>Subtraction of Vectors</h2>
+
+    <p>
+        Vector subtraction can be written as addition of the
+        opposite vector.
+    </p>
+
+    <div class="formula">
+
+        a − b = a + (−b)
+
+    </div>
+
+
+    <div class="example">
+
+        a =
+        ⎡5⎤
+        <br>
+        ⎣7⎦
+
+        <br><br>
+
+        b =
+        ⎡2⎤
+        <br>
+        ⎣3⎦
+
+        <br><br>
+
+        a − b =
+
+        <br>
+
+        ⎡5−2⎤
+        <br>
+        ⎣7−3⎦
+
+        <br><br>
+
+        =
+
+        <br>
+
+        ⎡3⎤
+        <br>
+        ⎣4⎦
+
+    </div>
+
+</div>
+
+
+<!-- COLUMN OPERATIONS -->
+
+<div class="topic">
+
+    <h2>Addition and Subtraction of Column Vectors</h2>
+
+    <p>
+        Add or subtract corresponding components.
+    </p>
+
+    <div class="formula">
+
+        ⎡a⎤ ± ⎡c⎤
+        <br>
+        ⎣b⎦   ⎣d⎦
+        <br><br>
+        =
+        <br>
+        ⎡a±c⎤
+        <br>
+        ⎣b±d⎦
+
+    </div>
+
+
+    <div class="example">
+
+        ⎡6⎤ + ⎡2⎤
+        <br>
+        ⎣5⎦   ⎣3⎦
+        <br><br>
+
+        =
+
+        <br>
+
+        ⎡8⎤
+        <br>
+        ⎣8⎦
+
+    </div>
+
+</div>
+
+
+<!-- SCALAR MULTIPLICATION -->
+
+<div class="topic">
+
+    <h2>Multiplication of a Vector by a Scalar</h2>
+
+    <p>
+        Multiplying a vector by a scalar multiplies every component
+        by that scalar.
+    </p>
+
+    <div class="formula">
+
+        k
+        ⎡x⎤
+        <br>
+        ⎣y⎦
+        <br><br>
+
+        =
+        <br>
+
+        ⎡kx⎤
+        <br>
+        ⎣ky⎦
+
+    </div>
+
+
+    <div class="example">
+
+        3
+        ⎡2⎤
+        <br>
+        ⎣4⎦
+
+        <br><br>
+
+        =
+
+        <br>
+
+        ⎡6⎤
+        <br>
+        ⎣12⎦
+
+    </div>
+
+
+    <div class="trick">
+
+        ⚡ Positive scalar → same direction.
+
+        <br><br>
+
+        Negative scalar → opposite direction.
+
+    </div>
+
+</div>
+
+
+<!-- 8.4 -->
+
+<div class="topic">
+
+    <h2>8.4 Position Vector</h2>
+
+    <p>
+        A position vector describes the position of a point
+        relative to the origin.
+    </p>
+
+    <div class="formula">
+
+        OP = p
+
+    </div>
+
+    <p>
+        where O is the origin and P is the point.
+    </p>
+
+
+    <div class="example">
+
+        If:
+
+        <br>
+
+        P = (4, 3)
+
+        <br><br>
+
+        then the position vector of P is:
+
+        <br>
+
+        OP =
+
+        <br>
+
+        ⎡4⎤
+        <br>
+        ⎣3⎦
+
+    </div>
+
+
+    <h3>Vector Between Two Points</h3>
+
+    <p>
+        If A and B have position vectors a and b,
+        then the vector from A to B is:
+    </p>
+
+    <div class="formula">
+
+        AB = b − a
+
+    </div>
+
+</div>
+
+
+<!-- 8.5 -->
+
+<div class="topic">
+
+    <h2>8.5 Applications of Vectors in Two Dimensions</h2>
+
+    <p>
+        Vectors are used to solve many real-life problems.
+    </p>
+
+    <h3>1. Displacement</h3>
+
+    <p>
+        Vectors can represent movement from one point to another.
+    </p>
+
+    <h3>2. Velocity</h3>
+
+    <p>
+        Velocity describes speed together with direction.
+    </p>
+
+    <h3>3. Force</h3>
+
+    <p>
+        Forces have both magnitude and direction,
+        so they can be represented by vectors.
+    </p>
+
+    <h3>4. Navigation</h3>
+
+    <p>
+        Vectors can be used to describe movement in different directions.
+    </p>
+
+    <h3>5. Engineering and Physics</h3>
+
+    <p>
+        Vectors are used to represent forces, motion,
+        acceleration and displacement.
+    </p>
+
+</div>
+
+
+<!-- EXAM TRICKS -->
+
+<div class="topic">
+
+    <h2>⭐ Exam Short Tricks</h2>
+
+    <div class="trick">
+
+        <b>1.</b> Scalar → magnitude only.
+
+        <br><br>
+
+        <b>2.</b> Vector → magnitude + direction.
+
+        <br><br>
+
+        <b>3.</b> Equal vectors → same magnitude + same direction.
+
+        <br><br>
+
+        <b>4.</b> Opposite vectors → same magnitude + opposite direction.
+
+        <br><br>
+
+        <b>5.</b> Magnitude →
+        √(x² + y²)
+
+        <br><br>
+
+        <b>6.</b> Direction →
+        tan⁻¹(y/x)
+
+        <br><br>
+
+        <b>7.</b> Addition → add corresponding components.
+
+        <br><br>
+
+        <b>8.</b> Subtraction → subtract corresponding components.
+
+        <br><br>
+
+        <b>9.</b> Scalar multiplication → multiply every component.
+
+        <br><br>
+
+        <b>10.</b> Position vector → vector from origin to point.
+
+    </div>
+
+</div>
+
+
+<a href="grade9grade.html" class="back">
+
+    ← Back to Grade 9 Mathematics
+
+</a>
+
+
+</div>
+
+</body>
+
+</html>
