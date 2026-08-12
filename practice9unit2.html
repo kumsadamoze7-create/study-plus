@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics - Unit 2 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+#score{
+    background:white;
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.question{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question h3{
+    line-height:1.6;
+}
+
+.topic{
+    color:#2563eb;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#eef4ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.7;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+.right{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#eef4ff;
+    color:#222;
+    border-radius:8px;
+}
+
+#finish{
+    display:none;
+    background:#2563eb;
+    color:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    font-size:21px;
+    margin:25px 0;
+}
+
+.back{
+    display:block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔢 Grade 9 Mathematics</h1>
+<p>Unit 2 — The Number System</p>
+<p>🔥 60 Entrance / UEE-Style Practice Questions</p>
+</header>
+
+<div class="container">
+
+<div id="score">
+Score: 0 / 60
+</div>
+
+<div id="questions"></div>
+
+<div id="finish"></div>
+
+<a href="maths.html" class="back">
+← Back to Mathematics
+</a>
+
+</div>
+
+<script>
+
+const questions = [
+
+/* 1 */
+{
+topic:"Natural Numbers & Integers",
+q:"Which of the following is NOT an integer?",
+o:["−7","0","12","3/2"],
+a:3,
+e:"Integers are ..., −3, −2, −1, 0, 1, 2, 3, ... . Since 3/2 is not a whole number, it is not an integer."
+},
+
+/* 2 */
+{
+topic:"Natural Numbers & Integers",
+q:"Which statement is always true for two consecutive integers?",
+o:["Their sum is odd","Their product is odd","Their difference is even","Both are prime"],
+a:0,
+e:"Two consecutive integers have opposite parity: one is even and one is odd. Therefore their sum is always odd."
+},
+
+/* 3 */
+{
+topic:"Euclid Division Lemma",
+q:"If a = 5b + 3, what is the remainder when a is divided by b?",
+o:["0","2","3","5"],
+a:2,
+e:"Euclid's division form is a = bq + r, where 0 ≤ r < b. Here r = 3."
+},
+
+/* 4 */
+{
+topic:"Euclid Division Lemma",
+q:"When 157 is divided by 12, what are the quotient and remainder?",
+o:["12, 13","13, 1","14, 5","11, 25"],
+a:1,
+e:"157 = 12 × 13 + 1. Therefore quotient = 13 and remainder = 1."
+},
+
+/* 5 */
+{
+topic:"Prime Numbers",
+q:"Which number is prime?",
+o:["51","57","61","69"],
+a:2,
+e:"61 has no positive divisor other than 1 and 61, so it is prime."
+},
+
+/* 6 */
+{
+topic:"Prime & Composite",
+q:"Which statement is correct?",
+o:["1 is prime","1 is composite","2 is the only even prime","0 is prime"],
+a:2,
+e:"2 is the only even prime number. The number 1 is neither prime nor composite."
+},
+
+/* 7 */
+{
+topic:"Divisibility",
+q:"Which number is divisible by 9?",
+o:["234","351","472","581"],
+a:1,
+e:"For divisibility by 9, add the digits. 3+5+1=9, so 351 is divisible by 9."
+},
+
+/* 8 */
+{
+topic:"Divisibility",
+q:"Which number is divisible by 11?",
+o:["121","123","125","127"],
+a:0,
+e:"121 ÷ 11 = 11, so 121 is divisible by 11."
+},
+
+/* 9 */
+{
+topic:"GCF",
+q:"Find the GCF of 84 and 126.",
+o:["21","28","42","63"],
+a:2,
+e:"84 = 2²×3×7 and 126 = 2×3²×7. Common factors give 2×3×7 = 42."
+},
+
+/* 10 */
+{
+topic:"LCM",
+q:"Find the LCM of 18 and 24.",
+o:["36","48","72","96"],
+a:2,
+e:"18 = 2×3² and 24 = 2³×3. LCM = 2³×3² = 72."
+},
+
+/* 11 */
+{
+topic:"GCF & LCM",
+q:"If GCF(a,b)=6 and LCM(a,b)=60, which could be a and b?",
+o:["6 and 60","12 and 30","18 and 30","24 and 60"],
+a:1,
+e:"For 12 and 30, GCF = 6 and LCM = 60."
+},
+
+/* 12 */
+{
+topic:"Factorization",
+q:"The prime factorization of 360 is:",
+o:[
+"2³×3²×5",
+"2²×3²×5",
+"2³×3×5²",
+"2×3²×5²"
+],
+a:0,
+e:"360 = 36×10 = 2²×3²×2×5 = 2³×3²×5."
+},
+
+/* 13 */
+{
+topic:"Rational Numbers",
+q:"Which number is rational?",
+o:["√2","π","√9","√5"],
+a:2,
+e:"√9 = 3, and every integer can be written as a fraction, so it is rational."
+},
+
+/* 14 */
+{
+topic:"Rational Numbers",
+q:"Which fraction represents a terminating decimal?",
+o:["1/3","2/7","3/8","5/11"],
+a:2,
+e:"A fraction in lowest form has a terminating decimal only when its denominator contains only factors 2 and/or 5. 8 = 2³."
+},
+
+/* 15 */
+{
+topic:"Decimal to Fraction",
+q:"Convert 0.75 to a fraction in simplest form.",
+o:["1/2","2/3","3/4","4/5"],
+a:2,
+e:"0.75 = 75/100 = 3/4."
+},
+
+/* 16 */
+{
+topic:"Decimal to Fraction",
+q:"Convert 0.125 to a fraction.",
+o:["1/4","1/8","1/16","3/8"],
+a:1,
+e:"0.125 = 125/1000 = 1/8."
+},
+
+/* 17 */
+{
+topic:"Number Line",
+q:"Which number lies exactly halfway between −3 and 5?",
+o:["0","1","2","−1"],
+a:1,
+e:"Midpoint = (−3+5)/2 = 2/2 = 1."
+},
+
+/* 18 */
+{
+topic:"Repeating Decimal",
+q:"Convert 0.333... to a fraction.",
+o:["1/2","1/3","2/3","3/10"],
+a:1,
+e:"Let x=0.333... . Then 10x=3.333... . Subtract: 9x=3, so x=1/3."
+},
+
+/* 19 */
+{
+topic:"Repeating Decimal",
+q:"Convert 0.666... to a fraction.",
+o:["1/3","2/3","3/4","6/10"],
+a:1,
+e:"0.666... = 2/3."
+},
+
+/* 20 */
+{
+topic:"Repeating Decimal",
+q:"Convert 0.272727... to a fraction.",
+o:["3/11","27/100","27/99","2/11"],
+a:0,
+e:"0.272727... = 27/99 = 3/11."
+},
+
+/* 21 */
+{
+topic:"Irrational Numbers",
+q:"Which is irrational?",
+o:["0.25","√16","√7","−3"],
+a:2,
+e:"√7 cannot be expressed as a ratio of two integers, so it is irrational."
+},
+
+/* 22 */
+{
+topic:"Irrational Numbers",
+q:"Which decimal is irrational?",
+o:["0.125","0.777...","0.101001000100001...","2.5"],
+a:2,
+e:"A non-terminating, non-repeating decimal is irrational."
+},
+
+/* 23 */
+{
+topic:"Irrational Numbers",
+q:"Which expression is irrational?",
+o:["√4","√25","√36","√50"],
+a:3,
+e:"√50 = 5√2. Since √2 is irrational, √50 is irrational."
+},
+
+/* 24 */
+{
+topic:"Real Numbers",
+q:"Which set contains both rational and irrational numbers?",
+o:["Natural numbers","Integers","Real numbers","Prime numbers"],
+a:2,
+e:"The real numbers include both rational and irrational numbers."
+},
+
+/* 25 */
+{
+topic:"Comparing Real Numbers",
+q:"Which is greatest?",
+o:["√10","3.1","π","√9"],
+a:2,
+e:"√10 ≈ 3.162, 3.1, π ≈ 3.142, √9 = 3. Therefore √10 is greatest."
+},
+
+/* 26 */
+{
+topic:"Comparing Real Numbers",
+q:"Which is smallest?",
+o:["−√2","−1.5","−1.4","−π/2"],
+a:3,
+e:"−π/2 ≈ −1.571, which is less than −1.5 and −√2≈−1.414."
+},
+
+/* 27 */
+{
+topic:"Intervals",
+q:"Which interval represents 2 ≤ x < 7?",
+o:["(2,7)","[2,7)","(2,7]","[2,7]"],
+a:1,
+e:"The bracket [ means included and ) means excluded. Therefore [2,7)."
+},
+
+/* 28 */
+{
+topic:"Intervals",
+q:"Which inequality represents the interval (−2,5]?",
+o:["−2≤x<5","−2<x≤5","−2<x<5","−2≤x≤5"],
+a:1,
+e:"−2 is excluded and 5 is included, so −2 < x ≤ 5."
+},
+
+/* 29 */
+{
+topic:"Absolute Value",
+q:"What is |−17|?",
+o:["−17","0","17","34"],
+a:2,
+e:"Absolute value represents distance from zero, so |−17| = 17."
+},
+
+/* 30 */
+{
+topic:"Absolute Value",
+q:"Solve |x| = 5.",
+o:["x=5 only","x=−5 only","x=±5","x=0"],
+a:2,
+e:"Both 5 and −5 have distance 5 from zero. Therefore x = ±5."
+},
+
+/* 31 */
+{
+topic:"Absolute Value",
+q:"Solve |x−3|=4.",
+o:["x=7 only","x=−1 only","x=7 or −1","x=1 or 7"],
+a:2,
+e:"x−3=4 gives x=7. x−3=−4 gives x=−1."
+},
+
+/* 32 */
+{
+topic:"Exponents",
+q:"Simplify 2³ × 2⁴.",
+o:["2⁷","2¹²","4⁷","2"],
+a:0,
+e:"For the same base multiplied, add exponents: 2³×2⁴=2⁷."
+},
+
+/* 33 */
+{
+topic:"Laws of Exponents",
+q:"Simplify 5⁷ ÷ 5³.",
+o:["5²","5³","5⁴","5¹⁰"],
+a:2,
+e:"For division with the same base, subtract exponents: 7−3=4."
+},
+
+/* 34 */
+{
+topic:"Laws of Exponents",
+q:"Simplify (3²)⁴.",
+o:["3⁶","3⁸","3¹⁰","3¹⁶"],
+a:1,
+e:"For a power raised to another power, multiply exponents: 2×4=8."
+},
+
+/* 35 */
+{
+topic:"Exponent Zero",
+q:"For a non-zero number a, what is a⁰?",
+o:["0","1","a","−1"],
+a:1,
+e:"Any non-zero number raised to the zero power equals 1."
+},
+
+/* 36 */
+{
+topic:"Negative Exponents",
+q:"Simplify 2⁻³.",
+o:["−8","8","1/8","−1/8"],
+a:2,
+e:"a⁻ⁿ = 1/aⁿ. Therefore 2⁻³ = 1/2³ = 1/8."
+},
+
+/* 37 */
+{
+topic:"Radicals",
+q:"Simplify √72.",
+o:["6√2","3√8","8√2","12√2"],
+a:0,
+e:"√72 = √(36×2) = 6√2."
+},
+
+/* 38 */
+{
+topic:"Radicals",
+q:"Simplify √50 + √8.",
+o:["7√2","8√2","9√2","10√2"],
+a:0,
+e:"√50=5√2 and √8=2√2. Therefore total = 7√2."
+},
+
+/* 39 */
+{
+topic:"Radicals",
+q:"Simplify 3√5 + 2√5.",
+o:["5√5","6√5","5√10","√25"],
+a:0,
+e:"Like radicals can be combined: 3√5+2√5=5√5."
+},
+
+/* 40 */
+{
+topic:"Radicals",
+q:"Which is equal to √12?",
+o:["2√3","3√2","4√3","6√2"],
+a:0,
+e:"√12 = √(4×3) = 2√3."
+},
+
+/* 41 */
+{
+topic:"Exponent & Radical",
+q:"Write √x as an exponent.",
+o:["x²","x¹/²","x⁻²","2x"],
+a:1,
+e:"A square root is equivalent to an exponent of 1/2: √x = x^(1/2)."
+},
+
+/* 42 */
+{
+topic:"Exponent & Radical",
+q:"Evaluate 27^(1/3).",
+o:["3","6","9","27"],
+a:0,
+e:"27^(1/3) means the cube root of 27, which is 3."
+},
+
+/* 43 */
+{
+topic:"Scientific Notation",
+q:"Write 4500000 in scientific notation.",
+o:["4.5×10⁶","45×10⁵","0.45×10⁷","4.5×10⁵"],
+a:0,
+e:"Move the decimal 6 places left: 4.5×10⁶."
+},
+
+/* 44 */
+{
+topic:"Scientific Notation",
+q:"Write 0.00072 in scientific notation.",
+o:["7.2×10⁻⁴","7.2×10⁻³","72×10⁻⁵","0.72×10⁻³"],
+a:0,
+e:"Move the decimal 4 places right to get 7.2, so exponent = −4."
+},
+
+/* 45 */
+{
+topic:"Scientific Notation",
+q:"Which is greater?",
+o:["3.5×10⁴","4.1×10³","9.9×10²","2×10⁴"],
+a:0,
+e:"3.5×10⁴ = 35000, which is greater than 20000, 4100 and 990."
+},
+
+/* 46 */
+{
+topic:"Rounding",
+q:"Round 7.846 to 2 decimal places.",
+o:["7.84","7.85","7.86","7.80"],
+a:1,
+e:"The hundredths digit is 4 and the next digit is 6. Therefore round 4 up to 5: 7.85."
+},
+
+/* 47 */
+{
+topic:"Rounding",
+q:"Round 0.004786 to 3 significant figures.",
+o:["0.00478","0.00479","0.00480","0.004786"],
+a:1,
+e:"The first three significant digits are 4,7,8. The next digit is 6, so 8 rounds up to 9: 0.00479."
+},
+
+/* 48 */
+{
+topic:"Significant Figures",
+q:"How many significant figures are in 0.005060?",
+o:["3","4","5","6"],
+a:1,
+e:"Leading zeros are not significant. The significant digits are 5,0,6,0 = 4 significant figures."
+},
+
+/* 49 */
+{
+topic:"Accuracy",
+q:"A length is measured as 8.42 cm to the nearest 0.01 cm. What is the maximum absolute error?",
+o:["0.1 cm","0.05 cm","0.01 cm","0.005 cm"],
+a:3,
+e:"When rounded to the nearest 0.01, the maximum absolute error is half of 0.01 = 0.005 cm."
+},
+
+/* 50 */
+{
+topic:"Significant Figures",
+q:"Which has exactly 3 significant figures?",
+o:["0.0405","4050","4.50","0.00405"],
+a:2,
+e:"4.50 has three significant digits: 4, 5 and the trailing zero."
+},
+
+/* 51 */
+{
+topic:"Operations",
+q:"Evaluate 2³ + √16.",
+o:["8","10","12","16"],
+a:1,
+e:"2³=8 and √16=4. Therefore 8+4=12."
+},
+
+/* 52 */
+{
+topic:"Operations",
+q:"Evaluate (√9)² + 2⁴.",
+o:["19","21","25","34"],
+a:1,
+e:"√9=3, so (√9)²=9. Also 2⁴=16. Total = 25. Therefore the correct answer is 25."
+},
+
+/* 53 */
+{
+topic:"Rationalization",
+q:"Rationalize 1/√3.",
+o:["√3/3","3/√3","√3","1/3"],
+a:0,
+e:"Multiply numerator and denominator by √3: 1/√3 × √3/√3 = √3/3."
+},
+
+/* 54 */
+{
+topic:"Rationalization",
+q:"Rationalize 2/√5.",
+o:["2√5/5","√5/2","5√2","2√5"],
+a:0,
+e:"Multiply by √5/√5: 2√5/5."
+},
+
+/* 55 */
+{
+topic:"Rationalization",
+q:"Rationalize 1/(2+√3).",
+o:[
+"2−√3",
+"2+√3",
+"1/(2−√3)",
+"√3−2"
+],
+a:0,
+e:"Multiply by the conjugate (2−√3). Denominator becomes 4−3=1, giving 2−√3."
+},
+
+/* 56 */
+{
+topic:"Mixed",
+q:"Which number is both irrational and real?",
+o:["√2","3/4","−5","0.25"],
+a:0,
+e:"√2 is irrational and every irrational number is a real number."
+},
+
+/* 57 */
+{
+topic:"Mixed",
+q:"If x=2 and y=3, find x²y³.",
+o:["36","72","108","216"],
+a:2,
+e:"x²y³ = 2²×3³ = 4×27 = 108."
+},
+
+/* 58 */
+{
+topic:"Mixed",
+q:"Which expression has the greatest value?",
+o:["2⁵","3³","√100","4²"],
+a:0,
+e:"2⁵=32, 3³=27, √100=10 and 4²=16. Therefore 2⁵ is greatest."
+},
+
+/* 59 */
+{
+topic:"Entrance Challenge",
+q:"If x = √2 + √8, what is x?",
+o:["2√2","3√2","4√2","√10"],
+a:1,
+e:"√8=2√2. Therefore x=√2+2√2=3√2."
+},
+
+/* 60 */
+{
+topic:"Entrance Challenge",
+q:"If a = 2³×3² and b = 2²×3³, what is GCF(a,b)?",
+o:["18","24","36","72"],
+a:0,
+e:"For the GCF, take the smaller exponent of each prime: 2²×3² = 4×9 = 36. Therefore the correct answer is 36."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+function showQuestions(){
+
+    const box=document.getElementById("questions");
+
+    questions.forEach((item,index)=>{
+
+        const num=index+1;
+
+        let html=`
+        <div class="question">
+
+        <div class="topic">
+        ${item.topic}
+        </div>
+
+        <h3>
+        ${num}. ${item.q}
+        </h3>
+        `;
+
+        item.o.forEach((option,i)=>{
+
+            html+=`
+            <button
+            class="option"
+            onclick="checkAnswer(${num},${i},this)">
+            ${String.fromCharCode(65+i)}. ${option}
+            </button>
+            `;
+
+        });
+
+        html+=`
+        <div id="result${num}" class="result"></div>
+
+        </div>
+        `;
+
+        box.innerHTML+=html;
+
+    });
+}
+
+function checkAnswer(num,selected,button){
+
+    const item=questions[num-1];
+
+    const parent=button.parentElement;
+
+    const buttons=parent.querySelectorAll(".option");
+
+    if(buttons[0].disabled){
+        return;
+    }
+
+    buttons.forEach(btn=>{
+        btn.disabled=true;
+    });
+
+    const result=document.getElementById("result"+num);
+
+    answered++;
+
+    if(selected===item.a){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+
+        <div class="explanation">
+
+        <b>Explanation:</b><br>
+
+        ${item.e}
+
+        </div>
+        `;
+
+    }
+
+    else{
+
+        const correct=
+        String.fromCharCode(65+item.a);
+
+        result.className="result wrong";
+
+        result.innerHTML=`
+
+        <strong>❌ WRONG!</strong>
+
+        <br><br>
+
+        <b>
+        Correct Answer:
+        ${correct}. ${item.o[item.a]}
+        </b>
+
+        <div class="explanation">
+
+        <b>Explanation:</b><br>
+
+        ${item.e}
+
+        </div>
+        `;
+
+    }
+
+    document.getElementById("score").innerHTML=
+    `Score: ${score} / 60`;
+
+    if(answered===questions.length){
+
+        const percentage=
+        (score/questions.length)*100;
+
+        const finish=
+        document.getElementById("finish");
+
+        finish.style.display="block";
+
+        let message="";
+
+        if(percentage>=90){
+            message="🏆 Excellent! Entrance Exam Level!";
+        }
+        else if(percentage>=75){
+            message="🔥 Very Good! Keep practicing!";
+        }
+        else if(percentage>=50){
+            message="👍 Good! Review your weak topics.";
+        }
+        else{
+            message="📚 Keep studying and try again.";
+        }
+
+        finish.innerHTML=`
+
+        🎉 <b>UNIT 2 COMPLETED!</b>
+
+        <br><br>
+
+        Score:
+        ${score} / ${questions.length}
+
+        <br>
+
+        Percentage:
+        ${percentage.toFixed(1)}%
+
+        <br><br>
+
+        ${message}
+
+        `;
+
+    }
+
+}
+
+showQuestions();
+
+</script>
+
+</body>
+</html>
