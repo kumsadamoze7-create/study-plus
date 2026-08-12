@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Grade 9 Mathematics - Unit 2 Notes</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -25,10 +20,14 @@ body{
 }
 
 header{
-    background:#2563eb;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
     color:white;
     text-align:center;
     padding:30px 15px;
+}
+
+header h1{
+    margin:0 0 8px;
 }
 
 .container{
@@ -105,17 +104,16 @@ table{
 th,td{
     border:1px solid #ddd;
     padding:10px;
-    text-align:center;
+    text-align:left;
 }
 
 th{
-    background:#2563eb;
-    color:white;
+    background:#eef4ff;
 }
 
 .back{
     display:block;
-    background:#172554;
+    background:#2563eb;
     color:white;
     text-decoration:none;
     text-align:center;
@@ -125,37 +123,1303 @@ th{
     font-weight:bold;
 }
 
+.math{
+    font-size:18px;
+    font-weight:bold;
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
-<h1>🔢 Grade 9 Mathematics</h1>
-
-<h2 style="color:white;border:0">
-Unit 2 — The Number System
-</h2>
-
-<p>
-Complete Notes • Examples • Short Tricks • Entrance Exam Tips
-</p>
-
+    <h1>📘 Grade 9 Mathematics</h1>
+    <p>Unit 2 — The Number System</p>
+    <p>Study Plus • Complete Notes</p>
 </header>
-
 
 <div class="container">
 
-
-<!-- INTRODUCTION -->
+<!-- OVERVIEW -->
 
 <div class="topic">
 
-<h2>📌 Unit 2 Overview</h2>
+<h2>📚 Unit 2 Overview — The Number System</h2>
 
 <p>
-The
+The number system explains how numbers are classified, represented,
+compared and operated on.
+</p>
+
+<table>
+<tr>
+<th>Section</th>
+<th>Main Topics</th>
+</tr>
+
+<tr>
+<td>2.1</td>
+<td>Natural Numbers and Integers</td>
+</tr>
+
+<tr>
+<td>2.2</td>
+<td>Rational Numbers</td>
+</tr>
+
+<tr>
+<td>2.3</td>
+<td>Irrational Numbers</td>
+</tr>
+
+<tr>
+<td>2.4</td>
+<td>Real Numbers</td>
+</tr>
+
+</table>
+
+<div class="trick">
+⚡ <b>Number System Memory:</b><br><br>
+Natural ⊂ Whole ⊂ Integers ⊂ Rational ⊂ Real
+<br><br>
+Irrational numbers are also real, but they are NOT rational.
+</div>
+
+</div>
+
+
+<!-- 2.1 -->
+
+<div class="topic">
+
+<h2>2.1 Revision on Natural Numbers and Integers</h2>
+
+<h3>Natural Numbers</h3>
+
+<p>
+Natural numbers are the positive counting numbers.
+</p>
+
+<div class="formula">
+N = {1,2,3,4,5,...}
+</div>
+
+<h3>Integers</h3>
+
+<p>
+Integers include positive numbers, negative numbers and zero.
+</p>
+
+<div class="formula">
+Z = {...,-3,-2,-1,0,1,2,3,...}
+</div>
+
+<div class="example">
+<b>Example:</b><br>
+7 is a natural number and an integer.<br>
+−5 is an integer but NOT a natural number.<br>
+0 is an integer.
+</div>
+
+<div class="trick">
+⚡ <b>Exam Trick:</b><br>
+Negative numbers → integers, not natural numbers.
+</div>
+
+</div>
+
+
+<!-- EUCLID -->
+
+<div class="topic">
+
+<h2>2.1.1 Euclid Division Lemma</h2>
+
+<p>
+For positive integers a and b, there exist unique integers q and r such that:
+</p>
+
+<div class="formula">
+a = bq + r
+<br><br>
+0 ≤ r &lt; b
+</div>
+
+<p>
+Where:
+</p>
+
+<ul>
+<li>a = dividend</li>
+<li>b = divisor</li>
+<li>q = quotient</li>
+<li>r = remainder</li>
+</ul>
+
+<div class="example">
+<b>Example:</b><br><br>
+
+Divide 47 by 5.
+<br><br>
+
+47 = 5(9) + 2
+<br><br>
+
+Therefore:
+<br>
+q = 9
+<br>
+r = 2
+</div>
+
+<div class="exam">
+🔥 <b>Entrance Exam Example:</b><br><br>
+
+If 157 = 12q + r and 0 ≤ r &lt; 12,
+find q and r.
+<br><br>
+
+157 = 12(13) + 1
+<br><br>
+
+Therefore q = 13 and r = 1.
+</div>
+
+<div class="trick">
+⚡ <b>Short Trick:</b><br>
+Remainder is ALWAYS smaller than divisor.
+<br><br>
+r &lt; b
+</div>
+
+<div class="warning">
+⚠️ Do not allow r ≥ b.
+</div>
+
+</div>
+
+
+<!-- PRIME -->
+
+<div class="topic">
+
+<h2>2.1.2 Prime and Composite Numbers</h2>
+
+<h3>Prime Number</h3>
+
+<p>
+A prime number has exactly two positive factors:
+1 and itself.
+</p>
+
+<div class="example">
+2, 3, 5, 7, 11, 13, 17, 19...
+</div>
+
+<h3>Composite Number</h3>
+
+<p>
+A composite number has more than two positive factors.
+</p>
+
+<div class="example">
+4 = 1 × 4 = 2 × 2
+<br>
+Therefore 4 is composite.
+</div>
+
+<h3>Important Fact</h3>
+
+<div class="formula">
+1 is neither prime nor composite.
+</div>
+
+<div class="trick">
+⚡ <b>Fast Prime Test:</b><br>
+To check whether n is prime, test divisibility by prime numbers
+up to √n.
+</div>
+
+<div class="exam">
+🔥 <b>Example:</b><br>
+Is 97 prime?
+<br><br>
+√97 ≈ 9.85.
+<br>
+Check 2, 3, 5 and 7.
+<br>
+97 is not divisible by any of them.
+<br><br>
+Therefore 97 is prime.
+</div>
+
+</div>
+
+
+<!-- DIVISIBILITY -->
+
+<div class="topic">
+
+<h2>2.1.3 Divisibility Tests</h2>
+
+<table>
+
+<tr>
+<th>Number</th>
+<th>Divisibility Rule</th>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Last digit is even.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Sum of digits is divisible by 3.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Last two digits are divisible by 4.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Last digit is 0 or 5.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Divisible by both 2 and 3.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Last three digits are divisible by 8.</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Sum of digits is divisible by 9.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Last digit is 0.</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Difference between alternating digit sums is 0 or a multiple of 11.</td>
+</tr>
+
+</table>
+
+<div class="example">
+<b>Example:</b><br>
+Is 4,536 divisible by 9?
+<br><br>
+
+4+5+3+6 = 18
+<br>
+18 is divisible by 9.
+<br><br>
+Therefore 4536 is divisible by 9.
+</div>
+
+<div class="trick">
+⚡ For 3 and 9 → ADD THE DIGITS.
+<br><br>
+For 2 → LAST DIGIT.
+<br>
+For 5 → 0 or 5.
+<br>
+For 10 → 0.
+</div>
+
+</div>
+
+
+<!-- GCF LCM -->
+
+<div class="topic">
+
+<h2>2.1.4 Greatest Common Factor and Least Common Multiple</h2>
+
+<h3>GCF / HCF</h3>
+
+<p>
+The greatest common factor is the largest number that divides
+two or more numbers exactly.
+</p>
+
+<div class="example">
+Find GCF of 18 and 24.
+<br><br>
+
+Factors of 18:
+1,2,3,6,9,18
+<br>
+Factors of 24:
+1,2,3,4,6,8,12,24
+<br><br>
+
+GCF = <b>6</b>
+</div>
+
+<h3>LCM</h3>
+
+<p>
+The least common multiple is the smallest positive number that is
+a multiple of all given numbers.
+</p>
+
+<div class="example">
+Find LCM of 6 and 8.
+<br><br>
+
+Multiples of 6:
+6,12,18,24...
+<br>
+Multiples of 8:
+8,16,24...
+<br><br>
+
+LCM = <b>24</b>
+</div>
+
+<h3>Prime Factorization Method</h3>
+
+<div class="example">
+
+12 = 2² × 3
+<br>
+18 = 2 × 3²
+<br><br>
+
+GCF = 2¹ × 3¹ = <b>6</b>
+<br><br>
+
+LCM = 2² × 3² = <b>36</b>
+
+</div>
+
+<div class="formula">
+For two positive integers:
+<br><br>
+GCF × LCM = Product of the two numbers
+</div>
+
+<div class="exam">
+🔥 <b>Example:</b><br>
+If GCF(12,18)=6 and LCM=36:
+<br><br>
+6 × 36 = 216
+<br>
+12 × 18 = 216
+<br><br>
+Correct.
+</div>
+
+<div class="trick">
+⚡ GCF → take the SMALLEST powers.
+<br>
+LCM → take the LARGEST powers.
+</div>
+
+</div>
+
+
+<!-- RATIONAL -->
+
+<div class="topic">
+
+<h2>2.2 Rational Numbers</h2>
+
+<p>
+A rational number is a number that can be written in the form:
+</p>
+
+<div class="formula">
+a/b, where a,b ∈ Z and b ≠ 0
+</div>
+
+<div class="example">
+Examples:
+<br><br>
+1/2, −3/4, 5, 0, 2.75
+<br><br>
+All are rational.
+</div>
+
+<p>
+Every integer is rational because:
+</p>
+
+<div class="formula">
+5 = 5/1
+</div>
+
+<div class="trick">
+⚡ If you can write a number as fraction of integers,
+it is rational.
+</div>
+
+</div>
+
+
+<!-- DECIMAL -->
+
+<div class="topic">
+
+<h2>2.2.1 Representation of Rational Numbers by Decimal</h2>
+
+<h3>Terminating Decimal</h3>
+
+<p>
+A decimal that ends after a finite number of digits.
+</p>
+
+<div class="example">
+1/4 = 0.25
+<br>
+3/8 = 0.375
+</div>
+
+<h3>Converting Terminating Decimal to Fraction</h3>
+
+<div class="example">
+
+0.75
+<br><br>
+
+= 75/100
+<br>
+= 3/4
+
+</div>
+
+<div class="trick">
+⚡ Count decimal places → put 1 followed by that many zeros.
+</div>
+
+<h3>Representing Rational Numbers on Number Line</h3>
+
+<div class="example">
+To locate 3/4:
+<br><br>
+
+Divide the interval from 0 to 1 into 4 equal parts.
+<br>
+The third point is 3/4.
+</div>
+
+</div>
+
+
+<!-- REPEATING -->
+
+<div class="topic">
+
+<h2>2.2.2 Converting Repeating Decimals into Fractions</h2>
+
+<p>
+Repeating decimals can always be expressed as rational numbers.
+</p>
+
+<div class="example">
+Let:
+<br><br>
+
+x = 0.7777...
+<br><br>
+
+10x = 7.7777...
+<br><br>
+
+Subtract:
+<br>
+10x − x = 7
+<br>
+9x = 7
+<br>
+x = 7/9
+</div>
+
+<h3>Example with Two Repeating Digits</h3>
+
+<div class="example">
+
+x = 0.121212...
+<br><br>
+
+100x = 12.121212...
+<br><br>
+
+100x − x = 12
+<br>
+99x = 12
+<br>
+x = 12/99
+<br>
+x = 4/33
+
+</div>
+
+<div class="trick">
+⚡ One repeating digit → denominator 9.
+<br>
+Two repeating digits → denominator 99.
+<br>
+Three repeating digits → denominator 999.
+</div>
+
+</div>
+
+
+<!-- IRRATIONAL -->
+
+<div class="topic">
+
+<h2>2.3 Irrational Numbers</h2>
+
+<p>
+An irrational number cannot be written as a ratio of two integers.
+Its decimal expansion is non-terminating and non-repeating.
+</p>
+
+<div class="example">
+Examples:
+<br><br>
+√2, √3, √5, π
+</div>
+
+<div class="formula">
+Irrational = Non-terminating + Non-repeating
+</div>
+
+<div class="warning">
+⚠️ Not every square root is irrational.
+<br><br>
+√9 = 3, so √9 is rational.
+</div>
+
+</div>
+
+
+<!-- NEITHER -->
+
+<div class="topic">
+
+<h2>2.3.1 Neither Repeating Nor Terminating Numbers</h2>
+
+<p>
+An irrational decimal continues forever without repeating a fixed pattern.
+</p>
+
+<div class="example">
+π = 3.1415926535...
+<br><br>
+√2 = 1.4142135623...
+</div>
+
+<p>
+These decimals neither terminate nor repeat.
+</p>
+
+<h3>Locating Irrational Numbers on Number Line</h3>
+
+<div class="example">
+To locate √2:
+<br><br>
+
+Since:
+<br>
+1² = 1
+<br>
+2² = 4
+<br><br>
+
+√2 lies between 1 and 2.
+<br><br>
+
+Using a right triangle with legs 1 and 1:
+<br>
+hypotenuse = √(1²+1²)=√2.
+<br><br>
+
+That length can be transferred onto the number line.
+</div>
+
+<div class="trick">
+⚡ First find two perfect squares surrounding the number.
+<br><br>
+For √20:
+<br>
+16 &lt; 20 &lt; 25
+<br>
+Therefore 4 &lt; √20 &lt; 5.
+</div>
+
+</div>
+
+
+<!-- OPERATIONS IRRATIONAL -->
+
+<div class="topic">
+
+<h2>2.3.2 Operations on Irrational Numbers</h2>
+
+<h3>Addition</h3>
+
+<div class="example">
+√2 + √2 = 2√2
+</div>
+
+<h3>Subtraction</h3>
+
+<div class="example">
+5√3 − 2√3 = 3√3
+</div>
+
+<h3>Multiplication</h3>
+
+<div class="example">
+√2 × √8
+<br><br>
+= √16
+<br>
+= 4
+</div>
+
+<h3>Division</h3>
+
+<div class="example">
+√18 / √2
+<br><br>
+= √9
+<br>
+= 3
+</div>
+
+<div class="warning">
+⚠️ Only like radicals can be added or subtracted.
+<br><br>
+√2 + √3 cannot be simplified to √5.
+</div>
+
+<div class="trick">
+⚡ Simplify radicals FIRST before combining them.
+</div>
+
+</div>
+
+
+<!-- REAL -->
+
+<div class="topic">
+
+<h2>2.4 Real Numbers</h2>
+
+<p>
+Real numbers consist of both rational and irrational numbers.
+</p>
+
+<div class="formula">
+Real Numbers = Rational Numbers ∪ Irrational Numbers
+</div>
+
+<div class="example">
+Rational:
+1/2, 3, −5, 0.25
+<br><br>
+
+Irrational:
+√2, π
+<br><br>
+
+All are real numbers.
+</div>
+
+<div class="trick">
+⚡ Every rational and irrational number is real.
+</div>
+
+</div>
+
+
+<!-- COMPARING -->
+
+<div class="topic">
+
+<h2>Comparing Real Numbers</h2>
+
+<p>
+Numbers on the number line increase from left to right.
+</p>
+
+<div class="example">
+Compare √2 and 1.5.
+<br><br>
+
+√2 ≈ 1.414
+<br>
+1.414 &lt; 1.5
+<br><br>
+
+Therefore:
+<br>
+√2 &lt; 1.5
+</div>
+
+<div class="trick">
+⚡ When comparing radicals, convert them to decimals
+or compare their squares when both numbers are positive.
+</div>
+
+</div>
+
+
+<!-- INTERVALS -->
+
+<div class="topic">
+
+<h2>Intervals</h2>
+
+<p>
+An interval represents a set of real numbers between two endpoints.
+</p>
+
+<h3>Open Interval</h3>
+
+<div class="formula">
+(a,b) = {x : a &lt; x &lt; b}
+</div>
+
+<h3>Closed Interval</h3>
+
+<div class="formula">
+[a,b] = {x : a ≤ x ≤ b}
+</div>
+
+<h3>Half-Open Intervals</h3>
+
+<div class="formula">
+[a,b) = {x : a ≤ x &lt; b}
+<br><br>
+(a,b] = {x : a &lt; x ≤ b}
+</div>
+
+<div class="trick">
+⚡ Square bracket [ ] → endpoint INCLUDED.
+<br>
+Round bracket ( ) → endpoint EXCLUDED.
+</div>
+
+</div>
+
+
+<!-- ABSOLUTE -->
+
+<div class="topic">
+
+<h2>2.4.2 Absolute Value</h2>
+
+<p>
+The absolute value of a number is its distance from zero on the number line.
+</p>
+
+<div class="formula">
+|x| ≥ 0
+</div>
+
+<div class="example">
+|5| = 5
+<br>
+|-5| = 5
+<br>
+|0| = 0
+</div>
+
+<h3>Important Rules</h3>
+
+<div class="formula">
+|x| = a → x = ±a
+<br><br>
+|x| &lt; a → −a &lt; x &lt; a
+<br><br>
+|x| &gt; a → x &lt; −a or x &gt; a
+</div>
+
+<div class="exam">
+🔥 <b>Example:</b><br><br>
+
+|x| &lt; 3
+<br><br>
+
+Therefore:
+<br>
+−3 &lt; x &lt; 3
+</div>
+
+<div class="trick">
+⚡ Absolute value = DISTANCE.
+<br>
+Distance cannot be negative.
+</div>
+
+</div>
+
+
+<!-- EXPONENTS -->
+
+<div class="topic">
+
+<h2>2.4.3 Exponents and Radicals</h2>
+
+<p>
+An exponent tells how many times a number is multiplied by itself.
+</p>
+
+<div class="example">
+2³ = 2 × 2 × 2 = 8
+</div>
+
+<h3>Laws of Exponents</h3>
+
+<div class="formula">
+
+aᵐ × aⁿ = aᵐ⁺ⁿ
+<br><br>
+
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ
+<br><br>
+
+(aᵐ)ⁿ = aᵐⁿ
+<br><br>
+
+(ab)ⁿ = aⁿbⁿ
+<br><br>
+
+(a/b)ⁿ = aⁿ/bⁿ
+<br><br>
+
+a⁰ = 1, a ≠ 0
+<br><br>
+
+a⁻ⁿ = 1/aⁿ
+
+</div>
+
+<div class="example">
+2³ × 2⁴
+<br>
+= 2⁷
+<br>
+= 128
+</div>
+
+<div class="trick">
+⚡ Same base × → ADD powers.
+<br>
+Same base ÷ → SUBTRACT powers.
+<br>
+Power of power → MULTIPLY powers.
+</div>
+
+</div>
+
+
+<!-- RADICALS -->
+
+<div class="topic">
+
+<h2>Radicals</h2>
+
+<p>
+A radical is an expression containing a root symbol.
+</p>
+
+<div class="formula">
+√a = a¹ᐟ²
+<br><br>
+∛a = a¹ᐟ³
+</div>
+
+<div class="example">
+√50
+<br>
+= √(25×2)
+<br>
+= 5√2
+</div>
+
+<h3>Multiplication of Radicals</h3>
+
+<div class="formula">
+√a × √b = √ab
+</div>
+
+<div class="example">
+√3 × √12
+<br>
+= √36
+<br>
+= 6
+</div>
+
+<h3>Division</h3>
+
+<div class="formula">
+√a / √b = √(a/b)
+</div>
+
+</div>
+
+
+<!-- LAWS ACCURACY -->
+
+<div class="topic">
+
+<h2>Law of Accuracy / Approximation</h2>
+
+<p>
+When an exact value is not required, numbers may be approximated
+to a required degree of accuracy.
+</p>
+
+<div class="example">
+√2 ≈ 1.41421356...
+<br><br>
+To 2 decimal places:
+<br>
+√2 ≈ 1.41
+</div>
+
+<div class="trick">
+⚡ Look at the digit immediately after the required place.
+<br><br>
+5 or greater → round UP.
+<br>
+Less than 5 → keep the digit.
+</div>
+
+</div>
+
+
+<!-- ROUNDING -->
+
+<div class="topic">
+
+<h2>Rounding</h2>
+
+<h3>Nearest Whole Number</h3>
+
+<div class="example">
+7.6 → 8
+<br>
+7.3 → 7
+</div>
+
+<h3>Decimal Places</h3>
+
+<div class="example">
+12.476 to 2 decimal places:
+<br><br>
+12.48
+</div>
+
+<h3>Significant Figures</h3>
+
+<p>
+Significant figures are digits that carry meaningful information
+about the precision of a measurement.
+</p>
+
+<div class="example">
+45.67 has 4 significant figures.
+<br><br>
+0.00456 has 3 significant figures.
+</div>
+
+<div class="trick">
+⚡ Leading zeros are NOT significant.
+<br>
+Zeros between non-zero digits ARE significant.
+<br>
+Trailing zeros after a decimal ARE significant.
+</div>
+
+</div>
+
+
+<!-- STANDARD FORM -->
+
+<div class="topic">
+
+<h2>Exponent / Standard Notation</h2>
+
+<p>
+Standard form expresses a number as:
+</p>
+
+<div class="formula">
+a × 10ⁿ
+<br>
+where 1 ≤ |a| &lt; 10
+</div>
+
+<div class="example">
+450000
+<br><br>
+= 4.5 × 10⁵
+</div>
+
+<div class="example">
+0.00072
+<br><br>
+= 7.2 × 10⁻⁴
+</div>
+
+<div class="trick">
+⚡ Large number → positive exponent.
+<br>
+Small decimal → negative exponent.
+</div>
+
+<div class="exam">
+🔥 <b>Entrance Example:</b><br><br>
+
+(3×10⁴)(2×10³)
+<br><br>
+= 6×10⁷
+</div>
+
+</div>
+
+
+<!-- OPERATIONS -->
+
+<div class="topic">
+
+<h2>Operations Involving Exponents and Radicals</h2>
+
+<h3>Example 1</h3>
+
+<div class="example">
+2³ × 2⁵
+<br>
+= 2⁸
+<br>
+= 256
+</div>
+
+<h3>Example 2</h3>
+
+<div class="example">
+√12 + √27
+<br><br>
+= 2√3 + 3√3
+<br>
+= 5√3
+</div>
+
+<h3>Example 3</h3>
+
+<div class="example">
+(√5)² = 5
+</div>
+
+<div class="warning">
+⚠️ Do NOT distribute square root incorrectly:
+<br><br>
+√(a+b) ≠ √a + √b
+</div>
+
+</div>
+
+
+<!-- RATIONALIZATION -->
+
+<div class="topic">
+
+<h2>Rationalization</h2>
+
+<p>
+Rationalization means removing a radical from the denominator
+of a fraction.
+</p>
+
+<h3>Simple Case</h3>
+
+<div class="example">
+
+1/√2
+<br><br>
+
+Multiply numerator and denominator by √2:
+<br><br>
+
+= √2/2
+
+</div>
+
+<h3>Denominator with Two Terms</h3>
+
+<p>
+Use the conjugate.
+</p>
+
+<div class="formula">
+(a+b)(a−b)=a²−b²
+</div>
+
+<div class="example">
+
+1/(√3+1)
+<br><br>
+
+Multiply by (√3−1):
+<br><br>
+
+= (√3−1)/(3−1)
+<br><br>
+
+= (√3−1)/2
+
+</div>
+
+<div class="trick">
+⚡ <b>Rationalization Trick:</b><br>
+One radical → multiply by the same radical.
+<br><br>
+Two terms → multiply by the conjugate.
+</div>
+
+</div>
+
+
+<!-- MASTER SUMMARY -->
+
+<div class="topic">
+
+<h2>🔥 Unit 2 Master Short Tricks</h2>
+
+<div class="trick">
+
+<b>1.</b> Euclid:
+a = bq + r, 0 ≤ r &lt; b
+<br><br>
+
+<b>2.</b> Prime → exactly 2 factors.
+<br><br>
+
+<b>3.</b> 1 → neither prime nor composite.
+<br><br>
+
+<b>4.</b> GCF → smallest prime powers.
+<br><br>
+
+<b>5.</b> LCM → largest prime powers.
+<br><br>
+
+<b>6.</b> Rational → fraction of integers.
+<br><br>
+
+<b>7.</b> Terminating decimal → rational.
+<br><br>
+
+<b>8.</b> Repeating decimal → rational.
+<br><br>
+
+<b>9.</b> Non-terminating + non-repeating → irrational.
+<br><br>
+
+<b>10.</b> Real = rational + irrational.
+<br><br>
+
+<b>11.</b> [ ] means included.
+<br><br>
+
+<b>12.</b> ( ) means excluded.
+<br><br>
+
+<b>13.</b> |x| means distance from zero.
+<br><br>
+
+<b>14.</b> Same base multiplication → add exponents.
+<br><br>
+
+<b>15.</b> Same base division → subtract exponents.
+<br><br>
+
+<b>16.</b> Power of a power → multiply exponents.
+<br><br>
+
+<b>17.</b> Large standard-form number → positive exponent.
+<br><br>
+
+<b>18.</b> Small decimal → negative exponent.
+<br><br>
+
+<b>19.</b> Rationalization → remove radical from denominator.
+<br><br>
+
+<b>20.</b> Two-term denominator → use conjugate.
+</div>
+
+</div>
+
+
+<!-- COMMON MISTAKES -->
+
+<div class="topic">
+
+<h2>⚠️ Common Exam Mistakes</h2>
+
+<div class="warning">
+
+❌ Thinking 1 is prime.
+<br><br>
+
+❌ Forgetting the condition r &lt; divisor in Euclid's lemma.
+<br><br>
+
+❌ Adding unlike radicals:
+√2 + √3 ≠ √5
+<br><br>
+
+❌ Thinking every square root is irrational.
+<br><br>
+
+❌ Treating |−5| as −5.
+<br><br>
+
+❌ Confusing open and closed intervals.
+<br><br>
+
+❌ Adding exponents when dividing.
+<br><br>
+
+❌ Subtracting exponents when multiplying.
+<br><br>
+
+❌ Rounding without checking the next digit.
+<br><br>
+
+❌ Leaving a radical in the denominator when rationalization is required.
+</div>
+
+</div>
+
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+</body>
+</html>
