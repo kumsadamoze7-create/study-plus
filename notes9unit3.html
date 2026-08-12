@@ -7,14 +7,16 @@
 <title>Grade 9 Mathematics - Unit 3 Notes</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
     font-family:Arial,sans-serif;
     background:#f4f7fb;
     color:#222;
-    line-height:1.75;
+    line-height:1.7;
 }
 
 header{
@@ -40,7 +42,7 @@ header{
 
 h2{
     color:#2563eb;
-    border-bottom:2px solid #e5e7eb;
+    border-bottom:2px solid #ddd;
     padding-bottom:8px;
 }
 
@@ -52,17 +54,17 @@ h3{
     background:#eef4ff;
     border-left:5px solid #2563eb;
     padding:14px;
-    margin:15px 0;
+    margin:12px 0;
     border-radius:8px;
     font-weight:bold;
     overflow-x:auto;
 }
 
 .example{
-    background:#ecfdf5;
+    background:#f0fdf4;
     border-left:5px solid #16a34a;
     padding:15px;
-    margin:15px 0;
+    margin:12px 0;
     border-radius:8px;
 }
 
@@ -70,15 +72,7 @@ h3{
     background:#fff7d6;
     border-left:5px solid #f59e0b;
     padding:15px;
-    margin:15px 0;
-    border-radius:8px;
-}
-
-.warning{
-    background:#fff1f2;
-    border-left:5px solid #e11d48;
-    padding:15px;
-    margin:15px 0;
+    margin:12px 0;
     border-radius:8px;
 }
 
@@ -86,8 +80,47 @@ h3{
     background:#f3e8ff;
     border-left:5px solid #9333ea;
     padding:15px;
-    margin:15px 0;
+    margin:12px 0;
     border-radius:8px;
+}
+
+.warning{
+    background:#fff1f2;
+    border-left:5px solid #e11d48;
+    padding:15px;
+    margin:12px 0;
+    border-radius:8px;
+}
+
+.tip{
+    background:#ecfeff;
+    border-left:5px solid #0891b2;
+    padding:15px;
+    margin:12px 0;
+    border-radius:8px;
+}
+
+.back{
+    display:block;
+    background:#172554;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin:25px 0;
+    font-weight:bold;
+}
+
+.top{
+    display:block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    margin:15px 0;
 }
 
 table{
@@ -103,84 +136,88 @@ th,td{
 }
 
 th{
-    background:#eef4ff;
+    background:#2563eb;
+    color:white;
 }
 
-.back{
-    display:block;
-    background:#172554;
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    padding:15px;
-    border-radius:10px;
-    margin:30px 0;
-    font-weight:bold;
+code{
+    background:#eee;
+    padding:3px 6px;
+    border-radius:4px;
+}
+
+.small{
+    font-size:14px;
+    color:#555;
 }
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
-<h1>📘 Grade 9 Mathematics</h1>
-<h2 style="color:white;border:0">Unit 3 — Solving Equations</h2>
-<p>Complete Notes • Examples • Short Tricks • Entrance Exam Focus</p>
+    <h1>📕 Grade 9 Mathematics</h1>
+    <h2 style="color:white;border:none;">
+        Unit 3 — Solving Equations
+    </h2>
+    <p>Complete Notes • Examples • Formulas • Short Tricks</p>
+    <p>🎯 Entrance Exam / UEE Preparation</p>
 </header>
 
 <div class="container">
 
-<!-- OVERVIEW -->
+<a href="#linear" class="top">⬇️ Go to Linear Equations</a>
+<a href="#system" class="top">⬇️ Go to Simultaneous Equations</a>
+<a href="#quadratic" class="top">⬇️ Go to Quadratic Equations</a>
+<a href="#absolute" class="top">⬇️ Go to Absolute Value</a>
+<a href="#radical" class="top">⬇️ Go to Exponents & Radicals</a>
+
+
+<!-- INTRODUCTION -->
 
 <div class="topic">
 
-<h2>📚 Unit 3 Overview</h2>
+<h2>⭐ Unit 3 Overview</h2>
 
 <p>
-An equation is a mathematical statement showing that two expressions
-are equal.
+An <b>equation</b> is a mathematical statement showing that
+two expressions are equal.
 </p>
 
 <div class="formula">
-Left Side = Right Side
+Left side = Right side
 </div>
 
-<p>
-In this unit we study:
-</p>
+<div class="example">
+<b>Example:</b><br><br>
 
-<ul>
-<li>Linear equation in one variable</li>
-<li>System of linear equations in two variables</li>
-<li>Table method</li>
-<li>Substitution method</li>
-<li>Elimination method</li>
-<li>Graphical method</li>
-<li>Absolute value equations</li>
-<li>Quadratic equations</li>
-<li>Factorization</li>
-<li>Completing the square</li>
-<li>Quadratic formula</li>
-<li>Discriminant</li>
-<li>Relationship between roots and coefficients</li>
-<li>Equations involving exponents</li>
-<li>Equations involving radicals</li>
-</ul>
+2x + 5 = 15
+<br><br>
+
+The goal is to find the value of x that makes the equation true.
+</div>
+
+<div class="important">
+🎯 <b>Main idea:</b><br><br>
+
+Whatever operation you perform on one side of an equation,
+you must perform the same operation on the other side.
+</div>
 
 </div>
 
 
 <!-- 3.1 -->
 
-<div class="topic">
+<div class="topic" id="linear">
 
-<h2>3.1 Revision: Linear Equation in One Variable</h2>
+<h2>3.1 Revision on Linear Equation in One Variable</h2>
 
 <h3>Definition</h3>
 
 <p>
-A linear equation in one variable is an equation whose highest power
-of the variable is 1.
+A linear equation in one variable is an equation in which
+the highest power of the variable is 1.
 </p>
 
 <div class="formula">
@@ -195,19 +232,19 @@ Solve:
 
 <br><br>
 
-2x + 6 = 14
+3x + 5 = 20
 
 <br><br>
 
-2x = 14 − 6
+3x = 20 − 5
 
 <br>
 
-2x = 8
+3x = 15
 
 <br>
 
-<b>x = 4</b>
+x = 5
 
 </div>
 
@@ -215,38 +252,82 @@ Solve:
 
 <div class="example">
 
-3(x − 2) = 15
+Solve:
 
 <br><br>
 
-3x − 6 = 15
+5x − 7 = 18
+
+<br><br>
+
+5x = 25
 
 <br>
 
-3x = 21
+x = 5
+
+</div>
+
+<h3>Equation with fractions</h3>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+x/3 + 2 = 6
+
+<br><br>
+
+x/3 = 4
 
 <br>
 
-<b>x = 7</b>
+x = 12
+
+</div>
+
+<h3>Equation with brackets</h3>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+3(x + 2) = 18
+
+<br><br>
+
+3x + 6 = 18
+
+<br>
+
+3x = 12
+
+<br>
+
+x = 4
 
 </div>
 
 <div class="trick">
+⚡ <b>Short Trick:</b><br><br>
 
-⚡ <b>Short Trick:</b>
+Move a term across "=" → its sign changes.
 
 <br><br>
 
-Whatever you do to one side of an equation,
-do the same to the other side.
++ becomes −<br>
+− becomes +<br>
+× becomes ÷<br>
+÷ becomes ×
 
 </div>
 
 <div class="warning">
-
-⚠️ Always check your answer by substituting it back into
-the original equation.
-
+⚠️ Always check your answer by substituting it back into the original equation.
 </div>
 
 </div>
@@ -254,28 +335,26 @@ the original equation.
 
 <!-- SYSTEM -->
 
-<div class="topic">
+<div class="topic" id="system">
 
 <h2>3.2 System of Linear Equations in Two Variables</h2>
 
 <p>
-A system of linear equations contains two or more equations involving
-the same variables.
+A system of linear equations contains two or more equations
+with two variables.
 </p>
 
 <div class="formula">
-
 ax + by = c
-
-<br><br>
-
+<br>
 dx + ey = f
-
 </div>
 
-<h3>Example</h3>
-
 <div class="example">
+
+Example:
+
+<br><br>
 
 x + y = 7
 
@@ -283,17 +362,34 @@ x + y = 7
 
 x − y = 1
 
+</div>
+
+
+<h3>Meaning of Solution</h3>
+
+<p>
+The solution is an ordered pair <b>(x,y)</b> that satisfies
+both equations.
+</p>
+
+<div class="example">
+For the example above:
+
 <br><br>
 
-Adding the equations:
+Add the equations:
 
 <br>
 
-2x = 8
+(x+y)+(x−y)=7+1
 
 <br>
 
-x = 4
+2x=8
+
+<br>
+
+x=4
 
 <br><br>
 
@@ -301,86 +397,71 @@ Substitute:
 
 <br>
 
-4 + y = 7
+4+y=7
 
 <br>
 
-<b>y = 3</b>
+y=3
 
 <br><br>
 
 Therefore:
 
-<br>
-
-<b>(x,y) = (4,3)</b>
-
+<b>(4,3)</b>
 </div>
 
 </div>
 
 
-<!-- TABLE -->
+<!-- TABLE METHOD -->
 
 <div class="topic">
 
 <h2>3.2.1 Solving Linear Equations Using a Table</h2>
 
 <p>
-A table can be used to find values of x and y that satisfy an equation.
+Choose values of x and calculate the corresponding values of y.
 </p>
 
-<h3>Example</h3>
+<div class="example">
 
-<div class="formula">
-x + y = 5
-</div>
+Equation:
+
+<br><br>
+
+y = 2x + 1
 
 <table>
-
 <tr>
 <th>x</th>
-<th>y = 5 − x</th>
+<th>y = 2x + 1</th>
 </tr>
 
 <tr>
 <td>0</td>
-<td>5</td>
-</tr>
-
-<tr>
-<td>1</td>
-<td>4</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>3</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td>4</td>
 <td>1</td>
 </tr>
 
 <tr>
-<td>5</td>
-<td>0</td>
+<td>1</td>
+<td>3</td>
 </tr>
 
+<tr>
+<td>2</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>7</td>
+</tr>
 </table>
 
+</div>
+
 <div class="trick">
-
-🎯 <b>Exam Trick:</b>
-
-For y = mx + b, choose convenient x-values and calculate y.
-
+⚡ Pick easy x-values such as −2, −1, 0, 1, 2.
 </div>
 
 </div>
@@ -392,88 +473,68 @@ For y = mx + b, choose convenient x-values and calculate y.
 
 <h2>3.2.2 Substitution Method</h2>
 
-<p>
-In substitution, solve one equation for one variable and substitute
-the result into the other equation.
-</p>
+<h3>Steps</h3>
 
-<h3>Example</h3>
+<ol>
+<li>Make one variable the subject.</li>
+<li>Substitute into the other equation.</li>
+<li>Solve for one variable.</li>
+<li>Substitute back to find the other variable.</li>
+<li>Check the answer.</li>
+</ol>
 
 <div class="example">
+
+Solve:
+
+<br><br>
 
 x + y = 10
 
 <br>
 
-x = 6
+x − y = 2
 
 <br><br>
 
-Substitute x = 6:
+From first equation:
 
 <br>
 
-6 + y = 10
-
-<br>
-
-<b>y = 4</b>
+x = 10 − y
 
 <br><br>
 
-Answer:
+Substitute into second:
 
 <br>
 
-<b>(x,y) = (6,4)</b>
-
-</div>
-
-<h3>More Complex Example</h3>
-
-<div class="example">
-
-y = 2x + 1
+10 − y − y = 2
 
 <br>
 
-x + y = 10
+10 − 2y = 2
+
+<br>
+
+−2y = −8
+
+<br>
+
+y = 4
 
 <br><br>
 
-Substitute:
-
-<br>
-
-x + (2x + 1) = 10
-
-<br>
-
-3x + 1 = 10
-
-<br>
-
-3x = 9
-
-<br>
-
-x = 3
+x = 10 − 4 = 6
 
 <br><br>
 
-y = 2(3)+1
-
-<br>
-
-<b>y = 7</b>
+<b>Answer: (6,4)</b>
 
 </div>
 
 <div class="trick">
-
-⚡ If one equation already has x = ... or y = ...,
-substitution is usually the fastest method.
-
+⚡ Choose the equation where a variable already has coefficient 1.
 </div>
 
 </div>
@@ -486,18 +547,21 @@ substitution is usually the fastest method.
 <h2>3.2.3 Elimination Method</h2>
 
 <p>
-Elimination removes one variable by adding or subtracting equations.
+The goal is to eliminate one variable by adding or subtracting
+the equations.
 </p>
-
-<h3>Example</h3>
 
 <div class="example">
 
-2x + y = 7
+Solve:
+
+<br><br>
+
+2x + y = 9
 
 <br>
 
-3x − y = 8
+3x − y = 11
 
 <br><br>
 
@@ -505,11 +569,11 @@ Add:
 
 <br>
 
-5x = 15
+5x = 20
 
 <br>
 
-x = 3
+x = 4
 
 <br><br>
 
@@ -517,101 +581,46 @@ Substitute:
 
 <br>
 
-2(3)+y=7
+2(4)+y=9
 
 <br>
 
-6+y=7
+8+y=9
 
 <br>
 
-<b>y=1</b>
+y=1
+
+<br><br>
+
+<b>Answer: (4,1)</b>
 
 </div>
 
 <div class="trick">
-
-🎯 <b>Shortcut:</b>
-
-Look for opposite coefficients such as +y and −y.
-
-</div>
-
-<h3>When Coefficients Are Not Opposite</h3>
-
-<div class="example">
-
-2x + 3y = 12
-
-<br>
-
-4x + 3y = 18
-
-<br><br>
-
-Subtract the first equation from the second:
-
-<br>
-
-2x = 6
-
-<br>
-
-x = 3
-
-<br><br>
-
-2(3)+3y=12
-
-<br>
-
-6+3y=12
-
-<br>
-
-y=2
-
+⚡ Opposite coefficients → ADD.<br>
+Same coefficients → SUBTRACT.
 </div>
 
 </div>
 
 
-<!-- GRAPH -->
+<!-- GRAPHICAL -->
 
 <div class="topic">
 
 <h2>3.2.4 Graphical Method</h2>
 
 <p>
-A system of two linear equations can be represented by two straight
-lines.
+Each linear equation represents a straight line.
+The solution of two equations is the point where the two lines intersect.
 </p>
 
-<p>
-The solution is the point where the two lines intersect.
-</p>
+<div class="example">
 
-<div class="important">
-
-📌 <b>Important:</b>
+Example:
 
 <br><br>
-
-One intersection → one solution
-
-<br>
-
-Parallel lines → no solution
-
-<br>
-
-Same line → infinitely many solutions
-
-</div>
-
-<h3>Example</h3>
-
-<div class="formula">
 
 y = x + 1
 
@@ -619,13 +628,11 @@ y = x + 1
 
 y = −x + 5
 
-</div>
+<br><br>
 
-<p>
-At the intersection:
-</p>
+At intersection:
 
-<div class="example">
+<br>
 
 x + 1 = −x + 5
 
@@ -643,14 +650,65 @@ y = 3
 
 <br><br>
 
-Intersection = <b>(2,3)</b>
+<b>Solution = (2,3)</b>
+
+</div>
+
+<h3>Types of Solutions</h3>
+
+<div class="important">
+
+<b>One solution:</b> lines intersect once.
+
+<br><br>
+
+<b>No solution:</b> parallel lines.
+
+<br><br>
+
+<b>Infinitely many solutions:</b> same line.
 
 </div>
 
 <div class="trick">
+🎯 <b>Graph Trick:</b><br><br>
 
-⚡ Graph question?
-Find the intersection point.
+Intersection point = solution.
+</div>
+
+</div>
+
+
+<!-- NON LINEAR -->
+
+<div class="topic">
+
+<h2>3.3 Solving Non-Linear Equations</h2>
+
+<p>
+A nonlinear equation has a variable with power greater than 1
+or another nonlinear form.
+</p>
+
+<div class="example">
+
+Examples:
+
+<br><br>
+
+x² + 3x − 4 = 0
+
+<br>
+
+x³ − 8 = 0
+
+<br>
+
+√x = 4
+
+<br>
+
+2ˣ = 16
 
 </div>
 
@@ -659,7 +717,7 @@ Find the intersection point.
 
 <!-- ABSOLUTE -->
 
-<div class="topic">
+<div class="topic" id="absolute">
 
 <h2>3.3.1 Equations Involving Absolute Value</h2>
 
@@ -667,45 +725,48 @@ Find the intersection point.
 
 <p>
 Absolute value represents distance from zero.
+Therefore it is always non-negative.
 </p>
 
 <div class="formula">
-
 |x| ≥ 0
+</div>
 
-<br><br>
+<div class="example">
 
 |5| = 5
 
 <br>
 
-|-5| = 5
+|−5| = 5
+
+<br>
+
+|0| = 0
 
 </div>
 
 <h3>Basic Rule</h3>
 
 <div class="formula">
-
 |x| = a
-
-<br><br>
-
-x = a &nbsp; or &nbsp; x = −a
-
+<br>
+x = a or x = −a
 </div>
 
-<h3>Example</h3>
+<p>
+This rule applies when <b>a ≥ 0</b>.
+</p>
 
 <div class="example">
+
+Solve:
+
+<br><br>
 
 |x| = 7
 
 <br><br>
-
-Therefore:
-
-<br>
 
 x = 7
 
@@ -717,15 +778,27 @@ or
 
 x = −7
 
+<br><br>
+
+<b>Answer: x = ±7</b>
+
 </div>
 
-<h3>Example 2</h3>
+<h3>Example with expression</h3>
 
 <div class="example">
+
+Solve:
+
+<br><br>
 
 |2x − 3| = 5
 
 <br><br>
+
+Case 1:
+
+<br>
 
 2x − 3 = 5
 
@@ -739,9 +812,9 @@ x = 4
 
 <br><br>
 
-OR
+Case 2:
 
-<br><br>
+<br>
 
 2x − 3 = −5
 
@@ -755,23 +828,16 @@ x = −1
 
 <br><br>
 
-<b>x = 4 or x = −1</b>
-
-</div>
-
-<div class="trick">
-
-🎯 When |expression| = positive number,
-make TWO equations: + value and − value.
+<b>Answer: x = 4 or x = −1</b>
 
 </div>
 
 <div class="warning">
+⚠️ Never write only x = a. For |x| = a, remember both +a and −a.
+</div>
 
-⚠️ |x| can never be negative.
-
-Therefore |x| = −3 has <b>no real solution</b>.
-
+<div class="trick">
+⚡ Absolute value = distance → distance cannot be negative.
 </div>
 
 </div>
@@ -779,33 +845,34 @@ Therefore |x| = −3 has <b>no real solution</b>.
 
 <!-- QUADRATIC -->
 
-<div class="topic">
+<div class="topic" id="quadratic">
 
 <h2>3.3.2 Quadratic Equation</h2>
 
+<h3>Definition</h3>
+
 <p>
-A quadratic equation is an equation whose highest power is 2.
+A quadratic equation is an equation whose highest power of
+the variable is 2.
 </p>
 
 <div class="formula">
-
 ax² + bx + c = 0
-
-<br><br>
-
+<br>
 a ≠ 0
-
 </div>
-
-<h3>Examples</h3>
 
 <div class="example">
 
-x² + 5x + 6 = 0
+Examples:
 
 <br><br>
 
-2x² − 3x + 1 = 0
+x² + 5x + 6 = 0
+
+<br>
+
+2x² − 7x + 3 = 0
 
 </div>
 
@@ -816,14 +883,906 @@ x² + 5x + 6 = 0
 
 <div class="topic">
 
-<h2>Solving Quadratic Equations by Factorization</h2>
-
-<h3>Example 1</h3>
+<h2>3.3.2.1 Solving Quadratic Equations by Factorization</h2>
 
 <div class="example">
+
+Solve:
+
+<br><br>
 
 x² + 5x + 6 = 0
 
 <br><br>
 
-Find two numbers
+Find two numbers whose:
+
+<br>
+
+Product = 6
+
+<br>
+
+Sum = 5
+
+<br><br>
+
+Numbers are 2 and 3.
+
+<br><br>
+
+Therefore:
+
+<br>
+
+(x+2)(x+3)=0
+
+<br><br>
+
+x+2=0 → x=−2
+
+<br>
+
+x+3=0 → x=−3
+
+<br><br>
+
+<b>Answer: x = −2, −3</b>
+
+</div>
+
+<div class="trick">
+⚡ For x²+bx+c:<br><br>
+
+Find two numbers that multiply to c
+and add to b.
+</div>
+
+</div>
+
+
+<!-- COMPLETING SQUARE -->
+
+<div class="topic">
+
+<h2>3.3.2.2 Completing the Square</h2>
+
+<p>
+Completing the square changes a quadratic expression into
+a perfect square.
+</p>
+
+<div class="formula">
+x² + bx
+=
+(x + b/2)² − (b/2)²
+</div>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+x² + 6x + 5 = 0
+
+<br><br>
+
+Move constant:
+
+<br>
+
+x² + 6x = −5
+
+<br><br>
+
+Half of 6 = 3
+
+<br>
+
+Add 9 to both sides:
+
+<br>
+
+x² + 6x + 9 = 4
+
+<br><br>
+
+(x+3)² = 4
+
+<br>
+
+x+3 = ±2
+
+<br>
+
+x = −3 ± 2
+
+<br><br>
+
+<b>x = −1 or −5</b>
+
+</div>
+
+<div class="trick">
+⚡ Take half of the x-coefficient, then square it.
+</div>
+
+</div>
+
+
+<!-- QUADRATIC FORMULA -->
+
+<div class="topic">
+
+<h2>3.3.2.3 Quadratic Formula</h2>
+
+<div class="formula">
+x =
+[-b ± √(b² − 4ac)] / 2a
+</div>
+
+<p>
+For:
+
+<br>
+
+ax² + bx + c = 0
+</p>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+x² − 5x + 6 = 0
+
+<br><br>
+
+a=1, b=−5, c=6
+
+<br><br>
+
+x =
+[5 ± √(25−24)] / 2
+
+<br><br>
+
+x =
+[5 ± 1] / 2
+
+<br><br>
+
+x=3 or x=2
+
+</div>
+
+<div class="trick">
+🎯 Always identify <b>a, b, c</b> before using the formula.
+</div>
+
+</div>
+
+
+<!-- DISCRIMINANT -->
+
+<div class="topic">
+
+<h2>3.3.2.4 Discriminant</h2>
+
+<div class="formula">
+D = b² − 4ac
+</div>
+
+<p>
+The discriminant tells us the nature and number of roots.
+</p>
+
+<table>
+
+<tr>
+<th>Discriminant</th>
+<th>Roots</th>
+</tr>
+
+<tr>
+<td>D &gt; 0</td>
+<td>Two distinct real roots</td>
+</tr>
+
+<tr>
+<td>D = 0</td>
+<td>One repeated real root</td>
+</tr>
+
+<tr>
+<td>D &lt; 0</td>
+<td>No real roots</td>
+</tr>
+
+</table>
+
+<div class="example">
+
+For:
+
+<br>
+
+x² − 4x + 4 = 0
+
+<br><br>
+
+D = (−4)² − 4(1)(4)
+
+<br>
+
+D = 16 − 16
+
+<br>
+
+D = 0
+
+<br><br>
+
+Therefore there is one repeated real root.
+
+</div>
+
+<div class="trick">
+⚡ Remember: + = 2 roots, 0 = repeated root, − = no real root.
+</div>
+
+</div>
+
+
+<!-- ROOT RELATIONSHIP -->
+
+<div class="topic">
+
+<h2>3.3.2.5 Relationship Between Roots and Coefficients</h2>
+
+<p>
+For:
+
+</p>
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+<p>
+If the roots are α and β:
+</p>
+
+<div class="formula">
+
+α + β = −b/a
+
+<br><br>
+
+αβ = c/a
+
+</div>
+
+<div class="example">
+
+For:
+
+<br>
+
+2x² − 7x + 3 = 0
+
+<br><br>
+
+a=2, b=−7, c=3
+
+<br><br>
+
+Sum of roots:
+
+<br>
+
+α+β = −(−7)/2 = 7/2
+
+<br><br>
+
+Product:
+
+<br>
+
+αβ = 3/2
+
+</div>
+
+<div class="trick">
+⚡ <b>Sum → −b/a</b><br>
+⚡ <b>Product → c/a</b>
+</div>
+
+</div>
+
+
+<!-- EXPONENT -->
+
+<div class="topic">
+
+<h2>3.3.3 Equations Involving Exponents</h2>
+
+<p>
+An exponential equation contains the variable in the exponent.
+</p>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+2ˣ = 16
+
+<br><br>
+
+Write 16 as a power of 2:
+
+<br>
+
+16 = 2⁴
+
+<br><br>
+
+Therefore:
+
+<br>
+
+2ˣ = 2⁴
+
+<br>
+
+x = 4
+
+</div>
+
+<h3>Same Base Rule</h3>
+
+<div class="formula">
+aˣ = aʸ → x = y
+<br>
+when a &gt; 0 and a ≠ 1
+</div>
+
+<h3>Example</h3>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+3ˣ⁺¹ = 27
+
+<br><br>
+
+27 = 3³
+
+<br>
+
+3ˣ⁺¹ = 3³
+
+<br>
+
+x+1=3
+
+<br>
+
+x=2
+
+</div>
+
+<div class="trick">
+⚡ Convert both sides to the same base before comparing exponents.
+</div>
+
+</div>
+
+
+<!-- EXPONENT LAWS -->
+
+<div class="topic">
+
+<h2>⭐ Important Laws of Exponents</h2>
+
+<div class="formula">
+
+aᵐ × aⁿ = aᵐ⁺ⁿ
+
+<br><br>
+
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ
+
+<br><br>
+
+(aᵐ)ⁿ = aᵐⁿ
+
+<br><br>
+
+a⁰ = 1
+
+<br><br>
+
+a⁻ⁿ = 1/aⁿ
+
+<br><br>
+
+aᵐ/n = ⁿ√(aᵐ)
+
+</div>
+
+<div class="example">
+
+2³ × 2²
+
+<br>
+
+= 2⁵
+
+<br>
+
+= 32
+
+</div>
+
+<div class="trick">
+⚡ Same base × → ADD powers.<br>
+⚡ Same base ÷ → SUBTRACT powers.<br>
+⚡ Power of power → MULTIPLY powers.
+</div>
+
+</div>
+
+
+<!-- RADICAL -->
+
+<div class="topic" id="radical">
+
+<h2>3.3.3 Equations Involving Radicals</h2>
+
+<p>
+A radical equation contains a variable inside a root.
+</p>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+√x = 5
+
+<br><br>
+
+Square both sides:
+
+<br>
+
+x = 25
+
+</div>
+
+<h3>Example 2</h3>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+√(x+1) = 4
+
+<br><br>
+
+Square both sides:
+
+<br>
+
+x+1=16
+
+<br>
+
+x=15
+
+</div>
+
+<h3>Example 3</h3>
+
+<div class="example">
+
+Solve:
+
+<br><br>
+
+√(2x+3)=7
+
+<br><br>
+
+Square:
+
+<br>
+
+2x+3=49
+
+<br>
+
+2x=46
+
+<br>
+
+x=23
+
+</div>
+
+<div class="warning">
+⚠️ Squaring can sometimes create an extraneous solution.
+Always substitute the answer back into the original equation.
+</div>
+
+<div class="trick">
+⚡ Radical alone → isolate it first → square both sides → solve → CHECK.
+</div>
+
+</div>
+
+
+<!-- MIXED RADICAL -->
+
+<div class="topic">
+
+<h2>⭐ Operations with Radicals</h2>
+
+<h3>Adding and Subtracting</h3>
+
+<p>
+Only like radicals can be added or subtracted.
+</p>
+
+<div class="example">
+
+2√3 + 5√3
+
+<br>
+
+= 7√3
+
+</div>
+
+<div class="warning">
+❌ √2 + √3 cannot be simplified to √5.
+</div>
+
+<h3>Multiplication</h3>
+
+<div class="formula">
+√a × √b = √(ab)
+</div>
+
+<div class="example">
+
+√3 × √12
+
+<br>
+
+= √36
+
+<br>
+
+= 6
+
+</div>
+
+<h3>Division</h3>
+
+<div class="formula">
+√a / √b = √(a/b)
+</div>
+
+<div class="example">
+
+√18 / √2
+
+<br>
+
+= √9
+
+<br>
+
+= 3
+
+</div>
+
+</div>
+
+
+<!-- RATIONALIZATION -->
+
+<div class="topic">
+
+<h2>⭐ Rationalization</h2>
+
+<p>
+Rationalization means removing a radical from the denominator.
+</p>
+
+<div class="example">
+
+1/√2
+
+<br><br>
+
+Multiply numerator and denominator by √2:
+
+<br><br>
+
+= √2 / 2
+
+</div>
+
+<h3>Conjugate Method</h3>
+
+<div class="example">
+
+1/(√3+1)
+
+<br><br>
+
+Multiply by:
+
+<br>
+
+(√3−1)
+
+<br><br>
+
+= (√3−1)/(3−1)
+
+<br>
+
+= (√3−1)/2
+
+</div>
+
+<div class="trick">
+⚡ For a denominator containing √a + b,
+multiply by its conjugate √a − b.
+</div>
+
+</div>
+
+
+<!-- STANDARD FORM -->
+
+<div class="topic">
+
+<h2>⭐ Standard Form / Scientific Notation</h2>
+
+<p>
+Very large or very small numbers can be written as:
+</p>
+
+<div class="formula">
+a × 10ⁿ
+<br>
+where 1 ≤ |a| &lt; 10
+</div>
+
+<div class="example">
+
+450000
+
+<br>
+
+= 4.5 × 10⁵
+
+<br><br>
+
+0.00032
+
+<br>
+
+= 3.2 × 10⁻⁴
+
+</div>
+
+<div class="trick">
+⚡ Decimal moves left → positive exponent.<br>
+⚡ Decimal moves right → negative exponent.
+</div>
+
+</div>
+
+
+<!-- MIXED EXAM -->
+
+<div class="topic">
+
+<h2>🔥 Entrance Exam Quick Tricks</h2>
+
+<div class="trick">
+
+<b>1.</b> Linear equation → isolate the variable.
+
+<br><br>
+
+<b>2.</b> Simultaneous equations → substitution or elimination.
+
+<br><br>
+
+<b>3.</b> Graphical solution → intersection point.
+
+<br><br>
+
+<b>4.</b> |x| = a → x = ±a.
+
+<br><br>
+
+<b>5.</b> Quadratic → ax²+bx+c=0.
+
+<br><br>
+
+<b>6.</b> Factorization → product c, sum b.
+
+<br><br>
+
+<b>7.</b> Quadratic formula →
+−b ± √(b²−4ac) / 2a.
+
+<br><br>
+
+<b>8.</b> Discriminant → b²−4ac.
+
+<br><br>
+
+<b>9.</b> Sum of roots → −b/a.
+
+<br><br>
+
+<b>10.</b> Product of roots → c/a.
+
+<br><br>
+
+<b>11.</b> Same exponential base → compare powers.
+
+<br><br>
+
+<b>12.</b> Radical equation → isolate → square → check.
+
+<br><br>
+
+<b>13.</b> √a × √b = √ab.
+
+<br><br>
+
+<b>14.</b> Rationalization → multiply by the conjugate.
+
+</div>
+
+</div>
+
+
+<!-- COMMON MISTAKES -->
+
+<div class="topic">
+
+<h2>⚠️ Common Exam Mistakes</h2>
+
+<div class="warning">
+
+❌ Forgetting to change the sign when moving terms.
+
+<br><br>
+
+❌ Using the quadratic formula with the wrong value of b.
+
+<br><br>
+
+❌ Forgetting ± when solving a squared equation.
+
+<br><br>
+
+❌ Forgetting to check radical-equation answers.
+
+<br><br>
+
+❌ Thinking √a + √b = √(a+b).
+
+<br><br>
+
+❌ Confusing sum of roots with product of roots.
+
+<br><br>
+
+❌ Forgetting that a proper quadratic equation requires a ≠ 0.
+
+</div>
+
+</div>
+
+
+<!-- FINAL SUMMARY -->
+
+<div class="topic">
+
+<h2>🎯 Unit 3 Formula Sheet</h2>
+
+<div class="formula">
+
+<b>Linear:</b><br>
+ax+b=0
+
+<br><br>
+
+<b>Quadratic:</b><br>
+ax²+bx+c=0
+
+<br><br>
+
+<b>Quadratic Formula:</b><br>
+x=[−b±√(b²−4ac)]/(2a)
+
+<br><br>
+
+<b>Discriminant:</b><br>
+D=b²−4ac
+
+<br><br>
+
+<b>Sum of roots:</b><br>
+α+β=−b/a
+
+<br><br>
+
+<b>Product of roots:</b><br>
+αβ=c/a
+
+<br><br>
+
+<b>Absolute value:</b><br>
+|x|=a → x=±a
+
+<br><br>
+
+<b>Exponent:</b><br>
+aᵐaⁿ=aᵐ⁺ⁿ
+
+<br><br>
+
+<b>Radical:</b><br>
+√a√b=√ab
+
+</div>
+
+<div class="important">
+
+🎓 <b>Study Strategy:</b><br><br>
+
+First understand the formula →<br>
+then study the example →<br>
+then memorize the short trick →<br>
+then solve difficult practice questions.
+
+</div>
+
+</div>
+
+
+<a href="#top" class="top">
+⬆️ Back to Top
+</a>
+
+<a href="grade9.html" class="back">
+← Back to Grade 9 Mathematics
+</a>
+
+</div>
+
+</body>
+</html>
