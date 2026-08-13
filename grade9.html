@@ -3,139 +3,156 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Grade 9 - Study Plus</title>
+<title>Grade 9 - Study Plus</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
 
-        header {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            color: white;
-            text-align: center;
-            padding: 35px 15px;
-        }
+header {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
 
-        header p {
-            margin: 8px 0;
-        }
+header p {
+    margin: 8px 0;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .card {
-            background: white;
-            margin: 18px 0;
-            padding: 22px;
-            border-radius: 16px;
-            box-shadow: 0 3px 10px #ccc;
-        }
+.card {
+    background: white;
+    margin: 18px 0;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px #ccc;
+}
 
-        .math {
-            border-left: 6px solid #2563eb;
-        }
+.math {
+    border-left: 6px solid #2563eb;
+}
 
-        .biology {
-            border-left: 6px solid #16a34a;
-        }
+.biology {
+    border-left: 6px solid #16a34a;
+}
 
-        .physics {
-            border-left: 6px solid #dc2626;
-        }
+.physics {
+    border-left: 6px solid #dc2626;
+}
 
-        .chemistry {
-            border-left: 6px solid #9333ea;
-        }
+.chemistry {
+    border-left: 6px solid #9333ea;
+}
 
-        .english {
-            border-left: 6px solid #ea580c;
-        }
+.english {
+    border-left: 6px solid #ea580c;
+}
 
-        .unit {
-            border-left: 5px solid #2563eb;
-        }
+.unit {
+    border-left: 5px solid #2563eb;
+}
 
-        h2 {
-            margin-top: 0;
-        }
+.chemUnit {
+    border-left: 5px solid #9333ea;
+}
 
-        h3 {
-            color: #2563eb;
-        }
+h2 {
+    margin-top: 0;
+}
 
-        p {
-            line-height: 1.6;
-            color: #555;
-        }
+h3 {
+    color: #2563eb;
+}
 
-        button {
-            width: 100%;
-            padding: 15px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+p {
+    line-height: 1.6;
+    color: #555;
+}
 
-        button:hover {
-            opacity: 0.9;
-        }
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .open {
-            background: #2563eb;
-        }
+button:hover {
+    opacity: 0.9;
+}
 
-        .notes {
-            background: #7c3aed;
-        }
+.open {
+    background: #2563eb;
+}
 
-        .practice {
-            background: #16a34a;
-        }
+.chemOpen {
+    background: #9333ea;
+}
 
-        .coming {
-            background: #9ca3af;
-        }
+.notes {
+    background: #7c3aed;
+}
 
-        .back {
-            background: #172554;
-        }
+.practice {
+    background: #16a34a;
+}
 
-        #mathUnits {
-            display: none;
-        }
+.coming {
+    background: #9ca3af;
+}
 
-        .title {
-            text-align: center;
-            color: #2563eb;
-        }
+.back {
+    background: #172554;
+}
 
-    </style>
+#mathUnits {
+    display: none;
+}
+
+#chemistryUnits {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    color: #2563eb;
+}
+
+.chemTitle {
+    text-align: center;
+    color: #9333ea;
+}
+
+</style>
 
 </head>
 
@@ -145,11 +162,11 @@
 
 <header>
 
-    <h1>📚 Grade 9</h1>
+<h1>📚 Grade 9</h1>
 
-    <p>Study Plus</p>
+<p>Study Plus</p>
 
-    <p>Learn • Practice • Prepare</p>
+<p>Learn • Practice • Prepare</p>
 
 </header>
 
@@ -157,408 +174,489 @@
 <div class="container">
 
 
-    <!-- MATHEMATICS -->
+<!-- ================= MATHEMATICS ================= -->
 
-    <div class="card math">
+<div class="card math">
 
-        <h2>📐 Mathematics</h2>
+<h2>📐 Mathematics</h2>
 
-        <p>
-            Complete Grade 9 Mathematics from
-            Unit 1 to Unit 9 with Notes and Practice.
-        </p>
+<p>
+Complete Grade 9 Mathematics from
+Unit 1 to Unit 9 with Notes and Practice.
+</p>
 
-        <button
-            class="open"
-            onclick="openMath()">
+<button
+class="open"
+onclick="openMath()">
 
-            📚 Open Mathematics
+📚 Open Mathematics
 
-        </button>
+</button>
 
-    </div>
+</div>
 
 
-    <!-- MATHEMATICS UNITS -->
+<!-- MATHEMATICS UNITS -->
 
-    <div id="mathUnits">
+<div id="mathUnits">
 
-        <div class="card">
 
-            <h2 class="title">
-                📐 Grade 9 Mathematics
-            </h2>
+<div class="card">
 
-            <p>
-                Choose a unit to study Notes or Practice.
-            </p>
+<h2 class="title">
+📐 Grade 9 Mathematics
+</h2>
 
-        </div>
+<p>
+Choose a unit to study Notes or Practice.
+</p>
 
+</div>
 
-        <!-- UNIT 1 -->
 
-        <div class="card unit">
+<!-- UNIT 1 -->
 
-            <h3>📘 Unit 1 — Further on Sets</h3>
+<div class="card unit">
 
-            <button
-                class="notes"
-                onclick="location.href='notes9.html'">
+<h3>📘 Unit 1 — Further on Sets</h3>
 
-                📖 Unit 1 Notes
+<button
+class="notes"
+onclick="location.href='notes9.html'">
 
-            </button>
+📖 Unit 1 Notes
 
-            <button
-                class="practice"
-                onclick="location.href='practice9.html'">
+</button>
 
-                📝 Unit 1 Practice
+<button
+class="practice"
+onclick="location.href='practice9.html'">
 
-            </button>
+📝 Unit 1 Practice
 
-        </div>
+</button>
 
+</div>
 
-        <!-- UNIT 2 -->
 
-        <div class="card unit">
+<!-- UNIT 2 -->
 
-            <h3>🔢 Unit 2 — The Number System</h3>
+<div class="card unit">
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit2.html'">
+<h3>🔢 Unit 2 — The Number System</h3>
 
-                📖 Unit 2 Notes
+<button
+class="notes"
+onclick="location.href='notes9unit2.html'">
 
-            </button>
+📖 Unit 2 Notes
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit2.html'">
+</button>
 
-                📝 Unit 2 Practice
+<button
+class="practice"
+onclick="location.href='practice9unit2.html'">
 
-            </button>
+📝 Unit 2 Practice
 
-        </div>
+</button>
 
+</div>
 
-        <!-- UNIT 3 -->
 
-        <div class="card unit">
+<!-- UNIT 3 -->
 
-            <h3>📕 Unit 3 — Solving Equations</h3>
+<div class="card unit">
 
-            <p>
-                Linear equations, simultaneous equations,
-                quadratic equations, absolute value,
-                exponents and radicals.
-            </p>
+<h3>📕 Unit 3 — Solving Equations</h3>
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit3.html'">
+<button
+class="notes"
+onclick="location.href='notes9unit3.html'">
 
-                📖 Unit 3 Notes
+📖 Unit 3 Notes
 
-            </button>
+</button>
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit3.html'">
+<button
+class="practice"
+onclick="location.href='practice9unit3.html'">
 
-                📝 Unit 3 Practice — 60 Questions
+📝 Unit 3 Practice
 
-            </button>
+</button>
 
-        </div>
+</div>
 
 
-        <!-- UNIT 4 -->
+<!-- UNIT 4 -->
 
-        <div class="card unit">
+<div class="card unit">
 
-            <h3>📗 Unit 4 — Solving Inequalities</h3>
+<h3>📗 Unit 4 — Solving Inequalities</h3>
 
-            <p>
-                Linear inequalities, systems of linear
-                inequalities, absolute value inequalities
-                and quadratic inequalities.
-            </p>
+<button
+class="notes"
+onclick="location.href='notes9unit4.html'">
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit4.html'">
+📖 Unit 4 Notes
 
-                📖 Unit 4 Notes
+</button>
 
-            </button>
+<button
+class="practice"
+onclick="location.href='practice9unit4.html'">
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit4.html'">
+📝 Unit 4 Practice
 
-                📝 Unit 4 Practice — 60 Questions
+</button>
 
-            </button>
+</div>
 
-        </div>
 
+<!-- UNIT 5 -->
 
-        <!-- UNIT 5 -->
+<div class="card unit">
 
-        <div class="card unit">
+<h3>📐 Unit 5 — Introduction to Trigonometry</h3>
 
-            <h3>📐 Unit 5 — Introduction to Trigonometry</h3>
+<button
+class="notes"
+onclick="location.href='notes9unit5.html'">
 
-            <p>
-                Right angled triangles, Pythagoras theorem,
-                trigonometric ratios and basic angles.
-            </p>
+📖 Unit 5 Notes
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit5.html'">
+</button>
 
-                📖 Unit 5 Notes
+<button
+class="practice"
+onclick="location.href='practice9unit5.html'">
 
-            </button>
+📝 Unit 5 Practice
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit5.html'">
+</button>
 
-                📝 Unit 5 Practice — 60 Questions
+</div>
 
-            </button>
 
-        </div>
+<!-- UNIT 6 -->
 
+<div class="card unit">
 
-        <!-- UNIT 6 -->
+<h3>🔷 Unit 6 — Regular Polygons</h3>
 
-        <div class="card unit">
+<button
+class="notes"
+onclick="location.href='notes9unit6.html'">
 
-            <h3>🔷 Unit 6 — Regular Polygons</h3>
+📖 Unit 6 Notes
 
-            <p>
-                Interior and exterior angles, regular polygons,
-                symmetry, inscribed and circumscribed polygons,
-                perimeter, area and apothem.
-            </p>
+</button>
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit6.html'">
+<button
+class="practice"
+onclick="location.href='practice9unit6.html'">
 
-                📖 Unit 6 Notes
+📝 Unit 6 Practice
 
-            </button>
+</button>
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit6.html'">
+</div>
 
-                📝 Unit 6 Practice — 60 Questions
 
-            </button>
+<!-- UNIT 7 -->
 
-        </div>
+<div class="card unit">
 
+<h3>🔺 Unit 7 — Congruency and Similarity</h3>
 
-        <!-- UNIT 7 -->
+<button
+class="notes"
+onclick="location.href='notes9unit7.html'">
 
-        <div class="card unit">
+📖 Unit 7 Notes
 
-            <h3>🔺 Unit 7 — Congruency and Similarity</h3>
+</button>
 
-            <p>
-                Similar figures, similarity theorems,
-                SSS similarity, SAS similarity,
-                ratios of perimeters and areas.
-            </p>
+<button
+class="practice"
+onclick="location.href='practice9unit7.html'">
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit7.html'">
+📝 Unit 7 Practice
 
-                📖 Unit 7 Notes
+</button>
 
-            </button>
+</div>
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit7.html'">
 
-                📝 Unit 7 Practice — 60 Questions
+<!-- UNIT 8 -->
 
-            </button>
+<div class="card unit">
 
-        </div>
+<h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
 
+<button
+class="notes"
+onclick="location.href='notes9unit8.html'">
 
-        <!-- UNIT 8 -->
+📖 Unit 8 Notes
 
-        <div class="card unit">
+</button>
 
-            <h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
+<button
+class="practice"
+onclick="location.href='practice9unit8.html'">
 
-            <p>
-                Vector and scalar quantities, representation
-                of vectors, vector operations, position vectors
-                and applications.
-            </p>
+📝 Unit 8 Practice
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit8.html'">
+</button>
 
-                📖 Unit 8 Notes
+</div>
 
-            </button>
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit8.html'">
+<!-- UNIT 9 -->
 
-                📝 Unit 8 Practice — 60 Questions
+<div class="card unit">
 
-            </button>
+<h3>📊 Unit 9 — Statistics and Probability</h3>
 
-        </div>
+<button
+class="notes"
+onclick="location.href='notes9unit9.html'">
 
+📖 Unit 9 Notes
 
-        <!-- UNIT 9 -->
+</button>
 
-        <div class="card unit">
+<button
+class="practice"
+onclick="location.href='practice9unit9.html'">
 
-            <h3>📊 Unit 9 — Statistics and Probability</h3>
+📝 Unit 9 Practice
 
-            <p>
-                Statistical data, data collection, tables,
-                graphs, mean, median, mode, range,
-                variance, standard deviation and probability.
-            </p>
+</button>
 
-            <button
-                class="notes"
-                onclick="location.href='notes9unit9.html'">
+</div>
 
-                📖 Unit 9 Notes
 
-            </button>
+</div>
 
-            <button
-                class="practice"
-                onclick="location.href='practice9unit9.html'">
 
-                📝 Unit 9 Practice — 60 Questions
+<!-- ================= CHEMISTRY ================= -->
 
-            </button>
+<div class="card chemistry">
 
-        </div>
+<h2>🧪 Chemistry</h2>
 
+<p>
+Grade 9 Chemistry with detailed Notes and Practice.
+</p>
 
-    </div>
+<button
+class="chemOpen"
+onclick="openChemistry()">
 
+🧪 Open Chemistry
 
-    <!-- BIOLOGY -->
+</button>
 
-    <div class="card biology">
+</div>
 
-        <h2>🧬 Biology</h2>
 
-        <p>
-            Grade 9 Biology lessons, Notes and Practice.
-        </p>
+<!-- CHEMISTRY UNITS -->
 
-        <button
-            class="coming"
-            disabled>
+<div id="chemistryUnits">
 
-            🔒 Coming Soon
 
-        </button>
+<div class="card">
 
-    </div>
+<h2 class="chemTitle">
+🧪 Grade 9 Chemistry
+</h2>
 
+<p>
+Choose a Chemistry unit to study Notes or Practice.
+</p>
 
-    <!-- PHYSICS -->
+</div>
 
-    <div class="card physics">
 
-        <h2>⚡ Physics</h2>
+<!-- CHEMISTRY UNIT 1 -->
 
-        <p>
-            Grade 9 Physics lessons, Notes and Practice.
-        </p>
+<div class="card chemUnit">
 
-        <button
-            class="coming"
-            disabled>
+<h3>🧪 Unit 1 — Chemistry and Its Importance</h3>
 
-            🔒 Coming Soon
+<p>
+Definition and scope of chemistry, matter, substances,
+properties, composition, branches of chemistry, relationship
+with other natural sciences, medicine, agriculture, food,
+construction and chemical industries.
+</p>
 
-        </button>
+<button
+class="notes"
+onclick="location.href='notes9chemistryunit1.html'">
 
-    </div>
+📖 Unit 1 Notes
 
+</button>
 
-    <!-- CHEMISTRY -->
+<button
+class="practice"
+onclick="location.href='practice9chemistryunit1.html'">
 
-    <div class="card chemistry">
+📝 Unit 1 Practice — 60 Questions
 
-        <h2>🧪 Chemistry</h2>
+</button>
 
-        <p>
-            Grade 9 Chemistry lessons, Notes and Practice.
-        </p>
+</div>
 
-        <button
-            class="coming"
-            disabled>
 
-            🔒 Coming Soon
+<!-- CHEMISTRY UNIT 2 -->
 
-        </button>
+<div class="card chemUnit">
 
-    </div>
+<h3>📏 Unit 2 — Measurement and Scientific Method</h3>
 
+<button
+class="coming"
+disabled>
 
-    <!-- ENGLISH -->
+🔒 Coming Soon
 
-    <div class="card english">
+</button>
 
-        <h2>📖 English</h2>
+</div>
 
-        <p>
-            Grade 9 English grammar, vocabulary,
-            reading and practice.
-        </p>
 
-        <button
-            class="coming"
-            disabled>
+<!-- CHEMISTRY UNIT 3 -->
 
-            🔒 Coming Soon
+<div class="card chemUnit">
 
-        </button>
+<h3>⚛️ Unit 3 — Structure of the Atom</h3>
 
-    </div>
+<button
+class="coming"
+disabled>
 
+🔒 Coming Soon
 
-    <!-- BACK -->
+</button>
 
-    <button
-        class="back"
-        onclick="location.href='index.html'">
+</div>
 
-        ← Back to Grades
 
-    </button>
+<!-- CHEMISTRY UNIT 4 -->
+
+<div class="card chemUnit">
+
+<h3>🧩 Unit 4 — Periodic Classification of Elements</h3>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- CHEMISTRY UNIT 5 -->
+
+<div class="card chemUnit">
+
+<h3>🔗 Unit 5 — Chemical Bonding</h3>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= BIOLOGY ================= -->
+
+<div class="card biology">
+
+<h2>🧬 Biology</h2>
+
+<p>
+Grade 9 Biology lessons, Notes and Practice.
+</p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ================= PHYSICS ================= -->
+
+<div class="card physics">
+
+<h2>⚡ Physics</h2>
+
+<p>
+Grade 9 Physics lessons, Notes and Practice.
+</p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ================= ENGLISH ================= -->
+
+<div class="card english">
+
+<h2>📖 English</h2>
+
+<p>
+Grade 9 English grammar, vocabulary,
+reading and practice.
+</p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- BACK -->
+
+<button
+class="back"
+onclick="location.href='index.html'">
+
+← Back to Grades
+
+</button>
 
 
 </div>
@@ -568,20 +666,26 @@
 
 function openMath() {
 
-    var math = document.getElementById("mathUnits");
+    var math =
+        document.getElementById("mathUnits");
 
-    if (math.style.display === "none" ||
-        math.style.display === "") {
-
-        math.style.display = "block";
-
-    } else {
-
-        math.style.display = "none";
-
-    }
+    math.style.display = "block";
 
     math.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+function openChemistry() {
+
+    var chemistry =
+        document.getElementById("chemistryUnits");
+
+    chemistry.style.display = "block";
+
+    chemistry.scrollIntoView({
         behavior: "smooth"
     });
 
