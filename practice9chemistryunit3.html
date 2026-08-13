@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Grade 9 Chemistry - Unit 3 Practice</title>
+<title>Grade 9 Chemistry Unit 3 Practice</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -19,7 +21,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#172554,#2563eb);
+    background:linear-gradient(135deg,#9333ea,#2563eb);
     color:white;
     text-align:center;
     padding:30px 15px;
@@ -27,1130 +29,2135 @@ header{
 
 header h1{
     margin:0;
-    font-size:28px;
 }
 
 .container{
-    max-width:950px;
+    max-width:900px;
     margin:auto;
     padding:20px;
 }
 
-.info{
+.card{
     background:white;
-    padding:18px;
-    border-radius:12px;
-    margin-bottom:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    padding:22px;
+    margin:18px 0;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
 }
 
 .question{
-    background:white;
-    padding:20px;
-    margin:18px 0;
-    border-radius:14px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-.question h3{
-    color:#1d4ed8;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 .option{
     display:block;
-    padding:12px;
+    width:100%;
+    padding:13px;
     margin:8px 0;
-    background:#f3f4f6;
-    border-radius:8px;
+    border:none;
+    border-radius:10px;
+    background:#eef2ff;
+    color:#222;
+    text-align:left;
     cursor:pointer;
-    transition:.2s;
+    font-size:16px;
 }
 
 .option:hover{
-    background:#dbeafe;
-}
-
-.option input{
-    margin-right:8px;
+    background:#ddd6fe;
 }
 
 .correct{
-    background:#dcfce7 !important;
-    border:2px solid #16a34a;
+    background:#bbf7d0 !important;
+    color:#166534 !important;
 }
 
 .wrong{
-    background:#fee2e2 !important;
-    border:2px solid #dc2626;
+    background:#fecaca !important;
+    color:#991b1b !important;
 }
 
-.answer{
+.explanation{
     display:none;
-    margin-top:12px;
-    padding:12px;
+    margin-top:15px;
+    padding:15px;
     background:#eff6ff;
+    border-left:5px solid #2563eb;
     border-radius:8px;
-    color:#1e40af;
+    line-height:1.6;
+}
+
+.result{
+    display:none;
+    background:#ecfdf5;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    margin:20px 0;
+}
+
+.score{
+    font-size:25px;
+    font-weight:bold;
+    color:#16a34a;
 }
 
 button{
     width:100%;
-    padding:16px;
-    border:0;
+    padding:15px;
+    border:none;
     border-radius:10px;
-    background:#2563eb;
     color:white;
-    font-size:18px;
+    font-size:16px;
+    font-weight:bold;
     cursor:pointer;
-    margin:20px 0;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
-
-#result{
-    display:none;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    margin-bottom:25px;
-    box-shadow:0 3px 12px rgba(0,0,0,.1);
-}
-
-#score{
-    font-size:35px;
-    font-weight:bold;
-    color:#2563eb;
-}
-
-#percentage{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.progress{
-    height:12px;
-    background:#e5e7eb;
-    border-radius:10px;
-    overflow:hidden;
     margin-top:10px;
 }
 
-#progressBar{
-    height:100%;
-    width:0%;
-    background:#2563eb;
+.submit{
+    background:#16a34a;
 }
 
-.section{
-    background:#dbeafe;
-    padding:12px;
-    border-radius:10px;
-    margin-top:30px;
+.restart{
+    background:#9333ea;
 }
 
-footer{
-    text-align:center;
+.back{
     background:#172554;
-    color:white;
-    padding:25px;
 }
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
-<h1>🧪 Grade 9 Chemistry</h1>
+
+<h1>⚛️ Grade 9 Chemistry</h1>
+
 <p>Unit 3 — Structure of the Atom</p>
-<p>60 Questions Practice Test</p>
+
+<p>📝 Practice — 60 Questions</p>
+
 </header>
+
 
 <div class="container">
 
-<div class="info">
-<strong>Instructions:</strong>
-<p>
-Choose one answer for each question.
-After finishing, click <b>Check My Answers</b>.
-Your score will be shown out of 60.
-</p>
 
-<div class="progress">
-<div id="progressBar"></div>
-</div>
+<div class="result" id="result">
 
-</div>
+<h2>🎉 Practice Completed!</h2>
 
-<div id="result">
-<h2>🎯 Your Result</h2>
-
-<div id="score"></div>
-
-<div id="percentage"></div>
+<p class="score" id="score"></p>
 
 <p id="message"></p>
 
-</div>
-
-
-<!-- ========================= -->
-<!-- 3.1 HISTORICAL DEVELOPMENT -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>3.1 Historical Development of Atomic Theory</h2>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>1. What does the Greek word "atomos" mean?</h3>
-
-<label class="option"><input type="radio" name="q1" value="A">A. Heavy</label>
-<label class="option"><input type="radio" name="q1" value="B">B. Indivisible</label>
-<label class="option"><input type="radio" name="q1" value="C">C. Positive</label>
-<label class="option"><input type="radio" name="q1" value="D">D. Visible</label>
-
-<div class="answer">Correct Answer: B. Indivisible</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>2. Who was one of the earliest philosophers associated with atomism?</h3>
-
-<label class="option"><input type="radio" name="q2" value="A">A. Lavoisier</label>
-<label class="option"><input type="radio" name="q2" value="B">B. Bohr</label>
-<label class="option"><input type="radio" name="q2" value="C">C. Leucippus</label>
-<label class="option"><input type="radio" name="q2" value="D">D. Chadwick</label>
-
-<div class="answer">Correct Answer: C. Leucippus</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>3. Who developed the Greek atomic idea further?</h3>
-
-<label class="option"><input type="radio" name="q3" value="A">A. Democritus</label>
-<label class="option"><input type="radio" name="q3" value="B">B. Thomson</label>
-<label class="option"><input type="radio" name="q3" value="C">C. Millikan</label>
-<label class="option"><input type="radio" name="q3" value="D">D. Rutherford</label>
-
-<div class="answer">Correct Answer: A. Democritus</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>4. According to Democritus, matter is made of:</h3>
-
-<label class="option"><input type="radio" name="q4" value="A">A. Cells only</label>
-<label class="option"><input type="radio" name="q4" value="B">B. Energy only</label>
-<label class="option"><input type="radio" name="q4" value="C">C. Water only</label>
-<label class="option"><input type="radio" name="q4" value="D">D. Tiny particles called atoms</label>
-
-<div class="answer">Correct Answer: D. Tiny particles called atoms</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>5. What was a major weakness of the Greek atomic idea?</h3>
-
-<label class="option"><input type="radio" name="q5" value="A">A. It had too many experiments</label>
-<label class="option"><input type="radio" name="q5" value="B">B. It discovered electrons</label>
-<label class="option"><input type="radio" name="q5" value="C">C. It lacked experimental evidence</label>
-<label class="option"><input type="radio" name="q5" value="D">D. It used modern instruments</label>
-
-<div class="answer">Correct Answer: C. It lacked experimental evidence</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>6. The Greek philosophers believed atoms were:</h3>
-
-<label class="option"><input type="radio" name="q6" value="A">A. Indivisible</label>
-<label class="option"><input type="radio" name="q6" value="B">B. Made of electrons</label>
-<label class="option"><input type="radio" name="q6" value="C">C. Made of protons</label>
-<label class="option"><input type="radio" name="q6" value="D">D. Liquid</label>
-
-<div class="answer">Correct Answer: A. Indivisible</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>7. What did Democritus believe existed between atoms?</h3>
-
-<label class="option"><input type="radio" name="q7" value="A">A. Water</label>
-<label class="option"><input type="radio" name="q7" value="B">B. Empty space</label>
-<label class="option"><input type="radio" name="q7" value="C">C. Electrons</label>
-<label class="option"><input type="radio" name="q7" value="D">D. Nuclei</label>
-
-<div class="answer">Correct Answer: B. Empty space</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>8. Which statement is NOT part of the early Greek atomic idea?</h3>
-
-<label class="option"><input type="radio" name="q8" value="A">A. Atoms differ in size</label>
-<label class="option"><input type="radio" name="q8" value="B">B. Atoms move in empty space</label>
-<label class="option"><input type="radio" name="q8" value="C">C. Matter contains atoms</label>
-<label class="option"><input type="radio" name="q8" value="D">D. Atoms contain electrons and protons</label>
-
-<div class="answer">Correct Answer: D. Atoms contain electrons and protons</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- 3.2 LAWS -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>3.2 Three Fundamental Laws of Chemical Reactions</h2>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>9. Who is associated with the Law of Conservation of Mass?</h3>
-
-<label class="option"><input type="radio" name="q9" value="A">A. Antoine Lavoisier</label>
-<label class="option"><input type="radio" name="q9" value="B">B. Proust</label>
-<label class="option"><input type="radio" name="q9" value="C">C. Bohr</label>
-<label class="option"><input type="radio" name="q9" value="D">D. Chadwick</label>
-
-<div class="answer">Correct Answer: A. Antoine Lavoisier</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>10. The Law of Conservation of Mass states that:</h3>
-
-<label class="option"><input type="radio" name="q10" value="A">A. Mass is always created</label>
-<label class="option"><input type="radio" name="q10" value="B">B. Mass disappears</label>
-<label class="option"><input type="radio" name="q10" value="C">C. Mass is neither created nor destroyed in a chemical reaction</label>
-<label class="option"><input type="radio" name="q10" value="D">D. Products always weigh less</label>
-
-<div class="answer">Correct Answer: C.</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>11. Who formulated the Law of Definite Proportions?</h3>
-
-<label class="option"><input type="radio" name="q11" value="A">A. Dalton</label>
-<label class="option"><input type="radio" name="q11" value="B">B. Joseph Proust</label>
-<label class="option"><input type="radio" name="q11" value="C">C. Thomson</label>
-<label class="option"><input type="radio" name="q11" value="D">D. Rutherford</label>
-
-<div class="answer">Correct Answer: B. Joseph Proust</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>12. A pure compound contains its elements in:</h3>
-
-<label class="option"><input type="radio" name="q12" value="A">A. Random proportions</label>
-<label class="option"><input type="radio" name="q12" value="B">B. Changing proportions</label>
-<label class="option"><input type="radio" name="q12" value="C">C. Zero proportion</label>
-<label class="option"><input type="radio" name="q12" value="D">D. Fixed proportions by mass</label>
-
-<div class="answer">Correct Answer: D. Fixed proportions by mass</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>13. Who is associated with the Law of Multiple Proportions?</h3>
-
-<label class="option"><input type="radio" name="q13" value="A">A. John Dalton</label>
-<label class="option"><input type="radio" name="q13" value="B">B. Bohr</label>
-<label class="option"><input type="radio" name="q13" value="C">C. Chadwick</label>
-<label class="option"><input type="radio" name="q13" value="D">D. Millikan</label>
-
-<div class="answer">Correct Answer: A. John Dalton</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>14. In the Law of Multiple Proportions, ratios are:</h3>
-
-<label class="option"><input type="radio" name="q14" value="A">A. Decimal only</label>
-<label class="option"><input type="radio" name="q14" value="B">B. Random</label>
-<label class="option"><input type="radio" name="q14" value="C">C. Simple whole numbers</label>
-<label class="option"><input type="radio" name="q14" value="D">D. Always fractions</label>
-
-<div class="answer">Correct Answer: C. Simple whole numbers</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>15. Which law says total mass of reactants equals total mass of products?</h3>
-
-<label class="option"><input type="radio" name="q15" value="A">A. Multiple proportions</label>
-<label class="option"><input type="radio" name="q15" value="B">B. Conservation of mass</label>
-<label class="option"><input type="radio" name="q15" value="C">C. Definite proportions</label>
-<label class="option"><input type="radio" name="q15" value="D">D. Boyle's law</label>
-
-<div class="answer">Correct Answer: B. Conservation of mass</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- 3.3 DALTON -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>3.3 Atomic Theory</h2>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>16. Who developed the first modern scientific atomic theory?</h3>
-
-<label class="option"><input type="radio" name="q16" value="A">A. John Dalton</label>
-<label class="option"><input type="radio" name="q16" value="B">B. Democritus</label>
-<label class="option"><input type="radio" name="q16" value="C">C. Rutherford</label>
-<label class="option"><input type="radio" name="q16" value="D">D. Bohr</label>
-
-<div class="answer">Correct Answer: A. John Dalton</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>17. Dalton stated that all matter is made of:</h3>
-
-<label class="option"><input type="radio" name="q17" value="A">A. Cells</label>
-<label class="option"><input type="radio" name="q17" value="B">B. Molecules only</label>
-<label class="option"><input type="radio" name="q17" value="C">C. Atoms</label>
-<label class="option"><input type="radio" name="q17" value="D">D. Nuclei only</label>
-
-<div class="answer">Correct Answer: C. Atoms</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>18. According to Dalton, atoms of the same element were:</h3>
-
-<label class="option"><input type="radio" name="q18" value="A">A. Always different</label>
-<label class="option"><input type="radio" name="q18" value="B">B. Identical in mass and properties</label>
-<label class="option"><input type="radio" name="q18" value="C">C. Positively charged</label>
-<label class="option"><input type="radio" name="q18" value="D">D. Made of neutrons</label>
-
-<div class="answer">Correct Answer: B.</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>19. Dalton said atoms combine in:</h3>
-
-<label class="option"><input type="radio" name="q19" value="A">A. Random ratios</label>
-<label class="option"><input type="radio" name="q19" value="B">B. Infinite ratios</label>
-<label class="option"><input type="radio" name="q19" value="C">C. Decimal ratios only</label>
-<label class="option"><input type="radio" name="q19" value="D">D. Simple whole-number ratios</label>
-
-<div class="answer">Correct Answer: D.</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>20. Which Dalton postulate was later shown to be incorrect because of isotopes?</h3>
-
-<label class="option"><input type="radio" name="q20" value="A">A. Atoms of the same element have identical masses</label>
-<label class="option"><input type="radio" name="q20" value="B">B. Atoms combine</label>
-<label class="option"><input type="radio" name="q20" value="C">C. Matter contains atoms</label>
-<label class="option"><input type="radio" name="q20" value="D">D. Compounds exist</label>
-
-<div class="answer">Correct Answer: A.</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>21. Why is Dalton's theory not completely correct today?</h3>
-
-<label class="option"><input type="radio" name="q21" value="A">A. Matter does not exist</label>
-<label class="option"><input type="radio" name="q21" value="B">B. Elements do not exist</label>
-<label class="option"><input type="radio" name="q21" value="C">C. Atoms contain subatomic particles</label>
-<label class="option"><input type="radio" name="q21" value="D">D. Compounds do not exist</label>
-
-<div class="answer">Correct Answer: C.</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>22. Modern atomic theory recognizes that atoms can:</h3>
-
-<label class="option"><input type="radio" name="q22" value="A">A. Never change</label>
-<label class="option"><input type="radio" name="q22" value="B">B. Have no electrons</label>
-<label class="option"><input type="radio" name="q22" value="C">C. Have no nucleus</label>
-<label class="option"><input type="radio" name="q22" value="D">D. Undergo nuclear changes</label>
-
-<div class="answer">Correct Answer: D.</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- 3.4 SUBATOMIC PARTICLES -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>3.4 Subatomic Particles and Nucleus</h2>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>23. Which particle has a negative charge?</h3>
-
-<label class="option"><input type="radio" name="q23" value="A">A. Proton</label>
-<label class="option"><input type="radio" name="q23" value="B">B. Neutron</label>
-<label class="option"><input type="radio" name="q23" value="C">C. Electron</label>
-<label class="option"><input type="radio" name="q23" value="D">D. Nucleus</label>
-
-<div class="answer">Correct Answer: C. Electron</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>24. Which particle has a positive charge?</h3>
-
-<label class="option"><input type="radio" name="q24" value="A">A. Proton</label>
-<label class="option"><input type="radio" name="q24" value="B">B. Electron</label>
-<label class="option"><input type="radio" name="q24" value="C">C. Neutron</label>
-<label class="option"><input type="radio" name="q24" value="D">D. Atom</label>
-
-<div class="answer">Correct Answer: A. Proton</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>25. Which particle has no electric charge?</h3>
-
-<label class="option"><input type="radio" name="q25" value="A">A. Electron</label>
-<label class="option"><input type="radio" name="q25" value="B">B. Proton</label>
-<label class="option"><input type="radio" name="q25" value="C">C. Ion</label>
-<label class="option"><input type="radio" name="q25" value="D">D. Neutron</label>
-
-<div class="answer">Correct Answer: D. Neutron</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>26. Who discovered the electron?</h3>
-
-<label class="option"><input type="radio" name="q26" value="A">A. Rutherford</label>
-<label class="option"><input type="radio" name="q26" value="B">B. J. J. Thomson</label>
-<label class="option"><input type="radio" name="q26" value="C">C. Chadwick</label>
-<label class="option"><input type="radio" name="q26" value="D">D. Bohr</label>
-
-<div class="answer">Correct Answer: B. J. J. Thomson</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>27. Thomson used which apparatus in discovering the electron?</h3>
-
-<label class="option"><input type="radio" name="q27" value="A">A. Oil drop</label>
-<label class="option"><input type="radio" name="q27" value="B">B. Gold foil</label>
-<label class="option"><input type="radio" name="q27" value="C">C. Cathode ray tube</label>
-<label class="option"><input type="radio" name="q27" value="D">D. Spectroscope</label>
-
-<div class="answer">Correct Answer: C. Cathode ray tube</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>28. The electron has a charge of:</h3>
-
-<label class="option"><input type="radio" name="q28" value="A">A. -1</label>
-<label class="option"><input type="radio" name="q28" value="B">B. +1</label>
-<label class="option"><input type="radio" name="q28" value="C">C. 0</label>
-<label class="option"><input type="radio" name="q28" value="D">D. +2</label>
-
-<div class="answer">Correct Answer: A. -1</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>29. Who discovered the neutron?</h3>
-
-<label class="option"><input type="radio" name="q29" value="A">A. Thomson</label>
-<label class="option"><input type="radio" name="q29" value="B">B. Rutherford</label>
-<label class="option"><input type="radio" name="q29" value="C">C. Millikan</label>
-<label class="option"><input type="radio" name="q29" value="D">D. James Chadwick</label>
-
-<div class="answer">Correct Answer: D. James Chadwick</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>30. The neutron has:</h3>
-
-<label class="option"><input type="radio" name="q30" value="A">A. +1 charge</label>
-<label class="option"><input type="radio" name="q30" value="B">B. 0 charge</label>
-<label class="option"><input type="radio" name="q30" value="C">C. -1 charge</label>
-<label class="option"><input type="radio" name="q30" value="D">D. +2 charge</label>
-
-<div class="answer">Correct Answer: B. 0 charge</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- RUTHERFORD -->
-<!-- ========================= -->
-
-<div class="question" data-answer="A">
-<h3>31. Who discovered the atomic nucleus?</h3>
-
-<label class="option"><input type="radio" name="q31" value="A">A. Ernest Rutherford</label>
-<label class="option"><input type="radio" name="q31" value="B">B. Dalton</label>
-<label class="option"><input type="radio" name="q31" value="C">C. Proust</label>
-<label class="option"><input type="radio" name="q31" value="D">D. Millikan</label>
-
-<div class="answer">Correct Answer: A. Ernest Rutherford</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>32. Which experiment led to the discovery of the nucleus?</h3>
-
-<label class="option"><input type="radio" name="q32" value="A">A. Oil drop</label>
-<label class="option"><input type="radio" name="q32" value="B">B. Cathode ray</label>
-<label class="option"><input type="radio" name="q32" value="C">C. Gold foil experiment</label>
-<label class="option"><input type="radio" name="q32" value="D">D. Flame test</label>
-
-<div class="answer">Correct Answer: C. Gold foil experiment</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>33. Most alpha particles in Rutherford's experiment:</h3>
-
-<label class="option"><input type="radio" name="q33" value="A">A. Bounced back</label>
-<label class="option"><input type="radio" name="q33" value="B">B. Passed straight through</label>
-<label class="option"><input type="radio" name="q33" value="C">C. Disappeared</label>
-<label class="option"><input type="radio" name="q33" value="D">D. Became electrons</label>
-
-<div class="answer">Correct Answer: B.</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>34. Rutherford concluded that most of the atom is:</h3>
-
-<label class="option"><input type="radio" name="q34" value="A">A. Solid</label>
-<label class="option"><input type="radio" name="q34" value="B">B. Liquid</label>
-<label class="option"><input type="radio" name="q34" value="C">C. Positive</label>
-<label class="option"><input type="radio" name="q34" value="D">D. Empty space</label>
-
-<div class="answer">Correct Answer: D.</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>35. Most of the positive charge of an atom is concentrated in the:</h3>
-
-<label class="option"><input type="radio" name="q35" value="A">A. Nucleus</label>
-<label class="option"><input type="radio" name="q35" value="B">B. Electron cloud</label>
-<label class="option"><input type="radio" name="q35" value="C">C. Shell</label>
-<label class="option"><input type="radio" name="q35" value="D">D. Empty space</label>
-
-<div class="answer">Correct Answer: A. Nucleus</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- BOHR & MILLIKAN -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>Bohr Model and Millikan Experiment</h2>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>36. Who proposed the Bohr atomic model?</h3>
-
-<label class="option"><input type="radio" name="q36" value="A">A. Dalton</label>
-<label class="option"><input type="radio" name="q36" value="B">B. Rutherford</label>
-<label class="option"><input type="radio" name="q36" value="C">C. Niels Bohr</label>
-<label class="option"><input type="radio" name="q36" value="D">D. Chadwick</label>
-
-<div class="answer">Correct Answer: C. Niels Bohr</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>37. Bohr proposed that electrons occupy:</h3>
-
-<label class="option"><input type="radio" name="q37" value="A">A. Specific energy levels</label>
-<label class="option"><input type="radio" name="q37" value="B">B. The nucleus</label>
-<label class="option"><input type="radio" name="q37" value="C">C. Protons</label>
-<label class="option"><input type="radio" name="q37" value="D">D. Neutrons</label>
-
-<div class="answer">Correct Answer: A. Specific energy levels</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>38. An electron can move to a higher energy level by:</h3>
-
-<label class="option"><input type="radio" name="q38" value="A">A. Losing energy</label>
-<label class="option"><input type="radio" name="q38" value="B">B. Losing a proton</label>
-<label class="option"><input type="radio" name="q38" value="C">C. Losing a neutron</label>
-<label class="option"><input type="radio" name="q38" value="D">D. Absorbing energy</label>
-
-<div class="answer">Correct Answer: D. Absorbing energy</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>39. Who performed the oil-drop experiment?</h3>
-
-<label class="option"><input type="radio" name="q39" value="A">A. Bohr</label>
-<label class="option"><input type="radio" name="q39" value="B">B. Robert Millikan</label>
-<label class="option"><input type="radio" name="q39" value="C">C. Rutherford</label>
-<label class="option"><input type="radio" name="q39" value="D">D. Dalton</label>
-
-<div class="answer">Correct Answer: B. Robert Millikan</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>40. Millikan's oil-drop experiment measured the:</h3>
-
-<label class="option"><input type="radio" name="q40" value="A">A. Mass of proton only</label>
-<label class="option"><input type="radio" name="q40" value="B">B. Number of neutrons</label>
-<label class="option"><input type="radio" name="q40" value="C">C. Charge of the electron</label>
-<label class="option"><input type="radio" name="q40" value="D">D. Size of nucleus</label>
-
-<div class="answer">Correct Answer: C. Charge of the electron</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- COMPOSITION -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>Composition of Atom and Isotopes</h2>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>41. Where are protons located?</h3>
-
-<label class="option"><input type="radio" name="q41" value="A">A. Outside the atom</label>
-<label class="option"><input type="radio" name="q41" value="B">B. Electron shell</label>
-<label class="option"><input type="radio" name="q41" value="C">C. Empty space</label>
-<label class="option"><input type="radio" name="q41" value="D">D. Nucleus</label>
-
-<div class="answer">Correct Answer: D. Nucleus</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>42. Where are electrons mainly found?</h3>
-
-<label class="option"><input type="radio" name="q42" value="A">A. Around the nucleus</label>
-<label class="option"><input type="radio" name="q42" value="B">B. Inside the proton</label>
-<label class="option"><input type="radio" name="q42" value="C">C. Inside the neutron</label>
-<label class="option"><input type="radio" name="q42" value="D">D. Only in the nucleus</label>
-
-<div class="answer">Correct Answer: A.</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>43. What are isotopes?</h3>
-
-<label class="option"><input type="radio" name="q43" value="A">A. Same neutrons, different protons</label>
-<label class="option"><input type="radio" name="q43" value="B">B. Same protons, different neutrons</label>
-<label class="option"><input type="radio" name="q43" value="C">C. No protons</label>
-<label class="option"><input type="radio" name="q43" value="D">D. No electrons</label>
-
-<div class="answer">Correct Answer: B.</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>44. Carbon-12 and Carbon-14 have the same number of:</h3>
-
-<label class="option"><input type="radio" name="q44" value="A">A. Neutrons</label>
-<label class="option"><input type="radio" name="q44" value="B">B. Mass numbers</label>
-<label class="option"><input type="radio" name="q44" value="C">C. Protons</label>
-<label class="option"><input type="radio" name="q44" value="D">D. Nuclear masses</label>
-
-<div class="answer">Correct Answer: C. Protons</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>45. Carbon-12 has 6 protons. How many neutrons does it have?</h3>
-
-<label class="option"><input type="radio" name="q45" value="A">A. 12</label>
-<label class="option"><input type="radio" name="q45" value="B">B. 8</label>
-<label class="option"><input type="radio" name="q45" value="C">C. 4</label>
-<label class="option"><input type="radio" name="q45" value="D">D. 6</label>
-
-<div class="answer">Correct Answer: D. 6</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- ATOMIC NUMBER -->
-<!-- ========================= -->
-
-<div class="section">
-<h2>3.5 Atomic Number, Mass Number and Electron Configuration</h2>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>46. Atomic number is represented by:</h3>
-
-<label class="option"><input type="radio" name="q46" value="A">A. Z</label>
-<label class="option"><input type="radio" name="q46" value="B">B. A</label>
-<label class="option"><input type="radio" name="q46" value="C">C. N</label>
-<label class="option"><input type="radio" name="q46" value="D">D. E</label>
-
-<div class="answer">Correct Answer: A. Z</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>47. Mass number is represented by:</h3>
-
-<label class="option"><input type="radio" name="q47" value="A">A. Z</label>
-<label class="option"><input type="radio" name="q47" value="B">B. E</label>
-<label class="option"><input type="radio" name="q47" value="C">C. A</label>
-<label class="option"><input type="radio" name="q47" value="D">D. P</label>
-
-<div class="answer">Correct Answer: C. A</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>48. Mass number equals:</h3>
-
-<label class="option"><input type="radio" name="q48" value="A">A. Protons - neutrons</label>
-<label class="option"><input type="radio" name="q48" value="B">B. Protons + neutrons</label>
-<label class="option"><input type="radio" name="q48" value="C">C. Protons + electrons</label>
-<label class="option"><input type="radio" name="q48" value="D">D. Electrons - protons</label>
-
-<div class="answer">Correct Answer: B.</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>49. An atom has mass number 35 and atomic number 17. Number of neutrons?</h3>
-
-<label class="option"><input type="radio" name="q49" value="A">A. 17</label>
-<label class="option"><input type="radio" name="q49" value="B">B. 35</label>
-<label class="option"><input type="radio" name="q49" value="C">C. 52</label>
-<label class="option"><input type="radio" name="q49" value="D">D. 18</label>
-
-<div class="answer">Correct Answer: D. 18</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>50. In a neutral atom, the number of electrons equals the number of:</h3>
-
-<label class="option"><input type="radio" name="q50" value="A">A. Protons</label>
-<label class="option"><input type="radio" name="q50" value="B">B. Neutrons</label>
-<label class="option"><input type="radio" name="q50" value="C">C. Nuclei</label>
-<label class="option"><input type="radio" name="q50" value="D">D. Isotopes</label>
-
-<div class="answer">Correct Answer: A. Protons</div>
-</div>
-
-
-<!-- ========================= -->
-<!-- ELECTRON CONFIGURATION -->
-<!-- ========================= -->
-
-<div class="question" data-answer="B">
-<h3>51. What is the maximum number of electrons in the first shell?</h3>
-
-<label class="option"><input type="radio" name="q51" value="A">A. 1</label>
-<label class="option"><input type="radio" name="q51" value="B">B. 2</label>
-<label class="option"><input type="radio" name="q51" value="C">C. 8</label>
-<label class="option"><input type="radio" name="q51" value="D">D. 18</label>
-
-<div class="answer">Correct Answer: B. 2</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>52. What is the maximum number of electrons in the second shell?</h3>
-
-<label class="option"><input type="radio" name="q52" value="A">A. 2</label>
-<label class="option"><input type="radio" name="q52" value="B">B. 18</label>
-<label class="option"><input type="radio" name="q52" value="C">C. 8</label>
-<label class="option"><input type="radio" name="q52" value="D">D. 32</label>
-
-<div class="answer">Correct Answer: C. 8</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>53. What is the electron configuration of carbon (Z = 6)?</h3>
-
-<label class="option"><input type="radio" name="q53" value="A">A. 2,4</label>
-<label class="option"><input type="radio" name="q53" value="B">B. 2,6</label>
-<label class="option"><input type="radio" name="q53" value="C">C. 6</label>
-<label class="option"><input type="radio" name="q53" value="D">D. 4,2</label>
-
-<div class="answer">Correct Answer: A. 2,4</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>54. What is the electron configuration of sodium (Z = 11)?</h3>
-
-<label class="option"><input type="radio" name="q54" value="A">A. 2,9</label>
-<label class="option"><input type="radio" name="q54" value="B">B. 8,3</label>
-<label class="option"><input type="radio" name="q54" value="C">C. 2,8,2</label>
-<label class="option"><input type="radio" name="q54" value="D">D. 2,8,1</label>
-
-<div class="answer">Correct Answer: D. 2,8,1</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>55. How many valence electrons does sodium have?</h3>
-
-<label class="option"><input type="radio" name="q55" value="A">A. 11</label>
-<label class="option"><input type="radio" name="q55" value="B">B. 1</label>
-<label class="option"><input type="radio" name="q55" value="C">C. 8</label>
-<label class="option"><input type="radio" name="q55" value="D">D. 2</label>
-
-<div class="answer">Correct Answer: B. 1</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>56. What is the electron configuration of chlorine (Z = 17)?</h3>
-
-<label class="option"><input type="radio" name="q56" value="A">A. 2,7,8</label>
-<label class="option"><input type="radio" name="q56" value="B">B. 8,9</label>
-<label class="option"><input type="radio" name="q56" value="C">C. 2,8,7</label>
-<label class="option"><input type="radio" name="q56" value="D">D. 2,7,8</label>
-
-<div class="answer">Correct Answer: C. 2,8,7</div>
-</div>
-
-
-<div class="question" data-answer="A">
-<h3>57. How many valence electrons does chlorine have?</h3>
-
-<label class="option"><input type="radio" name="q57" value="A">A. 7</label>
-<label class="option"><input type="radio" name="q57" value="B">B. 17</label>
-<label class="option"><input type="radio" name="q57" value="C">C. 8</label>
-<label class="option"><input type="radio" name="q57" value="D">D. 2</label>
-
-<div class="answer">Correct Answer: A. 7</div>
-</div>
-
-
-<div class="question" data-answer="D">
-<h3>58. What formula gives the maximum number of electrons in a shell?</h3>
-
-<label class="option"><input type="radio" name="q58" value="A">A. n²</label>
-<label class="option"><input type="radio" name="q58" value="B">B. n + 2</label>
-<label class="option"><input type="radio" name="q58" value="C">C. n - 2</label>
-<label class="option"><input type="radio" name="q58" value="D">D. 2n²</label>
-
-<div class="answer">Correct Answer: D. 2n²</div>
-</div>
-
-
-<div class="question" data-answer="B">
-<h3>59. Valence electrons are found in the:</h3>
-
-<label class="option"><input type="radio" name="q59" value="A">A. Nucleus</label>
-<label class="option"><input type="radio" name="q59" value="B">B. Outermost occupied shell</label>
-<label class="option"><input type="radio" name="q59" value="C">C. Proton</label>
-<label class="option"><input type="radio" name="q59" value="D">D. Neutron</label>
-
-<div class="answer">Correct Answer: B. Outermost occupied shell</div>
-</div>
-
-
-<div class="question" data-answer="C">
-<h3>60. Which statement about isotopes is correct?</h3>
-
-<label class="option"><input type="radio" name="q60" value="A">A. They have different atomic numbers</label>
-<label class="option"><input type="radio" name="q60" value="B">B. They have different numbers of protons</label>
-<label class="option"><input type="radio" name="q60" value="C">C. They have the same protons but different neutrons</label>
-<label class="option"><input type="radio" name="q60" value="D">D. They have no neutrons</label>
-
-<div class="answer">Correct Answer: C.</div>
-</div>
-
-
-<button onclick="checkAnswers()">
-✅ Check My Answers
+<button class="restart" onclick="location.reload()">
+🔄 Try Again
 </button>
 
 </div>
 
 
-<footer>
-Grade 9 Chemistry — Unit 3 Practice
-</footer>
+<!-- QUESTIONS -->
+
+<div class="card">
+
+<div class="question">
+1. Which particle has a negative electrical charge?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Proton
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+An electron has a negative charge. A proton has a positive charge,
+while a neutron has no electrical charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+2. Which particle has a positive electrical charge?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Atom
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A proton carries a positive electrical charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+3. Which subatomic particle has no electrical charge?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electron
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Ion
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A neutron is electrically neutral because it has no net charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+4. Where are protons and neutrons mainly found?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Electron cloud
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Nucleus
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Outer shell
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Energy level
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The nucleus contains protons and neutrons. Electrons occupy regions
+around the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+5. Who proposed the first modern atomic theory?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. John Dalton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. J.J. Thomson
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Ernest Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. James Chadwick
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+John Dalton developed an early modern atomic theory in the early
+19th century.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+6. Who discovered the electron?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Dalton
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. J.J. Thomson
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Chadwick
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+J.J. Thomson identified the electron through cathode-ray experiments.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+7. Who proposed the nuclear model of the atom?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Dalton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Thomson
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Chadwick
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Ernest Rutherford's gold-foil experiment led to the nuclear model
+of the atom.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+8. Who discovered the neutron?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Thomson
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. James Chadwick
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Dalton
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+James Chadwick discovered the neutron in 1932.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+9. What is the atomic number of an element?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Number of protons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Number of neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Number of electrons and neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Total mass
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The atomic number is equal to the number of protons in the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+10. What is the mass number of an atom?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Protons only
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electrons only
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Protons + neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Neutrons − protons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Mass number is the total number of protons and neutrons in the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+11. An atom has 11 protons. What is its atomic number?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 10
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 11
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 12
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 22
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Atomic number = number of protons. Therefore, the atomic number is 11.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+12. An atom has 8 protons and 8 neutrons. What is its mass number?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 8
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 16
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 64
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Mass number = protons + neutrons = 8 + 8 = 16.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+13. A neutral atom has 17 protons. How many electrons does it have?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 16
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 17
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 18
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 34
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+In a neutral atom, the number of electrons equals the number of protons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+14. What is an isotope?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Atoms with different protons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Atoms of the same element with different neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Atoms with different electrons only
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Different elements with the same protons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Isotopes have the same number of protons but different numbers
+of neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+15. Isotopes of an element have the same:
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Atomic number
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Mass number
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Number of neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Total nucleons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Isotopes have the same number of protons, so they have the same
+atomic number.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+16. An atom has atomic number 12 and mass number 24.
+How many neutrons does it have?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 10
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 12
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 24
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 36
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+Neutrons = Mass number − Atomic number
+
+24 − 12 = 12 neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+17. Which particle has the smallest mass among the three main
+subatomic particles?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The electron has a much smaller mass than a proton or neutron.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+18. What is the nucleus mainly made of?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Electrons only
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Protons and neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Electrons and protons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Neutrons and electrons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The nucleus contains protons and neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+19. Which particle determines the identity of an element?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Ion
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The number of protons determines the atomic number and therefore
+the identity of an element.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+20. What happens when a neutral atom loses electrons?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. It becomes a negative ion
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. It becomes a positive ion
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. It becomes a neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. It becomes an isotope
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Electrons have negative charge. Losing negative electrons leaves
+the atom with a net positive charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+21. What happens when an atom gains electrons?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. It becomes a negative ion
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. It becomes a positive ion
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. It becomes a proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. It becomes a neutron
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Gaining negatively charged electrons gives the atom an overall
+negative charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+22. A positively charged ion is called a:
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Cation
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Anion
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Isotope
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Neutron
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A cation is a positively charged ion.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+23. A negatively charged ion is called a:
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Cation
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Anion
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+An anion is a negatively charged ion.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+24. Which atomic model is associated with a "plum pudding" model?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Dalton
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Thomson
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Chadwick
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+J.J. Thomson proposed the plum-pudding model.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+25. Rutherford's experiment showed that the atom contains:
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Only electrons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. A small dense nucleus
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. No empty space
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Only neutrons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Rutherford's gold-foil experiment showed that most of the atom is
+empty space and that positive charge is concentrated in a small nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+26. Most of the atom is:
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Empty space
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Solid matter
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. The nucleus
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Protons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Rutherford's experiment demonstrated that most of an atom is empty space.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+27. What is the charge of the nucleus?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Positive
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Negative
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Neutral
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. No mass
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The nucleus contains positively charged protons and neutral neutrons,
+so the nucleus has an overall positive charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+28. The number of protons in an atom is 15. What is its atomic number?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 14
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 15
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 16
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 30
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Atomic number equals the number of protons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+29. An atom contains 13 protons and 14 neutrons.
+What is its mass number?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. 27
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. 14
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 13
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 1
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+Mass number = protons + neutrons
+
+13 + 14 = 27.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+30. An atom has mass number 35 and atomic number 17.
+How many neutrons are present?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 17
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 18
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 35
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 52
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+Neutrons = 35 − 17 = 18.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+31. Which particle is found outside the nucleus?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleon
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Electrons occupy regions around the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+32. Protons and neutrons together are called:
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Electrons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Nucleons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Ions
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Isotopes
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Protons and neutrons are collectively called nucleons because
+they are located in the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+33. Which statement about isotopes is correct?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. They have the same number of protons.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. They always have the same number of neutrons.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. They are different elements.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. They have different atomic numbers.
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Isotopes are atoms of the same element, so they have the same
+number of protons but different numbers of neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+34. Which subatomic particle determines the chemical behavior
+of an atom most directly?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Proton
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The arrangement of electrons, especially outer electrons,
+strongly influences chemical behavior and bonding.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+35. What is an atom?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. The smallest unit of an element that retains its chemical identity
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Only a proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Only an electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. A molecule only
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+An atom is the basic unit of an element that retains the chemical
+identity of that element.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+36. Which statement about electrons is correct?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. They are positively charged.
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. They are negatively charged.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. They have no charge.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. They are found only in the nucleus.
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Electrons have a negative charge and occupy regions around the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+37. Which statement about neutrons is correct?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. They have positive charge.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. They have negative charge.
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. They have no electrical charge.
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. They are found outside the atom.
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Neutrons are electrically neutral particles found in the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+38. If a neutral atom has 20 electrons, how many protons does it have?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. 20
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. 10
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 19
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 40
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A neutral atom has equal numbers of protons and electrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+39. Which of the following changes the mass number of an atom?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Changing electrons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Changing the number of neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Losing electrons only
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Gaining electrons only
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Mass number is the sum of protons and neutrons, so changing neutrons
+changes the mass number.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+40. Which change produces an ion without changing the element's identity?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Changing protons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Changing neutrons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Changing electrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Changing the nucleus into another nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Changing electrons changes the charge but not the atomic number,
+so the element remains the same.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+41. An atom has 10 protons and 12 neutrons. What is its mass number?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 10
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. 12
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. 22
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 2
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+10 + 12 = 22.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+42. An atom has 25 protons and mass number 55.
+How many neutrons does it have?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. 25
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. 30
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 55
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. 80
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+Neutrons = 55 − 25 = 30.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+43. Which scientist's experiment used alpha particles and thin gold foil?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Dalton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Thomson
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Chadwick
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Rutherford and his colleagues used the gold-foil experiment to
+investigate the structure of the atom.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+44. Dalton's model considered atoms of the same element to be:
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Identical in their basic properties
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Always different elements
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Made only of electrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Mostly empty space
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Dalton's original theory treated atoms of the same element as
+fundamentally alike.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+45. Which particle is directly involved in forming most chemical bonds?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Proton
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Electron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Chemical bonding mainly involves electrons, especially valence electrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+46. What is the charge of a proton?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. +1
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. −1
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +2
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A proton has a relative charge of +1.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+47. What is the relative charge of an electron?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. +1
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. −1
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +2
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+An electron has a relative charge of −1.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+48. What is the relative charge of a neutron?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. +1
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. −1
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +2
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A neutron has zero electrical charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+49. Which two particles have approximately equal masses?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Proton and neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electron and proton
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Electron and neutron
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Electron and nucleus
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Protons and neutrons have approximately equal masses, while an
+electron is much lighter.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+50. Which part of the atom contains most of its mass?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Nucleus
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electron cloud
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Outer shell
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Empty space
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Almost all of an atom's mass is concentrated in the nucleus,
+where protons and neutrons are located.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+51. An atom has 16 protons and 18 electrons. What is its charge?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. +2
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. −2
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +34
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+Charge = protons − electrons
+
+16 − 18 = −2.
+
+Therefore, the ion has a charge of −2.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+52. An ion has 12 protons and 10 electrons. What is its charge?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. +2
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. −2
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +22
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+
+12 protons − 10 electrons = +2.
+
+So the ion has a +2 charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+53. If an atom loses two electrons, its charge becomes:
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. +2
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. −2
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +1
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Losing two negatively charged electrons leaves a net charge of +2.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+54. If an atom gains three electrons, its charge becomes:
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. +3
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. −3
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. 0
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. +1
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Each electron has a −1 charge, so gaining three gives a −3 charge.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+55. Which statement best describes an isotope?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Same neutrons, different protons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Same protons, different neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Same electrons, different protons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Different elements with identical atomic numbers
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+The defining feature of isotopes is the same number of protons
+but different numbers of neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+56. What determines the atomic number?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Number of protons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Number of neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Number of electrons only
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Protons + neutrons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Atomic number is defined as the number of protons in the nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+57. What determines the mass number?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Electrons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+B. Protons + neutrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Protons − electrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Neutrons − electrons
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Mass number is the total number of protons and neutrons.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+58. Which model first introduced the idea of a small dense nucleus?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Dalton's model
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Thomson's model
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Rutherford's model
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Simple sphere model
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Rutherford's nuclear model introduced the idea of a small,
+dense, positively charged nucleus.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+59. Which statement is TRUE about a neutral atom?
+</div>
+
+<button class="option" onclick="answer(this,false)">
+A. Protons are greater than electrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Electrons are greater than protons
+</button>
+
+<button class="option" onclick="answer(this,true)">
+C. Protons equal electrons
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Neutrons equal electrons always
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+A neutral atom has equal numbers of positive protons and negative
+electrons, giving an overall charge of zero.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="question">
+60. Which sequence correctly shows the main development of atomic models?
+</div>
+
+<button class="option" onclick="answer(this,true)">
+A. Dalton → Thomson → Rutherford → later models
+</button>
+
+<button class="option" onclick="answer(this,false)">
+B. Rutherford → Dalton → Thomson
+</button>
+
+<button class="option" onclick="answer(this,false)">
+C. Thomson → Dalton → Rutherford
+</button>
+
+<button class="option" onclick="answer(this,false)">
+D. Chadwick → Dalton → Thomson
+</button>
+
+<div class="explanation">
+<strong>Explanation:</strong>
+Atomic theory developed progressively. Dalton proposed an early
+atomic theory, Thomson discovered the electron, and Rutherford
+developed the nuclear model. Later work further developed the
+modern atomic model.
+</div>
+
+</div>
+
+
+<button
+class="submit"
+onclick="showResult()">
+
+✅ Finish Practice
+
+</button>
+
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+
+</div>
 
 
 <script>
 
-function checkAnswers(){
+let score = 0;
+let answered = 0;
+let totalQuestions = 60;
 
-    const questions =
-        document.querySelectorAll(".question");
+function answer(button,isCorrect){
 
-    let score = 0;
+    let card = button.parentElement;
 
-    questions.forEach(function(question){
+    if(card.dataset.answered === "true"){
+        return;
+    }
 
-        const correct =
-            question.dataset.answer;
+    card.dataset.answered = "true";
 
-        const selected =
-            question.querySelector(
-                'input[type="radio"]:checked'
-            );
+    let buttons =
+        card.querySelectorAll(".option");
 
-        const options =
-            question.querySelectorAll(".option");
-
-        const answer =
-            question.querySelector(".answer");
-
-        options.forEach(function(option){
-            option.classList.remove("correct");
-            option.classList.remove("wrong");
-        });
-
-        if(selected){
-
-            if(selected.value === correct){
-
-                score++;
-
-                selected.parentElement
-                    .classList.add("correct");
-
-            }else{
-
-                selected.parentElement
-                    .classList.add("wrong");
-
-                options.forEach(function(option){
-
-                    const input =
-                        option.querySelector("input");
-
-                    if(input.value === correct){
-                        option.classList.add("correct");
-                    }
-
-                });
-
-            }
-
-        }else{
-
-            options.forEach(function(option){
-
-                const input =
-                    option.querySelector("input");
-
-                if(input.value === correct){
-                    option.classList.add("correct");
-                }
-
-            });
-
-        }
-
-        answer.style.display = "block";
-
+    buttons.forEach(function(btn){
+        btn.disabled = true;
     });
 
+    let explanation =
+        card.querySelector(".explanation");
 
-    const percentage =
-        Math.round((score / 60) * 100);
+    explanation.style.display = "block";
 
+    if(isCorrect){
 
-    document.getElementById("result")
-        .style.display = "block";
+        button.classList.add("correct");
 
-    document.getElementById("score")
-        .innerHTML =
-        score + " / 60";
-
-
-    document.getElementById("percentage")
-        .innerHTML =
-        percentage + "%";
-
-
-    let message = "";
-
-    if(score === 60){
-
-        message =
-        "🏆 Perfect! Excellent work!";
-
-    }else if(score >= 50){
-
-        message =
-        "🔥 Excellent! You understand Unit 3 very well.";
-
-    }else if(score >= 40){
-
-        message =
-        "👏 Very good! Review a few topics.";
-
-    }else if(score >= 30){
-
-        message =
-        "👍 Good effort. More practice will help.";
+        score++;
 
     }else{
 
-        message =
-        "📚 Review Unit 3 again and try the test again.";
+        button.classList.add("wrong");
+
+        buttons.forEach(function(btn){
+
+            if(
+                btn.getAttribute("onclick")
+                &&
+                btn.getAttribute("onclick")
+                .includes("true")
+            ){
+
+                btn.classList.add("correct");
+
+            }
+
+        });
 
     }
 
-    document.getElementById("message")
-        .innerHTML = message;
+    answered++;
+
+}
 
 
-    window.scrollTo({
-        top:0,
+function showResult(){
+
+    if(answered < totalQuestions){
+
+        alert(
+            "Please answer all 60 questions first. " +
+            answered +
+            "/60 answered."
+        );
+
+        return;
+    }
+
+    let percentage =
+        Math.round((score / totalQuestions) * 100);
+
+    let result =
+        document.getElementById("result");
+
+    let scoreText =
+        document.getElementById("score");
+
+    let message =
+        document.getElementById("message");
+
+    result.style.display = "block";
+
+    scoreText.innerHTML =
+        "Score: " +
+        score +
+        " / " +
+        totalQuestions +
+        " (" +
+        percentage +
+        "%)";
+
+    if(percentage >= 80){
+
+        message.innerHTML =
+        "🎉 Excellent! You have a very good understanding of Unit 3.";
+
+    }else if(percentage >= 60){
+
+        message.innerHTML =
+        "👍 Good job! Review the explanations and try again.";
+
+    }else{
+
+        message.innerHTML =
+        "📖 Keep studying! Read the Unit 3 notes and try the practice again.";
+
+    }
+
+    result.scrollIntoView({
         behavior:"smooth"
     });
 
 }
 
-
-/* Progress bar */
-document.addEventListener("change", function(){
-
-    const total =
-        document.querySelectorAll(
-            '.question input[type="radio"]:checked'
-        ).length;
-
-    const percentage =
-        (total / 60) * 100;
-
-    document.getElementById("progressBar")
-        .style.width = percentage + "%";
-
-});
-
 </script>
 
+
 </body>
+
 </html>
