@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Chemistry Unit 5 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#9333ea,#2563eb);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:27px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    margin:18px 0;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #9333ea;
+}
+
+.question h3{
+    color:#7c3aed;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:none;
+    border-radius:10px;
+    background:#eef2ff;
+    color:#222;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.option:hover{
+    background:#ddd6fe;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    color:#166534 !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    color:#991b1b !important;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    display:none;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.scoreBox{
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.reset{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#f97316;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧪 Grade 9 Chemistry</h1>
+
+<p>Unit 5 — Chemical Bonding</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+<div class="container">
+
+<div class="scoreBox">
+
+<h2>📊 Your Score</h2>
+
+<div id="score">0 / 60</div>
+
+</div>
+
+<div id="quiz"></div>
+
+<button class="reset" onclick="location.reload()">
+🔄 Restart Practice
+</button>
+
+<button class="back" onclick="history.back()">
+← Back
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is a chemical bond?",
+a:["A force that holds atoms or ions together","A type of atom","A neutron","A measuring instrument"],
+c:0,
+e:"A chemical bond is the attractive force that holds atoms or ions together."
+},
+
+{
+q:"2. Which electrons are mainly involved in chemical bonding?",
+a:["Core electrons","Valence electrons","Neutrons","Protons"],
+c:1,
+e:"Valence electrons are the outermost electrons and are mainly involved in bonding."
+},
+
+{
+q:"3. What is the octet rule?",
+a:["Atoms tend to have eight valence electrons","Atoms always have eight protons","Atoms have eight neutrons","Atoms must have eight shells"],
+c:0,
+e:"The octet rule describes the tendency of many atoms to achieve eight valence electrons."
+},
+
+{
+q:"4. Which rule is commonly associated with hydrogen?",
+a:["Octet rule","Duet rule","Triplet rule","Decet rule"],
+c:1,
+e:"Hydrogen follows the duet rule because its first shell can hold only two electrons."
+},
+
+{
+q:"5. How many major types of chemical bonding are commonly studied?",
+a:["One","Two","Three","Five"],
+c:2,
+e:"The three major types are ionic, covalent and metallic bonding."
+},
+
+{
+q:"6. Ionic bonding mainly involves:",
+a:["Sharing electrons","Transfer of electrons","Sharing neutrons","Transfer of protons"],
+c:1,
+e:"Ionic bonding generally results from transfer of electrons followed by attraction between oppositely charged ions."
+},
+
+{
+q:"7. Covalent bonding mainly involves:",
+a:["Electron sharing","Electron destruction","Proton transfer","Neutron transfer"],
+c:0,
+e:"A covalent bond is formed when atoms share electron pairs."
+},
+
+{
+q:"8. Metallic bonding occurs mainly in:",
+a:["Nonmetals","Metals","Noble gases only","Hydrogen only"],
+c:1,
+e:"Metallic bonding is characteristic of metals."
+},
+
+{
+q:"9. A positively charged ion is called:",
+a:["Anion","Cation","Molecule","Isotope"],
+c:1,
+e:"A cation is a positively charged ion."
+},
+
+{
+q:"10. A negatively charged ion is called:",
+a:["Cation","Anion","Proton","Atom"],
+c:1,
+e:"An anion is a negatively charged ion."
+},
+
+{
+q:"11. A sodium atom forms Na⁺ by:",
+a:["Gaining one electron","Losing one electron","Gaining two protons","Losing a neutron"],
+c:1,
+e:"Sodium has one valence electron and forms Na⁺ by losing it."
+},
+
+{
+q:"12. Chlorine forms Cl⁻ by:",
+a:["Gaining one electron","Losing one electron","Losing two electrons","Gaining a proton"],
+c:0,
+e:"Chlorine gains one electron to complete its valence shell and form Cl⁻."
+},
+
+{
+q:"13. Which compound contains ionic bonding?",
+a:["NaCl","H₂","O₂","N₂"],
+c:0,
+e:"NaCl contains Na⁺ and Cl⁻ ions held together by ionic attraction."
+},
+
+{
+q:"14. Which is a covalent molecule?",
+a:["NaCl","MgO","H₂O","NaF"],
+c:2,
+e:"H₂O is formed by sharing electrons between hydrogen and oxygen."
+},
+
+{
+q:"15. A single covalent bond contains:",
+a:["One shared electron","One shared pair of electrons","Two protons","Three electron pairs"],
+c:1,
+e:"A single covalent bond consists of one shared pair of electrons."
+},
+
+{
+q:"16. A double covalent bond contains:",
+a:["One shared pair","Two shared pairs","Three shared pairs","Four shared pairs"],
+c:1,
+e:"A double bond contains two shared electron pairs."
+},
+
+{
+q:"17. A triple covalent bond contains:",
+a:["One pair","Two pairs","Three pairs","Four pairs"],
+c:2,
+e:"A triple covalent bond consists of three shared electron pairs."
+},
+
+{
+q:"18. Which molecule contains a single bond?",
+a:["H₂","O₂","N₂","CO₂"],
+c:0,
+e:"The H—H bond in H₂ is a single covalent bond."
+},
+
+{
+q:"19. Which molecule contains a double bond?",
+a:["H₂","O₂","N₂","CH₄"],
+c:1,
+e:"O₂ contains an O=O double bond."
+},
+
+{
+q:"20. Which molecule contains a triple bond?",
+a:["H₂","O₂","N₂","H₂O"],
+c:2,
+e:"N₂ contains an N≡N triple bond."
+},
+
+{
+q:"21. What is a coordinate covalent bond?",
+a:["A bond where both electrons come from one atom","A bond with no electrons","A bond between neutrons","A metallic bond"],
+c:0,
+e:"In a coordinate covalent bond, both electrons in the shared pair are donated by the same atom."
+},
+
+{
+q:"22. Another name for coordinate covalent bond is:",
+a:["Metallic bond","Dative bond","Ionic bond","Hydrogen bond"],
+c:1,
+e:"Coordinate covalent bonding is also called dative covalent bonding."
+},
+
+{
+q:"23. In a coordinate covalent bond, the electron-pair donor provides:",
+a:["One electron","Both electrons","A proton","A neutron"],
+c:1,
+e:"The donor atom provides both electrons in the shared pair."
+},
+
+{
+q:"24. Which ion is formed when NH₃ accepts H⁺?",
+a:["NH₂⁻","NH₄⁺","NO₃⁻","N₂"],
+c:1,
+e:"NH₃ accepts H⁺ using nitrogen's lone pair and forms NH₄⁺."
+},
+
+{
+q:"25. Which atom donates the lone pair in NH₃ + H⁺ → NH₄⁺?",
+a:["Hydrogen","Nitrogen","Both hydrogen atoms","No atom"],
+c:1,
+e:"Nitrogen in NH₃ has a lone pair that it donates to H⁺."
+},
+
+{
+q:"26. What is the product of H₂O + H⁺?",
+a:["H₂","OH⁻","H₃O⁺","O₂"],
+c:2,
+e:"Water donates a lone pair from oxygen to H⁺ and forms H₃O⁺."
+},
+
+{
+q:"27. Which atom donates the lone pair in H₃O⁺ formation?",
+a:["Oxygen","Hydrogen","Both","Neither"],
+c:0,
+e:"Oxygen in water donates a lone pair to H⁺."
+},
+
+{
+q:"28. The arrow in a coordinate bond points from:",
+a:["Acceptor to donor","Donor to acceptor","Proton to neutron","Anion to cation only"],
+c:1,
+e:"The arrow represents donation of the electron pair and points from donor to acceptor."
+},
+
+{
+q:"29. Which species contains a lone pair that can donate in NH₃?",
+a:["Nitrogen","Hydrogen only","Proton","Na⁺"],
+c:0,
+e:"Nitrogen in NH₃ has a lone pair of electrons."
+},
+
+{
+q:"30. Which statement about coordinate bonds is correct?",
+a:["They are not covalent bonds","They are a type of covalent bond","They contain no electrons","They always occur in metals"],
+c:1,
+e:"A coordinate bond is a special type of covalent bond because the electron pair is shared after formation."
+},
+
+{
+q:"31. Metallic bonding involves:",
+a:["Positive metal ions and delocalized electrons","Only neutrons","Only protons","Negative ions only"],
+c:0,
+e:"Metallic bonding involves attraction between metal ions and mobile/delocalized electrons."
+},
+
+{
+q:"32. Why do metals conduct electricity?",
+a:["They have mobile electrons","They have no electrons","Their protons move freely","Their neutrons conduct"],
+c:0,
+e:"Mobile or delocalized electrons allow metals to conduct electricity."
+},
+
+{
+q:"33. The ability of a metal to be drawn into wire is called:",
+a:["Malleability","Ductility","Density","Solubility"],
+c:1,
+e:"Ductility is the ability to be drawn into wires."
+},
+
+{
+q:"34. The ability of a metal to be hammered into sheets is called:",
+a:["Ductility","Malleability","Conductivity","Volatility"],
+c:1,
+e:"Malleability is the ability to be hammered or pressed into sheets."
+},
+
+{
+q:"35. Which is an example of a metal?",
+a:["Copper","Oxygen","Chlorine","Nitrogen"],
+c:0,
+e:"Copper is a metal and exhibits metallic bonding."
+},
+
+{
+q:"36. Lewis symbols mainly show:",
+a:["Valence electrons","Neutrons","Atomic mass only","Nuclear size"],
+c:0,
+e:"Lewis symbols represent valence electrons as dots around the element symbol."
+},
+
+{
+q:"37. How many valence electrons does oxygen have?",
+a:["2","4","6","8"],
+c:2,
+e:"Oxygen is in Group 16 and has six valence electrons."
+},
+
+{
+q:"38. How many valence electrons does chlorine have?",
+a:["1","5","7","8"],
+c:2,
+e:"Chlorine is in Group 17 and has seven valence electrons."
+},
+
+{
+q:"39. How many valence electrons does carbon have?",
+a:["2","4","6","8"],
+c:1,
+e:"Carbon has four valence electrons."
+},
+
+{
+q:"40. How many valence electrons does sodium have?",
+a:["1","2","7","8"],
+c:0,
+e:"Sodium has one valence electron."
+},
+
+{
+q:"41. What does electronegativity measure?",
+a:["Ability to attract shared electrons","Number of neutrons","Atomic mass","Number of shells"],
+c:0,
+e:"Electronegativity is the ability of an atom in a bond to attract shared electrons."
+},
+
+{
+q:"42. A non-polar covalent bond involves:",
+a:["Equal or nearly equal sharing","Complete electron transfer","No electrons","Only metal ions"],
+c:0,
+e:"Non-polar covalent bonds have equal or nearly equal sharing of electrons."
+},
+
+{
+q:"43. A polar covalent bond involves:",
+a:["Unequal sharing of electrons","No electron sharing","Complete proton transfer","Only metals"],
+c:0,
+e:"Polar covalent bonding occurs when shared electrons are attracted more strongly by one atom."
+},
+
+{
+q:"44. Which molecule contains polar O—H bonds?",
+a:["H₂O","N₂","H₂","Cl₂"],
+c:0,
+e:"Oxygen attracts the shared electrons more strongly than hydrogen, making the O—H bonds polar."
+},
+
+{
+q:"45. Which molecule contains a non-polar bond between identical atoms?",
+a:["H₂","HCl","H₂O","CO"],
+c:0,
+e:"Identical atoms have the same electronegativity, so H₂ has a non-polar covalent bond."
+},
+
+{
+q:"46. Which pair is most likely to form an ionic compound?",
+a:["Na and Cl","H and H","O and O","N and N"],
+c:0,
+e:"Sodium is a metal and chlorine is a nonmetal, so they commonly form an ionic compound."
+},
+
+{
+q:"47. Which pair is most likely to form a covalent compound?",
+a:["Na and Cl","Mg and O","H and Cl","Na and F"],
+c:2,
+e:"Hydrogen and chlorine are both nonmetals and form HCl through covalent bonding."
+},
+
+{
+q:"48. Which compound contains ionic bonding?",
+a:["CO₂","NaCl","H₂O","NH₃"],
+c:1,
+e:"NaCl consists of oppositely charged Na⁺ and Cl⁻ ions."
+},
+
+{
+q:"49. Which substance is most likely to have mobile electrons?",
+a:["Copper","Water","Sodium chloride crystal","Carbon dioxide"],
+c:0,
+e:"Copper is a metal and contains mobile/delocalized electrons."
+},
+
+{
+q:"50. Solid ionic compounds generally do not conduct electricity because:",
+a:["Their ions cannot move freely","They have no particles","They have no charges","Their electrons are all destroyed"],
+c:0,
+e:"In a solid ionic lattice, ions are fixed in position and cannot move freely."
+},
+
+{
+q:"51. Molten ionic compounds can conduct electricity because:",
+a:["Their ions can move","They lose all electrons","They become metals","They contain no ions"],
+c:0,
+e:"When molten, ions become mobile and can carry electric charge."
+},
+
+{
+q:"52. Which has a relatively high melting point due to strong ionic attraction?",
+a:["NaCl","H₂","CO₂","CH₄"],
+c:0,
+e:"Strong electrostatic attraction in ionic lattices gives many ionic compounds high melting points."
+},
+
+{
+q:"53. Which statement about covalent molecular substances is generally true?",
+a:["Many have relatively low melting points","All are metals","All conduct electricity strongly","All contain ions"],
+c:0,
+e:"Many simple molecular covalent substances have relatively low melting and boiling points."
+},
+
+{
+q:"54. Which bond is represented by N≡N?",
+a:["Single","Double","Triple","Coordinate"],
+c:2,
+e:"N≡N contains three shared electron pairs, so it is a triple covalent bond."
+},
+
+{
+q:"55. Which bond is represented by O=O?",
+a:["Single","Double","Triple","Metallic"],
+c:1,
+e:"O=O represents two shared electron pairs, which is a double covalent bond."
+},
+
+{
+q:"56. Which is an example of a coordinate covalent bond formation?",
+a:["NH₃ + H⁺ → NH₄⁺","Na + Cl → NaCl","H + H → H₂ only","Cu → Cu"],
+c:0,
+e:"NH₃ donates a lone pair to H⁺ to form NH₄⁺ through coordinate covalent bonding."
+},
+
+{
+q:"57. Which particle accepts the electron pair in NH₃ + H⁺ → NH₄⁺?",
+a:["NH₃","H⁺","N₂","Cl⁻"],
+c:1,
+e:"H⁺ accepts the electron pair donated by nitrogen."
+},
+
+{
+q:"58. Which particle donates the electron pair in H₂O + H⁺ → H₃O⁺?",
+a:["H⁺","H₂O","Cl⁻","Na⁺"],
+c:1,
+e:"The oxygen atom in H₂O donates a lone pair."
+},
+
+{
+q:"59. Which statement is TRUE?",
+a:["Coordinate covalent bonds contain no electrons",
+"Both electrons come from the same atom when the bond forms",
+"Coordinate bonds are always metallic",
+"Coordinate bonds are always ionic"],
+c:1,
+e:"The defining feature is that both electrons of the shared pair are supplied by one atom."
+},
+
+{
+q:"60. Which statement best summarizes chemical bonding?",
+a:["Atoms bond only to increase their mass",
+"Chemical bonds involve interactions of valence electrons and can produce stable structures",
+"Bonds contain only neutrons",
+"All bonds are identical"],
+c:1,
+e:"Chemical bonding involves valence electrons and produces stable atoms, molecules, ions, or structures."
+}
+
+];
+
+
+let score = 0;
+let answered = 0;
+
+function loadQuiz(){
+
+    const quiz = document.getElementById("quiz");
+
+    questions.forEach((item,index)=>{
+
+        const card = document.createElement("div");
+
+        card.className = "card question";
+
+        let html = `
+        <h3>${item.q}</h3>
+        `;
+
+        item.a.forEach((option,optionIndex)=>{
+
+            html += `
+            <button
+            class="option"
+            id="q${index}o${optionIndex}"
+            onclick="checkAnswer(${index},${optionIndex})">
+
+            ${String.fromCharCode(65+optionIndex)}. ${option}
+
+            </button>
+            `;
+
+        });
+
+        html += `
+        <div
+        id="result${index}"
+        class="result">
+        </div>
+        `;
+
+        card.innerHTML = html;
+
+        quiz.appendChild(card);
+
+    });
+
+}
+
+
+function checkAnswer(questionIndex,selectedIndex){
+
+    const question = questions[questionIndex];
+
+    const result = document.getElementById(
+        "result"+questionIndex
+    );
+
+    if(result.style.display === "block"){
+        return;
+    }
+
+    answered++;
+
+    const selectedButton =
+        document.getElementById(
+            `q${questionIndex}o${selectedIndex}`
+        );
+
+    const correctButton =
+        document.getElementById(
+            `q${questionIndex}o${question.c}`
+        );
+
+
+    if(selectedIndex === question.c){
+
+        score++;
+
+        selectedButton.classList.add("correct");
+
+        result.className = "result right";
+
+        result.innerHTML = `
+        <strong>✅ RIGHT!</strong><br>
+        ${question.e}
+        `;
+
+    }else{
+
+        selectedButton.classList.add("wrong");
+
+        correctButton.classList.add("correct");
+
+        result.className = "result wrongResult";
+
+        result.innerHTML = `
+        <strong>❌ WRONG!</strong><br>
+        <strong>Correct Answer:</strong>
+        ${String.fromCharCode(65+question.c)}. ${question.a[question.c]}
+        <br><br>
+        <strong>📖 Explanation:</strong>
+        ${question.e}
+        `;
+
+    }
+
+    result.style.display = "block";
+
+    document.getElementById("score").innerHTML =
+        `${score} / 60`;
+
+}
+
+
+loadQuiz();
+
+</script>
+
+</body>
+
+</html>
