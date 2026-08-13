@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Chemistry Unit 1 Practice</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px #ccc;
+}
+
+.question-number {
+    color: #7c3aed;
+    font-weight: bold;
+}
+
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0 25px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #7c3aed;
+    transition: 0.3s;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.option {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f3e8ff;
+    border-color: #7c3aed;
+}
+
+.option.correct {
+    background: #dcfce7;
+    border-color: #16a34a;
+    color: #166534;
+}
+
+.option.wrong {
+    background: #fee2e2;
+    border-color: #dc2626;
+    color: #991b1b;
+}
+
+.feedback {
+    display: none;
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.feedback.correct {
+    display: block;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.feedback.wrong {
+    display: block;
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.next,
+.restart,
+.back {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.next {
+    background: #2563eb;
+    display: none;
+}
+
+.restart {
+    background: #16a34a;
+}
+
+.back {
+    background: #172554;
+}
+
+#result {
+    display: none;
+    text-align: center;
+}
+
+.score {
+    font-size: 42px;
+    color: #7c3aed;
+    font-weight: bold;
+}
+
+.small {
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Grade 9 Chemistry</h1>
+    <p>Unit 1 — Chemistry and Its Importance</p>
+    <p>📝 60 Questions</p>
+</header>
+
+<div class="container">
+
+<div class="card" id="quizCard">
+
+    <div class="question-number" id="questionNumber">
+        Question 1 of 60
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="question" id="question"></div>
+
+    <div id="options"></div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <button class="next" id="nextBtn" onclick="nextQuestion()">
+        ➡️ Next Question
+    </button>
+
+</div>
+
+
+<div class="card" id="result">
+
+    <h2>🎉 Practice Complete!</h2>
+
+    <p>Your Score</p>
+
+    <div class="score" id="score"></div>
+
+    <p id="resultMessage"></p>
+
+    <button class="restart" onclick="restartQuiz()">
+        🔄 Try Again
+    </button>
+
+    <button class="back" onclick="location.href='grade9.html'">
+        ← Back to Grade 9
+    </button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"What is chemistry?",
+options:[
+"The study of matter, its composition, properties, structure and changes",
+"The study of numbers only",
+"The study of planets only",
+"The study of animals only"
+],
+answer:0,
+explain:"Chemistry studies matter, its composition, structure, properties and the changes it undergoes."
+},
+
+{
+q:"Which of the following is matter?",
+options:[
+"Water",
+"Only an idea",
+"Only a number",
+"Only a sound"
+],
+answer:0,
+explain:"Water is matter because it has mass and occupies space."
+},
+
+{
+q:"Matter is anything that has:",
+options:[
+"Mass and occupies space",
+"Only color",
+"Only temperature",
+"Only shape"
+],
+answer:0,
+explain:"Matter has mass and occupies space."
+},
+
+{
+q:"What is a substance?",
+options:[
+"A form of matter with definite composition and characteristic properties",
+"Anything that has no mass",
+"Only a mixture of gases",
+"Only a living organism"
+],
+answer:0,
+explain:"A substance has a definite composition and characteristic properties."
+},
+
+{
+q:"What does composition describe?",
+options:[
+"What a substance is made of",
+"Only its color",
+"Only its temperature",
+"Only its shape"
+],
+answer:0,
+explain:"Composition describes the types and relative amounts of components making up matter."
+},
+
+{
+q:"Which is a physical property?",
+options:[
+"Boiling point",
+"Flammability",
+"Ability to rust",
+"Reactivity with acid"
+],
+answer:0,
+explain:"Boiling point is a physical property because it can be measured without changing the substance into another substance."
+},
+
+{
+q:"Which is a chemical property?",
+options:[
+"Flammability",
+"Color",
+"Density",
+"Melting point"
+],
+answer:0,
+explain:"Flammability describes how a substance behaves in a chemical reaction with oxygen."
+},
+
+{
+q:"Which branch studies carbon-containing compounds?",
+options:[
+"Organic chemistry",
+"Inorganic chemistry",
+"Analytical chemistry",
+"Physical chemistry"
+],
+answer:0,
+explain:"Organic chemistry mainly studies carbon-containing compounds."
+},
+
+{
+q:"Which branch studies the identification and measurement of substances?",
+options:[
+"Analytical chemistry",
+"Organic chemistry",
+"Biology",
+"Geology"
+],
+answer:0,
+explain:"Analytical chemistry identifies substances and determines their amounts."
+},
+
+{
+q:"Which branch studies chemical processes in living organisms?",
+options:[
+"Biochemistry",
+"Inorganic chemistry",
+"Physical chemistry",
+"Geology"
+],
+answer:0,
+explain:"Biochemistry studies chemical substances and processes in living organisms."
+},
+
+{
+q:"Physical chemistry is mainly concerned with:",
+options:[
+"Relationships between matter and energy",
+"Only plants",
+"Only rocks",
+"Only animals"
+],
+answer:0,
+explain:"Physical chemistry studies the relationship between matter, energy and chemical processes."
+},
+
+{
+q:"Inorganic chemistry mainly studies:",
+options:[
+"Inorganic substances such as metals, salts, acids and bases",
+"Only DNA",
+"Only carbohydrates",
+"Only living organisms"
+],
+answer:0,
+explain:"Inorganic chemistry studies many substances such as metals, minerals, salts, acids and bases."
+},
+
+{
+q:"Chemistry and biology are closely related through:",
+options:[
+"Biochemistry",
+"Geometry",
+"Astrology",
+"Mechanics only"
+],
+answer:0,
+explain:"Biochemistry connects chemistry with biology by studying chemical processes in living organisms."
+},
+
+{
+q:"Which molecule is directly associated with heredity and studied in biochemistry?",
+options:[
+"DNA",
+"Sand",
+"Iron nail",
+"Glass"
+],
+answer:0,
+explain:"DNA is a biological molecule whose chemical structure and reactions are studied in biochemistry."
+},
+
+{
+q:"Chemistry and physics are related because both study:",
+options:[
+"Matter and energy",
+"Only plants",
+"Only animals",
+"Only agriculture"
+],
+answer:0,
+explain:"Both chemistry and physics study matter and energy, although from different perspectives."
+},
+
+{
+q:"Chemistry helps agriculture mainly through:",
+options:[
+"Fertilizers, pesticides and soil analysis",
+"Building roads only",
+"Drawing maps only",
+"Writing stories"
+],
+answer:0,
+explain:"Chemistry helps agriculture through fertilizers, pesticides, soil testing and understanding nutrients."
+},
+
+{
+q:"Which chemical product supplies nutrients to crops?",
+options:[
+"Fertilizer",
+"Soap",
+"Glass",
+"Paint"
+],
+answer:0,
+explain:"Fertilizers provide essential nutrients needed for plant growth."
+},
+
+{
+q:"Chemistry helps food production by:",
+options:[
+"Preservation and quality control",
+"Changing numbers into letters",
+"Building houses only",
+"Measuring distance only"
+],
+answer:0,
+explain:"Chemistry is used in food processing, preservation, quality control and packaging."
+},
+
+{
+q:"Food contains chemical substances such as:",
+options:[
+"Carbohydrates, proteins and fats",
+"Only stones",
+"Only metals",
+"Only gases"
+],
+answer:0,
+explain:"Food contains many chemical substances including carbohydrates, proteins, fats, vitamins, minerals and water."
+},
+
+{
+q:"Why is chemistry important in medicine?",
+options:[
+"It helps discover, produce and analyze medicines",
+"It only studies buildings",
+"It only studies weather",
+"It only studies stars"
+],
+answer:0,
+explain:"Medicinal chemistry helps in discovering, preparing, analyzing and improving medicines."
+},
+
+{
+q:"What is an analgesic?",
+options:[
+"A medicine mainly used to relieve pain",
+"A medicine used only to kill bacteria",
+"A surface cleaner",
+"A fertilizer"
+],
+answer:0,
+explain:"Analgesics are medicines used mainly to reduce or relieve pain."
+},
+
+{
+q:"Which is an example of an analgesic?",
+options:[
+"Paracetamol",
+"Amoxicillin",
+"Sodium hypochlorite",
+"Fertilizer"
+],
+answer:0,
+explain:"Paracetamol is commonly used as an analgesic and also reduces fever."
+},
+
+{
+q:"Paracetamol is commonly used for:",
+options:[
+"Pain and fever relief",
+"Disinfecting floors",
+"Growing plants",
+"Making glass"
+],
+answer:0,
+explain:"Paracetamol is commonly used to relieve mild to moderate pain and reduce fever."
+},
+
+{
+q:"Ibuprofen belongs to which group?",
+options:[
+"NSAID analgesic",
+"Antibiotic",
+"Disinfectant",
+"Fertilizer"
+],
+answer:0,
+explain:"Ibuprofen is an NSAID that can relieve pain and reduce inflammation."
+},
+
+{
+q:"What is an antibiotic?",
+options:[
+"A medicine used to treat certain bacterial infections",
+"A medicine for every viral disease",
+"A surface cleaning chemical",
+"A food preservative only"
+],
+answer:0,
+explain:"Antibiotics treat certain bacterial infections by killing bacteria or preventing their growth."
+},
+
+{
+q:"Which is an antibiotic?",
+options:[
+"Amoxicillin",
+"Paracetamol",
+"Soap",
+"Paint"
+],
+answer:0,
+explain:"Amoxicillin is an antibiotic used to treat certain bacterial infections."
+},
+
+{
+q:"Antibiotics are mainly used against:",
+options:[
+"Bacterial infections",
+"All viruses",
+"All headaches",
+"All injuries"
+],
+answer:0,
+explain:"Antibiotics act against bacteria. They do not treat viral infections."
+},
+
+{
+q:"Why should antibiotics not be used unnecessarily?",
+options:[
+"Unnecessary use can contribute to antibiotic resistance",
+"They always become vitamins",
+"They increase plant growth",
+"They turn into water"
+],
+answer:0,
+explain:"Unnecessary or inappropriate antibiotic use can contribute to antibiotic resistance."
+},
+
+{
+q:"What is a disinfectant?",
+options:[
+"A chemical used on non-living surfaces to reduce or destroy microorganisms",
+"A medicine for pain",
+"A fertilizer",
+"A food nutrient"
+],
+answer:0,
+explain:"Disinfectants are used mainly on non-living surfaces to reduce or destroy microorganisms."
+},
+
+{
+q:"Which can be used as a disinfectant?",
+options:[
+"Sodium hypochlorite solution",
+"Paracetamol",
+"Amoxicillin tablet",
+"Fertilizer"
+],
+answer:0,
+explain:"Sodium hypochlorite solutions can be used as disinfectants for suitable surfaces."
+},
+
+{
+q:"Which statement is correct?",
+options:[
+"Analgesic reduces pain",
+"Antibiotic is always a painkiller",
+"Disinfectant is a food nutrient",
+"Fertilizer is a medicine"
+],
+answer:0,
+explain:"Analgesics are medicines mainly used to relieve pain."
+},
+
+{
+q:"Which statement correctly compares antibiotics and disinfectants?",
+options:[
+"Antibiotics are medicines for certain bacterial infections, while disinfectants are mainly for non-living surfaces",
+"They are exactly the same",
+"Both are fertilizers",
+"Both are analgesics"
+],
+answer:0,
+explain:"Antibiotics are used medically against certain bacterial infections; disinfectants are mainly used on non-living surfaces."
+},
+
+{
+q:"Chemistry helps construction through production of:",
+options:[
+"Cement, glass, paint and ceramics",
+"Only food",
+"Only medicines",
+"Only fertilizers"
+],
+answer:0,
+explain:"Chemistry is important in producing and improving construction materials."
+},
+
+{
+q:"Which is a construction material?",
+options:[
+"Cement",
+"Paracetamol",
+"Antibiotic",
+"Vaccine"
+],
+answer:0,
+explain:"Cement is an important construction material."
+},
+
+{
+q:"Glass production is related to chemistry because:",
+options:[
+"Chemical processes are used to transform raw materials into glass",
+"Glass has no chemical composition",
+"Glass is not matter",
+"Glass cannot be produced"
+],
+answer:0,
+explain:"Glass is produced by processing suitable raw materials through chemical and physical processes."
+},
+
+{
+q:"What is an industry?",
+options:[
+"An economic activity that processes raw materials to produce useful goods",
+"Only a laboratory",
+"Only a school",
+"Only a hospital"
+],
+answer:0,
+explain:"Industry involves processing raw materials to manufacture useful products."
+},
+
+{
+q:"What is a chemical industry?",
+options:[
+"An industry that uses chemical processes to produce useful chemical products",
+"An industry that studies only animals",
+"An industry that only builds roads",
+"An industry that only sells books"
+],
+answer:0,
+explain:"Chemical industries use chemical processes to manufacture useful products."
+},
+
+{
+q:"Chemical industries are important because they:",
+options:[
+"Provide useful products for agriculture, health, construction and other sectors",
+"Only produce toys",
+"Only study mathematics",
+"Only collect data"
+],
+answer:0,
+explain:"Chemical industries provide products used across many sectors of society."
+},
+
+{
+q:"Which is a basic chemical product?",
+options:[
+"Sulfuric acid",
+"Finished soap",
+"Painted wall",
+"Medicine package"
+],
+answer:0,
+explain:"Sulfuric acid is an important basic chemical used as an input in many industrial processes."
+},
+
+{
+q:"Which is an example of a basic chemical?",
+options:[
+"Ammonia",
+"Soap",
+"Detergent",
+"Paint"
+],
+answer:0,
+explain:"Ammonia is a basic chemical used in many industrial processes, including fertilizer production."
+},
+
+{
+q:"Which is another basic chemical?",
+options:[
+"Sodium hydroxide",
+"Shampoo",
+"Paint",
+"Soap"
+],
+answer:0,
+explain:"Sodium hydroxide is an important basic industrial chemical."
+},
+
+{
+q:"What is an intermediate product?",
+options:[
+"A product made during a production process and used to make another product",
+"Always the final product",
+"Only a medicine",
+"Only a food"
+],
+answer:0,
+explain:"An intermediate is produced during processing and is used as an input for further production."
+},
+
+{
+q:"Which is an example of an intermediate chemical?",
+options:[
+"Ethylene",
+"Finished soap",
+"Paint",
+"Packaged medicine"
+],
+answer:0,
+explain:"Ethylene is an important chemical intermediate used to manufacture other products."
+},
+
+{
+q:"Intermediate chemicals can be used to produce:",
+options:[
+"Plastics and resins",
+"Only water",
+"Only soil",
+"Only air"
+],
+answer:0,
+explain:"Chemical intermediates such as ethylene can be used to make polymers, plastics and other products."
+},
+
+{
+q:"What is a finished chemical product?",
+options:[
+"A product ready for its intended use or sale",
+"A raw material only",
+"An unfinished intermediate",
+"Only a laboratory sample"
+],
+answer:0,
+explain:"Finished products have completed the necessary manufacturing stages and are ready for their intended use."
+},
+
+{
+q:"Which is a finished chemical product?",
+options:[
+"Soap",
+"Ethylene",
+"Ammonia",
+"Sulfuric acid"
+],
+answer:0,
+explain:"Soap is a finished chemical product used directly by consumers."
+},
+
+{
+q:"Which is another finished chemical product?",
+options:[
+"Detergent",
+"Ethylene",
+"Propylene",
+"Hydrochloric acid"
+],
+answer:0,
+explain:"Detergent is a finished product prepared for direct use."
+},
+
+{
+q:"The simple order of chemical production can be represented as:",
+options:[
+"Basic → Intermediate → Finished",
+"Finished → Basic → Intermediate",
+"Intermediate → Finished → Basic",
+"Finished → Intermediate → Basic"
+],
+answer:0,
+explain:"A simplified production chain is Basic chemicals → Intermediate products → Finished products."
+},
+
+{
+q:"Which product is commonly used to clean clothes?",
+options:[
+"Detergent",
+"Amoxicillin",
+"Paracetamol",
+"Ammonia gas only"
+],
+answer:0,
+explain:"Detergents are finished chemical products used for cleaning."
+},
+
+{
+q:"Which product is commonly used to relieve pain?",
+options:[
+"Analgesic",
+"Fertilizer",
+"Disinfectant",
+"Paint"
+],
+answer:0,
+explain:"Analgesics are medicines mainly used to relieve pain."
+},
+
+{
+q:"Which product is mainly used to reduce microorganisms on surfaces?",
+options:[
+"Disinfectant",
+"Analgesic",
+"Antibiotic tablet",
+"Fertilizer"
+],
+answer:0,
+explain:"Disinfectants are mainly used on non-living surfaces to reduce or destroy microorganisms."
+},
+
+{
+q:"Which natural science studies living organisms?",
+options:[
+"Biology",
+"Chemistry",
+"Physics",
+"Geology"
+],
+answer:0,
+explain:"Biology is the natural science that studies living organisms."
+},
+
+{
+q:"Which natural science mainly studies matter, energy, forces and motion?",
+options:[
+"Physics",
+"Biology",
+"Chemistry",
+"Agriculture"
+],
+answer:0,
+explain:"Physics studies matter, energy, forces, motion and related phenomena."
+},
+
+{
+q:"Chemistry helps environmental science by studying:",
+options:[
+"Pollutants and chemical changes in the environment",
+"Only mathematics",
+"Only sports",
+"Only history"
+],
+answer:0,
+explain:"Chemistry helps identify pollutants and understand chemical processes in air, water and soil."
+},
+
+{
+q:"Which branch of chemistry is most closely related to chemical processes in organisms?",
+options:[
+"Biochemistry",
+"Organic only",
+"Inorganic only",
+"Physical only"
+],
+answer:0,
+explain:"Biochemistry studies chemical processes occurring in living organisms."
+},
+
+{
+q:"Which statement about matter is correct?",
+options:[
+"Air is matter",
+"Light is always matter",
+"An idea is matter",
+"A number is matter"
+],
+answer:0,
+explain:"Air has mass and occupies space, so it is matter."
+},
+
+{
+q:"Which is NOT a property of a substance?",
+options:[
+"A person's favorite color",
+"Density",
+"Melting point",
+"Boiling point"
+],
+answer:0,
+explain:"A person's preference is not a characteristic property of a substance."
+},
+
+{
+q:"Which property describes how easily a substance burns?",
+options:[
+"Flammability",
+"Density",
+"Color",
+"Melting point"
+],
+answer:0,
+explain:"Flammability describes the ability of a substance to burn and is a chemical property."
+},
+
+{
+q:"Which branch can determine what substances are present in a sample?",
+options:[
+"Analytical chemistry",
+"Biology only",
+"Physics only",
+"Geometry"
+],
+answer:0,
+explain:"Analytical chemistry identifies substances and determines their amounts."
+},
+
+{
+q:"Which field benefits from chemistry when studying soil nutrients?",
+options:[
+"Agriculture",
+"Music",
+"History",
+"Literature"
+],
+answer:0,
+explain:"Agricultural chemistry helps understand soil nutrients and fertilizers."
+},
+
+{
+q:"Which statement about chemistry is correct?",
+options:[
+"Chemistry is useful in everyday life",
+"Chemistry is useful only in laboratories",
+"Chemistry has no connection with medicine",
+"Chemistry is unrelated to agriculture"
+],
+answer:0,
+explain:"Chemistry is important in everyday life and is connected with medicine, agriculture, food, construction and industry."
+},
+
+{
+q:"Which group contains three classes of chemical products discussed in production?",
+options:[
+"Basic, Intermediate, Finished",
+"Solid, Liquid, Gas",
+"Acid, Base, Salt",
+"Metal, Nonmetal, Gas"
+],
+answer:0,
+explain:"Chemical products can be classified according to their production stage as Basic, Intermediate and Finished products."
+},
+
+{
+q:"Which of the following is an example of a medicine provided through chemistry?",
+options:[
+"Paracetamol",
+"Cement",
+"Glass",
+"Detergent"
+],
+answer:0,
+explain:"Paracetamol is a pharmaceutical product whose active ingredient is developed and manufactured using chemistry."
+},
+
+{
+q:"Which statement best explains the importance of chemistry to society?",
+options:[
+"It helps develop useful products and solve problems in health, agriculture, food, construction and industry",
+"It studies only numbers",
+"It has no practical applications",
+"It is used only for entertainment"
+],
+answer:0,
+explain:"Chemistry has many applications in health, agriculture, food production, construction, industry and environmental protection."
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").innerText =
+        "Question " + (currentQuestion + 1) +
+        " of " + questions.length;
+
+    document.getElementById("question").innerText =
+        q.q;
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion + 1) / questions.length * 100) + "%";
+
+    const optionsDiv =
+        document.getElementById("options");
+
+    optionsDiv.innerHTML = "";
+
+    q.options.forEach((option, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.innerText =
+            String.fromCharCode(65 + index) +
+            ". " + option;
+
+        button.onclick = function() {
+            checkAnswer(index, button);
+        };
+
+        optionsDiv.appendChild(button);
+
+    });
+
+    const feedback =
+        document.getElementById("feedback");
+
+    feedback.className = "feedback";
+
+    feedback.innerHTML = "";
+
+    document.getElementById("nextBtn")
+        .style.display = "none";
+}
+
+
+function checkAnswer(selected, selectedButton) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+    buttons.forEach((button, index) => {
+
+        button.disabled = true;
+
+        if (index === q.answer) {
+            button.classList.add("correct");
+        }
+
+    });
+
+
+    const feedback =
+        document.getElementById("feedback");
+
+
+    if (selected === q.answer) {
+
+        score++;
+
+        selectedButton.classList.add("correct");
+
+        feedback.className =
+            "feedback correct";
+
+        feedback.innerHTML =
+            "✅ <strong>Correct!</strong><br>" +
+            "Excellent! Your answer is correct.";
+
+    } else {
+
+        selectedButton.classList.add("wrong");
+
+        feedback.className =
+            "feedback wrong";
+
+        feedback.innerHTML =
+            "❌ <strong>Wrong!</strong><br>" +
+            "💡 <strong>Explain:</strong> " +
+            q.explain;
+    }
+
+
+    document.getElementById("nextBtn")
+        .style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    } else {
+
+        showResult();
+    }
+}
+
+
+function showResult() {
+
+    document.getElementById("quizCard")
+        .style.display = "none";
+
+    document.getElementById("result")
+        .style.display = "block";
+
+    document.getElementById("score").innerText =
+        score + " / " + questions.length;
+
+    const percentage =
+        (score / questions.length) * 100;
+
+
+    if (percentage >= 80) {
+
+        document.getElementById("resultMessage")
+            .innerText =
+            "🏆 Excellent! You have a strong understanding of Unit 1.";
+
+    } else if (percentage >= 60) {
+
+        document.getElementById("resultMessage")
+            .innerText =
+            "👍 Good job! Review the questions you missed.";
+
+    } else {
+
+        document.getElementById("resultMessage")
+            .innerText =
+            "📚 Keep studying the Unit 1 notes and try again.";
+
+    }
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    document.getElementById("quizCard")
+        .style.display = "block";
+
+    document.getElementById("result")
+        .style.display = "none";
+
+    loadQuestion();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
