@@ -3,9 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Grade 9 Chemistry</title>
 
@@ -40,7 +38,7 @@ header p{
     margin:8px 0;
 }
 
-/* CONTAINER */
+/* MAIN */
 
 .container{
     max-width:950px;
@@ -60,14 +58,19 @@ header p{
 
 .welcome h2{
     color:#1d4ed8;
+    margin-top:0;
+}
+
+.welcome p{
+    line-height:1.7;
 }
 
 /* UNIT CARD */
 
 .unit{
     background:white;
-    margin:20px 0;
     padding:22px;
+    margin:20px 0;
     border-radius:15px;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
@@ -81,36 +84,7 @@ header p{
     line-height:1.6;
 }
 
-/* BUTTONS */
-
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    text-decoration:none;
-    padding:13px 20px;
-    border-radius:9px;
-    color:white;
-    font-weight:bold;
-    display:inline-block;
-}
-
-.notes{
-    background:#2563eb;
-}
-
-.practice{
-    background:#16a34a;
-}
-
-.btn:hover{
-    opacity:.85;
-}
-
-/* UNIT 3 SPECIAL */
+/* UNIT 3 */
 
 .unit3{
     border:3px solid #2563eb;
@@ -125,9 +99,10 @@ header p{
     display:inline-block;
     background:#2563eb;
     color:white;
-    padding:6px 12px;
+    padding:7px 14px;
     border-radius:20px;
     font-size:13px;
+    font-weight:bold;
     margin-bottom:10px;
 }
 
@@ -135,18 +110,62 @@ header p{
 
 .topics{
     background:#f8fafc;
-    padding:15px;
-    border-radius:10px;
-    margin:15px 0;
+    padding:18px;
+    border-radius:12px;
+    margin:18px 0;
+}
+
+.topics h3{
+    color:#1e40af;
+    margin-top:0;
 }
 
 .topics ul{
-    margin:8px 0;
     padding-left:25px;
 }
 
 .topics li{
-    margin:7px 0;
+    margin:8px 0;
+    line-height:1.5;
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    padding:14px 20px;
+    border-radius:9px;
+    font-weight:bold;
+    display:inline-block;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
+.notes{
+    background:#2563eb;
+}
+
+.practice{
+    background:#16a34a;
+}
+
+/* COMING SOON */
+
+.coming{
+    color:#64748b;
+    font-style:italic;
 }
 
 /* FOOTER */
@@ -159,14 +178,21 @@ footer{
     padding:25px;
 }
 
+footer p{
+    margin:7px;
+}
+
 </style>
+
 </head>
 
 
 <body>
 
 
+<!-- ========================= -->
 <!-- HEADER -->
+<!-- ========================= -->
 
 <header>
 
@@ -174,11 +200,15 @@ footer{
 
 <p>Grade 9 Chemistry Learning Website</p>
 
-<p>Notes • Practice • Revision</p>
+<p>📚 Notes • 📝 Practice • 🎯 Revision</p>
 
 </header>
 
 
+
+<!-- ========================= -->
+<!-- MAIN -->
+<!-- ========================= -->
 
 <div class="container">
 
@@ -190,22 +220,22 @@ footer{
 <h2>📚 Welcome to Grade 9 Chemistry</h2>
 
 <p>
-Welcome to the Grade 9 Chemistry learning page.
+Welcome to the Grade 9 Chemistry learning website.
 Here you can study Chemistry notes and practice
 questions unit by unit.
 </p>
 
 <p>
-Choose a unit below to open the notes or practice.
+Choose a unit below and start learning.
 </p>
 
 </div>
 
 
 
-<!-- ======================= -->
+<!-- ========================= -->
 <!-- UNIT 1 -->
-<!-- ======================= -->
+<!-- ========================= -->
 
 <div class="unit">
 
@@ -219,12 +249,16 @@ Introduction to Chemistry
 
 <a href="notes9chemistryunit1.html"
 class="btn notes">
-📖 Notes
+
+📖 Open Notes
+
 </a>
 
 <a href="practice9chemistryunit1.html"
 class="btn practice">
+
 📝 Practice
+
 </a>
 
 </div>
@@ -233,28 +267,33 @@ class="btn practice">
 
 
 
-<!-- ======================= -->
+<!-- ========================= -->
 <!-- UNIT 2 -->
-<!-- ======================= -->
+<!-- ========================= -->
 
 <div class="unit">
 
-<h2>📘 Unit 2</h2>
+<h2>🧪 Unit 2</h2>
 
 <p>
-Chemical Reactions and related Chemistry concepts.
+Chemical concepts, experiments and
+chemical reactions.
 </p>
 
 <div class="buttons">
 
 <a href="notes9chemistryunit2.html"
 class="btn notes">
-📖 Notes
+
+📖 Open Notes
+
 </a>
 
 <a href="practice9chemistryunit2.html"
 class="btn practice">
+
 📝 Practice
+
 </a>
 
 </div>
@@ -263,27 +302,28 @@ class="btn practice">
 
 
 
-<!-- ======================= -->
+<!-- ========================= -->
 <!-- UNIT 3 -->
-<!-- ======================= -->
+<!-- ========================= -->
 
 <div class="unit unit3">
 
 <span class="badge">
-NEW UNIT
+⚛️ UNIT 3
 </span>
 
 <h2>
-⚛️ Unit 3 — Structure of the Atom
+Structure of the Atom
 </h2>
 
 <p>
-Study the historical development of atomic theory,
-the laws of chemical reactions, atomic theories,
-subatomic particles, the atomic nucleus, isotopes,
-atomic number, mass number and electron configuration.
+Learn how scientists developed the atomic theory
+and how the atom was discovered to contain
+subatomic particles.
 </p>
 
+
+<!-- UNIT 3 TOPICS -->
 
 <div class="topics">
 
@@ -297,19 +337,19 @@ Historical Development of Atomic Theories of Matter
 </li>
 
 <li>
-The Greek concept of <em>atomos</em>
-</li>
-
-<li>
 The indivisible atom
 </li>
 
 <li>
-Major ideas of early Greek philosophers
+The Greek concept of <strong>atomos</strong>
 </li>
 
 <li>
-Drawbacks of the early Greek atomic idea
+Major ideas of the Greek philosophers
+</li>
+
+<li>
+Drawbacks of the early Greek atomic theory
 </li>
 
 <li>
@@ -343,7 +383,7 @@ Dalton's Postulates
 </li>
 
 <li>
-Drawbacks of Dalton's Theory
+Drawbacks of Dalton's Atomic Theory
 </li>
 
 <li>
@@ -351,16 +391,18 @@ Modern Atomic Theory
 </li>
 
 <li>
-Dalton vs Modern Atomic Theory
+Relationship and differences between Dalton
+and Modern Atomic Theory
 </li>
 
 <li>
 <strong>3.4</strong>
 Discovery of Fundamental Subatomic Particles
+and the Atomic Nucleus
 </li>
 
 <li>
-Discovery of the Electron — J. J. Thomson
+Discovery of the Electron
 </li>
 
 <li>
@@ -368,19 +410,19 @@ Discovery of the Proton
 </li>
 
 <li>
-Discovery of the Neutron — James Chadwick
+Discovery of the Neutron
 </li>
 
 <li>
-Discovery of the Nucleus — Ernest Rutherford
+Discovery of the Atomic Nucleus
 </li>
 
 <li>
-Bohr Atomic Model — Niels Bohr
+Bohr Atomic Model
 </li>
 
 <li>
-Millikan Oil-Drop Experiment — Robert Millikan
+Millikan Oil-Drop Experiment
 </li>
 
 <li>
@@ -388,7 +430,7 @@ Composition of the Atom
 </li>
 
 <li>
-Proton, Neutron and Electron
+Electron, Proton and Neutron
 </li>
 
 <li>
@@ -401,11 +443,7 @@ Atomic Number and Atomic Mass
 </li>
 
 <li>
-Atomic Number
-</li>
-
-<li>
-Mass Number
+Atomic Mass and Isotopes
 </li>
 
 <li>
@@ -429,7 +467,8 @@ Valence Electrons
 </div>
 
 
-<!-- UNIT 3 SCIENTISTS -->
+
+<!-- SCIENTISTS -->
 
 <div class="topics">
 
@@ -439,7 +478,7 @@ Valence Electrons
 
 <li>
 <strong>Leucippus</strong> —
-Early Greek atomism
+Early Greek atomic idea
 </li>
 
 <li>
@@ -479,7 +518,7 @@ Discovery of the atomic nucleus
 
 <li>
 <strong>Niels Bohr</strong> —
-Bohr atomic model and energy levels
+Atomic model and energy levels
 </li>
 
 <li>
@@ -493,14 +532,14 @@ Discovery of the neutron
 
 
 
-<!-- UNIT 3 BUTTONS -->
+<!-- UNIT 3 LINKS -->
 
 <div class="buttons">
 
 <a href="notes9chemistryunit3.html"
 class="btn notes">
 
-📖 Open Unit 3 Notes
+📖 Unit 3 Notes
 
 </a>
 
@@ -508,7 +547,7 @@ class="btn notes">
 <a href="practice9chemistryunit3.html"
 class="btn practice">
 
-📝 60 Questions Practice
+📝 Unit 3 Practice — 60 Questions
 
 </a>
 
@@ -518,27 +557,95 @@ class="btn practice">
 
 
 
-<!-- ======================= -->
-<!-- FUTURE UNIT -->
-<!-- ======================= -->
+<!-- ========================= -->
+<!-- UNIT 4 -->
+<!-- ========================= -->
 
 <div class="unit">
 
 <h2>📕 Unit 4</h2>
 
-<p>
+<p class="coming">
 Coming soon...
 </p>
 
 </div>
 
 
+
+<!-- ========================= -->
+<!-- UNIT 5 -->
+<!-- ========================= -->
 
 <div class="unit">
 
 <h2>📕 Unit 5</h2>
 
-<p>
+<p class="coming">
+Coming soon...
+</p>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- UNIT 6 -->
+<!-- ========================= -->
+
+<div class="unit">
+
+<h2>📕 Unit 6</h2>
+
+<p class="coming">
+Coming soon...
+</p>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- UNIT 7 -->
+<!-- ========================= -->
+
+<div class="unit">
+
+<h2>📕 Unit 7</h2>
+
+<p class="coming">
+Coming soon...
+</p>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- UNIT 8 -->
+<!-- ========================= -->
+
+<div class="unit">
+
+<h2>📕 Unit 8</h2>
+
+<p class="coming">
+Coming soon...
+</p>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- UNIT 9 -->
+<!-- ========================= -->
+
+<div class="unit">
+
+<h2>📕 Unit 9</h2>
+
+<p class="coming">
 Coming soon...
 </p>
 
@@ -549,16 +656,23 @@ Coming soon...
 </div>
 
 
+
+<!-- ========================= -->
 <!-- FOOTER -->
+<!-- ========================= -->
 
 <footer>
 
 <p>
-🧪 Grade 9 Chemistry
+🧪 <strong>Grade 9 Chemistry</strong>
 </p>
 
 <p>
 Learn • Practice • Improve
+</p>
+
+<p>
+© 2026 Chemistry Learning Website
 </p>
 
 </footer>
