@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 Chemistry Unit 2 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{margin:0}
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 12px #ccc;
+}
+
+.number{
+    color:#7c3aed;
+    font-weight:bold;
+}
+
+.progress{
+    height:12px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0 25px;
+}
+
+.bar{
+    height:100%;
+    width:0;
+    background:#7c3aed;
+    transition:.3s;
+}
+
+.question{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.option{
+    width:100%;
+    padding:15px;
+    margin:8px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#f3e8ff;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.feedback{
+    display:none;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.feedback.correctBox{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.feedback.wrongBox{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.next,.restart,.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.next{
+    background:#2563eb;
+    display:none;
+}
+
+.restart{
+    background:#16a34a;
+}
+
+.back{
+    background:#172554;
+}
+
+#result{
+    display:none;
+    text-align:center;
+}
+
+.score{
+    font-size:42px;
+    color:#7c3aed;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🧪 Grade 9 Chemistry</h1>
+<p>Unit 2 — Measurement and Scientific Method</p>
+<p>📝 60 Questions</p>
+</header>
+
+<div class="container">
+
+<div class="card" id="quiz">
+
+<div class="number" id="number">
+Question 1 of 60
+</div>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<div class="question" id="question"></div>
+
+<div id="options"></div>
+
+<div id="feedback" class="feedback"></div>
+
+<button class="next" id="next" onclick="nextQuestion()">
+➡️ Next Question
+</button>
+
+</div>
+
+
+<div class="card" id="result">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p>Your Score</p>
+
+<div class="score" id="score"></div>
+
+<p id="message"></p>
+
+<button class="restart" onclick="restartQuiz()">
+🔄 Try Again
+</button>
+
+<button class="back" onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questions=[
+
+{
+q:"What is measurement?",
+o:[
+"Comparing an unknown quantity with a standard unit",
+"Guessing a value",
+"Changing a substance",
+"Observing without instruments"
+],
+a:0,
+e:"Measurement is the comparison of an unknown physical quantity with an accepted standard unit."
+},
+
+{
+q:"What is the SI unit of length?",
+o:["Metre","Kilogram","Second","Kelvin"],
+a:0,
+e:"The SI base unit of length is the metre (m)."
+},
+
+{
+q:"What is the SI unit of mass?",
+o:["Kilogram","Gram","Metre","Newton"],
+a:0,
+e:"The SI base unit of mass is kilogram (kg)."
+},
+
+{
+q:"What is the SI unit of time?",
+o:["Second","Minute","Hour","Day"],
+a:0,
+e:"The SI base unit of time is the second (s)."
+},
+
+{
+q:"What is the SI unit of temperature?",
+o:["Kelvin","Celsius","Fahrenheit","Degree"],
+a:0,
+e:"The SI base unit of thermodynamic temperature is kelvin (K)."
+},
+
+{
+q:"Which is a fundamental quantity?",
+o:["Length","Density","Area","Volume"],
+a:0,
+e:"Length is one of the SI base quantities."
+},
+
+{
+q:"Which is a derived quantity?",
+o:["Density","Mass","Time","Length"],
+a:0,
+e:"Density is derived from mass and volume."
+},
+
+{
+q:"Which instrument measures temperature?",
+o:["Thermometer","Balance","Ruler","Stopwatch"],
+a:0,
+e:"A thermometer is used to measure temperature."
+},
+
+{
+q:"Which instrument is commonly used to measure mass?",
+o:["Balance","Thermometer","Ruler","Measuring cylinder"],
+a:0,
+e:"A balance is used to measure mass."
+},
+
+{
+q:"Which instrument measures time?",
+o:["Stopwatch","Balance","Thermometer","Ruler"],
+a:0,
+e:"A stopwatch can measure elapsed time."
+},
+
+{
+q:"Which instrument can measure the volume of a liquid?",
+o:["Graduated cylinder","Ruler","Balance","Thermometer"],
+a:0,
+e:"A graduated cylinder is commonly used to measure liquid volume."
+},
+
+{
+q:"What is the SI unit of volume?",
+o:["m³","m","kg","K"],
+a:0,
+e:"The SI unit of volume is cubic metre (m³)."
+},
+
+{
+q:"What is the formula for the volume of a rectangular solid?",
+o:[
+"Length × width × height",
+"Mass ÷ volume",
+"Length + width + height",
+"Mass × volume"
+],
+a:0,
+e:"For a rectangular solid, volume = length × width × height."
+},
+
+{
+q:"What is density?",
+o:[
+"Mass per unit volume",
+"Volume per unit mass",
+"Mass plus volume",
+"Temperature per unit mass"
+],
+a:0,
+e:"Density is the mass contained in a unit volume."
+},
+
+{
+q:"Which formula represents density?",
+o:[
+"ρ = m/V",
+"ρ = V/m",
+"ρ = mV",
+"ρ = m+V"
+],
+a:0,
+e:"Density is calculated by dividing mass by volume: ρ = m/V."
+},
+
+{
+q:"A substance has a mass of 100 g and volume of 20 cm³. What is its density?",
+o:["5 g/cm³","2 g/cm³","20 g/cm³","120 g/cm³"],
+a:0,
+e:"Density = mass ÷ volume = 100 ÷ 20 = 5 g/cm³."
+},
+
+{
+q:"1 metre is equal to:",
+o:["100 cm","10 cm","1000 cm","0.1 cm"],
+a:0,
+e:"1 metre = 100 centimetres."
+},
+
+{
+q:"1 kilogram is equal to:",
+o:["1000 g","100 g","10 g","0.1 g"],
+a:0,
+e:"1 kg = 1000 g."
+},
+
+{
+q:"1 litre is equal to:",
+o:["1000 mL","100 mL","10 mL","1 mL"],
+a:0,
+e:"1 L = 1000 mL."
+},
+
+{
+q:"500 mL is equal to:",
+o:["0.5 L","5 L","50 L","0.05 L"],
+a:0,
+e:"500 mL ÷ 1000 = 0.5 L."
+},
+
+{
+q:"What does SI stand for?",
+o:[
+"International System of Units",
+"Scientific Instrument System",
+"Standard Investigation",
+"System of International Chemistry"
+],
+a:0,
+e:"SI stands for International System of Units."
+},
+
+{
+q:"Which prefix means 1000?",
+o:["kilo","centi","milli","micro"],
+a:0,
+e:"Kilo means 1000."
+},
+
+{
+q:"Which prefix means one thousandth?",
+o:["milli","kilo","centi","mega"],
+a:0,
+e:"Milli means 1/1000."
+},
+
+{
+q:"Which prefix means one hundredth?",
+o:["centi","kilo","milli","nano"],
+a:0,
+e:"Centi means 1/100."
+},
+
+{
+q:"What is accuracy?",
+o:[
+"Closeness to the accepted value",
+"Closeness of repeated values only",
+"Size of an instrument",
+"Number of measurements"
+],
+a:0,
+e:"Accuracy describes how close a measurement is to the accepted or true value."
+},
+
+{
+q:"What is precision?",
+o:[
+"Closeness of repeated measurements to each other",
+"Closeness to the true value only",
+"Size of a measurement",
+"Type of unit"
+],
+a:0,
+e:"Precision describes how close repeated measurements are to each other."
+},
+
+{
+q:"A measurement can be:",
+o:[
+"Precise but not accurate",
+"Only accurate",
+"Only precise",
+"Neither measurable nor repeatable"
+],
+a:0,
+e:"Measurements can be precise but inaccurate if repeated results are close together but far from the accepted value."
+},
+
+{
+q:"What are significant figures?",
+o:[
+"Digits that carry meaningful information about a measurement",
+"All zeros in a number",
+"Only whole numbers",
+"Only decimal points"
+],
+a:0,
+e:"Significant figures show meaningful precision in a measurement."
+},
+
+{
+q:"How many significant figures are in 25.4?",
+o:["3","2","4","1"],
+a:0,
+e:"25.4 contains three significant figures: 2, 5 and 4."
+},
+
+{
+q:"How many significant figures are in 0.0052?",
+o:["2","4","5","1"],
+a:0,
+e:"Leading zeros are not significant, so 0.0052 has two significant figures."
+},
+
+{
+q:"Which number is written in scientific notation?",
+o:[
+"3.5 × 10⁴",
+"35000",
+"0.0035",
+"35"
+],
+a:0,
+e:"3.5 × 10⁴ is written directly in scientific notation."
+},
+
+{
+q:"3000 in scientific notation is:",
+o:["3 × 10³","30 × 10²","300 × 10","3 × 10⁻³"],
+a:0,
+e:"3000 = 3 × 10³."
+},
+
+{
+q:"0.0045 in scientific notation is:",
+o:["4.5 × 10⁻³","4.5 × 10³","45 × 10³","0.45 × 10³"],
+a:0,
+e:"Move the decimal three places right: 0.0045 = 4.5 × 10⁻³."
+},
+
+{
+q:"What is a scientific method?",
+o:[
+"A systematic way of investigating scientific questions",
+"A way of memorizing facts",
+"A method of guessing",
+"A method of drawing"
+],
+a:0,
+e:"The scientific method provides a systematic approach to investigating scientific questions."
+},
+
+{
+q:"What usually begins a scientific investigation?",
+o:["Observation","Conclusion","Publication","Final answer"],
+a:0,
+e:"Observation often provides the starting point for a scientific investigation."
+},
+
+{
+q:"What is a scientific question?",
+o:[
+"A question that can be investigated using evidence",
+"A question with no possible investigation",
+"A personal opinion",
+"A random guess"
+],
+a:0,
+e:"A scientific question should be investigable through observation or experiment."
+},
+
+{
+q:"What is a hypothesis?",
+o:[
+"A testable proposed explanation or prediction",
+"A final fact",
+"A measuring instrument",
+"A laboratory accident"
+],
+a:0,
+e:"A hypothesis is a testable proposed explanation or prediction."
+},
+
+{
+q:"A good hypothesis must be:",
+o:["Testable","Impossible to test","Always correct","A personal belief"],
+a:0,
+e:"A scientific hypothesis must be testable."
+},
+
+{
+q:"What is an experiment?",
+o:[
+"A controlled investigation used to test a hypothesis",
+"A guess",
+"A conclusion",
+"A measurement unit"
+],
+a:0,
+e:"An experiment is a controlled investigation designed to test a hypothesis."
+},
+
+{
+q:"What is the independent variable?",
+o:[
+"The variable deliberately changed by the researcher",
+"The variable that is measured",
+"A variable kept constant",
+"The final conclusion"
+],
+a:0,
+e:"The independent variable is the factor deliberately changed."
+},
+
+{
+q:"What is the dependent variable?",
+o:[
+"The variable measured or observed",
+"The variable deliberately changed",
+"The variable always kept constant",
+"The hypothesis"
+],
+a:0,
+e:"The dependent variable is the response that is measured or observed."
+},
+
+{
+q:"What are controlled variables?",
+o:[
+"Factors kept constant",
+"Factors deliberately changed",
+"Results",
+"Measurements only"
+],
+a:0,
+e:"Controlled variables are kept constant so they do not affect the comparison."
+},
+
+{
+q:"In an experiment testing temperature effect on dissolving sugar, temperature is the:",
+o:["Independent variable","Dependent variable","Controlled variable","Conclusion"],
+a:0,
+e:"Temperature is deliberately changed, so it is the independent variable."
+},
+
+{
+q:"In the same experiment, dissolving time is the:",
+o:["Dependent variable","Independent variable","Control","Hypothesis"],
+a:0,
+e:"Dissolving time is measured, so it is the dependent variable."
+},
+
+{
+q:"Which is qualitative data?",
+o:[
+"The solution is blue",
+"The temperature is 25°C",
+"The mass is 10 g",
+"The volume is 20 mL"
+],
+a:0,
+e:"'Blue' describes a quality rather than a numerical measurement."
+},
+
+{
+q:"Which is quantitative data?",
+o:[
+"The temperature is 25°C",
+"The liquid is blue",
+"The substance smells strong",
+"The solution is clear"
+],
+a:0,
+e:"25°C is numerical data, so it is quantitative."
+},
+
+{
+q:"Why are data recorded in tables?",
+o:[
+"To organize information clearly",
+"To change the experiment",
+"To hide results",
+"To avoid measurements"
+],
+a:0,
+e:"Tables help organize collected data clearly."
+},
+
+{
+q:"What is data analysis?",
+o:[
+"Examining data to identify patterns and relationships",
+"Collecting chemicals",
+"Cleaning equipment",
+"Writing a hypothesis only"
+],
+a:0,
+e:"Data analysis involves examining results to identify patterns, relationships and trends."
+},
+
+{
+q:"What does a conclusion do?",
+o:[
+"States what the evidence shows",
+"Starts the experiment",
+"Changes the variables",
+"Measures temperature"
+],
+a:0,
+e:"A conclusion explains what was learned from the investigation based on evidence."
+},
+
+{
+q:"Why do scientists communicate their results?",
+o:[
+"So others can understand and evaluate the work",
+"To hide the results",
+"To avoid experiments",
+"To change the SI system"
+],
+a:0,
+e:"Communication allows other scientists to understand, evaluate and potentially reproduce the work."
+},
+
+{
+q:"Which is a laboratory safety rule?",
+o:[
+"Do not taste chemicals",
+"Taste every chemical",
+"Mix chemicals randomly",
+"Ignore labels"
+],
+a:0,
+e:"Chemicals should never be tasted in the laboratory."
+},
+
+{
+q:"Why should chemical labels be read?",
+o:[
+"To know the chemical identity and possible hazards",
+"To make chemicals taste better",
+"To change their color",
+"To increase their mass"
+],
+a:0,
+e:"Labels provide important information about identity, handling and hazards."
+},
+
+{
+q:"Which symbol represents a flammable hazard?",
+o:["🔥","📏","📐","🕒"],
+a:0,
+e:"The flame symbol indicates a flammable hazard."
+},
+
+{
+q:"What is a corrosive substance capable of doing?",
+o:[
+"Damaging skin or materials",
+"Always freezing water",
+"Producing only light",
+"Measuring mass"
+],
+a:0,
+e:"Corrosive substances can damage living tissue and some materials."
+},
+
+{
+q:"What is experimental error?",
+o:[
+"The difference between a measured value and an accepted value",
+"The correct value",
+"The unit of measurement",
+"The scientific method"
+],
+a:0,
+e:"Experimental error describes the difference between a measured result and the accepted value."
+},
+
+{
+q:"What is random error?",
+o:[
+"An unpredictable variation between measurements",
+"A constant shift in one direction",
+"A perfect measurement",
+"A unit conversion"
+],
+a:0,
+e:"Random error varies unpredictably from one measurement to another."
+},
+
+{
+q:"How can random error often be reduced?",
+o:[
+"Repeat measurements and use an average",
+"Never measure again",
+"Ignore the results",
+"Change the units randomly"
+],
+a:0,
+e:"Repeated measurements and averaging can reduce the effect of random error."
+},
+
+{
+q:"What is systematic error?",
+o:[
+"A consistent error that tends to shift measurements in one direction",
+"An unpredictable change",
+"A correct result",
+"A scientific hypothesis"
+],
+a:0,
+e:"Systematic errors tend to produce consistent bias in measurements."
+},
+
+{
+q:"A poorly calibrated balance can cause:",
+o:["Systematic error","Only random error","No error","A hypothesis"],
+a:0,
+e:"Poor calibration can cause measurements to be consistently too high or too low."
+},
+
+{
+q:"Which practice improves reliability?",
+o:[
+"Repeating measurements",
+"Guessing results",
+"Ignoring units",
+"Changing several variables without control"
+],
+a:0,
+e:"Repeated measurements help assess consistency and improve reliability."
+},
+
+{
+q:"Why are units important in chemistry?",
+o:[
+"They tell us what a numerical measurement represents",
+"They increase mass",
+"They change substances",
+"They remove all errors"
+],
+a:0,
+e:"Units give meaning to numerical measurements."
+},
+
+{
+q:"Which statement is correct?",
+o:[
+"Measurement requires a numerical value and a unit",
+"Measurement never needs units",
+"All measurements are guesses",
+"Units are unnecessary in science"
+],
+a:0,
+e:"A scientific measurement is normally expressed using a numerical value and an appropriate unit."
+}
+
+];
+
+let current=0;
+let score=0;
+let answered=false;
+
+function loadQuestion(){
+
+answered=false;
+
+let q=questions[current];
+
+document.getElementById("number").innerText=
+"Question "+(current+1)+" of "+questions.length;
+
+document.getElementById("question").innerText=q.q;
+
+document.getElementById("bar").style.width=
+((current+1)/questions.length*100)+"%";
+
+let options=document.getElementById("options");
+options.innerHTML="";
+
+q.o.forEach((text,index)=>{
+
+let btn=document.createElement("button");
+
+btn.className="option";
+
+btn.innerText=
+String.fromCharCode(65+index)+". "+text;
+
+btn.onclick=()=>checkAnswer(index,btn);
+
+options.appendChild(btn);
+
+});
+
+document.getElementById("feedback").className="feedback";
+document.getElementById("feedback").innerHTML="";
+
+document.getElementById("next").style.display="none";
+}
+
+
+function checkAnswer(selected,button){
+
+if(answered)return;
+
+answered=true;
+
+let q=questions[current];
+
+let buttons=document.querySelectorAll(".option");
+
+buttons.forEach((b,i)=>{
+b.disabled=true;
+
+if(i===q.a){
+b.classList.add("correct");
+}
+});
+
+let feedback=document.getElementById("feedback");
+
+if(selected===q.a){
+
+score++;
+
+button.classList.add("correct");
+
+feedback.className="feedback correctBox";
+
+feedback.innerHTML=
+"✅ <strong>Correct!</strong><br>"+
+"Excellent! Your answer is correct.";
+
+}else{
+
+button.classList.add("wrong");
+
+feedback.className="feedback wrongBox";
+
+feedback.innerHTML=
+"❌ <strong>Wrong!</strong><br>"+
+"💡 <strong>Explain:</strong> "+q.e;
+
+}
+
+document.getElementById("next").style.display="block";
+}
+
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+loadQuestion();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}else{
+
+showResult();
+
+}
+}
+
+
+function showResult(){
+
+document.getElementById("quiz").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("score").innerText=
+score+" / "+questions.length;
+
+let percent=(score/questions.length)*100;
+
+if(percent>=80){
+
+document.getElementById("message").innerText=
+"🏆 Excellent! You have a strong understanding of Unit 2.";
+
+}else if(percent>=60){
+
+document.getElementById("message").innerText=
+"👍 Good job! Review the questions you missed.";
+
+}else{
+
+document.getElementById("message").innerText=
+"📚 Keep studying Unit 2 Notes and try again.";
+
+}
+}
+
+
+function restartQuiz(){
+
+current=0;
+score=0;
+
+document.getElementById("quiz").style.display="block";
+
+document.getElementById("result").style.display="none";
+
+loadQuestion();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
