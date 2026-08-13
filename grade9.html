@@ -57,16 +57,16 @@ header p {
     border-left: 6px solid #2563eb;
 }
 
+.chemistry {
+    border-left: 6px solid #9333ea;
+}
+
 .biology {
     border-left: 6px solid #16a34a;
 }
 
 .physics {
     border-left: 6px solid #dc2626;
-}
-
-.chemistry {
-    border-left: 6px solid #9333ea;
 }
 
 .english {
@@ -87,6 +87,10 @@ h2 {
 
 h3 {
     color: #2563eb;
+}
+
+.chemUnit h3 {
+    color: #9333ea;
 }
 
 p {
@@ -214,7 +218,7 @@ Choose a unit to study Notes or Practice.
 </div>
 
 
-<!-- UNIT 1 -->
+<!-- MATH UNIT 1 -->
 
 <div class="card unit">
 
@@ -239,7 +243,7 @@ onclick="location.href='practice9.html'">
 </div>
 
 
-<!-- UNIT 2 -->
+<!-- MATH UNIT 2 -->
 
 <div class="card unit">
 
@@ -264,7 +268,7 @@ onclick="location.href='practice9unit2.html'">
 </div>
 
 
-<!-- UNIT 3 -->
+<!-- MATH UNIT 3 -->
 
 <div class="card unit">
 
@@ -289,7 +293,7 @@ onclick="location.href='practice9unit3.html'">
 </div>
 
 
-<!-- UNIT 4 -->
+<!-- MATH UNIT 4 -->
 
 <div class="card unit">
 
@@ -314,7 +318,7 @@ onclick="location.href='practice9unit4.html'">
 </div>
 
 
-<!-- UNIT 5 -->
+<!-- MATH UNIT 5 -->
 
 <div class="card unit">
 
@@ -339,7 +343,7 @@ onclick="location.href='practice9unit5.html'">
 </div>
 
 
-<!-- UNIT 6 -->
+<!-- MATH UNIT 6 -->
 
 <div class="card unit">
 
@@ -364,7 +368,7 @@ onclick="location.href='practice9unit6.html'">
 </div>
 
 
-<!-- UNIT 7 -->
+<!-- MATH UNIT 7 -->
 
 <div class="card unit">
 
@@ -389,7 +393,7 @@ onclick="location.href='practice9unit7.html'">
 </div>
 
 
-<!-- UNIT 8 -->
+<!-- MATH UNIT 8 -->
 
 <div class="card unit">
 
@@ -414,7 +418,7 @@ onclick="location.href='practice9unit8.html'">
 </div>
 
 
-<!-- UNIT 9 -->
+<!-- MATH UNIT 9 -->
 
 <div class="card unit">
 
@@ -449,7 +453,7 @@ onclick="location.href='practice9unit9.html'">
 <h2>🧪 Chemistry</h2>
 
 <p>
-Grade 9 Chemistry with detailed Notes and Practice.
+Grade 9 Chemistry — Unit 1 and Unit 2 are available.
 </p>
 
 <button
@@ -475,7 +479,7 @@ onclick="openChemistry()">
 </h2>
 
 <p>
-Choose a Chemistry unit to study Notes or Practice.
+Choose a unit to study Notes or Practice.
 </p>
 
 </div>
@@ -485,13 +489,15 @@ Choose a Chemistry unit to study Notes or Practice.
 
 <div class="card chemUnit">
 
-<h3>🧪 Unit 1 — Chemistry and Its Importance</h3>
+<h3>
+🧪 Unit 1 — Chemistry and Its Importance
+</h3>
 
 <p>
 Definition and scope of chemistry, matter, substances,
-properties, composition, branches of chemistry, relationship
-with other natural sciences, medicine, agriculture, food,
-construction and chemical industries.
+properties, branches of chemistry, relationship with other
+natural sciences, agriculture, food production, medicine,
+common drugs, construction materials and chemical industries.
 </p>
 
 <button
@@ -517,13 +523,31 @@ onclick="location.href='practice9chemistryunit1.html'">
 
 <div class="card chemUnit">
 
-<h3>📏 Unit 2 — Measurement and Scientific Method</h3>
+<h3>
+📏 Unit 2 — Measurement and Scientific Method
+</h3>
+
+<p>
+Measurement, SI units, physical quantities, fundamental and
+derived quantities, length, mass, time, temperature, volume,
+density, accuracy, precision, significant figures, scientific
+notation, unit conversion, scientific method, variables,
+laboratory safety and experimental errors.
+</p>
 
 <button
-class="coming"
-disabled>
+class="notes"
+onclick="location.href='notes9chemistryunit2.html'">
 
-🔒 Coming Soon
+📖 Unit 2 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9chemistryunit2.html'">
+
+📝 Unit 2 Practice — 60 Questions
 
 </button>
 
@@ -534,7 +558,14 @@ disabled>
 
 <div class="card chemUnit">
 
-<h3>⚛️ Unit 3 — Structure of the Atom</h3>
+<h3>
+⚛️ Unit 3 — Structure of the Atom
+</h3>
+
+<p>
+Atomic theory, subatomic particles, atomic number,
+mass number, isotopes, electron arrangement and ions.
+</p>
 
 <button
 class="coming"
@@ -551,7 +582,9 @@ disabled>
 
 <div class="card chemUnit">
 
-<h3>🧩 Unit 4 — Periodic Classification of Elements</h3>
+<h3>
+🧩 Unit 4 — Periodic Classification of Elements
+</h3>
 
 <button
 class="coming"
@@ -568,7 +601,9 @@ disabled>
 
 <div class="card chemUnit">
 
-<h3>🔗 Unit 5 — Chemical Bonding</h3>
+<h3>
+🔗 Unit 5 — Chemical Bonding
+</h3>
 
 <button
 class="coming"
@@ -695,5 +730,4 @@ function openChemistry() {
 
 
 </body>
-
 </html>
