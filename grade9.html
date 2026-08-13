@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Grade 9 Chemistry</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 - Study Plus</title>
 
 <style>
 
@@ -15,15 +18,13 @@
 
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f4f7fb;
     color:#222;
 }
 
-/* HEADER */
-
 header{
-    background:linear-gradient(135deg,#172554,#2563eb);
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
     padding:35px 15px;
@@ -38,148 +39,121 @@ header p{
     margin:8px 0;
 }
 
-/* MAIN */
-
 .container{
-    max-width:950px;
+    max-width:900px;
     margin:auto;
     padding:20px;
 }
 
-/* WELCOME */
-
-.welcome{
+.card{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:25px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
 }
 
-.welcome h2{
-    color:#1d4ed8;
-    margin-top:0;
+.math{
+    border-left:6px solid #2563eb;
 }
 
-.welcome p{
-    line-height:1.7;
+.chemistry{
+    border-left:6px solid #9333ea;
 }
 
-/* UNIT CARD */
+.biology{
+    border-left:6px solid #16a34a;
+}
+
+.physics{
+    border-left:6px solid #dc2626;
+}
+
+.english{
+    border-left:6px solid #ea580c;
+}
 
 .unit{
-    background:white;
-    padding:22px;
-    margin:20px 0;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    border-left:5px solid #2563eb;
 }
 
-.unit h2{
-    color:#1d4ed8;
+.chemUnit{
+    border-left:5px solid #9333ea;
+}
+
+h2{
     margin-top:0;
 }
 
-.unit p{
+h3{
+    color:#2563eb;
+}
+
+.chemUnit h3{
+    color:#9333ea;
+}
+
+p{
     line-height:1.6;
+    color:#555;
 }
 
-/* UNIT 3 */
-
-.unit3{
-    border:3px solid #2563eb;
-    background:linear-gradient(
-        135deg,
-        #ffffff,
-        #eff6ff
-    );
-}
-
-.badge{
-    display:inline-block;
-    background:#2563eb;
+button{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
     color:white;
-    padding:7px 14px;
-    border-radius:20px;
-    font-size:13px;
+    font-size:16px;
     font-weight:bold;
-    margin-bottom:10px;
+    cursor:pointer;
 }
 
-/* TOPICS */
-
-.topics{
-    background:#f8fafc;
-    padding:18px;
-    border-radius:12px;
-    margin:18px 0;
-}
-
-.topics h3{
-    color:#1e40af;
-    margin-top:0;
-}
-
-.topics ul{
-    padding-left:25px;
-}
-
-.topics li{
-    margin:8px 0;
-    line-height:1.5;
-}
-
-/* BUTTONS */
-
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:15px;
-}
-
-.btn{
-    text-decoration:none;
-    color:white;
-    padding:14px 20px;
-    border-radius:9px;
-    font-weight:bold;
-    display:inline-block;
-    transition:.2s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
+button:hover{
     opacity:.9;
 }
 
-.notes{
+.open{
     background:#2563eb;
+}
+
+.chemOpen{
+    background:#9333ea;
+}
+
+.notes{
+    background:#7c3aed;
 }
 
 .practice{
     background:#16a34a;
 }
 
-/* COMING SOON */
-
 .coming{
-    color:#64748b;
-    font-style:italic;
+    background:#9ca3af;
 }
 
-/* FOOTER */
-
-footer{
-    margin-top:40px;
+.back{
     background:#172554;
-    color:white;
-    text-align:center;
-    padding:25px;
 }
 
-footer p{
-    margin:7px;
+#mathUnits{
+    display:none;
+}
+
+#chemistryUnits{
+    display:none;
+}
+
+.title{
+    text-align:center;
+    color:#2563eb;
+}
+
+.chemTitle{
+    text-align:center;
+    color:#9333ea;
 }
 
 </style>
@@ -190,492 +164,585 @@ footer p{
 <body>
 
 
-<!-- ========================= -->
-<!-- HEADER -->
-<!-- ========================= -->
-
 <header>
 
-<h1>🧪 Grade 9 Chemistry</h1>
+<h1>📚 Grade 9</h1>
 
-<p>Grade 9 Chemistry Learning Website</p>
+<p>Study Plus</p>
 
-<p>📚 Notes • 📝 Practice • 🎯 Revision</p>
+<p>Learn • Practice • Prepare</p>
 
 </header>
 
 
-
-<!-- ========================= -->
-<!-- MAIN -->
-<!-- ========================= -->
-
 <div class="container">
 
 
-<!-- WELCOME -->
+<!-- ================= MATHEMATICS ================= -->
 
-<div class="welcome">
+<div class="card math">
 
-<h2>📚 Welcome to Grade 9 Chemistry</h2>
-
-<p>
-Welcome to the Grade 9 Chemistry learning website.
-Here you can study Chemistry notes and practice
-questions unit by unit.
-</p>
+<h2>📐 Mathematics</h2>
 
 <p>
-Choose a unit below and start learning.
+Complete Grade 9 Mathematics from
+Unit 1 to Unit 9 with Notes and Practice.
 </p>
 
-</div>
+<button
+class="open"
+onclick="openMath()">
 
+📚 Open Mathematics
 
-
-<!-- ========================= -->
-<!-- UNIT 1 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📘 Unit 1</h2>
-
-<p>
-Introduction to Chemistry
-</p>
-
-<div class="buttons">
-
-<a href="notes9chemistryunit1.html"
-class="btn notes">
-
-📖 Open Notes
-
-</a>
-
-<a href="practice9chemistryunit1.html"
-class="btn practice">
-
-📝 Practice
-
-</a>
-
-</div>
+</button>
 
 </div>
 
 
+<!-- ================= MATHEMATICS UNITS ================= -->
 
-<!-- ========================= -->
-<!-- UNIT 2 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>🧪 Unit 2</h2>
-
-<p>
-Chemical concepts, experiments and
-chemical reactions.
-</p>
-
-<div class="buttons">
-
-<a href="notes9chemistryunit2.html"
-class="btn notes">
-
-📖 Open Notes
-
-</a>
-
-<a href="practice9chemistryunit2.html"
-class="btn practice">
-
-📝 Practice
-
-</a>
-
-</div>
-
-</div>
+<div id="mathUnits">
 
 
+<div class="card">
 
-<!-- ========================= -->
-<!-- UNIT 3 -->
-<!-- ========================= -->
-
-<div class="unit unit3">
-
-<span class="badge">
-⚛️ UNIT 3
-</span>
-
-<h2>
-Structure of the Atom
+<h2 class="title">
+📐 Grade 9 Mathematics
 </h2>
 
 <p>
-Learn how scientists developed the atomic theory
-and how the atom was discovered to contain
-subatomic particles.
+Choose a unit to study Notes or Practice.
 </p>
 
+</div>
 
-<!-- UNIT 3 TOPICS -->
 
-<div class="topics">
+<!-- UNIT 1 -->
 
-<h3>📚 Unit 3 Topics</h3>
+<div class="card unit">
 
-<ul>
+<h3>📘 Unit 1 — Further on Sets</h3>
 
-<li>
-<strong>3.1</strong>
-Historical Development of Atomic Theories of Matter
-</li>
+<button
+class="notes"
+onclick="location.href='notes9.html'">
 
-<li>
-The indivisible atom
-</li>
+📖 Unit 1 Notes
 
-<li>
-The Greek concept of <strong>atomos</strong>
-</li>
+</button>
 
-<li>
-Major ideas of the Greek philosophers
-</li>
+<button
+class="practice"
+onclick="location.href='practice9.html'">
 
-<li>
-Drawbacks of the early Greek atomic theory
-</li>
+📝 Unit 1 Practice
 
-<li>
-<strong>3.2</strong>
-Three Fundamental Laws of Chemical Reactions
-</li>
-
-<li>
-Law of Conservation of Mass
-</li>
-
-<li>
-Law of Definite Proportions
-</li>
-
-<li>
-Law of Multiple Proportions
-</li>
-
-<li>
-<strong>3.3</strong>
-Atomic Theory
-</li>
-
-<li>
-Dalton's Atomic Theory
-</li>
-
-<li>
-Dalton's Postulates
-</li>
-
-<li>
-Drawbacks of Dalton's Atomic Theory
-</li>
-
-<li>
-Modern Atomic Theory
-</li>
-
-<li>
-Relationship and differences between Dalton
-and Modern Atomic Theory
-</li>
-
-<li>
-<strong>3.4</strong>
-Discovery of Fundamental Subatomic Particles
-and the Atomic Nucleus
-</li>
-
-<li>
-Discovery of the Electron
-</li>
-
-<li>
-Discovery of the Proton
-</li>
-
-<li>
-Discovery of the Neutron
-</li>
-
-<li>
-Discovery of the Atomic Nucleus
-</li>
-
-<li>
-Bohr Atomic Model
-</li>
-
-<li>
-Millikan Oil-Drop Experiment
-</li>
-
-<li>
-Composition of the Atom
-</li>
-
-<li>
-Electron, Proton and Neutron
-</li>
-
-<li>
-Isotopes
-</li>
-
-<li>
-<strong>3.5</strong>
-Atomic Number and Atomic Mass
-</li>
-
-<li>
-Atomic Mass and Isotopes
-</li>
-
-<li>
-Average Atomic Mass
-</li>
-
-<li>
-Electron Configuration
-</li>
-
-<li>
-Main Energy Levels
-</li>
-
-<li>
-Valence Electrons
-</li>
-
-</ul>
+</button>
 
 </div>
 
 
+<!-- UNIT 2 -->
 
-<!-- SCIENTISTS -->
+<div class="card unit">
 
-<div class="topics">
+<h3>🔢 Unit 2 — The Number System</h3>
 
-<h3>👨‍🔬 Important Scientists</h3>
+<button
+class="notes"
+onclick="location.href='notes9unit2.html'">
 
-<ul>
+📖 Unit 2 Notes
 
-<li>
-<strong>Leucippus</strong> —
-Early Greek atomic idea
-</li>
+</button>
 
-<li>
-<strong>Democritus</strong> —
-Developed the idea of indivisible atoms
-</li>
+<button
+class="practice"
+onclick="location.href='practice9unit2.html'">
 
-<li>
-<strong>Antoine Lavoisier</strong> —
-Law of Conservation of Mass
-</li>
+📝 Unit 2 Practice
 
-<li>
-<strong>Joseph Proust</strong> —
-Law of Definite Proportions
-</li>
-
-<li>
-<strong>John Dalton</strong> —
-Modern scientific atomic theory
-</li>
-
-<li>
-<strong>J. J. Thomson</strong> —
-Discovery of the electron
-</li>
-
-<li>
-<strong>Robert Millikan</strong> —
-Oil-drop experiment and electron charge
-</li>
-
-<li>
-<strong>Ernest Rutherford</strong> —
-Discovery of the atomic nucleus
-</li>
-
-<li>
-<strong>Niels Bohr</strong> —
-Atomic model and energy levels
-</li>
-
-<li>
-<strong>James Chadwick</strong> —
-Discovery of the neutron
-</li>
-
-</ul>
+</button>
 
 </div>
 
 
+<!-- UNIT 3 -->
 
-<!-- UNIT 3 LINKS -->
+<div class="card unit">
 
-<div class="buttons">
+<h3>📕 Unit 3 — Solving Equations</h3>
 
-<a href="notes9chemistryunit3.html"
-class="btn notes">
+<button
+class="notes"
+onclick="location.href='notes9unit3.html'">
 
 📖 Unit 3 Notes
 
-</a>
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit3.html'">
+
+📝 Unit 3 Practice
+
+</button>
+
+</div>
 
 
-<a href="practice9chemistryunit3.html"
-class="btn practice">
+<!-- UNIT 4 -->
+
+<div class="card unit">
+
+<h3>📗 Unit 4 — Solving Inequalities</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit4.html'">
+
+📖 Unit 4 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit4.html'">
+
+📝 Unit 4 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 5 -->
+
+<div class="card unit">
+
+<h3>📐 Unit 5 — Introduction to Trigonometry</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit5.html'">
+
+📖 Unit 5 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit5.html'">
+
+📝 Unit 5 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 6 -->
+
+<div class="card unit">
+
+<h3>🔷 Unit 6 — Regular Polygons</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit6.html'">
+
+📖 Unit 6 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit6.html'">
+
+📝 Unit 6 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 7 -->
+
+<div class="card unit">
+
+<h3>🔺 Unit 7 — Congruency and Similarity</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit7.html'">
+
+📖 Unit 7 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit7.html'">
+
+📝 Unit 7 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 8 -->
+
+<div class="card unit">
+
+<h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit8.html'">
+
+📖 Unit 8 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit8.html'">
+
+📝 Unit 8 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 9 -->
+
+<div class="card unit">
+
+<h3>📊 Unit 9 — Statistics and Probability</h3>
+
+<button
+class="notes"
+onclick="location.href='notes9unit9.html'">
+
+📖 Unit 9 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9unit9.html'">
+
+📝 Unit 9 Practice
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= CHEMISTRY ================= -->
+
+<div class="card chemistry">
+
+<h2>🧪 Chemistry</h2>
+
+<p>
+Grade 9 Chemistry — Unit 1 to Unit 3 are available.
+</p>
+
+<button
+class="chemOpen"
+onclick="openChemistry()">
+
+🧪 Open Chemistry
+
+</button>
+
+</div>
+
+
+<!-- ================= CHEMISTRY UNITS ================= -->
+
+<div id="chemistryUnits">
+
+
+<div class="card">
+
+<h2 class="chemTitle">
+🧪 Grade 9 Chemistry
+</h2>
+
+<p>
+Choose a unit to study Notes or Practice.
+</p>
+
+</div>
+
+
+<!-- CHEMISTRY UNIT 1 -->
+
+<div class="card chemUnit">
+
+<h3>
+🧪 Unit 1 — Chemistry and Its Importance
+</h3>
+
+<p>
+Definition and scope of chemistry, matter, substances,
+properties, branches of chemistry, relationship with other
+natural sciences, agriculture, food production, medicine,
+common drugs, construction materials and chemical industries.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9chemistryunit1.html'">
+
+📖 Unit 1 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9chemistryunit1.html'">
+
+📝 Unit 1 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- CHEMISTRY UNIT 2 -->
+
+<div class="card chemUnit">
+
+<h3>
+📏 Unit 2 — Measurement and Scientific Method
+</h3>
+
+<p>
+Measurement, SI units, fundamental and derived quantities,
+measuring instruments, density, accuracy, precision,
+significant figures, scientific notation, scientific method,
+variables, laboratory safety and experimental error.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9chemistryunit2.html'">
+
+📖 Unit 2 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9chemistryunit2.html'">
+
+📝 Unit 2 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- CHEMISTRY UNIT 3 -->
+
+<div class="card chemUnit">
+
+<h3>
+⚛️ Unit 3 — Structure of the Atom
+</h3>
+
+<p>
+Atomic theory, development of atomic models, subatomic particles,
+protons, neutrons and electrons, atomic number, mass number,
+isotopes, electron arrangement and ions.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9chemistryunit3.html'">
+
+📖 Unit 3 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9chemistryunit3.html'">
 
 📝 Unit 3 Practice — 60 Questions
 
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- UNIT 4 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📕 Unit 4</h2>
-
-<p class="coming">
-Coming soon...
-</p>
+</button>
 
 </div>
 
 
+<!-- CHEMISTRY UNIT 4 -->
 
-<!-- ========================= -->
-<!-- UNIT 5 -->
-<!-- ========================= -->
+<div class="card chemUnit">
 
-<div class="unit">
-
-<h2>📕 Unit 5</h2>
-
-<p class="coming">
-Coming soon...
-</p>
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- UNIT 6 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📕 Unit 6</h2>
-
-<p class="coming">
-Coming soon...
-</p>
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- UNIT 7 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📕 Unit 7</h2>
-
-<p class="coming">
-Coming soon...
-</p>
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- UNIT 8 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📕 Unit 8</h2>
-
-<p class="coming">
-Coming soon...
-</p>
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- UNIT 9 -->
-<!-- ========================= -->
-
-<div class="unit">
-
-<h2>📕 Unit 9</h2>
-
-<p class="coming">
-Coming soon...
-</p>
-
-</div>
-
-
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->
-
-<footer>
+<h3>
+🧩 Unit 4 — Periodic Classification of Elements
+</h3>
 
 <p>
-🧪 <strong>Grade 9 Chemistry</strong>
+Periodic table and classification of elements.
 </p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- CHEMISTRY UNIT 5 -->
+
+<div class="card chemUnit">
+
+<h3>
+🔗 Unit 5 — Chemical Bonding
+</h3>
 
 <p>
-Learn • Practice • Improve
+Chemical bonds and formation of compounds.
 </p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= BIOLOGY ================= -->
+
+<div class="card biology">
+
+<h2>🧬 Biology</h2>
 
 <p>
-© 2026 Chemistry Learning Website
+Grade 9 Biology lessons, Notes and Practice.
 </p>
 
-</footer>
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ================= PHYSICS ================= -->
+
+<div class="card physics">
+
+<h2>⚡ Physics</h2>
+
+<p>
+Grade 9 Physics lessons, Notes and Practice.
+</p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ================= ENGLISH ================= -->
+
+<div class="card english">
+
+<h2>📖 English</h2>
+
+<p>
+Grade 9 English grammar, vocabulary,
+reading and practice.
+</p>
+
+<button
+class="coming"
+disabled>
+
+🔒 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ================= BACK ================= -->
+
+<button
+class="back"
+onclick="location.href='index.html'">
+
+← Back to Grades
+
+</button>
+
+
+</div>
+
+
+<script>
+
+function openMath(){
+
+    var math =
+    document.getElementById("mathUnits");
+
+    math.style.display="block";
+
+    math.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+function openChemistry(){
+
+    var chemistry =
+    document.getElementById("chemistryUnits");
+
+    chemistry.style.display="block";
+
+    chemistry.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
 
 
 </body>
