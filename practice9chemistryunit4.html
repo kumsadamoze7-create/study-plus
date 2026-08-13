@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Grade 9 Chemistry Unit 4 Practice</title>
+<title>Chemistry Unit 4 Practice</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -32,6 +27,7 @@ header{
 
 header h1{
     margin:0;
+    font-size:28px;
 }
 
 .container{
@@ -42,2156 +38,721 @@ header h1{
 
 .card{
     background:white;
-    margin:18px 0;
     padding:20px;
-    border-radius:15px;
+    margin:18px 0;
+    border-radius:16px;
     box-shadow:0 3px 10px #ccc;
 }
 
 .question{
-    margin:20px 0;
-    padding:18px;
-    background:#f8fafc;
-    border-radius:12px;
-    border-left:5px solid #9333ea;
-}
-
-.question h3{
-    margin-top:0;
-    color:#6b21a8;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 .option{
-    display:block;
-    padding:12px;
+    width:100%;
+    background:#eef2ff;
+    color:#222;
+    border:2px solid #ddd;
+    padding:14px;
     margin:8px 0;
-    background:white;
-    border:1px solid #ddd;
-    border-radius:8px;
+    border-radius:10px;
+    text-align:left;
     cursor:pointer;
+    font-size:16px;
 }
 
 .option:hover{
-    background:#f3e8ff;
+    background:#ddd6fe;
 }
 
-.option input{
-    margin-right:8px;
+.option:disabled{
+    cursor:not-allowed;
 }
 
-.feedback{
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+    color:#166534 !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+    color:#991b1b !important;
+}
+
+.result{
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
     display:none;
-    margin-top:12px;
-    padding:14px;
-    border-radius:9px;
-    font-weight:bold;
 }
 
 .right{
     background:#dcfce7;
-    border-left:5px solid #16a34a;
     color:#166534;
 }
 
-.wrong{
+.wrongBox{
     background:#fee2e2;
-    border-left:5px solid #dc2626;
     color:#991b1b;
 }
 
-.explain{
-    margin-top:8px;
-    padding:10px;
-    background:#fff7ed;
-    border-left:4px solid #f97316;
-    color:#7c2d12;
-    font-weight:normal;
+.explanation{
+    margin-top:10px;
+    background:#f3f4f6;
+    padding:12px;
+    border-radius:8px;
+    color:#374151;
 }
 
-button{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
+#scoreBox{
+    display:none;
+    text-align:center;
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+#score{
+    font-size:32px;
+    font-weight:bold;
+    color:#9333ea;
+}
+
+.retry{
+    background:#9333ea;
     color:white;
-    font-size:17px;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:12px;
-}
-
-.submit{
-    background:#16a34a;
-}
-
-.reset{
-    background:#dc2626;
 }
 
 .back{
-    background:#172554;
-    text-align:center;
-    display:block;
-    text-decoration:none;
-}
-
-#result{
-    display:none;
-    background:#ecfdf5;
-    border-left:6px solid #16a34a;
-    padding:20px;
-    border-radius:12px;
-    margin:20px 0;
-}
-
-.score{
-    font-size:28px;
-    font-weight:bold;
-    color:#166534;
-}
-
-textarea{
     width:100%;
-    min-height:100px;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
+    background:#172554;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:20px;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<h1>🧪 Grade 9 Chemistry</h1>
-
-<p>Unit 4 — Periodic Classification of Elements</p>
-
-<p>📝 60 Practice Questions</p>
-
+    <h1>🧪 Chemistry — Unit 4</h1>
+    <p>Periodic Classification of Elements</p>
+    <p>📝 60 Multiple Choice Questions</p>
 </header>
-
 
 <div class="container">
 
-<div class="card">
+<div id="quiz"></div>
 
-<h2>📚 Instructions</h2>
+<div id="scoreBox">
+    <h2>🎉 Practice Completed!</h2>
+    <p>Your Score:</p>
+    <div id="score"></div>
+    <p id="message"></p>
 
-<p>
-Choose the best answer for each question.
-Then press <strong>Submit Practice</strong>.
-</p>
-
-<p>
-After submitting, every question will show:
-</p>
-
-<ul>
-<li>🟢 RIGHT or 🔴 WRONG</li>
-<li>💡 Explanation</li>
-<li>🎯 Final Score</li>
-</ul>
-
+    <button class="retry" onclick="location.reload()">
+        🔄 Try Again
+    </button>
 </div>
 
-
-<form id="quiz">
-
-
-<!-- QUESTION 1 -->
-
-<div class="question">
-
-<h3>1. Who developed the idea of Döbereiner's triads?</h3>
-
-<label class="option">
-<input type="radio" name="q1" value="A">
-A. Mendeleev
-</label>
-
-<label class="option">
-<input type="radio" name="q1" value="B">
-B. Döbereiner
-</label>
-
-<label class="option">
-<input type="radio" name="q1" value="C">
-C. Newlands
-</label>
-
-<label class="option">
-<input type="radio" name="q1" value="D">
-D. Moseley
-</label>
-
-<div id="f1" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 2 -->
-
-<div class="question">
-
-<h3>2. How many elements are found in a Döbereiner triad?</h3>
-
-<label class="option">
-<input type="radio" name="q2" value="A">
-A. 2
-</label>
-
-<label class="option">
-<input type="radio" name="q2" value="B">
-B. 3
-</label>
-
-<label class="option">
-<input type="radio" name="q2" value="C">
-C. 4
-</label>
-
-<label class="option">
-<input type="radio" name="q2" value="D">
-D. 8
-</label>
-
-<div id="f2" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 3 -->
-
-<div class="question">
-
-<h3>3. Who proposed the Law of Octaves?</h3>
-
-<label class="option">
-<input type="radio" name="q3" value="A">
-A. Newlands
-</label>
-
-<label class="option">
-<input type="radio" name="q3" value="B">
-B. Mendeleev
-</label>
-
-<label class="option">
-<input type="radio" name="q3" value="C">
-C. Dalton
-</label>
-
-<label class="option">
-<input type="radio" name="q3" value="D">
-D. Moseley
-</label>
-
-<div id="f3" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 4 -->
-
-<div class="question">
-
-<h3>4. Mendeleev mainly arranged elements according to:</h3>
-
-<label class="option">
-<input type="radio" name="q4" value="A">
-A. Atomic number
-</label>
-
-<label class="option">
-<input type="radio" name="q4" value="B">
-B. Atomic mass
-</label>
-
-<label class="option">
-<input type="radio" name="q4" value="C">
-C. Number of neutrons
-</label>
-
-<label class="option">
-<input type="radio" name="q4" value="D">
-D. Density
-</label>
-
-<div id="f4" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 5 -->
-
-<div class="question">
-
-<h3>5. The modern periodic table is arranged according to increasing:</h3>
-
-<label class="option">
-<input type="radio" name="q5" value="A">
-A. Atomic mass
-</label>
-
-<label class="option">
-<input type="radio" name="q5" value="B">
-B. Atomic number
-</label>
-
-<label class="option">
-<input type="radio" name="q5" value="C">
-C. Density
-</label>
-
-<label class="option">
-<input type="radio" name="q5" value="D">
-D. Melting point
-</label>
-
-<div id="f5" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 6 -->
-
-<div class="question">
-
-<h3>6. How many groups are in the modern periodic table?</h3>
-
-<label class="option">
-<input type="radio" name="q6" value="A">
-A. 7
-</label>
-
-<label class="option">
-<input type="radio" name="q6" value="B">
-B. 8
-</label>
-
-<label class="option">
-<input type="radio" name="q6" value="C">
-C. 18
-</label>
-
-<label class="option">
-<input type="radio" name="q6" value="D">
-D. 20
-</label>
-
-<div id="f6" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 7 -->
-
-<div class="question">
-
-<h3>7. How many periods are in the modern periodic table?</h3>
-
-<label class="option">
-<input type="radio" name="q7" value="A">
-A. 5
-</label>
-
-<label class="option">
-<input type="radio" name="q7" value="B">
-B. 6
-</label>
-
-<label class="option">
-<input type="radio" name="q7" value="C">
-C. 7
-</label>
-
-<label class="option">
-<input type="radio" name="q7" value="D">
-D. 18
-</label>
-
-<div id="f7" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 8 -->
-
-<div class="question">
-
-<h3>8. A vertical column in the periodic table is called a:</h3>
-
-<label class="option">
-<input type="radio" name="q8" value="A">
-A. Period
-</label>
-
-<label class="option">
-<input type="radio" name="q8" value="B">
-B. Group
-</label>
-
-<label class="option">
-<input type="radio" name="q8" value="C">
-C. Block
-</label>
-
-<label class="option">
-<input type="radio" name="q8" value="D">
-D. Series
-</label>
-
-<div id="f8" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 9 -->
-
-<div class="question">
-
-<h3>9. A horizontal row is called a:</h3>
-
-<label class="option">
-<input type="radio" name="q9" value="A">
-A. Group
-</label>
-
-<label class="option">
-<input type="radio" name="q9" value="B">
-B. Period
-</label>
-
-<label class="option">
-<input type="radio" name="q9" value="C">
-C. Block
-</label>
-
-<label class="option">
-<input type="radio" name="q9" value="D">
-D. Family
-</label>
-
-<div id="f9" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 10 -->
-
-<div class="question">
-
-<h3>10. Periodicity means:</h3>
-
-<label class="option">
-<input type="radio" name="q10" value="A">
-A. Complete disappearance of elements
-</label>
-
-<label class="option">
-<input type="radio" name="q10" value="B">
-B. Regular repetition of properties
-</label>
-
-<label class="option">
-<input type="radio" name="q10" value="C">
-C. Loss of all electrons
-</label>
-
-<label class="option">
-<input type="radio" name="q10" value="D">
-D. Formation of only metals
-</label>
-
-<div id="f10" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 11 -->
-
-<div class="question">
-
-<h3>11. Which block contains Groups 1 and 2?</h3>
-
-<label class="option">
-<input type="radio" name="q11" value="A">
-A. s-block
-</label>
-
-<label class="option">
-<input type="radio" name="q11" value="B">
-B. p-block
-</label>
-
-<label class="option">
-<input type="radio" name="q11" value="C">
-C. d-block
-</label>
-
-<label class="option">
-<input type="radio" name="q11" value="D">
-D. f-block
-</label>
-
-<div id="f11" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 12 -->
-
-<div class="question">
-
-<h3>12. The p-block mainly contains Groups:</h3>
-
-<label class="option">
-<input type="radio" name="q12" value="A">
-A. 1–2
-</label>
-
-<label class="option">
-<input type="radio" name="q12" value="B">
-B. 3–12
-</label>
-
-<label class="option">
-<input type="radio" name="q12" value="C">
-C. 13–18
-</label>
-
-<label class="option">
-<input type="radio" name="q12" value="D">
-D. 1–18
-</label>
-
-<div id="f12" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 13 -->
-
-<div class="question">
-
-<h3>13. Which block contains transition elements?</h3>
-
-<label class="option">
-<input type="radio" name="q13" value="A">
-A. s-block
-</label>
-
-<label class="option">
-<input type="radio" name="q13" value="B">
-B. p-block
-</label>
-
-<label class="option">
-<input type="radio" name="q13" value="C">
-C. d-block
-</label>
-
-<label class="option">
-<input type="radio" name="q13" value="D">
-D. f-block
-</label>
-
-<div id="f13" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 14 -->
-
-<div class="question">
-
-<h3>14. The f-block contains:</h3>
-
-<label class="option">
-<input type="radio" name="q14" value="A">
-A. Halogens
-</label>
-
-<label class="option">
-<input type="radio" name="q14" value="B">
-B. Lanthanides and actinides
-</label>
-
-<label class="option">
-<input type="radio" name="q14" value="C">
-C. Noble gases
-</label>
-
-<label class="option">
-<input type="radio" name="q14" value="D">
-D. Alkali metals
-</label>
-
-<div id="f14" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 15 -->
-
-<div class="question">
-
-<h3>15. Which element is an s-block element?</h3>
-
-<label class="option">
-<input type="radio" name="q15" value="A">
-A. Na
-</label>
-
-<label class="option">
-<input type="radio" name="q15" value="B">
-B. Cl
-</label>
-
-<label class="option">
-<input type="radio" name="q15" value="C">
-C. Fe
-</label>
-
-<label class="option">
-<input type="radio" name="q15" value="D">
-D. Br
-</label>
-
-<div id="f15" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 16 -->
-
-<div class="question">
-
-<h3>16. Which element is a transition element?</h3>
-
-<label class="option">
-<input type="radio" name="q16" value="A">
-A. Na
-</label>
-
-<label class="option">
-<input type="radio" name="q16" value="B">
-B. Fe
-</label>
-
-<label class="option">
-<input type="radio" name="q16" value="C">
-C. Cl
-</label>
-
-<label class="option">
-<input type="radio" name="q16" value="D">
-D. Ne
-</label>
-
-<div id="f16" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 17 -->
-
-<div class="question">
-
-<h3>17. Representative elements mainly belong to:</h3>
-
-<label class="option">
-<input type="radio" name="q17" value="A">
-A. s and p blocks
-</label>
-
-<label class="option">
-<input type="radio" name="q17" value="B">
-B. d and f blocks
-</label>
-
-<label class="option">
-<input type="radio" name="q17" value="C">
-C. d block only
-</label>
-
-<label class="option">
-<input type="radio" name="q17" value="D">
-D. f block only
-</label>
-
-<div id="f17" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 18 -->
-
-<div class="question">
-
-<h3>18. Atomic number is equal to the number of:</h3>
-
-<label class="option">
-<input type="radio" name="q18" value="A">
-A. Neutrons
-</label>
-
-<label class="option">
-<input type="radio" name="q18" value="B">
-B. Protons
-</label>
-
-<label class="option">
-<input type="radio" name="q18" value="C">
-C. Shells
-</label>
-
-<label class="option">
-<input type="radio" name="q18" value="D">
-D. Isotopes
-</label>
-
-<div id="f18" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 19 -->
-
-<div class="question">
-
-<h3>19. Ionization energy is the energy required to:</h3>
-
-<label class="option">
-<input type="radio" name="q19" value="A">
-A. Remove an electron
-</label>
-
-<label class="option">
-<input type="radio" name="q19" value="B">
-A. Add a proton
-</label>
-
-<label class="option">
-<input type="radio" name="q19" value="C">
-C. Add a neutron
-</label>
-
-<label class="option">
-<input type="radio" name="q19" value="D">
-D. Remove a proton
-</label>
-
-<div id="f19" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 20 -->
-
-<div class="question">
-
-<h3>20. Ionization energy generally increases:</h3>
-
-<label class="option">
-<input type="radio" name="q20" value="A">
-A. Down a group
-</label>
-
-<label class="option">
-<input type="radio" name="q20" value="B">
-B. From left to right
-</label>
-
-<label class="option">
-<input type="radio" name="q20" value="C">
-C. From top to bottom
-</label>
-
-<label class="option">
-<input type="radio" name="q20" value="D">
-D. Toward bottom-left
-</label>
-
-<div id="f20" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 21 -->
-
-<div class="question">
-
-<h3>21. Ionization energy generally decreases:</h3>
-
-<label class="option">
-<input type="radio" name="q21" value="A">
-A. Down a group
-</label>
-
-<label class="option">
-<input type="radio" name="q21" value="B">
-B. Across a period
-</label>
-
-<label class="option">
-<input type="radio" name="q21" value="C">
-C. Toward top-right
-</label>
-
-<label class="option">
-<input type="radio" name="q21" value="D">
-D. From left to right
-</label>
-
-<div id="f21" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 22 -->
-
-<div class="question">
-
-<h3>22. Electron affinity is related to the tendency of an atom to:</h3>
-
-<label class="option">
-<input type="radio" name="q22" value="A">
-A. Gain an electron
-</label>
-
-<label class="option">
-<input type="radio" name="q22" value="B">
-B. Lose a proton
-</label>
-
-<label class="option">
-<input type="radio" name="q22" value="C">
-C. Gain a neutron
-</label>
-
-<label class="option">
-<input type="radio" name="q22" value="D">
-D. Lose its nucleus
-</label>
-
-<div id="f22" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 23 -->
-
-<div class="question">
-
-<h3>23. Which element strongly tends to gain one electron?</h3>
-
-<label class="option">
-<input type="radio" name="q23" value="A">
-A. Na
-</label>
-
-<label class="option">
-<input type="radio" name="q23" value="B">
-B. Mg
-</label>
-
-<label class="option">
-<input type="radio" name="q23" value="C">
-C. Cl
-</label>
-
-<label class="option">
-<input type="radio" name="q23" value="D">
-D. Ne
-</label>
-
-<div id="f23" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 24 -->
-
-<div class="question">
-
-<h3>24. Electronegativity is the ability of an atom to:</h3>
-
-<label class="option">
-<input type="radio" name="q24" value="A">
-A. Attract shared electrons
-</label>
-
-<label class="option">
-<input type="radio" name="q24" value="B">
-B. Attract neutrons
-</label>
-
-<label class="option">
-<input type="radio" name="q24" value="C">
-C. Produce protons
-</label>
-
-<label class="option">
-<input type="radio" name="q24" value="D">
-D. Remove the nucleus
-</label>
-
-<div id="f24" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 25 -->
-
-<div class="question">
-
-<h3>25. Which element has the highest electronegativity?</h3>
-
-<label class="option">
-<input type="radio" name="q25" value="A">
-A. F
-</label>
-
-<label class="option">
-<input type="radio" name="q25" value="B">
-B. Na
-</label>
-
-<label class="option">
-<input type="radio" name="q25" value="C">
-C. K
-</label>
-
-<label class="option">
-<input type="radio" name="q25" value="D">
-D. Cs
-</label>
-
-<div id="f25" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 26 -->
-
-<div class="question">
-
-<h3>26. Electronegativity generally increases:</h3>
-
-<label class="option">
-<input type="radio" name="q26" value="A">
-A. Down a group
-</label>
-
-<label class="option">
-<input type="radio" name="q26" value="B">
-B. From left to right
-</label>
-
-<label class="option">
-<input type="radio" name="q26" value="C">
-C. From top to bottom
-</label>
-
-<label class="option">
-<input type="radio" name="q26" value="D">
-D. Toward bottom-left
-</label>
-
-<div id="f26" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 27 -->
-
-<div class="question">
-
-<h3>27. Atomic radius generally increases:</h3>
-
-<label class="option">
-<input type="radio" name="q27" value="A">
-A. From left to right
-</label>
-
-<label class="option">
-<input type="radio" name="q27" value="B">
-B. Down a group
-</label>
-
-<label class="option">
-<input type="radio" name="q27" value="C">
-C. Toward top-right
-</label>
-
-<label class="option">
-<input type="radio" name="q27" value="D">
-D. Across a period
-</label>
-
-<div id="f27" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 28 -->
-
-<div class="question">
-
-<h3>28. Atomic radius generally decreases:</h3>
-
-<label class="option">
-<input type="radio" name="q28" value="A">
-A. Down a group
-</label>
-
-<label class="option">
-<input type="radio" name="q28" value="B">
-B. From left to right
-</label>
-
-<label class="option">
-<input type="radio" name="q28" value="C">
-C. Toward bottom-left
-</label>
-
-<label class="option">
-<input type="radio" name="q28" value="D">
-D. From bottom to top only
-</label>
-
-<div id="f28" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 29 -->
-
-<div class="question">
-
-<h3>29. Metallic character generally increases toward:</h3>
-
-<label class="option">
-<input type="radio" name="q29" value="A">
-A. Top-right
-</label>
-
-<label class="option">
-<input type="radio" name="q29" value="B">
-B. Bottom-left
-</label>
-
-<label class="option">
-<input type="radio" name="q29" value="C">
-C. Top-right only
-</label>
-
-<label class="option">
-<input type="radio" name="q29" value="D">
-D. Center
-</label>
-
-<div id="f29" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 30 -->
-
-<div class="question">
-
-<h3>30. Halogens belong to:</h3>
-
-<label class="option">
-<input type="radio" name="q30" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q30" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q30" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q30" value="D">
-D. Group 18
-</label>
-
-<div id="f30" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 31 -->
-
-<div class="question">
-
-<h3>31. Noble gases belong to:</h3>
-
-<label class="option">
-<input type="radio" name="q31" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q31" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q31" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q31" value="D">
-D. Group 18
-</label>
-
-<div id="f31" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 32 -->
-
-<div class="question">
-
-<h3>32. Sodium belongs to:</h3>
-
-<label class="option">
-<input type="radio" name="q32" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q32" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q32" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q32" value="D">
-D. Group 18
-</label>
-
-<div id="f32" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 33 -->
-
-<div class="question">
-
-<h3>33. Magnesium belongs to:</h3>
-
-<label class="option">
-<input type="radio" name="q33" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q33" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q33" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q33" value="D">
-D. Group 18
-</label>
-
-<div id="f33" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 34 -->
-
-<div class="question">
-
-<h3>34. Chlorine belongs to:</h3>
-
-<label class="option">
-<input type="radio" name="q34" value="A">
-A. s-block
-</label>
-
-<label class="option">
-<input type="radio" name="q34" value="B">
-B. p-block
-</label>
-
-<label class="option">
-<input type="radio" name="q34" value="C">
-C. d-block
-</label>
-
-<label class="option">
-<input type="radio" name="q34" value="D">
-D. f-block
-</label>
-
-<div id="f34" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 35 -->
-
-<div class="question">
-
-<h3>35. Iron belongs to which block?</h3>
-
-<label class="option">
-<input type="radio" name="q35" value="A">
-A. s-block
-</label>
-
-<label class="option">
-<input type="radio" name="q35" value="B">
-B. p-block
-</label>
-
-<label class="option">
-<input type="radio" name="q35" value="C">
-C. d-block
-</label>
-
-<label class="option">
-<input type="radio" name="q35" value="D">
-D. f-block
-</label>
-
-<div id="f35" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 36 -->
-
-<div class="question">
-
-<h3>36. Lanthanides belong mainly to the:</h3>
-
-<label class="option">
-<input type="radio" name="q36" value="A">
-A. s-block
-</label>
-
-<label class="option">
-<input type="radio" name="q36" value="B">
-B. p-block
-</label>
-
-<label class="option">
-<input type="radio" name="q36" value="C">
-C. d-block
-</label>
-
-<label class="option">
-<input type="radio" name="q36" value="D">
-D. f-block
-</label>
-
-<div id="f36" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 37 -->
-
-<div class="question">
-
-<h3>37. Which element has electron arrangement 2,8,1?</h3>
-
-<label class="option">
-<input type="radio" name="q37" value="A">
-A. Na
-</label>
-
-<label class="option">
-<input type="radio" name="q37" value="B">
-B. Mg
-</label>
-
-<label class="option">
-<input type="radio" name="q37" value="C">
-C. Cl
-</label>
-
-<label class="option">
-<input type="radio" name="q37" value="D">
-D. Ne
-</label>
-
-<div id="f37" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 38 -->
-
-<div class="question">
-
-<h3>38. An element with 2,8,7 belongs to which group?</h3>
-
-<label class="option">
-<input type="radio" name="q38" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q38" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q38" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q38" value="D">
-D. Group 18
-</label>
-
-<div id="f38" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 39 -->
-
-<div class="question">
-
-<h3>39. An element with 2,8,1 is found in which period?</h3>
-
-<label class="option">
-<input type="radio" name="q39" value="A">
-A. Period 1
-</label>
-
-<label class="option">
-<input type="radio" name="q39" value="B">
-B. Period 2
-</label>
-
-<label class="option">
-<input type="radio" name="q39" value="C">
-C. Period 3
-</label>
-
-<label class="option">
-<input type="radio" name="q39" value="D">
-D. Period 4
-</label>
-
-<div id="f39" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 40 -->
-
-<div class="question">
-
-<h3>40. Which group contains noble gases?</h3>
-
-<label class="option">
-<input type="radio" name="q40" value="A">
-A. Group 1
-</label>
-
-<label class="option">
-<input type="radio" name="q40" value="B">
-B. Group 2
-</label>
-
-<label class="option">
-<input type="radio" name="q40" value="C">
-C. Group 17
-</label>
-
-<label class="option">
-<input type="radio" name="q40" value="D">
-D. Group 18
-</label>
-
-<div id="f40" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 41 -->
-
-<div class="question">
-
-<h3>41. Which property generally increases down a group?</h3>
-
-<label class="option">
-<input type="radio" name="q41" value="A">
-A. Atomic radius
-</label>
-
-<label class="option">
-<input type="radio" name="q41" value="B">
-B. Electronegativity
-</label>
-
-<label class="option">
-<input type="radio" name="q41" value="C">
-C. Ionization energy
-</label>
-
-<label class="option">
-<input type="radio" name="q41" value="D">
-D. Electron attraction only
-</label>
-
-<div id="f41" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 42 -->
-
-<div class="question">
-
-<h3>42. Which property generally decreases down a group?</h3>
-
-<label class="option">
-<input type="radio" name="q42" value="A">
-A. Atomic radius
-</label>
-
-<label class="option">
-<input type="radio" name="q42" value="B">
-B. Ionization energy
-</label>
-
-<label class="option">
-<input type="radio" name="q42" value="C">
-C. Number of shells
-</label>
-
-<label class="option">
-<input type="radio" name="q42" value="D">
-D. Atomic size
-</label>
-
-<div id="f42" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 43 -->
-
-<div class="question">
-
-<h3>43. Which property generally increases from left to right?</h3>
-
-<label class="option">
-<input type="radio" name="q43" value="A">
-A. Atomic radius
-</label>
-
-<label class="option">
-<input type="radio" name="q43" value="B">
-B. Electronegativity
-</label>
-
-<label class="option">
-<input type="radio" name="q43" value="C">
-C. Metallic character
-</label>
-
-<label class="option">
-<input type="radio" name="q43" value="D">
-D. Atomic size
-</label>
-
-<div id="f43" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 44 -->
-
-<div class="question">
-
-<h3>44. Which property generally decreases from left to right?</h3>
-
-<label class="option">
-<input type="radio" name="q44" value="A">
-A. Electronegativity
-</label>
-
-<label class="option">
-<input type="radio" name="q44" value="B">
-B. Ionization energy
-</label>
-
-<label class="option">
-<input type="radio" name="q44" value="C">
-B. Atomic radius
-</label>
-
-<label class="option">
-<input type="radio" name="q44" value="D">
-D. Nuclear charge
-</label>
-
-<div id="f44" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 45 -->
-
-<div class="question">
-
-<h3>45. Which element has the highest electronegativity?</h3>
-
-<label class="option">
-<input type="radio" name="q45" value="A">
-A. F
-</label>
-
-<label class="option">
-<input type="radio" name="q45" value="B">
-B. O
-</label>
-
-<label class="option">
-<input type="radio" name="q45" value="C">
-C. Cl
-</label>
-
-<label class="option">
-<input type="radio" name="q45" value="D">
-D. Na
-</label>
-
-<div id="f45" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 46 -->
-
-<div class="question">
-
-<h3>46. The modern periodic table has 18 groups.</h3>
-
-<label class="option">
-<input type="radio" name="q46" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q46" value="F">
-False
-</label>
-
-<div id="f46" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 47 -->
-
-<div class="question">
-
-<h3>47. The modern periodic table has 7 periods.</h3>
-
-<label class="option">
-<input type="radio" name="q47" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q47" value="F">
-False
-</label>
-
-<div id="f47" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 48 -->
-
-<div class="question">
-
-<h3>48. Mendeleev arranged elements mainly by atomic number.</h3>
-
-<label class="option">
-<input type="radio" name="q48" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q48" value="F">
-False
-</label>
-
-<div id="f48" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 49 -->
-
-<div class="question">
-
-<h3>49. Newlands proposed the Law of Octaves.</h3>
-
-<label class="option">
-<input type="radio" name="q49" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q49" value="F">
-False
-</label>
-
-<div id="f49" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 50 -->
-
-<div class="question">
-
-<h3>50. A group is a horizontal row.</h3>
-
-<label class="option">
-<input type="radio" name="q50" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q50" value="F">
-False
-</label>
-
-<div id="f50" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 51 -->
-
-<div class="question">
-
-<h3>51. Ionization energy generally increases from left to right.</h3>
-
-<label class="option">
-<input type="radio" name="q51" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q51" value="F">
-False
-</label>
-
-<div id="f51" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 52 -->
-
-<div class="question">
-
-<h3>52. Atomic radius generally increases down a group.</h3>
-
-<label class="option">
-<input type="radio" name="q52" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q52" value="F">
-False
-</label>
-
-<div id="f52" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 53 -->
-
-<div class="question">
-
-<h3>53. Fluorine has the highest electronegativity.</h3>
-
-<label class="option">
-<input type="radio" name="q53" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q53" value="F">
-False
-</label>
-
-<div id="f53" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 54 -->
-
-<div class="question">
-
-<h3>54. The d-block contains transition elements.</h3>
-
-<label class="option">
-<input type="radio" name="q54" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q54" value="F">
-False
-</label>
-
-<div id="f54" class="feedback"></div>
-
-</div>
-
-
-<!-- QUESTION 55 -->
-
-<div class="question">
-
-<h3>55. Metallic character generally increases toward the bottom-left.</h3>
-
-<label class="option">
-<input type="radio" name="q55" value="T">
-True
-</label>
-
-<label class="option">
-<input type="radio" name="q55" value="F">
-False
-</label>
-
-<div id="f55" class="feedback"></div>
-
-</div>
-
-
-<!-- WRITTEN -->
-
-<div class="card">
-
-<h2>📝 Part C — Explain</h2>
-
-<p>Write your answer, then press Submit.</p>
-
-
-<div class="question">
-
-<h3>56. Explain periodicity.</h3>
-
-<textarea id="q56"></textarea>
-
-<div id="f56" class="feedback"></div>
-
-</div>
-
-
-<div class="question">
-
-<h3>57. Explain the difference between Mendeleev's periodic law and the modern periodic law.</h3>
-
-<textarea id="q57"></textarea>
-
-<div id="f57" class="feedback"></div>
-
-</div>
-
-
-<div class="question">
-
-<h3>58. Explain why ionization energy generally increases from left to right.</h3>
-
-<textarea id="q58"></textarea>
-
-<div id="f58" class="feedback"></div>
-
-</div>
-
-
-<div class="question">
-
-<h3>59. Explain why atomic radius increases down a group.</h3>
-
-<textarea id="q59"></textarea>
-
-<div id="f59" class="feedback"></div>
-
-</div>
-
-
-<div class="question">
-
-<h3>60. Explain the difference between electron affinity and electronegativity.</h3>
-
-<textarea id="q60"></textarea>
-
-<div id="f60" class="feedback"></div>
-
-</div>
-
-</div>
-
-
-<button
-type="button"
-class="submit"
-onclick="checkQuiz()">
-
-✅ Submit Practice
-
+<button class="back" onclick="history.back()">
+    ← Back
 </button>
 
-<button
-type="button"
-class="reset"
-onclick="location.reload()">
-
-🔄 Try Again
-
-</button>
-
-</form>
-
-
-<div id="result"></div>
-
-
-<a
-href="grade9.html"
-class="back">
-
-← Back to Grade 9
-
-</a>
-
 </div>
-
 
 <script>
 
+const questions = [
 
-const answers = {
+{
+q:"1. Who proposed the law of triads?",
+a:["Döbereiner","Newlands","Mendeleev","Moseley"],
+c:0,
+e:"Johann Döbereiner grouped some elements into groups of three called triads."
+},
 
-q1:"B",
-q2:"B",
-q3:"A",
-q4:"B",
-q5:"B",
-q6:"C",
-q7:"C",
-q8:"B",
-q9:"B",
-q10:"B",
-q11:"A",
-q12:"C",
-q13:"C",
-q14:"B",
-q15:"A",
-q16:"B",
-q17:"A",
-q18:"B",
-q19:"A",
-q20:"B",
-q21:"A",
-q22:"A",
-q23:"C",
-q24:"A",
-q25:"A",
-q26:"B",
-q27:"B",
-q28:"B",
-q29:"B",
-q30:"C",
-q31:"D",
-q32:"A",
-q33:"B",
-q34:"B",
-q35:"C",
-q36:"D",
-q37:"A",
-q38:"C",
-q39:"C",
-q40:"D",
-q41:"A",
-q42:"B",
-q43:"B",
-q44:"C",
-q45:"A",
+{
+q:"2. What is a Döbereiner triad?",
+a:["A group of two elements","A group of three chemically similar elements","A group of four elements","A group of eight elements"],
+c:1,
+e:"A Döbereiner triad contains three elements with similar chemical properties."
+},
 
-q46:"T",
-q47:"T",
-q48:"F",
-q49:"T",
-q50:"F",
-q51:"T",
-q52:"T",
-q53:"T",
-q54:"T",
-q55:"T"
+{
+q:"3. In a Döbereiner triad, the atomic mass of the middle element is approximately:",
+a:["Double the first","The average of the first and third","Equal to the third","Zero"],
+c:1,
+e:"The atomic mass of the middle element was approximately the average of the other two."
+},
 
-};
+{
+q:"4. Who proposed the Law of Octaves?",
+a:["Mendeleev","Moseley","Newlands","Dalton"],
+c:2,
+e:"John Newlands proposed the Law of Octaves."
+},
 
+{
+q:"5. Newlands arranged elements according to increasing:",
+a:["Atomic number","Atomic mass","Density","Melting point"],
+c:1,
+e:"Newlands arranged known elements in order of increasing atomic mass."
+},
 
-const explanations = {
+{
+q:"6. Newlands noticed that every eighth element had similar:",
+a:["Color only","Chemical properties","Mass only","Size"],
+c:1,
+e:"Newlands observed that every eighth element had properties similar to the first."
+},
 
-q1:"Döbereiner proposed groups of three elements called triads.",
-q2:"A Döbereiner triad contains three elements with similar properties.",
-q3:"John Newlands proposed the Law of Octaves.",
-q4:"Mendeleev mainly arranged elements according to increasing atomic mass.",
-q5:"The modern periodic table is arranged according to increasing atomic number.",
-q6:"The modern periodic table contains 18 groups.",
-q7:"There are 7 periods in the modern periodic table.",
-q8:"A vertical column is called a group.",
-q9:"A horizontal row is called a period.",
-q10:"Periodicity means the regular repetition of similar properties.",
-q11:"The s-block contains Groups 1 and 2.",
-q12:"The p-block contains Groups 13–18.",
-q13:"The d-block contains the transition elements.",
-q14:"The f-block contains lanthanides and actinides.",
-q15:"Sodium is an s-block element.",
-q16:"Iron is a transition element in the d-block.",
-q17:"Representative elements are mainly s-block and p-block elements.",
-q18:"Atomic number equals the number of protons in an atom.",
-q19:"Ionization energy is the energy required to remove an electron from a gaseous atom.",
-q20:"Ionization energy generally increases from left to right across a period.",
-q21:"Ionization energy generally decreases down a group.",
-q22:"Electron affinity is associated with the gain of an electron by an atom.",
-q23:"Chlorine strongly tends to gain one electron to complete its valence shell.",
-q24:"Electronegativity is the ability of an atom in a chemical bond to attract shared electrons.",
-q25:"Fluorine is the most electronegative element.",
-q26:"Electronegativity generally increases from left to right.",
-q27:"Atomic radius generally increases down a group because additional electron shells are added.",
-q28:"Atomic radius generally decreases from left to right because effective nuclear attraction increases.",
-q29:"Metallic character generally increases toward the bottom-left of the periodic table.",
-q30:"Halogens are Group 17 elements.",
-q31:"Noble gases are Group 18 elements.",
-q32:"Sodium is an alkali metal in Group 1.",
-q33:"Magnesium is an alkaline earth metal in Group 2.",
-q34:"Chlorine is a p-block element.",
-q35:"Iron is a d-block transition element.",
-q36:"Lanthanides are part of the f-block.",
-q37:"The electron arrangement 2,8,1 is sodium.",
-q38:"An atom with 7 valence electrons belongs to Group 17.",
-q39:"Three occupied shells mean Period 3.",
-q40:"Noble gases are located in Group 18.",
-q41:"Atomic radius increases down a group.",
-q42:"Ionization energy generally decreases down a group.",
-q43:"Electronegativity generally increases from left to right.",
-q44:"Atomic radius generally decreases from left to right.",
-q45:"Fluorine has the highest electronegativity.",
+{
+q:"7. The Law of Octaves was compared with:",
+a:["Musical octaves","Chemical bonds","Electricity","Light"],
+c:0,
+e:"Newlands compared the repeating pattern of elements to musical octaves."
+},
 
-q46:"Correct. The modern periodic table has 18 groups.",
-q47:"Correct. The modern periodic table has 7 periods.",
-q48:"Wrong. Mendeleev mainly used atomic mass. The modern table uses atomic number.",
-q49:"Correct. Newlands proposed the Law of Octaves.",
-q50:"Wrong. A group is a vertical column. A period is a horizontal row.",
-q51:"Correct. Ionization energy generally increases across a period.",
-q52:"Correct. Atomic radius generally increases down a group.",
-q53:"Correct. Fluorine has the highest electronegativity.",
-q54:"Correct. The d-block contains transition elements.",
-q55:"Correct. Metallic character generally increases toward the bottom-left."
+{
+q:"8. Who developed the first widely accepted periodic table?",
+a:["Mendeleev","Newlands","Döbereiner","Rutherford"],
+c:0,
+e:"Dmitri Mendeleev developed the first widely successful periodic table."
+},
 
-};
+{
+q:"9. Mendeleev mainly arranged elements according to increasing:",
+a:["Atomic number","Atomic mass","Number of neutrons","Density"],
+c:1,
+e:"Mendeleev arranged elements mainly according to increasing atomic mass."
+},
 
+{
+q:"10. Mendeleev left gaps in his table because:",
+a:["He forgot elements","He predicted undiscovered elements","There were no metals","He disliked gases"],
+c:1,
+e:"Mendeleev left gaps for elements that had not yet been discovered."
+},
 
-function checkQuiz(){
+{
+q:"11. One important success of Mendeleev's table was:",
+a:["Predicting new elements","Removing all gases","Discovering electrons","Creating atoms"],
+c:0,
+e:"Mendeleev successfully predicted the properties of several undiscovered elements."
+},
+
+{
+q:"12. Mendeleev's periodic law states that properties of elements are periodic functions of:",
+a:["Atomic mass","Atomic volume only","Density","Temperature"],
+c:0,
+e:"Mendeleev's original periodic law related properties to atomic mass."
+},
+
+{
+q:"13. The modern periodic law is based on:",
+a:["Atomic mass","Atomic number","Density","Melting point"],
+c:1,
+e:"The modern periodic law states that properties of elements are periodic functions of atomic number."
+},
+
+{
+q:"14. Who established atomic number as the basis of periodic classification?",
+a:["Moseley","Newlands","Mendeleev","Bohr"],
+c:0,
+e:"Henry Moseley showed that atomic number is fundamental to periodic classification."
+},
+
+{
+q:"15. The modern periodic table contains how many periods?",
+a:["5","6","7","8"],
+c:2,
+e:"The modern periodic table has seven periods."
+},
+
+{
+q:"16. The modern periodic table contains how many groups?",
+a:["8","12","18","20"],
+c:2,
+e:"There are 18 vertical groups in the modern periodic table."
+},
+
+{
+q:"17. A vertical column in the periodic table is called a:",
+a:["Period","Group","Block","Series"],
+c:1,
+e:"Vertical columns are called groups."
+},
+
+{
+q:"18. A horizontal row in the periodic table is called a:",
+a:["Group","Period","Block","Family"],
+c:1,
+e:"Horizontal rows are called periods."
+},
+
+{
+q:"19. Elements in the same group generally have similar:",
+a:["Chemical properties","Atomic masses","Number of shells","Physical state"],
+c:0,
+e:"Elements in the same group have similar valence-electron arrangements and therefore similar chemical properties."
+},
+
+{
+q:"20. The s-block contains mainly:",
+a:["Groups 1 and 2","Groups 3 and 4","Groups 13–18","Only transition metals"],
+c:0,
+e:"The s-block mainly contains Groups 1 and 2."
+},
+
+{
+q:"21. The p-block contains:",
+a:["Groups 1–2","Groups 3–12","Groups 13–18","Only hydrogen"],
+c:2,
+e:"The p-block consists mainly of Groups 13–18."
+},
+
+{
+q:"22. The d-block elements are commonly called:",
+a:["Noble gases","Transition elements","Halogens","Alkali metals"],
+c:1,
+e:"The d-block contains the transition elements."
+},
+
+{
+q:"23. The f-block contains:",
+a:["Lanthanides and actinides","Halogens","Noble gases","Alkali metals"],
+c:0,
+e:"The f-block contains the lanthanide and actinide series."
+},
+
+{
+q:"24. Which block is located in the middle of the periodic table?",
+a:["s-block","p-block","d-block","f-block"],
+c:2,
+e:"The d-block is located between the s- and p-blocks."
+},
+
+{
+q:"25. Elements in the same period have the same number of:",
+a:["Valence electrons","Electron shells","Protons","Neutrons"],
+c:1,
+e:"Elements in the same period have the same number of occupied electron shells."
+},
+
+{
+q:"26. Group 1 elements are known as:",
+a:["Halogens","Alkali metals","Noble gases","Transition metals"],
+c:1,
+e:"Group 1 elements are called alkali metals."
+},
+
+{
+q:"27. Group 17 elements are called:",
+a:["Halogens","Noble gases","Alkaline earth metals","Lanthanides"],
+c:0,
+e:"Group 17 elements are called halogens."
+},
+
+{
+q:"28. Group 18 elements are called:",
+a:["Alkali metals","Halogens","Noble gases","Transition metals"],
+c:2,
+e:"Group 18 elements are the noble gases."
+},
+
+{
+q:"29. Which is a noble gas?",
+a:["Na","Cl","Ne","Mg"],
+c:2,
+e:"Neon (Ne) is a Group 18 noble gas."
+},
+
+{
+q:"30. Which element is an alkali metal?",
+a:["Na","Cl","Ne","O"],
+c:0,
+e:"Sodium (Na) is a Group 1 alkali metal."
+},
+
+{
+q:"31. Which element is a halogen?",
+a:["K","Cl","Ca","Ne"],
+c:1,
+e:"Chlorine (Cl) belongs to Group 17, the halogens."
+},
+
+{
+q:"32. Periodicity means:",
+a:["Random changes in properties","Repetition of properties at regular intervals","Atoms disappearing","Only changes in color"],
+c:1,
+e:"Periodicity is the repetition of similar properties at regular intervals when elements are arranged by atomic number."
+},
+
+{
+q:"33. Across a period, atomic number generally:",
+a:["Decreases","Remains zero","Increases","Does not exist"],
+c:2,
+e:"Atomic number increases from left to right across a period."
+},
+
+{
+q:"34. Atomic radius generally decreases across a period because:",
+a:["Nuclear charge increases","Shells disappear","Mass decreases","Atoms lose all electrons"],
+c:0,
+e:"Increasing nuclear charge pulls electrons closer to the nucleus."
+},
+
+{
+q:"35. Atomic radius generally increases down a group because:",
+a:["New electron shells are added","Nuclear charge disappears","Electrons disappear","Atoms become smaller"],
+c:0,
+e:"Each step down a group adds an occupied electron shell."
+},
+
+{
+q:"36. Ionization energy is the energy required to:",
+a:["Add a neutron","Remove an electron from an atom","Add a proton","Melt an atom"],
+c:1,
+e:"Ionization energy is the energy needed to remove an electron from a gaseous atom."
+},
+
+{
+q:"37. First ionization energy generally increases:",
+a:["Down a group","Across a period","Randomly","Only in metals"],
+c:1,
+e:"First ionization energy generally increases from left to right across a period."
+},
+
+{
+q:"38. First ionization energy generally decreases:",
+a:["Across a period","Down a group","Toward fluorine","Toward the right"],
+c:1,
+e:"Ionization energy generally decreases down a group because outer electrons are farther from the nucleus."
+},
+
+{
+q:"39. Which generally has the highest ionization energy?",
+a:["Alkali metals","Noble gases","Alkaline earth metals","Transition metals"],
+c:1,
+e:"Noble gases generally have very high ionization energies because their electron shells are stable."
+},
+
+{
+q:"40. Electron affinity describes the energy change when an atom:",
+a:["Gains an electron","Loses a proton","Gains a neutron","Melts"],
+c:0,
+e:"Electron affinity concerns the energy change associated with gaining an electron."
+},
+
+{
+q:"41. Which group generally has a strong tendency to gain electrons?",
+a:["Halogens","Alkali metals","Noble gases","Alkaline earth metals"],
+c:0,
+e:"Halogens are one electron short of a stable outer shell and strongly tend to gain an electron."
+},
+
+{
+q:"42. Electronegativity is the ability of an atom to:",
+a:["Attract shared electrons","Lose neutrons","Attract protons from the nucleus","Increase mass"],
+c:0,
+e:"Electronegativity is the ability of an atom in a chemical bond to attract shared electrons."
+},
+
+{
+q:"43. Electronegativity generally increases:",
+a:["Down a group","Across a period","Toward the bottom left","Only in metals"],
+c:1,
+e:"Electronegativity generally increases from left to right across a period."
+},
+
+{
+q:"44. Electronegativity generally decreases:",
+a:["Across a period","Down a group","Toward fluorine","Toward the upper right"],
+c:1,
+e:"Electronegativity generally decreases down a group."
+},
+
+{
+q:"45. The most electronegative element is:",
+a:["Oxygen","Chlorine","Fluorine","Sodium"],
+c:2,
+e:"Fluorine has the highest electronegativity."
+},
+
+{
+q:"46. Metals are generally located on the:",
+a:["Left side of the periodic table","Right side only","Top right only","Middle bottom only"],
+c:0,
+e:"Most metals are found on the left and center of the periodic table."
+},
+
+{
+q:"47. Nonmetals are mainly found on the:",
+a:["Left side","Right side","Bottom only","Center only"],
+c:1,
+e:"Most nonmetals are located on the right side of the periodic table."
+},
+
+{
+q:"48. Metalloids are generally found:",
+a:["Along the staircase line","Only in Group 1","Only in Group 18","At the bottom"],
+c:0,
+e:"Metalloids are generally located along the staircase boundary between metals and nonmetals."
+},
+
+{
+q:"49. Which is a metalloid?",
+a:["Na","Si","Cl","Ne"],
+c:1,
+e:"Silicon (Si) is a metalloid."
+},
+
+{
+q:"50. Representative elements mainly belong to:",
+a:["s- and p-blocks","d-block only","f-block only","d- and f-blocks"],
+c:0,
+e:"Representative elements are mainly the s- and p-block elements."
+},
+
+{
+q:"51. Which element belongs to the d-block?",
+a:["Fe","Na","Cl","Ne"],
+c:0,
+e:"Iron (Fe) is a transition element in the d-block."
+},
+
+{
+q:"52. Which element belongs to the f-block?",
+a:["Fe","U","Na","Cl"],
+c:1,
+e:"Uranium (U) belongs to the actinide series of the f-block."
+},
+
+{
+q:"53. Which element has the largest atomic radius among these?",
+a:["Li","Na","K","Rb"],
+c:3,
+e:"Atomic radius increases down Group 1, so Rb is largest among these."
+},
+
+{
+q:"54. Which has the smallest atomic radius?",
+a:["Li","Na","K","Rb"],
+c:0,
+e:"Atomic radius decreases upward in a group, so Li is the smallest."
+},
+
+{
+q:"55. Which has the highest electronegativity?",
+a:["Na","Mg","Cl","F"],
+c:3,
+e:"Fluorine is the most electronegative element."
+},
+
+{
+q:"56. Which generally has the lowest ionization energy?",
+a:["Li","Na","K","Rb"],
+c:3,
+e:"Ionization energy decreases down Group 1, making Rb the lowest among these."
+},
+
+{
+q:"57. The periodic table is useful because it:",
+a:["Organizes elements according to their properties","Removes atoms","Changes elements into compounds","Measures temperature"],
+c:0,
+e:"The periodic table organizes elements so their properties and trends can be studied easily."
+},
+
+{
+q:"58. Which property generally increases from left to right across a period?",
+a:["Atomic radius","Electronegativity","Metallic character","Number of shells"],
+c:1,
+e:"Electronegativity generally increases from left to right across a period."
+},
+
+{
+q:"59. Metallic character generally increases:",
+a:["From left to right","Up a group","Down a group","Toward the upper right"],
+c:2,
+e:"Metallic character increases down a group because atoms more easily lose outer electrons."
+},
+
+{
+q:"60. Which statement is correct?",
+a:["Atomic radius generally increases across a period",
+   "Ionization energy generally decreases across a period",
+   "Electronegativity generally increases across a period",
+   "All elements have the same properties"],
+c:2,
+e:"Electronegativity generally increases from left to right across a period."
+}
+
+];
 
 let score=0;
+let answered=0;
 
+function loadQuiz(){
 
-for(let i=1;i<=55;i++){
+    const quiz=document.getElementById("quiz");
 
-let selected=
-document.querySelector(
-'input[name="q'+i+'"]:checked'
-);
+    questions.forEach((item,index)=>{
 
-let feedback=
-document.getElementById("f"+i);
+        const card=document.createElement("div");
+        card.className="card";
 
+        const question=document.createElement("div");
+        question.className="question";
+        question.textContent=item.q;
 
-if(!selected){
+        card.appendChild(question);
 
-feedback.className="feedback wrong";
+        item.a.forEach((answer,optionIndex)=>{
 
-feedback.innerHTML=
-"🔴 WRONG — Not answered."+
-"<div class='explain'>"+
-explanations["q"+i]+
-"</div>";
+            const button=document.createElement("button");
 
-feedback.style.display="block";
+            button.className="option";
+            button.textContent=
+                String.fromCharCode(65+optionIndex)+". "+answer;
 
-continue;
+            button.onclick=function(){
 
-}
+                checkAnswer(
+                    button,
+                    card,
+                    optionIndex,
+                    item.c,
+                    item.e
+                );
 
+            };
 
-if(selected.value===answers["q"+i]){
+            card.appendChild(button);
 
-score++;
+        });
 
-feedback.className="feedback right";
+        const result=document.createElement("div");
+        result.className="result";
 
-feedback.innerHTML=
-"🟢 RIGHT!"+
-"<div class='explain'>"+
-explanations["q"+i]+
-"</div>";
+        card.appendChild(result);
 
-}else{
+        quiz.appendChild(card);
 
-feedback.className="feedback wrong";
-
-feedback.innerHTML=
-"🔴 WRONG!"+
-"<div class='explain'>"+
-explanations["q"+i]+
-"</div>";
+    });
 
 }
 
-feedback.style.display="block";
+function checkAnswer(
+    selected,
+    card,
+    selectedIndex,
+    correctIndex,
+    explanation
+){
+
+    const buttons=card.querySelectorAll(".option");
+    const result=card.querySelector(".result");
+
+    buttons.forEach(button=>{
+        button.disabled=true;
+    });
+
+    answered++;
+
+    if(selectedIndex===correctIndex){
+
+        score++;
+
+        selected.classList.add("correct");
+
+        result.className="result right";
+        result.style.display="block";
+
+        result.innerHTML=
+            "<strong>✅ RIGHT / CORRECT!</strong>"+
+            "<div class='explanation'>"+
+            "📖 <strong>Explanation:</strong> "+
+            explanation+
+            "</div>";
+
+    }else{
+
+        selected.classList.add("wrong");
+
+        buttons[correctIndex].classList.add("correct");
+
+        result.className="result wrongBox";
+        result.style.display="block";
+
+        result.innerHTML=
+            "<strong>❌ WRONG!</strong>"+
+            "<div class='explanation'>"+
+            "📖 <strong>Explanation:</strong> "+
+            explanation+
+            "</div>";
+
+    }
+
+    if(answered===questions.length){
+
+        showScore();
+
+    }
 
 }
 
+function showScore(){
 
-/* Written questions */
+    const scoreBox=document.getElementById("scoreBox");
 
-const expected={
+    scoreBox.style.display="block";
 
-q56:
-"Periodicity is the regular repetition of similar physical and chemical properties of elements when arranged according to increasing atomic number.",
+    document.getElementById("score").textContent=
+        score+" / "+questions.length;
 
-q57:
-"Mendeleev's periodic law was based mainly on atomic mass, while the modern periodic law is based on atomic number.",
+    let message="";
 
-q58:
-"Ionization energy generally increases across a period because nuclear attraction to the outer electrons becomes stronger.",
+    const percent=(score/questions.length)*100;
 
-q59:
-"Atomic radius increases down a group because additional electron shells are added and the outer electrons are farther from the nucleus.",
+    if(percent>=90){
+        message="🏆 Excellent! You really understand Unit 4.";
+    }else if(percent>=75){
+        message="👏 Very good! Keep practicing.";
+    }else if(percent>=50){
+        message="👍 Good effort. Review the notes and try again.";
+    }else{
+        message="📚 Keep studying and try again. You can improve!";
+    }
 
-q60:
-"Electron affinity concerns the energy change when an isolated atom gains an electron. Electronegativity is the ability of an atom in a bond to attract shared electrons."
+    document.getElementById("message").textContent=message;
 
-};
-
-
-for(let i=56;i<=60;i++){
-
-let answer=
-document.getElementById("q"+i).value.trim();
-
-let feedback=
-document.getElementById("f"+i);
-
-feedback.className="feedback";
-
-
-if(answer.length>=15){
-
-feedback.classList.add("right");
-
-feedback.innerHTML=
-"🟢 ANSWER SUBMITTED"+
-"<div class='explain'>"+
-"<strong>Expected answer:</strong><br>"+
-expected["q"+i]+
-"</div>";
-
-}else{
-
-feedback.classList.add("wrong");
-
-feedback.innerHTML=
-"🔴 ANSWER TOO SHORT OR EMPTY"+
-"<div class='explain'>"+
-"<strong>Expected answer:</strong><br>"+
-expected["q"+i]+
-"</div>";
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
-feedback.style.display="block";
-
-}
-
-
-let percentage=
-Math.round((score/55)*100);
-
-
-let result=
-document.getElementById("result");
-
-result.style.display="block";
-
-result.innerHTML=
-
-"<div class='score'>"+
-"🎯 Score: "+score+"/55"+
-"</div>"+
-
-"<p><strong>Percentage:</strong> "+
-percentage+"%</p>"+
-
-"<p>🟢 Green = Right</p>"+
-
-"<p>🔴 Red = Wrong</p>"+
-
-"<p>💡 Every question now has an explanation.</p>";
-
-
-result.scrollIntoView({
-behavior:"smooth"
-});
-
-}
+loadQuiz();
 
 </script>
 
 </body>
-
 </html>
