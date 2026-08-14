@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 - Study Plus</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:linear-gradient(135deg,#2563eb,#7c3aed);color:white;text-align:center;padding:35px 15px}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:white;margin:18px 0;padding:22px;border-radius:16px;box-shadow:0 3px 10px #ccc}
+.math{border-left:6px solid #2563eb}.chemistry{border-left:6px solid #9333ea}
+.biology{border-left:6px solid #16a34a}.physics{border-left:6px solid #dc2626}
+.english{border-left:6px solid #ea580c}.unit{border-left:5px solid #2563eb}
+.chemUnit{border-left:5px solid #9333ea}.engUnit{border-left:5px solid #ea580c}
+h2{margin-top:0} h3{color:#2563eb}.chemUnit h3{color:#9333ea}.engUnit h3{color:#ea580c}
+p{line-height:1.6;color:#555}
+button{width:100%;padding:15px;margin-top:10px;border:none;border-radius:10px;color:white;font-size:16px;font-weight:bold;cursor:pointer}
+button:hover{opacity:.9}.open{background:#2563eb}.chemOpen{background:#9333ea}
+.engOpen{background:#ea580c}.notes{background:#7c3aed}.practice{background:#16a34a}
+.coming{background:#9ca3af}.back{background:#172554}
+#mathUnits,#chemistryUnits,#englishUnits{display:none}
+.title{text-align:center;color:#2563eb}.chemTitle{text-align:center;color:#9333ea}
+.engTitle{text-align:center;color:#ea580c}
+</style>
+</head>
+<body>
+<header>
+<h1>📚 Grade 9</h1><p>Study Plus</p><p>Learn • Practice • Prepare</p>
+</header>
+<div class="container">
+
+<div class="card math">
+<h2>📐 Mathematics</h2>
+<p>Complete Grade 9 Mathematics from Unit 1 to Unit 9 with Notes and Practice.</p>
+<button class="open" onclick="openMath()">📚 Open Mathematics</button>
+</div>
+
+<div id="mathUnits">
+<div class="card"><h2 class="title">📐 Grade 9 Mathematics</h2><p>Choose a unit to study Notes or Practice.</p></div>
+<div class="card unit"><h3>📘 Unit 1 — Further on Sets</h3><button class="notes" onclick="location.href='notes9.html'">📖 Unit 1 Notes</button><button class="practice" onclick="location.href='practice9.html'">📝 Unit 1 Practice</button></div>
+<div class="card unit"><h3>🔢 Unit 2 — The Number System</h3><button class="notes" onclick="location.href='notes9unit2.html'">📖 Unit 2 Notes</button><button class="practice" onclick="location.href='practice9unit2.html'">📝 Unit 2 Practice</button></div>
+<div class="card unit"><h3>📕 Unit 3 — Solving Equations</h3><button class="notes" onclick="location.href='notes9unit3.html'">📖 Unit 3 Notes</button><button class="practice" onclick="location.href='practice9unit3.html'">📝 Unit 3 Practice</button></div>
+<div class="card unit"><h3>📗 Unit 4 — Solving Inequalities</h3><button class="notes" onclick="location.href='notes9unit4.html'">📖 Unit 4 Notes</button><button class="practice" onclick="location.href='practice9unit4.html'">📝 Unit 4 Practice</button></div>
+<div class="card unit"><h3>📐 Unit 5 — Introduction to Trigonometry</h3><button class="notes" onclick="location.href='notes9unit5.html'">📖 Unit 5 Notes</button><button class="practice" onclick="location.href='practice9unit5.html'">📝 Unit 5 Practice</button></div>
+<div class="card unit"><h3>🔷 Unit 6 — Regular Polygons</h3><button class="notes" onclick="location.href='notes9unit6.html'">📖 Unit 6 Notes</button><button class="practice" onclick="location.href='practice9unit6.html'">📝 Unit 6 Practice</button></div>
+<div class="card unit"><h3>🔺 Unit 7 — Congruency and Similarity</h3><button class="notes" onclick="location.href='notes9unit7.html'">📖 Unit 7 Notes</button><button class="practice" onclick="location.href='practice9unit7.html'">📝 Unit 7 Practice</button></div>
+<div class="card unit"><h3>➡️ Unit 8 — Vectors in Two Dimensions</h3><button class="notes" onclick="location.href='notes9unit8.html'">📖 Unit 8 Notes</button><button class="practice" onclick="location.href='practice9unit8.html'">📝 Unit 8 Practice</button></div>
+<div class="card unit"><h3>📊 Unit 9 — Statistics and Probability</h3><button class="notes" onclick="location.href='notes9unit9.html'">📖 Unit 9 Notes</button><button class="practice" onclick="location.href='practice9unit9.html'">📝 Unit 9 Practice</button></div>
+</div>
+
+<div class="card chemistry">
+<h2>🧪 Chemistry</h2><p>Grade 9 Chemistry — Unit 1 to Unit 5 are available.</p>
+<button class="chemOpen" onclick="openChemistry()">🧪 Open Chemistry</button>
+</div>
+
+<div id="chemistryUnits">
+<div class="card"><h2 class="chemTitle">🧪 Grade 9 Chemistry</h2><p>Choose a unit to study Notes or Practice.</p></div>
+<div class="card chemUnit"><h3>🧪 Unit 1 — Chemistry and Its Importance</h3><p>Definition and scope of chemistry, matter, substance, properties, composition, branches of chemistry, relationship with other natural sciences, agriculture, food production, medicine, analgesics, antibiotics, disinfectants, construction materials and chemical industries.</p><button class="notes" onclick="location.href='notes9chemistryunit1.html'">📖 Unit 1 Notes</button><button class="practice" onclick="location.href='practice9chemistryunit1.html'">📝 Unit 1 Practice — 60 Questions</button></div>
+<div class="card chemUnit"><h3>📏 Unit 2 — Measurement and Scientific Method</h3><p>Measurement, SI units, fundamental and derived quantities, measuring instruments, density, accuracy, precision, significant figures, scientific notation, scientific method, variables, laboratory safety and experimental error.</p><button class="notes" onclick="location.href='notes9chemistryunit2.html'">📖 Unit 2 Notes</button><button class="practice" onclick="location.href='practice9chemistryunit2.html'">📝 Unit 2 Practice — 60 Questions</button></div>
+<div class="card chemUnit"><h3>⚛️ Unit 3 — Structure of the Atom</h3><p>Atomic theory, development of atomic models, subatomic particles, protons, neutrons and electrons, atomic number, mass number, isotopes, electron arrangement and ions.</p><button class="notes" onclick="location.href='notes9chemistryunit3.html'">📖 Unit 3 Notes</button><button class="practice" onclick="location.href='practice9chemistryunit3.html'">📝 Unit 3 Practice — 60 Questions</button></div>
+<div class="card chemUnit"><h3>🧩 Unit 4 — Periodic Classification of Elements</h3><p>Historical development, Dobereiner triads, Newlands law of octaves, Mendeleev periodic law, periodicity, modern periodic table, groups and periods, s-, p-, d-, f-blocks, representative elements, ionization energy, electron affinity and electronegativity.</p><button class="notes" onclick="location.href='notes9chemistryunit4.html'">📖 Unit 4 Notes</button><button class="practice" onclick="location.href='practice9chemistryunit4.html'">📝 Unit 4 Practice — 60 Questions</button></div>
+<div class="card chemUnit"><h3>🔗 Unit 5 — Chemical Bonding</h3><p>Chemical bonding, valence electrons, octet and duet rules, ionic and covalent bonding, single/double/triple covalent bonds, coordinate covalent bonding, metallic bonding, Lewis structures, electronegativity, polar and non-polar covalent bonds, ions and compounds.</p><button class="notes" onclick="location.href='notes9chemistryunit5.html'">📖 Unit 5 Notes</button><button class="practice" onclick="location.href='practice9chemistryunit5.html'">📝 Unit 5 Practice — 60 Questions</button></div>
+</div>
+
+<div class="card english">
+<h2>📖 English</h2>
+<p>Grade 9 English Unit 1 — Tenses. Notes and 200-question difficult practice.</p>
+<button class="engOpen" onclick="openEnglish()">📖 Open English</button>
+</div>
+
+<div id="englishUnits">
+<div class="card"><h2 class="engTitle">🇬🇧 Grade 9 English</h2><p>Choose a unit to study Notes or Practice.</p></div>
+<div class="card engUnit">
+<h3>📚 Unit 1 — Tenses</h3>
+<p>Simple Present, Present Continuous, Present Perfect, Present Perfect Continuous, Simple Past, Past Continuous, Past Perfect, Past Perfect Continuous, Simple Future, Future Continuous, Future Perfect and Future Perfect Continuous.</p>
+<button class="notes" onclick="location.href='notes9englishunit1.html'">📖 Unit 1 Notes</button>
+<button class="practice" onclick="location.href='practice9englishunit1_200.html'">📝 Unit 1 Practice — 200 Questions</button>
+</div>
+</div>
+
+<div class="card biology"><h2>🧬 Biology</h2><p>Grade 9 Biology lessons, Notes and Practice.</p><button class="coming" disabled>🔒 Coming Soon</button></div>
+<div class="card physics"><h2>⚡ Physics</h2><p>Grade 9 Physics lessons, Notes and Practice.</p><button class="coming" disabled>🔒 Coming Soon</button></div>
+
+<button class="back" onclick="location.href='index.html'">← Back to Grades</button>
+</div>
+
+<script>
+function openMath(){const x=document.getElementById("mathUnits");x.style.display="block";x.scrollIntoView({behavior:"smooth"});}
+function openChemistry(){const x=document.getElementById("chemistryUnits");x.style.display="block";x.scrollIntoView({behavior:"smooth"});}
+function openEnglish(){const x=document.getElementById("englishUnits");x.style.display="block";x.scrollIntoView({behavior:"smooth"});}
+</script>
+</body>
+</html>
