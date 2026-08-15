@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 History Unit 8 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#172554,#2563eb);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{margin:0}
+header p{margin:7px}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
+}
+
+.progress{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:14px;
+    text-align:center;
+    font-weight:bold;
+    border-radius:10px;
+    box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #2563eb;
+}
+
+.question h3{
+    color:#1e40af;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:6px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fafafa;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#eff6ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.result{
+    display:none;
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.score{
+    text-align:center;
+    border-left:6px solid #ea580c;
+    background:#fff7ed;
+}
+
+button.main{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    background:#1e40af;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button.back{
+    background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 8 PRACTICE</p>
+<p>Political, Social and Economic Processes in Ethiopia</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+
+<h2>🏆 FINAL SCORE</h2>
+
+<h2 id="finalScore">0 / 60</h2>
+
+<p id="message">
+Answer all questions to see your result.
+</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit8.html'">
+📖 Unit 8 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Which period is mainly covered by Grade 9 History Unit 8?",
+o:[
+"Mid-16th to mid-19th century",
+"10th to 12th century",
+"20th to 21st century",
+"5th to 8th century"
+],
+a:0,
+e:"Unit 8 deals mainly with political, social and economic processes in Ethiopia from the mid-16th to the mid-19th century."
+},
+
+{
+q:"Which city became the major royal center during the Gondarine period?",
+o:["Gondar","Harar","Adama","Jimma"],
+a:0,
+e:"Gondar became the major royal and political center during the Gondarine period."
+},
+
+{
+q:"Who established Gondar as the permanent royal center?",
+o:["Fasilides","Ahmad Gragn","Yekuno Amlak","Sahle Sellassie"],
+a:0,
+e:"Emperor Fasilides established Gondar as the permanent royal center in 1636."
+},
+
+{
+q:"In which year did Fasilides establish Gondar as the royal center?",
+o:["1636","1543","1813","1706"],
+a:0,
+e:"Fasilides established Gondar as the permanent royal center in 1636."
+},
+
+{
+q:"The Gondarine period is named after:",
+o:["Gondar","Gojjam","Shewa","Harar"],
+a:0,
+e:"The period is called Gondarine because Gondar became the royal center."
+},
+
+{
+q:"Who was one of the important Gondarine emperors?",
+o:["Iyasu I","Negasi","Ras Ali I","Ras Gugsa"],
+a:0,
+e:"Iyasu I was one of the important emperors of the Gondarine period."
+},
+
+{
+q:"When did Iyasu I reign?",
+o:["1682–1706","1813–1847","1636–1645","1540–1550"],
+a:0,
+e:"Iyasu I ruled from 1682 to 1706."
+},
+
+{
+q:"What did Iyasu I attempt to do?",
+o:[
+"Strengthen central royal authority",
+"End all agriculture",
+"Move the capital to Europe",
+"Destroy trade"
+],
+a:0,
+e:"Iyasu I attempted to strengthen royal authority and control different parts of the kingdom."
+},
+
+{
+q:"Gondar became famous for its:",
+o:["Castles and churches","Modern factories","Railways","Airports"],
+a:0,
+e:"Gondar became famous for its castles, churches and other architectural monuments."
+},
+
+{
+q:"The Royal Enclosure is associated with:",
+o:["Gondar","Shewa","Harar","Bale"],
+a:0,
+e:"The Royal Enclosure in Gondar is one of the major architectural symbols of the Gondarine period."
+},
+
+{
+q:"What contributed to the weakening of central authority during the Gondarine period?",
+o:[
+"Succession disputes and political struggles",
+"Industrialization",
+"Modern democracy",
+"European colonization"
+],
+a:0,
+e:"Succession disputes, religious controversies and political struggles weakened central royal authority."
+},
+
+{
+q:"What does Zemene-Mesafint mean?",
+o:[
+"Era of Princes or Era of Warlords",
+"Age of Discovery",
+"Age of Industry",
+"Age of Kings"
+],
+a:0,
+e:"Zemene-Mesafint is commonly understood as the Era of Princes or Era of Warlords."
+},
+
+{
+q:"During the Zemene-Mesafint, political power was often held by:",
+o:[
+"Regional nobles and warlords",
+"Foreign presidents",
+"Modern parliaments",
+"European kings"
+],
+a:0,
+e:"Regional nobles and warlords exercised great political influence during the Zemene-Mesafint."
+},
+
+{
+q:"One major characteristic of the Zemene-Mesafint was:",
+o:[
+"Weak imperial authority",
+"Strong centralized government",
+"No regional rulers",
+"Complete political unity"
+],
+a:0,
+e:"The emperor's authority was often weak while regional rulers controlled large territories."
+},
+
+{
+q:"Which was a cause of the Zemene-Mesafint?",
+o:[
+"Succession disputes",
+"Modern industrialization",
+"Air transportation",
+"Foreign tourism"
+],
+a:0,
+e:"Succession disputes contributed to political instability and the weakening of central authority."
+},
+
+{
+q:"Which was another cause of the Zemene-Mesafint?",
+o:[
+"Powerful provincial nobles",
+"Modern elections",
+"Factories",
+"Railways"
+],
+a:0,
+e:"Powerful provincial nobles increasingly challenged and limited imperial authority."
+},
+
+{
+q:"Which noble became influential during the rise of the Zemene-Mesafint?",
+o:[
+"Ras Mikael Sehul",
+"Fasilides",
+"Negasi",
+"Yekuno Amlak"
+],
+a:0,
+e:"Ras Mikael Sehul was an important regional noble during the period of political fragmentation."
+},
+
+{
+q:"The Zemene-Mesafint was characterized by:",
+o:[
+"Political fragmentation",
+"Complete centralization",
+"European colonization",
+"No warfare"
+],
+a:0,
+e:"Political power was divided among competing regional rulers."
+},
+
+{
+q:"What was one consequence of the Zemene-Mesafint?",
+o:[
+"Frequent warfare",
+"Complete peace",
+"End of regional states",
+"End of agriculture everywhere"
+],
+a:0,
+e:"Competition among regional rulers led to frequent military conflicts."
+},
+
+{
+q:"Which group became especially influential during the Zemene-Mesafint?",
+o:[
+"Yejju Oromo",
+"Portuguese",
+"British",
+"Dutch"
+],
+a:0,
+e:"Yejju Oromo rulers became one of the most influential political forces during the period."
+},
+
+{
+q:"The Yejju rulers were mainly associated with:",
+o:[
+"Political dominance in northern Ethiopia",
+"European colonization",
+"Maritime trade",
+"Modern industry"
+],
+a:0,
+e:"Yejju rulers became major political actors in northern Ethiopia during the Zemene-Mesafint."
+},
+
+{
+q:"Who was an important Yejju ruler?",
+o:["Ras Ali I","Fasilides","Sahle Sellassie","Negasi"],
+a:0,
+e:"Ras Ali I was an important Yejju ruler."
+},
+
+{
+q:"Who was another important Yejju political leader?",
+o:["Ras Gugsa","Iyasu I","Fasilides","Menelik II"],
+a:0,
+e:"Ras Gugsa was an important Yejju ruler and regional political leader."
+},
+
+{
+q:"The Yejju rulers influenced:",
+o:[
+"The imperial throne and northern politics",
+"Only coastal trade",
+"European politics",
+"Modern education"
+],
+a:0,
+e:"Yejju rulers had major influence over the imperial throne and regional politics."
+},
+
+{
+q:"The political dominance of the Yejju rulers eventually:",
+o:[
+"Declined",
+"Expanded over Europe",
+"Ended all regional states",
+"Created a modern republic"
+],
+a:0,
+e:"Their dominance declined as new political forces challenged the existing regional power structure."
+},
+
+{
+q:"Which region developed as a relatively independent kingdom during the Zemene-Mesafint?",
+o:["Shewa","Portugal","Egypt","Somalia"],
+a:0,
+e:"The Kingdom of Shewa developed as a relatively independent regional kingdom."
+},
+
+{
+q:"Who is associated with the founding of the Shewan kingdom?",
+o:["Negasi","Fasilides","Ahmad Gragn","Iyasu I"],
+a:0,
+e:"Negasi is associated with the emergence and founding of the Shewan kingdom."
+},
+
+{
+q:"The early Shewan kingdom emerged around:",
+o:["Manz","Gondar","Harar","Tigray"],
+a:0,
+e:"The Shewan kingdom emerged around the Manz area."
+},
+
+{
+q:"Which town became an important center of the Shewan kingdom?",
+o:["Ankober","Gondar","Harar","Massawa"],
+a:0,
+e:"Ankober became the center of the Shewan kingdom during the period."
+},
+
+{
+q:"Who was a major ruler of Shewa from 1813 to 1847?",
+o:["Sahle Sellassie","Fasilides","Ras Ali I","Iyasu I"],
+a:0,
+e:"Nigus Sahle Sellassie ruled Shewa from 1813 to 1847."
+},
+
+{
+q:"Sahle Sellassie is remembered for:",
+o:[
+"Strengthening the Shewan kingdom",
+"Destroying Shewa",
+"Ending all trade",
+"Moving the capital to Gondar"
+],
+a:0,
+e:"Sahle Sellassie strengthened the Shewan kingdom and expanded its political influence."
+},
+
+{
+q:"One achievement of Sahle Sellassie was:",
+o:[
+"Encouraging trade",
+"Ending agriculture",
+"Closing all markets",
+"Ending diplomacy"
+],
+a:0,
+e:"Sahle Sellassie encouraged trade and developed Shewa's external relations."
+},
+
+{
+q:"Sahle Sellassie established relations with:",
+o:[
+"Britain and France",
+"Japan and China only",
+"Russia and Brazil",
+"Portugal and Spain only"
+],
+a:0,
+e:"Sahle Sellassie established foreign relations with Britain and France."
+},
+
+{
+q:"Why was Shewa relatively important during the Zemene-Mesafint?",
+o:[
+"It remained relatively independent and developed as a strong regional kingdom",
+"It had no political organization",
+"It was controlled by Europe",
+"It had no trade"
+],
+a:0,
+e:"Shewa maintained considerable independence and gradually developed into a strong regional kingdom."
+},
+
+{
+q:"Which region was an important Islamic and commercial center in eastern Ethiopia?",
+o:["Harar","Gondar","Ankober","Manz"],
+a:0,
+e:"Harar was an important Islamic, cultural and commercial center in eastern Ethiopia."
+},
+
+{
+q:"Which activity was important in eastern Ethiopia?",
+o:["Trade","Car manufacturing","Oil refining","Railway construction"],
+a:0,
+e:"Trade was an important economic activity in eastern Ethiopia."
+},
+
+{
+q:"Pastoralism was particularly important among many peoples of:",
+o:["Eastern Ethiopia","Central Europe","Western America","Northern Asia"],
+a:0,
+e:"Pastoralism was important among several communities in eastern Ethiopia, especially in dry environments."
+},
+
+{
+q:"Which group was important in eastern Ethiopia?",
+o:["Somali","French","Portuguese","Dutch"],
+a:0,
+e:"Somali peoples were among the important populations of eastern Ethiopia."
+},
+
+{
+q:"Which other group was important in eastern Ethiopia?",
+o:["Afar","Spanish","British","Italian"],
+a:0,
+e:"Afar peoples were important in eastern Ethiopia."
+},
+
+{
+q:"Southern Ethiopia was characterized by:",
+o:[
+"Political, cultural and linguistic diversity",
+"Only one ethnic group",
+"No agriculture",
+"No political organization"
+],
+a:0,
+e:"Southern Ethiopia contained many peoples with diverse political, cultural and linguistic traditions."
+},
+
+{
+q:"Which is an example of a southern Ethiopian people?",
+o:["Wolayta","Portuguese","British","Dutch"],
+a:0,
+e:"Wolayta is one of the peoples of southern Ethiopia."
+},
+
+{
+q:"Which is another southern Ethiopian people?",
+o:["Gamo","French","Spanish","Italian"],
+a:0,
+e:"Gamo is one of the peoples of southern Ethiopia."
+},
+
+{
+q:"Which economic activity was important in southern Ethiopia?",
+o:["Agriculture","Automobile manufacturing","Oil refining","Aircraft production"],
+a:0,
+e:"Agriculture was a major economic activity in southern Ethiopia."
+},
+
+{
+q:"Southern societies interacted through:",
+o:[
+"Trade, migration, warfare and intermarriage",
+"Only modern technology",
+"Only European colonization",
+"No interaction"
+],
+a:0,
+e:"Trade, migration, warfare and intermarriage created interactions among southern societies."
+},
+
+{
+q:"Western Ethiopia contained:",
+o:[
+"Different peoples and political states",
+"Only one state",
+"Only European colonies",
+"No agricultural communities"
+],
+a:0,
+e:"Western Ethiopia contained diverse peoples and political organizations."
+},
+
+{
+q:"Which people lived in western Ethiopia?",
+o:["Gumuz","French","Portuguese","Dutch"],
+a:0,
+e:"Gumuz communities are among the peoples associated with western Ethiopia."
+},
+
+{
+q:"Which was an important economic activity in western Ethiopia?",
+o:["Agriculture","Car manufacturing","Air transport","Oil drilling"],
+a:0,
+e:"Agriculture was important in many western communities."
+},
+
+{
+q:"Western Ethiopia was connected to trade routes toward:",
+o:["Sudan and the Ethiopian highlands","Europe only","Asia only","America"],
+a:0,
+e:"Western Ethiopia was connected to trade routes linking the region with Sudan and the Ethiopian highlands."
+},
+
+{
+q:"Which statement about western Ethiopia is correct?",
+o:[
+"It was politically diverse",
+"It had only one ruler",
+"It had no trade",
+"It had no agriculture"
+],
+a:0,
+e:"Western Ethiopia contained different societies with different political and economic institutions."
+},
+
+{
+q:"What helped weaken the central monarchy before the Zemene-Mesafint?",
+o:[
+"Succession disputes and regional power struggles",
+"Modern democracy",
+"Industrialization",
+"Foreign tourism"
+],
+a:0,
+e:"Succession disputes and regional competition weakened central royal authority."
+},
+
+{
+q:"During the Zemene-Mesafint, emperors often:",
+o:[
+"Had limited real political power",
+"Controlled every region directly",
+"Ruled Europe",
+"Had no regional opposition"
+],
+a:0,
+e:"Regional nobles often exercised more practical political power than the emperor."
+},
+
+{
+q:"The word 'Ras' was commonly used as a title for:",
+o:[
+"A high-ranking noble or military leader",
+"A farmer",
+"A merchant only",
+"A priest only"
+],
+a:0,
+e:"Ras was an important title associated with high-ranking nobles and military leaders."
+},
+
+{
+q:"Which city is associated with the Royal Enclosure?",
+o:["Gondar","Ankober","Harar","Manz"],
+a:0,
+e:"The famous Royal Enclosure is located in Gondar."
+},
+
+{
+q:"Which ruler established Gondar as a permanent royal center?",
+o:["Fasilides","Sahle Sellassie","Ras Ali I","Negasi"],
+a:0,
+e:"Fasilides established Gondar as the permanent royal center in 1636."
+},
+
+{
+q:"Which ruler strengthened Shewa during the first half of the 19th century?",
+o:["Sahle Sellassie","Fasilides","Iyasu I","Ras Gugsa"],
+a:0,
+e:"Sahle Sellassie was a major ruler who strengthened the Shewan kingdom."
+},
+
+{
+q:"The Kingdom of Shewa was centered at:",
+o:["Ankober","Gondar","Harar","Bale"],
+a:0,
+e:"Ankober served as an important center of the Shewan kingdom."
+},
+
+{
+q:"Which period came before the rise of the Zemene-Mesafint?",
+o:["The Gondarine period","The modern federal period","The Italian occupation","The Derg period"],
+a:0,
+e:"The Gondarine period preceded the Zemene-Mesafint."
+},
+
+{
+q:"Which of the following best describes Unit 8?",
+o:[
+"Regional states, Gondar, Zemene-Mesafint, Yejju and Shewa",
+"Only ancient Egyptian history",
+"Only European history",
+"Only modern Ethiopian politics"
+],
+a:0,
+e:"Unit 8 covers regional peoples and states, the Gondarine period, Zemene-Mesafint, Yejju political influence and the Kingdom of Shewa."
+},
+
+{
+q:"Which factor encouraged the development of regional states?",
+o:[
+"Weakening of central authority",
+"Complete political unity",
+"Modern industrialization",
+"European parliament"
+],
+a:0,
+e:"The weakening of central royal authority allowed regional rulers to become more powerful."
+},
+
+{
+q:"Which statement about the Gondarine period is correct?",
+o:[
+"Gondar became an important political and cultural center",
+"Gondar had no political importance",
+"Fasilides ruled Shewa",
+"Gondar was outside Ethiopia"
+],
+a:0,
+e:"Gondar became a major political, cultural and architectural center during the Gondarine period."
+},
+
+{
+q:"Which statement about the Zemene-Mesafint is correct?",
+o:[
+"Regional warlords had considerable power",
+"The emperor had unlimited power",
+"There were no regional rulers",
+"Political conflict disappeared"
+],
+a:0,
+e:"Regional nobles and warlords exercised considerable power during the Zemene-Mesafint."
+},
+
+{
+q:"Which statement about Shewa is correct?",
+o:[
+"It developed into a strong regional kingdom",
+"It disappeared completely",
+"It was ruled permanently from Gondar",
+"It had no political leaders"
+],
+a:0,
+e:"Shewa developed into an increasingly strong and relatively independent regional kingdom."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="card question";
+
+    card.innerHTML=`
+    <h3>Question ${index+1} / ${questions.length}</h3>
+    <p><strong>${item.q}</strong></p>
+    <div id="options${index}"></div>
+    <div id="result${index}" class="result"></div>
+    `;
+
+    quiz.appendChild(card);
+
+    const box=document.getElementById("options"+index);
+
+    item.o.forEach((option,i)=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="option";
+
+        btn.innerText=
+        String.fromCharCode(65+i)+". "+option;
+
+        btn.onclick=()=>{
+            checkAnswer(index,i,btn,box);
+        };
+
+        box.appendChild(btn);
+    });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+    const result=document.getElementById("result"+index);
+
+    if(result.dataset.done==="true") return;
+
+    result.dataset.done="true";
+
+    answered++;
+
+    const correct=questions[index].a;
+
+    const buttons=box.querySelectorAll(".option");
+
+    buttons.forEach((btn,i)=>{
+
+        btn.disabled=true;
+
+        if(i===correct){
+            btn.classList.add("correct");
+        }
+    });
+
+    if(selected===correct){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <br><br>
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        `;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        result.className="result wrongResult";
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <br><br>
+        <strong>Correct Answer:</strong>
+        ${questions[index].o[correct]}
+        <br><br>
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        `;
+    }
+
+    result.style.display="block";
+
+    updateProgress();
+
+    if(answered===questions.length){
+        showFinal();
+    }
+}
+
+
+function updateProgress(){
+
+    document.getElementById("progress").innerText=
+    "Answered: "+answered+
+    " / "+questions.length+
+    " | Score: "+score;
+}
+
+
+function showFinal(){
+
+    const percent=Math.round(
+        (score/questions.length)*100
+    );
+
+    document.getElementById("finalScore").innerText=
+    score+" / "+questions.length;
+
+    let message;
+
+    if(percent>=90){
+        message="🏆 Excellent! You mastered Unit 8.";
+    }
+    else if(percent>=75){
+        message="👏 Very Good! Review the questions you missed.";
+    }
+    else if(percent>=50){
+        message="👍 Good effort! Read Unit 8 notes and practice again.";
+    }
+    else{
+        message="📖 Keep studying! Review Unit 8 carefully and try again.";
+    }
+
+    document.getElementById("message").innerText=
+    percent+"% — "+message;
+}
+
+</script>
+
+</body>
+</html>
