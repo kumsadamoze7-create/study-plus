@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 History Unit 1 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#92400e,#d97706);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.question{
+    background:white;
+    margin:18px 0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+    border-left:5px solid #d97706;
+}
+
+.question h3{
+    color:#92400e;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:9px;
+    background:#f9fafb;
+    cursor:pointer;
+    text-align:left;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#fff7ed;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    display:none;
+    line-height:1.6;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+    display:block;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+    display:block;
+}
+
+.score{
+    background:#172554;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    margin:25px 0;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>Unit 1 — The Discipline of History and Human Evolution</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="score" id="score">
+Score: 0 / 60
+</div>
+
+
+<!-- Q1 -->
+<div class="question">
+<h3>1. What is History mainly concerned with?</h3>
+
+<button class="option" onclick="check(this,1,'B')">
+A. Predicting the future
+</button>
+
+<button class="option" onclick="check(this,1,'B')">
+B. Studying and interpreting the human past
+</button>
+
+<button class="option" onclick="check(this,1,'B')">
+C. Studying only animals
+</button>
+
+<button class="option" onclick="check(this,1,'B')">
+D. Studying only geography
+</button>
+
+<div id="r1" class="result"></div>
+</div>
+
+
+<!-- Q2 -->
+<div class="question">
+<h3>2. What is prehistory?</h3>
+
+<button class="option" onclick="check(this,2,'A')">
+A. The period before written records
+</button>
+
+<button class="option" onclick="check(this,2,'A')">
+B. The period after modern technology
+</button>
+
+<button class="option" onclick="check(this,2,'A')">
+C. The study of future events
+</button>
+
+<button class="option" onclick="check(this,2,'A')">
+D. The study of modern governments
+</button>
+
+<div id="r2" class="result"></div>
+</div>
+
+
+<!-- Q3 -->
+<div class="question">
+<h3>3. Which is an important characteristic of History?</h3>
+
+<button class="option" onclick="check(this,3,'C')">
+A. It ignores evidence
+</button>
+
+<button class="option" onclick="check(this,3,'C')">
+B. It studies only the future
+</button>
+
+<button class="option" onclick="check(this,3,'C')">
+C. It uses evidence to understand the past
+</button>
+
+<button class="option" onclick="check(this,3,'C')">
+D. It never involves interpretation
+</button>
+
+<div id="r3" class="result"></div>
+</div>
+
+
+<!-- Q4 -->
+<div class="question">
+<h3>4. Why is History important?</h3>
+
+<button class="option" onclick="check(this,4,'D')">
+A. It helps us understand the past
+</button>
+
+<button class="option" onclick="check(this,4,'D')">
+B. It helps preserve heritage
+</button>
+
+<button class="option" onclick="check(this,4,'D')">
+C. It can provide lessons from the past
+</button>
+
+<button class="option" onclick="check(this,4,'D')">
+D. All of the above
+</button>
+
+<div id="r4" class="result"></div>
+</div>
+
+
+<!-- Q5 -->
+<div class="question">
+<h3>5. What is historiography?</h3>
+
+<button class="option" onclick="check(this,5,'B')">
+A. Study of rocks
+</button>
+
+<button class="option" onclick="check(this,5,'B')">
+B. Study of historical writing and interpretation
+</button>
+
+<button class="option" onclick="check(this,5,'B')">
+C. Study of plants
+</button>
+
+<button class="option" onclick="check(this,5,'B')">
+D. Study of weather
+</button>
+
+<div id="r5" class="result"></div>
+</div>
+
+
+<!-- Q6 -->
+<div class="question">
+<h3>6. Which of the following is a primary source?</h3>
+
+<button class="option" onclick="check(this,6,'A')">
+A. A letter written during the historical event
+</button>
+
+<button class="option" onclick="check(this,6,'A')">
+B. A modern textbook
+</button>
+
+<button class="option" onclick="check(this,6,'A')">
+C. A modern encyclopedia
+</button>
+
+<button class="option" onclick="check(this,6,'A')">
+D. A later historical summary
+</button>
+
+<div id="r6" class="result"></div>
+</div>
+
+
+<!-- Q7 -->
+<div class="question">
+<h3>7. Which is a secondary source?</h3>
+
+<button class="option" onclick="check(this,7,'C')">
+A. Ancient coin
+</button>
+
+<button class="option" onclick="check(this,7,'C')">
+B. Original letter
+</button>
+
+<button class="option" onclick="check(this,7,'C')">
+C. History textbook analyzing the past
+</button>
+
+<button class="option" onclick="check(this,7,'C')">
+D. Ancient tool
+</button>
+
+<div id="r7" class="result"></div>
+</div>
+
+
+<!-- Q8 -->
+<div class="question">
+<h3>8. Which source is mainly archaeological?</h3>
+
+<button class="option" onclick="check(this,8,'B')">
+A. Newspaper article
+</button>
+
+<button class="option" onclick="check(this,8,'B')">
+B. Stone tool
+</button>
+
+<button class="option" onclick="check(this,8,'B')">
+C. Modern textbook
+</button>
+
+<button class="option" onclick="check(this,8,'B')">
+D. Modern speech
+</button>
+
+<div id="r8" class="result"></div>
+</div>
+
+
+<!-- Q9 -->
+<div class="question">
+<h3>9. What does chronology mean?</h3>
+
+<button class="option" onclick="check(this,9,'A')">
+A. Arrangement of events according to time
+</button>
+
+<button class="option" onclick="check(this,9,'A')">
+B. Study of plants
+</button>
+
+<button class="option" onclick="check(this,9,'A')">
+C. Study of animals
+</button>
+
+<button class="option" onclick="check(this,9,'A')">
+D. Study of climate
+</button>
+
+<div id="r9" class="result"></div>
+</div>
+
+
+<!-- Q10 -->
+<div class="question">
+<h3>10. What is relative dating?</h3>
+
+<button class="option" onclick="check(this,10,'D')">
+A. Giving an exact date to an object
+</button>
+
+<button class="option" onclick="check(this,10,'D')">
+B. Predicting the future
+</button>
+
+<button class="option" onclick="check(this,10,'D')">
+C. Measuring temperature
+</button>
+
+<button class="option" onclick="check(this,10,'D')">
+D. Determining whether something is older or younger than another
+</button>
+
+<div id="r10" class="result"></div>
+</div>
+
+
+<!-- Q11 -->
+<div class="question">
+<h3>11. Radiocarbon dating is based mainly on which element?</h3>
+
+<button class="option" onclick="check(this,11,'C')">
+A. Oxygen
+</button>
+
+<button class="option" onclick="check(this,11,'C')">
+B. Iron
+</button>
+
+<button class="option" onclick="check(this,11,'C')">
+C. Carbon-14
+</button>
+
+<button class="option" onclick="check(this,11,'C')">
+D. Gold
+</button>
+
+<div id="r11" class="result"></div>
+</div>
+
+
+<!-- Q12 -->
+<div class="question">
+<h3>12. Carbon-14 dating is especially useful for:</h3>
+
+<button class="option" onclick="check(this,12,'B')">
+A. Plastic materials
+</button>
+
+<button class="option" onclick="check(this,12,'B')">
+B. Once-living organic materials
+</button>
+
+<button class="option" onclick="check(this,12,'B')">
+C. Modern computers
+</button>
+
+<button class="option" onclick="check(this,12,'B')">
+D. Steel buildings
+</button>
+
+<div id="r12" class="result"></div>
+</div>
+
+
+<!-- Q13 -->
+<div class="question">
+<h3>13. What is human evolution?</h3>
+
+<button class="option" onclick="check(this,13,'A')">
+A. Long-term biological and cultural development of humans
+</button>
+
+<button class="option" onclick="check(this,13,'A')">
+B. Development of machines
+</button>
+
+<button class="option" onclick="check(this,13,'A')">
+C. Development of modern cities only
+</button>
+
+<button class="option" onclick="check(this,13,'A')">
+D. Study of plants
+</button>
+
+<div id="r13" class="result"></div>
+</div>
+
+
+<!-- Q14 -->
+<div class="question">
+<h3>14. What does bipedalism mean?</h3>
+
+<button class="option" onclick="check(this,14,'D')">
+A. Walking on four legs
+</button>
+
+<button class="option" onclick="check(this,14,'D')">
+B. Swimming
+</button>
+
+<button class="option" onclick="check(this,14,'D')">
+C. Flying
+</button>
+
+<button class="option" onclick="check(this,14,'D')">
+D. Walking primarily on two legs
+</button>
+
+<div id="r14" class="result"></div>
+</div>
+
+
+<!-- Q15 -->
+<div class="question">
+<h3>15. Which provides important evidence for human evolution?</h3>
+
+<button class="option" onclick="check(this,15,'C')">
+A. Modern cars
+</button>
+
+<button class="option" onclick="check(this,15,'C')">
+B. Modern phones
+</button>
+
+<button class="option" onclick="check(this,15,'C')">
+C. Fossils
+</button>
+
+<button class="option" onclick="check(this,15,'C')">
+D. Plastic bottles
+</button>
+
+<div id="r15" class="result"></div>
+</div>
+
+
+<!-- Q16 -->
+<div class="question">
+<h3>16. What are fossils?</h3>
+
+<button class="option" onclick="check(this,16,'A')">
+A. Preserved remains or traces of ancient organisms
+</button>
+
+<button class="option" onclick="check(this,16,'A')">
+B. Modern buildings
+</button>
+
+<button class="option" onclick="check(this,16,'A')">
+C. Modern machines
+</button>
+
+<button class="option" onclick="check(this,16,'A')">
+D. Modern documents
+</button>
+
+<div id="r16" class="result"></div>
+</div>
+
+
+<!-- Q17 -->
+<div class="question">
+<h3>17. Which is associated with early human technology?</h3>
+
+<button class="option" onclick="check(this,17,'B')">
+A. Computers
+</button>
+
+<button class="option" onclick="check(this,17,'B')">
+B. Stone tools
+</button>
+
+<button class="option" onclick="check(this,17,'B')">
+C. Cars
+</button>
+
+<button class="option" onclick="check(this,17,'B')">
+D. Satellites
+</button>
+
+<div id="r17" class="result"></div>
+</div>
+
+
+<!-- Q18 -->
+<div class="question">
+<h3>18. Which hominin is associated with habitual bipedalism?</h3>
+
+<button class="option" onclick="check(this,18,'A')">
+A. Australopithecines
+</button>
+
+<button class="option" onclick="check(this,18,'A')">
+B. Modern machines
+</button>
+
+<button class="option" onclick="check(this,18,'A')">
+C. Dinosaurs
+</button>
+
+<button class="option" onclick="check(this,18,'A')">
+D. Fish
+</button>
+
+<div id="r18" class="result"></div>
+</div>
+
+
+<!-- Q19 -->
+<div class="question">
+<h3>19. Homo habilis is commonly associated with:</h3>
+
+<button class="option" onclick="check(this,19,'C')">
+A. Modern computers
+</button>
+
+<button class="option" onclick="check(this,19,'C')">
+B. Agriculture only
+</button>
+
+<button class="option" onclick="check(this,19,'C')">
+C. Early stone-tool traditions
+</button>
+
+<button class="option" onclick="check(this,19,'C')">
+D. Writing systems
+</button>
+
+<div id="r19" class="result"></div>
+</div>
+
+
+<!-- Q20 -->
+<div class="question">
+<h3>20. Which species is modern human?</h3>
+
+<button class="option" onclick="check(this,20,'D')">
+A. Homo habilis
+</button>
+
+<button class="option" onclick="check(this,20,'D')">
+B. Australopithecus
+</button>
+
+<button class="option" onclick="check(this,20,'D')">
+C. Homo erectus
+</button>
+
+<button class="option" onclick="check(this,20,'D')">
+D. Homo sapiens
+</button>
+
+<div id="r20" class="result"></div>
+</div>
+
+
+<!-- Q21 -->
+<div class="question">
+<h3>21. Africa is especially important in the study of:</h3>
+
+<button class="option" onclick="check(this,21,'B')">
+A. Modern computers
+</button>
+
+<button class="option" onclick="check(this,21,'B')">
+B. Human origins
+</button>
+
+<button class="option" onclick="check(this,21,'B')">
+C. Space travel
+</button>
+
+<button class="option" onclick="check(this,21,'B')">
+D. Modern automobiles
+</button>
+
+<div id="r21" class="result"></div>
+</div>
+
+
+<!-- Q22 -->
+<div class="question">
+<h3>22. Ethiopia is important to human evolution because:</h3>
+
+<button class="option" onclick="check(this,22,'C')">
+A. It invented computers
+</button>
+
+<button class="option" onclick="check(this,22,'C')">
+B. It has no archaeological sites
+</button>
+
+<button class="option" onclick="check(this,22,'C')">
+C. Important early hominin fossils have been found there
+</button>
+
+<button class="option" onclick="check(this,22,'C')">
+D. Humans first appeared there according to written records
+</button>
+
+<div id="r22" class="result"></div>
+</div>
+
+
+<!-- Q23 -->
+<div class="question">
+<h3>23. Which field studies past human societies through material remains?</h3>
+
+<button class="option" onclick="check(this,23,'A')">
+A. Archaeology
+</button>
+
+<button class="option" onclick="check(this,23,'A')">
+B. Astronomy
+</button>
+
+<button class="option" onclick="check(this,23,'A')">
+C. Meteorology
+</button>
+
+<button class="option" onclick="check(this,23,'A')">
+D. Chemistry
+</button>
+
+<div id="r23" class="result"></div>
+</div>
+
+
+<!-- Q24 -->
+<div class="question">
+<h3>24. Which is an oral historical source?</h3>
+
+<button class="option" onclick="check(this,24,'D')">
+A. Stone tool
+</button>
+
+<button class="option" onclick="check(this,24,'D')">
+B. Ancient coin
+</button>
+
+<button class="option" onclick="check(this,24,'D')">
+C. Archaeological building
+</button>
+
+<button class="option" onclick="check(this,24,'D')">
+D. Interview with an eyewitness
+</button>
+
+<div id="r24" class="result"></div>
+</div>
+
+
+<!-- Q25 -->
+<div class="question">
+<h3>25. Which is a written source?</h3>
+
+<button class="option" onclick="check(this,25,'B')">
+A. Stone axe
+</button>
+
+<button class="option" onclick="check(this,25,'B')">
+B. Historical letter
+</button>
+
+<button class="option" onclick="check(this,25,'B')">
+C. Human fossil
+</button>
+
+<button class="option" onclick="check(this,25,'B')">
+D. Pottery fragment
+</button>
+
+<div id="r25" class="result"></div>
+</div>
+
+
+<!-- Q26 -->
+<div class="question">
+<h3>26. Why can historians have different interpretations?</h3>
+
+<button class="option" onclick="check(this,26,'C')">
+A. Evidence never matters
+</button>
+
+<button class="option" onclick="check(this,26,'C')">
+B. History has no sources
+</button>
+
+<button class="option" onclick="check(this,26,'C')">
+C. They may use different evidence, questions and methods
+</button>
+
+<button class="option" onclick="check(this,26,'C')">
+D. All historians have identical opinions
+</button>
+
+<div id="r26" class="result"></div>
+</div>
+
+
+<!-- Q27 -->
+<div class="question">
+<h3>27. What is a primary source?</h3>
+
+<button class="option" onclick="check(this,27,'A')">
+A. Evidence directly connected to the period or event studied
+</button>
+
+<button class="option" onclick="check(this,27,'A')">
+B. Only modern textbooks
+</button>
+
+<button class="option" onclick="check(this,27,'A')">
+C. Only future predictions
+</button>
+
+<button class="option" onclick="check(this,27,'A')">
+D. Only modern websites
+</button>
+
+<div id="r27" class="result"></div>
+</div>
+
+
+<!-- Q28 -->
+<div class="question">
+<h3>28. What is a secondary source?</h3>
+
+<button class="option" onclick="check(this,28,'D')">
+A. Ancient coin
+</button>
+
+<button class="option" onclick="check(this,28,'D')">
+B. Original photograph
+</button>
+
+<button class="option" onclick="check(this,28,'D')">
+C. Original government document
+</button>
+
+<button class="option" onclick="check(this,28,'D')">
+D. Later work analyzing historical evidence
+</button>
+
+<div id="r28" class="result"></div>
+</div>
+
+
+<!-- Q29 -->
+<div class="question">
+<h3>29. What is an artifact?</h3>
+
+<button class="option" onclick="check(this,29,'B')">
+A. A future event
+</button>
+
+<button class="option" onclick="check(this,29,'B')">
+B. A human-made object from the past
+</button>
+
+<button class="option" onclick="check(this,29,'B')">
+C. A weather forecast
+</button>
+
+<button class="option" onclick="check(this,29,'B')">
+D. A modern theory only
+</button>
+
+<div id="r29" class="result"></div>
+</div>
+
+
+<!-- Q30 -->
+<div class="question">
+<h3>30. What is the main purpose of dating historical materials?</h3>
+
+<button class="option" onclick="check(this,30,'A')">
+A. To establish when they existed
+</button>
+
+<button class="option" onclick="check(this,30,'A')">
+B. To change their color
+</button>
+
+<button class="option" onclick="check(this,30,'A')">
+C. To destroy them
+</button>
+
+<button class="option" onclick="check(this,30,'A')">
+D. To predict the weather
+</button>
+
+<div id="r30" class="result"></div>
+</div>
+
+
+<!-- Q31 -->
+<div class="question">
+<h3>31. Which is an example of visual historical evidence?</h3>
+
+<button class="option" onclick="check(this,31,'C')">
+A. DNA only
+</button>
+
+<button class="option" onclick="check(this,31,'C')">
+B. Oral tradition only
+</button>
+
+<button class="option" onclick="check(this,31,'C')">
+C. Historical photograph
+</button>
+
+<button class="option" onclick="check(this,31,'C')">
+D. Modern calculator
+</button>
+
+<div id="r31" class="result"></div>
+</div>
+
+
+<!-- Q32 -->
+<div class="question">
+<h3>32. Which development is strongly associated with early human evolution?</h3>
+
+<button class="option" onclick="check(this,32,'D')">
+A. Internet
+</button>
+
+<button class="option" onclick="check(this,32,'D')">
+B. Electricity
+</button>
+
+<button class="option" onclick="check(this,32,'D')">
+C. Automobiles
+</button>
+
+<button class="option" onclick="check(this,32,'D')">
+D. Tool use
+</button>
+
+<div id="r32" class="result"></div>
+</div>
+
+
+<!-- Q33 -->
+<div class="question">
+<h3>33. Which is evidence from genetics?</h3>
+
+<button class="option" onclick="check(this,33,'A')">
+A. DNA comparisons
+</button>
+
+<button class="option" onclick="check(this,33,'A')">
+B. Pottery only
+</button>
+
+<button class="option" onclick="check(this,33,'A')">
+C. Written stories only
+</button>
+
+<button class="option" onclick="check(this,33,'A')">
+D. Buildings only
+</button>
+
+<div id="r33" class="result"></div>
+</div>
+
+
+<!-- Q34 -->
+<div class="question">
+<h3>34. Human evolution was:</h3>
+
+<button class="option" onclick="check(this,34,'C')">
+A. A single sudden event
+</button>
+
+<button class="option" onclick="check(this,34,'C')">
+B. A modern invention
+</button>
+
+<button class="option" onclick="check(this,34,'C')">
+C. A long and complex process
+</button>
+
+<button class="option" onclick="check(this,34,'C')">
+D. Completed in one year
+</button>
+
+<div id="r34" class="result"></div>
+</div>
+
+
+<!-- Q35 -->
+<div class="question">
+<h3>35. What does a state generally have?</h3>
+
+<button class="option" onclick="check(this,35,'B')">
+A. No population
+</button>
+
+<button class="option" onclick="check(this,35,'B')">
+B. Political authority over a population and territory
+</button>
+
+<button class="option" onclick="check(this,35,'B')">
+C. Only animals
+</button>
+
+<button class="option" onclick="check(this,35,'B')">
+D. No organization
+</button>
+
+<div id="r35" class="result"></div>
+</div>
+
+
+<!-- Q36 -->
+<div class="question">
+<h3>36. Which contributed to the emergence of early states?</h3>
+
+<button class="option" onclick="check(this,36,'D')">
+A. Population growth
+</button>
+
+<button class="option" onclick="check(this,36,'D')">
+B. Agriculture
+</button>
+
+<button class="option" onclick="check(this,36,'D')">
+C. Division of labor
+</button>
+
+<button class="option" onclick="check(this,36,'D')">
+D. All of the above
+</button>
+
+<div id="r36" class="result"></div>
+</div>
+
+
+<!-- Q37 -->
+<div class="question">
+<h3>37. Why was agriculture important for state formation?</h3>
+
+<button class="option" onclick="check(this,37,'A')">
+A. It supported permanent settlements and food production
+</button>
+
+<button class="option" onclick="check(this,37,'A')">
+B. It eliminated all societies
+</button>
+
+<button class="option" onclick="check(this,37,'A')">
+C. It stopped population growth
+</button>
+
+<button class="option" onclick="check(this,37,'A')">
+D. It prevented trade
+</button>
+
+<div id="r37" class="result"></div>
+</div>
+
+
+<!-- Q38 -->
+<div class="question">
+<h3>38. What is food surplus?</h3>
+
+<button class="option" onclick="check(this,38,'C')">
+A. No food production
+</button>
+
+<button class="option" onclick="check(this,38,'C')">
+B. Food shortage
+</button>
+
+<button class="option" onclick="check(this,38,'C')">
+C. Food produced beyond immediate needs
+</button>
+
+<button class="option" onclick="check(this,38,'C')">
+D. Imported food only
+</button>
+
+<div id="r38" class="result"></div>
+</div>
+
+
+<!-- Q39 -->
+<div class="question">
+<h3>39. What is division of labor?</h3>
+
+<button class="option" onclick="check(this,39,'B')">
+A. Everyone doing exactly the same job
+</button>
+
+<button class="option" onclick="check(this,39,'B')">
+B. Different people specializing in different tasks
+</button>
+
+<button class="option" onclick="check(this,39,'B')">
+C. Ending all work
+</button>
+
+<button class="option" onclick="check(this,39,'B')">
+D. Avoiding agriculture
+</button>
+
+<div id="r39" class="result"></div>
+</div>
+
+
+<!-- Q40 -->
+<div class="question">
+<h3>40. What can archaeology contribute to History?</h3>
+
+<button class="option" onclick="check(this,40,'A')">
+A. Evidence about past human activities
+</button>
+
+<button class="option" onclick="check(this,40,'A')">
+B. Weather forecasts
+</button>
+
+<button class="option" onclick="check(this,40,'A')">
+C. Future predictions
+</button>
+
+<button class="option" onclick="check(this,40,'A')">
+D. Modern entertainment
+</button>
+
+<div id="r40" class="result"></div>
+</div>
+
+
+<!-- Q41 -->
+<div class="question">
+<h3>41. Which source can provide information about past traditions through spoken accounts?</h3>
+
+<button class="option" onclick="check(this,41,'D')">
+A. Coin
+</button>
+
+<button class="option" onclick="check(this,41,'D')">
+B. Pottery
+</button>
+
+<button class="option" onclick="check(this,41,'D')">
+C. Stone tool
+</button>
+
+<button class="option" onclick="check(this,41,'D')">
+D. Oral tradition
+</button>
+
+<div id="r41" class="result"></div>
+</div>
+
+
+<!-- Q42 -->
+<div class="question">
+<h3>42. Why should historians critically examine sources?</h3>
+
+<button class="option" onclick="check(this,42,'C')">
+A. All sources are always correct
+</button>
+
+<button class="option" onclick="check(this,42,'C')">
+B. Sources never contain bias
+</button>
+
+<button class="option" onclick="check(this,42,'C')">
+C. Sources may have limitations or bias
+</button>
+
+<button class="option" onclick="check(this,42,'C')">
+D. Evidence is unnecessary
+</button>
+
+<div id="r42" class="result"></div>
+</div>
+
+
+<!-- Q43 -->
+<div class="question">
+<h3>43. Which is an example of a historical inscription?</h3>
+
+<button class="option" onclick="check(this,43,'A')">
+A. Writing carved on stone or another durable surface
+</button>
+
+<button class="option" onclick="check(this,43,'A')">
+B. Modern television
+</button>
+
+<button class="option" onclick="check(this,43,'A')">
+C. Modern car
+</button>
+
+<button class="option" onclick="check(this,43,'A')">
+D. Plastic toy
+</button>
+
+<div id="r43" class="result"></div>
+</div>
+
+
+<!-- Q44 -->
+<div class="question">
+<h3>44. What is the purpose of historical interpretation?</h3>
+
+<button class="option" onclick="check(this,44,'B')">
+A. To remove all evidence
+</button>
+
+<button class="option" onclick="check(this,44,'B')">
+B. To explain the meaning and significance of evidence
+</button>
+
+<button class="option" onclick="check(this,44,'B')">
+C. To ignore the past
+</button>
+
+<button class="option" onclick="check(this,44,'B')">
+D. To predict every future event
+</button>
+
+<div id="r44" class="result"></div>
+</div>
+
+
+<!-- Q45 -->
+<div class="question">
+<h3>45. What may cause historical interpretations to change?</h3>
+
+<button class="option" onclick="check(this,45,'D')">
+A. Discovery of new evidence
+</button>
+
+<button class="option" onclick="check(this,45,'D')">
+B. New research methods
+</button>
+
+<button class="option" onclick="check(this,45,'D')">
+C. New historical questions
+</button>
+
+<button class="option" onclick="check(this,45,'D')">
+D. All of the above
+</button>
+
+<div id="r45" class="result"></div>
+</div>
+
+
+<!-- Q46 -->
+<div class="question">
+<h3>46. Which is NOT normally considered a historical source?</h3>
+
+<button class="option" onclick="check(this,46,'C')">
+A. Ancient coin
+</button>
+
+<button class="option" onclick="check(this,46,'C')">
+B. Historical letter
+</button>
+
+<button class="option" onclick="check(this,46,'C')">
+C. A random prediction about the future
+</button>
+
+<button class="option" onclick="check(this,46,'C')">
+D. Archaeological artifact
+</button>
+
+<div id="r46" class="result"></div>
+</div>
+
+
+<!-- Q47 -->
+<div class="question">
+<h3>47. Which development is connected with permanent settlement?</h3>
+
+<button class="option" onclick="check(this,47,'A')">
+A. Agriculture
+</button>
+
+<button class="option" onclick="check(this,47,'A')">
+B. Space travel
+</button>
+
+<button class="option" onclick="check(this,47,'A')">
+C. Internet
+</button>
+
+<button class="option" onclick="check(this,47,'A')">
+D. Modern industry
+</button>
+
+<div id="r47" class="result"></div>
+</div>
+
+
+<!-- Q48 -->
+<div class="question">
+<h3>48. What is a hominin?</h3>
+
+<button class="option" onclick="check(this,48,'B')">
+A. Any modern machine
+</button>
+
+<button class="option" onclick="check(this,48,'B')">
+B. A member of the human evolutionary lineage
+</button>
+
+<button class="option" onclick="check(this,48,'B')">
+C. A type of plant
+</button>
+
+<button class="option" onclick="check(this,48,'B')">
+D. A type of rock
+</button>
+
+<div id="r48" class="result"></div>
+</div>
+
+
+<!-- Q49 -->
+<div class="question">
+<h3>49. Which is a biological aspect of human evolution?</h3>
+
+<button class="option" onclick="check(this,49,'D')">
+A. Changes in anatomy
+</button>
+
+<button class="option" onclick="check(this,49,'D')">
+B. Changes in brain organization
+</button>
+
+<button class="option" onclick="check(this,49,'D')">
+C. Bipedalism
+</button>
+
+<button class="option" onclick="check(this,49,'D')">
+D. All of the above
+</button>
+
+<div id="r49" class="result"></div>
+</div>
+
+
+<!-- Q50 -->
+<div class="question">
+<h3>50. Which is a cultural aspect of human development?</h3>
+
+<button class="option" onclick="check(this,50,'A')">
+A. Tool-making and social learning
+</button>
+
+<button class="option" onclick="check(this,50,'A')">
+B. Rock formation
+</button>
+
+<button class="option" onclick="check(this,50,'A')">
+C. Weather changes
+</button>
+
+<button class="option" onclick="check(this,50,'A')">
+D. Planet rotation
+</button>
+
+<div id="r50" class="result"></div>
+</div>
+
+
+<!-- Q51 -->
+<div class="question">
+<h3>51. Which evidence can help reconstruct early human behavior?</h3>
+
+<button class="option" onclick="check(this,51,'C')">
+A. Stone tools
+</button>
+
+<button class="option" onclick="check(this,51,'C')">
+B. Fossils
+</button>
+
+<button class="option" onclick="check(this,51,'C')">
+C. Both A and B
+</button>
+
+<button class="option" onclick="check(this,51,'C')">
+D. Neither
+</button>
+
+<div id="r51" class="result"></div>
+</div>
+
+
+<!-- Q52 -->
+<div class="question">
+<h3>52. Why is the study of early humans multidisciplinary?</h3>
+
+<button class="option" onclick="check(this,52,'D')">
+A. It uses archaeology
+</button>
+
+<button class="option" onclick="check(this,52,'D')">
+B. It uses genetics
+</button>
+
+<button class="option" onclick="check(this,52,'D')">
+C. It uses geology and anatomy
+</button>
+
+<button class="option" onclick="check(this,52,'D')">
+D. All of the above
+</button>
+
+<div id="r52" class="result"></div>
+</div>
+
+
+<!-- Q53 -->
+<div class="question">
+<h3>53. What does permanent settlement mean?</h3>
+
+<button class="option" onclick="check(this,53,'B')">
+A. Moving every day
+</button>
+
+<button class="option" onclick="check(this,53,'B')">
+B. Living in a place for a long period rather than continually moving
+</button>
+
+<button class="option" onclick="check(this,53,'B')">
+C. Living without food
+</button>
+
+<button class="option" onclick="check(this,53,'B')">
+D. Avoiding agriculture
+</button>
+
+<div id="r53" class="result"></div>
+</div>
+
+
+<!-- Q54 -->
+<div class="question">
+<h3>54. Which factor could increase the need for political organization?</h3>
+
+<button class="option" onclick="check(this,54,'A')">
+A. Growing population and complex economic activities
+</button>
+
+<button class="option" onclick="check(this,54,'A')">
+B. No population
+</button>
+
+<button class="option" onclick="check(this,54,'A')">
+C. No settlement
+</button>
+
+<button class="option" onclick="check(this,54,'A')">
+D. No economic activity
+</button>
+
+<div id="r54" class="result"></div>
+</div>
+
+
+<!-- Q55 -->
+<div class="question">
+<h3>55. Trade can contribute to state development by:</h3>
+
+<button class="option" onclick="check(this,55,'C')">
+A. Eliminating specialization
+</button>
+
+<button class="option" onclick="check(this,55,'C')">
+B. Preventing settlement
+</button>
+
+<button class="option" onclick="check(this,55,'C')">
+C. Increasing economic interaction and specialization
+</button>
+
+<button class="option" onclick="check(this,55,'C')">
+D. Ending food production
+</button>
+
+<div id="r55" class="result"></div>
+</div>
+
+
+<!-- Q56 -->
+<div class="question">
+<h3>56. Which statement about History is correct?</h3>
+
+<button class="option" onclick="check(this,56,'D')">
+A. History is based only on imagination
+</button>
+
+<button class="option" onclick="check(this,56,'D')">
+B. Historians do not use evidence
+</button>
+
+<button class="option" onclick="check(this,56,'D')">
+C. History only studies the future
+</button>
+
+<button class="option" onclick="check(this,56,'D')">
+D. History uses evidence to investigate and interpret the past
+</button>
+
+<div id="r56" class="result"></div>
+</div>
+
+
+<!-- Q57 -->
+<div class="question">
+<h3>57. Which statement about primary sources is correct?</h3>
+
+<button class="option" onclick="check(this,57,'A')">
+A. They can provide direct or contemporary evidence
+</button>
+
+<button class="option" onclick="check(this,57,'A')">
+B. They are always modern textbooks
+</button>
+
+<button class="option" onclick="check(this,57,'A')">
+C. They are always written centuries later
+</button>
+
+<button class="option" onclick="check(this,57,'A')">
+D. They cannot be physical objects
+</button>
+
+<div id="r57" class="result"></div>
+</div>
+
+
+<!-- Q58 -->
+<div class="question">
+<h3>58. Which statement about human evolution is correct?</h3>
+
+<button class="option" onclick="check(this,58,'C')">
+A. It happened in one generation
+</button>
+
+<button class="option" onclick="check(this,58,'C')">
+B. It has no scientific evidence
+</button>
+
+<button class="option" onclick="check(this,58,'C')">
+C. It involved biological and cultural changes over long periods
+</button>
+
+<button class="option" onclick="check(this,58,'C')">
+D. It began with modern technology
+</button>
+
+<div id="r58" class="result"></div>
+</div>
+
+
+<!-- Q59 -->
+<div class="question">
+<h3>59. Which combination best explains the emergence of early states?</h3>
+
+<button class="option" onclick="check(this,59,'B')">
+A. No agriculture + no settlements
+</button>
+
+<button class="option" onclick="check(this,59,'B')">
+B. Agriculture + food surplus + population growth + political organization
+</button>
+
+<button class="option" onclick="check(this,59,'B')">
+C. No trade + no labor
+</button>
+
+<button class="option" onclick="check(this,59,'B')">
+D. Only hunting with no settlement
+</button>
+
+<div id="r59" class="result"></div>
+</div>
+
+
+<!-- Q60 -->
+<div class="question">
+<h3>60. What is the best overall reason for studying History?</h3>
+
+<button class="option" onclick="check(this,60,'D')">
+A. To memorize dates only
+</button>
+
+<button class="option" onclick="check(this,60,'D')">
+B. To study only famous people
+</button>
+
+<button class="option" onclick="check(this,60,'D')">
+C. To predict every future event
+</button>
+
+<button class="option" onclick="check(this,60,'D')">
+D. To understand the past, interpret evidence and learn from human experience
+</button>
+
+<div id="r60" class="result"></div>
+</div>
+
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<script>
+
+let score = 0;
+let answered = {};
+
+const explanations = {
+
+1:"History is the systematic study and interpretation of the human past using evidence.",
+
+2:"Prehistory broadly refers to the period before written records became available.",
+
+3:"Historians use evidence to investigate and interpret past events.",
+
+4:"History helps us understand the past, preserve heritage and learn from earlier experiences.",
+
+5:"Historiography studies how history has been written and interpreted.",
+
+6:"A letter produced during the period being studied can be a primary source.",
+
+7:"A later textbook that analyzes historical evidence is a secondary source.",
+
+8:"Stone tools are material remains studied by archaeologists.",
+
+9:"Chronology means arranging events according to their time sequence.",
+
+10:"Relative dating establishes whether something is older or younger than another item.",
+
+11:"Radiocarbon dating uses radioactive carbon-14.",
+
+12:"Radiocarbon dating is particularly useful for once-living organic materials.",
+
+13:"Human evolution involves long-term biological and cultural development.",
+
+14:"Bipedalism means walking primarily on two legs.",
+
+15:"Fossils provide important evidence about ancient organisms and human ancestors.",
+
+16:"Fossils are preserved remains or traces of ancient organisms.",
+
+17:"Stone tools provide evidence of early human technological behavior.",
+
+18:"Australopithecines are early hominins associated with habitual bipedalism.",
+
+19:"Homo habilis is associated with early stone-tool traditions.",
+
+20:"Homo sapiens is the scientific name for modern humans.",
+
+21:"Africa is central to research into human origins because of extensive fossil and archaeological evidence.",
+
+22:"Important early hominin fossils have been discovered in Ethiopia.",
+
+23:"Archaeology studies past societies through material remains.",
+
+24:"An eyewitness interview is an example of an oral historical source.",
+
+25:"A historical letter is a written source.",
+
+26:"Different evidence, questions, methods and contexts can lead historians to different interpretations.",
+
+27:"Primary sources are direct or contemporary evidence connected with the period studied.",
+
+28:"Secondary sources are later works that analyze or interpret historical evidence.",
+
+29:"An artifact is a human-made object from the past.",
+
+30:"Dating helps establish when an object, event or remains existed.",
+
+31:"Historical photographs are visual sources.",
+
+32:"Tool use is an important part of early human technological development.",
+
+33:"DNA comparisons provide genetic evidence relevant to human evolution.",
+
+34:"Human evolution was a long and complex process involving many populations and changes.",
+
+35:"A state has political organization and authority over a population and territory.",
+
+36:"Population growth, agriculture and division of labor all contributed to increasing social complexity.",
+
+37:"Agriculture supported food production and permanent settlements.",
+
+38:"A food surplus is food produced beyond immediate consumption needs.",
+
+39:"Division of labor means different people specialize in different tasks.",
+
+40:"Archaeological evidence can reveal information about past human activities.",
+
+41:"Oral traditions can preserve information through spoken accounts.",
+
+42:"Sources can contain limitations, bias or incomplete information, so historians must evaluate them critically.",
+
+43:"An inscription is writing carved or recorded on a durable surface.",
+
+44:"Historical interpretation explains the meaning and significance of evidence.",
+
+45:"New evidence, methods and questions can change historical interpretations.",
+
+46:"A random prediction about the future is not normally a historical source.",
+
+47:"Agriculture encouraged settled communities in many regions.",
+
+48:"A hominin is a member of the human evolutionary lineage.",
+
+49:"Anatomical changes, brain changes and bipedalism are biological aspects of human evolution.",
+
+50:"Tool-making and social learning are examples of cultural development.",
+
+51:"Both fossils and stone tools provide evidence about early humans.",
+
+52:"Human evolution is studied using several disciplines, including archaeology, genetics, geology and anatomy.",
+
+53:"Permanent settlement means living in one place for a long period rather than continually moving.",
+
+54:"Population growth and complex economic activities can increase the need for political organization.",
+
+55:"Trade can encourage economic interaction, specialization and greater social complexity.",
+
+56:"History investigates and interprets the past using evidence.",
+
+57:"Primary sources can provide direct or contemporary evidence.",
+
+58:"Human evolution involved biological and cultural changes over very long periods.",
+
+59:"Agriculture, food surplus, population growth and political organization were important factors in state formation.",
+
+60:"History helps us understand the past, evaluate evidence and learn from human experience."
+
+};
+
+
+function check(button, number, correct){
+
+    if(answered[number]){
+        return;
+    }
+
+    answered[number] = true;
+
+    const selected =
+    button.innerText.trim().charAt(0);
+
+    const result =
+    document.getElementById("r" + number);
+
+    if(selected === correct){
+
+        score++;
+
+        result.className =
+        "result correct";
+
+        result.innerHTML =
+        "✅ <strong>RIGHT!</strong><br>" +
+        "💡 Explanation: " +
+        explanations[number];
+
+    }else{
+
+        result.className =
+        "result wrong";
+
+        result.innerHTML =
+        "❌ <strong>WRONG!</strong><br>" +
+        "✅ Correct Answer: <strong>" +
+        correct +
+        "</strong><br>" +
+        "💡 Explanation: " +
+        explanations[number];
+
+    }
+
+    document.getElementById("score").innerHTML =
+    "Score: " + score + " / 60";
+
+}
+
+</script>
+
+</body>
+</html>
