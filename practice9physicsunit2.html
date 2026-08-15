@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 2</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+.header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+}
+
+.header h1{
+    margin:0;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px 15px 100px;
+}
+
+.question{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.question h3{
+    color:#0d47a1;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:2px solid #e2e8f0;
+    border-radius:10px;
+    background:#f8fafc;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#e3f2fd;
+}
+
+.option.correct{
+    background:#c8e6c9;
+    border-color:#2e7d32;
+    color:#1b5e20;
+}
+
+.option.wrong{
+    background:#ffcdd2;
+    border-color:#c62828;
+    color:#b71c1c;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.feedback{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.feedback.right{
+    display:block;
+    background:#e8f5e9;
+    border-left:5px solid #2e7d32;
+}
+
+.feedback.wrong{
+    display:block;
+    background:#ffebee;
+    border-left:5px solid #c62828;
+}
+
+#scoreBox{
+    position:fixed;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:500px;
+    background:white;
+    padding:14px;
+    border-radius:15px;
+    box-shadow:0 4px 20px rgba(0,0,0,.2);
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    z-index:100;
+}
+
+#restart{
+    margin-top:8px;
+    padding:9px 20px;
+    border:none;
+    border-radius:8px;
+    background:#0d47a1;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Grade 9 Physics</h1>
+    <p>Unit 2 — Physical Quantities</p>
+    <p>60 Multiple Choice Questions</p>
+</div>
+
+<div class="container">
+
+<div id="quiz"></div>
+
+</div>
+
+<div id="scoreBox">
+    Score: <span id="score">0</span> / 60
+    <br>
+    Answered: <span id="answered">0</span> / 60
+    <br>
+    <button id="restart" onclick="location.reload()">Restart</button>
+</div>
+
+<script>
+
+const questions = [
+
+/* 1 */
+{
+q:"What is a physical quantity?",
+o:[
+"A property that can be measured",
+"A person's name",
+"A color only",
+"A story"
+],
+a:0,
+e:"A physical quantity is a property of a phenomenon, body or substance that can be measured and expressed with a number and a unit."
+},
+
+/* 2 */
+{
+q:"Which of the following is a physical quantity?",
+o:[
+"Length",
+"Beauty",
+"Honesty",
+"Kindness"
+],
+a:0,
+e:"Length can be measured using a measuring instrument, so it is a physical quantity."
+},
+
+/* 3 */
+{
+q:"What is measurement?",
+o:[
+"Comparing a quantity with a standard",
+"Guessing a quantity",
+"Naming an object",
+"Drawing an object"
+],
+a:0,
+e:"Measurement is the comparison of an unknown quantity with an accepted standard."
+},
+
+/* 4 */
+{
+q:"Which instrument is commonly used to measure length?",
+o:[
+"Meter stick",
+"Beam balance",
+"Stopwatch",
+"Thermometer"
+],
+a:0,
+e:"A meter stick or ruler is used to measure length."
+},
+
+/* 5 */
+{
+q:"Which instrument is commonly used to measure mass?",
+o:[
+"Beam balance",
+"Meter stick",
+"Stopwatch",
+"Thermometer"
+],
+a:0,
+e:"A beam balance is used to measure mass."
+},
+
+/* 6 */
+{
+q:"Which instrument is used to measure time?",
+o:[
+"Stopwatch",
+"Balance",
+"Ruler",
+"Thermometer"
+],
+a:0,
+e:"A stopwatch or clock can be used to measure time."
+},
+
+/* 7 */
+{
+q:"Which instrument is used to measure temperature?",
+o:[
+"Thermometer",
+"Balance",
+"Meter stick",
+"Stopwatch"
+],
+a:0,
+e:"Temperature is measured using a thermometer."
+},
+
+/* 8 */
+{
+q:"What is the SI unit of length?",
+o:[
+"Meter",
+"Kilogram",
+"Second",
+"Kelvin"
+],
+a:0,
+e:"The SI base unit of length is the meter (m)."
+},
+
+/* 9 */
+{
+q:"What is the SI unit of mass?",
+o:[
+"Kilogram",
+"Gram",
+"Newton",
+"Joule"
+],
+a:0,
+e:"The SI base unit of mass is the kilogram (kg)."
+},
+
+/* 10 */
+{
+q:"What is the SI unit of time?",
+o:[
+"Second",
+"Minute",
+"Hour",
+"Day"
+],
+a:0,
+e:"The SI base unit of time is the second (s)."
+},
+
+/* 11 */
+{
+q:"What is the SI unit of temperature?",
+o:[
+"Kelvin",
+"Celsius",
+"Fahrenheit",
+"Degree"
+],
+a:0,
+e:"The SI base unit of thermodynamic temperature is kelvin (K)."
+},
+
+/* 12 */
+{
+q:"What is the SI unit of electric current?",
+o:[
+"Ampere",
+"Volt",
+"Ohm",
+"Watt"
+],
+a:0,
+e:"Ampere (A) is the SI base unit of electric current."
+},
+
+/* 13 */
+{
+q:"Which of the following is one of the seven fundamental physical quantities?",
+o:[
+"Length",
+"Speed",
+"Force",
+"Pressure"
+],
+a:0,
+e:"Length is one of the seven SI fundamental quantities."
+},
+
+/* 14 */
+{
+q:"How many fundamental physical quantities are recognized in the SI system?",
+o:[
+"5",
+"6",
+"7",
+"8"
+],
+a:2,
+e:"There are seven SI fundamental quantities."
+},
+
+/* 15 */
+{
+q:"Which is NOT a fundamental physical quantity?",
+o:[
+"Speed",
+"Length",
+"Mass",
+"Time"
+],
+a:0,
+e:"Speed is a derived quantity. Length, mass and time are fundamental quantities."
+},
+
+/* 16 */
+{
+q:"Which quantity is derived from length and time?",
+o:[
+"Speed",
+"Mass",
+"Temperature",
+"Electric current"
+],
+a:0,
+e:"Speed is obtained from distance divided by time."
+},
+
+/* 17 */
+{
+q:"Which is a derived physical quantity?",
+o:[
+"Volume",
+"Length",
+"Mass",
+"Time"
+],
+a:0,
+e:"Volume is a derived quantity because it can be expressed using length dimensions."
+},
+
+/* 18 */
+{
+q:"Which is a derived quantity?",
+o:[
+"Density",
+"Mass",
+"Time",
+"Temperature"
+],
+a:0,
+e:"Density is derived from mass and volume."
+},
+
+/* 19 */
+{
+q:"Which is a derived quantity?",
+o:[
+"Speed",
+"Length",
+"Mass",
+"Time"
+],
+a:0,
+e:"Speed is derived from distance and time."
+},
+
+/* 20 */
+{
+q:"Which is a scalar quantity?",
+o:[
+"Mass",
+"Force",
+"Velocity",
+"Displacement"
+],
+a:0,
+e:"Mass has magnitude only and is therefore a scalar quantity."
+},
+
+/* 21 */
+{
+q:"Which is a vector quantity?",
+o:[
+"Force",
+"Mass",
+"Time",
+"Temperature"
+],
+a:0,
+e:"Force has both magnitude and direction, so it is a vector quantity."
+},
+
+/* 22 */
+{
+q:"A scalar quantity is described by:",
+o:[
+"Magnitude only",
+"Direction only",
+"Magnitude and direction",
+"Neither magnitude nor direction"
+],
+a:0,
+e:"A scalar quantity is completely described by its magnitude."
+},
+
+/* 23 */
+{
+q:"A vector quantity is described by:",
+o:[
+"Magnitude and direction",
+"Magnitude only",
+"Direction only",
+"Unit only"
+],
+a:0,
+e:"A vector quantity requires both magnitude and direction."
+},
+
+/* 24 */
+{
+q:"Which of the following is a vector quantity?",
+o:[
+"Displacement",
+"Distance",
+"Mass",
+"Time"
+],
+a:0,
+e:"Displacement has both magnitude and direction."
+},
+
+/* 25 */
+{
+q:"Which of the following is a scalar quantity?",
+o:[
+"Distance",
+"Velocity",
+"Force",
+"Displacement"
+],
+a:0,
+e:"Distance has magnitude only and is therefore scalar."
+},
+
+/* 26 */
+{
+q:"What is a standard unit?",
+o:[
+"An agreed unit used consistently for measurement",
+"A unit chosen randomly",
+"A traditional unit only",
+"A personal estimate"
+],
+a:0,
+e:"A standard unit is an agreed reference used so measurements can be compared consistently."
+},
+
+/* 27 */
+{
+q:"Why are standard units important?",
+o:[
+"They make measurements comparable",
+"They make objects heavier",
+"They remove measurement",
+"They change quantities"
+],
+a:0,
+e:"Standard units allow measurements made by different people and places to be compared."
+},
+
+/* 28 */
+{
+q:"Which is a non-SI unit of time?",
+o:[
+"Minute",
+"Second",
+"Meter",
+"Kilogram"
+],
+a:0,
+e:"Minute is commonly used for time but the SI base unit is second."
+},
+
+/* 29 */
+{
+q:"Which is the SI symbol for meter?",
+o:[
+"m",
+"M",
+"mt",
+"me"
+],
+a:0,
+e:"The SI symbol for meter is m."
+},
+
+/* 30 */
+{
+q:"Which is the SI symbol for kilogram?",
+o:[
+"kg",
+"KG",
+"Kg",
+"gk"
+],
+a:0,
+e:"The SI symbol for kilogram is kg."
+},
+
+/* 31 */
+{
+q:"Which is the SI symbol for second?",
+o:[
+"s",
+"sec",
+"ss",
+"sc"
+],
+a:0,
+e:"The SI symbol for second is s."
+},
+
+/* 32 */
+{
+q:"Which is the SI symbol for kelvin?",
+o:[
+"K",
+"k",
+"Kel",
+"°K"
+],
+a:0,
+e:"The SI symbol for kelvin is K."
+},
+
+/* 33 */
+{
+q:"Which prefix represents 1000?",
+o:[
+"Kilo",
+"Micro",
+"Milli",
+"Centi"
+],
+a:0,
+e:"Kilo means 1000 times the unit."
+},
+
+/* 34 */
+{
+q:"Which prefix represents one thousandth?",
+o:[
+"Milli",
+"Kilo",
+"Mega",
+"Centi"
+],
+a:0,
+e:"Milli means one thousandth (1/1000)."
+},
+
+/* 35 */
+{
+q:"Which prefix represents one hundredth?",
+o:[
+"Centi",
+"Kilo",
+"Mega",
+"Micro"
+],
+a:0,
+e:"Centi means one hundredth (1/100)."
+},
+
+/* 36 */
+{
+q:"Which prefix represents one million?",
+o:[
+"Mega",
+"Kilo",
+"Micro",
+"Milli"
+],
+a:0,
+e:"Mega represents 10⁶, or one million."
+},
+
+/* 37 */
+{
+q:"Which prefix represents one millionth?",
+o:[
+"Micro",
+"Mega",
+"Kilo",
+"Centi"
+],
+a:0,
+e:"Micro represents 10⁻⁶, or one millionth."
+},
+
+/* 38 */
+{
+q:"How many centimeters are in 1 meter?",
+o:[
+"10",
+"100",
+"1000",
+"10000"
+],
+a:1,
+e:"1 meter = 100 centimeters."
+},
+
+/* 39 */
+{
+q:"How many millimeters are in 1 meter?",
+o:[
+"10",
+"100",
+"1000",
+"10000"
+],
+a:2,
+e:"1 meter = 1000 millimeters."
+},
+
+/* 40 */
+{
+q:"How many meters are in 1 kilometer?",
+o:[
+"10",
+"100",
+"1000",
+"10000"
+],
+a:2,
+e:"1 kilometer = 1000 meters."
+},
+
+/* 41 */
+{
+q:"How many grams are in 1 kilogram?",
+o:[
+"10",
+"100",
+"1000",
+"10000"
+],
+a:2,
+e:"1 kilogram = 1000 grams."
+},
+
+/* 42 */
+{
+q:"How many seconds are in 1 minute?",
+o:[
+"30",
+"60",
+"100",
+"120"
+],
+a:1,
+e:"1 minute = 60 seconds."
+},
+
+/* 43 */
+{
+q:"How many seconds are in 1 hour?",
+o:[
+"600",
+"1200",
+"3600",
+"6000"
+],
+a:2,
+e:"1 hour = 60 × 60 = 3600 seconds."
+},
+
+/* 44 */
+{
+q:"2 km is equal to:",
+o:[
+"20 m",
+"200 m",
+"2000 m",
+"20000 m"
+],
+a:2,
+e:"2 km × 1000 = 2000 m."
+},
+
+/* 45 */
+{
+q:"3 m is equal to:",
+o:[
+"30 cm",
+"300 cm",
+"3000 cm",
+"3 cm"
+],
+a:1,
+e:"3 m × 100 = 300 cm."
+},
+
+/* 46 */
+{
+q:"500 cm is equal to:",
+o:[
+"0.5 m",
+"5 m",
+"50 m",
+"5000 m"
+],
+a:1,
+e:"500 cm ÷ 100 = 5 m."
+},
+
+/* 47 */
+{
+q:"2000 g is equal to:",
+o:[
+"0.2 kg",
+"2 kg",
+"20 kg",
+"200 kg"
+],
+a:1,
+e:"2000 g ÷ 1000 = 2 kg."
+},
+
+/* 48 */
+{
+q:"2 hours is equal to:",
+o:[
+"120 s",
+"1200 s",
+"7200 s",
+"3600 s"
+],
+a:2,
+e:"2 × 3600 = 7200 seconds."
+},
+
+/* 49 */
+{
+q:"What should you do before using a measuring instrument?",
+o:[
+"Check the instrument and its scale",
+"Throw it away",
+"Guess the reading",
+"Ignore the unit"
+],
+a:0,
+e:"The instrument and its scale should be checked before taking a measurement."
+},
+
+/* 50 */
+{
+q:"Which is an important laboratory safety rule?",
+o:[
+"Follow instructions",
+"Run inside the laboratory",
+"Taste chemicals",
+"Ignore warnings"
+],
+a:0,
+e:"Following instructions and safety procedures helps prevent accidents."
+},
+
+/* 51 */
+{
+q:"Why should chemicals not be tasted in a laboratory?",
+o:[
+"They may be harmful",
+"They are always sweet",
+"They have no effect",
+"They are food"
+],
+a:0,
+e:"Laboratory chemicals may be toxic, corrosive or otherwise harmful and should never be tasted."
+},
+
+/* 52 */
+{
+q:"A measuring device with smaller divisions generally allows:",
+o:[
+"More precise readings",
+"Less information",
+"No measurement",
+"Only guesses"
+],
+a:0,
+e:"Smaller scale divisions generally allow measurements to be read with greater precision."
+},
+
+/* 53 */
+{
+q:"What does a scale on a measuring instrument show?",
+o:[
+"Values used for measurement",
+"Only colors",
+"Only names",
+"Only pictures"
+],
+a:0,
+e:"A scale contains markings that represent amounts of the quantity being measured."
+},
+
+/* 54 */
+{
+q:"Which device can display a measurement digitally?",
+o:[
+"Digital measuring instrument",
+"Paper",
+"Book",
+"Chair"
+],
+a:0,
+e:"Digital instruments display measured values electronically, often making readings easier to interpret."
+},
+
+/* 55 */
+{
+q:"Which quantity has the SI unit candela?",
+o:[
+"Luminous intensity",
+"Mass",
+"Time",
+"Length"
+],
+a:0,
+e:"Candela (cd) is the SI base unit of luminous intensity."
+},
+
+/* 56 */
+{
+q:"Which quantity has the SI unit mole?",
+o:[
+"Amount of substance",
+"Mass",
+"Temperature",
+"Length"
+],
+a:0,
+e:"Mole (mol) is the SI base unit for amount of substance."
+},
+
+/* 57 */
+{
+q:"Which of the following is a fundamental quantity?",
+o:[
+"Temperature",
+"Volume",
+"Speed",
+"Density"
+],
+a:0,
+e:"Temperature is one of the seven fundamental physical quantities."
+},
+
+/* 58 */
+{
+q:"Volume can be expressed in terms of:",
+o:[
+"Length",
+"Time only",
+"Mass only",
+"Temperature only"
+],
+a:0,
+e:"Volume is a derived quantity based on dimensions of length, for example m³."
+},
+
+/* 59 */
+{
+q:"Density is calculated using:",
+o:[
+"Mass ÷ Volume",
+"Volume ÷ Mass",
+"Mass × Time",
+"Length ÷ Time"
+],
+a:0,
+e:"Density = mass / volume."
+},
+
+/* 60 */
+{
+q:"Which statement is correct about physical quantities?",
+o:[
+"They can be measured and expressed with units",
+"They can never be measured",
+"They have no units",
+"They are only names"
+],
+a:0,
+e:"Physical quantities are measurable properties and are expressed using numerical values and appropriate units."
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q,index)=>{
+
+    const div = document.createElement("div");
+
+    div.className = "question";
+
+    let html = `
+        <h3>${index+1}. ${q.q}</h3>
+    `;
+
+    q.o.forEach((option,i)=>{
+
+        html += `
+        <button
+        class="option"
+        onclick="answer(${index},${i},this)">
+        ${String.fromCharCode(65+i)}. ${option}
+        </button>
+        `;
+
+    });
+
+    html += `
+        <div id="feedback${index}" class="feedback">
+        </div>
+    `;
+
+    div.innerHTML = html;
+
+    quiz.appendChild(div);
+});
+
+
+function answer(questionIndex,selected,button){
+
+    const q = questions[questionIndex];
+
+    const buttons =
+        button.parentElement.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled = true;
+    });
+
+    const feedback =
+        document.getElementById("feedback"+questionIndex);
+
+    if(selected === q.a){
+
+        button.classList.add("correct");
+
+        feedback.className =
+            "feedback right";
+
+        feedback.innerHTML = `
+            <strong>✅ RIGHT!</strong>
+            <br>
+            <b>Correct Answer:</b>
+            ${String.fromCharCode(65+q.a)}. ${q.o[q.a]}
+            <br><br>
+            <b>Explanation:</b>
+            ${q.e}
+        `;
+
+        score++;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        buttons[q.a].classList.add("correct");
+
+        feedback.className =
+            "feedback wrong";
+
+        feedback.innerHTML = `
+            <strong>❌ WRONG!</strong>
+            <br>
+            <b>Correct Answer:</b>
+            ${String.fromCharCode(65+q.a)}. ${q.o[q.a]}
+            <br><br>
+            <b>Explanation:</b>
+            ${q.e}
+        `;
+    }
+
+    answered++;
+
+    document.getElementById("score").innerText = score;
+
+    document.getElementById("answered").innerText = answered;
+
+    feedback.scrollIntoView({
+        behavior:"smooth",
+        block:"nearest"
+    });
+
+    if(answered === 60){
+
+        setTimeout(()=>{
+
+            alert(
+                "🎉 Quiz Completed!\n\n" +
+                "Your Score: " +
+                score +
+                " / 60"
+            );
+
+        },500);
+    }
+}
+
+</script>
+
+</body>
+</html>
