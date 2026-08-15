@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Biology Unit 6 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#15803d,#16a34a);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+}
+
+header p{
+    margin:7px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.scoreBox{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#14532d;
+    color:white;
+    padding:18px;
+    border-radius:14px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+    border-left:6px solid #16a34a;
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    color:#166534;
+}
+
+.option{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#f8fafc;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#dcfce7;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    display:none;
+    margin-top:10px;
+    padding:14px;
+    background:#eff6ff;
+    color:#1e3a8a;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.back{
+    width:100%;
+    padding:16px;
+    margin:20px 0;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧬 Grade 9 Biology</h1>
+
+<p>Unit 6 — Ecology</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="scoreBox">
+
+Score:
+<span id="score">0</span> / 60
+
+</div>
+
+<div id="quiz"></div>
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is ecology?",
+a:[
+"Study of cells only",
+"Study of interactions between organisms and their environment",
+"Study of rocks",
+"Study of the human skeleton"
+],
+c:1,
+e:"Ecology is the branch of biology that studies interactions among organisms and between organisms and their environment."
+},
+
+{
+q:"2. A scientist who studies ecology is called a:",
+a:[
+"Geneticist",
+"Ecologist",
+"Chemist",
+"Anatomist"
+],
+c:1,
+e:"An ecologist studies relationships between organisms and their environment."
+},
+
+{
+q:"3. What is a habitat?",
+a:[
+"The role of an organism",
+"The place where an organism normally lives",
+"A group of ecosystems",
+"Only the climate"
+],
+c:1,
+e:"A habitat is the place or environment where an organism normally lives."
+},
+
+{
+q:"4. What is an ecological niche?",
+a:[
+"The physical size of an organism",
+"The role of an organism in its environment",
+"The name of an ecosystem",
+"The temperature of an area"
+],
+c:1,
+e:"A niche describes the role of an organism and how it uses resources in its environment."
+},
+
+{
+q:"5. Which is an abiotic factor?",
+a:[
+"Grass",
+"Bird",
+"Temperature",
+"Fungus"
+],
+c:2,
+e:"Temperature is non-living, so it is an abiotic factor."
+},
+
+{
+q:"6. Which is a biotic factor?",
+a:[
+"Water",
+"Light",
+"Temperature",
+"Plant"
+],
+c:3,
+e:"Plants are living organisms, so they are biotic components."
+},
+
+{
+q:"7. Which of the following is NOT an abiotic factor?",
+a:[
+"Water",
+"Light",
+"Soil",
+"Animal"
+],
+c:3,
+e:"Animals are living organisms and therefore are biotic factors."
+},
+
+{
+q:"8. Which factor provides the main energy input for most ecosystems?",
+a:[
+"Moon",
+"Sunlight",
+"Soil",
+"Wind"
+],
+c:1,
+e:"Sunlight is the main energy source for most ecosystems because producers use it in photosynthesis."
+},
+
+{
+q:"9. Which organism is a producer?",
+a:[
+"Lion",
+"Grass",
+"Eagle",
+"Human"
+],
+c:1,
+e:"Grass is a plant and can produce its own food through photosynthesis."
+},
+
+{
+q:"10. Which organism is a decomposer?",
+a:[
+"Fungus",
+"Lion",
+"Grass",
+"Eagle"
+],
+c:0,
+e:"Fungi are important decomposers that break down dead organic matter."
+},
+
+{
+q:"11. A consumer obtains energy mainly by:",
+a:[
+"Making food from sunlight",
+"Eating other organisms",
+"Producing minerals",
+"Making soil"
+],
+c:1,
+e:"Consumers cannot make their own food and obtain energy by consuming other organisms."
+},
+
+{
+q:"12. Which is an example of a primary consumer?",
+a:[
+"Grass",
+"Grasshopper",
+"Lion",
+"Eagle"
+],
+c:1,
+e:"A grasshopper feeds on plants, making it a primary consumer."
+},
+
+{
+q:"13. A population consists of:",
+a:[
+"Different ecosystems",
+"Members of the same species living in an area",
+"All organisms on Earth",
+"Only plants"
+],
+c:1,
+e:"A population is a group of organisms of the same species living in the same area."
+},
+
+{
+q:"14. A community consists of:",
+a:[
+"One organism",
+"Only one population",
+"Different populations interacting in an area",
+"Only abiotic factors"
+],
+c:2,
+e:"A community contains populations of different species living and interacting in an area."
+},
+
+{
+q:"15. An ecosystem contains:",
+a:[
+"Only animals",
+"Only plants",
+"Biotic and abiotic components",
+"Only microorganisms"
+],
+c:2,
+e:"An ecosystem includes living organisms and the non-living environment with which they interact."
+},
+
+{
+q:"16. Which is the largest ecological level?",
+a:[
+"Organism",
+"Population",
+"Community",
+"Biosphere"
+],
+c:3,
+e:"The biosphere includes all regions of Earth where life exists."
+},
+
+{
+q:"17. Which sequence is correct?",
+a:[
+"Population → organism → biosphere",
+"Organism → population → community → ecosystem → biosphere",
+"Ecosystem → organism → population",
+"Community → organism → biosphere"
+],
+c:1,
+e:"The common ecological organization is organism, population, community, ecosystem and biosphere."
+},
+
+{
+q:"18. Which is an example of a population?",
+a:[
+"All animals in Africa",
+"All fish of one species in a lake",
+"Plants and animals in a forest",
+"All ecosystems on Earth"
+],
+c:1,
+e:"Individuals of the same species living in the same area form a population."
+},
+
+{
+q:"19. Which is an example of a community?",
+a:[
+"One lion",
+"All lions of one species",
+"Plants, birds and insects in a forest",
+"One tree"
+],
+c:2,
+e:"A community contains different populations living and interacting together."
+},
+
+{
+q:"20. Which is a freshwater ecosystem?",
+a:[
+"Ocean",
+"Sea",
+"Lake",
+"Coral sea"
+],
+c:2,
+e:"A lake is a freshwater ecosystem."
+},
+
+{
+q:"21. Which is a marine ecosystem?",
+a:[
+"River",
+"Lake",
+"Ocean",
+"Pond"
+],
+c:2,
+e:"Oceans are salt-water or marine ecosystems."
+},
+
+{
+q:"22. What is a biome?",
+a:[
+"A single organism",
+"A large ecological region with characteristic climate and organisms",
+"A single population",
+"A type of cell"
+],
+c:1,
+e:"A biome is a large ecological region characterized by particular climate, vegetation and animals."
+},
+
+{
+q:"23. Which biome receives very little rainfall?",
+a:[
+"Desert",
+"Tropical rainforest",
+"Wetland",
+"Marine"
+],
+c:0,
+e:"Deserts are characterized by very low precipitation."
+},
+
+{
+q:"24. Which biome is generally warm and receives high rainfall?",
+a:[
+"Desert",
+"Tropical rainforest",
+"Tundra",
+"Polar region"
+],
+c:1,
+e:"Tropical rainforests are generally warm and receive abundant rainfall."
+},
+
+{
+q:"25. Which biome is characterized by very cold conditions and a short growing season?",
+a:[
+"Tundra",
+"Tropical rainforest",
+"Desert",
+"Grassland"
+],
+c:0,
+e:"The tundra has very cold conditions and a short growing season."
+},
+
+{
+q:"26. Which biome is dominated mainly by grasses?",
+a:[
+"Grassland",
+"Tundra",
+"Rainforest",
+"Desert"
+],
+c:0,
+e:"Grasslands are ecosystems in which grasses are the dominant vegetation."
+},
+
+{
+q:"27. What is ecological succession?",
+a:[
+"Sudden movement of animals",
+"Gradual change in a community over time",
+"Production of food",
+"Movement of water"
+],
+c:1,
+e:"Ecological succession is the gradual change in species composition and community structure over time."
+},
+
+{
+q:"28. Primary succession begins:",
+a:[
+"Where well-developed soil already exists",
+"Where soil is absent or newly forming",
+"Only in forests",
+"Only in oceans"
+],
+c:1,
+e:"Primary succession starts in areas where there was previously no established soil or biological community."
+},
+
+{
+q:"29. Secondary succession occurs when:",
+a:[
+"Soil remains after disturbance",
+"No soil exists",
+"There are no organisms anywhere",
+"Only rocks are present"
+],
+c:0,
+e:"Secondary succession occurs after disturbance when soil remains."
+},
+
+{
+q:"30. Which organisms are often pioneer species?",
+a:[
+"Lichens",
+"Lions",
+"Eagles",
+"Whales"
+],
+c:0,
+e:"Lichens can colonize bare surfaces and are often pioneer organisms in primary succession."
+},
+
+{
+q:"31. Which interaction occurs when both organisms benefit?",
+a:[
+"Parasitism",
+"Mutualism",
+"Predation",
+"Competition"
+],
+c:1,
+e:"In mutualism, both organisms benefit from the interaction."
+},
+
+{
+q:"32. Which interaction benefits one organism while the other is not significantly affected?",
+a:[
+"Mutualism",
+"Commensalism",
+"Competition",
+"Predation"
+],
+c:1,
+e:"In commensalism, one organism benefits while the other is neither significantly helped nor harmed."
+},
+
+{
+q:"33. In parasitism:",
+a:[
+"Both benefit",
+"Both are harmed",
+"One benefits and the host is harmed",
+"Neither is affected"
+],
+c:2,
+e:"The parasite benefits while the host is harmed."
+},
+
+{
+q:"34. A lion eating a zebra is an example of:",
+a:[
+"Mutualism",
+"Commensalism",
+"Predation",
+"Parasitism"
+],
+c:2,
+e:"The lion is the predator and the zebra is the prey."
+},
+
+{
+q:"35. Competition occurs when organisms:",
+a:[
+"Share unlimited resources",
+"Require the same limited resources",
+"Always help each other",
+"Never interact"
+],
+c:1,
+e:"Competition occurs when organisms need the same limited resources."
+},
+
+{
+q:"36. Competition between members of the same species is:",
+a:[
+"Interspecific competition",
+"Intraspecific competition",
+"Mutualism",
+"Parasitism"
+],
+c:1,
+e:"Intraspecific competition occurs between individuals of the same species."
+},
+
+{
+q:"37. Competition between different species is:",
+a:[
+"Intraspecific competition",
+"Interspecific competition",
+"Mutualism",
+"Commensalism"
+],
+c:1,
+e:"Interspecific competition occurs between individuals of different species."
+},
+
+{
+q:"38. Which is a producer-consumer relationship?",
+a:[
+"Grass eaten by a rabbit",
+"Two lions fighting",
+"Tick on a dog",
+"Fungus decomposing a dead tree"
+],
+c:0,
+e:"A rabbit consumes grass, creating a producer-consumer relationship."
+},
+
+{
+q:"39. Which organism is most likely to be at the first trophic level?",
+a:[
+"Grass",
+"Rabbit",
+"Snake",
+"Eagle"
+],
+c:0,
+e:"Producers occupy the first trophic level."
+},
+
+{
+q:"40. Which organism is usually at the second trophic level?",
+a:[
+"Producer",
+"Primary consumer",
+"Secondary consumer",
+"Decomposer"
+],
+c:1,
+e:"Primary consumers feed on producers and occupy the second trophic level."
+},
+
+{
+q:"41. What is a food chain?",
+a:[
+"A group of habitats",
+"A sequence showing feeding relationships",
+"A group of abiotic factors",
+"A climate zone"
+],
+c:1,
+e:"A food chain shows how energy and food pass from one organism to another."
+},
+
+{
+q:"42. What is a food web?",
+a:[
+"One feeding relationship only",
+"Interconnected food chains",
+"Only producers",
+"Only decomposers"
+],
+c:1,
+e:"A food web consists of many interconnected food chains."
+},
+
+{
+q:"43. In a food chain, energy generally flows:",
+a:[
+"From consumers to the Sun",
+"From producers to consumers",
+"From decomposers to the Sun",
+"Only between abiotic factors"
+],
+c:1,
+e:"Energy enters most ecosystems through producers and passes to consumers through feeding."
+},
+
+{
+q:"44. What is the main role of decomposers?",
+a:[
+"Produce sunlight",
+"Break down dead organic material",
+"Eat only living plants",
+"Stop nutrient cycling"
+],
+c:1,
+e:"Decomposers break down dead organisms and organic remains."
+},
+
+{
+q:"45. Decomposers are important because they:",
+a:[
+"Recycle nutrients",
+"Destroy all ecosystems",
+"Prevent plant growth",
+"Produce sunlight"
+],
+c:0,
+e:"Decomposers help recycle nutrients back into the ecosystem."
+},
+
+{
+q:"46. Which is an abiotic factor affecting aquatic organisms?",
+a:[
+"Water temperature",
+"Fish",
+"Algae",
+"Bacteria"
+],
+c:0,
+e:"Water temperature is a non-living environmental factor."
+},
+
+{
+q:"47. Which factor can strongly affect plant photosynthesis?",
+a:[
+"Light intensity",
+"Predator only",
+"Competition only",
+"Parasitism only"
+],
+c:0,
+e:"Light intensity affects the rate of photosynthesis in plants."
+},
+
+{
+q:"48. Which abiotic factor is essential for all living organisms?",
+a:[
+"Water",
+"Predator",
+"Competitor",
+"Parasite"
+],
+c:0,
+e:"Water is essential for life and is a major abiotic component of ecosystems."
+},
+
+{
+q:"49. Which of the following is a biotic component?",
+a:[
+"Humidity",
+"Mineral",
+"Tree",
+"Temperature"
+],
+c:2,
+e:"A tree is a living organism and therefore a biotic component."
+},
+
+{
+q:"50. Which relationship is represented by (+/+)?",
+a:[
+"Mutualism",
+"Parasitism",
+"Competition",
+"Predation"
+],
+c:0,
+e:"Mutualism benefits both organisms, represented as (+/+)."
+},
+
+{
+q:"51. Which relationship is represented by (+/-)?",
+a:[
+"Mutualism",
+"Parasitism",
+"Commensalism",
+"None"
+],
+c:1,
+e:"Parasitism benefits the parasite and harms the host, represented as (+/-)."
+},
+
+{
+q:"52. Which relationship is represented by (+/0)?",
+a:[
+"Competition",
+"Predation",
+"Commensalism",
+"Mutualism"
+],
+c:2,
+e:"Commensalism benefits one organism while the other is not significantly affected."
+},
+
+{
+q:"53. Which is an example of parasitism?",
+a:[
+"Bee and flowering plant",
+"Tick and dog",
+"Lion and zebra",
+"Two competing plants"
+],
+c:1,
+e:"A tick benefits by obtaining nutrients while the dog is harmed."
+},
+
+{
+q:"54. Which is an example of mutualism?",
+a:[
+"Bee obtaining nectar while pollinating a flower",
+"Tick feeding on a dog",
+"Lion eating zebra",
+"Two plants competing for light"
+],
+c:0,
+e:"Bees obtain food while plants may benefit through pollination."
+},
+
+{
+q:"55. Why is biodiversity important?",
+a:[
+"It reduces all ecosystems",
+"It supports ecosystem stability and provides valuable biological resources",
+"It eliminates species",
+"It prevents reproduction"
+],
+c:1,
+e:"Biodiversity supports ecosystem functioning and provides ecological, economic and biological resources."
+},
+
+{
+q:"56. Why should ecosystems be conserved?",
+a:[
+"To destroy habitats",
+"To protect biodiversity and natural resources",
+"To eliminate producers",
+"To increase pollution"
+],
+c:1,
+e:"Conservation helps protect biodiversity, habitats, soil, water and other natural resources."
+},
+
+{
+q:"57. Ethiopia has diverse ecosystems partly because of:",
+a:[
+"Differences in altitude and climate",
+"Only one type of climate",
+"Absence of mountains",
+"Absence of rivers"
+],
+c:0,
+e:"Ethiopia has varied altitude, climate and geography, contributing to diverse ecosystems."
+},
+
+{
+q:"58. Which action can harm ecosystems?",
+a:[
+"Deforestation",
+"Conservation",
+"Habitat restoration",
+"Tree planting"
+],
+c:0,
+e:"Deforestation can destroy habitats, reduce biodiversity and disturb ecosystem processes."
+},
+
+{
+q:"59. Which action helps conserve ecosystems?",
+a:[
+"Uncontrolled deforestation",
+"Habitat protection",
+"Pollution",
+"Illegal wildlife hunting"
+],
+c:1,
+e:"Protecting habitats helps conserve organisms and ecosystem processes."
+},
+
+{
+q:"60. Which statement best describes an ecosystem?",
+a:[
+"Only the animals in an area",
+"Only the plants in an area",
+"Living organisms interacting with each other and with their non-living environment",
+"Only the climate of an area"
+],
+c:2,
+e:"An ecosystem includes biotic organisms and abiotic environmental factors interacting together."
+}
+
+];
+
+
+let score = 0;
+
+
+const quiz = document.getElementById("quiz");
+
+
+questions.forEach((item,index)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+
+    const title = document.createElement("div");
+
+    title.className = "question";
+
+    title.textContent = item.q;
+
+    card.appendChild(title);
+
+
+    item.a.forEach((answer,i)=>{
+
+        const button =
+        document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65+i)
+        + ". "
+        + answer;
+
+
+        button.onclick = function(){
+
+            if(card.dataset.answered === "yes"){
+                return;
+            }
+
+            card.dataset.answered = "yes";
+
+
+            const result =
+            document.createElement("div");
+
+            const explanation =
+            document.createElement("div");
+
+
+            if(i === item.c){
+
+                score++;
+
+                result.className =
+                "result right";
+
+                result.innerHTML =
+                "✅ RIGHT!";
+
+            }else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ WRONG!<br>" +
+                "Correct answer: " +
+                String.fromCharCode(65+item.c)
+                + ". "
+                + item.a[item.c];
+
+            }
+
+
+            explanation.className =
+            "explanation";
+
+            explanation.innerHTML =
+            "💡 Explanation: "
+            + item.e;
+
+
+            result.style.display = "block";
+
+            explanation.style.display = "block";
+
+
+            card.appendChild(result);
+
+            card.appendChild(explanation);
+
+
+            document.getElementById("score")
+            .textContent = score;
+
+
+            card.querySelectorAll(".option")
+            .forEach(btn=>{
+
+                btn.disabled = true;
+
+            });
+
+        };
+
+
+        card.appendChild(button);
+
+    });
+
+
+    quiz.appendChild(card);
+
+});
+
+</script>
+
+</body>
+
+</html>
