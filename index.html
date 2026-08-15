@@ -1,165 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>Study Plus</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<style>
+*{
+    box-sizing:border-box;
+}
 
-    <title>Study Plus</title>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7ff;
+    color:#172033;
+}
 
-    <style>
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:42px 20px 65px;
+    text-align:center;
+    border-radius:0 0 35px 35px;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+.logo{
+    width:82px;
+    height:82px;
+    margin:auto;
+    border-radius:24px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-        }
+header h1{
+    margin:16px 0 8px;
+    font-size:34px;
+}
 
-        header {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            color: white;
-            text-align: center;
-            padding: 55px 20px;
-        }
+header p{
+    margin:6px 0;
+    opacity:.95;
+}
 
-        header h1 {
-            font-size: 42px;
-            margin: 0 0 12px;
-        }
+/* MAIN */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
 
-        header p {
-            font-size: 18px;
-            margin: 8px 0;
-        }
+/* HERO */
+.hero{
+    background:white;
+    margin-top:-35px;
+    padding:28px 22px;
+    border-radius:24px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 25px 20px;
-        }
+.hero h2{
+    margin-top:0;
+    color:#2563eb;
+    font-size:25px;
+}
 
-        .hero {
-            background: white;
-            padding: 30px 25px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: 0 4px 15px #ccc;
-            margin-top: -25px;
-        }
+.hero p{
+    color:#64748b;
+    line-height:1.7;
+}
 
-        .hero h2 {
-            color: #1d4ed8;
-            font-size: 28px;
-        }
+.start{
+    width:100%;
+    padding:17px;
+    margin-top:12px;
+    border:0;
+    border-radius:14px;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 6px 15px rgba(22,163,74,.25);
+}
 
-        .hero p {
-            line-height: 1.7;
-            color: #555;
-        }
+.start:active{
+    transform:scale(.98);
+}
 
-        .start {
-            width: 100%;
-            padding: 17px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 12px;
-            background: #16a34a;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+/* QUICK MENU */
+.quick-title{
+    margin:30px 0 15px;
+    font-size:21px;
+}
 
-        .start:hover {
-            opacity: 0.9;
-        }
+.quick-menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
 
-        .grades {
-            display: none;
-            margin-top: 25px;
-        }
+.quick{
+    background:white;
+    padding:20px 12px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
 
-        .grade {
-            background: white;
-            padding: 25px;
-            margin: 15px 0;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px #ddd;
-        }
+.quick-icon{
+    font-size:30px;
+    display:block;
+    margin-bottom:8px;
+}
 
-        .grade h3 {
-            margin-top: 0;
-            color: #2563eb;
-            font-size: 23px;
-        }
+.quick h3{
+    margin:5px 0;
+    font-size:16px;
+}
 
-        .grade p {
-            color: #666;
-            line-height: 1.6;
-        }
+.quick p{
+    margin:5px 0;
+    color:#64748b;
+    font-size:13px;
+}
 
-        .grade-button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: #2563eb;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+/* GRADES */
+.grades{
+    display:none;
+    margin-top:30px;
+}
 
-        .grade-button:hover {
-            opacity: 0.9;
-        }
+.section-title{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:18px;
+}
 
-        .coming {
-            background: #e5e7eb;
-            color: #777;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-        }
+.grade{
+    background:white;
+    padding:23px;
+    margin:15px 0;
+    border-radius:20px;
+    box-shadow:0 5px 16px rgba(0,0,0,.08);
+    border-left:6px solid #2563eb;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #172554;
-            color: white;
-        }
+.grade:nth-child(3){
+    border-left-color:#16a34a;
+}
 
-    </style>
+.grade:nth-child(4){
+    border-left-color:#ea580c;
+}
 
+.grade:nth-child(5){
+    border-left-color:#7c3aed;
+}
+
+.grade h3{
+    margin:0 0 10px;
+    font-size:22px;
+}
+
+.grade p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+.grade-button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.grade-button:active{
+    transform:scale(.98);
+}
+
+.coming{
+    background:#f1f5f9;
+    color:#64748b;
+    padding:13px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    margin-top:40px;
+    padding:30px 20px;
+    background:#172554;
+    color:white;
+    text-align:center;
+}
+
+footer p{
+    margin:7px;
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    .quick-menu{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero{
+        padding:24px 18px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
-
 <header>
 
-    <h1>📚 Study Plus</h1>
+    <div class="logo">
+        📚
+    </div>
+
+    <h1>Study Plus</h1>
 
     <p>Learn • Practice • Improve</p>
 
-    <p>Prepare Yourself for Your Future 🚀</p>
+    <p>Prepare Today • Succeed Tomorrow 🚀</p>
 
 </header>
 
 
 <div class="container">
 
+    <!-- HERO -->
 
     <div class="hero">
 
@@ -167,9 +259,9 @@
 
         <p>
             Your learning platform for Ethiopian students.
-            Choose your grade and start learning.
+            Study lessons, practice questions and prepare
+            yourself for your future.
         </p>
-
 
         <button
             class="start"
@@ -182,12 +274,50 @@
     </div>
 
 
+    <!-- QUICK MENU -->
+
+    <h2 class="quick-title">
+        📌 Quick Menu
+    </h2>
+
+    <div class="quick-menu">
+
+        <div class="quick">
+            <span class="quick-icon">📖</span>
+            <h3>Notes</h3>
+            <p>Study your lessons</p>
+        </div>
+
+        <div class="quick">
+            <span class="quick-icon">📝</span>
+            <h3>Practice</h3>
+            <p>Test your knowledge</p>
+        </div>
+
+        <div class="quick">
+            <span class="quick-icon">📅</span>
+            <h3>Weekly Exam</h3>
+            <p>Coming Soon</p>
+        </div>
+
+        <div class="quick">
+            <span class="quick-icon">🎯</span>
+            <h3>UEE Exam</h3>
+            <p>Coming Soon</p>
+        </div>
+
+    </div>
+
 
     <!-- GRADES -->
 
     <div
         class="grades"
         id="grades">
+
+        <h2 class="section-title">
+            🎓 Choose Your Grade
+        </h2>
 
 
         <!-- GRADE 9 -->
@@ -212,7 +342,6 @@
         </div>
 
 
-
         <!-- GRADE 10 -->
 
         <div class="grade">
@@ -225,13 +354,10 @@
             </p>
 
             <div class="coming">
-
                 🔒 Coming Soon
-
             </div>
 
         </div>
-
 
 
         <!-- GRADE 11 -->
@@ -246,13 +372,10 @@
             </p>
 
             <div class="coming">
-
                 🔒 Coming Soon
-
             </div>
 
         </div>
-
 
 
         <!-- GRADE 12 -->
@@ -267,45 +390,43 @@
             </p>
 
             <div class="coming">
-
                 🔒 Coming Soon
-
             </div>
 
         </div>
 
-
     </div>
-
 
 </div>
 
 
 <footer>
 
-    <p>📚 Study Plus</p>
+    <p>📚 <strong>Study Plus</strong></p>
 
-    <p>Learn Today • Succeed Tomorrow 🚀</p>
+    <p>
+        Learn Today • Practice More • Succeed Tomorrow 🚀
+    </p>
 
 </footer>
 
 
-
 <script>
 
-function showGrades() {
+function showGrades(){
 
-    document.getElementById("grades").style.display = "block";
+    const grades =
+        document.getElementById("grades");
 
-    document.getElementById("grades").scrollIntoView({
-        behavior: "smooth"
+    grades.style.display = "block";
+
+    grades.scrollIntoView({
+        behavior:"smooth"
     });
 
 }
 
 </script>
 
-
 </body>
-
 </html>
