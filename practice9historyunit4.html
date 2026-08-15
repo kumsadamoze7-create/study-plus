@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 History Unit 4 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#172554,#2563eb);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{margin:0;font-size:27px}
+header p{margin:7px}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
+}
+
+.progress{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:13px;
+    text-align:center;
+    font-weight:bold;
+    border-radius:10px;
+    box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #2563eb;
+}
+
+.question h3{
+    color:#1e40af;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:6px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fafafa;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#eff6ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.result{
+    display:none;
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:8px;
+}
+
+.score{
+    text-align:center;
+    border-left:6px solid #ea580c;
+    background:#fff7ed;
+}
+
+button.main{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    background:#1e40af;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button.back{
+    background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 4 PRACTICE</p>
+<p>🏰 The Middle Ages and Early Modern World</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+
+<h2>🏆 Final Result</h2>
+
+<h2 id="finalScore">0 / 60</h2>
+
+<p id="message">
+Answer all questions to see your result.
+</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit4.html'">
+📖 Unit 4 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questions=[
+
+{
+q:"What is generally meant by the Middle Ages in European history?",
+o:[
+"A period between the ancient and modern worlds",
+"A period after the Industrial Revolution",
+"A period before ancient civilizations",
+"A period of modern globalization"
+],
+a:0,
+e:"The Middle Ages refers broadly to the period between the ancient world and the modern period in European history."
+},
+
+{
+q:"Approximately when did the Western Roman Empire collapse?",
+o:[
+"5th century AD",
+"1st century BC",
+"15th century AD",
+"20th century AD"
+],
+a:0,
+e:"The Western Roman Empire collapsed in the fifth century, creating major political changes in Western Europe."
+},
+
+{
+q:"Which was an internal problem of the Western Roman Empire?",
+o:[
+"Political instability",
+"Industrialization",
+"Modern democracy",
+"Printing revolution"
+],
+a:0,
+e:"Political instability was one of the internal problems that weakened the Western Roman Empire."
+},
+
+{
+q:"Which was an external pressure on the Western Roman Empire?",
+o:[
+"Invasions by Germanic peoples",
+"Industrial workers",
+"Modern corporations",
+"European universities"
+],
+a:0,
+e:"Various Germanic peoples and other groups put pressure on the Western Roman Empire."
+},
+
+{
+q:"The term 'Dark Age' is mainly associated with which part of Europe?",
+o:[
+"Western Europe",
+"South America",
+"East Asia",
+"Australia"
+],
+a:0,
+e:"The term Dark Age is traditionally associated with the early medieval period in Western Europe."
+},
+
+{
+q:"Why was the early medieval period sometimes called the Dark Age?",
+o:[
+"Political fragmentation and decline of cities and trade",
+"Because there was no sunlight",
+"Because agriculture disappeared completely",
+"Because everyone stopped using language"
+],
+a:0,
+e:"The term refers to political fragmentation, decline of cities, reduced long-distance trade and other changes after Roman authority weakened."
+},
+
+{
+q:"What happened to many cities in Western Europe during the early Middle Ages?",
+o:[
+"Many declined",
+"They all became capitals",
+"They all became industrial centers",
+"They all disappeared permanently"
+],
+a:0,
+e:"Many cities declined as political instability and reduced long-distance trade affected urban life."
+},
+
+{
+q:"What happened to long-distance trade in much of Western Europe during the early medieval period?",
+o:[
+"It declined",
+"It immediately became global",
+"It completely doubled",
+"It became industrial"
+],
+a:0,
+e:"Long-distance trade declined in many parts of Western Europe during the early medieval period."
+},
+
+{
+q:"What was ruralization?",
+o:[
+"Movement toward rural and agricultural life",
+"Growth of modern cities",
+"Development of factories",
+"Expansion of airports"
+],
+a:0,
+e:"Ruralization refers to the increasing importance of rural areas and agricultural life."
+},
+
+{
+q:"What institution became very important in medieval Europe?",
+o:[
+"The Christian Church",
+"The modern United Nations",
+"The European Union",
+"Modern corporations"
+],
+a:0,
+e:"The Christian Church became one of the most important institutions of medieval Europe."
+},
+
+{
+q:"What were castles mainly used for?",
+o:[
+"Residence and defense",
+"Modern factories",
+"Airports",
+"Universities only"
+],
+a:0,
+e:"Castles served as residences for powerful lords and as defensive structures."
+},
+
+{
+q:"Who were knights?",
+o:[
+"Trained warriors serving lords",
+"Farmers only",
+"Merchants only",
+"Religious books"
+],
+a:0,
+e:"Knights were trained warriors who served powerful lords and provided military service."
+},
+
+{
+q:"What was chivalry?",
+o:[
+"A code of behavior associated with knights",
+"A farming tool",
+"A type of currency",
+"A medieval disease"
+],
+a:0,
+e:"Chivalry refers to the code of conduct associated with medieval knights."
+},
+
+{
+q:"What is feudalism?",
+o:[
+"A land and service-based political and social system",
+"A modern democratic system",
+"An industrial system",
+"A modern banking system"
+],
+a:0,
+e:"Feudalism was based largely on landholding, loyalty, service and protection."
+},
+
+{
+q:"What was a fief?",
+o:[
+"Land granted by a lord to a vassal",
+"A type of weapon",
+"A church building",
+"A merchant ship"
+],
+a:0,
+e:"A fief was land granted by a lord to a vassal in return for service."
+},
+
+{
+q:"Who was a vassal?",
+o:[
+"A person who received land and owed service to a lord",
+"A king without land",
+"A peasant who owned a factory",
+"A medieval explorer"
+],
+a:0,
+e:"A vassal received land or protection from a higher lord and owed loyalty and service."
+},
+
+{
+q:"Who was at the top of the traditional feudal hierarchy?",
+o:[
+"The king",
+"The serf",
+"The merchant",
+"The peasant"
+],
+a:0,
+e:"The king was traditionally placed at the top of the feudal political hierarchy."
+},
+
+{
+q:"What did nobles usually control?",
+o:[
+"Large areas of land",
+"Modern factories",
+"Airports",
+"Printing companies"
+],
+a:0,
+e:"Nobles or lords controlled large areas of land and governed their territories."
+},
+
+{
+q:"What was the main economic activity of medieval Europe?",
+o:[
+"Agriculture",
+"Industrial manufacturing",
+"Computer programming",
+"Air transportation"
+],
+a:0,
+e:"Agriculture was the foundation of the medieval European economy."
+},
+
+{
+q:"What was the manor?",
+o:[
+"An important agricultural and economic unit",
+"A medieval ocean",
+"A modern city",
+"A Roman army"
+],
+a:0,
+e:"The manor was an agricultural estate and an important economic unit of medieval society."
+},
+
+{
+q:"Who worked the land on medieval manors?",
+o:[
+"Peasants and serfs",
+"Only kings",
+"Only knights",
+"Only merchants"
+],
+a:0,
+e:"Peasants and serfs performed much of the agricultural labor on manors."
+},
+
+{
+q:"What was a serf?",
+o:[
+"An agricultural worker legally tied to the land",
+"A king",
+"A knight commander",
+"A merchant"
+],
+a:0,
+e:"A serf was a peasant legally tied to the land and required to perform obligations to the lord."
+},
+
+{
+q:"What was the main feature of a manorial economy?",
+o:[
+"Local agricultural production and self-sufficiency",
+"Mass industrial production",
+"Global stock markets",
+"Modern banking"
+],
+a:0,
+e:"Manorial economies depended heavily on local agricultural production and self-sufficiency."
+},
+
+{
+q:"Which institution helped preserve written knowledge in medieval Europe?",
+o:[
+"Monasteries and the Church",
+"Modern factories",
+"Airports",
+"Stock exchanges"
+],
+a:0,
+e:"Monasteries and Church institutions helped preserve manuscripts and learning."
+},
+
+{
+q:"Which was an important feature of medieval architecture?",
+o:[
+"Castles and cathedrals",
+"Skyscrapers",
+"Modern bridges",
+"Airports"
+],
+a:0,
+e:"Castles, churches and cathedrals were important examples of medieval architecture."
+},
+
+{
+q:"Which helped increase agricultural production in later medieval Europe?",
+o:[
+"Improved agricultural techniques",
+"Computer technology",
+"Steam engines",
+"Modern fertilizers only"
+],
+a:0,
+e:"Improved agricultural techniques contributed to increased production and population growth."
+},
+
+{
+q:"Which was a disadvantage of medieval feudal society?",
+o:[
+"Serfdom",
+"Universal equality",
+"Modern democracy",
+"Free education for everyone"
+],
+a:0,
+e:"Serfdom was one of the major social disadvantages of medieval feudal society."
+},
+
+{
+q:"Which was a benefit or development of the medieval period?",
+o:[
+"Growth of universities and learning later in the period",
+"Complete disappearance of education",
+"End of agriculture",
+"End of architecture"
+],
+a:0,
+e:"Universities and centers of learning developed especially during the later Middle Ages."
+},
+
+{
+q:"Where did Islam originate?",
+o:[
+"The Arabian Peninsula",
+"Western Europe",
+"South America",
+"East Asia"
+],
+a:0,
+e:"Islam originated in the Arabian Peninsula in the seventh century."
+},
+
+{
+q:"When did Islam begin?",
+o:[
+"7th century AD",
+"1st century BC",
+"15th century AD",
+"20th century AD"
+],
+a:0,
+e:"Islam emerged in the seventh century AD in the Arabian Peninsula."
+},
+
+{
+q:"Which field was developed significantly in Islamic civilization?",
+o:[
+"Mathematics",
+"Modern aviation",
+"Computer science",
+"Nuclear physics"
+],
+a:0,
+e:"Muslim scholars made important contributions to mathematics, medicine, astronomy and other fields."
+},
+
+{
+q:"Which field was also advanced by Muslim scholars?",
+o:[
+"Medicine",
+"Modern automobile engineering",
+"Computer programming",
+"Space engineering"
+],
+a:0,
+e:"Medicine was one of the major fields in which Islamic civilization made significant contributions."
+},
+
+{
+q:"What did Muslim scholars do with knowledge from earlier civilizations?",
+o:[
+"They translated, preserved and developed it",
+"They destroyed all of it",
+"They ignored it completely",
+"They prohibited all learning"
+],
+a:0,
+e:"Muslim scholars translated, preserved and expanded knowledge from earlier civilizations."
+},
+
+{
+q:"Where did the Ottoman state first develop?",
+o:[
+"Anatolia",
+"Scandinavia",
+"South America",
+"Australia"
+],
+a:0,
+e:"The Ottoman state emerged in Anatolia and gradually expanded."
+},
+
+{
+q:"Which empire conquered Constantinople in 1453?",
+o:[
+"The Ottoman Empire",
+"The Roman Republic",
+"The Inca Empire",
+"The Aztec Empire"
+],
+a:0,
+e:"The Ottoman Empire conquered Constantinople in 1453."
+},
+
+{
+q:"What year did the Ottomans conquer Constantinople?",
+o:[
+"1453",
+"1066",
+"1270",
+"1492"
+],
+a:0,
+e:"Constantinople was conquered by the Ottomans in 1453."
+},
+
+{
+q:"Why was Constantinople important to the Ottomans?",
+o:[
+"It became a major imperial center",
+"It was an African village",
+"It was an American colony",
+"It was a Roman farm"
+],
+a:0,
+e:"Constantinople became one of the major political and economic centers of the Ottoman Empire."
+},
+
+{
+q:"What was one important feature of the Ottoman Empire?",
+o:[
+"Strong military and administration",
+"No political organization",
+"No trade",
+"No cities"
+],
+a:0,
+e:"The Ottoman Empire developed strong military and administrative institutions."
+},
+
+{
+q:"What is early capitalism associated with?",
+o:[
+"Markets, merchants, banking and investment",
+"Only subsistence farming",
+"Decline of all trade",
+"End of money"
+],
+a:0,
+e:"Early capitalism developed alongside expanding markets, merchant activity, banking and investment."
+},
+
+{
+q:"Which group became increasingly important with the growth of trade?",
+o:[
+"Merchants",
+"Serfs only",
+"Knights only",
+"Monks only"
+],
+a:0,
+e:"Merchants became increasingly important as trade and markets expanded."
+},
+
+{
+q:"What helped weaken some traditional feudal economic structures?",
+o:[
+"Growth of towns and markets",
+"End of trade",
+"Decline of money",
+"End of agriculture"
+],
+a:0,
+e:"Growing towns, markets, trade and monetary exchange helped transform traditional feudal structures."
+},
+
+{
+q:"What was a major motivation for European exploration?",
+o:[
+"Finding new trade routes",
+"Ending all trade",
+"Destroying agriculture",
+"Stopping navigation"
+],
+a:0,
+e:"European explorers searched for new routes to trade with Asia and obtain valuable goods."
+},
+
+{
+q:"Why were spices important to European explorers?",
+o:[
+"They were valuable trade goods",
+"They were used as weapons",
+"They were worthless",
+"They were building materials"
+],
+a:0,
+e:"Spices were valuable commodities and were an important motivation for finding new trade routes."
+},
+
+{
+q:"Which explorer reached India by sailing around the Cape of Good Hope?",
+o:[
+"Vasco da Gama",
+"Christopher Columbus",
+"Martin Luther",
+"Johannes Gutenberg"
+],
+a:0,
+e:"Vasco da Gama reached India by sailing around the Cape of Good Hope."
+},
+
+{
+q:"Which explorer is associated with the European voyage to the Americas in 1492?",
+o:[
+"Christopher Columbus",
+"Vasco da Gama",
+"Ferdinand Magellan",
+"Martin Luther"
+],
+a:0,
+e:"Christopher Columbus reached the Americas in 1492 while searching for a western route to Asia."
+},
+
+{
+q:"Which explorer is associated with the first circumnavigation expedition?",
+o:[
+"Ferdinand Magellan",
+"Martin Luther",
+"Leonardo da Vinci",
+"Vasco da Gama"
+],
+a:0,
+e:"Ferdinand Magellan led the expedition that became the first to circumnavigate the globe, although he died before it was completed."
+},
+
+{
+q:"What was one consequence of European exploration?",
+o:[
+"Expansion of global trade",
+"End of all trade",
+"End of navigation",
+"Complete isolation of continents"
+],
+a:0,
+e:"European voyages expanded contacts and trade between different regions of the world."
+},
+
+{
+q:"What was another consequence of European overseas expansion?",
+o:[
+"Colonization",
+"End of political power",
+"End of navigation",
+"End of agriculture"
+],
+a:0,
+e:"European exploration was followed by overseas conquest and colonization."
+},
+
+{
+q:"What was the Renaissance?",
+o:[
+"A revival of classical learning and culture",
+"A medieval war",
+"A farming system",
+"A type of currency"
+],
+a:0,
+e:"The Renaissance was a revival of interest in classical Greek and Roman learning, art and culture."
+},
+
+{
+q:"Where did the Renaissance begin?",
+o:[
+"Italian city-states",
+"Central Africa",
+"South America",
+"Australia"
+],
+a:0,
+e:"The Renaissance began in Italian city-states and later spread across Europe."
+},
+
+{
+q:"What does Renaissance mean?",
+o:[
+"Rebirth",
+"War",
+"Kingdom",
+"Trade"
+],
+a:0,
+e:"The word Renaissance means 'rebirth.'"
+},
+
+{
+q:"What is humanism?",
+o:[
+"An intellectual movement emphasizing human abilities and classical learning",
+"A military system",
+"A farming technique",
+"A feudal tax"
+],
+a:0,
+e:"Humanism emphasized human abilities, education, individual achievement and classical learning."
+},
+
+{
+q:"Who was Leonardo da Vinci?",
+o:[
+"A famous Renaissance artist and thinker",
+"An Ottoman sultan",
+"A medieval serf",
+"A Roman emperor"
+],
+a:0,
+e:"Leonardo da Vinci was a major Renaissance artist, inventor and thinker."
+},
+
+{
+q:"Who painted the Sistine Chapel ceiling?",
+o:[
+"Michelangelo",
+"Martin Luther",
+"Vasco da Gama",
+"Johannes Gutenberg"
+],
+a:0,
+e:"Michelangelo painted the famous ceiling of the Sistine Chapel."
+},
+
+{
+q:"What was the Protestant Reformation?",
+o:[
+"A religious reform movement challenging aspects of the Catholic Church",
+"A military alliance",
+"A trade route",
+"An agricultural revolution"
+],
+a:0,
+e:"The Protestant Reformation challenged aspects of Roman Catholic religious practice and authority."
+},
+
+{
+q:"Who was a major leader of the Protestant Reformation?",
+o:[
+"Martin Luther",
+"Leonardo da Vinci",
+"Vasco da Gama",
+"King Lalibela"
+],
+a:0,
+e:"Martin Luther became one of the central figures of the Protestant Reformation."
+},
+
+{
+q:"Which was a cause of the Reformation?",
+o:[
+"Criticism of Church practices",
+"Industrialization",
+"Space exploration",
+"Modern globalization"
+],
+a:0,
+e:"Criticism of Church practices and demands for religious reform contributed to the Reformation."
+},
+
+{
+q:"Which was a result of the Protestant Reformation?",
+o:[
+"Growth of Protestant churches",
+"End of Christianity",
+"End of Europe",
+"End of printing"
+],
+a:0,
+e:"The Reformation led to the development and growth of Protestant churches."
+},
+
+{
+q:"Who is associated with movable-type printing in Europe?",
+o:[
+"Johannes Gutenberg",
+"Martin Luther",
+"Christopher Columbus",
+"Michelangelo"
+],
+a:0,
+e:"Johannes Gutenberg is associated with the development of movable-type printing in Europe."
+},
+
+{
+q:"What was one major effect of the printing revolution?",
+o:[
+"Faster spread of knowledge",
+"End of books",
+"End of literacy",
+"End of religious debate"
+],
+a:0,
+e:"Printing made written material easier to reproduce and helped ideas spread more rapidly."
+},
+
+{
+q:"Which period was characterized by Renaissance, Reformation and overseas exploration?",
+o:[
+"The Early Modern period",
+"The Stone Age",
+"The Paleolithic period",
+"Prehistory"
+],
+a:0,
+e:"The Early Modern period was characterized by major changes including the Renaissance, Reformation, exploration and expanding global connections."
+},
+
+{
+q:"Which of the following best connects the Middle Ages to the Early Modern World?",
+o:[
+"Growth of trade, towns, learning and centralized states",
+"Complete disappearance of cities",
+"End of all trade",
+"End of political organization"
+],
+a:0,
+e:"The growth of trade, towns, learning and stronger centralized states helped transform medieval society into the early modern world."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="card question";
+
+    card.innerHTML=`
+        <h3>Question ${index+1} / ${questions.length}</h3>
+        <p><strong>${item.q}</strong></p>
+        <div id="options${index}"></div>
+        <div id="result${index}" class="result"></div>
+    `;
+
+    quiz.appendChild(card);
+
+    const box=document.getElementById("options"+index);
+
+    item.o.forEach((option,i)=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="option";
+
+        btn.innerText=
+        String.fromCharCode(65+i)+". "+option;
+
+        btn.onclick=()=>{
+            checkAnswer(index,i,btn,box);
+        };
+
+        box.appendChild(btn);
+
+    });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+    const result=document.getElementById("result"+index);
+
+    if(result.dataset.done==="true"){
+        return;
+    }
+
+    result.dataset.done="true";
+
+    answered++;
+
+    const correct=questions[index].a;
+
+    const buttons=box.querySelectorAll(".option");
+
+    buttons.forEach((btn,i)=>{
+
+        btn.disabled=true;
+
+        if(i===correct){
+            btn.classList.add("correct");
+        }
+
+    });
+
+
+    if(selected===correct){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <div class="explanation">
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        </div>
+        `;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        result.className="result wrongResult";
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <div class="explanation">
+        <strong>Correct Answer:</strong>
+        ${questions[index].o[correct]}
+        <br><br>
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        </div>
+        `;
+
+    }
+
+    result.style.display="block";
+
+    updateProgress();
+
+    if(answered===questions.length){
+        showFinal();
+    }
+
+}
+
+
+function updateProgress(){
+
+    document.getElementById("progress").innerText=
+    "Answered: "+answered+
+    " / "+questions.length+
+    " | Score: "+score;
+
+}
+
+
+function showFinal(){
+
+    const percent=
+    Math.round((score/questions.length)*100);
+
+    document.getElementById("finalScore").innerText=
+    score+" / "+questions.length;
+
+    let message;
+
+    if(percent>=90){
+
+        message="🏆 Excellent! You mastered Unit 4.";
+
+    }else if(percent>=75){
+
+        message="👏 Very Good! Review the questions you missed.";
+
+    }else if(percent>=50){
+
+        message="👍 Good effort! Read Unit 4 again and practice.";
+
+    }else{
+
+        message="📖 Keep studying! Review the notes and try again.";
+
+    }
+
+    document.getElementById("message").innerText=
+    percent+"% — "+message;
+
+}
+
+</script>
+
+</body>
+</html>
