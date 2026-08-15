@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Biology Unit 1 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f3f7f5;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#087f5b,#12b886);
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:26px;
+}
+
+header p{
+    margin:7px 0;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:20px;
+}
+
+.score-box{
+    background:white;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.question-card{
+    background:white;
+    padding:22px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.question-number{
+    color:#087f5b;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin:12px 0 18px;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#f0fdf4;
+    border-color:#087f5b;
+}
+
+.option.correct{
+    background:#d3f9d8;
+    border-color:#2b8a3e;
+    color:#1b5e20;
+}
+
+.option.wrong{
+    background:#ffe3e3;
+    border-color:#e03131;
+    color:#c92a2a;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.feedback{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.feedback.correct{
+    display:block;
+    background:#d3f9d8;
+    border-left:5px solid #2b8a3e;
+}
+
+.feedback.wrong{
+    display:block;
+    background:#ffe3e3;
+    border-left:5px solid #e03131;
+}
+
+.explanation{
+    margin-top:8px;
+    line-height:1.6;
+}
+
+.final-score{
+    display:none;
+    background:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+    margin-top:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+}
+
+.final-score h2{
+    color:#087f5b;
+}
+
+.restart{
+    background:#087f5b;
+    color:white;
+    border:none;
+    padding:13px 25px;
+    border-radius:9px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.restart:hover{
+    background:#065f46;
+}
+
+.progress{
+    height:10px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:12px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#087f5b;
+    transition:.3s;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Grade 9 Biology</h1>
+    <p>Unit 1: Introduction to Biology</p>
+    <p><strong>60 Multiple Choice Questions</strong></p>
+</header>
+
+<div class="container">
+
+<div class="score-box">
+    <strong>Score: <span id="score">0</span> / 60</strong>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+</div>
+
+<div id="quiz"></div>
+
+<div class="final-score" id="finalScore">
+    <h2>🎉 Practice Completed!</h2>
+    <h3>Your Score: <span id="finalNumber">0</span> / 60</h3>
+    <p id="resultMessage"></p>
+    <button class="restart" onclick="restartQuiz()">
+        🔄 Restart Practice
+    </button>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"What is Biology?",
+options:[
+"Study of rocks",
+"Scientific study of life and living organisms",
+"Study of stars",
+"Study of machines"
+],
+answer:1,
+explanation:"Biology is the scientific study of life and living organisms."
+},
+
+{
+q:"The word 'bios' means:",
+options:[
+"Life",
+"Earth",
+"Animal",
+"Science"
+],
+answer:0,
+explanation:"The Greek word 'bios' means life."
+},
+
+{
+q:"The word 'logos' means:",
+options:[
+"Plant",
+"Life",
+"Study or knowledge",
+"Animal"
+],
+answer:2,
+explanation:"'Logos' means study, knowledge, or the study of something."
+},
+
+{
+q:"Which branch of Biology studies plants?",
+options:[
+"Zoology",
+"Botany",
+"Ecology",
+"Genetics"
+],
+answer:1,
+explanation:"Botany is the branch of Biology that studies plants."
+},
+
+{
+q:"Which branch studies animals?",
+options:[
+"Botany",
+"Zoology",
+"Microbiology",
+"Ecology"
+],
+answer:1,
+explanation:"Zoology is the scientific study of animals."
+},
+
+{
+q:"Which branch studies microorganisms?",
+options:[
+"Microbiology",
+"Botany",
+"Anatomy",
+"Zoology"
+],
+answer:0,
+explanation:"Microbiology deals with microorganisms."
+},
+
+{
+q:"Ecology mainly studies:",
+options:[
+"Stars",
+"Organisms and their environment",
+"Machines",
+"Rocks only"
+],
+answer:1,
+explanation:"Ecology studies relationships between organisms and their environment."
+},
+
+{
+q:"Genetics is the study of:",
+options:[
+"Heredity and variation",
+"Rocks",
+"Weather",
+"Light"
+],
+answer:0,
+explanation:"Genetics studies heredity and variation in organisms."
+},
+
+{
+q:"Anatomy is mainly concerned with:",
+options:[
+"Structure of organisms",
+"Weather",
+"Sound",
+"Electricity"
+],
+answer:0,
+explanation:"Anatomy studies the structures of organisms and their parts."
+},
+
+{
+q:"Physiology studies:",
+options:[
+"How organisms and their parts function",
+"Only plants",
+"Only rocks",
+"Stars"
+],
+answer:0,
+explanation:"Physiology is the study of functions of organisms and their parts."
+},
+
+{
+q:"Which profession depends heavily on Biology?",
+options:[
+"Medicine",
+"Carpentry only",
+"Architecture only",
+"Music only"
+],
+answer:0,
+explanation:"Medicine depends heavily on biological knowledge of the human body and diseases."
+},
+
+{
+q:"Biology is important in agriculture because it helps us understand:",
+options:[
+"Crop growth and pests",
+"Planetary motion",
+"Computer games",
+"Building design"
+],
+answer:0,
+explanation:"Biology helps agriculture through knowledge of crops, pests, diseases, and growth."
+},
+
+{
+q:"Biology helps protect the environment by studying:",
+options:[
+"Ecosystems and biodiversity",
+"Cars",
+"Buildings",
+"Televisions"
+],
+answer:0,
+explanation:"Biology helps us understand ecosystems, biodiversity, pollution, and conservation."
+},
+
+{
+q:"Biotechnology uses:",
+options:[
+"Living organisms or their components",
+"Only rocks",
+"Only metals",
+"Only machines"
+],
+answer:0,
+explanation:"Biotechnology uses living organisms or their components to make useful products or provide services."
+},
+
+{
+q:"The scientific method is used to:",
+options:[
+"Investigate questions systematically",
+"Guess without evidence",
+"Avoid experiments",
+"Make random decisions"
+],
+answer:0,
+explanation:"The scientific method provides a systematic way to investigate questions and solve problems."
+},
+
+{
+q:"The first step in a scientific investigation is commonly:",
+options:[
+"Observation",
+"Conclusion",
+"Publication",
+"Guessing"
+],
+answer:0,
+explanation:"Scientific investigations commonly begin with observation of something interesting or a problem."
+},
+
+{
+q:"A question in science should be:",
+options:[
+"Investigable",
+"Impossible to test",
+"Always personal",
+"Unrelated to observation"
+],
+answer:0,
+explanation:"A scientific question should be capable of being investigated using evidence."
+},
+
+{
+q:"A hypothesis is:",
+options:[
+"A testable possible explanation or prediction",
+"A final fact",
+"A laboratory tool",
+"A safety rule"
+],
+answer:0,
+explanation:"A hypothesis is a possible explanation or testable prediction."
+},
+
+{
+q:"Which step tests a hypothesis?",
+options:[
+"Experiment",
+"Conclusion",
+"Title",
+"Drawing"
+],
+answer:0,
+explanation:"An experiment is designed to test the hypothesis."
+},
+
+{
+q:"Information collected during an experiment is called:",
+options:[
+"Data",
+"Hypothesis",
+"Variable",
+"Conclusion"
+],
+answer:0,
+explanation:"Data are observations and measurements collected during an investigation."
+},
+
+{
+q:"Analyzing data means:",
+options:[
+"Examining the collected information",
+"Destroying the data",
+"Guessing the result",
+"Changing the question"
+],
+answer:0,
+explanation:"Data analysis involves organizing and examining collected information."
+},
+
+{
+q:"The conclusion is based mainly on:",
+options:[
+"Evidence and data",
+"Personal wishes",
+"Guessing",
+"Rumors"
+],
+answer:0,
+explanation:"A scientific conclusion should be based on evidence obtained from the investigation."
+},
+
+{
+q:"Scientists communicate their findings through:",
+options:[
+"Reports and presentations",
+"Secrets only",
+"Guessing",
+"Games only"
+],
+answer:0,
+explanation:"Scientists communicate findings through reports, presentations, graphs, articles, and other methods."
+},
+
+{
+q:"A variable is:",
+options:[
+"A factor that can change",
+"A fixed object",
+"A microscope",
+"A safety rule"
+],
+answer:0,
+explanation:"A variable is a factor or condition that can change in an investigation."
+},
+
+{
+q:"The independent variable is the factor that:",
+options:[
+"The researcher changes",
+"Is always ignored",
+"Is never measured",
+"Cannot change"
+],
+answer:0,
+explanation:"The independent variable is deliberately changed by the researcher."
+},
+
+{
+q:"The dependent variable is:",
+options:[
+"The factor measured or observed",
+"The factor deliberately changed",
+"Always constant",
+"A laboratory tool"
+],
+answer:0,
+explanation:"The dependent variable is what the researcher measures or observes."
+},
+
+{
+q:"Controlled variables are factors that are:",
+options:[
+"Kept constant",
+"Always changed",
+"Never considered",
+"Measured only once"
+],
+answer:0,
+explanation:"Controlled variables are kept constant so they do not unfairly affect the result."
+},
+
+{
+q:"Which is a laboratory tool?",
+options:[
+"Test tube",
+"Binoculars",
+"Bird",
+"Tree"
+],
+answer:0,
+explanation:"A test tube is commonly used in biological laboratory work."
+},
+
+{
+q:"A test tube is mainly used to:",
+options:[
+"Hold or mix small amounts of substances",
+"Measure distance",
+"Observe distant birds",
+"Measure body temperature only"
+],
+answer:0,
+explanation:"Test tubes are used to hold, mix, and sometimes heat small amounts of substances."
+},
+
+{
+q:"A beaker is commonly used for:",
+options:[
+"Holding and mixing liquids",
+"Viewing stars",
+"Measuring body height",
+"Cutting plants"
+],
+answer:0,
+explanation:"Beakers are used to hold, mix, and sometimes heat liquids."
+},
+
+{
+q:"Which instrument measures liquid volume?",
+options:[
+"Measuring cylinder",
+"Thermometer",
+"Balance",
+"Microscope"
+],
+answer:0,
+explanation:"A measuring cylinder is designed to measure the volume of liquids."
+},
+
+{
+q:"Which instrument measures mass?",
+options:[
+"Balance",
+"Thermometer",
+"Microscope",
+"Dropper"
+],
+answer:0,
+explanation:"A balance is used to measure mass."
+},
+
+{
+q:"Which instrument measures temperature?",
+options:[
+"Thermometer",
+"Balance",
+"Beaker",
+"Forceps"
+],
+answer:0,
+explanation:"A thermometer is used to measure temperature."
+},
+
+{
+q:"A dropper is used to:",
+options:[
+"Transfer small amounts of liquid",
+"Measure mass",
+"Observe cells",
+"Measure temperature"
+],
+answer:0,
+explanation:"A dropper transfers small amounts of liquid."
+},
+
+{
+q:"A Petri dish is commonly used to:",
+options:[
+"Culture or observe biological samples",
+"Measure temperature",
+"Measure mass",
+"Carry a microscope"
+],
+answer:0,
+explanation:"Petri dishes are commonly used to culture microorganisms or observe biological samples."
+},
+
+{
+q:"Forceps are useful for:",
+options:[
+"Picking up small specimens",
+"Measuring temperature",
+"Measuring volume",
+"Producing light"
+],
+answer:0,
+explanation:"Forceps help hold or pick up small specimens."
+},
+
+{
+q:"Which is mainly a field tool?",
+options:[
+"Binoculars",
+"Test tube",
+"Beaker",
+"Petri dish"
+],
+answer:0,
+explanation:"Binoculars are commonly used in the field to observe distant organisms."
+},
+
+{
+q:"A hand lens is used to:",
+options:[
+"Magnify small objects",
+"Measure mass",
+"Measure temperature",
+"Heat liquids"
+],
+answer:0,
+explanation:"A hand lens provides simple magnification for observing small objects."
+},
+
+{
+q:"A field notebook is used to:",
+options:[
+"Record observations",
+"Heat chemicals",
+"Magnify cells",
+"Measure mass"
+],
+answer:0,
+explanation:"Biologists use field notebooks to record observations and measurements."
+},
+
+{
+q:"A light microscope is used to:",
+options:[
+"Observe very small objects",
+"Measure rainfall",
+"Measure mass",
+"Heat substances"
+],
+answer:0,
+explanation:"A light microscope magnifies small objects so they can be observed more clearly."
+},
+
+{
+q:"A light microscope uses:",
+options:[
+"Visible light and lenses",
+"Sound waves only",
+"Radio waves only",
+"Heat only"
+],
+answer:0,
+explanation:"A light microscope uses visible light and optical lenses."
+},
+
+{
+q:"The eyepiece is also called the:",
+options:[
+"Ocular lens",
+"Stage",
+"Diaphragm",
+"Base"
+],
+answer:0,
+explanation:"The eyepiece is also known as the ocular lens."
+},
+
+{
+q:"The objective lenses are used mainly for:",
+options:[
+"Magnification",
+"Supporting the table",
+"Cleaning slides",
+"Holding chemicals"
+],
+answer:0,
+explanation:"Objective lenses provide different levels of magnification."
+},
+
+{
+q:"The revolving nosepiece:",
+options:[
+"Holds and changes objective lenses",
+"Holds the microscope table",
+"Controls temperature",
+"Measures mass"
+],
+answer:0,
+explanation:"The revolving nosepiece holds the objective lenses and allows the user to change them."
+},
+
+{
+q:"The stage is used to:",
+options:[
+"Support the microscope slide",
+"Magnify the image",
+"Control temperature",
+"Hold the microscope"
+],
+answer:0,
+explanation:"The stage supports the slide containing the specimen."
+},
+
+{
+q:"Stage clips are used to:",
+options:[
+"Hold the slide in place",
+"Magnify the specimen",
+"Control light",
+"Carry the microscope"
+],
+answer:0,
+explanation:"Stage clips keep the microscope slide securely in position."
+},
+
+{
+q:"The diaphragm controls:",
+options:[
+"Amount of light",
+"Magnification",
+"Temperature",
+"Mass"
+],
+answer:0,
+explanation:"The diaphragm regulates the amount of light reaching the specimen."
+},
+
+{
+q:"The coarse adjustment knob is used for:",
+options:[
+"Large focus adjustments",
+"Small focus adjustments only",
+"Measuring mass",
+"Controlling temperature"
+],
+answer:0,
+explanation:"The coarse adjustment knob makes large changes in focus."
+},
+
+{
+q:"The fine adjustment knob is used to:",
+options:[
+"Make the image sharper",
+"Change the slide",
+"Measure volume",
+"Carry the microscope"
+],
+answer:0,
+explanation:"The fine adjustment knob makes small adjustments to obtain a sharp image."
+},
+
+{
+q:"The base of a microscope:",
+options:[
+"Supports the microscope",
+"Magnifies the specimen",
+"Controls the light",
+"Holds chemicals"
+],
+answer:0,
+explanation:"The base provides support for the microscope."
+},
+
+{
+q:"The arm of a microscope is used for:",
+options:[
+"Supporting the upper parts and carrying the microscope",
+"Measuring temperature",
+"Magnifying the specimen",
+"Holding liquid"
+],
+answer:0,
+explanation:"The arm supports the upper parts of the microscope and helps when carrying it."
+},
+
+{
+q:"If the eyepiece is 10× and objective is 10×, total magnification is:",
+options:[
+"20×",
+"100×",
+"10×",
+"1×"
+],
+answer:1,
+explanation:"Total magnification = eyepiece × objective = 10 × 10 = 100×."
+},
+
+{
+q:"If the eyepiece is 10× and objective is 40×, total magnification is:",
+options:[
+"50×",
+"400×",
+"40×",
+"4×"
+],
+answer:1,
+explanation:"Total magnification = 10 × 40 = 400×."
+},
+
+{
+q:"When beginning microscope observation, it is usually best to start with:",
+options:[
+"Low-power objective",
+"Highest-power objective",
+"No objective",
+"Only the eyepiece"
+],
+answer:0,
+explanation:"Starting with low power makes it easier to locate and focus the specimen."
+},
+
+{
+q:"When carrying a microscope, you should:",
+options:[
+"Use both hands",
+"Hold it by the eyepiece only",
+"Carry it with one finger",
+"Drag it"
+],
+answer:0,
+explanation:"A microscope should be carried carefully using both hands."
+},
+
+{
+q:"Which is a laboratory safety rule?",
+options:[
+"Do not eat or drink in the laboratory",
+"Run around the laboratory",
+"Taste chemicals",
+"Play with equipment"
+],
+answer:0,
+explanation:"Eating and drinking in a laboratory can cause contamination or poisoning."
+},
+
+{
+q:"Laboratory chemicals should:",
+options:[
+"Be handled carefully",
+"Always be tasted",
+"Be smelled directly",
+"Be thrown anywhere"
+],
+answer:0,
+explanation:"Chemicals must be handled carefully and according to safety instructions."
+},
+
+{
+q:"If a chemical spills, you should:",
+options:[
+"Report it immediately",
+"Ignore it",
+"Touch it",
+"Hide it"
+],
+answer:0,
+explanation:"Spills should be reported immediately so they can be handled safely."
+},
+
+{
+q:"Why should you not run in a laboratory?",
+options:[
+"To prevent accidents",
+"Because running is difficult",
+"To save chemicals",
+"To increase temperature"
+],
+answer:0,
+explanation:"Running can cause falls, spills, broken glass, and other accidents."
+},
+
+{
+q:"After laboratory work, you should:",
+options:[
+"Wash your hands",
+"Eat immediately",
+"Leave chemicals open",
+"Touch your eyes"
+],
+answer:0,
+explanation:"Washing hands helps remove potentially harmful substances and microorganisms."
+},
+
+{
+q:"Broken glass in a laboratory should be:",
+options:[
+"Reported and disposed of safely",
+"Picked up with bare hands",
+"Left on the floor",
+"Hidden"
+],
+answer:0,
+explanation:"Broken glass can cause serious cuts and should be handled and disposed of safely."
+},
+
+{
+q:"Which statement about laboratory safety is TRUE?",
+options:[
+"Safety rules help prevent accidents",
+"Safety rules are unnecessary",
+"Chemicals can always be tasted",
+"Running is safe"
+],
+answer:0,
+explanation:"Laboratory safety rules are designed to reduce risks and prevent accidents."
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+function loadQuiz(){
+
+    const quiz = document.getElementById("quiz");
+
+    quiz.innerHTML = "";
+
+    questions.forEach((item,index)=>{
+
+        const card = document.createElement("div");
+        card.className = "question-card";
+
+        card.innerHTML = `
+            <div class="question-number">
+                Question ${index+1} of ${questions.length}
+            </div>
+
+            <div class="question">
+                ${item.q}
+            </div>
+
+            <div id="options-${index}"></div>
+
+            <div id="feedback-${index}" class="feedback"></div>
+        `;
+
+        quiz.appendChild(card);
+
+        const optionsDiv = document.getElementById(`options-${index}`);
+
+        item.options.forEach((option,optionIndex)=>{
+
+            const button = document.createElement("button");
+
+            button.className = "option";
+            button.innerHTML =
+                `<strong>${String.fromCharCode(65+optionIndex)}.</strong> ${option}`;
+
+            button.onclick = function(){
+                checkAnswer(index,optionIndex,button);
+            };
+
+            optionsDiv.appendChild(button);
+
+        });
+
+    });
+}
+
+function checkAnswer(questionIndex,selected,selectedButton){
+
+    const question = questions[questionIndex];
+
+    const options =
+        document.querySelectorAll(`#options-${questionIndex} .option`);
+
+    options.forEach(btn=>{
+        btn.disabled = true;
+    });
+
+    const feedback =
+        document.getElementById(`feedback-${questionIndex}`);
+
+    answered++;
+
+    if(selected === question.answer){
+
+        score++;
+
+        selectedButton.classList.add("correct");
+
+        feedback.className = "feedback correct";
+
+        feedback.innerHTML = `
+            <strong>✅ CORRECT!</strong>
+            <div class="explanation">
+                <strong>Explanation:</strong>
+                ${question.explanation}
+            </div>
+        `;
+
+    }else{
+
+        selectedButton.classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        feedback.className = "feedback wrong";
+
+        feedback.innerHTML = `
+            <strong>❌ WRONG!</strong>
+
+            <div class="explanation">
+                <strong>Correct Answer:</strong>
+                ${question.options[question.answer]}
+                <br><br>
+                <strong>Explanation:</strong>
+                ${question.explanation}
+            </div>
+        `;
+    }
+
+    document.getElementById("score").innerText = score;
+
+    const progress =
+        (answered / questions.length) * 100;
+
+    document.getElementById("progressBar").style.width =
+        progress + "%";
+
+    if(answered === questions.length){
+
+        setTimeout(showFinalScore,500);
+
+    }
+
+}
+
+function showFinalScore(){
+
+    const finalScore =
+        document.getElementById("finalScore");
+
+    document.getElementById("finalNumber").innerText =
+        score;
+
+    let message = "";
+
+    const percentage =
+        (score / questions.length) * 100;
+
+    if(percentage >= 90){
+
+        message =
+        "🏆 Excellent! You have a very strong understanding of Unit 1.";
+
+    }else if(percentage >= 75){
+
+        message =
+        "👏 Very Good! Review a few topics and keep practicing.";
+
+    }else if(percentage >= 50){
+
+        message =
+        "👍 Good effort! Review the notes and try the practice again.";
+
+    }else{
+
+        message =
+        "📚 Keep studying! Review Unit 1 carefully and try again.";
+
+    }
+
+    document.getElementById("resultMessage").innerText =
+        message;
+
+    finalScore.style.display = "block";
+
+    finalScore.scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function restartQuiz(){
+
+    score = 0;
+    answered = 0;
+
+    document.getElementById("score").innerText = "0";
+
+    document.getElementById("progressBar").style.width = "0%";
+
+    document.getElementById("finalScore").style.display = "none";
+
+    loadQuiz();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+loadQuiz();
+
+</script>
+
+</body>
+</html>
