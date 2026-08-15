@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 Physics - Unit 6 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #2563eb;
+}
+
+.question h3{
+    color:#1e3a8a;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    margin:7px 0;
+    border-radius:9px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    opacity:.9;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.8;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#f3f4f6;
+    border-left:4px solid #7c3aed;
+    color:#444;
+    line-height:1.6;
+}
+
+#score{
+    display:none;
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+#score h2{
+    margin-top:0;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    background:#16a34a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌊 Grade 9 Physics</h1>
+<p>Unit 6 — Mechanical Oscillation and Sound Wave</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>📚 Unit 6 Practice</h2>
+<p>
+Choose the correct answer. After selecting an answer,
+you will see whether it is correct or wrong and an explanation.
+</p>
+</div>
+
+<div id="quiz"></div>
+
+<div id="score">
+<h2>🎉 Practice Complete!</h2>
+<p id="scoreText"></p>
+
+<button class="back restart" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="back"
+onclick="location.href='notes9physicsunit6.html'">
+📖 Review Unit 6 Notes
+</button>
+
+<button class="back"
+onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+</div>
+
+<button class="back"
+onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is oscillation?",
+options:[
+"Repeated motion about an equilibrium position",
+"Motion in one direction only",
+"Motion with no repetition",
+"Complete rest"
+],
+answer:0,
+explanation:"Oscillation is repeated back-and-forth motion about an equilibrium position."
+},
+
+{
+q:"2. Which is an example of oscillatory motion?",
+options:[
+"A swinging pendulum",
+"A car moving on a straight road",
+"A stone lying on the ground",
+"A stationary table"
+],
+answer:0,
+explanation:"A pendulum moves repeatedly back and forth about its equilibrium position."
+},
+
+{
+q:"3. What is the equilibrium position?",
+options:[
+"The central position where the object tends to rest",
+"The highest position only",
+"The lowest position only",
+"The position of maximum speed"
+],
+answer:0,
+explanation:"The equilibrium position is the position where an object would remain at rest if no disturbance acted on it."
+},
+
+{
+q:"4. What is amplitude?",
+options:[
+"Maximum displacement from equilibrium",
+"Number of oscillations per second",
+"Time for one cycle",
+"Distance between two waves"
+],
+answer:0,
+explanation:"Amplitude is the maximum displacement of an oscillating object from its equilibrium position."
+},
+
+{
+q:"5. Which symbol commonly represents amplitude?",
+options:[
+"A",
+"T",
+"f",
+"λ"
+],
+answer:0,
+explanation:"Amplitude is commonly represented by A."
+},
+
+{
+q:"6. What is the period of an oscillation?",
+options:[
+"Time required for one complete cycle",
+"Number of cycles per second",
+"Maximum displacement",
+"Wave speed"
+],
+answer:0,
+explanation:"Period T is the time required for one complete oscillation."
+},
+
+{
+q:"7. What is the SI unit of period?",
+options:[
+"Hz",
+"m",
+"s",
+"N"
+],
+answer:2,
+explanation:"The SI unit of time, and therefore period, is the second (s)."
+},
+
+{
+q:"8. What is frequency?",
+options:[
+"Number of complete oscillations per second",
+"Time for one oscillation",
+"Maximum displacement",
+"Distance between crests"
+],
+answer:0,
+explanation:"Frequency is the number of complete oscillations made per unit time."
+},
+
+{
+q:"9. What is the SI unit of frequency?",
+options:[
+"Meter",
+"Second",
+"Hertz",
+"Newton"
+],
+answer:2,
+explanation:"Frequency is measured in Hertz (Hz), which means cycles per second."
+},
+
+{
+q:"10. What is the relationship between frequency and period?",
+options:[
+"f = T",
+"f = 1/T",
+"f = T²",
+"f = T + 1"
+],
+answer:1,
+explanation:"Frequency and period are inversely related: f = 1/T."
+},
+
+{
+q:"11. If the period is 2 seconds, what is the frequency?",
+options:[
+"0.5 Hz",
+"1 Hz",
+"2 Hz",
+"4 Hz"
+],
+answer:0,
+explanation:"f = 1/T = 1/2 = 0.5 Hz."
+},
+
+{
+q:"12. If frequency is 5 Hz, what is the period?",
+options:[
+"5 s",
+"1 s",
+"0.5 s",
+"0.2 s"
+],
+answer:3,
+explanation:"T = 1/f = 1/5 = 0.2 s."
+},
+
+{
+q:"13. What is a simple pendulum?",
+options:[
+"A mass attached to a light string fixed at one end",
+"A wheel attached to an axle",
+"A spring with no mass",
+"A fixed metal rod"
+],
+answer:0,
+explanation:"A simple pendulum consists of a small mass attached to a light string fixed at one end."
+},
+
+{
+q:"14. What is the bob of a pendulum?",
+options:[
+"The mass attached to the string",
+"The fixed support",
+"The string itself",
+"The equilibrium position"
+],
+answer:0,
+explanation:"The bob is the mass attached to the pendulum string."
+},
+
+{
+q:"15. For small oscillations, the period of a simple pendulum mainly depends on:",
+options:[
+"Length and gravitational acceleration",
+"Color of the bob",
+"Mass only",
+"Shape of the string"
+],
+answer:0,
+explanation:"For small oscillations, the period depends mainly on length L and gravitational acceleration g."
+},
+
+{
+q:"16. Which formula gives the period of a simple pendulum?",
+options:[
+"T = 2π√(L/g)",
+"T = L/g",
+"T = fλ",
+"T = 1/f"
+],
+answer:0,
+explanation:"For small oscillations, T = 2π√(L/g)."
+},
+
+{
+q:"17. What happens to the period when pendulum length increases?",
+options:[
+"It generally increases",
+"It becomes zero",
+"It always decreases",
+"It does not depend on length"
+],
+answer:0,
+explanation:"A longer simple pendulum has a longer period."
+},
+
+{
+q:"18. A wave is best described as:",
+options:[
+"A disturbance that transfers energy",
+"A permanent movement of matter",
+"A stationary object",
+"A type of force only"
+],
+answer:0,
+explanation:"A wave is a disturbance that travels and transfers energy from one place to another."
+},
+
+{
+q:"19. What do waves primarily transfer?",
+options:[
+"Energy",
+"Mass permanently",
+"Temperature only",
+"Objects"
+],
+answer:0,
+explanation:"Waves transfer energy without transporting the medium as a whole."
+},
+
+{
+q:"20. What is wavelength?",
+options:[
+"Distance between successive points in the same phase",
+"Time for one oscillation",
+"Number of waves per second",
+"Maximum displacement"
+],
+answer:0,
+explanation:"Wavelength λ is the distance between successive points that are in the same phase."
+},
+
+{
+q:"21. What symbol represents wavelength?",
+options:[
+"λ",
+"T",
+"f",
+"A"
+],
+answer:0,
+explanation:"Wavelength is commonly represented by the Greek letter λ."
+},
+
+{
+q:"22. What is the SI unit of wavelength?",
+options:[
+"Hz",
+"s",
+"m",
+"N"
+],
+answer:2,
+explanation:"Wavelength is a distance, so its SI unit is meter (m)."
+},
+
+{
+q:"23. What is the crest of a transverse wave?",
+options:[
+"The highest point",
+"The lowest point",
+"The center line",
+"The compression"
+],
+answer:0,
+explanation:"The crest is the highest point of a transverse wave."
+},
+
+{
+q:"24. What is the trough?",
+options:[
+"The highest point",
+"The lowest point",
+"The wavelength",
+"The frequency"
+],
+answer:1,
+explanation:"The trough is the lowest point of a transverse wave."
+},
+
+{
+q:"25. Which equation gives wave speed?",
+options:[
+"v = fλ",
+"v = f/T",
+"v = Tλ",
+"v = f + λ"
+],
+answer:0,
+explanation:"Wave speed is given by v = fλ."
+},
+
+{
+q:"26. A wave has frequency 5 Hz and wavelength 2 m. What is its speed?",
+options:[
+"2.5 m/s",
+"7 m/s",
+"10 m/s",
+"20 m/s"
+],
+answer:2,
+explanation:"v = fλ = 5 × 2 = 10 m/s."
+},
+
+{
+q:"27. If wave speed is 20 m/s and frequency is 4 Hz, wavelength is:",
+options:[
+"5 m",
+"8 m",
+"16 m",
+"80 m"
+],
+answer:0,
+explanation:"λ = v/f = 20/4 = 5 m."
+},
+
+{
+q:"28. In a transverse wave, particles vibrate:",
+options:[
+"Perpendicular to the direction of wave travel",
+"Parallel to wave travel",
+"Without moving",
+"Only upward"
+],
+answer:0,
+explanation:"In a transverse wave, particle vibration is perpendicular to the direction of propagation."
+},
+
+{
+q:"29. Which is an example of a transverse wave?",
+options:[
+"Wave on a stretched string",
+"Sound in air",
+"Compression in a spring",
+"Sound in a gas"
+],
+answer:0,
+explanation:"A wave travelling along a stretched string can be transverse."
+},
+
+{
+q:"30. In a longitudinal wave, particles vibrate:",
+options:[
+"Parallel to wave direction",
+"Perpendicular to wave direction",
+"At right angles only",
+"Without vibration"
+],
+answer:0,
+explanation:"In longitudinal waves, particles vibrate parallel to the direction of wave propagation."
+},
+
+{
+q:"31. Which two regions occur in longitudinal waves?",
+options:[
+"Crest and trough",
+"Compression and rarefaction",
+"Peak and valley",
+"Amplitude and period"
+],
+answer:1,
+explanation:"Longitudinal waves contain compressions and rarefactions."
+},
+
+{
+q:"32. What is a compression?",
+options:[
+"Region where particles are close together",
+"Region where particles are far apart",
+"Highest point of a wave",
+"Lowest point of a wave"
+],
+answer:0,
+explanation:"Compression is a region of a longitudinal wave where particles are close together."
+},
+
+{
+q:"33. What is rarefaction?",
+options:[
+"Region where particles are spread farther apart",
+"Region where particles are closest",
+"A crest",
+"A trough"
+],
+answer:0,
+explanation:"Rarefaction is a region where particles are farther apart."
+},
+
+{
+q:"34. Which type of wave is sound in air?",
+options:[
+"Longitudinal",
+"Transverse",
+"Electromagnetic",
+"Stationary only"
+],
+answer:0,
+explanation:"Sound travels through air as a longitudinal mechanical wave."
+},
+
+{
+q:"35. A mechanical wave requires:",
+options:[
+"A material medium",
+"Only vacuum",
+"No particles",
+"Electric current"
+],
+answer:0,
+explanation:"Mechanical waves require a material medium to propagate."
+},
+
+{
+q:"36. Which cannot travel through a vacuum?",
+options:[
+"Sound",
+"Light",
+"Radio waves",
+"Microwaves"
+],
+answer:0,
+explanation:"Sound is a mechanical wave and requires particles of a medium, so it cannot travel through a vacuum."
+},
+
+{
+q:"37. Sound is produced by:",
+options:[
+"Vibrating objects",
+"Objects at rest",
+"Light only",
+"Gravity only"
+],
+answer:0,
+explanation:"Sound is produced when an object vibrates and causes disturbances in the surrounding medium."
+},
+
+{
+q:"38. Which object produces sound by vibrating?",
+options:[
+"Guitar string",
+"Still table",
+"Closed book",
+"Rock at rest"
+],
+answer:0,
+explanation:"A guitar string vibrates when plucked and produces sound."
+},
+
+{
+q:"39. Sound can travel through:",
+options:[
+"Solids, liquids and gases",
+"Only gases",
+"Only vacuum",
+"Only solids"
+],
+answer:0,
+explanation:"Sound can propagate through solids, liquids and gases."
+},
+
+{
+q:"40. In general, sound travels fastest through:",
+options:[
+"Solids",
+"Liquids",
+"Gases",
+"Vacuum"
+],
+answer:0,
+explanation:"Sound generally travels fastest in solids because particles are strongly connected."
+},
+
+{
+q:"41. What determines the pitch of a sound?",
+options:[
+"Frequency",
+"Amplitude only",
+"Wavelength only",
+"Mass"
+],
+answer:0,
+explanation:"Frequency determines the pitch of a sound. Higher frequency means higher pitch."
+},
+
+{
+q:"42. What is generally associated with loudness?",
+options:[
+"Amplitude",
+"Frequency only",
+"Period only",
+"Wavelength only"
+],
+answer:0,
+explanation:"Greater amplitude of vibration generally produces a louder sound."
+},
+
+{
+q:"43. A higher frequency sound has:",
+options:[
+"Higher pitch",
+"Lower pitch",
+"No pitch",
+"Always greater amplitude"
+],
+answer:0,
+explanation:"Pitch increases as frequency increases."
+},
+
+{
+q:"44. A larger amplitude generally produces:",
+options:[
+"Louder sound",
+"Higher frequency",
+"Lower pitch",
+"Longer period"
+],
+answer:0,
+explanation:"Greater amplitude generally corresponds to greater loudness."
+},
+
+{
+q:"45. What is the approximate audible frequency range for humans?",
+options:[
+"2–20 Hz",
+"20–20,000 Hz",
+"20,000–100,000 Hz",
+"100–200 Hz"
+],
+answer:1,
+explanation:"The typical human audible range is approximately 20 Hz to 20,000 Hz."
+},
+
+{
+q:"46. Sound below approximately 20 Hz is called:",
+options:[
+"Ultrasound",
+"Infrasound",
+"Audible sound",
+"Supersound"
+],
+answer:1,
+explanation:"Frequencies below approximately 20 Hz are called infrasound."
+},
+
+{
+q:"47. Sound above approximately 20,000 Hz is called:",
+options:[
+"Infrasound",
+"Ultrasound",
+"Normal sound",
+"Low sound"
+],
+answer:1,
+explanation:"Frequencies above approximately 20,000 Hz are called ultrasound."
+},
+
+{
+q:"48. Which is an application of ultrasound?",
+options:[
+"Medical imaging",
+"Writing on paper",
+"Measuring mass with a balance",
+"Making food cold"
+],
+answer:0,
+explanation:"Ultrasound is widely used in medical imaging and other applications."
+},
+
+{
+q:"49. What happens when two waves overlap?",
+options:[
+"They can interfere",
+"They always disappear",
+"They stop permanently",
+"They become matter"
+],
+answer:0,
+explanation:"When waves overlap, their displacements combine according to superposition, producing interference."
+},
+
+{
+q:"50. Constructive interference occurs when:",
+options:[
+"Wave amplitudes reinforce each other",
+"All waves stop",
+"Amplitudes always cancel",
+"There is no wave"
+],
+answer:0,
+explanation:"Constructive interference occurs when wave displacements reinforce one another."
+},
+
+{
+q:"51. Destructive interference occurs when:",
+options:[
+"Wave displacements oppose each other",
+"All amplitudes increase",
+"Waves become particles",
+"Frequency becomes zero"
+],
+answer:0,
+explanation:"Destructive interference occurs when wave displacements oppose one another."
+},
+
+{
+q:"52. If frequency increases while wave speed stays constant, wavelength:",
+options:[
+"Decreases",
+"Increases",
+"Becomes infinite",
+"Does not change"
+],
+answer:0,
+explanation:"From v = fλ, if v is constant and f increases, λ must decrease."
+},
+
+{
+q:"53. If wavelength increases while frequency stays constant, wave speed:",
+options:[
+"Increases",
+"Decreases",
+"Becomes zero",
+"Does not exist"
+],
+answer:0,
+explanation:"From v = fλ, with constant frequency, increasing wavelength increases wave speed."
+},
+
+{
+q:"54. A wave has a frequency of 10 Hz. Its period is:",
+options:[
+"10 s",
+"1 s",
+"0.1 s",
+"100 s"
+],
+answer:2,
+explanation:"T = 1/f = 1/10 = 0.1 s."
+},
+
+{
+q:"55. A wave has wavelength 3 m and frequency 4 Hz. Its speed is:",
+options:[
+"7 m/s",
+"12 m/s",
+"1.33 m/s",
+"0.75 m/s"
+],
+answer:1,
+explanation:"v = fλ = 4 × 3 = 12 m/s."
+},
+
+{
+q:"56. Which statement about waves is correct?",
+options:[
+"Waves transfer energy",
+"Waves always transfer matter permanently",
+"Mechanical waves travel through vacuum",
+"Sound needs no medium"
+],
+answer:0,
+explanation:"Waves transfer energy from one location to another."
+},
+
+{
+q:"57. Which statement about sound is correct?",
+options:[
+"Sound needs a medium",
+"Sound travels through vacuum",
+"Sound is always transverse",
+"Sound does not involve vibration"
+],
+answer:0,
+explanation:"Sound is a mechanical wave and requires a material medium."
+},
+
+{
+q:"58. Which quantity is measured in Hertz?",
+options:[
+"Frequency",
+"Period",
+"Wavelength",
+"Speed"
+],
+answer:0,
+explanation:"Frequency is measured in Hertz (Hz)."
+},
+
+{
+q:"59. If a pendulum becomes longer, its period generally:",
+options:[
+"Increases",
+"Decreases",
+"Becomes zero",
+"Does not exist"
+],
+answer:0,
+explanation:"For a simple pendulum, T = 2π√(L/g), so increasing L increases the period."
+},
+
+{
+q:"60. Which formula is correct for wave speed?",
+options:[
+"v = fλ",
+"v = f + λ",
+"v = f/λ",
+"v = λ/f"
+],
+answer:0,
+explanation:"The correct wave-speed equation is v = fλ."
+}
+
+];
+
+
+const quiz = document.getElementById("quiz");
+
+let score = 0;
+let answered = 0;
+
+questions.forEach((question,index)=>{
+
+    const card = document.createElement("div");
+    card.className = "card question";
+
+    const title = document.createElement("h3");
+    title.textContent = question.q;
+
+    card.appendChild(title);
+
+    const result = document.createElement("div");
+    result.className = "result";
+    result.style.display = "none";
+
+    const explanation = document.createElement("div");
+    explanation.className = "explanation";
+    explanation.style.display = "none";
+
+    question.options.forEach((option,optionIndex)=>{
+
+        const button = document.createElement("button");
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65 + optionIndex) +
+        ". " + option;
+
+        button.onclick = function(){
+
+            const buttons =
+            card.querySelectorAll(".option");
+
+            buttons.forEach(btn=>{
+                btn.disabled = true;
+            });
+
+            answered++;
+
+            if(optionIndex === question.answer){
+
+                score++;
+
+                result.className =
+                "result correct";
+
+                result.innerHTML =
+                "✅ Correct!";
+
+            }else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ Wrong! Correct answer: " +
+                String.fromCharCode(65 + question.answer) +
+                ". " +
+                question.options[question.answer];
+
+            }
+
+            result.style.display = "block";
+
+            explanation.innerHTML =
+            "<b>💡 Explanation:</b> " +
+            question.explanation;
+
+            explanation.style.display = "block";
+
+            if(answered === questions.length){
+                showScore();
+            }
+
+        };
+
+        card.appendChild(button);
+
+    });
+
+    card.appendChild(result);
+    card.appendChild(explanation);
+
+    quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+    const scoreBox =
+    document.getElementById("score");
+
+    const scoreText =
+    document.getElementById("scoreText");
+
+    const percentage =
+    Math.round((score / questions.length) * 100);
+
+    scoreText.innerHTML =
+    "Your Score: <b>" +
+    score +
+    " / " +
+    questions.length +
+    "</b><br><br>" +
+    "Percentage: <b>" +
+    percentage +
+    "%</b>";
+
+    scoreBox.style.display = "block";
+
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
