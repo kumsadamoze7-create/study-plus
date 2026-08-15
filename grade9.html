@@ -85,6 +85,10 @@ header p{
     border-left:5px solid #ea580c;
 }
 
+.physicsUnit{
+    border-left:5px solid #dc2626;
+}
+
 h2{
     margin-top:0;
 }
@@ -99,6 +103,10 @@ h3{
 
 .engUnit h3{
     color:#ea580c;
+}
+
+.physicsUnit h3{
+    color:#dc2626;
 }
 
 p{
@@ -134,6 +142,10 @@ button:hover{
     background:#ea580c;
 }
 
+.physicsOpen{
+    background:#dc2626;
+}
+
 .notes{
     background:#7c3aed;
 }
@@ -152,7 +164,8 @@ button:hover{
 
 #mathUnits,
 #chemistryUnits,
-#englishUnits{
+#englishUnits,
+#physicsUnits{
     display:none;
 }
 
@@ -169,6 +182,11 @@ button:hover{
 .engTitle{
     text-align:center;
     color:#ea580c;
+}
+
+.physicsTitle{
+    text-align:center;
+    color:#dc2626;
 }
 
 </style>
@@ -715,9 +733,7 @@ Choose a unit to study Notes or Practice.
 </div>
 
 
-<!-- ================================================= -->
 <!-- ENGLISH UNIT 1 -->
-<!-- ================================================= -->
 
 <div class="card engUnit">
 
@@ -752,9 +768,7 @@ onclick="location.href='practice9englishunit1_200-1.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- ENGLISH UNIT 2 -->
-<!-- ================================================= -->
 
 <div class="card engUnit">
 
@@ -787,9 +801,7 @@ onclick="location.href='practice9englishunit2_200.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- ENGLISH UNIT 3 -->
-<!-- ================================================= -->
 
 <div class="card engUnit">
 
@@ -859,21 +871,109 @@ disabled>
 <h2>⚡ Physics</h2>
 
 <p>
-Grade 9 Physics lessons, Notes and Practice.
+Grade 9 Physics — Unit 1 and Unit 2 are available.
+Notes and Practice.
 </p>
 
 <button
-class="coming"
-disabled>
+class="physicsOpen"
+onclick="openPhysics()">
 
-🔒 Coming Soon
+⚡ Open Physics
 
 </button>
 
 </div>
 
 
+<div id="physicsUnits">
+
+
+<div class="card">
+
+<h2 class="physicsTitle">
+⚡ Grade 9 Physics
+</h2>
+
+<p>
+Choose a unit to study Notes or Practice.
+</p>
+
+</div>
+
+
+<!-- PHYSICS UNIT 1 -->
+
+<div class="card physicsUnit">
+
+<h3>
+⚡ Unit 1 — Physics and Its Scope
+</h3>
+
+<p>
+Study the Unit 1 Physics note and practice questions.
+Review the lesson first, then test your understanding
+with multiple-choice questions.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9physicsunit1.html'">
+
+📖 Unit 1 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9physicsunit1.html'">
+
+📝 Unit 1 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- PHYSICS UNIT 2 -->
+
+<div class="card physicsUnit">
+
+<h3>
+📏 Unit 2 — Physical Quantities and Measurement
+</h3>
+
+<p>
+Study physical quantities, measurement, units, SI units,
+measuring instruments, prefixes, scalar and vector
+quantities, unit conversion and measurement safety.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9physicsunit2.html'">
+
+📖 Unit 2 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9physicsunit2.html'">
+
+📝 Unit 2 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================================= -->
 <!-- BACK -->
+<!-- ================================================= -->
 
 <button
 class="back"
@@ -888,6 +988,7 @@ onclick="location.href='index.html'">
 
 
 <script>
+
 
 function openMath(){
 
@@ -929,6 +1030,21 @@ function openEnglish(){
     });
 
 }
+
+
+function openPhysics(){
+
+    const physics =
+    document.getElementById("physicsUnits");
+
+    physics.style.display="block";
+
+    physics.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
 
 </script>
 
