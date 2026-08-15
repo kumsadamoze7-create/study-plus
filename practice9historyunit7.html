@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 History Unit 7 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f7fb;
+ color:#222;
+}
+
+header{
+ background:linear-gradient(135deg,#172554,#2563eb);
+ color:white;
+ text-align:center;
+ padding:30px 15px;
+}
+
+header h1{margin:0}
+header p{margin:7px}
+
+.container{
+ max-width:900px;
+ margin:auto;
+ padding:18px;
+}
+
+.progress{
+ position:sticky;
+ top:0;
+ z-index:10;
+ background:white;
+ padding:14px;
+ text-align:center;
+ font-weight:bold;
+ border-radius:10px;
+ box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+ background:white;
+ margin:18px 0;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+ border-left:6px solid #2563eb;
+}
+
+.question h3{
+ color:#1e40af;
+}
+
+.option{
+ width:100%;
+ padding:13px;
+ margin:6px 0;
+ border:1px solid #ddd;
+ border-radius:10px;
+ background:#fafafa;
+ text-align:left;
+ cursor:pointer;
+ font-size:15px;
+}
+
+.option:hover{
+ background:#eff6ff;
+}
+
+.option:disabled{
+ cursor:not-allowed;
+}
+
+.correct{
+ background:#dcfce7 !important;
+ border-color:#16a34a !important;
+}
+
+.wrong{
+ background:#fee2e2 !important;
+ border-color:#dc2626 !important;
+}
+
+.result{
+ display:none;
+ margin-top:12px;
+ padding:14px;
+ border-radius:10px;
+ line-height:1.6;
+}
+
+.right{
+ background:#dcfce7;
+ color:#166534;
+}
+
+.wrongResult{
+ background:#fee2e2;
+ color:#991b1b;
+}
+
+.score{
+ text-align:center;
+ border-left:6px solid #ea580c;
+ background:#fff7ed;
+}
+
+button.main{
+ width:100%;
+ padding:14px;
+ margin-top:10px;
+ border:none;
+ border-radius:10px;
+ color:white;
+ background:#1e40af;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+button.back{
+ background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 7 PRACTICE</p>
+<p>States, Principalities, Population Movements and Interactions</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+
+<h2>🏆 FINAL SCORE</h2>
+
+<h2 id="finalScore">0 / 60</h2>
+
+<p id="message">
+Answer all questions to see your result.
+</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit7.html'">
+📖 Unit 7 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Who is associated with the restoration of the 'Solomonic' dynasty in the late 13th century?",
+o:["Yekuno Amlak","Ahmad Gragn","Gelawdewos","Menelik II"],
+a:0,
+e:"Yekuno Amlak overthrew the last Zagwe ruler and became associated with the restoration of the dynasty traditionally called 'Solomonic'."
+},
+
+{
+q:"The Zagwe dynasty was followed by the dynasty traditionally called:",
+o:["Solomonic dynasty","Adal dynasty","Oromo dynasty","Fatagar dynasty"],
+a:0,
+e:"The Zagwe dynasty was followed by the dynasty traditionally called the 'Solomonic' dynasty."
+},
+
+{
+q:"Why is the word 'Solomonic' sometimes written in quotation marks?",
+o:["Because the claim of descent from Solomon is debated","Because Solomon was an Ethiopian king","Because the dynasty had no rulers","Because it was a Muslim dynasty"],
+a:0,
+e:"The dynasty claimed descent from King Solomon and the Queen of Sheba, but the historical nature of this claim is debated."
+},
+
+{
+q:"Which religion was central to the Christian kingdom?",
+o:["Christianity","Islam","Buddhism","Hinduism"],
+a:0,
+e:"Christianity, particularly the Ethiopian Orthodox tradition, was central to the Christian kingdom."
+},
+
+{
+q:"What institution played an important role in the Christian kingdom?",
+o:["The Ethiopian Orthodox Church","Modern parliament","Industrial factories","Universities only"],
+a:0,
+e:"The Ethiopian Orthodox Church played important religious, social, educational and political roles."
+},
+
+{
+q:"What was an important economic activity of the Christian kingdom?",
+o:["Agriculture","Computer programming","Oil refining","Automobile manufacturing"],
+a:0,
+e:"Agriculture was the major economic activity, supported by livestock and trade."
+},
+
+{
+q:"Why did medieval Ethiopian rulers often move their royal camps?",
+o:["To administer territories and obtain resources","Because they had no army","Because they lived at sea","Because agriculture was forbidden"],
+a:0,
+e:"Royal movement helped rulers administer different areas and obtain resources from various regions."
+},
+
+{
+q:"Which of the following was a Muslim sultanate in the region?",
+o:["Ifat","France","Portugal","England"],
+a:0,
+e:"Ifat was one of the important Muslim sultanates in the eastern part of the Ethiopian region."
+},
+
+{
+q:"Which Muslim sultanate later became a major rival of the Christian kingdom?",
+o:["Adal","Sweden","Spain","Kongo"],
+a:0,
+e:"Adal became a powerful Muslim sultanate and a major rival of the Christian kingdom."
+},
+
+{
+q:"Which of the following was another Muslim principality?",
+o:["Bali","Italy","Russia","Germany"],
+a:0,
+e:"Bali was among the Muslim principalities of the period."
+},
+
+{
+q:"Which of the following was also a Muslim principality?",
+o:["Hadiya","Britain","France","Netherlands"],
+a:0,
+e:"Hadiya was an important southern state involved in political and economic interactions."
+},
+
+{
+q:"Islam spread in the region partly through:",
+o:["Trade and migration","Industrialization","Railways","Modern schools only"],
+a:0,
+e:"Trade, migration, religious activities and political relationships contributed to the spread of Islam."
+},
+
+{
+q:"Why were eastern Muslim states economically important?",
+o:["They were connected to long-distance trade networks","They had no trade","They controlled Europe","They had modern factories"],
+a:0,
+e:"Eastern states were connected to important Red Sea and Indian Ocean commercial networks."
+},
+
+{
+q:"What was one major source of wealth for many medieval states?",
+o:["Trade and agriculture","Computers","Modern industries","Airlines"],
+a:0,
+e:"Agriculture and trade were important economic foundations."
+},
+
+{
+q:"The Christian kingdom and Muslim states competed partly over:",
+o:["Territory and trade routes","Football stadiums","Modern factories","Airports"],
+a:0,
+e:"Political powers competed over territory, trade routes, resources and political influence."
+},
+
+{
+q:"The relationship between Christian and Muslim states was:",
+o:["Both conflict and peaceful interaction","Always peaceful","Always war with no trade","Completely nonexistent"],
+a:0,
+e:"Although wars occurred, there were also periods of trade, diplomacy and peaceful interaction."
+},
+
+{
+q:"Which Muslim leader became famous for campaigns against the Christian kingdom?",
+o:["Ahmad ibn Ibrahim al-Ghazi","Yekuno Amlak","Zara Yaqob","Tewodros II"],
+a:0,
+e:"Ahmad ibn Ibrahim al-Ghazi, commonly called Ahmad Gragn, led major campaigns against the Christian kingdom."
+},
+
+{
+q:"Ahmad ibn Ibrahim al-Ghazi is commonly known as:",
+o:["Ahmad Gragn","Abba Gadaa","Yekuno Amlak","Jan van Riebeeck"],
+a:0,
+e:"Ahmad ibn Ibrahim al-Ghazi is widely known as Ahmad Gragn."
+},
+
+{
+q:"Ahmad Gragn's major campaigns occurred mainly during:",
+o:["The 1520s and 1530s","The 12th century","The 18th century","The 20th century"],
+a:0,
+e:"The major Adal-Christian conflict associated with Ahmad Gragn intensified during the 1520s and 1530s."
+},
+
+{
+q:"What was one consequence of the Adal-Christian wars?",
+o:["Destruction of settlements and churches","Complete economic prosperity","End of population movement","No social effects"],
+a:0,
+e:"The wars caused extensive destruction of settlements, churches and economic activities."
+},
+
+{
+q:"The wars between Adal and the Christian kingdom caused:",
+o:["Population movements","Population stability everywhere","No migration","Only European migration"],
+a:0,
+e:"War and insecurity contributed to major population movements."
+},
+
+{
+q:"Who provided military assistance to the Christian kingdom during the conflict?",
+o:["The Portuguese","The Japanese","The Russians","The Swedes"],
+a:0,
+e:"Portuguese military assistance was provided to the Christian kingdom."
+},
+
+{
+q:"When was Ahmad Gragn killed?",
+o:["1543","1290","1652","1888"],
+a:0,
+e:"Ahmad Gragn was killed in 1543 during the continuing conflict."
+},
+
+{
+q:"Which Christian ruler continued the struggle after Ahmad Gragn's death?",
+o:["Gelawdewos","Yekuno Amlak","Menelik II","Lalibela"],
+a:0,
+e:"Gelawdewos continued the Christian kingdom's struggle after Ahmad Gragn's death."
+},
+
+{
+q:"Southern and central Ethiopia contained:",
+o:["Many different peoples and political organizations","Only one political group","Only Muslim states","Only Christian kingdoms"],
+a:0,
+e:"Southern and central regions contained diverse societies with different political and social institutions."
+},
+
+{
+q:"Which traditional political leader was associated with the Sidama?",
+o:["Mote","Abba Gadaa","Luwa","Sultan"],
+a:0,
+e:"The Sidama developed a political organization headed by the Mote."
+},
+
+{
+q:"Which traditional institution was associated with the Gedeo?",
+o:["Ballee","Gadaa","Mote","Chaffe"],
+a:0,
+e:"Ballee was a traditional governance institution among the Gedeo."
+},
+
+{
+q:"Which traditional institution was associated with the Burji?",
+o:["Luwa","Ballee","Mote","Chaffe"],
+a:0,
+e:"The Burji had a traditional administrative institution known as Luwa."
+},
+
+{
+q:"Which activity was important to many southern and central societies?",
+o:["Agriculture","Computer science","Car manufacturing","Air travel"],
+a:0,
+e:"Agriculture was a major economic activity, together with livestock, trade and crafts."
+},
+
+{
+q:"What does population movement mean?",
+o:["Movement of people from one geographical area to another","Movement of animals only","Movement of goods only","Movement of armies only"],
+a:0,
+e:"Population movement refers to people moving from one area to another temporarily or permanently."
+},
+
+{
+q:"Which could cause population movement?",
+o:["Search for land and pasture","Modern internet","Airports","Factories"],
+a:0,
+e:"People moved for land, pasture, environmental, economic and political reasons."
+},
+
+{
+q:"Which was a possible environmental cause of population movement?",
+o:["Changes in environmental conditions","Modern technology","Industrialization","Air travel"],
+a:0,
+e:"Environmental conditions could influence migration and settlement patterns."
+},
+
+{
+q:"Which populations experienced important movements during this period?",
+o:["Afar, Somali, Argoba and Oromo","Only Europeans","Only Portuguese","Only Arabs"],
+a:0,
+e:"Afar, Somali, Argoba and Oromo populations experienced important movements and interactions."
+},
+
+{
+q:"Pastoralism was particularly important in the movements of:",
+o:["Afar and Somali populations","Portuguese settlers","European missionaries","Dutch traders"],
+a:0,
+e:"Pastoral livelihoods and environmental conditions influenced Afar and Somali population movements."
+},
+
+{
+q:"The Oromo population movement was especially important during:",
+o:["The 16th century","The 5th century","The 10th century","The 20th century only"],
+a:0,
+e:"Oromo population movement and expansion became a major demographic process during the 16th century."
+},
+
+{
+q:"One result of population movement was:",
+o:["Cultural exchange","Complete cultural isolation","End of languages","End of trade"],
+a:0,
+e:"Population movements encouraged cultural, linguistic, religious and social interactions."
+},
+
+{
+q:"Population movements could lead to:",
+o:["Intermarriage and integration","Only warfare","No interaction","Complete isolation"],
+a:0,
+e:"Migration could result in intermarriage, integration and formation of new identities."
+},
+
+{
+q:"Population movement could sometimes also cause:",
+o:["Conflict over resources","No competition","Complete peace everywhere","End of agriculture"],
+a:0,
+e:"Movement and expansion could create competition over land and resources and sometimes lead to conflict."
+},
+
+{
+q:"What is Gadaa?",
+o:["An indigenous Oromo system of governance","A Muslim sultanate","A Christian dynasty","A European institution"],
+a:0,
+e:"Gadaa is an indigenous Oromo system of governance based on age grades and organized responsibilities."
+},
+
+{
+q:"The Gadaa system is strongly based on:",
+o:["Age grades","Royal inheritance only","European elections","Military dictatorship"],
+a:0,
+e:"Gadaa organizes political and social responsibilities through age grades."
+},
+
+{
+q:"Who was the leader of the ruling Gadaa class?",
+o:["Abba Gadaa","Mote","Sultan","Luwa"],
+a:0,
+e:"The Abba Gadaa was the leader of the ruling Gadaa class."
+},
+
+{
+q:"What was the Chaffe?",
+o:["An assembly associated with decision-making","A type of weapon","A Muslim kingdom","A farming tool"],
+a:0,
+e:"Chaffe was an important assembly associated with decision-making in the Gadaa system."
+},
+
+{
+q:"One function of Gadaa was:",
+o:["Conflict resolution","Ending community participation","Preventing leadership","Stopping traditions"],
+a:0,
+e:"Gadaa included institutions and procedures for settling disputes and maintaining social order."
+},
+
+{
+q:"Gadaa regulated:",
+o:["Political, social, economic and cultural responsibilities","Only warfare","Only farming","Only religion"],
+a:0,
+e:"Gadaa was a broad system covering political, social, economic, legal and cultural responsibilities."
+},
+
+{
+q:"What is Guddifacha?",
+o:["A traditional Oromo adoption system","A Christian dynasty","A Muslim army","A trade route"],
+a:0,
+e:"Guddifacha refers to a traditional Oromo adoption system."
+},
+
+{
+q:"What was one purpose of Guddifacha?",
+o:["Providing family belonging and social protection","Starting wars","Collecting taxes","Building forts"],
+a:0,
+e:"Guddifacha helped integrate adopted children into families and provided social belonging and protection."
+},
+
+{
+q:"What is Moggasa associated with?",
+o:["Incorporation and social integration","European colonization","Slave trading","Maritime exploration"],
+a:0,
+e:"Moggasa was an institution associated with incorporating groups or individuals into Oromo society."
+},
+
+{
+q:"Moggasa helped create:",
+o:["Social and political relationships","European colonies","Modern governments","Plantations"],
+a:0,
+e:"Moggasa helped establish social and political relationships between different groups."
+},
+
+{
+q:"What does egalitarian mean?",
+o:["Emphasizing equality and participation","Absolute monarchy","Military rule","Foreign rule"],
+a:0,
+e:"Egalitarian systems emphasize equality and participation among members of society."
+},
+
+{
+q:"Which is an example of an indigenous governance system?",
+o:["Gadaa","British Parliament","Portuguese monarchy","French Republic"],
+a:0,
+e:"Gadaa is an indigenous Oromo governance system."
+},
+
+{
+q:"Which institution was associated with Gedeo governance?",
+o:["Ballee","Luwa","Mote","Chaffe"],
+a:0,
+e:"Ballee was associated with Gedeo traditional governance."
+},
+
+{
+q:"Which institution was associated with Burji governance?",
+o:["Luwa","Ballee","Gadaa","Chaffe"],
+a:0,
+e:"Luwa was an important traditional administrative institution among the Burji."
+},
+
+{
+q:"Which leader was associated with Sidama political organization?",
+o:["Mote","Abba Gadaa","Luwa","Ballee"],
+a:0,
+e:"The Mote was a traditional political leader among the Sidama."
+},
+
+{
+q:"Which of the following is a characteristic of egalitarian governance?",
+o:["Community participation","Absolute royal authority","No customary law","No decision-making"],
+a:0,
+e:"Community participation and collective decision-making are important characteristics."
+},
+
+{
+q:"Which institution helped resolve conflicts in traditional Oromo society?",
+o:["Gadaa institutions","European courts only","Modern parliament","Portuguese administration"],
+a:0,
+e:"Gadaa institutions provided traditional mechanisms for dispute settlement."
+},
+
+{
+q:"What is Guma associated with?",
+o:["Compensation or reparation","European exploration","Christian baptism","Trade taxation"],
+a:0,
+e:"Guma is associated with compensation or reparation in traditional conflict settlement."
+},
+
+{
+q:"What is Arara associated with?",
+o:["Reconciliation and conflict resolution","Military conquest","Agricultural production","Maritime trade"],
+a:0,
+e:"Arara is associated with traditional reconciliation and conflict-resolution processes."
+},
+
+{
+q:"Which statement about the Oromo population movement is correct?",
+o:["It involved interaction with peoples already living in different areas","It occurred only outside Africa","It had no demographic effects","It happened only after 1900"],
+a:0,
+e:"Oromo groups moved into different regions and interacted with existing populations."
+},
+
+{
+q:"Which of the following best summarizes Unit 7?",
+o:["It studies Ethiopian states, population movements and indigenous systems of governance from the 13th to mid-16th centuries","It studies only European history","It studies only modern Ethiopia","It studies only ancient Egypt"],
+a:0,
+e:"Unit 7 covers Christian and Muslim states, their interactions, population movements and indigenous governance systems."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+ const card=document.createElement("div");
+
+ card.className="card question";
+
+ card.innerHTML=`
+ <h3>Question ${index+1} / ${questions.length}</h3>
+ <p><strong>${item.q}</strong></p>
+ <div id="options${index}"></div>
+ <div id="result${index}" class="result"></div>
+ `;
+
+ quiz.appendChild(card);
+
+ const box=document.getElementById("options"+index);
+
+ item.o.forEach((option,i)=>{
+
+  const btn=document.createElement("button");
+
+  btn.className="option";
+
+  btn.innerText=
+  String.fromCharCode(65+i)+". "+option;
+
+  btn.onclick=()=>{
+   checkAnswer(index,i,btn,box);
+  };
+
+  box.appendChild(btn);
+
+ });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+ const result=document.getElementById("result"+index);
+
+ if(result.dataset.done==="true") return;
+
+ result.dataset.done="true";
+
+ answered++;
+
+ const correct=questions[index].a;
+
+ const buttons=box.querySelectorAll(".option");
+
+ buttons.forEach((btn,i)=>{
+
+  btn.disabled=true;
+
+  if(i===correct){
+   btn.classList.add("correct");
+  }
+
+ });
+
+ if(selected===correct){
+
+  score++;
+
+  result.className="result right";
+
+  result.innerHTML=`
+  <strong>✅ RIGHT!</strong>
+  <br><br>
+  <strong>Explanation:</strong><br>
+  ${questions[index].e}
+  `;
+
+ }else{
+
+  button.classList.add("wrong");
+
+  result.className="result wrongResult";
+
+  result.innerHTML=`
+  <strong>❌ WRONG!</strong>
+  <br><br>
+  <strong>Correct Answer:</strong>
+  ${questions[index].o[correct]}
+  <br><br>
+  <strong>Explanation:</strong><br>
+  ${questions[index].e}
+  `;
+ }
+
+ result.style.display="block";
+
+ updateProgress();
+
+ if(answered===questions.length){
+  showFinal();
+ }
+}
+
+
+function updateProgress(){
+
+ document.getElementById("progress").innerText=
+ "Answered: "+answered+
+ " / "+questions.length+
+ " | Score: "+score;
+}
+
+
+function showFinal(){
+
+ const percent=Math.round(
+  (score/questions.length)*100
+ );
+
+ document.getElementById("finalScore").innerText=
+ score+" / "+questions.length;
+
+ let message;
+
+ if(percent>=90){
+  message="🏆 Excellent! You mastered Unit 7.";
+ }
+ else if(percent>=75){
+  message="👏 Very Good! Review the questions you missed.";
+ }
+ else if(percent>=50){
+  message="👍 Good effort! Read the Unit 7 notes and practice again.";
+ }
+ else{
+  message="📖 Keep studying! Review Unit 7 Notes carefully and try again.";
+ }
+
+ document.getElementById("message").innerText=
+ percent+"% — "+message;
+}
+
+</script>
+
+</body>
+</html>
