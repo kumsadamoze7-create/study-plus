@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 History Unit 6 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f7fb;
+ color:#222;
+}
+
+header{
+ background:linear-gradient(135deg,#172554,#2563eb);
+ color:white;
+ text-align:center;
+ padding:30px 15px;
+}
+
+header h1{margin:0}
+header p{margin:7px}
+
+.container{
+ max-width:900px;
+ margin:auto;
+ padding:18px;
+}
+
+.progress{
+ position:sticky;
+ top:0;
+ z-index:10;
+ background:white;
+ padding:14px;
+ text-align:center;
+ font-weight:bold;
+ border-radius:10px;
+ box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+ background:white;
+ margin:18px 0;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+ border-left:6px solid #2563eb;
+}
+
+.question h3{
+ color:#1e40af;
+}
+
+.option{
+ width:100%;
+ padding:13px;
+ margin:6px 0;
+ border:1px solid #ddd;
+ border-radius:10px;
+ background:#fafafa;
+ text-align:left;
+ cursor:pointer;
+ font-size:15px;
+}
+
+.option:hover{
+ background:#eff6ff;
+}
+
+.option:disabled{
+ cursor:not-allowed;
+}
+
+.correct{
+ background:#dcfce7 !important;
+ border-color:#16a34a !important;
+}
+
+.wrong{
+ background:#fee2e2 !important;
+ border-color:#dc2626 !important;
+}
+
+.result{
+ display:none;
+ margin-top:12px;
+ padding:14px;
+ border-radius:10px;
+ line-height:1.6;
+}
+
+.right{
+ background:#dcfce7;
+ color:#166534;
+}
+
+.wrongResult{
+ background:#fee2e2;
+ color:#991b1b;
+}
+
+.score{
+ text-align:center;
+ border-left:6px solid #ea580c;
+ background:#fff7ed;
+}
+
+.main{
+ width:100%;
+ padding:14px;
+ margin-top:10px;
+ border:none;
+ border-radius:10px;
+ color:white;
+ background:#1e40af;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.back{
+ background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 6 PRACTICE</p>
+<p>🌍 Africa and the Outside World, 1500–1880s</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+<h2>🏆 Final Result</h2>
+<h2 id="finalScore">0 / 60</h2>
+<p id="message">Answer all questions to see your result.</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit6.html'">
+📖 Unit 6 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Which European country was among the earliest to establish extensive maritime contact with the African coast?",
+o:["Portugal","Germany","Russia","Sweden"],
+a:0,
+e:"Portugal was one of the earliest European maritime powers to explore and establish trading contacts along the African coast."
+},
+
+{
+q:"One major reason Europeans searched for new sea routes was to:",
+o:["Reach Asian markets directly","End agriculture","Avoid all trade","Build African kingdoms"],
+a:0,
+e:"European powers wanted direct access to Asian markets and valuable goods while reducing dependence on existing intermediaries."
+},
+
+{
+q:"Which of the following was an important Portuguese objective in Africa?",
+o:["Trade and obtaining resources","Ending all commerce","Building modern factories","Stopping navigation"],
+a:0,
+e:"Portuguese expansion was motivated by trade, resources, political influence and religious objectives."
+},
+
+{
+q:"Early European influence in Africa was strongest mainly in:",
+o:["Coastal areas","Every inland village","The Sahara only","Central Europe"],
+a:0,
+e:"European ships and forts allowed Europeans to establish their strongest early influence along the coast."
+},
+
+{
+q:"Which African kingdom developed important relations with the Portuguese?",
+o:["Kongo","Mali only","Songhay only","Great Zimbabwe only"],
+a:0,
+e:"The Kingdom of Kongo established important political, commercial and religious relations with Portugal."
+},
+
+{
+q:"What was one major religious activity associated with Portuguese contact?",
+o:["Christian missionary activity","Spread of Buddhism","Spread of Hinduism","Spread of Shinto"],
+a:0,
+e:"Portuguese expansion was accompanied by Roman Catholic missionary activity."
+},
+
+{
+q:"What is slavery?",
+o:["A system in which people are controlled as property or forced labor","A system of free employment","A form of democracy","A religious ceremony"],
+a:0,
+e:"Slavery involves the severe restriction of freedom and treating people as property or controlled labor."
+},
+
+{
+q:"Did forms of slavery exist in Africa before the Trans-Atlantic Slave Trade?",
+o:["Yes","No","Only after 1900","Only after European colonization"],
+a:0,
+e:"Different forms of slavery existed in African, European and Asian societies before the Atlantic system."
+},
+
+{
+q:"What greatly increased European demand for enslaved Africans?",
+o:["Plantation economies in the Americas","European schools","Industrial computers","African universities"],
+a:0,
+e:"Plantation economies in the Americas created a huge demand for forced labor."
+},
+
+{
+q:"Which crop was important in the plantation economy of the Americas?",
+o:["Sugar","Wheat only","Barley only","Teff only"],
+a:0,
+e:"Sugar was one of the major plantation crops that depended heavily on enslaved labor."
+},
+
+{
+q:"Which of the following was also a plantation crop?",
+o:["Tobacco","Teff only","Sorghum only","Barley only"],
+a:0,
+e:"Tobacco, cotton, coffee and sugar were among the important plantation crops."
+},
+
+{
+q:"What was the Middle Passage?",
+o:["The forced Atlantic voyage of enslaved Africans","A European railway","A desert road","A pilgrimage route"],
+a:0,
+e:"The Middle Passage refers to the forced transportation of enslaved Africans across the Atlantic to the Americas."
+},
+
+{
+q:"Conditions during the Middle Passage were generally:",
+o:["Overcrowded and extremely harsh","Comfortable and safe","Luxurious","Free"],
+a:0,
+e:"Enslaved Africans faced overcrowding, disease, violence, starvation and death during the voyage."
+},
+
+{
+q:"Which three regions were connected by the Atlantic triangular trade?",
+o:["Europe, Africa and the Americas","Africa, Asia and Australia","Europe, Asia and Australia","Africa, Antarctica and Europe"],
+a:0,
+e:"The term triangular trade describes major trade connections among Europe, Africa and the Americas."
+},
+
+{
+q:"What was commonly transported from Africa to the Americas?",
+o:["Enslaved Africans","Machines only","European soldiers only","Gold coins only"],
+a:0,
+e:"The forced transportation of enslaved Africans was the central human movement of the Atlantic slave system."
+},
+
+{
+q:"What kinds of goods were commonly transported from Europe to Africa?",
+o:["Manufactured goods and commodities","Only African crops","Only enslaved Europeans","Only gold"],
+a:0,
+e:"European merchants exchanged manufactured goods and other commodities in African trading networks."
+},
+
+{
+q:"Which was a major commodity produced in the Americas and sent to Europe?",
+o:["Sugar","Teff","Enset","Salt from the Sahara"],
+a:0,
+e:"Sugar was one of the major plantation products exported from the Americas to Europe."
+},
+
+{
+q:"Which European countries became involved in the Trans-Atlantic Slave Trade?",
+o:["Portugal, Spain, Britain, France and the Netherlands","Only Norway","Only Germany","Only Russia"],
+a:0,
+e:"Several European maritime powers participated in Atlantic slavery at different periods."
+},
+
+{
+q:"Which group of Africans sometimes participated in slave-trading networks?",
+o:["Some rulers and merchants","No Africans at all","Only European missionaries","Only American farmers"],
+a:0,
+e:"Some African rulers, merchants and intermediaries participated in different parts of the slave-trading system."
+},
+
+{
+q:"One political effect of the slave trade in some African regions was:",
+o:["Increased warfare and instability","Complete peace","End of political rivalry","Immediate industrialization"],
+a:0,
+e:"The demand for captives contributed to warfare, raids and political instability in some areas."
+},
+
+{
+q:"One social effect of the slave trade was:",
+o:["Disruption of families and communities","Universal population growth","End of migration","Complete social equality"],
+a:0,
+e:"The forced removal of people disrupted families, communities and demographic patterns."
+},
+
+{
+q:"One economic effect of the slave trade was:",
+o:["Some rulers and merchants gained wealth","All African economies became industrialized","Trade completely stopped","Agriculture disappeared everywhere"],
+a:0,
+e:"Some African rulers and merchants gained wealth, although the wider consequences were highly damaging."
+},
+
+{
+q:"The Trans-Atlantic Slave Trade caused:",
+o:["Forced migration of millions of Africans","Voluntary migration of all Africans","No population movement","Only European migration"],
+a:0,
+e:"Millions of Africans were forcibly transported across the Atlantic."
+},
+
+{
+q:"What is meant by abolition?",
+o:["The legal ending or prohibition of a practice such as slavery or slave trading","Expansion of slavery","Beginning of plantation farming","Creation of a kingdom"],
+a:0,
+e:"Abolition means formally ending or prohibiting an institution or practice."
+},
+
+{
+q:"During which period did abolitionist movements become especially powerful?",
+o:["Late 18th and 19th centuries","10th century","5th century","21st century only"],
+a:0,
+e:"Abolitionist movements became increasingly influential during the late 18th and 19th centuries."
+},
+
+{
+q:"Which country became a major force in suppressing the Atlantic slave trade?",
+o:["Britain","Japan","Ethiopia","China"],
+a:0,
+e:"Britain played a major role in abolishing and suppressing the Atlantic slave trade."
+},
+
+{
+q:"What is meant by 'legitimate trade'?",
+o:["Trade in commodities other than enslaved people","Illegal trade in weapons only","Trade in enslaved people","No trade"],
+a:0,
+e:"The term referred mainly to commercial trade in commodities other than enslaved people."
+},
+
+{
+q:"Which product became particularly important in West African legitimate trade?",
+o:["Palm oil","Coal","Tea","Silk"],
+a:0,
+e:"Palm oil became an important export from West Africa during the period of legitimate trade."
+},
+
+{
+q:"Which of the following was another legitimate-trade commodity?",
+o:["Groundnuts","Computers","Cars","Petroleum plastics"],
+a:0,
+e:"Groundnuts were among the agricultural commodities exported from parts of Africa."
+},
+
+{
+q:"Which resource was important in African-European trade?",
+o:["Ivory","Plastic","Aluminum cans","Computer chips"],
+a:0,
+e:"Ivory was an important commodity in African-European commercial relations."
+},
+
+{
+q:"What was one effect of legitimate trade?",
+o:["Expansion of commercial agriculture","End of farming","End of coastal trade","End of European interest"],
+a:0,
+e:"Growing demand for export commodities encouraged commercial agriculture in several African regions."
+},
+
+{
+q:"Which trade center areas expanded as European commercial activity increased?",
+o:["Coastal trading centers","Only desert villages","Only European capitals","Only mountain tops"],
+a:0,
+e:"Coastal trading centers grew as African-European commercial relationships expanded."
+},
+
+{
+q:"Why is the word 'legitimate' sometimes placed in quotation marks?",
+o:["Because the trade was not necessarily equal or free from exploitation","Because it was always illegal","Because no goods were traded","Because it happened only in Europe"],
+a:0,
+e:"The term does not mean the economic relationship was equal; European influence and exploitation continued."
+},
+
+{
+q:"When was the Dutch refreshment station established at the Cape?",
+o:["1652","1500","1880","1750"],
+a:0,
+e:"The Dutch East India Company established a refreshment station at the Cape in 1652."
+},
+
+{
+q:"Who established the Dutch settlement at the Cape in 1652?",
+o:["Jan van Riebeeck","David Livingstone","Henry Stanley","Mansa Musa"],
+a:0,
+e:"Jan van Riebeeck led the establishment of the Dutch East India Company settlement at the Cape."
+},
+
+{
+q:"Why was the Cape important to European maritime powers?",
+o:["It was a useful location on the sea route between Europe and Asia","It was the center of the Sahara","It had no strategic value","It was in Europe"],
+a:0,
+e:"The Cape was strategically located along the maritime route between Europe and Asia."
+},
+
+{
+q:"Who were the Boers?",
+o:["Dutch-speaking settlers in southern Africa","West African merchants","Portuguese missionaries","Indian sailors"],
+a:0,
+e:"The Boers were Dutch-speaking settlers who established farms and moved into the interior."
+},
+
+{
+q:"What was an important economic activity of the Boers?",
+o:["Farming and pastoralism","Computer programming","Factory production","Deep-sea fishing only"],
+a:0,
+e:"Boer communities developed agricultural and pastoral activities."
+},
+
+{
+q:"What happened as European settlers expanded into African territories?",
+o:["Conflicts over land and resources increased","All conflicts ended","African states disappeared immediately","Trade stopped"],
+a:0,
+e:"Settlement expansion produced conflicts over land, livestock, labor and political control."
+},
+
+{
+q:"Which European power later took control of the Cape Colony?",
+o:["Britain","Portugal","Spain","France"],
+a:0,
+e:"Britain took control of the Cape Colony during the period of European rivalry in southern Africa."
+},
+
+{
+q:"What was the Great Trek?",
+o:["Migration of Boer settlers away from British-controlled areas","A Portuguese sea voyage","A West African pilgrimage","A slave ship route"],
+a:0,
+e:"The Great Trek was the migration of many Boer settlers into the interior of southern Africa."
+},
+
+{
+q:"Why did some Boers undertake the Great Trek?",
+o:["They wanted to escape British control and seek new land","They wanted to move to Europe","They wanted to stop farming","They wanted to join Portugal"],
+a:0,
+e:"Political disagreements with British rule and the search for land contributed to the Great Trek."
+},
+
+{
+q:"What did Boer migrants establish in the interior?",
+o:["Boer republics","European universities","Portuguese colonies","Arabian kingdoms"],
+a:0,
+e:"Boer migrants established independent republics in parts of the interior."
+},
+
+{
+q:"European explorers increasingly travelled into the African interior mainly during:",
+o:["The late 18th and 19th centuries","The 5th century","The 10th century","After 2000"],
+a:0,
+e:"European exploration of the African interior increased especially from the late 18th century through the 19th century."
+},
+
+{
+q:"Which was a motive of European exploration?",
+o:["Geographical and scientific curiosity","Ending all maps","Avoiding knowledge","Stopping trade"],
+a:0,
+e:"Scientific curiosity and geographical discovery were important motives for exploration."
+},
+
+{
+q:"Which was another motive for European exploration?",
+o:["Commercial opportunities","Ending European trade","Stopping navigation","Destroying maps"],
+a:0,
+e:"Explorers and their supporters were often interested in finding commercial opportunities and resources."
+},
+
+{
+q:"Who was David Livingstone?",
+o:["A Scottish missionary and explorer","A West African king","A Dutch governor","A Portuguese king"],
+a:0,
+e:"David Livingstone was a Scottish missionary and explorer who travelled widely in Africa."
+},
+
+{
+q:"What did David Livingstone strongly oppose?",
+o:["The slave trade","Agriculture","Geography","Missionary education"],
+a:0,
+e:"Livingstone strongly criticized and opposed the slave trade."
+},
+
+{
+q:"Which region was associated with Henry Morton Stanley's exploration?",
+o:["Central Africa and the Congo region","Northern Europe","Australia","South America"],
+a:0,
+e:"Henry Morton Stanley became famous for his explorations in Central Africa, especially the Congo region."
+},
+
+{
+q:"Who were European missionaries?",
+o:["People who travelled to spread Christianity","Military generals only","African farmers","Merchants of salt only"],
+a:0,
+e:"Missionaries travelled to Africa with the religious objective of spreading Christianity."
+},
+
+{
+q:"Which was a contribution of some missionaries?",
+o:["Establishing schools","Ending all education","Destroying written languages","Stopping medical care"],
+a:0,
+e:"Some missionaries established schools and participated in educational activities."
+},
+
+{
+q:"Some missionaries also contributed to:",
+o:["Medical services","Industrial mining only","Slave raiding","Shipbuilding only"],
+a:0,
+e:"Some missionary organizations established or supported medical services."
+},
+
+{
+q:"Why did missionaries sometimes study African languages?",
+o:["To communicate and translate religious materials","To stop communication","To prevent education","To control oceans"],
+a:0,
+e:"Missionaries often learned local languages to communicate and translate religious texts."
+},
+
+{
+q:"Missionary activity could sometimes have both religious and:",
+o:["Political dimensions","Agricultural dimensions only","Musical dimensions only","Sporting dimensions"],
+a:0,
+e:"Missionary activity could overlap with political interests and European expansion."
+},
+
+{
+q:"Which statement about European explorers is most accurate?",
+o:["Their activities sometimes contributed to later European expansion","They never collected information","They never travelled inland","They had no connection with Europe"],
+a:0,
+e:"Exploration produced geographical knowledge that could later be used by European commercial and colonial interests."
+},
+
+{
+q:"Which statement about early European control in Africa is correct?",
+o:["Europeans initially had strongest influence in many coastal areas","Europeans immediately controlled all of Africa","Europeans controlled only the Sahara","Europeans had no coastal presence"],
+a:0,
+e:"European maritime powers first established their strongest positions along many African coastal areas."
+},
+
+{
+q:"Which of the following best describes the relationship between exploration and later colonialism?",
+o:["Exploration increased European geographical knowledge and could facilitate later expansion","Exploration prevented all European expansion","Exploration ended trade","Exploration had no effect"],
+a:0,
+e:"Exploration provided geographical and political information that could support later European expansion."
+},
+
+{
+q:"Which of the following best summarizes Unit 6?",
+o:["Africa's growing contacts with Europe and the wider world changed trade, politics and society","Africa had no outside contacts","Europe had no interest in Africa","Trade ended after 1500"],
+a:0,
+e:"Unit 6 examines African-European contact, slavery, legitimate trade, white settlement and European explorers and missionaries."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+ const card=document.createElement("div");
+ card.className="card question";
+
+ card.innerHTML=`
+ <h3>Question ${index+1} / ${questions.length}</h3>
+ <p><strong>${item.q}</strong></p>
+ <div id="options${index}"></div>
+ <div id="result${index}" class="result"></div>
+ `;
+
+ quiz.appendChild(card);
+
+ const box=document.getElementById("options"+index);
+
+ item.o.forEach((option,i)=>{
+
+  const btn=document.createElement("button");
+
+  btn.className="option";
+
+  btn.innerText=
+  String.fromCharCode(65+i)+". "+option;
+
+  btn.onclick=()=>{
+   checkAnswer(index,i,btn,box);
+  };
+
+  box.appendChild(btn);
+
+ });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+ const result=document.getElementById("result"+index);
+
+ if(result.dataset.done==="true") return;
+
+ result.dataset.done="true";
+
+ answered++;
+
+ const correct=questions[index].a;
+
+ const buttons=box.querySelectorAll(".option");
+
+ buttons.forEach((btn,i)=>{
+
+  btn.disabled=true;
+
+  if(i===correct){
+   btn.classList.add("correct");
+  }
+
+ });
+
+ if(selected===correct){
+
+  score++;
+
+  result.className="result right";
+
+  result.innerHTML=`
+  <strong>✅ RIGHT!</strong>
+  <br>
+  <strong>Explanation:</strong><br>
+  ${questions[index].e}
+  `;
+
+ }else{
+
+  button.classList.add("wrong");
+
+  result.className="result wrongResult";
+
+  result.innerHTML=`
+  <strong>❌ WRONG!</strong>
+  <br>
+  <strong>Correct Answer:</strong>
+  ${questions[index].o[correct]}
+  <br><br>
+  <strong>Explanation:</strong><br>
+  ${questions[index].e}
+  `;
+ }
+
+ result.style.display="block";
+
+ updateProgress();
+
+ if(answered===questions.length){
+  showFinal();
+ }
+}
+
+
+function updateProgress(){
+
+ document.getElementById("progress").innerText=
+ "Answered: "+answered+
+ " / "+questions.length+
+ " | Score: "+score;
+}
+
+
+function showFinal(){
+
+ const percent=Math.round(
+  (score/questions.length)*100
+ );
+
+ document.getElementById("finalScore").innerText=
+ score+" / "+questions.length;
+
+ let message;
+
+ if(percent>=90){
+  message="🏆 Excellent! You mastered Unit 6.";
+ }
+ else if(percent>=75){
+  message="👏 Very Good! Review the questions you missed.";
+ }
+ else if(percent>=50){
+  message="👍 Good effort! Review Unit 6 and practice again.";
+ }
+ else{
+  message="📖 Keep studying! Read Unit 6 Notes and try again.";
+ }
+
+ document.getElementById("message").innerText=
+ percent+"% — "+message;
+}
+
+</script>
+
+</body>
+</html>
