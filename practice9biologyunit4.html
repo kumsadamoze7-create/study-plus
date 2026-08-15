@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Biology - Unit 4 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#16a34a,#15803d);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#f8fafc;
+    color:#222;
+    font-size:16px;
+    text-align:left;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#dcfce7;
+}
+
+.correct{
+    background:#22c55e !important;
+    color:white !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#ef4444 !important;
+    color:white !important;
+    border-color:#dc2626 !important;
+}
+
+.disabled{
+    pointer-events:none;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    display:none;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:14px;
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+    border-radius:8px;
+    display:none;
+    line-height:1.6;
+}
+
+.scoreBox{
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+    display:none;
+}
+
+.scoreBox h2{
+    margin-top:0;
+}
+
+.restart{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:15px;
+    width:100%;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.back{
+    background:#172554;
+    color:white;
+    border:none;
+    padding:15px;
+    width:100%;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.progress{
+    background:#e5e7eb;
+    height:12px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progressBar{
+    height:100%;
+    width:0%;
+    background:#16a34a;
+    transition:.3s;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🧬 Grade 9 Biology</h1>
+<p>Unit 4 — Reproduction</p>
+<p>📝 60 Multiple Choice Questions</p>
+
+<div class="progress">
+<div class="progressBar" id="progressBar"></div>
+</div>
+
+</header>
+
+
+<div class="container" id="quiz">
+
+
+<!-- Q1 -->
+
+<div class="card questionCard">
+<div class="question">
+1. What is reproduction?
+</div>
+
+<button class="option" onclick="answer(this,false,1)">
+A. The process of obtaining food
+</button>
+
+<button class="option" onclick="answer(this,true,1)">
+B. The process of producing new individuals
+</button>
+
+<button class="option" onclick="answer(this,false,1)">
+C. The process of respiration
+</button>
+
+<button class="option" onclick="answer(this,false,1)">
+D. The process of removing waste
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Reproduction is the biological process by which living organisms
+produce new individuals of their own kind.
+</div>
+</div>
+
+
+<!-- Q2 -->
+
+<div class="card questionCard">
+<div class="question">
+2. Which is a major type of reproduction?
+</div>
+
+<button class="option" onclick="answer(this,true,2)">
+A. Asexual reproduction
+</button>
+
+<button class="option" onclick="answer(this,false,2)">
+B. Digestive reproduction
+</button>
+
+<button class="option" onclick="answer(this,false,2)">
+C. Respiratory reproduction
+</button>
+
+<button class="option" onclick="answer(this,false,2)">
+D. Excretory reproduction
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The two major types of reproduction are asexual and sexual reproduction.
+</div>
+</div>
+
+
+<!-- Q3 -->
+
+<div class="card questionCard">
+<div class="question">
+3. How many parents are usually required in asexual reproduction?
+</div>
+
+<button class="option" onclick="answer(this,true,3)">
+A. One
+</button>
+
+<button class="option" onclick="answer(this,false,3)">
+B. Two
+</button>
+
+<button class="option" onclick="answer(this,false,3)">
+C. Three
+</button>
+
+<button class="option" onclick="answer(this,false,3)">
+D. Four
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Asexual reproduction generally involves only one parent.
+</div>
+</div>
+
+
+<!-- Q4 -->
+
+<div class="card questionCard">
+<div class="question">
+4. Which process does NOT occur in asexual reproduction?
+</div>
+
+<button class="option" onclick="answer(this,false,4)">
+A. Cell division
+</button>
+
+<button class="option" onclick="answer(this,false,4)">
+B. Growth
+</button>
+
+<button class="option" onclick="answer(this,true,4)">
+C. Fusion of male and female gametes
+</button>
+
+<button class="option" onclick="answer(this,false,4)">
+D. Production of offspring
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Asexual reproduction does not involve the fusion of male and female gametes.
+</div>
+</div>
+
+
+<!-- Q5 -->
+
+<div class="card questionCard">
+<div class="question">
+5. Which organism commonly reproduces by binary fission?
+</div>
+
+<button class="option" onclick="answer(this,false,5)">
+A. Hydra
+</button>
+
+<button class="option" onclick="answer(this,true,5)">
+B. Amoeba
+</button>
+
+<button class="option" onclick="answer(this,false,5)">
+C. Strawberry
+</button>
+
+<button class="option" onclick="answer(this,false,5)">
+D. Human
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Amoeba is a unicellular organism that commonly reproduces by binary fission.
+</div>
+</div>
+
+
+<!-- Q6 -->
+
+<div class="card questionCard">
+<div class="question">
+6. Binary fission produces how many daughter cells from one parent cell?
+</div>
+
+<button class="option" onclick="answer(this,true,6)">
+A. Two
+</button>
+
+<button class="option" onclick="answer(this,false,6)">
+B. Three
+</button>
+
+<button class="option" onclick="answer(this,false,6)">
+C. Four
+</button>
+
+<button class="option" onclick="answer(this,false,6)">
+D. Five
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+In binary fission, one parent cell divides into two daughter cells.
+</div>
+</div>
+
+
+<!-- Q7 -->
+
+<div class="card questionCard">
+<div class="question">
+7. Which organism commonly reproduces by budding?
+</div>
+
+<button class="option" onclick="answer(this,false,7)">
+A. Human
+</button>
+
+<button class="option" onclick="answer(this,true,7)">
+B. Hydra
+</button>
+
+<button class="option" onclick="answer(this,false,7)">
+C. Dog
+</button>
+
+<button class="option" onclick="answer(this,false,7)">
+D. Maize
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Hydra reproduces asexually by forming a bud that grows on the parent.
+</div>
+</div>
+
+
+<!-- Q8 -->
+
+<div class="card questionCard">
+<div class="question">
+8. Budding is best described as:
+</div>
+
+<button class="option" onclick="answer(this,true,8)">
+A. Development of a new organism as an outgrowth of the parent
+</button>
+
+<button class="option" onclick="answer(this,false,8)">
+B. Fusion of sperm and egg
+</button>
+
+<button class="option" onclick="answer(this,false,8)">
+C. Formation of seeds only
+</button>
+
+<button class="option" onclick="answer(this,false,8)">
+D. Division into four gametes
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+In budding, a new individual develops from an outgrowth or bud on the parent.
+</div>
+</div>
+
+
+<!-- Q9 -->
+
+<div class="card questionCard">
+<div class="question">
+9. Which organism is a common example of budding?
+</div>
+
+<button class="option" onclick="answer(this,false,9)">
+A. Amoeba
+</button>
+
+<button class="option" onclick="answer(this,true,9)">
+B. Yeast
+</button>
+
+<button class="option" onclick="answer(this,false,9)">
+C. Human
+</button>
+
+<button class="option" onclick="answer(this,false,9)">
+D. Fish
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Yeast commonly reproduces asexually by budding.
+</div>
+</div>
+
+
+<!-- Q10 -->
+
+<div class="card questionCard">
+<div class="question">
+10. What is fragmentation?
+</div>
+
+<button class="option" onclick="answer(this,false,10)">
+A. Fusion of gametes
+</button>
+
+<button class="option" onclick="answer(this,true,10)">
+B. Breaking of an organism into pieces that can develop into new individuals
+</button>
+
+<button class="option" onclick="answer(this,false,10)">
+C. Production of sperm
+</button>
+
+<button class="option" onclick="answer(this,false,10)">
+D. Formation of a zygote
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+In fragmentation, pieces of the parent can develop into new organisms.
+</div>
+</div>
+
+
+<!-- Q11 -->
+
+<div class="card questionCard">
+<div class="question">
+11. Which is an example of an organism that can reproduce by fragmentation?
+</div>
+
+<button class="option" onclick="answer(this,true,11)">
+A. Some algae
+</button>
+
+<button class="option" onclick="answer(this,false,11)">
+B. Humans
+</button>
+
+<button class="option" onclick="answer(this,false,11)">
+C. Dogs
+</button>
+
+<button class="option" onclick="answer(this,false,11)">
+D. Birds
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Some algae can reproduce asexually through fragmentation.
+</div>
+</div>
+
+
+<!-- Q12 -->
+
+<div class="card questionCard">
+<div class="question">
+12. Which organisms commonly reproduce through spores?
+</div>
+
+<button class="option" onclick="answer(this,false,12)">
+A. Mammals
+</button>
+
+<button class="option" onclick="answer(this,true,12)">
+B. Fungi
+</button>
+
+<button class="option" onclick="answer(this,false,12)">
+C. Humans
+</button>
+
+<button class="option" onclick="answer(this,false,12)">
+D. Dogs
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Many fungi reproduce by producing spores.
+</div>
+</div>
+
+
+<!-- Q13 -->
+
+<div class="card questionCard">
+<div class="question">
+13. Vegetative propagation is mainly associated with:
+</div>
+
+<button class="option" onclick="answer(this,true,13)">
+A. Plants
+</button>
+
+<button class="option" onclick="answer(this,false,13)">
+B. Mammals
+</button>
+
+<button class="option" onclick="answer(this,false,13)">
+C. Birds
+</button>
+
+<button class="option" onclick="answer(this,false,13)">
+D. Fish
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Vegetative propagation is asexual reproduction using plant parts such as
+stems, roots or leaves.
+</div>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="card questionCard">
+<div class="question">
+14. Potato commonly reproduces vegetatively through:
+</div>
+
+<button class="option" onclick="answer(this,false,14)">
+A. Root
+</button>
+
+<button class="option" onclick="answer(this,true,14)">
+B. Tuber
+</button>
+
+<button class="option" onclick="answer(this,false,14)">
+C. Flower
+</button>
+
+<button class="option" onclick="answer(this,false,14)">
+D. Seed only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+A potato tuber is a modified underground stem that can produce a new plant.
+</div>
+</div>
+
+
+<!-- Q15 -->
+
+<div class="card questionCard">
+<div class="question">
+15. Onion commonly reproduces vegetatively through a:
+</div>
+
+<button class="option" onclick="answer(this,false,15)">
+A. Runner
+</button>
+
+<button class="option" onclick="answer(this,true,15)">
+B. Bulb
+</button>
+
+<button class="option" onclick="answer(this,false,15)">
+C. Leaf only
+</button>
+
+<button class="option" onclick="answer(this,false,15)">
+D. Flower
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The onion bulb can produce a new plant by vegetative propagation.
+</div>
+</div>
+
+
+<!-- Q16 -->
+
+<div class="card questionCard">
+<div class="question">
+16. Strawberry commonly reproduces vegetatively by:
+</div>
+
+<button class="option" onclick="answer(this,true,16)">
+A. Runners
+</button>
+
+<button class="option" onclick="answer(this,false,16)">
+B. Bulbs
+</button>
+
+<button class="option" onclick="answer(this,false,16)">
+C. Tubers
+</button>
+
+<button class="option" onclick="answer(this,false,16)">
+D. Spores
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Strawberry plants commonly produce runners that can form new plants.
+</div>
+</div>
+
+
+<!-- Q17 -->
+
+<div class="card questionCard">
+<div class="question">
+17. What is parthenogenesis?
+</div>
+
+<button class="option" onclick="answer(this,false,17)">
+A. Fusion of two sperm cells
+</button>
+
+<button class="option" onclick="answer(this,true,17)">
+B. Development from an unfertilized egg
+</button>
+
+<button class="option" onclick="answer(this,false,17)">
+C. Binary fission
+</button>
+
+<button class="option" onclick="answer(this,false,17)">
+D. Formation of spores only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Parthenogenesis is development of an organism from an unfertilized egg.
+</div>
+</div>
+
+
+<!-- Q18 -->
+
+<div class="card questionCard">
+<div class="question">
+18. Which animal is an example associated with parthenogenesis?
+</div>
+
+<button class="option" onclick="answer(this,false,18)">
+A. Dog
+</button>
+
+<button class="option" onclick="answer(this,true,18)">
+B. Whiptail lizard
+</button>
+
+<button class="option" onclick="answer(this,false,18)">
+C. Cow
+</button>
+
+<button class="option" onclick="answer(this,false,18)">
+D. Lion
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The whiptail lizard Aspidoscelis uniparens is a well-known example of
+parthenogenesis.
+</div>
+</div>
+
+
+<!-- Q19 -->
+
+<div class="card questionCard">
+<div class="question">
+19. In honeybees, an unfertilized egg can develop into a:
+</div>
+
+<button class="option" onclick="answer(this,true,19)">
+A. Male drone
+</button>
+
+<button class="option" onclick="answer(this,false,19)">
+B. Worker only
+</button>
+
+<button class="option" onclick="answer(this,false,19)">
+C. Queen only
+</button>
+
+<button class="option" onclick="answer(this,false,19)">
+D. Plant
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+In honeybees, unfertilized eggs develop into haploid males called drones.
+</div>
+</div>
+
+
+<!-- Q20 -->
+
+<div class="card questionCard">
+<div class="question">
+20. Which is an advantage of asexual reproduction?
+</div>
+
+<button class="option" onclick="answer(this,false,20)">
+A. It always creates high genetic variation
+</button>
+
+<button class="option" onclick="answer(this,true,20)">
+B. It can occur without finding a mate
+</button>
+
+<button class="option" onclick="answer(this,false,20)">
+C. It requires two parents
+</button>
+
+<button class="option" onclick="answer(this,false,20)">
+D. It always requires fertilization
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Asexual reproduction generally requires only one parent and no mate.
+</div>
+</div>
+
+
+<!-- Q21 -->
+
+<div class="card questionCard">
+<div class="question">
+21. A major disadvantage of asexual reproduction is:
+</div>
+
+<button class="option" onclick="answer(this,false,21)">
+A. It is always slow
+</button>
+
+<button class="option" onclick="answer(this,true,21)">
+B. It usually produces little genetic variation
+</button>
+
+<button class="option" onclick="answer(this,false,21)">
+C. It always requires two parents
+</button>
+
+<button class="option" onclick="answer(this,false,21)">
+D. It cannot produce offspring
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Because offspring are generally genetically similar, there is usually less
+variation in asexual reproduction.
+</div>
+</div>
+
+
+<!-- Q22 -->
+
+<div class="card questionCard">
+<div class="question">
+22. Sexual reproduction usually involves:
+</div>
+
+<button class="option" onclick="answer(this,true,22)">
+A. Gametes and fertilization
+</button>
+
+<button class="option" onclick="answer(this,false,22)">
+B. Only one cell splitting in two
+</button>
+
+<button class="option" onclick="answer(this,false,22)">
+C. No genetic material
+</button>
+
+<button class="option" onclick="answer(this,false,22)">
+D. Only budding
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sexual reproduction involves gametes and usually their fusion during fertilization.
+</div>
+</div>
+
+
+<!-- Q23 -->
+
+<div class="card questionCard">
+<div class="question">
+23. The male gamete in humans is the:
+</div>
+
+<button class="option" onclick="answer(this,true,23)">
+A. Sperm
+</button>
+
+<button class="option" onclick="answer(this,false,23)">
+B. Egg
+</button>
+
+<button class="option" onclick="answer(this,false,23)">
+C. Zygote
+</button>
+
+<button class="option" onclick="answer(this,false,23)">
+D. Embryo
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sperm is the male reproductive cell in humans.
+</div>
+</div>
+
+
+<!-- Q24 -->
+
+<div class="card questionCard">
+<div class="question">
+24. The female gamete in humans is the:
+</div>
+
+<button class="option" onclick="answer(this,false,24)">
+A. Sperm
+</button>
+
+<button class="option" onclick="answer(this,true,24)">
+B. Egg
+</button>
+
+<button class="option" onclick="answer(this,false,24)">
+C. Zygote
+</button>
+
+<button class="option" onclick="answer(this,false,24)">
+D. Embryo
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The egg is the female gamete in humans.
+</div>
+</div>
+
+
+<!-- Q25 -->
+
+<div class="card questionCard">
+<div class="question">
+25. Which organ produces sperm?
+</div>
+
+<button class="option" onclick="answer(this,false,25)">
+A. Prostate
+</button>
+
+<button class="option" onclick="answer(this,true,25)">
+B. Testes
+</button>
+
+<button class="option" onclick="answer(this,false,25)">
+C. Uterus
+</button>
+
+<button class="option" onclick="answer(this,false,25)">
+D. Ovary
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The testes produce sperm and the hormone testosterone.
+</div>
+</div>
+
+
+<!-- Q26 -->
+
+<div class="card questionCard">
+<div class="question">
+26. Which organ produces eggs?
+</div>
+
+<button class="option" onclick="answer(this,true,26)">
+A. Ovaries
+</button>
+
+<button class="option" onclick="answer(this,false,26)">
+B. Testes
+</button>
+
+<button class="option" onclick="answer(this,false,26)">
+C. Uterus
+</button>
+
+<button class="option" onclick="answer(this,false,26)">
+D. Vagina
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The ovaries produce eggs and female sex hormones.
+</div>
+</div>
+
+
+<!-- Q27 -->
+
+<div class="card questionCard">
+<div class="question">
+27. Which structure is the usual site of fertilization in humans?
+</div>
+
+<button class="option" onclick="answer(this,false,27)">
+A. Uterus
+</button>
+
+<button class="option" onclick="answer(this,true,27)">
+B. Fallopian tube
+</button>
+
+<button class="option" onclick="answer(this,false,27)">
+C. Vagina
+</button>
+
+<button class="option" onclick="answer(this,false,27)">
+D. Cervix
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Fertilization normally occurs in the fallopian tube (oviduct).
+</div>
+</div>
+
+
+<!-- Q28 -->
+
+<div class="card questionCard">
+<div class="question">
+28. Where does the embryo normally develop?
+</div>
+
+<button class="option" onclick="answer(this,false,28)">
+A. Ovary
+</button>
+
+<button class="option" onclick="answer(this,true,28)">
+B. Uterus
+</button>
+
+<button class="option" onclick="answer(this,false,28)">
+C. Testis
+</button>
+
+<button class="option" onclick="answer(this,false,28)">
+D. Urethra
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The embryo implants in and develops within the lining of the uterus.
+</div>
+</div>
+
+
+<!-- Q29 -->
+
+<div class="card questionCard">
+<div class="question">
+29. What is fertilization?
+</div>
+
+<button class="option" onclick="answer(this,true,29)">
+A. Fusion of male and female gametes
+</button>
+
+<button class="option" onclick="answer(this,false,29)">
+B. Production of sperm only
+</button>
+
+<button class="option" onclick="answer(this,false,29)">
+C. Release of an egg only
+</button>
+
+<button class="option" onclick="answer(this,false,29)">
+D. Division of the uterus
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Fertilization is the fusion of sperm and egg.
+</div>
+</div>
+
+
+<!-- Q30 -->
+
+<div class="card questionCard">
+<div class="question">
+30. What is the cell formed immediately after fertilization called?
+</div>
+
+<button class="option" onclick="answer(this,false,30)">
+A. Gamete
+</button>
+
+<button class="option" onclick="answer(this,true,30)">
+B. Zygote
+</button>
+
+<button class="option" onclick="answer(this,false,30)">
+C. Sperm
+</button>
+
+<button class="option" onclick="answer(this,false,30)">
+D. Ovary
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The zygote is formed when the sperm and egg nuclei fuse.
+</div>
+</div>
+
+
+<!-- Q31 -->
+
+<div class="card questionCard">
+<div class="question">
+31. Human sperm normally contains how many chromosomes?
+</div>
+
+<button class="option" onclick="answer(this,false,31)">
+A. 46
+</button>
+
+<button class="option" onclick="answer(this,true,31)">
+B. 23
+</button>
+
+<button class="option" onclick="answer(this,false,31)">
+C. 44
+</button>
+
+<button class="option" onclick="answer(this,false,31)">
+D. 92
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Human sperm cells are haploid and normally contain 23 chromosomes.
+</div>
+</div>
+
+
+<!-- Q32 -->
+
+<div class="card questionCard">
+<div class="question">
+32. Human egg cells normally contain:
+</div>
+
+<button class="option" onclick="answer(this,true,32)">
+A. 23 chromosomes
+</button>
+
+<button class="option" onclick="answer(this,false,32)">
+B. 46 chromosomes
+</button>
+
+<button class="option" onclick="answer(this,false,32)">
+C. 92 chromosomes
+</button>
+
+<button class="option" onclick="answer(this,false,32)">
+D. 12 chromosomes
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Egg cells are haploid and normally contain 23 chromosomes.
+</div>
+</div>
+
+
+<!-- Q33 -->
+
+<div class="card questionCard">
+<div class="question">
+33. What is the chromosome number of a normal human zygote?
+</div>
+
+<button class="option" onclick="answer(this,false,33)">
+A. 23
+</button>
+
+<button class="option" onclick="answer(this,true,33)">
+B. 46
+</button>
+
+<button class="option" onclick="answer(this,false,33)">
+C. 12
+</button>
+
+<button class="option" onclick="answer(this,false,33)">
+D. 92
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+23 chromosomes from the sperm plus 23 from the egg gives a diploid
+zygote with 46 chromosomes.
+</div>
+</div>
+
+
+<!-- Q34 -->
+
+<div class="card questionCard">
+<div class="question">
+34. What is ovulation?
+</div>
+
+<button class="option" onclick="answer(this,true,34)">
+A. Release of an egg from an ovary
+</button>
+
+<button class="option" onclick="answer(this,false,34)">
+B. Fusion of sperm and egg
+</button>
+
+<button class="option" onclick="answer(this,false,34)">
+C. Implantation of embryo
+</button>
+
+<button class="option" onclick="answer(this,false,34)">
+D. Birth of a baby
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Ovulation is the release of a mature egg from an ovary.
+</div>
+</div>
+
+
+<!-- Q35 -->
+
+<div class="card questionCard">
+<div class="question">
+35. Which organ is mainly responsible for producing testosterone?
+</div>
+
+<button class="option" onclick="answer(this,false,35)">
+A. Ovary
+</button>
+
+<button class="option" onclick="answer(this,true,35)">
+B. Testes
+</button>
+
+<button class="option" onclick="answer(this,false,35)">
+C. Uterus
+</button>
+
+<button class="option" onclick="answer(this,false,35)">
+D. Fallopian tube
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The testes produce sperm and the male sex hormone testosterone.
+</div>
+</div>
+
+
+<!-- Q36 -->
+
+<div class="card questionCard">
+<div class="question">
+36. Which gland contributes fluid to semen?
+</div>
+
+<button class="option" onclick="answer(this,false,36)">
+A. Thyroid gland only
+</button>
+
+<button class="option" onclick="answer(this,true,36)">
+B. Prostate gland
+</button>
+
+<button class="option" onclick="answer(this,false,36)">
+C. Pituitary gland only
+</button>
+
+<button class="option" onclick="answer(this,false,36)">
+D. Sweat gland
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The prostate gland contributes fluid to semen.
+</div>
+</div>
+
+
+<!-- Q37 -->
+
+<div class="card questionCard">
+<div class="question">
+37. What is the function of the epididymis?
+</div>
+
+<button class="option" onclick="answer(this,true,37)">
+A. Sperm maturation and storage
+</button>
+
+<button class="option" onclick="answer(this,false,37)">
+B. Production of eggs
+</button>
+
+<button class="option" onclick="answer(this,false,37)">
+C. Development of the embryo
+</button>
+
+<button class="option" onclick="answer(this,false,37)">
+D. Production of milk
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sperm mature and are stored in the epididymis.
+</div>
+</div>
+
+
+<!-- Q38 -->
+
+<div class="card questionCard">
+<div class="question">
+38. Which structure transports sperm from the epididymis?
+</div>
+
+<button class="option" onclick="answer(this,false,38)">
+A. Uterus
+</button>
+
+<button class="option" onclick="answer(this,true,38)">
+B. Vas deferens
+</button>
+
+<button class="option" onclick="answer(this,false,38)">
+C. Ovary
+</button>
+
+<button class="option" onclick="answer(this,false,38)">
+D. Fallopian tube
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The vas deferens transports sperm from the epididymis toward the urethra.
+</div>
+</div>
+
+
+<!-- Q39 -->
+
+<div class="card questionCard">
+<div class="question">
+39. Which structure connects the uterus to the vagina?
+</div>
+
+<button class="option" onclick="answer(this,false,39)">
+A. Ovary
+</button>
+
+<button class="option" onclick="answer(this,true,39)">
+B. Cervix
+</button>
+
+<button class="option" onclick="answer(this,false,39)">
+C. Epididymis
+</button>
+
+<button class="option" onclick="answer(this,false,39)">
+D. Testis
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The cervix is the lower part of the uterus and opens into the vagina.
+</div>
+</div>
+
+
+<!-- Q40 -->
+
+<div class="card questionCard">
+<div class="question">
+40. Which structure is the muscular canal connecting the cervix to the outside?
+</div>
+
+<button class="option" onclick="answer(this,true,40)">
+A. Vagina
+</button>
+
+<button class="option" onclick="answer(this,false,40)">
+B. Ovary
+</button>
+
+<button class="option" onclick="answer(this,false,40)">
+C. Fallopian tube
+</button>
+
+<button class="option" onclick="answer(this,false,40)">
+D. Uterus
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The vagina is a muscular canal extending from the cervix to the outside.
+</div>
+</div>
+
+
+<!-- Q41 -->
+
+<div class="card questionCard">
+<div class="question">
+41. What is the main function of the uterus?
+</div>
+
+<button class="option" onclick="answer(this,false,41)">
+A. Produce sperm
+</button>
+
+<button class="option" onclick="answer(this,true,41)">
+B. Provide a place for development of the embryo and fetus
+</button>
+
+<button class="option" onclick="answer(this,false,41)">
+C. Produce testosterone
+</button>
+
+<button class="option" onclick="answer(this,false,41)">
+D. Store sperm
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The uterus is where the implanted embryo and developing fetus grow.
+</div>
+</div>
+
+
+<!-- Q42 -->
+
+<div class="card questionCard">
+<div class="question">
+42. What is the endometrium?
+</div>
+
+<button class="option" onclick="answer(this,true,42)">
+A. Inner lining of the uterus
+</button>
+
+<button class="option" onclick="answer(this,false,42)">
+B. Male reproductive gland
+</button>
+
+<button class="option" onclick="answer(this,false,42)">
+C. Part of the testis
+</button>
+
+<button class="option" onclick="answer(this,false,42)">
+D. A sperm cell
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The endometrium is the inner lining of the uterus.
+</div>
+</div>
+
+
+<!-- Q43 -->
+
+<div class="card questionCard">
+<div class="question">
+43. What happens if fertilization does not occur?
+</div>
+
+<button class="option" onclick="answer(this,false,43)">
+A. A zygote always forms
+</button>
+
+<button class="option" onclick="answer(this,true,43)">
+B. The uterine lining is eventually shed during menstruation
+</button>
+
+<button class="option" onclick="answer(this,false,43)">
+C. The embryo implants
+</button>
+
+<button class="option" onclick="answer(this,false,43)">
+D. A fetus immediately develops
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+If pregnancy does not occur, the thickened uterine lining is shed during
+menstruation.
+</div>
+</div>
+
+
+<!-- Q44 -->
+
+<div class="card questionCard">
+<div class="question">
+44. What is the placenta?
+</div>
+
+<button class="option" onclick="answer(this,false,44)">
+A. A sperm-producing organ
+</button>
+
+<button class="option" onclick="answer(this,true,44)">
+B. An organ that allows exchange between maternal and fetal blood supplies
+</button>
+
+<button class="option" onclick="answer(this,false,44)">
+C. A male gamete
+</button>
+
+<button class="option" onclick="answer(this,false,44)">
+D. A type of bacterium
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The placenta provides an important exchange surface for oxygen, nutrients
+and wastes between mother and fetus.
+</div>
+</div>
+
+
+<!-- Q45 -->
+
+<div class="card questionCard">
+<div class="question">
+45. What connects the fetus to the placenta?
+</div>
+
+<button class="option" onclick="answer(this,true,45)">
+A. Umbilical cord
+</button>
+
+<button class="option" onclick="answer(this,false,45)">
+B. Vas deferens
+</button>
+
+<button class="option" onclick="answer(this,false,45)">
+C. Fallopian tube
+</button>
+
+<button class="option" onclick="answer(this,false,45)">
+D. Cervix
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+The umbilical cord connects the fetus to the placenta.
+</div>
+</div>
+
+
+<!-- Q46 -->
+
+<div class="card questionCard">
+<div class="question">
+46. Which process allows the zygote to develop into an embryo?
+</div>
+
+<button class="option" onclick="answer(this,false,46)">
+A. Digestion
+</button>
+
+<button class="option" onclick="answer(this,true,46)">
+B. Repeated cell division
+</button>
+
+<button class="option" onclick="answer(this,false,46)">
+C. Respiration only
+</button>
+
+<button class="option" onclick="answer(this,false,46)">
+D. Excretion only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+After fertilization, the zygote undergoes repeated cell divisions and
+development to form an embryo.
+</div>
+</div>
+
+
+<!-- Q47 -->
+
+<div class="card questionCard">
+<div class="question">
+47. Implantation occurs when:
+</div>
+
+<button class="option" onclick="answer(this,true,47)">
+A. The developing embryo attaches to the uterine lining
+</button>
+
+<button class="option" onclick="answer(this,false,47)">
+B. Sperm leaves the testes
+</button>
+
+<button class="option" onclick="answer(this,false,47)">
+C. The egg leaves the ovary
+</button>
+
+<button class="option" onclick="answer(this,false,47)">
+D. The baby is born
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Implantation is attachment of the developing embryo to the uterine lining.
+</div>
+</div>
+
+
+<!-- Q48 -->
+
+<div class="card questionCard">
+<div class="question">
+48. Which of the following is a method of contraception?
+</div>
+
+<button class="option" onclick="answer(this,false,48)">
+A. Digestion
+</button>
+
+<button class="option" onclick="answer(this,true,48)">
+B. Condom
+</button>
+
+<button class="option" onclick="answer(this,false,48)">
+C. Respiration
+</button>
+
+<button class="option" onclick="answer(this,false,48)">
+D. Photosynthesis
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Condoms are a barrier contraceptive method.
+</div>
+</div>
+
+
+<!-- Q49 -->
+
+<div class="card questionCard">
+<div class="question">
+49. Which contraceptive method can also reduce the risk of many STIs?
+</div>
+
+<button class="option" onclick="answer(this,true,49)">
+A. Condom
+</button>
+
+<button class="option" onclick="answer(this,false,49)">
+B. Fertility alone
+</button>
+
+<button class="option" onclick="answer(this,false,49)">
+C. Calendar alone
+</button>
+
+<button class="option" onclick="answer(this,false,49)">
+D. IUD only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Correct and consistent condom use can reduce the risk of many sexually
+transmitted infections as well as pregnancy.
+</div>
+</div>
+
+
+<!-- Q50 -->
+
+<div class="card questionCard">
+<div class="question">
+50. What does STI stand for?
+</div>
+
+<button class="option" onclick="answer(this,false,50)">
+A. Special Tissue Infection
+</button>
+
+<button class="option" onclick="answer(this,true,50)">
+B. Sexually Transmitted Infection
+</button>
+
+<button class="option" onclick="answer(this,false,50)">
+C. Sexual Tissue Injury
+</button>
+
+<button class="option" onclick="answer(this,false,50)">
+D. Systemic Treatment Index
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+STI means Sexually Transmitted Infection.
+</div>
+</div>
+
+
+<!-- Q51 -->
+
+<div class="card questionCard">
+<div class="question">
+51. Which of the following is an STI?
+</div>
+
+<button class="option" onclick="answer(this,false,51)">
+A. Malaria
+</button>
+
+<button class="option" onclick="answer(this,true,51)">
+B. Gonorrhea
+</button>
+
+<button class="option" onclick="answer(this,false,51)">
+C. Common cold
+</button>
+
+<button class="option" onclick="answer(this,false,51)">
+D. Rickets
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Gonorrhea is a sexually transmitted infection.
+</div>
+</div>
+
+
+<!-- Q52 -->
+
+<div class="card questionCard">
+<div class="question">
+52. HIV mainly attacks:
+</div>
+
+<button class="option" onclick="answer(this,true,52)">
+A. The immune system
+</button>
+
+<button class="option" onclick="answer(this,false,52)">
+B. Bones only
+</button>
+
+<button class="option" onclick="answer(this,false,52)">
+C. Hair only
+</button>
+
+<button class="option" onclick="answer(this,false,52)">
+D. Teeth only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+HIV attacks important cells of the immune system.
+</div>
+</div>
+
+
+<!-- Q53 -->
+
+<div class="card questionCard">
+<div class="question">
+53. HIV is NOT normally transmitted by:
+</div>
+
+<button class="option" onclick="answer(this,false,53)">
+A. Sharing contaminated needles
+</button>
+
+<button class="option" onclick="answer(this,true,53)">
+B. Shaking hands
+</button>
+
+<button class="option" onclick="answer(this,false,53)">
+C. Certain sexual contact
+</button>
+
+<button class="option" onclick="answer(this,false,53)">
+D. Transmission from mother to child
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+HIV is not transmitted through ordinary casual contact such as shaking hands.
+</div>
+</div>
+
+
+<!-- Q54 -->
+
+<div class="card questionCard">
+<div class="question">
+54. Which type of reproduction generally produces greater genetic variation?
+</div>
+
+<button class="option" onclick="answer(this,false,54)">
+A. Asexual reproduction
+</button>
+
+<button class="option" onclick="answer(this,true,54)">
+B. Sexual reproduction
+</button>
+
+<button class="option" onclick="answer(this,false,54)">
+C. Binary fission only
+</button>
+
+<button class="option" onclick="answer(this,false,54)">
+D. Budding only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sexual reproduction combines genetic material from gametes and generally
+creates greater genetic variation.
+</div>
+</div>
+
+
+<!-- Q55 -->
+
+<div class="card questionCard">
+<div class="question">
+55. Which process produces gametes?
+</div>
+
+<button class="option" onclick="answer(this,false,55)">
+A. Mitosis only
+</button>
+
+<button class="option" onclick="answer(this,true,55)">
+B. Meiosis
+</button>
+
+<button class="option" onclick="answer(this,false,55)">
+C. Binary fission
+</button>
+
+<button class="option" onclick="answer(this,false,55)">
+D. Budding
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Meiosis is the specialized cell division that produces haploid gametes.
+</div>
+</div>
+
+
+<!-- Q56 -->
+
+<div class="card questionCard">
+<div class="question">
+56. Why are human gametes haploid?
+</div>
+
+<button class="option" onclick="answer(this,true,56)">
+A. So fertilization can restore the diploid chromosome number
+</button>
+
+<button class="option" onclick="answer(this,false,56)">
+B. So they contain no DNA
+</button>
+
+<button class="option" onclick="answer(this,false,56)">
+C. So they cannot reproduce
+</button>
+
+<button class="option" onclick="answer(this,false,56)">
+D. So they have twice the chromosomes
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Each gamete has 23 chromosomes. Fusion of two gametes restores the
+normal diploid number of 46.
+</div>
+</div>
+
+
+<!-- Q57 -->
+
+<div class="card questionCard">
+<div class="question">
+57. Which statement about asexual offspring is generally correct?
+</div>
+
+<button class="option" onclick="answer(this,false,57)">
+A. They always have completely different genes
+</button>
+
+<button class="option" onclick="answer(this,true,57)">
+B. They are generally genetically very similar to the parent
+</button>
+
+<button class="option" onclick="answer(this,false,57)">
+C. They always require fertilization
+</button>
+
+<button class="option" onclick="answer(this,false,57)">
+D. They always have two parents
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Asexual reproduction generally produces offspring genetically very similar
+to the parent, although mutations can introduce differences.
+</div>
+</div>
+
+
+<!-- Q58 -->
+
+<div class="card questionCard">
+<div class="question">
+58. Which sequence is correct?
+</div>
+
+<button class="option" onclick="answer(this,true,58)">
+A. Sperm + Egg → Fertilization → Zygote
+</button>
+
+<button class="option" onclick="answer(this,false,58)">
+B. Zygote → Sperm → Egg
+</button>
+
+<button class="option" onclick="answer(this,false,58)">
+C. Egg → Fertilization → Sperm
+</button>
+
+<button class="option" onclick="answer(this,false,58)">
+D. Embryo → Fertilization → Gamete
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sperm and egg fuse during fertilization to form a zygote.
+</div>
+</div>
+
+
+<!-- Q59 -->
+
+<div class="card questionCard">
+<div class="question">
+59. Which statement correctly compares sexual and asexual reproduction?
+</div>
+
+<button class="option" onclick="answer(this,false,59)">
+A. Both always require two parents
+</button>
+
+<button class="option" onclick="answer(this,true,59)">
+B. Sexual reproduction involves gametes, while asexual reproduction does not
+</button>
+
+<button class="option" onclick="answer(this,false,59)">
+C. Asexual reproduction always involves fertilization
+</button>
+
+<button class="option" onclick="answer(this,false,59)">
+D. Sexual reproduction never produces variation
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Sexual reproduction involves gametes and fertilization, while asexual
+reproduction does not involve gamete fusion.
+</div>
+</div>
+
+
+<!-- Q60 -->
+
+<div class="card questionCard">
+<div class="question">
+60. What is the main biological importance of reproduction?
+</div>
+
+<button class="option" onclick="answer(this,false,60)">
+A. To digest food
+</button>
+
+<button class="option" onclick="answer(this,true,60)">
+B. To ensure continuation of a species
+</button>
+
+<button class="option" onclick="answer(this,false,60)">
+C. To remove carbon dioxide
+</button>
+
+<button class="option" onclick="answer(this,false,60)">
+D. To produce energy only
+</button>
+
+<div class="result"></div>
+<div class="explanation">
+Reproduction allows organisms to produce new individuals and helps ensure
+the continuation of species from one generation to another.
+</div>
+</div>
+
+
+<!-- SCORE -->
+
+<div class="scoreBox" id="scoreBox">
+
+<h2>🏆 Your Result</h2>
+
+<h1 id="score"></h1>
+
+<p id="percentage"></p>
+
+<p id="message"></p>
+
+<button class="restart" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+</div>
+
+
+<button class="back"
+onclick="location.href='notes9biologyunit4.html'">
+
+← Back to Unit 4 Notes
+
+</button>
+
+
+<button class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<script>
+
+let score = 0;
+let answered = 0;
+const total = 60;
+
+function answer(button,isCorrect,number){
+
+    const card = button.parentElement;
+
+    const options =
+        card.querySelectorAll(".option");
+
+    const result =
+        card.querySelector(".result");
+
+    const explanation =
+        card.querySelector(".explanation");
+
+    if(card.dataset.answered === "true"){
+        return;
+    }
+
+    card.dataset.answered = "true";
+
+    answered++;
+
+    options.forEach(function(option){
+        option.classList.add("disabled");
+    });
+
+    if(isCorrect){
+
+        button.classList.add("correct");
+
+        result.style.display="block";
+        result.style.background="#dcfce7";
+        result.style.color="#166534";
+        result.innerHTML="✅ RIGHT!";
+
+        score++;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        result.style.display="block";
+        result.style.background="#fee2e2";
+        result.style.color="#991b1b";
+        result.innerHTML="❌ WRONG!";
+
+        options.forEach(function(option){
+
+            if(option.getAttribute("onclick")
+            .includes("true,"+number)){
+
+                option.classList.add("correct");
+
+            }
+
+        });
+
+    }
+
+    explanation.style.display="block";
+
+    updateProgress();
+
+    if(answered === total){
+        showScore();
+    }
+
+}
+
+
+function updateProgress(){
+
+    let percent =
+        (answered / total) * 100;
+
+    document.getElementById("progressBar")
+    .style.width = percent + "%";
+
+}
+
+
+function showScore(){
+
+    const box =
+        document.getElementById("scoreBox");
+
+    const scoreText =
+        document.getElementById("score");
+
+    const percentageText =
+        document.getElementById("percentage");
+
+    const message =
+        document.getElementById("message");
+
+    let percentage =
+        (score / total) * 100;
+
+    scoreText.innerHTML =
+        score + " / " + total;
+
+    percentageText.innerHTML =
+        "Percentage: " +
+        percentage.toFixed(1) + "%";
+
+    if(percentage >= 90){
+
+        message.innerHTML =
+        "🔥 Excellent! You have mastered Unit 4.";
+
+    }else if(percentage >= 75){
+
+        message.innerHTML =
+        "👏 Very Good! Keep practicing.";
+
+    }else if(percentage >= 50){
+
+        message.innerHTML =
+        "👍 Good effort. Review the notes and try again.";
+
+    }else{
+
+        message.innerHTML =
+        "📚 Keep studying. Review the notes carefully and try again.";
+
+    }
+
+    box.style.display="block";
+
+    box.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
