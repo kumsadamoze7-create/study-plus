@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 History Unit 2 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#7c2d12,#ea580c);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    margin:18px 0;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #ea580c;
+}
+
+.question h3{
+    color:#9a3412;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fafafa;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#fff7ed;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.result{
+    margin-top:12px;
+    padding:13px;
+    border-radius:10px;
+    display:none;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongText{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.progress{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:12px;
+    border-radius:10px;
+    box-shadow:0 2px 8px #ccc;
+    text-align:center;
+    font-weight:bold;
+}
+
+.score{
+    text-align:center;
+    background:#fff7ed;
+    border-left:6px solid #ea580c;
+}
+
+button.main{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.explanation{
+    margin-top:10px;
+    font-size:14px;
+}
+
+.back{
+    background:#172554;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>Unit 2 — Ancient World Civilizations</p>
+<p>📝 60 Questions • Right/Wrong • Explanation</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+
+<h2>🏆 Final Result</h2>
+
+<h2 id="finalScore">0 / 60</h2>
+
+<p id="message">
+Answer all questions to see your result.
+</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit2.html'">
+📖 Back to Unit 2 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+/* 1 */
+{
+q:"Where did Ancient Egyptian civilization mainly develop?",
+options:[
+"Along the Nile River",
+"Along the Amazon River",
+"Along the Yellow River",
+"Along the Tigris River"
+],
+answer:0,
+exp:"Ancient Egyptian civilization developed mainly in the Nile Valley. The river provided water, fertile soil, transportation and supported agriculture."
+},
+
+/* 2 */
+{
+q:"What was the ruler of Ancient Egypt called?",
+options:[
+"Consul",
+"Pharaoh",
+"Emperor",
+"Senator"
+],
+answer:1,
+exp:"The supreme ruler of Ancient Egypt was called the Pharaoh."
+},
+
+/* 3 */
+{
+q:"Why was the Nile River important to Ancient Egypt?",
+options:[
+"It provided fertile soil and water",
+"It prevented agriculture",
+"It was used only for fishing",
+"It separated Egypt from Africa"
+],
+answer:0,
+exp:"The annual flooding of the Nile deposited fertile silt, making agriculture possible and supporting Egyptian civilization."
+},
+
+/* 4 */
+{
+q:"What was the Egyptian writing system called?",
+options:[
+"Cuneiform",
+"Hieroglyphics",
+"Latin",
+"Alphabetic Greek"
+],
+answer:1,
+exp:"Ancient Egyptians developed hieroglyphic writing, which used symbols to represent ideas and sounds."
+},
+
+/* 5 */
+{
+q:"What material did Egyptians make from the papyrus plant?",
+options:[
+"Glass",
+"Paper-like writing material",
+"Iron",
+"Bronze"
+],
+answer:1,
+exp:"Papyrus was a writing material made from the papyrus plant."
+},
+
+/* 6 */
+{
+q:"Why did Egyptians practice mummification?",
+options:[
+"They believed in an afterlife",
+"They wanted to build roads",
+"They wanted to make weapons",
+"They wanted to improve farming"
+],
+answer:0,
+exp:"Egyptians believed in life after death, so they developed mummification to preserve the bodies of the dead."
+},
+
+/* 7 */
+{
+q:"What were pyramids mainly built as?",
+options:[
+"Markets",
+"Tombs",
+"Schools",
+"Factories"
+],
+answer:1,
+exp:"Many Egyptian pyramids were monumental tombs built for pharaohs."
+},
+
+/* 8 */
+{
+q:"Which civilization was located south of Egypt along the Nile?",
+options:[
+"Nubia",
+"Rome",
+"Maya",
+"China"
+],
+answer:0,
+exp:"Nubia was located along the Nile south of Egypt, mainly in present-day Sudan."
+},
+
+/* 9 */
+{
+q:"Which Nubian city became famous for iron production?",
+options:[
+"Meroe",
+"Athens",
+"Rome",
+"Cusco"
+],
+answer:0,
+exp:"Meroe became an important center of iron production and metalworking in Nubia."
+},
+
+/* 10 */
+{
+q:"Who conquered Egypt and established Kushite rule during the eighth century BC?",
+options:[
+"The Kushites",
+"The Romans",
+"The Greeks",
+"The Aztecs"
+],
+answer:0,
+exp:"The Kushites became powerful enough to conquer Egypt and establish the 25th Dynasty."
+},
+
+/* 11 */
+{
+q:"Which ruler of Aksum destroyed Meroe around 350 AD?",
+options:[
+"Ezana",
+"Constantine",
+"Cyrus",
+"Alexander"
+],
+answer:0,
+exp:"The Aksumite king Ezana invaded and destroyed Meroe around 350 AD."
+},
+
+/* 12 */
+{
+q:"Mesopotamia means the land between which rivers?",
+options:[
+"Nile and Congo",
+"Tigris and Euphrates",
+"Indus and Ganges",
+"Yellow and Yangtze"
+],
+answer:1,
+exp:"Mesopotamia refers to the region between the Tigris and Euphrates Rivers."
+},
+
+/* 13 */
+{
+q:"Which people developed one of the earliest writing systems in Mesopotamia?",
+options:[
+"Sumerians",
+"Romans",
+"Aztecs",
+"Persians"
+],
+answer:0,
+exp:"The Sumerians developed cuneiform, one of the world's earliest known writing systems."
+},
+
+/* 14 */
+{
+q:"What was the Sumerian writing system called?",
+options:[
+"Hieroglyphics",
+"Cuneiform",
+"Latin",
+"Chinese"
+],
+answer:1,
+exp:"Sumerian writing was called cuneiform. Wedge-shaped marks were pressed into clay tablets."
+},
+
+/* 15 */
+{
+q:"What were ziggurats?",
+options:[
+"Roman roads",
+"Mesopotamian stepped temple structures",
+"Egyptian ships",
+"Greek theaters"
+],
+answer:1,
+exp:"Ziggurats were large stepped temple structures built in ancient Mesopotamian cities."
+},
+
+/* 16 */
+{
+q:"Which invention helped transportation and other technological development in Mesopotamia?",
+options:[
+"The wheel",
+"The compass",
+"The airplane",
+"The telescope"
+],
+answer:0,
+exp:"The wheel was one of the important technological developments associated with Mesopotamia."
+},
+
+/* 17 */
+{
+q:"Who founded the Persian Empire around 550 BC?",
+options:[
+"Cyrus the Great",
+"Confucius",
+"Julius Caesar",
+"Constantine"
+],
+answer:0,
+exp:"Cyrus the Great established the first major Persian Empire around 550 BC."
+},
+
+/* 18 */
+{
+q:"Which was an important feature of the Persian Empire?",
+options:[
+"Extensive roads",
+"No communication",
+"No administration",
+"No trade"
+],
+answer:0,
+exp:"Persia developed extensive roads that supported communication, trade, administration and military movement."
+},
+
+/* 19 */
+{
+q:"Which religion is associated with Zoroaster?",
+options:[
+"Zoroastrianism",
+"Buddhism",
+"Christianity",
+"Confucianism"
+],
+answer:0,
+exp:"Zoroastrianism is the religious tradition associated with Zoroaster."
+},
+
+/* 20 */
+{
+q:"The ancient Indus Valley civilization developed mainly in which region?",
+options:[
+"South Asia",
+"South America",
+"Europe",
+"North Africa"
+],
+answer:0,
+exp:"The Indus Valley civilization developed in South Asia, particularly in areas of present-day Pakistan and western India."
+},
+
+/* 21 */
+{
+q:"What was important in the economy of the Indus Valley civilization?",
+options:[
+"Agriculture and trade",
+"Only hunting",
+"Only warfare",
+"Only fishing"
+],
+answer:0,
+exp:"Agriculture, crafts and trade were important parts of the Indus Valley civilization."
+},
+
+/* 22 */
+{
+q:"Which two religions originated in ancient India?",
+options:[
+"Hinduism and Buddhism",
+"Christianity and Islam",
+"Zoroastrianism and Christianity",
+"Confucianism and Christianity"
+],
+answer:0,
+exp:"Hindu religious traditions developed in India, and Buddhism also originated in ancient India."
+},
+
+/* 23 */
+{
+q:"Who is associated with the teachings of Confucianism?",
+options:[
+"Confucius",
+"Zoroaster",
+"Jesus",
+"Cyrus"
+],
+answer:0,
+exp:"Confucianism is associated with the Chinese thinker Confucius."
+},
+
+/* 24 */
+{
+q:"Around what period did Confucius live?",
+options:[
+"551–479 BC",
+"1–100 AD",
+"900–1000 AD",
+"1500–1600 AD"
+],
+answer:0,
+exp:"Confucius lived approximately from 551 to 479 BC."
+},
+
+/* 25 */
+{
+q:"Which river was especially important to early Chinese civilization?",
+options:[
+"Yellow River",
+"Nile River",
+"Tigris River",
+"Amazon River"
+],
+answer:0,
+exp:"The Yellow River was central to the development of early Chinese civilization."
+},
+
+/* 26 */
+{
+q:"What did Confucianism emphasize?",
+options:[
+"Social order and moral behavior",
+"Only military power",
+"Only farming",
+"Building pyramids"
+],
+answer:0,
+exp:"Confucianism emphasized moral behavior, education, social responsibilities and proper relationships."
+},
+
+/* 27 */
+{
+q:"Which civilization developed in Mesoamerica and became famous for astronomy and calendars?",
+options:[
+"Maya",
+"Roman",
+"Nubian",
+"Persian"
+],
+answer:0,
+exp:"The Maya made major achievements in astronomy, mathematics and calendar systems."
+},
+
+/* 28 */
+{
+q:"Which civilization was located mainly in the Andes?",
+options:[
+"Inca",
+"Egyptian",
+"Persian",
+"Greek"
+],
+answer:0,
+exp:"The Inca developed a large empire in the Andes region of South America."
+},
+
+/* 29 */
+{
+q:"What was the capital of the Inca Empire?",
+options:[
+"Cusco",
+"Athens",
+"Rome",
+"Tenochtitlan"
+],
+answer:0,
+exp:"Cusco was the capital of the Inca Empire."
+},
+
+/* 30 */
+{
+q:"Which civilization built an extensive road network through the Andes?",
+options:[
+"Inca",
+"Maya",
+"Aztec",
+"Egyptian"
+],
+answer:0,
+exp:"The Inca were famous for their extensive road network and mountain engineering."
+},
+
+/* 31 */
+{
+q:"Where did the Aztec civilization develop?",
+options:[
+"Mexico",
+"Egypt",
+"Italy",
+"China"
+],
+answer:0,
+exp:"The Aztec Empire developed in central Mexico."
+},
+
+/* 32 */
+{
+q:"What was the capital of the Aztec Empire?",
+options:[
+"Tenochtitlan",
+"Cusco",
+"Rome",
+"Sparta"
+],
+answer:0,
+exp:"Tenochtitlan was the capital of the Aztec Empire."
+},
+
+/* 33 */
+{
+q:"What type of writing did the Aztecs use?",
+options:[
+"Pictographic writing",
+"Cuneiform",
+"Hieroglyphic Egyptian",
+"Latin alphabet"
+],
+answer:0,
+exp:"The Aztecs used pictographic forms of writing."
+},
+
+/* 34 */
+{
+q:"Which two civilizations are major examples of ancient European civilization?",
+options:[
+"Greece and Rome",
+"Egypt and Nubia",
+"Maya and Inca",
+"India and China"
+],
+answer:0,
+exp:"Ancient Greece and Ancient Rome were two major civilizations of Europe."
+},
+
+/* 35 */
+{
+q:"What was a Greek city-state called?",
+options:[
+"Polis",
+"Empire",
+"Province",
+"Satrapy"
+],
+answer:0,
+exp:"A Greek city-state was called a polis."
+},
+
+/* 36 */
+{
+q:"Which Greek city-state became famous for democracy?",
+options:[
+"Athens",
+"Sparta",
+"Rome",
+"Cusco"
+],
+answer:0,
+exp:"Athens is especially famous for developing direct democratic institutions."
+},
+
+/* 37 */
+{
+q:"Which Greek city-state was famous for its military society?",
+options:[
+"Sparta",
+"Athens",
+"Corinth",
+"Meroe"
+],
+answer:0,
+exp:"Sparta was particularly known for its military organization and discipline."
+},
+
+/* 38 */
+{
+q:"Which civilization made major contributions to philosophy?",
+options:[
+"Ancient Greece",
+"Only Nubia",
+"Only Aztec civilization",
+"None"
+],
+answer:0,
+exp:"Ancient Greek thinkers made major contributions to philosophy, science, politics and logic."
+},
+
+/* 39 */
+{
+q:"What was the Hellenistic Age associated with?",
+options:[
+"Spread of Greek culture after Alexander's conquests",
+"Rise of Egypt",
+"Beginning of Christianity",
+"Fall of Rome"
+],
+answer:0,
+exp:"The Hellenistic Age followed Alexander the Great's conquests and saw Greek culture spread widely."
+},
+
+/* 40 */
+{
+q:"According to tradition, Rome was founded around which date?",
+options:[
+"753 BC",
+"313 AD",
+"476 AD",
+"550 BC"
+],
+answer:0,
+exp:"Roman tradition gives 753 BC as the foundation date of Rome."
+},
+
+/* 41 */
+{
+q:"When was the Roman Republic traditionally established?",
+options:[
+"509 BC",
+"753 AD",
+"313 AD",
+"476 BC"
+],
+answer:0,
+exp:"The Roman Republic was traditionally established around 509 BC."
+},
+
+/* 42 */
+{
+q:"Which officials headed the Roman Republic?",
+options:[
+"Two Consuls",
+"Pharaohs",
+"Kings only",
+"Greek priests"
+],
+answer:0,
+exp:"Two elected consuls served as the chief executive officials of the Roman Republic."
+},
+
+/* 43 */
+{
+q:"Which institution was powerful in the Roman Republic?",
+options:[
+"Senate",
+"Ziggurat",
+"Polis",
+"Pharaoh's court"
+],
+answer:0,
+exp:"The Roman Senate was a powerful political institution in the Republic."
+},
+
+/* 44 */
+{
+q:"Which civilization became famous for Roman law?",
+options:[
+"Rome",
+"Maya",
+"Nubia",
+"China"
+],
+answer:0,
+exp:"Roman law became one of Rome's most influential contributions to later legal systems."
+},
+
+/* 45 */
+{
+q:"Which structures carried water into Roman cities?",
+options:[
+"Aqueducts",
+"Pyramids",
+"Ziggurats",
+"Temples only"
+],
+answer:0,
+exp:"Roman aqueducts were engineering structures designed to transport water."
+},
+
+/* 46 */
+{
+q:"When did the Western Roman Empire traditionally fall?",
+options:[
+"476 AD",
+"313 AD",
+"753 BC",
+"509 BC"
+],
+answer:0,
+exp:"The Western Roman Empire traditionally ended in 476 AD."
+},
+
+/* 47 */
+{
+q:"Where did Christianity begin?",
+options:[
+"Palestine",
+"China",
+"Mexico",
+"Persia"
+],
+answer:0,
+exp:"Christianity began in Palestine during the first century AD."
+},
+
+/* 48 */
+{
+q:"Who is the central figure of Christianity?",
+options:[
+"Jesus Christ",
+"Confucius",
+"Cyrus",
+"Alexander"
+],
+answer:0,
+exp:"Christianity is based on the teachings and life of Jesus Christ."
+},
+
+/* 49 */
+{
+q:"During which century did Christianity begin?",
+options:[
+"First century AD",
+"Fifth century BC",
+"Tenth century AD",
+"Fifteenth century AD"
+],
+answer:0,
+exp:"Christianity originated during the first century AD."
+},
+
+/* 50 */
+{
+q:"Which Roman emperor was associated with persecution of Christians?",
+options:[
+"Nero",
+"Constantine",
+"Theodosius",
+"Augustus only"
+],
+answer:0,
+exp:"Nero's reign, AD 54–68, is associated with persecution of Christians."
+},
+
+/* 51 */
+{
+q:"What happened in 313 AD?",
+options:[
+"Edict of Milan",
+"Fall of Rome",
+"Beginning of Greece",
+"Birth of Confucius"
+],
+answer:0,
+exp:"The Edict of Milan in 313 AD granted religious toleration and allowed Christians to practice their faith more freely."
+},
+
+/* 52 */
+{
+q:"Which emperor supported Christianity and is associated with the Edict of Milan?",
+options:[
+"Constantine",
+"Nero",
+"Cyrus",
+"Confucius"
+],
+answer:0,
+exp:"Emperor Constantine became a major supporter of Christianity and was associated with the Edict of Milan."
+},
+
+/* 53 */
+{
+q:"Which Roman emperor made Christianity the official religion according to the textbook?",
+options:[
+"Theodosius",
+"Constantine",
+"Nero",
+"Julius Caesar"
+],
+answer:0,
+exp:"The textbook identifies Emperor Theodosius as the ruler under whom Christianity became the official religion of the Roman Empire."
+},
+
+/* 54 */
+{
+q:"Which date is associated with Christianity becoming the official religion of the Roman Empire in the textbook?",
+options:[
+"392 AD",
+"313 AD",
+"476 AD",
+"753 BC"
+],
+answer:0,
+exp:"According to the textbook, Christianity became the official religion of the Roman Empire in 392 AD."
+},
+
+/* 55 */
+{
+q:"Which civilization is most closely associated with cuneiform?",
+options:[
+"Sumerian",
+"Roman",
+"Maya",
+"Greek"
+],
+answer:0,
+exp:"Cuneiform was developed by the Sumerians in ancient Mesopotamia."
+},
+
+/* 56 */
+{
+q:"Which civilization is most closely associated with hieroglyphics?",
+options:[
+"Egyptian",
+"Roman",
+"Persian",
+"Inca"
+],
+answer:0,
+exp:"Hieroglyphics was the writing system of ancient Egypt."
+},
+
+/* 57 */
+{
+q:"Which civilization is especially associated with the development of democracy in Athens?",
+options:[
+"Greek",
+"Roman",
+"Persian",
+"Nubian"
+],
+answer:0,
+exp:"Athens in ancient Greece is famous for developing an early form of direct democracy."
+},
+
+/* 58 */
+{
+q:"Which civilization is especially famous for aqueducts, roads and Roman law?",
+options:[
+"Rome",
+"Maya",
+"China",
+"Nubia"
+],
+answer:0,
+exp:"Roman civilization made major contributions in law, road construction, aqueducts and engineering."
+},
+
+/* 59 */
+{
+q:"Which pair is correctly matched?",
+options:[
+"Maya — Astronomy and calendar",
+"Rome — Cuneiform",
+"Egypt — Confucianism",
+"China — Pyramids of Giza"
+],
+answer:0,
+exp:"The Maya made important achievements in astronomy and calendar systems."
+},
+
+/* 60 */
+{
+q:"Which pair is correctly matched?",
+options:[
+"Constantine — Edict of Milan",
+"Confucius — Roman Republic",
+"Cyrus — Buddhism",
+"Pharaoh — Greek democracy"
+],
+answer:0,
+exp:"Constantine is associated with the Edict of Milan of 313 AD, which granted religious toleration to Christians."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+const card=document.createElement("div");
+
+card.className="card question";
+
+card.innerHTML=`
+
+<h3>
+Question ${index+1} of ${questions.length}
+</h3>
+
+<p><strong>${item.q}</strong></p>
+
+<div id="options${index}"></div>
+
+<div id="result${index}" class="result"></div>
+
+`;
+
+quiz.appendChild(card);
+
+const optionsBox=document.getElementById("options"+index);
+
+item.options.forEach((option,optIndex)=>{
+
+const btn=document.createElement("button");
+
+btn.className="option";
+
+btn.innerText=
+String.fromCharCode(65+optIndex)+". "+option;
+
+btn.onclick=()=>checkAnswer(
+index,
+optIndex,
+btn,
+optionsBox
+);
+
+optionsBox.appendChild(btn);
+
+});
+
+});
+
+
+function checkAnswer(qIndex,selected,button,box){
+
+const result=
+document.getElementById("result"+qIndex);
+
+if(result.dataset.done==="true"){
+return;
+}
+
+result.dataset.done="true";
+
+answered++;
+
+const correct=
+questions[qIndex].answer;
+
+const buttons=
+box.querySelectorAll(".option");
+
+buttons.forEach((btn,i)=>{
+
+btn.disabled=true;
+
+if(i===correct){
+btn.classList.add("correct");
+}
+
+});
+
+if(selected===correct){
+
+score++;
+
+result.className="result right";
+
+result.innerHTML=
+"✅ <strong>RIGHT!</strong><br>"+
+"<div class='explanation'>"+
+"<strong>Explanation:</strong> "+
+questions[qIndex].exp+
+"</div>";
+
+}else{
+
+button.classList.add("wrong");
+
+result.className="result wrongText";
+
+result.innerHTML=
+"❌ <strong>WRONG!</strong><br>"+
+"<div class='explanation'>"+
+"<strong>Correct Answer:</strong> "+
+questions[qIndex].options[correct]+
+"<br><strong>Explanation:</strong> "+
+questions[qIndex].exp+
+"</div>";
+
+}
+
+result.style.display="block";
+
+updateProgress();
+
+if(answered===questions.length){
+
+showFinal();
+
+}
+
+}
+
+
+function updateProgress(){
+
+document.getElementById("progress").innerText=
+"Answered: "+
+answered+
+" / "+
+questions.length+
+" | Score: "+
+score;
+
+}
+
+
+function showFinal(){
+
+document.getElementById("finalScore").innerText=
+score+" / "+questions.length;
+
+let percent=
+Math.round((score/questions.length)*100);
+
+let message="";
+
+if(percent>=90){
+
+message="🏆 Excellent! You have mastered Unit 2.";
+
+}else if(percent>=75){
+
+message="👏 Very Good! Keep reviewing the difficult topics.";
+
+}else if(percent>=50){
+
+message="👍 Good effort! Review the notes and try again.";
+
+}else{
+
+message="📖 Keep studying! Read the Unit 2 notes carefully and try again.";
+
+}
+
+document.getElementById("message").innerText=
+percent+"% — "+message;
+
+}
+
+</script>
+
+</body>
+</html>
