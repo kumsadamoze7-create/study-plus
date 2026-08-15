@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 4 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#dc2626,#7f1d1d);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #dc2626;
+}
+
+.question h3{
+    color:#991b1b;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    margin:7px 0;
+    border-radius:9px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    opacity:.9;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.8;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#f3f4f6;
+    border-left:4px solid #7c3aed;
+    color:#444;
+    line-height:1.6;
+}
+
+#score{
+    display:none;
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+#score h2{
+    margin-top:0;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    background:#16a34a;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>⚡ Grade 9 Physics</h1>
+
+<p>Unit 4 — Force, Work, Energy and Power</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>📚 Unit 4 Practice</h2>
+
+<p>
+Choose the correct answer. After you select an answer,
+you will immediately see whether it is correct or wrong
+and an explanation.
+</p>
+
+</div>
+
+
+<div id="quiz"></div>
+
+
+<div id="score">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p id="scoreText"></p>
+
+<button
+class="back restart"
+onclick="location.reload()">
+
+🔄 Try Again
+
+</button>
+
+<button
+class="back"
+onclick="location.href='notes9physicsunit4.html'">
+
+📖 Review Unit 4 Notes
+
+</button>
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is a force?",
+options:[
+"A push or pull",
+"Only a movement",
+"A type of energy",
+"A measurement of time"
+],
+answer:0,
+explanation:"A force is a push or pull that can change the motion, direction, or shape of an object."
+},
+
+{
+q:"2. What is the SI unit of force?",
+options:[
+"Joule",
+"Watt",
+"Newton",
+"Kilogram"
+],
+answer:2,
+explanation:"The SI unit of force is the Newton (N)."
+},
+
+{
+q:"3. Force is a ______ quantity.",
+options:[
+"Scalar",
+"Vector",
+"Unitless",
+"Constant"
+],
+answer:1,
+explanation:"Force has both magnitude and direction, so it is a vector quantity."
+},
+
+{
+q:"4. Which of the following is a contact force?",
+options:[
+"Gravitational force",
+"Magnetic force",
+"Friction",
+"Electric force"
+],
+answer:2,
+explanation:"Friction is a contact force because it acts between surfaces that are in contact."
+},
+
+{
+q:"5. Which of the following is a non-contact force?",
+options:[
+"Friction",
+"Applied force",
+"Gravitational force",
+"Normal force"
+],
+answer:2,
+explanation:"Gravity acts between objects without requiring direct physical contact."
+},
+
+{
+q:"6. Which force pulls objects toward Earth?",
+options:[
+"Magnetic force",
+"Gravitational force",
+"Friction",
+"Tension"
+],
+answer:1,
+explanation:"Gravitational force attracts objects toward the Earth."
+},
+
+{
+q:"7. What is mass?",
+options:[
+"The force acting on an object",
+"The amount of matter in an object",
+"The speed of an object",
+"The energy of an object"
+],
+answer:1,
+explanation:"Mass is the amount of matter contained in an object."
+},
+
+{
+q:"8. What is the SI unit of mass?",
+options:[
+"Newton",
+"Joule",
+"Kilogram",
+"Watt"
+],
+answer:2,
+explanation:"The SI unit of mass is the kilogram (kg)."
+},
+
+{
+q:"9. What is weight?",
+options:[
+"The amount of matter",
+"The gravitational force acting on an object",
+"The volume of an object",
+"The speed of an object"
+],
+answer:1,
+explanation:"Weight is the gravitational force acting on an object's mass."
+},
+
+{
+q:"10. Which formula gives weight?",
+options:[
+"W = m/g",
+"W = mg",
+"W = m+g",
+"W = g/m"
+],
+answer:1,
+explanation:"Weight is calculated using W = mg."
+},
+
+{
+q:"11. What is the SI unit of weight?",
+options:[
+"Kilogram",
+"Joule",
+"Newton",
+"Watt"
+],
+answer:2,
+explanation:"Weight is a force, so its SI unit is Newton (N)."
+},
+
+{
+q:"12. What is the weight of a 5 kg object if g = 10 m/s²?",
+options:[
+"5 N",
+"10 N",
+"50 N",
+"500 N"
+],
+answer:2,
+explanation:"W = mg = 5 × 10 = 50 N."
+},
+
+{
+q:"13. Newton's First Law is also called the law of:",
+options:[
+"Energy",
+"Inertia",
+"Power",
+"Work"
+],
+answer:1,
+explanation:"Newton's First Law is known as the law of inertia."
+},
+
+{
+q:"14. What is inertia?",
+options:[
+"The ability to accelerate",
+"The tendency to resist a change in motion",
+"The force of gravity",
+"The ability to do work"
+],
+answer:1,
+explanation:"Inertia is an object's tendency to resist changes in its state of motion."
+},
+
+{
+q:"15. Which object generally has greater inertia?",
+options:[
+"A 1 kg object",
+"A 2 kg object",
+"A 10 kg object",
+"A 0.5 kg object"
+],
+answer:2,
+explanation:"Inertia increases with mass. Therefore, the 10 kg object has the greatest inertia."
+},
+
+{
+q:"16. Newton's First Law says an object at rest will remain at rest unless:",
+options:[
+"Its mass changes",
+"An unbalanced external force acts on it",
+"Time stops",
+"Its temperature increases"
+],
+answer:1,
+explanation:"An external unbalanced force is required to change an object's state of motion."
+},
+
+{
+q:"17. Newton's Second Law is represented by:",
+options:[
+"F = ma",
+"W = Fd",
+"P = W/t",
+"PE = mgh"
+],
+answer:0,
+explanation:"Newton's Second Law is F = ma."
+},
+
+{
+q:"18. According to F = ma, if mass is constant and force increases, acceleration:",
+options:[
+"Decreases",
+"Increases",
+"Becomes zero",
+"Does not exist"
+],
+answer:1,
+explanation:"Acceleration is directly proportional to force when mass is constant."
+},
+
+{
+q:"19. A 10 kg object accelerates at 2 m/s². What force acts on it?",
+options:[
+"5 N",
+"10 N",
+"20 N",
+"50 N"
+],
+answer:2,
+explanation:"F = ma = 10 × 2 = 20 N."
+},
+
+{
+q:"20. A force of 30 N acts on a 5 kg object. What is its acceleration?",
+options:[
+"3 m/s²",
+"5 m/s²",
+"6 m/s²",
+"10 m/s²"
+],
+answer:2,
+explanation:"a = F/m = 30/5 = 6 m/s²."
+},
+
+{
+q:"21. If the net force on an object is zero, the forces are:",
+options:[
+"Unbalanced",
+"Balanced",
+"Always increasing",
+"Always decreasing"
+],
+answer:1,
+explanation:"Balanced forces have a resultant or net force of zero."
+},
+
+{
+q:"22. What happens when an unbalanced force acts on an object?",
+options:[
+"Its motion can change",
+"Nothing can happen",
+"Its mass must become zero",
+"Time stops"
+],
+answer:0,
+explanation:"An unbalanced force produces acceleration and can change an object's motion."
+},
+
+{
+q:"23. Newton's Third Law states that:",
+options:[
+"F = ma",
+"Objects always stop",
+"Every action has an equal and opposite reaction",
+"Energy is destroyed"
+],
+answer:2,
+explanation:"Newton's Third Law states that forces occur in equal and opposite action-reaction pairs."
+},
+
+{
+q:"24. When you push a wall, the wall pushes back on you. This demonstrates:",
+options:[
+"Newton's First Law",
+"Newton's Second Law",
+"Newton's Third Law",
+"Law of conservation of energy"
+],
+answer:2,
+explanation:"The push from you and the reaction push from the wall are an action-reaction pair."
+},
+
+{
+q:"25. What is friction?",
+options:[
+"A force that always increases motion",
+"A force opposing relative motion",
+"A type of mass",
+"A form of potential energy"
+],
+answer:1,
+explanation:"Friction opposes relative motion between surfaces in contact."
+},
+
+{
+q:"26. Which is an advantage of friction?",
+options:[
+"It causes wear",
+"It produces unwanted heat",
+"It allows us to walk",
+"It always wastes energy"
+],
+answer:2,
+explanation:"Friction between our feet and the ground allows us to walk without slipping."
+},
+
+{
+q:"27. Which is a disadvantage of friction?",
+options:[
+"It helps us walk",
+"It helps vehicles stop",
+"It causes wear and tear",
+"It helps us hold objects"
+],
+answer:2,
+explanation:"Friction can cause surfaces to wear down over time."
+},
+
+{
+q:"28. What is work in physics?",
+options:[
+"Force without displacement",
+"Force causing displacement",
+"Mass multiplied by time",
+"Energy without movement"
+],
+answer:1,
+explanation:"Work is done when a force causes displacement in the direction of the force."
+},
+
+{
+q:"29. What is the formula for work?",
+options:[
+"W = Fd",
+"W = ma",
+"W = mg",
+"W = W/t"
+],
+answer:0,
+explanation:"Work is calculated as force multiplied by displacement: W = Fd."
+},
+
+{
+q:"30. What is the SI unit of work?",
+options:[
+"Newton",
+"Joule",
+"Watt",
+"Kilogram"
+],
+answer:1,
+explanation:"The SI unit of work is the Joule (J)."
+},
+
+{
+q:"31. A force of 20 N moves an object 5 m. How much work is done?",
+options:[
+"4 J",
+"25 J",
+"100 J",
+"200 J"
+],
+answer:2,
+explanation:"W = Fd = 20 × 5 = 100 J."
+},
+
+{
+q:"32. When is the work done by a force zero?",
+options:[
+"When there is no displacement in the direction of the force",
+"When force is large",
+"When speed is high",
+"When mass is large"
+],
+answer:0,
+explanation:"If there is no displacement in the direction of the applied force, the work done is zero."
+},
+
+{
+q:"33. You push a wall but it does not move. How much work is done on the wall?",
+options:[
+"0 J",
+"10 J",
+"100 J",
+"1000 J"
+],
+answer:0,
+explanation:"The wall has zero displacement, so work done on it is zero."
+},
+
+{
+q:"34. What is energy?",
+options:[
+"The ability to do work",
+"Only a force",
+"Only motion",
+"A unit of mass"
+],
+answer:0,
+explanation:"Energy is the capacity or ability to do work."
+},
+
+{
+q:"35. What is the SI unit of energy?",
+options:[
+"Newton",
+"Joule",
+"Watt",
+"Metre"
+],
+answer:1,
+explanation:"Energy is measured in Joules (J)."
+},
+
+{
+q:"36. What is kinetic energy?",
+options:[
+"Energy due to position",
+"Energy due to motion",
+"Energy due to height only",
+"Energy due to mass only"
+],
+answer:1,
+explanation:"Kinetic energy is the energy an object possesses because of its motion."
+},
+
+{
+q:"37. Which formula gives kinetic energy?",
+options:[
+"KE = mgh",
+"KE = Fd",
+"KE = ½mv²",
+"KE = W/t"
+],
+answer:2,
+explanation:"The kinetic energy formula is KE = ½mv²."
+},
+
+{
+q:"38. A 2 kg object moves at 4 m/s. What is its kinetic energy?",
+options:[
+"8 J",
+"16 J",
+"32 J",
+"64 J"
+],
+answer:1,
+explanation:"KE = ½mv² = ½ × 2 × 4² = 16 J."
+},
+
+{
+q:"39. If the velocity of an object doubles, its kinetic energy becomes:",
+options:[
+"Half",
+"Twice",
+"Four times",
+"Zero"
+],
+answer:2,
+explanation:"KE depends on v². Doubling velocity makes kinetic energy four times larger."
+},
+
+{
+q:"40. What is potential energy?",
+options:[
+"Energy due to position or condition",
+"Energy of motion only",
+"Energy divided by time",
+"Force divided by mass"
+],
+answer:0,
+explanation:"Potential energy is stored energy associated with position or condition."
+},
+
+{
+q:"41. Which formula gives gravitational potential energy?",
+options:[
+"PE = ½mv²",
+"PE = mgh",
+"PE = ma",
+"PE = Fd"
+],
+answer:1,
+explanation:"Gravitational potential energy is PE = mgh."
+},
+
+{
+q:"42. A 2 kg object is 5 m above the ground. If g = 10 m/s², what is its potential energy?",
+options:[
+"20 J",
+"50 J",
+"100 J",
+"200 J"
+],
+answer:2,
+explanation:"PE = mgh = 2 × 10 × 5 = 100 J."
+},
+
+{
+q:"43. If the height of an object increases, its gravitational potential energy:",
+options:[
+"Decreases",
+"Increases",
+"Becomes zero",
+"Does not change"
+],
+answer:1,
+explanation:"PE = mgh, so increasing height increases potential energy."
+},
+
+{
+q:"44. Mechanical energy is equal to:",
+options:[
+"KE − PE",
+"KE + PE",
+"KE × PE",
+"KE ÷ PE"
+],
+answer:1,
+explanation:"Mechanical energy is the sum of kinetic energy and potential energy."
+},
+
+{
+q:"45. What does the law of conservation of energy state?",
+options:[
+"Energy can be created from nothing",
+"Energy can be destroyed",
+"Energy cannot be created or destroyed",
+"Energy has no units"
+],
+answer:2,
+explanation:"Energy cannot be created or destroyed; it can only be transferred or transformed."
+},
+
+{
+q:"46. When a ball falls downward, its gravitational potential energy mainly changes into:",
+options:[
+"Kinetic energy",
+"Mass",
+"Time",
+"Weight only"
+],
+answer:0,
+explanation:"As the ball falls, gravitational potential energy is transformed into kinetic energy."
+},
+
+{
+q:"47. What is power?",
+options:[
+"Force per distance",
+"Rate of doing work",
+"Mass per volume",
+"Energy multiplied by time"
+],
+answer:1,
+explanation:"Power is the rate at which work is done or energy is transferred."
+},
+
+{
+q:"48. What is the formula for power?",
+options:[
+"P = W/t",
+"P = Fd",
+"P = ma",
+"P = mgh"
+],
+answer:0,
+explanation:"Power = work ÷ time, so P = W/t."
+},
+
+{
+q:"49. What is the SI unit of power?",
+options:[
+"Joule",
+"Newton",
+"Watt",
+"Kilogram"
+],
+answer:2,
+explanation:"The SI unit of power is the Watt (W)."
+},
+
+{
+q:"50. A machine does 100 J of work in 5 s. What is its power?",
+options:[
+"5 W",
+"20 W",
+"50 W",
+"500 W"
+],
+answer:1,
+explanation:"P = W/t = 100/5 = 20 W."
+},
+
+{
+q:"51. Which quantity is measured in Joules?",
+options:[
+"Force",
+"Power",
+"Work",
+"Mass"
+],
+answer:2,
+explanation:"Work and energy are measured in Joules."
+},
+
+{
+q:"52. Which quantity is measured in Watts?",
+options:[
+"Work",
+"Energy",
+"Power",
+"Force"
+],
+answer:2,
+explanation:"Power is measured in Watts (W)."
+},
+
+{
+q:"53. Which quantity is measured in Newtons?",
+options:[
+"Force",
+"Energy",
+"Power",
+"Work"
+],
+answer:0,
+explanation:"Force and weight are measured in Newtons."
+},
+
+{
+q:"54. Which force opposes the motion of a sliding box?",
+options:[
+"Friction",
+"Gravity only",
+"Magnetic force only",
+"Electric force only"
+],
+answer:0,
+explanation:"Friction acts between contacting surfaces and opposes their relative motion."
+},
+
+{
+q:"55. A 4 kg object accelerates at 3 m/s². What is the net force?",
+options:[
+"7 N",
+"12 N",
+"16 N",
+"20 N"
+],
+answer:1,
+explanation:"F = ma = 4 × 3 = 12 N."
+},
+
+{
+q:"56. A force of 50 N moves an object 2 m. What is the work done?",
+options:[
+"25 J",
+"50 J",
+"100 J",
+"200 J"
+],
+answer:2,
+explanation:"W = Fd = 50 × 2 = 100 J."
+},
+
+{
+q:"57. Which object has kinetic energy?",
+options:[
+"A moving car",
+"A stationary book only",
+"A motionless wall",
+"An object with no motion"
+],
+answer:0,
+explanation:"A moving object has kinetic energy because kinetic energy is energy of motion."
+},
+
+{
+q:"58. Which object has gravitational potential energy?",
+options:[
+"A book held above the ground",
+"Only a moving car",
+"Only a moving ball",
+"An object with no height"
+],
+answer:0,
+explanation:"An elevated object has gravitational potential energy because of its position."
+},
+
+{
+q:"59. If the time taken to do the same work is reduced, power:",
+options:[
+"Decreases",
+"Increases",
+"Becomes zero",
+"Does not exist"
+],
+answer:1,
+explanation:"P = W/t. For the same work, less time means greater power."
+},
+
+{
+q:"60. Which statement is correct?",
+options:[
+"Energy can be created and destroyed freely",
+"Power is the rate of doing work",
+"Force is measured in Joules",
+"Mass is measured in Watts"
+],
+answer:1,
+explanation:"Power is the rate at which work is done. Force is measured in Newtons, energy/work in Joules, and mass in kilograms."
+}
+
+];
+
+
+const quiz = document.getElementById("quiz");
+
+let score = 0;
+let answered = 0;
+
+
+questions.forEach((question,index)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "card question";
+
+
+    const title = document.createElement("h3");
+
+    title.textContent = question.q;
+
+    card.appendChild(title);
+
+
+    const result = document.createElement("div");
+
+    result.className = "result";
+
+    result.style.display = "none";
+
+
+    const explanation = document.createElement("div");
+
+    explanation.className = "explanation";
+
+    explanation.style.display = "none";
+
+
+    question.options.forEach((option,optionIndex)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65 + optionIndex) +
+        ". " + option;
+
+
+        button.onclick = function(){
+
+            const buttons =
+            card.querySelectorAll(".option");
+
+
+            buttons.forEach(btn=>{
+                btn.disabled = true;
+            });
+
+
+            answered++;
+
+
+            if(optionIndex === question.answer){
+
+                score++;
+
+                result.className =
+                "result correct";
+
+                result.innerHTML =
+                "✅ Correct!";
+
+            }else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ Wrong! Correct answer: " +
+                String.fromCharCode(65 + question.answer) +
+                ". " +
+                question.options[question.answer];
+
+            }
+
+
+            result.style.display = "block";
+
+
+            explanation.innerHTML =
+            "<b>💡 Explanation:</b> " +
+            question.explanation;
+
+            explanation.style.display = "block";
+
+
+            if(answered === questions.length){
+
+                showScore();
+
+            }
+
+        };
+
+
+        card.appendChild(button);
+
+    });
+
+
+    card.appendChild(result);
+
+    card.appendChild(explanation);
+
+    quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+    const scoreBox =
+    document.getElementById("score");
+
+    const scoreText =
+    document.getElementById("scoreText");
+
+
+    const percentage =
+    Math.round((score / questions.length) * 100);
+
+
+    scoreText.innerHTML =
+    "You scored <b>" +
+    score +
+    " / " +
+    questions.length +
+    "</b><br><br>" +
+    "Percentage: <b>" +
+    percentage +
+    "%</b>";
+
+
+    scoreBox.style.display = "block";
+
+
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
