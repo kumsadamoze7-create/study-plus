@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 1 Quiz</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+.header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px 15px 50px;
+}
+
+.question{
+    background:white;
+    margin-bottom:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.question h3{
+    margin-top:0;
+    color:#0d47a1;
+}
+
+.option{
+    width:100%;
+    border:2px solid #e2e8f0;
+    background:#f8fafc;
+    color:#1e293b;
+    padding:13px;
+    margin:8px 0;
+    border-radius:10px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#e3f2fd;
+}
+
+.option.correct{
+    background:#c8e6c9;
+    border-color:#2e7d32;
+    color:#1b5e20;
+}
+
+.option.wrong{
+    background:#ffcdd2;
+    border-color:#c62828;
+    color:#b71c1c;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.feedback{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+}
+
+.feedback.right{
+    display:block;
+    background:#e8f5e9;
+    border-left:5px solid #2e7d32;
+}
+
+.feedback.wrong-feedback{
+    display:block;
+    background:#ffebee;
+    border-left:5px solid #c62828;
+}
+
+.feedback strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.explanation{
+    line-height:1.6;
+}
+
+#scoreBox{
+    position:sticky;
+    bottom:10px;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    margin-top:20px;
+}
+
+.reset{
+    background:#0d47a1;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Grade 9 Physics</h1>
+    <p>Unit 1 — Physics and Human Society</p>
+    <p>60 Multiple Choice Questions</p>
+</div>
+
+<div class="container">
+
+<div id="quiz"></div>
+
+<div id="scoreBox">
+    Score: <span id="score">0</span> / 60
+    <br>
+    <button class="reset" onclick="location.reload()">Restart Quiz</button>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"What is Physics?",
+options:[
+"The study of living organisms",
+"The study of matter, energy and their interactions",
+"The study of languages",
+"The study of history"
+],
+answer:1,
+explain:"Physics is a branch of natural science that studies matter, energy, motion, forces and their interactions."
+},
+
+{
+q:"Which branch of Physics studies motion and forces?",
+options:[
+"Optics",
+"Mechanics",
+"Acoustics",
+"Thermodynamics"
+],
+answer:1,
+explain:"Mechanics is the branch of Physics concerned mainly with motion, forces and the behavior of objects."
+},
+
+{
+q:"Which branch of Physics studies light?",
+options:[
+"Optics",
+"Mechanics",
+"Acoustics",
+"Nuclear Physics"
+],
+answer:0,
+explain:"Optics is the branch of Physics that studies light, including reflection, refraction and image formation."
+},
+
+{
+q:"Which branch studies heat and temperature?",
+options:[
+"Optics",
+"Mechanics",
+"Thermodynamics",
+"Acoustics"
+],
+answer:2,
+explain:"Thermodynamics deals with heat, temperature, energy and the transfer of thermal energy."
+},
+
+{
+q:"Which branch studies sound?",
+options:[
+"Acoustics",
+"Optics",
+"Mechanics",
+"Nuclear Physics"
+],
+answer:0,
+explain:"Acoustics is the branch of Physics concerned with sound and its production, transmission and behavior."
+},
+
+{
+q:"Which branch studies electricity and magnetism?",
+options:[
+"Electromagnetism",
+"Acoustics",
+"Optics",
+"Mechanics"
+],
+answer:0,
+explain:"Electromagnetism studies electric charges, electric fields, magnetic fields and their relationship."
+},
+
+{
+q:"What does Nuclear Physics mainly study?",
+options:[
+"Sound",
+"Atomic nuclei",
+"Plants",
+"Weather"
+],
+answer:1,
+explain:"Nuclear Physics studies atomic nuclei, their properties and nuclear processes."
+},
+
+{
+q:"Astrophysics mainly applies Physics to the study of:",
+options:[
+"Stars and other objects in space",
+"Sound",
+"Cooking",
+"Languages"
+],
+answer:0,
+explain:"Astrophysics uses the laws of Physics to understand stars, planets, galaxies and other astronomical objects."
+},
+
+{
+q:"Physics is a branch of:",
+options:[
+"Natural science",
+"Literature",
+"History",
+"Art"
+],
+answer:0,
+explain:"Physics is one of the major branches of natural science."
+},
+
+{
+q:"Physics helps us understand:",
+options:[
+"Natural phenomena",
+"Only languages",
+"Only history",
+"Only literature"
+],
+answer:0,
+explain:"Physics helps explain many natural phenomena such as motion, light, sound, heat and electricity."
+},
+
+{
+q:"Who formulated the famous laws of motion?",
+options:[
+"Isaac Newton",
+"Michael Faraday",
+"Albert Einstein",
+"Galileo Galilei"
+],
+answer:0,
+explain:"Isaac Newton formulated the three laws of motion, which are fundamental to classical mechanics."
+},
+
+{
+q:"Isaac Newton is famous for his work on:",
+options:[
+"Laws of motion and universal gravitation",
+"Sound only",
+"Biology",
+"Literature"
+],
+answer:0,
+explain:"Newton made major contributions through his laws of motion and law of universal gravitation."
+},
+
+{
+q:"Galileo Galilei made important contributions to the study of:",
+options:[
+"Motion and astronomy",
+"Languages",
+"Plants",
+"Economics"
+],
+answer:0,
+explain:"Galileo made important observations and experiments concerning motion and astronomy."
+},
+
+{
+q:"Michael Faraday made major contributions to:",
+options:[
+"Electromagnetism",
+"Grammar",
+"Agriculture only",
+"History"
+],
+answer:0,
+explain:"Faraday made major contributions to electricity and magnetism, including electromagnetic induction."
+},
+
+{
+q:"Albert Einstein is famous for developing:",
+options:[
+"The theory of relativity",
+"The theory of evolution",
+"Cell theory",
+"Plate tectonics"
+],
+answer:0,
+explain:"Einstein developed the special and general theories of relativity, which transformed modern Physics."
+},
+
+{
+q:"Physics is important in:",
+options:[
+"Medicine",
+"Engineering",
+"Technology",
+"All of the above"
+],
+answer:3,
+explain:"Physics is widely applied in medicine, engineering, communication, transportation and many technologies."
+},
+
+{
+q:"Physics and Biology are related because Physics can help explain:",
+options:[
+"Movement and processes in living organisms",
+"Only languages",
+"Only history",
+"Only geography"
+],
+answer:0,
+explain:"Physics can be applied to biological systems, including movement, vision, hearing and other physical processes."
+},
+
+{
+q:"Physics contributes to medicine through:",
+options:[
+"Medical imaging",
+"Radiation technology",
+"Medical instruments",
+"All of the above"
+],
+answer:3,
+explain:"Many medical technologies, including imaging and radiation equipment, depend on principles of Physics."
+},
+
+{
+q:"Mobile communication depends strongly on:",
+options:[
+"Electromagnetic waves",
+"Soil",
+"Plants",
+"Rocks"
+],
+answer:0,
+explain:"Mobile communication uses electromagnetic waves to transmit information between devices and communication stations."
+},
+
+{
+q:"Engineering uses Physics mainly to:",
+options:[
+"Design machines and structures",
+"Study languages",
+"Write poems",
+"Study history"
+],
+answer:0,
+explain:"Engineers apply Physics to design machines, buildings, bridges, vehicles and many other systems."
+},
+
+{
+q:"Which is an application of Physics?",
+options:[
+"Electricity",
+"Transportation",
+"Communication",
+"All of the above"
+],
+answer:3,
+explain:"Physics is fundamental to electrical systems, transportation technologies and modern communication."
+},
+
+{
+q:"Which device is strongly related to the principles of optics?",
+options:[
+"Camera",
+"Spoon",
+"Chair",
+"Table"
+],
+answer:0,
+explain:"Cameras use lenses and the principles of light and image formation, which are studied in optics."
+},
+
+{
+q:"Which topic is mainly related to acoustics?",
+options:[
+"Sound",
+"Light",
+"Heat",
+"Gravity"
+],
+answer:0,
+explain:"Acoustics is the study of sound and its behavior."
+},
+
+{
+q:"Which topic is mainly related to thermodynamics?",
+options:[
+"Heat",
+"Sound",
+"Light",
+"Magnetism only"
+],
+answer:0,
+explain:"Thermodynamics deals with heat, temperature and energy transformations."
+},
+
+{
+q:"Which branch studies electric and magnetic fields?",
+options:[
+"Electromagnetism",
+"Acoustics",
+"Optics",
+"Mechanics"
+],
+answer:0,
+explain:"Electromagnetism deals with electric charges, electric fields, magnetic fields and electromagnetic effects."
+},
+
+{
+q:"The study of motion belongs mainly to:",
+options:[
+"Mechanics",
+"Optics",
+"Acoustics",
+"Thermodynamics"
+],
+answer:0,
+explain:"Mechanics is the branch of Physics that studies motion and the forces that affect objects."
+},
+
+{
+q:"The study of stars and galaxies using Physics is called:",
+options:[
+"Astrophysics",
+"Acoustics",
+"Mechanics",
+"Thermodynamics"
+],
+answer:0,
+explain:"Astrophysics applies physical laws to understand astronomical objects and the universe."
+},
+
+{
+q:"Which of the following is NOT a branch of Physics?",
+options:[
+"Mechanics",
+"Optics",
+"Grammar",
+"Acoustics"
+],
+answer:2,
+explain:"Grammar is a field of language study, not a branch of Physics."
+},
+
+{
+q:"Physics studies the relationship between:",
+options:[
+"Matter and energy",
+"Words only",
+"Countries only",
+"Languages only"
+],
+answer:0,
+explain:"Physics studies matter, energy, motion, forces and the interactions between them."
+},
+
+{
+q:"Which is an example of Physics in transportation?",
+options:[
+"Cars",
+"Aircraft",
+"Trains",
+"All of the above"
+],
+answer:3,
+explain:"The design and operation of cars, aircraft and trains involve many principles of Physics."
+},
+
+{
+q:"Electricity is important for:",
+options:[
+"Modern technology",
+"Only farming",
+"Only sports",
+"None"
+],
+answer:0,
+explain:"Electricity is essential for many modern technologies, machines, computers and communication systems."
+},
+
+{
+q:"Who is strongly associated with electromagnetic induction?",
+options:[
+"Michael Faraday",
+"Isaac Newton",
+"Albert Einstein",
+"Galileo Galilei"
+],
+answer:0,
+explain:"Michael Faraday discovered electromagnetic induction, an important principle used in electrical technology."
+},
+
+{
+q:"Who developed the theory of relativity?",
+options:[
+"Albert Einstein",
+"Isaac Newton",
+"Michael Faraday",
+"Galileo Galilei"
+],
+answer:0,
+explain:"Albert Einstein developed the special and general theories of relativity."
+},
+
+{
+q:"Galileo's scientific work included important studies of:",
+options:[
+"Motion and astronomy",
+"Grammar",
+"Literature",
+"Economics"
+],
+answer:0,
+explain:"Galileo used observation and experiment to investigate motion and made important astronomical observations."
+},
+
+{
+q:"Which modern technologies depend heavily on Physics?",
+options:[
+"Computers",
+"Smartphones",
+"Satellites",
+"All of the above"
+],
+answer:3,
+explain:"Computers, smartphones and satellites all depend on many principles of Physics."
+},
+
+{
+q:"Physics helps communication through:",
+options:[
+"Electromagnetic waves",
+"Soil",
+"Plants",
+"Rocks"
+],
+answer:0,
+explain:"Radio, television, mobile communication and many wireless systems use electromagnetic waves."
+},
+
+{
+q:"Medical X-ray imaging is an application of:",
+options:[
+"Physics",
+"History",
+"Literature",
+"Geography only"
+],
+answer:0,
+explain:"X-rays are electromagnetic radiation, and their interaction with matter is used in medical imaging."
+},
+
+{
+q:"Physics is important in construction because it helps engineers understand:",
+options:[
+"Forces and structures",
+"Languages",
+"Poetry",
+"History"
+],
+answer:0,
+explain:"Engineers use Physics to understand forces, motion, materials, balance and structural stability."
+},
+
+{
+q:"The field combining Physics with biological systems is called:",
+options:[
+"Biophysics",
+"History",
+"Literature",
+"Geography"
+],
+answer:0,
+explain:"Biophysics applies physical principles and methods to biological systems."
+},
+
+{
+q:"Physics can help explain how the human:",
+options:[
+"Body moves",
+"Language changes",
+"History develops",
+"Culture changes"
+],
+answer:0,
+explain:"Mechanics and other areas of Physics can help explain movement and physical processes in the human body."
+},
+
+{
+q:"Which of the following is a form of energy?",
+options:[
+"Heat",
+"Light",
+"Electrical energy",
+"All of the above"
+],
+answer:3,
+explain:"Heat, light and electrical energy are all forms or manifestations of energy studied in Physics."
+},
+
+{
+q:"Reflection and refraction of light are studied in:",
+options:[
+"Optics",
+"Acoustics",
+"Mechanics",
+"Thermodynamics"
+],
+answer:0,
+explain:"Reflection and refraction are important topics in optics, the study of light."
+},
+
+{
+q:"Vibrations and sound are mainly studied in:",
+options:[
+"Acoustics",
+"Optics",
+"Mechanics",
+"Nuclear Physics"
+],
+answer:0,
+explain:"Acoustics studies sound, including vibrations, sound production and propagation."
+},
+
+{
+q:"Which is a natural phenomenon studied by Physics?",
+options:[
+"Falling objects",
+"Sound",
+"Light",
+"All of the above"
+],
+answer:3,
+explain:"Motion of falling objects, sound and light are all physical phenomena."
+},
+
+{
+q:"Physics and Chemistry are related through the study of:",
+options:[
+"Matter and energy",
+"Poetry",
+"History",
+"Geography"
+],
+answer:0,
+explain:"Both Physics and Chemistry deal with matter and energy, although they investigate different aspects."
+},
+
+{
+q:"Which is NOT an application of Physics?",
+options:[
+"Electrical systems",
+"Medical imaging",
+"Vehicle design",
+"Writing a poem"
+],
+answer:3,
+explain:"Writing a poem is a literary activity, not an application of Physics."
+},
+
+{
+q:"What does Physics help engineers do?",
+options:[
+"Design safe structures",
+"Study grammar",
+"Write novels",
+"Study history"
+],
+answer:0,
+explain:"Physics provides engineers with principles needed to design safe and functional structures."
+},
+
+{
+q:"Which topic is related to Nuclear Physics?",
+options:[
+"Atomic nuclei",
+"Sound",
+"Grammar",
+"Poetry"
+],
+answer:0,
+explain:"Nuclear Physics focuses on the properties and behavior of atomic nuclei."
+},
+
+{
+q:"Physics has developed through:",
+options:[
+"Observation and experiments",
+"Guessing only",
+"Stories only",
+"None"
+],
+answer:0,
+explain:"Scientific knowledge develops through observation, experimentation, measurement, analysis and evidence."
+},
+
+{
+q:"Which is an important skill in Physics?",
+options:[
+"Measurement",
+"Observation",
+"Problem solving",
+"All of the above"
+],
+answer:3,
+explain:"Measurement, observation and problem solving are all important skills when studying Physics."
+},
+
+{
+q:"Why do scientists perform experiments?",
+options:[
+"To test ideas",
+"To avoid evidence",
+"To write stories",
+"None"
+],
+answer:0,
+explain:"Experiments provide evidence that helps scientists test hypotheses and understand physical phenomena."
+},
+
+{
+q:"Which instrument is commonly used to measure temperature?",
+options:[
+"Thermometer",
+"Ruler",
+"Balance",
+"Compass"
+],
+answer:0,
+explain:"A thermometer is an instrument used to measure temperature."
+},
+
+{
+q:"Which instrument is commonly used to measure length?",
+options:[
+"Ruler",
+"Thermometer",
+"Stopwatch",
+"Ammeter"
+],
+answer:0,
+explain:"A ruler or measuring tape can be used to measure length."
+},
+
+{
+q:"Which is a benefit of studying Physics?",
+options:[
+"Understanding nature",
+"Developing technology",
+"Solving practical problems",
+"All of the above"
+],
+answer:3,
+explain:"Physics helps us understand nature, develop technologies and solve practical problems."
+},
+
+{
+q:"Physics is useful in agriculture through:",
+options:[
+"Machines and irrigation technology",
+"Poetry",
+"Grammar",
+"History"
+],
+answer:0,
+explain:"Agricultural machines, pumps, irrigation systems and other technologies use physical principles."
+},
+
+{
+q:"Which field uses Physics to study planets and stars?",
+options:[
+"Astrophysics",
+"Acoustics",
+"Mechanics",
+"Biology"
+],
+answer:0,
+explain:"Astrophysics uses Physics to study planets, stars, galaxies and other objects in space."
+},
+
+{
+q:"Physics helps us understand why objects:",
+options:[
+"Fall toward Earth",
+"Speak languages",
+"Write books",
+"Change culture"
+],
+answer:0,
+explain:"Gravity is a physical interaction that causes objects near Earth to accelerate toward Earth."
+},
+
+{
+q:"Which statement is correct?",
+options:[
+"Physics has no connection with technology",
+"Physics is important for technology",
+"Physics studies only stars",
+"Physics is only mathematics"
+],
+answer:1,
+explain:"Physics provides the principles behind many technologies, from electricity and communication to machines and medical equipment."
+},
+
+{
+q:"Which is a modern application of Physics?",
+options:[
+"Satellite communication",
+"Medical imaging",
+"Computers",
+"All of the above"
+],
+answer:3,
+explain:"Satellite communication, medical imaging and computers all depend on principles of Physics."
+},
+
+{
+q:"Why is Physics important to human society?",
+options:[
+"It helps us understand nature",
+"It supports technology and development",
+"It helps solve practical problems",
+"All of the above"
+],
+answer:3,
+explain:"Physics helps society understand the natural world, develop technology and solve many practical problems."
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const box = document.createElement("div");
+    box.className = "question";
+
+    let html = `
+        <h3>${index+1}. ${item.q}</h3>
+        <div class="options">
+    `;
+
+    item.options.forEach((option,optIndex)=>{
+
+        html += `
+        <button
+            class="option"
+            onclick="checkAnswer(${index},${optIndex},this)">
+            ${String.fromCharCode(65+optIndex)}. ${option}
+        </button>
+        `;
+
+    });
+
+    html += `
+        </div>
+
+        <div id="feedback-${index}" class="feedback">
+            <strong id="result-${index}"></strong>
+            <div class="explanation">
+                <b>Explanation:</b>
+                ${item.explain}
+            </div>
+        </div>
+    `;
+
+    box.innerHTML = html;
+    quiz.appendChild(box);
+
+});
+
+
+function checkAnswer(questionIndex,selected,button){
+
+    const question = questions[questionIndex];
+
+    const parent = button.parentElement;
+    const buttons = parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled = true;
+    });
+
+    const feedback =
+        document.getElementById("feedback-"+questionIndex);
+
+    const result =
+        document.getElementById("result-"+questionIndex);
+
+    if(selected === question.answer){
+
+        button.classList.add("correct");
+
+        result.innerHTML =
+            "✅ RIGHT! Correct Answer";
+
+        feedback.className =
+            "feedback right";
+
+        score++;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        buttons[question.answer].classList.add("correct");
+
+        result.innerHTML =
+            "❌ WRONG! Correct Answer: " +
+            String.fromCharCode(65+question.answer) +
+            ". " +
+            question.options[question.answer];
+
+        feedback.className =
+            "feedback wrong-feedback";
+    }
+
+    answered++;
+
+    document.getElementById("score").innerText = score;
+
+    if(answered === 60){
+
+        setTimeout(()=>{
+
+            alert(
+                "Quiz Completed! Your score is " +
+                score +
+                " / 60"
+            );
+
+        },300);
+
+    }
+
+    feedback.scrollIntoView({
+        behavior:"smooth",
+        block:"nearest"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
