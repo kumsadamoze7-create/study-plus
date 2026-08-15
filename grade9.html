@@ -53,6 +53,8 @@ header p{
     box-shadow:0 3px 10px #ccc;
 }
 
+/* SUBJECT COLORS */
+
 .math{
     border-left:6px solid #2563eb;
 }
@@ -73,10 +75,20 @@ header p{
     border-left:6px solid #ea580c;
 }
 
-/* HISTORY ADDED */
 .history{
     border-left:6px solid #0891b2;
 }
+
+.geography{
+    border-left:6px solid #64748b;
+}
+
+.economics{
+    border-left:6px solid #64748b;
+}
+
+
+/* UNIT COLORS */
 
 .unit{
     border-left:5px solid #2563eb;
@@ -98,7 +110,6 @@ header p{
     border-left:5px solid #ea580c;
 }
 
-/* HISTORY UNIT */
 .historyUnit{
     border-left:5px solid #0891b2;
 }
@@ -136,6 +147,9 @@ p{
     color:#555;
 }
 
+
+/* BUTTONS */
+
 button{
     width:100%;
     padding:15px;
@@ -172,7 +186,6 @@ button:hover{
     background:#ea580c;
 }
 
-/* HISTORY OPEN BUTTON */
 .historyOpen{
     background:#0891b2;
 }
@@ -187,11 +200,15 @@ button:hover{
 
 .coming{
     background:#9ca3af;
+    cursor:not-allowed;
 }
 
 .back{
     background:#172554;
 }
+
+
+/* HIDDEN UNIT AREAS */
 
 #mathUnits,
 #chemistryUnits,
@@ -201,6 +218,9 @@ button:hover{
 #historyUnits{
     display:none;
 }
+
+
+/* TITLES */
 
 .title{
     text-align:center;
@@ -227,10 +247,22 @@ button:hover{
     color:#ea580c;
 }
 
-/* HISTORY TITLE */
 .historyTitle{
     text-align:center;
     color:#0891b2;
+}
+
+
+/* COMING SOON */
+
+.comingBox{
+    text-align:center;
+    padding:20px;
+    background:#f1f5f9;
+    border-radius:12px;
+    color:#64748b;
+    font-weight:bold;
+    margin-top:12px;
 }
 
 </style>
@@ -299,20 +331,14 @@ Choose a unit to study Notes or Practice.
 
 <h3>📘 Unit 1 — Further on Sets</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9.html'">
-
 📝 Unit 1 Practice
-
 </button>
 
 </div>
@@ -322,20 +348,14 @@ onclick="location.href='practice9.html'">
 
 <h3>🔢 Unit 2 — The Number System</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit2.html'">
-
 📝 Unit 2 Practice
-
 </button>
 
 </div>
@@ -345,20 +365,14 @@ onclick="location.href='practice9unit2.html'">
 
 <h3>📕 Unit 3 — Solving Equations</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit3.html'">
-
 📝 Unit 3 Practice
-
 </button>
 
 </div>
@@ -368,20 +382,14 @@ onclick="location.href='practice9unit3.html'">
 
 <h3>📗 Unit 4 — Solving Inequalities</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit4.html'">
-
 📖 Unit 4 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit4.html'">
-
 📝 Unit 4 Practice
-
 </button>
 
 </div>
@@ -391,20 +399,14 @@ onclick="location.href='practice9unit4.html'">
 
 <h3>📐 Unit 5 — Introduction to Trigonometry</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit5.html'">
-
 📖 Unit 5 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit5.html'">
-
 📝 Unit 5 Practice
-
 </button>
 
 </div>
@@ -414,20 +416,14 @@ onclick="location.href='practice9unit5.html'">
 
 <h3>🔷 Unit 6 — Regular Polygons</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit6.html'">
-
 📖 Unit 6 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit6.html'">
-
 📝 Unit 6 Practice
-
 </button>
 
 </div>
@@ -437,20 +433,14 @@ onclick="location.href='practice9unit6.html'">
 
 <h3>🔺 Unit 7 — Congruency and Similarity</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit7.html'">
-
 📖 Unit 7 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit7.html'">
-
 📝 Unit 7 Practice
-
 </button>
 
 </div>
@@ -460,20 +450,14 @@ onclick="location.href='practice9unit7.html'">
 
 <h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit8.html'">
-
 📖 Unit 8 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit8.html'">
-
 📝 Unit 8 Practice
-
 </button>
 
 </div>
@@ -483,20 +467,14 @@ onclick="location.href='practice9unit8.html'">
 
 <h3>📊 Unit 9 — Statistics and Probability</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9unit9.html'">
-
 📖 Unit 9 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9unit9.html'">
-
 📝 Unit 9 Practice
-
 </button>
 
 </div>
@@ -514,7 +492,8 @@ onclick="location.href='practice9unit9.html'">
 <h2>🧪 Chemistry</h2>
 
 <p>
-Grade 9 Chemistry — Unit 1 to Unit 5 are available.
+Grade 9 Chemistry — Unit 1 to Unit 5
+with Notes and Practice.
 </p>
 
 <button
@@ -546,32 +525,16 @@ Choose a unit to study Notes or Practice.
 
 <div class="card chemUnit">
 
-<h3>
-🧪 Unit 1 — Chemistry and Its Importance
-</h3>
+<h3>🧪 Unit 1 — Chemistry and Its Importance</h3>
 
-<p>
-Definition and scope of chemistry, matter, substance,
-properties, composition, branches of chemistry, relationship
-with other natural sciences, agriculture, food production,
-medicine, analgesics, antibiotics, disinfectants, construction
-materials and chemical industries.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9chemistryunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9chemistryunit1.html'">
-
-📝 Unit 1 Practice — 60 Questions
-
+📝 Unit 1 Practice
 </button>
 
 </div>
@@ -579,31 +542,16 @@ onclick="location.href='practice9chemistryunit1.html'">
 
 <div class="card chemUnit">
 
-<h3>
-📏 Unit 2 — Measurement and Scientific Method
-</h3>
+<h3>📏 Unit 2 — Measurement and Scientific Method</h3>
 
-<p>
-Measurement, SI units, fundamental and derived quantities,
-measuring instruments, density, accuracy, precision,
-significant figures, scientific notation, scientific method,
-variables, laboratory safety and experimental error.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9chemistryunit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9chemistryunit2.html'">
-
-📝 Unit 2 Practice — 60 Questions
-
+📝 Unit 2 Practice
 </button>
 
 </div>
@@ -611,30 +559,16 @@ onclick="location.href='practice9chemistryunit2.html'">
 
 <div class="card chemUnit">
 
-<h3>
-⚛️ Unit 3 — Structure of the Atom
-</h3>
+<h3>⚛️ Unit 3 — Structure of the Atom</h3>
 
-<p>
-Atomic theory, atomic models, subatomic particles,
-atomic number, mass number, isotopes, electron arrangement
-and ions.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9chemistryunit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9chemistryunit3.html'">
-
-📝 Unit 3 Practice — 60 Questions
-
+📝 Unit 3 Practice
 </button>
 
 </div>
@@ -642,30 +576,16 @@ onclick="location.href='practice9chemistryunit3.html'">
 
 <div class="card chemUnit">
 
-<h3>
-🧩 Unit 4 — Periodic Classification of Elements
-</h3>
+<h3>🧩 Unit 4 — Periodic Classification of Elements</h3>
 
-<p>
-Historical development, periodicity, modern periodic table,
-groups, periods, blocks, representative elements and periodic
-properties.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9chemistryunit4.html'">
-
 📖 Unit 4 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9chemistryunit4.html'">
-
-📝 Unit 4 Practice — 60 Questions
-
+📝 Unit 4 Practice
 </button>
 
 </div>
@@ -673,30 +593,16 @@ onclick="location.href='practice9chemistryunit4.html'">
 
 <div class="card chemUnit">
 
-<h3>
-🔗 Unit 5 — Chemical Bonding
-</h3>
+<h3>🔗 Unit 5 — Chemical Bonding</h3>
 
-<p>
-Chemical bonding, valence electrons, octet and duet rules,
-ionic and covalent bonding, metallic bonding, Lewis structures,
-electronegativity and polar and non-polar covalent bonds.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9chemistryunit5.html'">
-
 📖 Unit 5 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9chemistryunit5.html'">
-
-📝 Unit 5 Practice — 60 Questions
-
+📝 Unit 5 Practice
 </button>
 
 </div>
@@ -714,8 +620,8 @@ onclick="location.href='practice9chemistryunit5.html'">
 <h2>📖 English</h2>
 
 <p>
-Grade 9 English — Unit 1, Unit 2 and Unit 3.
-Notes and Practice.
+Grade 9 English — Unit 1 to Unit 3
+with Notes and Practice.
 </p>
 
 <button
@@ -747,32 +653,16 @@ Choose a unit to study Notes or Practice.
 
 <div class="card engUnit">
 
-<h3>
-📚 Unit 1 — Tenses
-</h3>
+<h3>📚 Unit 1 — Tenses</h3>
 
-<p>
-Simple Present, Present Continuous, Present Perfect,
-Present Perfect Continuous, Simple Past, Past Continuous,
-Past Perfect, Past Perfect Continuous, Simple Future,
-Future Continuous, Future Perfect and Future Perfect
-Continuous.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9englishunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9englishunit1_200-1.html'">
-
-📝 Unit 1 Practice — 200 Questions
-
+📝 Unit 1 Practice
 </button>
 
 </div>
@@ -780,30 +670,16 @@ onclick="location.href='practice9englishunit1_200-1.html'">
 
 <div class="card engUnit">
 
-<h3>
-⚖️ Unit 2 — Conditional Sentences
-</h3>
+<h3>⚖️ Unit 2 — Conditional Sentences</h3>
 
-<p>
-Zero Conditional, First Conditional, Second Conditional,
-Third Conditional, Mixed Conditionals, unless, provided
-that, as long as, in case and inverted conditionals.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9englishunit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9englishunit2_200.html'">
-
-📝 Unit 2 Practice — 200 Questions
-
+📝 Unit 2 Practice
 </button>
 
 </div>
@@ -811,30 +687,16 @@ onclick="location.href='practice9englishunit2_200.html'">
 
 <div class="card engUnit">
 
-<h3>
-📊 Unit 3 — Comparison
-</h3>
+<h3>📊 Unit 3 — Comparison</h3>
 
-<p>
-Comparison using adjectives, adverbs, nouns, verbs,
-tenses and modal verbs. Positive, comparative and
-superlative forms, equality and inequality.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9englishunit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9englishunit3.html'">
-
-📝 Unit 3 Practice — 100 Questions
-
+📝 Unit 3 Practice
 </button>
 
 </div>
@@ -852,7 +714,8 @@ onclick="location.href='practice9englishunit3.html'">
 <h2>🧬 Biology</h2>
 
 <p>
-Grade 9 Biology — Unit 1 to Unit 6 with Notes and Practice.
+Grade 9 Biology — Unit 1 to Unit 6
+with Notes and Practice.
 </p>
 
 <button
@@ -884,29 +747,16 @@ Choose a unit to study Notes or Practice.
 
 <div class="card bioUnit">
 
-<h3>
-🧬 Unit 1 — Biology
-</h3>
+<h3>🧬 Unit 1 — Biology</h3>
 
-<p>
-Biology, its branches, scientists and their contributions,
-characteristics of living organisms and major biological concepts.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit1.html'">
-
-📝 Unit 1 Practice — 60 Questions
-
+📝 Unit 1 Practice
 </button>
 
 </div>
@@ -914,29 +764,16 @@ onclick="location.href='practice9biologyunit1.html'">
 
 <div class="card bioUnit">
 
-<h3>
-🔬 Unit 2 — Cell Biology
-</h3>
+<h3>🔬 Unit 2 — Cell Biology</h3>
 
-<p>
-Cell structure, cell theory, prokaryotic and eukaryotic cells,
-cell organelles and their functions.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit2.html'">
-
-📝 Unit 2 Practice — 60 Questions
-
+📝 Unit 2 Practice
 </button>
 
 </div>
@@ -944,29 +781,16 @@ onclick="location.href='practice9biologyunit2.html'">
 
 <div class="card bioUnit">
 
-<h3>
-🧬 Unit 3 — Genetics
-</h3>
+<h3>🧬 Unit 3 — Genetics</h3>
 
-<p>
-Genetic material, DNA, chromosomes, genes, heredity,
-genotype, phenotype, dominant and recessive traits.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit3.html'">
-
-📝 Unit 3 Practice — 60 Questions
-
+📝 Unit 3 Practice
 </button>
 
 </div>
@@ -974,29 +798,16 @@ onclick="location.href='practice9biologyunit3.html'">
 
 <div class="card bioUnit">
 
-<h3>
-🌱 Unit 4 — Plant Biology
-</h3>
+<h3>🌱 Unit 4 — Plant Biology</h3>
 
-<p>
-Plant structure, plant tissues, roots, stems, leaves,
-photosynthesis, transport and reproduction in plants.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit4.html'">
-
 📖 Unit 4 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit4.html'">
-
-📝 Unit 4 Practice — 60 Questions
-
+📝 Unit 4 Practice
 </button>
 
 </div>
@@ -1004,29 +815,16 @@ onclick="location.href='practice9biologyunit4.html'">
 
 <div class="card bioUnit">
 
-<h3>
-🫀 Unit 5 — Human Biology
-</h3>
+<h3>🫀 Unit 5 — Human Biology</h3>
 
-<p>
-Nutrition, nutrients, balanced diet, malnutrition, diseases,
-disease prevention, health and healthy lifestyle.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit5.html'">
-
 📖 Unit 5 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit5.html'">
-
-📝 Unit 5 Practice — 60 Questions
-
+📝 Unit 5 Practice
 </button>
 
 </div>
@@ -1034,30 +832,16 @@ onclick="location.href='practice9biologyunit5.html'">
 
 <div class="card bioUnit">
 
-<h3>
-🌍 Unit 6 — Ecology
-</h3>
+<h3>🌍 Unit 6 — Ecology</h3>
 
-<p>
-Ecology, ecological terms, biotic and abiotic factors,
-ecosystems, ecological levels, biomes, ecological succession
-and ecological relationships.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9biologyunit6.html'">
-
 📖 Unit 6 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9biologyunit6.html'">
-
-📝 Unit 6 Practice — 60 Questions
-
+📝 Unit 6 Practice
 </button>
 
 </div>
@@ -1075,7 +859,8 @@ onclick="location.href='practice9biologyunit6.html'">
 <h2>⚡ Physics</h2>
 
 <p>
-Grade 9 Physics — Unit 1 to Unit 7 with Notes and Practice.
+Grade 9 Physics — Unit 1 to Unit 7
+with Notes and Practice.
 </p>
 
 <button
@@ -1109,20 +894,14 @@ Choose a unit to study Notes or Practice.
 
 <h3>⚡ Unit 1 — Physics and Measurement</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit1.html'">
-
-📝 Unit 1 Practice — 60 Questions
-
+📝 Unit 1 Practice
 </button>
 
 </div>
@@ -1132,20 +911,14 @@ onclick="location.href='practice9physicsunit1.html'">
 
 <h3>📏 Unit 2 — Motion</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit2.html'">
-
-📝 Unit 2 Practice — 60 Questions
-
+📝 Unit 2 Practice
 </button>
 
 </div>
@@ -1155,20 +928,14 @@ onclick="location.href='practice9physicsunit2.html'">
 
 <h3>➡️ Unit 3 — Force and Newton's Laws</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit3.html'">
-
-📝 Unit 3 Practice — 60 Questions
-
+📝 Unit 3 Practice
 </button>
 
 </div>
@@ -1178,20 +945,14 @@ onclick="location.href='practice9physicsunit3.html'">
 
 <h3>⚖️ Unit 4 — Work, Energy and Power</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit4.html'">
-
 📖 Unit 4 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit4.html'">
-
-📝 Unit 4 Practice — 60 Questions
-
+📝 Unit 4 Practice
 </button>
 
 </div>
@@ -1201,20 +962,14 @@ onclick="location.href='practice9physicsunit4.html'">
 
 <h3>🌡️ Unit 5 — Heat</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit5.html'">
-
 📖 Unit 5 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit5.html'">
-
-📝 Unit 5 Practice — 60 Questions
-
+📝 Unit 5 Practice
 </button>
 
 </div>
@@ -1224,20 +979,14 @@ onclick="location.href='practice9physicsunit5.html'">
 
 <h3>💡 Unit 6 — Electricity</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit6.html'">
-
 📖 Unit 6 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit6.html'">
-
-📝 Unit 6 Practice — 60 Questions
-
+📝 Unit 6 Practice
 </button>
 
 </div>
@@ -1247,20 +996,14 @@ onclick="location.href='practice9physicsunit6.html'">
 
 <h3>🔊 Unit 7 — Sound</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9physicsunit7.html'">
-
 📖 Unit 7 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9physicsunit7.html'">
-
-📝 Unit 7 Practice — 60 Questions
-
+📝 Unit 7 Practice
 </button>
 
 </div>
@@ -1270,7 +1013,7 @@ onclick="location.href='practice9physicsunit7.html'">
 
 
 <!-- ================================================= -->
-<!-- HISTORY — ADDED -->
+<!-- HISTORY -->
 <!-- ================================================= -->
 
 <div class="card history">
@@ -1278,8 +1021,8 @@ onclick="location.href='practice9physicsunit7.html'">
 <h2>📜 History</h2>
 
 <p>
-Grade 9 History — Unit 1 to Unit 9 with detailed
-Notes and Practice.
+Grade 9 History — Unit 1 to Unit 9
+with detailed Notes and Practice.
 </p>
 
 <button
@@ -1309,309 +1052,201 @@ Choose a unit to study detailed Notes or Practice.
 </div>
 
 
-<!-- HISTORY UNIT 1 -->
-
 <div class="card historyUnit">
 
-<h3>
-📜 Unit 1 — History and Human Evolution
-</h3>
+<h3>📜 Unit 1 — History and Human Evolution</h3>
 
-<p>
-Introduction to history, historical sources, interpretation
-of historical evidence, human origins, evolution and
-early human societies.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit1.html'">
-
 📝 Unit 1 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 2 -->
-
 <div class="card historyUnit">
 
-<h3>
-🏺 Unit 2 — Ancient Civilizations
-</h3>
+<h3>🏺 Unit 2 — Ancient Civilizations</h3>
 
-<p>
-Major ancient civilizations, their political systems,
-economic activities, social structures, culture, religion,
-science and contributions to human civilization.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit2.html'">
-
 📖 Unit 2 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit2.html'">
-
 📝 Unit 2 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 3 -->
-
 <div class="card historyUnit">
 
-<h3>
-🌍 Unit 3 — The Middle Ages
-</h3>
+<h3>🌍 Unit 3 — The Middle Ages</h3>
 
-<p>
-Political, economic and social developments during the
-Middle Ages, major civilizations, religion, trade and
-important historical changes.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit3.html'">
-
 📖 Unit 3 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit3.html'">
-
 📝 Unit 3 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 4 -->
-
 <div class="card historyUnit">
 
-<h3>
-⛵ Unit 4 — The Age of Exploration
-</h3>
+<h3>⛵ Unit 4 — The Age of Exploration</h3>
 
-<p>
-European exploration, causes of exploration, major explorers,
-new trade routes, expansion of European influence and
-the consequences of exploration.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit4.html'">
-
 📖 Unit 4 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit4.html'">
-
 📝 Unit 4 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 5 -->
-
 <div class="card historyUnit">
 
-<h3>
-🏛️ Unit 5 — Ethiopia and the Horn of Africa
-</h3>
+<h3>🏛️ Unit 5 — Ethiopia and the Horn of Africa</h3>
 
-<p>
-Historical developments in Ethiopia and the Horn of Africa,
-states and peoples, political changes, economic activities,
-religion, culture and regional interactions.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit5.html'">
-
 📖 Unit 5 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit5.html'">
-
 📝 Unit 5 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 6 -->
-
 <div class="card historyUnit">
 
-<h3>
-👑 Unit 6 — States and Societies
-</h3>
+<h3>👑 Unit 6 — States and Societies</h3>
 
-<p>
-Development of states and societies, political organization,
-social structures, economic systems, leadership and
-historical interactions.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit6.html'">
-
 📖 Unit 6 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit6.html'">
-
 📝 Unit 6 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 7 -->
-
 <div class="card historyUnit">
 
-<h3>
-🌐 Unit 7 — European Expansion and Its Effects
-</h3>
+<h3>🌐 Unit 7 — European Expansion and Its Effects</h3>
 
-<p>
-European expansion, imperialism, political and economic
-competition, colonial expansion and its effects on Africa
-and other parts of the world.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit7.html'">
-
 📖 Unit 7 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit7.html'">
-
 📝 Unit 7 Practice
-
 </button>
 
 </div>
 
 
-<!-- HISTORY UNIT 8 -->
-
 <div class="card historyUnit">
 
-<h3>
-🌍 Unit 8 — Africa and the Wider World
-</h3>
+<h3>🌍 Unit 8 — Africa and the Wider World</h3>
 
-<p>
-African societies and their relationships with the wider
-world, trade, political developments, European influence
-and major historical changes.
-</p>
-
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9historyunit8.html'">
-
 📖 Unit 8 Notes
-
 </button>
 
-<button
-class="practice"
+<button class="practice"
 onclick="location.href='practice9historyunit8.html'">
-
 📝 Unit 8 Practice
-
 </button>
 
 </div>
 
-
-<!-- HISTORY UNIT 9 -->
 
 <div class="card historyUnit">
 
-<h3>
-🔥 Unit 9 — The Age of Revolutions, 1750s–1815
-</h3>
+<h3>🔥 Unit 9 — The Age of Revolutions, 1750s–1815</h3>
+
+<button class="notes"
+onclick="location.href='historyunit9.html'">
+📖 Unit 9 Notes
+</button>
+
+<button class="practice"
+onclick="location.href='practice9historyunit9.html'">
+📝 Unit 9 Practice
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- GEOGRAPHY -->
+<!-- ================================================= -->
+
+<div class="card geography">
+
+<h2>🌍 Geography</h2>
 
 <p>
-Industrial Capitalism, the Industrial Revolution,
-the French Revolution, the American War of Independence,
-the Napoleonic Era and the Congress of Vienna.
+Grade 9 Geography will be added soon.
 </p>
 
-<button
-class="notes"
-onclick="location.href='historyunit9.html'">
-
-📖 Unit 9 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9historyunit9.html'">
-
-📝 Unit 9 Practice — 60 Questions
-
-</button>
-
+<div class="comingBox">
+🔒 COMING SOON
 </div>
-
 
 </div>
 
 
 <!-- ================================================= -->
+<!-- ECONOMICS -->
+<!-- ================================================= -->
+
+<div class="card economics">
+
+<h2>💰 Economics</h2>
+
+<p>
+Grade 9 Economics will be added soon.
+</p>
+
+<div class="comingBox">
+🔒 COMING SOON
+</div>
+
+</div>
+
+
 <!-- BACK -->
-<!-- ================================================= -->
 
 <button
 class="back"
@@ -1627,91 +1262,48 @@ onclick="location.href='index.html'">
 
 <script>
 
-function openMath(){
+function showSection(id){
 
-    const math =
-    document.getElementById("mathUnits");
+    const section =
+    document.getElementById(id);
 
-    math.style.display="block";
+    section.style.display="block";
 
-    math.scrollIntoView({
-        behavior:"smooth"
+    section.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
     });
 
+}
+
+
+function openMath(){
+    showSection("mathUnits");
 }
 
 
 function openChemistry(){
-
-    const chemistry =
-    document.getElementById("chemistryUnits");
-
-    chemistry.style.display="block";
-
-    chemistry.scrollIntoView({
-        behavior:"smooth"
-    });
-
+    showSection("chemistryUnits");
 }
 
 
 function openEnglish(){
-
-    const english =
-    document.getElementById("englishUnits");
-
-    english.style.display="block";
-
-    english.scrollIntoView({
-        behavior:"smooth"
-    });
-
+    showSection("englishUnits");
 }
 
 
 function openBiology(){
-
-    const biology =
-    document.getElementById("biologyUnits");
-
-    biology.style.display="block";
-
-    biology.scrollIntoView({
-        behavior:"smooth"
-    });
-
+    showSection("biologyUnits");
 }
 
 
 function openPhysics(){
-
-    const physics =
-    document.getElementById("physicsUnits");
-
-    physics.style.display="block";
-
-    physics.scrollIntoView({
-        behavior:"smooth"
-    });
-
+    showSection("physicsUnits");
 }
 
 
-/* ================================================= */
-/* HISTORY */
-/* ================================================= */
-
 function openHistory(){
-
-    const history =
-    document.getElementById("historyUnits");
-
-    history.style.display="block";
-
-    history.scrollIntoView({
-        behavior:"smooth"
-    });
-
+    showSection("historyUnits");
 }
 
 </script>
