@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 5 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#1e3a8a);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #2563eb;
+}
+
+.question h3{
+    color:#1e3a8a;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    margin:7px 0;
+    border-radius:9px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    opacity:.9;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.8;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#f3f4f6;
+    border-left:4px solid #7c3aed;
+    color:#444;
+    line-height:1.6;
+}
+
+#score{
+    display:none;
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+#score h2{
+    margin-top:0;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    background:#16a34a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚙️ Grade 9 Physics</h1>
+
+<p>Unit 5 — Simple Machines</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>📚 Unit 5 Practice</h2>
+
+<p>
+Choose the correct answer. After you answer each question,
+you will see whether your answer is correct or wrong and
+an explanation.
+</p>
+
+</div>
+
+
+<div id="quiz"></div>
+
+
+<div id="score">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p id="scoreText"></p>
+
+<button
+class="back restart"
+onclick="location.reload()">
+
+🔄 Try Again
+
+</button>
+
+<button
+class="back"
+onclick="location.href='notes9physicsunit5.html'">
+
+📖 Review Unit 5 Notes
+
+</button>
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is a simple machine?",
+options:[
+"A device that makes work easier",
+"A type of energy",
+"A unit of force",
+"A type of material"
+],
+answer:0,
+explanation:"A simple machine is a basic mechanical device that makes work easier by changing the size or direction of a force."
+},
+
+{
+q:"2. Which of the following is a simple machine?",
+options:[
+"Lever",
+"Battery",
+"Thermometer",
+"Computer"
+],
+answer:0,
+explanation:"A lever is one of the six basic types of simple machines."
+},
+
+{
+q:"3. How many basic types of simple machines are commonly identified?",
+options:[
+"3",
+"4",
+"6",
+"10"
+],
+answer:2,
+explanation:"The six basic simple machines are lever, pulley, inclined plane, wheel and axle, wedge, and screw."
+},
+
+{
+q:"4. Which of the following is NOT a simple machine?",
+options:[
+"Pulley",
+"Wedge",
+"Computer",
+"Screw"
+],
+answer:2,
+explanation:"A computer is not classified as one of the six basic simple machines."
+},
+
+{
+q:"5. Which simple machine is a rigid bar that rotates around a fixed point?",
+options:[
+"Pulley",
+"Lever",
+"Screw",
+"Wedge"
+],
+answer:1,
+explanation:"A lever is a rigid bar that rotates around a fixed point called the fulcrum."
+},
+
+{
+q:"6. What is the fixed point around which a lever rotates called?",
+options:[
+"Load",
+"Effort",
+"Fulcrum",
+"Axle"
+],
+answer:2,
+explanation:"The fulcrum is the fixed point around which a lever rotates."
+},
+
+{
+q:"7. What is the load in a machine?",
+options:[
+"The force applied",
+"The resistance or object being moved",
+"The fixed point",
+"The distance moved"
+],
+answer:1,
+explanation:"The load is the resistance or object that the machine is intended to move."
+},
+
+{
+q:"8. What is the effort?",
+options:[
+"The force applied to operate a machine",
+"The weight of the machine",
+"The fulcrum",
+"The output distance"
+],
+answer:0,
+explanation:"Effort is the force applied to a machine to move the load."
+},
+
+{
+q:"9. In a first-class lever, what is between the effort and the load?",
+options:[
+"Fulcrum",
+"Axle",
+"Pulley",
+"Screw"
+],
+answer:0,
+explanation:"In a first-class lever, the fulcrum lies between the effort and the load."
+},
+
+{
+q:"10. Which is an example of a first-class lever?",
+options:[
+"Wheelbarrow",
+"Seesaw",
+"Bottle opener",
+"Tweezers"
+],
+answer:1,
+explanation:"A seesaw is a first-class lever because its fulcrum is between the effort and load."
+},
+
+{
+q:"11. In a second-class lever, where is the load?",
+options:[
+"Between fulcrum and effort",
+"Between two fulcrums",
+"Outside the lever",
+"Above the effort"
+],
+answer:0,
+explanation:"In a second-class lever, the load is located between the fulcrum and effort."
+},
+
+{
+q:"12. Which is an example of a second-class lever?",
+options:[
+"Seesaw",
+"Wheelbarrow",
+"Tweezers",
+"Scissors"
+],
+answer:1,
+explanation:"A wheelbarrow is a second-class lever because the load is between the wheel/fulcrum and the effort."
+},
+
+{
+q:"13. In a third-class lever, what is between the fulcrum and the load?",
+options:[
+"Effort",
+"Wheel",
+"Load",
+"Axle"
+],
+answer:0,
+explanation:"In a third-class lever, the effort is located between the fulcrum and the load."
+},
+
+{
+q:"14. Which is an example of a third-class lever?",
+options:[
+"Seesaw",
+"Wheelbarrow",
+"Tweezers",
+"Crowbar"
+],
+answer:2,
+explanation:"Tweezers are an example of a third-class lever."
+},
+
+{
+q:"15. Which simple machine consists of a wheel with a rope around it?",
+options:[
+"Pulley",
+"Screw",
+"Wedge",
+"Lever"
+],
+answer:0,
+explanation:"A pulley consists of a grooved wheel through which a rope or cable passes."
+},
+
+{
+q:"16. What is the main advantage of a fixed pulley?",
+options:[
+"It creates energy",
+"It changes the direction of the effort",
+"It removes gravity",
+"It increases mass"
+],
+answer:1,
+explanation:"A fixed pulley mainly changes the direction in which the effort is applied."
+},
+
+{
+q:"17. A movable pulley generally helps to:",
+options:[
+"Increase the load's mass",
+"Reduce the effort needed",
+"Destroy energy",
+"Stop friction completely"
+],
+answer:1,
+explanation:"A movable pulley can provide mechanical advantage and reduce the effort required to lift a load."
+},
+
+{
+q:"18. What is an inclined plane?",
+options:[
+"A sloping surface",
+"A circular wheel",
+"A rigid bar",
+"A rope"
+],
+answer:0,
+explanation:"An inclined plane is a sloping surface used to move objects between different heights."
+},
+
+{
+q:"19. Which is an example of an inclined plane?",
+options:[
+"Ramp",
+"Door knob",
+"Scissors",
+"Pulley"
+],
+answer:0,
+explanation:"A ramp is a common example of an inclined plane."
+},
+
+{
+q:"20. An inclined plane allows a load to be moved using:",
+options:[
+"A smaller force over a longer distance",
+"A larger force over a shorter distance only",
+"No force",
+"Only magnetic force"
+],
+answer:0,
+explanation:"An inclined plane reduces the effort force by increasing the distance over which the effort acts."
+},
+
+{
+q:"21. Which simple machine consists of a large wheel attached to a smaller axle?",
+options:[
+"Wheel and axle",
+"Wedge",
+"Screw",
+"Lever"
+],
+answer:0,
+explanation:"A wheel and axle consists of a wheel attached to a smaller cylindrical axle."
+},
+
+{
+q:"22. Which is an example of a wheel and axle?",
+options:[
+"Door knob",
+"Knife",
+"Ramp",
+"Seesaw"
+],
+answer:0,
+explanation:"A door knob is a common example of a wheel and axle."
+},
+
+{
+q:"23. A wedge is made from:",
+options:[
+"Two inclined planes joined together",
+"Two pulleys",
+"Two wheels",
+"A rope and wheel"
+],
+answer:0,
+explanation:"A wedge can be considered as two inclined planes joined together."
+},
+
+{
+q:"24. Which is an example of a wedge?",
+options:[
+"Knife",
+"Door knob",
+"Wheelbarrow",
+"Pulley"
+],
+answer:0,
+explanation:"A knife has a wedge-shaped blade and is a common example of a wedge."
+},
+
+{
+q:"25. A wedge is commonly used for:",
+options:[
+"Cutting and splitting",
+"Measuring time",
+"Producing electricity",
+"Measuring temperature"
+],
+answer:0,
+explanation:"Wedges are useful for cutting, splitting, separating, and holding objects."
+},
+
+{
+q:"26. A screw can be considered as:",
+options:[
+"An inclined plane wrapped around a cylinder",
+"A pulley without a rope",
+"A lever without a fulcrum",
+"A wheel without an axle"
+],
+answer:0,
+explanation:"A screw is essentially an inclined plane wrapped around a cylinder."
+},
+
+{
+q:"27. Which is an example of a screw?",
+options:[
+"Wood screw",
+"Seesaw",
+"Ramp",
+"Knife"
+],
+answer:0,
+explanation:"A wood screw is a common example of a screw simple machine."
+},
+
+{
+q:"28. What does mechanical advantage tell us?",
+options:[
+"How much a machine multiplies effort",
+"The temperature of a machine",
+"The mass of a machine",
+"The time of operation"
+],
+answer:0,
+explanation:"Mechanical advantage compares the load to the effort and shows how much the machine multiplies the applied effort."
+},
+
+{
+q:"29. What is the formula for mechanical advantage?",
+options:[
+"MA = Effort / Load",
+"MA = Load / Effort",
+"MA = Load × Effort",
+"MA = Load + Effort"
+],
+answer:1,
+explanation:"Mechanical advantage is calculated using MA = Load / Effort."
+},
+
+{
+q:"30. A machine lifts a 200 N load using 50 N effort. What is its MA?",
+options:[
+"2",
+"4",
+"5",
+"10"
+],
+answer:1,
+explanation:"MA = Load / Effort = 200 / 50 = 4."
+},
+
+{
+q:"31. If load = 600 N and effort = 100 N, MA is:",
+options:[
+"3",
+"6",
+"60",
+"600"
+],
+answer:1,
+explanation:"MA = 600 / 100 = 6."
+},
+
+{
+q:"32. If MA is greater than 1, the machine generally:",
+options:[
+"Multiplies the applied effort",
+"Destroys energy",
+"Has no load",
+"Cannot do work"
+],
+answer:0,
+explanation:"An MA greater than 1 means the output load force is greater than the input effort force."
+},
+
+{
+q:"33. What does velocity ratio compare?",
+options:[
+"Mass and force",
+"Distance moved by effort and load",
+"Time and mass",
+"Energy and power"
+],
+answer:1,
+explanation:"Velocity ratio is the distance moved by the effort divided by the distance moved by the load."
+},
+
+{
+q:"34. What is the formula for velocity ratio?",
+options:[
+"VR = Load / Effort",
+"VR = Effort distance / Load distance",
+"VR = Effort × Load",
+"VR = Load distance / Effort distance"
+],
+answer:1,
+explanation:"VR = distance moved by effort / distance moved by load."
+},
+
+{
+q:"35. The effort moves 4 m and the load moves 1 m. What is VR?",
+options:[
+"1",
+"2",
+"4",
+"5"
+],
+answer:2,
+explanation:"VR = 4 / 1 = 4."
+},
+
+{
+q:"36. A machine has an effort distance of 6 m and load distance of 2 m. VR is:",
+options:[
+"2",
+"3",
+"4",
+"8"
+],
+answer:1,
+explanation:"VR = 6 / 2 = 3."
+},
+
+{
+q:"37. What does efficiency measure?",
+options:[
+"How effectively a machine converts input work into useful output work",
+"Only the mass of the machine",
+"The color of the machine",
+"The length of the machine"
+],
+answer:0,
+explanation:"Efficiency measures how much of the input work becomes useful output work."
+},
+
+{
+q:"38. What is the formula for efficiency using work?",
+options:[
+"Efficiency = Input / Output × 100",
+"Efficiency = Output / Input × 100",
+"Efficiency = Input + Output",
+"Efficiency = Output − Input"
+],
+answer:1,
+explanation:"Efficiency = (useful output work / input work) × 100%."
+},
+
+{
+q:"39. What is the efficiency of an ideal machine?",
+options:[
+"0%",
+"50%",
+"75%",
+"100%"
+],
+answer:3,
+explanation:"An ideal machine has no energy loss, so its efficiency is 100%."
+},
+
+{
+q:"40. Why is the efficiency of a real machine less than 100%?",
+options:[
+"Because of energy losses such as friction",
+"Because machines create energy",
+"Because mass disappears",
+"Because gravity stops"
+],
+answer:0,
+explanation:"Real machines lose some input energy, commonly due to friction, sound, heat, and deformation."
+},
+
+{
+q:"41. Which formula relates efficiency, MA and VR?",
+options:[
+"Efficiency = MA × VR × 100",
+"Efficiency = MA / VR × 100",
+"Efficiency = VR / MA × 100",
+"Efficiency = MA + VR"
+],
+answer:1,
+explanation:"Efficiency (%) = (MA / VR) × 100."
+},
+
+{
+q:"42. A machine has MA = 4 and VR = 5. What is its efficiency?",
+options:[
+"20%",
+"40%",
+"80%",
+"125%"
+],
+answer:2,
+explanation:"Efficiency = (4/5) × 100 = 80%."
+},
+
+{
+q:"43. A machine has MA = 3 and VR = 4. Efficiency is:",
+options:[
+"25%",
+"50%",
+"75%",
+"100%"
+],
+answer:2,
+explanation:"Efficiency = (3/4) × 100 = 75%."
+},
+
+{
+q:"44. Which statement about a real machine is correct?",
+options:[
+"Its efficiency is normally less than 100%",
+"Its efficiency must be 200%",
+"It has no friction",
+"It creates energy"
+],
+answer:0,
+explanation:"Real machines have energy losses, so their efficiency is normally less than 100%."
+},
+
+{
+q:"45. Which simple machine is commonly used to draw water from a well?",
+options:[
+"Pulley",
+"Wedge",
+"Screw",
+"Wheel and axle"
+],
+answer:0,
+explanation:"A pulley can be used to change the direction of force and help lift a bucket from a well."
+},
+
+{
+q:"46. Which simple machine is commonly used for cutting wood?",
+options:[
+"Wedge",
+"Pulley",
+"Wheel and axle",
+"Inclined plane"
+],
+answer:0,
+explanation:"An axe has a wedge-shaped blade and is used for cutting and splitting wood."
+},
+
+{
+q:"47. Which simple machine is commonly used as a ramp for loading heavy objects?",
+options:[
+"Inclined plane",
+"Screw",
+"Pulley",
+"Wedge"
+],
+answer:0,
+explanation:"A loading ramp is an inclined plane."
+},
+
+{
+q:"48. Which simple machine is commonly found in a steering wheel?",
+options:[
+"Wheel and axle",
+"Wedge",
+"Screw",
+"Pulley"
+],
+answer:0,
+explanation:"A steering wheel works as a wheel-and-axle arrangement."
+},
+
+{
+q:"49. Which simple machine is used in a bottle opener?",
+options:[
+"Second-class lever",
+"Third-class lever",
+"Pulley",
+"Screw"
+],
+answer:0,
+explanation:"A bottle opener is an example of a second-class lever."
+},
+
+{
+q:"50. Which simple machine is represented by scissors?",
+options:[
+"First-class lever",
+"Second-class lever",
+"Third-class lever",
+"Inclined plane"
+],
+answer:0,
+explanation:"Scissors act as first-class levers because the pivot is between the effort and the load."
+},
+
+{
+q:"51. If the load is 500 N and the MA is 5, what is the effort?",
+options:[
+"50 N",
+"100 N",
+"250 N",
+"2500 N"
+],
+answer:1,
+explanation:"MA = Load / Effort. Therefore Effort = Load / MA = 500 / 5 = 100 N."
+},
+
+{
+q:"52. If MA = 4 and effort = 50 N, what is the load?",
+options:[
+"12.5 N",
+"54 N",
+"200 N",
+"400 N"
+],
+answer:2,
+explanation:"MA = Load / Effort. Load = MA × Effort = 4 × 50 = 200 N."
+},
+
+{
+q:"53. If the effort moves 10 m and the load moves 2 m, what is VR?",
+options:[
+"2",
+"5",
+"8",
+"20"
+],
+answer:1,
+explanation:"VR = effort distance / load distance = 10 / 2 = 5."
+},
+
+{
+q:"54. If a machine has MA = 2 and VR = 4, its efficiency is:",
+options:[
+"25%",
+"50%",
+"75%",
+"200%"
+],
+answer:0,
+explanation:"Efficiency = (MA / VR) × 100 = (2/4) × 100 = 50%. Therefore the correct answer is 50%."
+},
+
+{
+q:"55. Which statement is TRUE about simple machines?",
+options:[
+"They create energy",
+"They make tasks easier",
+"They always have 100% efficiency",
+"They remove all friction"
+],
+answer:1,
+explanation:"Simple machines make tasks easier by changing the magnitude or direction of forces."
+},
+
+{
+q:"56. Which factor commonly reduces the efficiency of machines?",
+options:[
+"Friction",
+"Mass disappearing",
+"Perfect energy conversion",
+"Zero resistance"
+],
+answer:0,
+explanation:"Friction converts some useful mechanical energy into heat and other forms of energy."
+},
+
+{
+q:"57. A machine has an input work of 500 J and useful output work of 400 J. What is its efficiency?",
+options:[
+"20%",
+"40%",
+"80%",
+"125%"
+],
+answer:2,
+explanation:"Efficiency = (400 / 500) × 100 = 80%."
+},
+
+{
+q:"58. A machine has 80% efficiency. What does this mean?",
+options:[
+"80% of input work becomes useful output work",
+"20% of input work becomes output",
+"The machine creates 80% extra energy",
+"The machine has no energy loss"
+],
+answer:0,
+explanation:"An efficiency of 80% means 80% of the input work is converted into useful output work."
+},
+
+{
+q:"59. Which statement about a machine is correct?",
+options:[
+"Output work can be greater than input work in a real machine",
+"Some input energy is lost in a real machine",
+"A machine creates energy",
+"Friction always increases efficiency"
+],
+answer:1,
+explanation:"Real machines lose some energy, commonly through friction, heat, sound, and deformation."
+},
+
+{
+q:"60. Which formula is correct?",
+options:[
+"MA = Effort / Load",
+"VR = Load distance / Effort distance",
+"Efficiency = (MA / VR) × 100%",
+"Efficiency = MA + VR"
+],
+answer:2,
+explanation:"The correct relationship is Efficiency = (MA / VR) × 100%."
+}
+
+];
+
+
+const quiz = document.getElementById("quiz");
+
+let score = 0;
+let answered = 0;
+
+
+questions.forEach((question,index)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "card question";
+
+
+    const title = document.createElement("h3");
+
+    title.textContent = question.q;
+
+    card.appendChild(title);
+
+
+    const result = document.createElement("div");
+
+    result.className = "result";
+
+    result.style.display = "none";
+
+
+    const explanation = document.createElement("div");
+
+    explanation.className = "explanation";
+
+    explanation.style.display = "none";
+
+
+    question.options.forEach((option,optionIndex)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65 + optionIndex) +
+        ". " + option;
+
+
+        button.onclick = function(){
+
+            const buttons =
+            card.querySelectorAll(".option");
+
+
+            buttons.forEach(btn=>{
+                btn.disabled = true;
+            });
+
+
+            answered++;
+
+
+            if(optionIndex === question.answer){
+
+                score++;
+
+                result.className =
+                "result correct";
+
+                result.innerHTML =
+                "✅ Correct!";
+
+            }else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ Wrong! Correct answer: " +
+                String.fromCharCode(65 + question.answer) +
+                ". " +
+                question.options[question.answer];
+
+            }
+
+
+            result.style.display = "block";
+
+
+            explanation.innerHTML =
+            "<b>💡 Explanation:</b> " +
+            question.explanation;
+
+            explanation.style.display = "block";
+
+
+            if(answered === questions.length){
+
+                showScore();
+
+            }
+
+        };
+
+
+        card.appendChild(button);
+
+    });
+
+
+    card.appendChild(result);
+
+    card.appendChild(explanation);
+
+    quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+    const scoreBox =
+    document.getElementById("score");
+
+    const scoreText =
+    document.getElementById("scoreText");
+
+
+    const percentage =
+    Math.round((score / questions.length) * 100);
+
+
+    scoreText.innerHTML =
+    "Your Score: <b>" +
+    score +
+    " / " +
+    questions.length +
+    "</b><br><br>" +
+    "Percentage: <b>" +
+    percentage +
+    "%</b>";
+
+
+    scoreBox.style.display = "block";
+
+
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
