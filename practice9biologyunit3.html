@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Grade 9 Biology Unit 3 Practice</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -27,6 +32,11 @@ header{
 
 header h1{
     margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
 }
 
 .container{
@@ -35,1031 +45,1466 @@ header h1{
     padding:20px;
 }
 
-.question{
+.card{
     background:white;
     margin:18px 0;
-    padding:20px;
-    border-radius:15px;
+    padding:22px;
+    border-radius:16px;
     box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #16a34a;
 }
 
 .question h3{
     color:#15803d;
+    line-height:1.5;
 }
 
 .option{
     display:block;
-    background:#f8fafc;
-    border:1px solid #ddd;
-    padding:12px;
-    margin:8px 0;
-    border-radius:9px;
+    width:100%;
+    margin:9px 0;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#eef2f7;
+    color:#222;
+    text-align:left;
+    font-size:15px;
     cursor:pointer;
 }
 
 .option:hover{
-    background:#dcfce7;
+    background:#dbeafe;
 }
 
-.option input{
-    margin-right:10px;
+.option.correct{
+    background:#bbf7d0;
+    border:2px solid #16a34a;
+    color:#166534;
 }
 
-button{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:10px;
-    color:white;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-.submit{
-    background:#16a34a;
-}
-
-.reset{
-    background:#dc2626;
-}
-
-.back{
-    background:#172554;
+.option.wrong{
+    background:#fecaca;
+    border:2px solid #dc2626;
+    color:#991b1b;
 }
 
 .result{
     display:none;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin:20px 0;
-    text-align:center;
-    box-shadow:0 3px 10px #ccc;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.6;
 }
 
 .right{
-    color:#15803d;
-    font-weight:bold;
+    background:#dcfce7;
+    color:#166534;
 }
 
-.wrong{
-    color:#dc2626;
-    font-weight:bold;
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
 }
 
 .explanation{
-    background:#f0fdf4;
-    border-left:5px solid #16a34a;
-    padding:12px;
+    margin-top:8px;
+    font-weight:normal;
+}
+
+#scoreBox{
+    background:#fff;
+    border-left:6px solid #16a34a;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+#score{
+    font-size:24px;
+    font-weight:bold;
+    color:#15803d;
+}
+
+.finish{
+    width:100%;
+    padding:16px;
+    margin-top:20px;
+    border:none;
+    border-radius:12px;
+    background:#15803d;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.reset{
+    width:100%;
+    padding:16px;
     margin-top:10px;
-    border-radius:8px;
+    border:none;
+    border-radius:12px;
+    background:#334155;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.back{
+    width:100%;
+    padding:16px;
+    margin-top:10px;
+    border:none;
+    border-radius:12px;
+    background:#172554;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>🧬 Grade 9 Biology</h1>
-<p>Unit 3 — Cells</p>
+
+<p>Unit 3 — Cell Biology</p>
+
 <p>📝 60 Multiple Choice Questions</p>
+
 </header>
+
 
 <div class="container">
 
-<form id="quiz">
 
-<!-- 1 -->
-<div class="question">
+<div class="card" id="scoreBox">
+
+<h2>📊 Your Score</h2>
+
+<div id="score">0 / 60</div>
+
+</div>
+
+
+<!-- QUESTION 1 -->
+
+<div class="card question">
+
 <h3>1. What is the basic structural and functional unit of life?</h3>
-<label class="option"><input type="radio" name="q1" value="A"> A. Tissue</label>
-<label class="option"><input type="radio" name="q1" value="B"> B. Organ</label>
-<label class="option"><input type="radio" name="q1" value="C"> C. Cell</label>
-<label class="option"><input type="radio" name="q1" value="D"> D. Organ system</label>
-<div id="e1"></div>
-</div>
 
-<!-- 2 -->
-<div class="question">
-<h3>2. Who introduced the term "cell" after observing cork?</h3>
-<label class="option"><input type="radio" name="q2" value="A"> A. Robert Hooke</label>
-<label class="option"><input type="radio" name="q2" value="B"> B. Rudolf Virchow</label>
-<label class="option"><input type="radio" name="q2" value="C"> C. Theodor Schwann</label>
-<label class="option"><input type="radio" name="q2" value="D"> D. Matthias Schleiden</label>
-<div id="e2"></div>
-</div>
+<button class="option" onclick="check(this,1,'A')">A. Tissue</button>
+<button class="option" onclick="check(this,1,'B')">B. Cell</button>
+<button class="option" onclick="check(this,1,'C')">C. Organ</button>
+<button class="option" onclick="check(this,1,'D')">D. Organ system</button>
 
-<!-- 3 -->
-<div class="question">
-<h3>3. What did Schleiden conclude?</h3>
-<label class="option"><input type="radio" name="q3" value="A"> A. All animals are made of cells</label>
-<label class="option"><input type="radio" name="q3" value="B"> B. All plants are made of cells</label>
-<label class="option"><input type="radio" name="q3" value="C"> C. Cells have no DNA</label>
-<label class="option"><input type="radio" name="q3" value="D"> D. Cells arise from rocks</label>
-<div id="e3"></div>
-</div>
+<div id="result1" class="result"></div>
 
-<!-- 4 -->
-<div class="question">
-<h3>4. Who concluded that animals are made of cells?</h3>
-<label class="option"><input type="radio" name="q4" value="A"> A. Hooke</label>
-<label class="option"><input type="radio" name="q4" value="B"> B. Virchow</label>
-<label class="option"><input type="radio" name="q4" value="C"> C. Schwann</label>
-<label class="option"><input type="radio" name="q4" value="D"> D. Leeuwenhoek</label>
-<div id="e4"></div>
-</div>
-
-<!-- 5 -->
-<div class="question">
-<h3>5. Who proposed that new cells arise from pre-existing cells?</h3>
-<label class="option"><input type="radio" name="q5" value="A"> A. Rudolf Virchow</label>
-<label class="option"><input type="radio" name="q5" value="B"> B. Robert Hooke</label>
-<label class="option"><input type="radio" name="q5" value="C"> C. Schleiden</label>
-<label class="option"><input type="radio" name="q5" value="D"> D. Schwann</label>
-<div id="e5"></div>
-</div>
-
-<!-- 6 -->
-<div class="question">
-<h3>6. Which organism is unicellular?</h3>
-<label class="option"><input type="radio" name="q6" value="A"> A. Human</label>
-<label class="option"><input type="radio" name="q6" value="B"> B. Dog</label>
-<label class="option"><input type="radio" name="q6" value="C"> C. Amoeba</label>
-<label class="option"><input type="radio" name="q6" value="D"> D. Maize</label>
-<div id="e6"></div>
-</div>
-
-<!-- 7 -->
-<div class="question">
-<h3>7. An organism made of many cells is called:</h3>
-<label class="option"><input type="radio" name="q7" value="A"> A. Unicellular</label>
-<label class="option"><input type="radio" name="q7" value="B"> B. Multicellular</label>
-<label class="option"><input type="radio" name="q7" value="C"> C. Prokaryotic</label>
-<label class="option"><input type="radio" name="q7" value="D"> D. Microscopic</label>
-<div id="e7"></div>
-</div>
-
-<!-- 8 -->
-<div class="question">
-<h3>8. Which organelle contains most of the cell's genetic material?</h3>
-<label class="option"><input type="radio" name="q8" value="A"> A. Ribosome</label>
-<label class="option"><input type="radio" name="q8" value="B"> B. Nucleus</label>
-<label class="option"><input type="radio" name="q8" value="C"> C. Vacuole</label>
-<label class="option"><input type="radio" name="q8" value="D"> D. Golgi apparatus</label>
-<div id="e8"></div>
-</div>
-
-<!-- 9 -->
-<div class="question">
-<h3>9. Which structure controls what enters and leaves the cell?</h3>
-<label class="option"><input type="radio" name="q9" value="A"> A. Cell membrane</label>
-<label class="option"><input type="radio" name="q9" value="B"> B. Cell wall</label>
-<label class="option"><input type="radio" name="q9" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q9" value="D"> D. Chloroplast</label>
-<div id="e9"></div>
-</div>
-
-<!-- 10 -->
-<div class="question">
-<h3>10. Where do many chemical reactions occur in a cell?</h3>
-<label class="option"><input type="radio" name="q10" value="A"> A. Cytoplasm</label>
-<label class="option"><input type="radio" name="q10" value="B"> B. Cell wall</label>
-<label class="option"><input type="radio" name="q10" value="C"> C. Vacuole</label>
-<label class="option"><input type="radio" name="q10" value="D"> D. Nucleus</label>
-<div id="e10"></div>
-</div>
-
-<!-- 11 -->
-<div class="question">
-<h3>11. Which organelle is the major site of aerobic respiration?</h3>
-<label class="option"><input type="radio" name="q11" value="A"> A. Chloroplast</label>
-<label class="option"><input type="radio" name="q11" value="B"> B. Ribosome</label>
-<label class="option"><input type="radio" name="q11" value="C"> C. Mitochondrion</label>
-<label class="option"><input type="radio" name="q11" value="D"> D. Lysosome</label>
-<div id="e11"></div>
-</div>
-
-<!-- 12 -->
-<div class="question">
-<h3>12. What is the main function of ribosomes?</h3>
-<label class="option"><input type="radio" name="q12" value="A"> A. Photosynthesis</label>
-<label class="option"><input type="radio" name="q12" value="B"> B. Protein synthesis</label>
-<label class="option"><input type="radio" name="q12" value="C"> C. Water storage</label>
-<label class="option"><input type="radio" name="q12" value="D"> D. Digestion</label>
-<div id="e12"></div>
-</div>
-
-<!-- 13 -->
-<div class="question">
-<h3>13. Which organelle is the main site of photosynthesis?</h3>
-<label class="option"><input type="radio" name="q13" value="A"> A. Mitochondrion</label>
-<label class="option"><input type="radio" name="q13" value="B"> B. Chloroplast</label>
-<label class="option"><input type="radio" name="q13" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q13" value="D"> D. Lysosome</label>
-<div id="e13"></div>
-</div>
-
-<!-- 14 -->
-<div class="question">
-<h3>14. Which structure provides support and protection to plant cells?</h3>
-<label class="option"><input type="radio" name="q14" value="A"> A. Ribosome</label>
-<label class="option"><input type="radio" name="q14" value="B"> B. Cell wall</label>
-<label class="option"><input type="radio" name="q14" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q14" value="D"> D. Cytoplasm</label>
-<div id="e14"></div>
-</div>
-
-<!-- 15 -->
-<div class="question">
-<h3>15. Plant cell walls are mainly made of:</h3>
-<label class="option"><input type="radio" name="q15" value="A"> A. Protein</label>
-<label class="option"><input type="radio" name="q15" value="B"> B. Cellulose</label>
-<label class="option"><input type="radio" name="q15" value="C"> C. Fat</label>
-<label class="option"><input type="radio" name="q15" value="D"> D. DNA</label>
-<div id="e15"></div>
-</div>
-
-<!-- 16 -->
-<div class="question">
-<h3>16. Which organelle modifies, sorts and packages materials?</h3>
-<label class="option"><input type="radio" name="q16" value="A"> A. Golgi apparatus</label>
-<label class="option"><input type="radio" name="q16" value="B"> B. Ribosome</label>
-<label class="option"><input type="radio" name="q16" value="C"> C. Chloroplast</label>
-<label class="option"><input type="radio" name="q16" value="D"> D. Nucleus</label>
-<div id="e16"></div>
-</div>
-
-<!-- 17 -->
-<div class="question">
-<h3>17. Which organelle contains digestive enzymes?</h3>
-<label class="option"><input type="radio" name="q17" value="A"> A. Lysosome</label>
-<label class="option"><input type="radio" name="q17" value="B"> B. Vacuole</label>
-<label class="option"><input type="radio" name="q17" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q17" value="D"> D. Chloroplast</label>
-<div id="e17"></div>
-</div>
-
-<!-- 18 -->
-<div class="question">
-<h3>18. What is a major function of the vacuole in plant cells?</h3>
-<label class="option"><input type="radio" name="q18" value="A"> A. Protein synthesis</label>
-<label class="option"><input type="radio" name="q18" value="B"> B. Storage</label>
-<label class="option"><input type="radio" name="q18" value="C"> C. DNA replication only</label>
-<label class="option"><input type="radio" name="q18" value="D"> D. Photosynthesis</label>
-<div id="e18"></div>
-</div>
-
-<!-- 19 -->
-<div class="question">
-<h3>19. Which type of cell has no true nucleus?</h3>
-<label class="option"><input type="radio" name="q19" value="A"> A. Eukaryotic</label>
-<label class="option"><input type="radio" name="q19" value="B"> B. Prokaryotic</label>
-<label class="option"><input type="radio" name="q19" value="C"> C. Plant</label>
-<label class="option"><input type="radio" name="q19" value="D"> D. Animal</label>
-<div id="e19"></div>
-</div>
-
-<!-- 20 -->
-<div class="question">
-<h3>20. Which organism is prokaryotic?</h3>
-<label class="option"><input type="radio" name="q20" value="A"> A. Human</label>
-<label class="option"><input type="radio" name="q20" value="B"> B. Bacterium</label>
-<label class="option"><input type="radio" name="q20" value="C"> C. Mushroom</label>
-<label class="option"><input type="radio" name="q20" value="D"> D. Maize</label>
-<div id="e20"></div>
-</div>
-
-<!-- 21 -->
-<div class="question">
-<h3>21. Eukaryotic cells have:</h3>
-<label class="option"><input type="radio" name="q21" value="A"> A. No DNA</label>
-<label class="option"><input type="radio" name="q21" value="B"> B. A membrane-bound nucleus</label>
-<label class="option"><input type="radio" name="q21" value="C"> C. No ribosomes</label>
-<label class="option"><input type="radio" name="q21" value="D"> D. No cell membrane</label>
-<div id="e21"></div>
-</div>
-
-<!-- 22 -->
-<div class="question">
-<h3>22. Which structure is found in both plant and animal cells?</h3>
-<label class="option"><input type="radio" name="q22" value="A"> A. Cell wall</label>
-<label class="option"><input type="radio" name="q22" value="B"> B. Chloroplast</label>
-<label class="option"><input type="radio" name="q22" value="C"> C. Cell membrane</label>
-<label class="option"><input type="radio" name="q22" value="D"> D. Large central vacuole</label>
-<div id="e22"></div>
-</div>
-
-<!-- 23 -->
-<div class="question">
-<h3>23. Which structure is characteristic of plant cells but absent from animal cells?</h3>
-<label class="option"><input type="radio" name="q23" value="A"> A. Nucleus</label>
-<label class="option"><input type="radio" name="q23" value="B"> B. Cell wall</label>
-<label class="option"><input type="radio" name="q23" value="C"> C. Cytoplasm</label>
-<label class="option"><input type="radio" name="q23" value="D"> D. Mitochondria</label>
-<div id="e23"></div>
-</div>
-
-<!-- 24 -->
-<div class="question">
-<h3>24. Which structure contains chlorophyll?</h3>
-<label class="option"><input type="radio" name="q24" value="A"> A. Chloroplast</label>
-<label class="option"><input type="radio" name="q24" value="B"> B. Ribosome</label>
-<label class="option"><input type="radio" name="q24" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q24" value="D"> D. Golgi apparatus</label>
-<div id="e24"></div>
-</div>
-
-<!-- 25 -->
-<div class="question">
-<h3>25. Which instrument is used to observe very small cells?</h3>
-<label class="option"><input type="radio" name="q25" value="A"> A. Telescope</label>
-<label class="option"><input type="radio" name="q25" value="B"> B. Microscope</label>
-<label class="option"><input type="radio" name="q25" value="C"> C. Thermometer</label>
-<label class="option"><input type="radio" name="q25" value="D"> D. Balance</label>
-<div id="e25"></div>
-</div>
-
-<!-- 26 -->
-<div class="question">
-<h3>26. Why are stains used when observing cells?</h3>
-<label class="option"><input type="radio" name="q26" value="A"> A. To kill all cells</label>
-<label class="option"><input type="radio" name="q26" value="B"> B. To increase contrast</label>
-<label class="option"><input type="radio" name="q26" value="C"> C. To make cells larger permanently</label>
-<label class="option"><input type="radio" name="q26" value="D"> D. To remove DNA</label>
-<div id="e26"></div>
-</div>
-
-<!-- 27 -->
-<div class="question">
-<h3>27. When using a microscope, which objective should usually be used first?</h3>
-<label class="option"><input type="radio" name="q27" value="A"> A. Highest power</label>
-<label class="option"><input type="radio" name="q27" value="B"> B. Oil immersion only</label>
-<label class="option"><input type="radio" name="q27" value="C"> C. Low power</label>
-<label class="option"><input type="radio" name="q27" value="D"> D. No objective</label>
-<div id="e27"></div>
-</div>
-
-<!-- 28 -->
-<div class="question">
-<h3>28. Diffusion is the net movement of particles from:</h3>
-<label class="option"><input type="radio" name="q28" value="A"> A. Low to high concentration</label>
-<label class="option"><input type="radio" name="q28" value="B"> B. High to low concentration</label>
-<label class="option"><input type="radio" name="q28" value="C"> C. Cell to nucleus only</label>
-<label class="option"><input type="radio" name="q28" value="D"> D. Nucleus to DNA</label>
-<div id="e28"></div>
-</div>
-
-<!-- 29 -->
-<div class="question">
-<h3>29. Which process specifically involves movement of water through a selectively permeable membrane?</h3>
-<label class="option"><input type="radio" name="q29" value="A"> A. Diffusion</label>
-<label class="option"><input type="radio" name="q29" value="B"> B. Osmosis</label>
-<label class="option"><input type="radio" name="q29" value="C"> C. Respiration</label>
-<label class="option"><input type="radio" name="q29" value="D"> D. Photosynthesis</label>
-<div id="e29"></div>
-</div>
-
-<!-- 30 -->
-<div class="question">
-<h3>30. Passive transport generally:</h3>
-<label class="option"><input type="radio" name="q30" value="A"> A. Requires ATP</label>
-<label class="option"><input type="radio" name="q30" value="B"> B. Requires photosynthesis</label>
-<label class="option"><input type="radio" name="q30" value="C"> C. Does not require direct cellular energy</label>
-<label class="option"><input type="radio" name="q30" value="D"> D. Always moves substances from low to high concentration</label>
-<div id="e30"></div>
-</div>
-
-<!-- 31 -->
-<div class="question">
-<h3>31. Active transport requires:</h3>
-<label class="option"><input type="radio" name="q31" value="A"> A. Cellular energy</label>
-<label class="option"><input type="radio" name="q31" value="B"> B. No energy</label>
-<label class="option"><input type="radio" name="q31" value="C"> C. Sunlight only</label>
-<label class="option"><input type="radio" name="q31" value="D"> D. Chlorophyll only</label>
-<div id="e31"></div>
-</div>
-
-<!-- 32 -->
-<div class="question">
-<h3>32. Active transport can move substances:</h3>
-<label class="option"><input type="radio" name="q32" value="A"> A. Only from high to low concentration</label>
-<label class="option"><input type="radio" name="q32" value="B"> B. Against a concentration gradient</label>
-<label class="option"><input type="radio" name="q32" value="C"> C. Without a membrane</label>
-<label class="option"><input type="radio" name="q32" value="D"> D. Without energy</label>
-<div id="e32"></div>
-</div>
-
-<!-- 33 -->
-<div class="question">
-<h3>33. A solution with lower solute concentration outside the cell is called:</h3>
-<label class="option"><input type="radio" name="q33" value="A"> A. Hypertonic</label>
-<label class="option"><input type="radio" name="q33" value="B"> B. Isotonic</label>
-<label class="option"><input type="radio" name="q33" value="C"> C. Hypotonic</label>
-<label class="option"><input type="radio" name="q33" value="D"> D. Neutral</label>
-<div id="e33"></div>
-</div>
-
-<!-- 34 -->
-<div class="question">
-<h3>34. In a hypertonic solution, water tends to:</h3>
-<label class="option"><input type="radio" name="q34" value="A"> A. Enter the cell</label>
-<label class="option"><input type="radio" name="q34" value="B"> B. Leave the cell</label>
-<label class="option"><input type="radio" name="q34" value="C"> C. Become DNA</label>
-<label class="option"><input type="radio" name="q34" value="D"> D. Stop existing</label>
-<div id="e34"></div>
-</div>
-
-<!-- 35 -->
-<div class="question">
-<h3>35. In an isotonic solution there is:</h3>
-<label class="option"><input type="radio" name="q35" value="A"> A. No net movement of water</label>
-<label class="option"><input type="radio" name="q35" value="B"> B. Only movement into the cell</label>
-<label class="option"><input type="radio" name="q35" value="C"> C. Only movement out of the cell</label>
-<label class="option"><input type="radio" name="q35" value="D"> D. No water molecules</label>
-<div id="e35"></div>
-</div>
-
-<!-- 36 -->
-<div class="question">
-<h3>36. Which is an example of active transport?</h3>
-<label class="option"><input type="radio" name="q36" value="A"> A. Oxygen diffusion</label>
-<label class="option"><input type="radio" name="q36" value="B"> B. Water movement by osmosis</label>
-<label class="option"><input type="radio" name="q36" value="C"> C. Mineral ion uptake by plant roots</label>
-<label class="option"><input type="radio" name="q36" value="D"> D. Carbon dioxide diffusion</label>
-<div id="e36"></div>
-</div>
-
-<!-- 37 -->
-<div class="question">
-<h3>37. Which process does NOT directly require ATP?</h3>
-<label class="option"><input type="radio" name="q37" value="A"> A. Active transport</label>
-<label class="option"><input type="radio" name="q37" value="B"> B. Diffusion</label>
-<label class="option"><input type="radio" name="q37" value="C"> C. Energy-dependent pumping</label>
-<label class="option"><input type="radio" name="q37" value="D"> D. Ion pumping</label>
-<div id="e37"></div>
-</div>
-
-<!-- 38 -->
-<div class="question">
-<h3>38. What is a selectively permeable membrane?</h3>
-<label class="option"><input type="radio" name="q38" value="A"> A. A membrane that allows every substance through</label>
-<label class="option"><input type="radio" name="q38" value="B"> B. A membrane that controls what crosses it</label>
-<label class="option"><input type="radio" name="q38" value="C"> C. A solid wall with no openings</label>
-<label class="option"><input type="radio" name="q38" value="D"> D. A membrane made only of cellulose</label>
-<div id="e38"></div>
-</div>
-
-<!-- 39 -->
-<div class="question">
-<h3>39. Which level comes immediately after the cell?</h3>
-<label class="option"><input type="radio" name="q39" value="A"> A. Organ</label>
-<label class="option"><input type="radio" name="q39" value="B"> B. Tissue</label>
-<label class="option"><input type="radio" name="q39" value="C"> C. Organ system</label>
-<label class="option"><input type="radio" name="q39" value="D"> D. Organism</label>
-<div id="e39"></div>
-</div>
-
-<!-- 40 -->
-<div class="question">
-<h3>40. A group of similar cells working together is called:</h3>
-<label class="option"><input type="radio" name="q40" value="A"> A. Organ</label>
-<label class="option"><input type="radio" name="q40" value="B"> B. Tissue</label>
-<label class="option"><input type="radio" name="q40" value="C"> C. Organ system</label>
-<label class="option"><input type="radio" name="q40" value="D"> D. Organism</label>
-<div id="e40"></div>
-</div>
-
-<!-- 41 -->
-<div class="question">
-<h3>41. An organ is made up of:</h3>
-<label class="option"><input type="radio" name="q41" value="A"> A. Only one cell</label>
-<label class="option"><input type="radio" name="q41" value="B"> B. Different tissues working together</label>
-<label class="option"><input type="radio" name="q41" value="C"> C. Only organs</label>
-<label class="option"><input type="radio" name="q41" value="D"> D. Only organ systems</label>
-<div id="e41"></div>
-</div>
-
-<!-- 42 -->
-<div class="question">
-<h3>42. Which sequence is correct?</h3>
-<label class="option"><input type="radio" name="q42" value="A"> A. Organ → Cell → Tissue → Organism</label>
-<label class="option"><input type="radio" name="q42" value="B"> B. Cell → Tissue → Organ → Organ system → Organism</label>
-<label class="option"><input type="radio" name="q42" value="C"> C. Tissue → Cell → Organ → Organism</label>
-<label class="option"><input type="radio" name="q42" value="D"> D. Cell → Organ → Tissue → Organism</label>
-<div id="e42"></div>
-</div>
-
-<!-- 43 -->
-<div class="question">
-<h3>43. Which is an example of an organ system?</h3>
-<label class="option"><input type="radio" name="q43" value="A"> A. Heart</label>
-<label class="option"><input type="radio" name="q43" value="B"> B. Muscle tissue</label>
-<label class="option"><input type="radio" name="q43" value="C"> C. Digestive system</label>
-<label class="option"><input type="radio" name="q43" value="D"> D. Nerve cell</label>
-<div id="e43"></div>
-</div>
-
-<!-- 44 -->
-<div class="question">
-<h3>44. Which structure is NOT found in animal cells?</h3>
-<label class="option"><input type="radio" name="q44" value="A"> A. Nucleus</label>
-<label class="option"><input type="radio" name="q44" value="B"> B. Mitochondria</label>
-<label class="option"><input type="radio" name="q44" value="C"> C. Cell wall</label>
-<label class="option"><input type="radio" name="q44" value="D"> D. Ribosomes</label>
-<div id="e44"></div>
-</div>
-
-<!-- 45 -->
-<div class="question">
-<h3>45. Which structure is NOT found in prokaryotic cells?</h3>
-<label class="option"><input type="radio" name="q45" value="A"> A. Ribosomes</label>
-<label class="option"><input type="radio" name="q45" value="B"> B. Cell membrane</label>
-<label class="option"><input type="radio" name="q45" value="C"> C. A membrane-bound nucleus</label>
-<label class="option"><input type="radio" name="q45" value="D"> D. DNA</label>
-<div id="e45"></div>
-</div>
-
-<!-- 46 -->
-<div class="question">
-<h3>46. Which organelle is associated with lipid production?</h3>
-<label class="option"><input type="radio" name="q46" value="A"> A. Smooth endoplasmic reticulum</label>
-<label class="option"><input type="radio" name="q46" value="B"> B. Ribosome</label>
-<label class="option"><input type="radio" name="q46" value="C"> C. Chloroplast</label>
-<label class="option"><input type="radio" name="q46" value="D"> D. Lysosome</label>
-<div id="e46"></div>
-</div>
-
-<!-- 47 -->
-<div class="question">
-<h3>47. What is attached to rough endoplasmic reticulum?</h3>
-<label class="option"><input type="radio" name="q47" value="A"> A. Chloroplasts</label>
-<label class="option"><input type="radio" name="q47" value="B"> B. Ribosomes</label>
-<label class="option"><input type="radio" name="q47" value="C"> C. Lysosomes</label>
-<label class="option"><input type="radio" name="q47" value="D"> D. Vacuoles</label>
-<div id="e47"></div>
-</div>
-
-<!-- 48 -->
-<div class="question">
-<h3>48. Which organelle is involved in protein production and transport?</h3>
-<label class="option"><input type="radio" name="q48" value="A"> A. Rough ER</label>
-<label class="option"><input type="radio" name="q48" value="B"> B. Cell wall</label>
-<label class="option"><input type="radio" name="q48" value="C"> C. Chloroplast</label>
-<label class="option"><input type="radio" name="q48" value="D"> D. Vacuole</label>
-<div id="e48"></div>
-</div>
-
-<!-- 49 -->
-<div class="question">
-<h3>49. Which organelle helps break down worn-out cell components?</h3>
-<label class="option"><input type="radio" name="q49" value="A"> A. Lysosome</label>
-<label class="option"><input type="radio" name="q49" value="B"> B. Ribosome</label>
-<label class="option"><input type="radio" name="q49" value="C"> C. Nucleus</label>
-<label class="option"><input type="radio" name="q49" value="D"> D. Cell wall</label>
-<div id="e49"></div>
-</div>
-
-<!-- 50 -->
-<div class="question">
-<h3>50. Which cell structure gives a plant cell its rigid shape?</h3>
-<label class="option"><input type="radio" name="q50" value="A"> A. Cell wall</label>
-<label class="option"><input type="radio" name="q50" value="B"> B. Cell membrane only</label>
-<label class="option"><input type="radio" name="q50" value="C"> C. Ribosome</label>
-<label class="option"><input type="radio" name="q50" value="D"> D. Golgi apparatus</label>
-<div id="e50"></div>
-</div>
-
-<!-- 51 -->
-<div class="question">
-<h3>51. Which structure is responsible for controlling many cell activities?</h3>
-<label class="option"><input type="radio" name="q51" value="A"> A. Nucleus</label>
-<label class="option"><input type="radio" name="q51" value="B"> B. Vacuole</label>
-<label class="option"><input type="radio" name="q51" value="C"> C. Cell wall</label>
-<label class="option"><input type="radio" name="q51" value="D"> D. Ribosome</label>
-<div id="e51"></div>
-</div>
-
-<!-- 52 -->
-<div class="question">
-<h3>52. Which of the following is a multicellular organism?</h3>
-<label class="option"><input type="radio" name="q52" value="A"> A. Bacterium</label>
-<label class="option"><input type="radio" name="q52" value="B"> B. Amoeba</label>
-<label class="option"><input type="radio" name="q52" value="C"> C. Human</label>
-<label class="option"><input type="radio" name="q52" value="D"> D. Yeast cell</label>
-<div id="e52"></div>
-</div>
-
-<!-- 53 -->
-<div class="question">
-<h3>53. Which statement is TRUE about cell theory?</h3>
-<label class="option"><input type="radio" name="q53" value="A"> A. Only animals are made of cells</label>
-<label class="option"><input type="radio" name="q53" value="B"> B. Cells are the basic units of life</label>
-<label class="option"><input type="radio" name="q53" value="C"> C. Cells are not living structures</label>
-<label class="option"><input type="radio" name="q53" value="D"> D. New cells arise from non-living rocks</label>
-<div id="e53"></div>
-</div>
-
-<!-- 54 -->
-<div class="question">
-<h3>54. Which statement about mitochondria is correct?</h3>
-<label class="option"><input type="radio" name="q54" value="A"> A. They carry out photosynthesis</label>
-<label class="option"><input type="radio" name="q54" value="B"> B. They are major sites of aerobic respiration</label>
-<label class="option"><input type="radio" name="q54" value="C"> C. They make the cell wall</label>
-<label class="option"><input type="radio" name="q54" value="D"> D. They store DNA only</label>
-<div id="e54"></div>
-</div>
-
-<!-- 55 -->
-<div class="question">
-<h3>55. Which process allows oxygen to move into a cell when its concentration is higher outside?</h3>
-<label class="option"><input type="radio" name="q55" value="A"> A. Active transport</label>
-<label class="option"><input type="radio" name="q55" value="B"> B. Diffusion</label>
-<label class="option"><input type="radio" name="q55" value="C"> C. Osmosis</label>
-<label class="option"><input type="radio" name="q55" value="D"> D. Photosynthesis</label>
-<div id="e55"></div>
-</div>
-
-<!-- 56 -->
-<div class="question">
-<h3>56. Which process is responsible for water absorption by plant roots?</h3>
-<label class="option"><input type="radio" name="q56" value="A"> A. Osmosis</label>
-<label class="option"><input type="radio" name="q56" value="B"> B. Protein synthesis</label>
-<label class="option"><input type="radio" name="q56" value="C"> C. Respiration</label>
-<label class="option"><input type="radio" name="q56" value="D"> D. Cell division</label>
-<div id="e56"></div>
-</div>
-
-<!-- 57 -->
-<div class="question">
-<h3>57. Which of the following requires cellular energy?</h3>
-<label class="option"><input type="radio" name="q57" value="A"> A. Diffusion</label>
-<label class="option"><input type="radio" name="q57" value="B"> B. Osmosis</label>
-<label class="option"><input type="radio" name="q57" value="C"> C. Active transport</label>
-<label class="option"><input type="radio" name="q57" value="D"> D. Simple movement down a gradient</label>
-<div id="e57"></div>
-</div>
-
-<!-- 58 -->
-<div class="question">
-<h3>58. Which is the correct order of biological organization?</h3>
-<label class="option"><input type="radio" name="q58" value="A"> A. Tissue → Cell → Organ → Organism</label>
-<label class="option"><input type="radio" name="q58" value="B"> B. Cell → Tissue → Organ → Organ System → Organism</label>
-<label class="option"><input type="radio" name="q58" value="C"> C. Cell → Organ → Tissue → Organism</label>
-<label class="option"><input type="radio" name="q58" value="D"> D. Organ → Tissue → Cell → Organism</label>
-<div id="e58"></div>
-</div>
-
-<!-- 59 -->
-<div class="question">
-<h3>59. Which statement best describes a tissue?</h3>
-<label class="option"><input type="radio" name="q59" value="A"> A. A group of organs</label>
-<label class="option"><input type="radio" name="q59" value="B"> B. A group of similar cells performing a function</label>
-<label class="option"><input type="radio" name="q59" value="C"> C. A complete organism</label>
-<label class="option"><input type="radio" name="q59" value="D"> D. A single organelle</label>
-<div id="e59"></div>
-</div>
-
-<!-- 60 -->
-<div class="question">
-<h3>60. Which statement correctly compares plant and animal cells?</h3>
-<label class="option"><input type="radio" name="q60" value="A"> A. Animal cells have chloroplasts</label>
-<label class="option"><input type="radio" name="q60" value="B"> B. Plant cells have cell walls and chloroplasts</label>
-<label class="option"><input type="radio" name="q60" value="C"> C. Plant cells have no nucleus</label>
-<label class="option"><input type="radio" name="q60" value="D"> D. Animal cells have cell walls</label>
-<div id="e60"></div>
 </div>
 
 
-<button type="button" class="submit" onclick="checkAnswers()">
-✅ Submit Answers
+<!-- QUESTION 2 -->
+
+<div class="card question">
+
+<h3>2. Who first observed cells in cork?</h3>
+
+<button class="option" onclick="check(this,2,'A')">A. Robert Hooke</button>
+<button class="option" onclick="check(this,2,'B')">B. Anton van Leeuwenhoek</button>
+<button class="option" onclick="check(this,2,'C')">C. Schleiden</button>
+<button class="option" onclick="check(this,2,'D')">D. Schwann</button>
+
+<div id="result2" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 3 -->
+
+<div class="card question">
+
+<h3>3. Which scientist observed living microorganisms using a microscope?</h3>
+
+<button class="option" onclick="check(this,3,'A')">A. Robert Hooke</button>
+<button class="option" onclick="check(this,3,'B')">B. Anton van Leeuwenhoek</button>
+<button class="option" onclick="check(this,3,'C')">C. Virchow</button>
+<button class="option" onclick="check(this,3,'D')">D. Schleiden</button>
+
+<div id="result3" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 4 -->
+
+<div class="card question">
+
+<h3>4. Which statement is part of the cell theory?</h3>
+
+<button class="option" onclick="check(this,4,'A')">A. Only animals are made of cells</button>
+<button class="option" onclick="check(this,4,'B')">B. All living organisms are composed of cells</button>
+<button class="option" onclick="check(this,4,'C')">C. Cells are not living structures</button>
+<button class="option" onclick="check(this,4,'D')">D. Cells exist only in plants</button>
+
+<div id="result4" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 5 -->
+
+<div class="card question">
+
+<h3>5. Which type of cell has a nucleus surrounded by a membrane?</h3>
+
+<button class="option" onclick="check(this,5,'A')">A. Prokaryotic cell</button>
+<button class="option" onclick="check(this,5,'B')">B. Eukaryotic cell</button>
+<button class="option" onclick="check(this,5,'C')">C. Bacterial cell only</button>
+<button class="option" onclick="check(this,5,'D')">D. Viral cell</button>
+
+<div id="result5" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 6 -->
+
+<div class="card question">
+
+<h3>6. Which cell type does NOT have a membrane-bound nucleus?</h3>
+
+<button class="option" onclick="check(this,6,'A')">A. Eukaryotic</button>
+<button class="option" onclick="check(this,6,'B')">B. Plant</button>
+<button class="option" onclick="check(this,6,'C')">C. Animal</button>
+<button class="option" onclick="check(this,6,'D')">D. Prokaryotic</button>
+
+<div id="result6" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 7 -->
+
+<div class="card question">
+
+<h3>7. Which organelle controls most activities of a eukaryotic cell?</h3>
+
+<button class="option" onclick="check(this,7,'A')">A. Ribosome</button>
+<button class="option" onclick="check(this,7,'B')">B. Nucleus</button>
+<button class="option" onclick="check(this,7,'C')">C. Vacuole</button>
+<button class="option" onclick="check(this,7,'D')">D. Cell wall</button>
+
+<div id="result7" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 8 -->
+
+<div class="card question">
+
+<h3>8. What is the main function of the cell membrane?</h3>
+
+<button class="option" onclick="check(this,8,'A')">A. Producing light</button>
+<button class="option" onclick="check(this,8,'B')">B. Controlling movement of substances into and out of the cell</button>
+<button class="option" onclick="check(this,8,'C')">C. Making proteins only</button>
+<button class="option" onclick="check(this,8,'D')">D. Storing DNA outside the cell</button>
+
+<div id="result8" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 9 -->
+
+<div class="card question">
+
+<h3>9. Which organelle is mainly responsible for energy production?</h3>
+
+<button class="option" onclick="check(this,9,'A')">A. Mitochondrion</button>
+<button class="option" onclick="check(this,9,'B')">B. Nucleus</button>
+<button class="option" onclick="check(this,9,'C')">C. Ribosome</button>
+<button class="option" onclick="check(this,9,'D')">D. Golgi apparatus</button>
+
+<div id="result9" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 10 -->
+
+<div class="card question">
+
+<h3>10. Which organelle is the site of protein synthesis?</h3>
+
+<button class="option" onclick="check(this,10,'A')">A. Ribosome</button>
+<button class="option" onclick="check(this,10,'B')">B. Vacuole</button>
+<button class="option" onclick="check(this,10,'C')">C. Lysosome</button>
+<button class="option" onclick="check(this,10,'D')">D. Chloroplast</button>
+
+<div id="result10" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 11 -->
+
+<div class="card question">
+
+<h3>11. Which structure is found in plant cells but not normally in animal cells?</h3>
+
+<button class="option" onclick="check(this,11,'A')">A. Nucleus</button>
+<button class="option" onclick="check(this,11,'B')">B. Mitochondrion</button>
+<button class="option" onclick="check(this,11,'C')">C. Cell wall</button>
+<button class="option" onclick="check(this,11,'D')">D. Ribosome</button>
+
+<div id="result11" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 12 -->
+
+<div class="card question">
+
+<h3>12. Which organelle carries out photosynthesis?</h3>
+
+<button class="option" onclick="check(this,12,'A')">A. Mitochondrion</button>
+<button class="option" onclick="check(this,12,'B')">B. Chloroplast</button>
+<button class="option" onclick="check(this,12,'C')">C. Ribosome</button>
+<button class="option" onclick="check(this,12,'D')">D. Nucleus</button>
+
+<div id="result12" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 13 -->
+
+<div class="card question">
+
+<h3>13. What pigment inside chloroplasts absorbs light energy?</h3>
+
+<button class="option" onclick="check(this,13,'A')">A. Hemoglobin</button>
+<button class="option" onclick="check(this,13,'B')">B. Chlorophyll</button>
+<button class="option" onclick="check(this,13,'C')">C. Melanin</button>
+<button class="option" onclick="check(this,13,'D')">D. Keratin</button>
+
+<div id="result13" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 14 -->
+
+<div class="card question">
+
+<h3>14. What is the jelly-like material inside the cell?</h3>
+
+<button class="option" onclick="check(this,14,'A')">A. Cytoplasm</button>
+<button class="option" onclick="check(this,14,'B')">B. Cell wall</button>
+<button class="option" onclick="check(this,14,'C')">C. Chromosome</button>
+<button class="option" onclick="check(this,14,'D')">D. Nucleolus</button>
+
+<div id="result14" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 15 -->
+
+<div class="card question">
+
+<h3>15. Which structure gives plant cells support and protection?</h3>
+
+<button class="option" onclick="check(this,15,'A')">A. Cell wall</button>
+<button class="option" onclick="check(this,15,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,15,'C')">C. Cytoplasm</button>
+<button class="option" onclick="check(this,15,'D')">D. Nucleus</button>
+
+<div id="result15" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 16 -->
+
+<div class="card question">
+
+<h3>16. Which organelle modifies, sorts and packages proteins?</h3>
+
+<button class="option" onclick="check(this,16,'A')">A. Golgi apparatus</button>
+<button class="option" onclick="check(this,16,'B')">B. Chloroplast</button>
+<button class="option" onclick="check(this,16,'C')">C. Nucleus</button>
+<button class="option" onclick="check(this,16,'D')">D. Cell wall</button>
+
+<div id="result16" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 17 -->
+
+<div class="card question">
+
+<h3>17. Which organelle contains digestive enzymes and helps break down waste materials?</h3>
+
+<button class="option" onclick="check(this,17,'A')">A. Lysosome</button>
+<button class="option" onclick="check(this,17,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,17,'C')">C. Chloroplast</button>
+<button class="option" onclick="check(this,17,'D')">D. Nucleus</button>
+
+<div id="result17" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 18 -->
+
+<div class="card question">
+
+<h3>18. What is the main function of a large plant cell vacuole?</h3>
+
+<button class="option" onclick="check(this,18,'A')">A. Protein synthesis</button>
+<button class="option" onclick="check(this,18,'B')">B. Storage and maintaining cell pressure</button>
+<button class="option" onclick="check(this,18,'C')">C. DNA replication only</button>
+<button class="option" onclick="check(this,18,'D')">D. Photosynthesis only</button>
+
+<div id="result18" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 19 -->
+
+<div class="card question">
+
+<h3>19. Which structure contains the genetic material in a eukaryotic cell?</h3>
+
+<button class="option" onclick="check(this,19,'A')">A. Nucleus</button>
+<button class="option" onclick="check(this,19,'B')">B. Cell wall</button>
+<button class="option" onclick="check(this,19,'C')">C. Vacuole</button>
+<button class="option" onclick="check(this,19,'D')">D. Golgi apparatus</button>
+
+<div id="result19" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 20 -->
+
+<div class="card question">
+
+<h3>20. DNA stands for:</h3>
+
+<button class="option" onclick="check(this,20,'A')">A. Deoxyribonucleic acid</button>
+<button class="option" onclick="check(this,20,'B')">B. Dinucleic acid</button>
+<button class="option" onclick="check(this,20,'C')">C. Deoxyribose nitrogen acid</button>
+<button class="option" onclick="check(this,20,'D')">D. Double nucleic acid</button>
+
+<div id="result20" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 21 -->
+
+<div class="card question">
+
+<h3>21. Which structure is present in both plant and animal cells?</h3>
+
+<button class="option" onclick="check(this,21,'A')">A. Cell wall only</button>
+<button class="option" onclick="check(this,21,'B')">B. Chloroplast only</button>
+<button class="option" onclick="check(this,21,'C')">C. Nucleus</button>
+<button class="option" onclick="check(this,21,'D')">D. Large central vacuole only</button>
+
+<div id="result21" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 22 -->
+
+<div class="card question">
+
+<h3>22. Which cell structure is selectively permeable?</h3>
+
+<button class="option" onclick="check(this,22,'A')">A. Cell membrane</button>
+<button class="option" onclick="check(this,22,'B')">B. Cell wall</button>
+<button class="option" onclick="check(this,22,'C')">C. Nucleus</button>
+<button class="option" onclick="check(this,22,'D')">D. Ribosome</button>
+
+<div id="result22" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 23 -->
+
+<div class="card question">
+
+<h3>23. Movement of water molecules through a selectively permeable membrane is called:</h3>
+
+<button class="option" onclick="check(this,23,'A')">A. Diffusion</button>
+<button class="option" onclick="check(this,23,'B')">B. Osmosis</button>
+<button class="option" onclick="check(this,23,'C')">C. Respiration</button>
+<button class="option" onclick="check(this,23,'D')">D. Photosynthesis</button>
+
+<div id="result23" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 24 -->
+
+<div class="card question">
+
+<h3>24. Movement of particles from a region of high concentration to low concentration is:</h3>
+
+<button class="option" onclick="check(this,24,'A')">A. Diffusion</button>
+<button class="option" onclick="check(this,24,'B')">B. Photosynthesis</button>
+<button class="option" onclick="check(this,24,'C')">C. Active transport</button>
+<button class="option" onclick="check(this,24,'D')">D. Respiration</button>
+
+<div id="result24" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 25 -->
+
+<div class="card question">
+
+<h3>25. Which process requires energy from the cell?</h3>
+
+<button class="option" onclick="check(this,25,'A')">A. Simple diffusion</button>
+<button class="option" onclick="check(this,25,'B')">B. Osmosis</button>
+<button class="option" onclick="check(this,25,'C')">C. Active transport</button>
+<button class="option" onclick="check(this,25,'D')">D. Passive diffusion</button>
+
+<div id="result25" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 26 -->
+
+<div class="card question">
+
+<h3>26. Which organelle is known as the powerhouse of the cell?</h3>
+
+<button class="option" onclick="check(this,26,'A')">A. Nucleus</button>
+<button class="option" onclick="check(this,26,'B')">B. Mitochondrion</button>
+<button class="option" onclick="check(this,26,'C')">C. Ribosome</button>
+<button class="option" onclick="check(this,26,'D')">D. Vacuole</button>
+
+<div id="result26" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 27 -->
+
+<div class="card question">
+
+<h3>27. What molecule is the main immediate energy currency of cells?</h3>
+
+<button class="option" onclick="check(this,27,'A')">A. DNA</button>
+<button class="option" onclick="check(this,27,'B')">B. ATP</button>
+<button class="option" onclick="check(this,27,'C')">C. RNA</button>
+<button class="option" onclick="check(this,27,'D')">D. Glucose only</button>
+
+<div id="result27" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 28 -->
+
+<div class="card question">
+
+<h3>28. Which process releases energy from glucose in cells?</h3>
+
+<button class="option" onclick="check(this,28,'A')">A. Cellular respiration</button>
+<button class="option" onclick="check(this,28,'B')">B. Photosynthesis</button>
+<button class="option" onclick="check(this,28,'C')">C. Osmosis</button>
+<button class="option" onclick="check(this,28,'D')">D. Diffusion</button>
+
+<div id="result28" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 29 -->
+
+<div class="card question">
+
+<h3>29. Which organelle is associated with photosynthesis?</h3>
+
+<button class="option" onclick="check(this,29,'A')">A. Lysosome</button>
+<button class="option" onclick="check(this,29,'B')">B. Chloroplast</button>
+<button class="option" onclick="check(this,29,'C')">C. Golgi apparatus</button>
+<button class="option" onclick="check(this,29,'D')">D. Ribosome</button>
+
+<div id="result29" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 30 -->
+
+<div class="card question">
+
+<h3>30. Which organelle is surrounded by a double membrane and contains DNA?</h3>
+
+<button class="option" onclick="check(this,30,'A')">A. Mitochondrion</button>
+<button class="option" onclick="check(this,30,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,30,'C')">C. Lysosome</button>
+<button class="option" onclick="check(this,30,'D')">D. Vacuole</button>
+
+<div id="result30" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 31 -->
+
+<div class="card question">
+
+<h3>31. What is the main difference between prokaryotic and eukaryotic cells?</h3>
+
+<button class="option" onclick="check(this,31,'A')">A. Prokaryotes have no cell membrane</button>
+<button class="option" onclick="check(this,31,'B')">B. Eukaryotes have a membrane-bound nucleus</button>
+<button class="option" onclick="check(this,31,'C')">C. Prokaryotes have chloroplasts</button>
+<button class="option" onclick="check(this,31,'D')">D. Eukaryotes have no DNA</button>
+
+<div id="result31" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 32 -->
+
+<div class="card question">
+
+<h3>32. Bacteria are generally classified as:</h3>
+
+<button class="option" onclick="check(this,32,'A')">A. Eukaryotes</button>
+<button class="option" onclick="check(this,32,'B')">B. Prokaryotes</button>
+<button class="option" onclick="check(this,32,'C')">C. Viruses</button>
+<button class="option" onclick="check(this,32,'D')">D. Multicellular animals</button>
+
+<div id="result32" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 33 -->
+
+<div class="card question">
+
+<h3>33. Which structure is found in prokaryotic cells?</h3>
+
+<button class="option" onclick="check(this,33,'A')">A. Cell membrane</button>
+<button class="option" onclick="check(this,33,'B')">B. Membrane-bound nucleus</button>
+<button class="option" onclick="check(this,33,'C')">C. Chloroplast</button>
+<button class="option" onclick="check(this,33,'D')">D. Mitochondrion</button>
+
+<div id="result33" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 34 -->
+
+<div class="card question">
+
+<h3>34. What is the genetic material of most organisms?</h3>
+
+<button class="option" onclick="check(this,34,'A')">A. DNA</button>
+<button class="option" onclick="check(this,34,'B')">B. ATP</button>
+<button class="option" onclick="check(this,34,'C')">C. Lipid</button>
+<button class="option" onclick="check(this,34,'D')">D. Starch</button>
+
+<div id="result34" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 35 -->
+
+<div class="card question">
+
+<h3>35. Which structure contains DNA in a typical eukaryotic cell?</h3>
+
+<button class="option" onclick="check(this,35,'A')">A. Nucleus</button>
+<button class="option" onclick="check(this,35,'B')">B. Cell wall</button>
+<button class="option" onclick="check(this,35,'C')">C. Vacuole</button>
+<button class="option" onclick="check(this,35,'D')">D. Golgi apparatus</button>
+
+<div id="result35" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 36 -->
+
+<div class="card question">
+
+<h3>36. Which organelle contains ribosomal RNA and is involved in ribosome production?</h3>
+
+<button class="option" onclick="check(this,36,'A')">A. Nucleolus</button>
+<button class="option" onclick="check(this,36,'B')">B. Lysosome</button>
+<button class="option" onclick="check(this,36,'C')">C. Vacuole</button>
+<button class="option" onclick="check(this,36,'D')">D. Cell wall</button>
+
+<div id="result36" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 37 -->
+
+<div class="card question">
+
+<h3>37. Which organelle is responsible for assembling proteins?</h3>
+
+<button class="option" onclick="check(this,37,'A')">A. Ribosome</button>
+<button class="option" onclick="check(this,37,'B')">B. Chloroplast</button>
+<button class="option" onclick="check(this,37,'C')">C. Vacuole</button>
+<button class="option" onclick="check(this,37,'D')">D. Cell wall</button>
+
+<div id="result37" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 38 -->
+
+<div class="card question">
+
+<h3>38. Which organelle is connected with the transport of proteins inside the cell?</h3>
+
+<button class="option" onclick="check(this,38,'A')">A. Endoplasmic reticulum</button>
+<button class="option" onclick="check(this,38,'B')">B. Cell wall</button>
+<button class="option" onclick="check(this,38,'C')">C. Nucleolus</button>
+<button class="option" onclick="check(this,38,'D')">D. Chromosome</button>
+
+<div id="result38" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 39 -->
+
+<div class="card question">
+
+<h3>39. Rough endoplasmic reticulum has:</h3>
+
+<button class="option" onclick="check(this,39,'A')">A. Chlorophyll</button>
+<button class="option" onclick="check(this,39,'B')">B. Ribosomes</button>
+<button class="option" onclick="check(this,39,'C')">C. Cell walls</button>
+<button class="option" onclick="check(this,39,'D')">D. Chromosomes only</button>
+
+<div id="result39" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 40 -->
+
+<div class="card question">
+
+<h3>40. Smooth endoplasmic reticulum is important in:</h3>
+
+<button class="option" onclick="check(this,40,'A')">A. Lipid synthesis</button>
+<button class="option" onclick="check(this,40,'B')">B. Photosynthesis only</button>
+<button class="option" onclick="check(this,40,'C')">C. DNA storage only</button>
+<button class="option" onclick="check(this,40,'D')">D. Cell wall formation only</button>
+
+<div id="result40" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 41 -->
+
+<div class="card question">
+
+<h3>41. Which organelle packages materials into vesicles?</h3>
+
+<button class="option" onclick="check(this,41,'A')">A. Golgi apparatus</button>
+<button class="option" onclick="check(this,41,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,41,'C')">C. Nucleus</button>
+<button class="option" onclick="check(this,41,'D')">D. Chloroplast</button>
+
+<div id="result41" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 42 -->
+
+<div class="card question">
+
+<h3>42. Which organelle helps digest damaged cell parts?</h3>
+
+<button class="option" onclick="check(this,42,'A')">A. Lysosome</button>
+<button class="option" onclick="check(this,42,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,42,'C')">C. Chloroplast</button>
+<button class="option" onclick="check(this,42,'D')">D. Nucleus</button>
+
+<div id="result42" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 43 -->
+
+<div class="card question">
+
+<h3>43. Which structure is responsible for maintaining the shape of many animal cells?</h3>
+
+<button class="option" onclick="check(this,43,'A')">A. Cytoskeleton</button>
+<button class="option" onclick="check(this,43,'B')">B. Chloroplast</button>
+<button class="option" onclick="check(this,43,'C')">C. Cell wall</button>
+<button class="option" onclick="check(this,43,'D')">D. Vacuole</button>
+
+<div id="result43" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 44 -->
+
+<div class="card question">
+
+<h3>44. What is the correct order of biological organization from smallest to largest?</h3>
+
+<button class="option" onclick="check(this,44,'A')">A. Organ → cell → tissue → organism</button>
+<button class="option" onclick="check(this,44,'B')">B. Cell → tissue → organ → organ system</button>
+<button class="option" onclick="check(this,44,'C')">C. Tissue → cell → organ → organism</button>
+<button class="option" onclick="check(this,44,'D')">D. Organism → organ → tissue → cell</button>
+
+<div id="result44" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 45 -->
+
+<div class="card question">
+
+<h3>45. A group of similar cells performing a common function is called:</h3>
+
+<button class="option" onclick="check(this,45,'A')">A. Organ</button>
+<button class="option" onclick="check(this,45,'B')">B. Tissue</button>
+<button class="option" onclick="check(this,45,'C')">C. Organ system</button>
+<button class="option" onclick="check(this,45,'D')">D. Organism</button>
+
+<div id="result45" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 46 -->
+
+<div class="card question">
+
+<h3>46. A group of tissues working together forms a:</h3>
+
+<button class="option" onclick="check(this,46,'A')">A. Cell</button>
+<button class="option" onclick="check(this,46,'B')">B. Tissue</button>
+<button class="option" onclick="check(this,46,'C')">C. Organ</button>
+<button class="option" onclick="check(this,46,'D')">D. Molecule</button>
+
+<div id="result46" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 47 -->
+
+<div class="card question">
+
+<h3>47. Which process produces two genetically similar daughter cells?</h3>
+
+<button class="option" onclick="check(this,47,'A')">A. Mitosis</button>
+<button class="option" onclick="check(this,47,'B')">B. Meiosis</button>
+<button class="option" onclick="check(this,47,'C')">C. Fertilization</button>
+<button class="option" onclick="check(this,47,'D')">D. Photosynthesis</button>
+
+<div id="result47" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 48 -->
+
+<div class="card question">
+
+<h3>48. Mitosis is important mainly for:</h3>
+
+<button class="option" onclick="check(this,48,'A')">A. Growth and repair</button>
+<button class="option" onclick="check(this,48,'B')">B. Producing only gametes</button>
+<button class="option" onclick="check(this,48,'C')">C. Producing glucose</button>
+<button class="option" onclick="check(this,48,'D')">D. Digestion</button>
+
+<div id="result48" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 49 -->
+
+<div class="card question">
+
+<h3>49. Which type of cell division produces gametes?</h3>
+
+<button class="option" onclick="check(this,49,'A')">A. Mitosis</button>
+<button class="option" onclick="check(this,49,'B')">B. Meiosis</button>
+<button class="option" onclick="check(this,49,'C')">C. Binary fission</button>
+<button class="option" onclick="check(this,49,'D')">D. Budding</button>
+
+<div id="result49" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 50 -->
+
+<div class="card question">
+
+<h3>50. Which cells are usually haploid?</h3>
+
+<button class="option" onclick="check(this,50,'A')">A. Body cells</button>
+<button class="option" onclick="check(this,50,'B')">B. Gametes</button>
+<button class="option" onclick="check(this,50,'C')">C. Muscle cells</button>
+<button class="option" onclick="check(this,50,'D')">D. Skin cells</button>
+
+<div id="result50" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 51 -->
+
+<div class="card question">
+
+<h3>51. What is the main function of chromosomes?</h3>
+
+<button class="option" onclick="check(this,51,'A')">A. Store and carry genetic information</button>
+<button class="option" onclick="check(this,51,'B')">B. Produce oxygen</button>
+<button class="option" onclick="check(this,51,'C')">C. Digest food</button>
+<button class="option" onclick="check(this,51,'D')">D. Make cell walls</button>
+
+<div id="result51" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 52 -->
+
+<div class="card question">
+
+<h3>52. What are chromosomes mainly made of?</h3>
+
+<button class="option" onclick="check(this,52,'A')">A. DNA and proteins</button>
+<button class="option" onclick="check(this,52,'B')">B. Glucose and water</button>
+<button class="option" onclick="check(this,52,'C')">C. Lipids only</button>
+<button class="option" onclick="check(this,52,'D')">D. Starch only</button>
+
+<div id="result52" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 53 -->
+
+<div class="card question">
+
+<h3>53. Which organelle is surrounded by a nuclear envelope?</h3>
+
+<button class="option" onclick="check(this,53,'A')">A. Nucleus</button>
+<button class="option" onclick="check(this,53,'B')">B. Ribosome</button>
+<button class="option" onclick="check(this,53,'C')">C. Lysosome</button>
+<button class="option" onclick="check(this,53,'D')">D. Cell wall</button>
+
+<div id="result53" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 54 -->
+
+<div class="card question">
+
+<h3>54. Which cell structure is absent in viruses but present in living cells?</h3>
+
+<button class="option" onclick="check(this,54,'A')">A. Cellular organization</button>
+<button class="option" onclick="check(this,54,'B')">B. Genetic material</button>
+<button class="option" onclick="check(this,54,'C')">C. Protein coat</button>
+<button class="option" onclick="check(this,54,'D')">D. Nucleic acid</button>
+
+<div id="result54" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 55 -->
+
+<div class="card question">
+
+<h3>55. Which microscope is commonly used to observe cells?</h3>
+
+<button class="option" onclick="check(this,55,'A')">A. Light microscope</button>
+<button class="option" onclick="check(this,55,'B')">B. Telescope</button>
+<button class="option" onclick="check(this,55,'C')">C. Periscope</button>
+<button class="option" onclick="check(this,55,'D')">D. Thermometer</button>
+
+<div id="result55" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 56 -->
+
+<div class="card question">
+
+<h3>56. What part of a light microscope holds the objective lenses?</h3>
+
+<button class="option" onclick="check(this,56,'A')">A. Revolving nosepiece</button>
+<button class="option" onclick="check(this,56,'B')">B. Stage</button>
+<button class="option" onclick="check(this,56,'C')">C. Eyepiece</button>
+<button class="option" onclick="check(this,56,'D')">D. Mirror</button>
+
+<div id="result56" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 57 -->
+
+<div class="card question">
+
+<h3>57. Which microscope part supports the specimen slide?</h3>
+
+<button class="option" onclick="check(this,57,'A')">A. Stage</button>
+<button class="option" onclick="check(this,57,'B')">B. Eyepiece</button>
+<button class="option" onclick="check(this,57,'C')">C. Nosepiece</button>
+<button class="option" onclick="check(this,57,'D')">D. Arm</button>
+
+<div id="result57" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 58 -->
+
+<div class="card question">
+
+<h3>58. Which organelle is found in plant cells and contains chlorophyll?</h3>
+
+<button class="option" onclick="check(this,58,'A')">A. Chloroplast</button>
+<button class="option" onclick="check(this,58,'B')">B. Lysosome</button>
+<button class="option" onclick="check(this,58,'C')">C. Ribosome</button>
+<button class="option" onclick="check(this,58,'D')">D. Golgi apparatus</button>
+
+<div id="result58" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 59 -->
+
+<div class="card question">
+
+<h3>59. Which statement about cells is correct?</h3>
+
+<button class="option" onclick="check(this,59,'A')">A. All cells are exactly the same</button>
+<button class="option" onclick="check(this,59,'B')">B. Cells have structures adapted to their functions</button>
+<button class="option" onclick="check(this,59,'C')">C. Cells cannot reproduce</button>
+<button class="option" onclick="check(this,59,'D')">D. Cells have no genetic material</button>
+
+<div id="result59" class="result"></div>
+
+</div>
+
+
+<!-- QUESTION 60 -->
+
+<div class="card question">
+
+<h3>60. Which statement best describes the importance of studying cells?</h3>
+
+<button class="option" onclick="check(this,60,'A')">A. Cells are unrelated to living organisms</button>
+<button class="option" onclick="check(this,60,'B')">B. Understanding cells helps us understand how living organisms function</button>
+<button class="option" onclick="check(this,60,'C')">C. Cells exist only in laboratories</button>
+<button class="option" onclick="check(this,60,'D')">D. Cells are found only in plants</button>
+
+<div id="result60" class="result"></div>
+
+</div>
+
+
+<button class="finish" onclick="finishTest()">
+🏆 Finish Practice
 </button>
 
-</form>
-
-
-<div class="result" id="result"></div>
-
 <button class="reset" onclick="location.reload()">
-🔄 Try Again
+🔄 Restart Practice
 </button>
 
 <button class="back" onclick="location.href='grade9.html'">
 ← Back to Grade 9
 </button>
 
+
 </div>
 
 
 <script>
 
+let score = 0;
+
+let answered = {};
+
 const answers = {
 
-q1:"C",
-q2:"A",
-q3:"B",
-q4:"C",
-q5:"A",
-q6:"C",
-q7:"B",
-q8:"B",
-q9:"A",
-q10:"A",
-
-q11:"C",
-q12:"B",
-q13:"B",
-q14:"B",
-q15:"B",
-q16:"A",
-q17:"A",
-q18:"B",
-q19:"B",
-q20:"B",
-
-q21:"B",
-q22:"C",
-q23:"B",
-q24:"A",
-q25:"B",
-q26:"B",
-q27:"C",
-q28:"B",
-q29:"B",
-q30:"C",
-
-q31:"A",
-q32:"B",
-q33:"C",
-q34:"B",
-q35:"A",
-q36:"C",
-q37:"B",
-q38:"B",
-q39:"B",
-q40:"B",
-
-q41:"B",
-q42:"B",
-q43:"C",
-q44:"C",
-q45:"C",
-q46:"A",
-q47:"B",
-q48:"A",
-q49:"A",
-q50:"A",
-
-q51:"A",
-q52:"C",
-q53:"B",
-q54:"B",
-q55:"B",
-q56:"A",
-q57:"C",
-q58:"B",
-q59:"B",
-q60:"B"
+1:"B",
+2:"A",
+3:"B",
+4:"B",
+5:"B",
+6:"D",
+7:"B",
+8:"B",
+9:"A",
+10:"A",
+11:"C",
+12:"B",
+13:"B",
+14:"A",
+15:"A",
+16:"A",
+17:"A",
+18:"B",
+19:"A",
+20:"A",
+21:"C",
+22:"A",
+23:"B",
+24:"A",
+25:"C",
+26:"B",
+27:"B",
+28:"A",
+29:"B",
+30:"A",
+31:"B",
+32:"B",
+33:"A",
+34:"A",
+35:"A",
+36:"A",
+37:"A",
+38:"A",
+39:"B",
+40:"A",
+41:"A",
+42:"A",
+43:"A",
+44:"B",
+45:"B",
+46:"C",
+47:"A",
+48:"A",
+49:"B",
+50:"B",
+51:"A",
+52:"A",
+53:"A",
+54:"A",
+55:"A",
+56:"A",
+57:"A",
+58:"A",
+59:"B",
+60:"B"
 
 };
-
 
 const explanations = {
 
-q1:"The cell is the basic structural and functional unit of life.",
+1:"A cell is the basic structural and functional unit of life.",
 
-q2:"Robert Hooke observed cork and introduced the term cell.",
+2:"Robert Hooke observed small box-like structures in cork in 1665 and called them cells.",
 
-q3:"Schleiden concluded that plants are made of cells.",
+3:"Anton van Leeuwenhoek used microscopes to observe living microorganisms.",
 
-q4:"Theodor Schwann concluded that animals are made of cells.",
+4:"Cell theory states that all living organisms are made of one or more cells.",
 
-q5:"Rudolf Virchow stated that new cells arise from pre-existing cells.",
+5:"Eukaryotic cells have a true nucleus surrounded by a nuclear membrane.",
 
-q6:"Amoeba is a unicellular organism.",
+6:"Prokaryotic cells do not have a membrane-bound nucleus.",
 
-q7:"Multicellular organisms contain many cells.",
+7:"The nucleus contains genetic material and controls many activities of the cell.",
 
-q8:"The nucleus contains most of the cell's genetic material.",
+8:"The cell membrane regulates what enters and leaves the cell.",
 
-q9:"The cell membrane controls movement into and out of the cell.",
+9:"Mitochondria are major sites of cellular respiration and ATP production.",
 
-q10:"The cytoplasm is the site of many chemical reactions.",
+10:"Ribosomes are the structures where proteins are assembled.",
 
-q11:"Mitochondria are major sites of aerobic cellular respiration.",
+11:"Plant cells have a cell wall, while animal cells do not.",
 
-q12:"Ribosomes are responsible for protein synthesis.",
+12:"Chloroplasts contain chlorophyll and are the main sites of photosynthesis.",
 
-q13:"Chloroplasts are the main sites of photosynthesis.",
+13:"Chlorophyll absorbs light energy used during photosynthesis.",
 
-q14:"The cell wall provides support and protection in plant cells.",
+14:"Cytoplasm is the jelly-like material in which many cell reactions occur.",
 
-q15:"Plant cell walls are mainly made of cellulose.",
+15:"The cell wall provides support, strength and protection to plant cells.",
 
-q16:"The Golgi apparatus modifies, sorts and packages materials.",
+16:"The Golgi apparatus modifies, sorts and packages proteins and other materials.",
 
-q17:"Lysosomes contain digestive enzymes.",
+17:"Lysosomes contain enzymes that break down waste and damaged cell components.",
 
-q18:"Vacuoles have important storage functions.",
+18:"The large plant vacuole stores substances and helps maintain turgor pressure.",
 
-q19:"Prokaryotic cells do not have a membrane-bound nucleus.",
+19:"In eukaryotic cells, most genetic material is located inside the nucleus.",
 
-q20:"Bacteria are prokaryotic organisms.",
+20:"DNA means deoxyribonucleic acid.",
 
-q21:"Eukaryotic cells have a membrane-bound nucleus.",
+21:"Both plant and animal cells contain a nucleus, although mature cells can have exceptions.",
 
-q22:"Both plant and animal cells have a cell membrane.",
+22:"The cell membrane is selectively permeable, allowing some substances to pass more easily than others.",
 
-q23:"Plant cells have a cell wall; animal cells do not.",
+23:"Osmosis is the movement of water through a selectively permeable membrane.",
 
-q24:"Chlorophyll is found in chloroplasts.",
+24:"Diffusion is movement from higher concentration toward lower concentration.",
 
-q25:"A microscope is used to observe very small objects such as cells.",
+25:"Active transport requires cellular energy because substances can be moved against a concentration gradient.",
 
-q26:"Staining increases contrast and makes structures easier to see.",
+26:"Mitochondria are often called the powerhouse of the cell because they produce much of the cell's ATP.",
 
-q27:"Starting with low power makes it easier to locate and focus the specimen.",
+27:"ATP is the main immediate energy currency used by cells.",
 
-q28:"Diffusion is net movement from higher to lower concentration.",
+28:"Cellular respiration releases usable energy from glucose and other food molecules.",
 
-q29:"Osmosis is movement of water through a selectively permeable membrane.",
+29:"Chloroplasts are the organelles responsible for photosynthesis in plants and algae.",
 
-q30:"Passive transport does not require direct cellular energy.",
+30:"Mitochondria have a double membrane and contain their own DNA.",
 
-q31:"Active transport requires cellular energy.",
+31:"The major distinction is that eukaryotes have a membrane-bound nucleus while prokaryotes do not.",
 
-q32:"Active transport can move substances against a concentration gradient.",
+32:"Bacteria are prokaryotic organisms.",
 
-q33:"A hypotonic solution has a lower solute concentration outside the cell.",
+33:"Prokaryotes have a cell membrane but lack membrane-bound organelles such as mitochondria.",
 
-q34:"Water tends to leave a cell in a hypertonic environment.",
+34:"DNA carries the genetic instructions used by most living organisms.",
 
-q35:"In an isotonic solution there is no net movement of water.",
+35:"The nucleus contains most of the DNA in a typical eukaryotic cell.",
 
-q36:"Plant roots use active transport to take up some mineral ions.",
+36:"The nucleolus is involved in producing ribosomal components.",
 
-q37:"Diffusion is a passive process and does not directly require ATP.",
+37:"Ribosomes assemble amino acids into proteins.",
 
-q38:"A selectively permeable membrane controls what substances cross it.",
+38:"The endoplasmic reticulum helps synthesize and transport materials within the cell.",
 
-q39:"A tissue is the level immediately above a cell.",
+39:"Rough ER has ribosomes attached to its surface.",
 
-q40:"A tissue is a group of cells working together.",
+40:"Smooth ER has important roles in lipid synthesis and other cellular processes.",
 
-q41:"An organ consists of different tissues working together.",
+41:"The Golgi apparatus packages and sorts materials into vesicles.",
 
-q42:"The correct order is Cell → Tissue → Organ → Organ System → Organism.",
+42:"Lysosomes digest damaged cell parts and cellular waste.",
 
-q43:"The digestive system is an organ system.",
+43:"The cytoskeleton helps maintain cell shape and supports movement inside cells.",
 
-q44:"Animal cells do not have cell walls.",
+44:"The correct order is cell → tissue → organ → organ system.",
 
-q45:"Prokaryotic cells do not have a membrane-bound nucleus.",
+45:"A tissue is a group of similar cells working together to perform a function.",
 
-q46:"Smooth ER is involved in lipid production.",
+46:"An organ consists of different tissues working together.",
 
-q47:"Ribosomes are attached to rough ER.",
+47:"Mitosis produces daughter cells that are generally genetically similar to the parent cell.",
 
-q48:"Rough ER is involved in protein production and transport.",
+48:"Mitosis is important for growth, development and repair of tissues.",
 
-q49:"Lysosomes help digest worn-out cell components.",
+49:"Meiosis produces haploid gametes such as sperm and egg cells.",
 
-q50:"The cell wall gives plant cells support and shape.",
+50:"Gametes are normally haploid, meaning they contain one set of chromosomes.",
 
-q51:"The nucleus controls many cell activities.",
+51:"Chromosomes carry genetic information in the form of DNA.",
 
-q52:"Humans are multicellular organisms.",
+52:"Chromosomes consist mainly of DNA associated with proteins.",
 
-q53:"One central idea of cell theory is that cells are the basic units of life.",
+53:"The nucleus is enclosed by a nuclear envelope.",
 
-q54:"Mitochondria are major sites of aerobic respiration.",
+54:"Cells have cellular organization and metabolism, whereas viruses are not cellular organisms.",
 
-q55:"Oxygen can move by diffusion from higher to lower concentration.",
+55:"A light microscope is commonly used to observe cells and many cell structures.",
 
-q56:"Water enters plant roots mainly through osmosis.",
+56:"The revolving nosepiece holds and rotates the objective lenses.",
 
-q57:"Active transport requires cellular energy.",
+57:"The stage supports the microscope slide.",
 
-q58:"The correct sequence is Cell → Tissue → Organ → Organ System → Organism.",
+58:"Chloroplasts contain chlorophyll and are found in plant cells.",
 
-q59:"A tissue is a group of similar cells working together.",
+59:"Different cells have structures and shapes suited to their particular functions.",
 
-q60:"Plant cells have structures such as cell walls and chloroplasts that animal cells lack."
+60:"Studying cells helps us understand the structure, function and processes of living organisms."
+
 };
 
 
-function checkAnswers(){
+function check(button, question, selected){
 
-    let score = 0;
+    if(answered[question]){
+        return;
+    }
 
-    for(let i=1;i<=60;i++){
+    answered[question] = true;
 
-        const selected =
-        document.querySelector(
-            'input[name="q'+i+'"]:checked'
-        );
+    const correct = answers[question];
 
-        const explanation =
-        document.getElementById("e"+i);
+    const result =
+    document.getElementById("result" + question);
 
-        if(selected){
+    const buttons =
+    button.parentElement.querySelectorAll(".option");
 
-            if(selected.value === answers["q"+i]){
+    buttons.forEach(function(btn){
 
-                score++;
+        btn.disabled = true;
 
-                explanation.innerHTML =
-                `<p class="right">
-                ✅ RIGHT — Correct answer: ${answers["q"+i]}
-                </p>
-                <div class="explanation">
-                💡 ${explanations["q"+i]}
-                </div>`;
+        const value =
+        btn.getAttribute("onclick").match(/,'([A-D])'\)/);
 
-            }else{
-
-                explanation.innerHTML =
-                `<p class="wrong">
-                ❌ WRONG — Correct answer: ${answers["q"+i]}
-                </p>
-                <div class="explanation">
-                💡 ${explanations["q"+i]}
-                </div>`;
-
-            }
-
-        }else{
-
-            explanation.innerHTML =
-            `<p class="wrong">
-            ⚠️ NOT ANSWERED — Correct answer: ${answers["q"+i]}
-            </p>
-            <div class="explanation">
-            💡 ${explanations["q"+i]}
-            </div>`;
-
+        if(value && value[1] === correct){
+            btn.classList.add("correct");
         }
+
+    });
+
+
+    if(selected === correct){
+
+        score++;
+
+        button.classList.add("correct");
+
+        result.className =
+        "result right";
+
+        result.innerHTML =
+        "<strong>✅ RIGHT!</strong><br>" +
+        "Excellent! Your answer is correct." +
+        "<div class='explanation'>" +
+        "<strong>💡 Explanation:</strong> " +
+        explanations[question] +
+        "</div>";
 
     }
 
+    else{
 
-    const percentage =
-    Math.round((score/60)*100);
+        button.classList.add("wrong");
 
+        result.className =
+        "result wrongResult";
+
+        result.innerHTML =
+        "<strong>❌ WRONG!</strong><br>" +
+        "Correct answer: <strong>" +
+        correct +
+        "</strong>" +
+        "<div class='explanation'>" +
+        "<strong>💡 Explanation:</strong> " +
+        explanations[question] +
+        "</div>";
+
+    }
+
+    result.style.display = "block";
+
+    updateScore();
+
+}
+
+
+function updateScore(){
+
+    document.getElementById("score").innerHTML =
+    score + " / 60";
+
+}
+
+
+function finishTest(){
+
+    const answeredCount =
+    Object.keys(answered).length;
 
     let message = "";
 
-    if(percentage >= 90){
+    if(answeredCount < 60){
 
-        message = "🏆 Excellent! Outstanding work!";
-
-    }else if(percentage >= 75){
-
-        message = "👏 Very Good! Keep going!";
-
-    }else if(percentage >= 50){
-
-        message = "👍 Good! Review the wrong answers.";
-
-    }else{
-
-        message = "📚 Keep studying the Unit 3 notes and try again.";
+        message =
+        "You answered " +
+        answeredCount +
+        " out of 60 questions.<br><br>" +
+        "Please complete all questions.";
 
     }
 
+    else{
 
-    const result =
-    document.getElementById("result");
+        const percentage =
+        Math.round((score / 60) * 100);
 
-    result.style.display="block";
+        let level = "";
 
-    result.innerHTML = `
+        if(percentage >= 90){
+            level = "🏆 Excellent!";
+        }
+        else if(percentage >= 75){
+            level = "👏 Very Good!";
+        }
+        else if(percentage >= 50){
+            level = "👍 Good! Keep practicing.";
+        }
+        else{
+            level = "📚 Keep studying and try again.";
+        }
 
-    <h2>🎯 Your Result</h2>
+        message =
+        "<strong>🎉 Test Completed!</strong><br><br>" +
+        "Score: " + score + " / 60<br>" +
+        "Percentage: " + percentage + "%<br><br>" +
+        level;
 
-    <h1>${score} / 60</h1>
+    }
 
-    <h2>${percentage}%</h2>
-
-    <p>${message}</p>
-
-    <p>
-    ✅ Right: ${score}<br>
-    ❌ Wrong: ${60-score}
-    </p>
-
-    `;
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    alert(
+        message
+        .replace(/<br>/g,"\n")
+        .replace(/<[^>]*>/g,"")
+    );
 
 }
 
 </script>
 
 </body>
+
 </html>
