@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 2 Quiz</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+.header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px 15px 50px;
+}
+
+.question{
+    background:white;
+    margin-bottom:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.question h3{
+    margin-top:0;
+    color:#0d47a1;
+}
+
+.option{
+    width:100%;
+    border:2px solid #e2e8f0;
+    background:#f8fafc;
+    color:#1e293b;
+    padding:13px;
+    margin:8px 0;
+    border-radius:10px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#e3f2fd;
+}
+
+.option.correct{
+    background:#c8e6c9;
+    border-color:#2e7d32;
+    color:#1b5e20;
+}
+
+.option.wrong{
+    background:#ffcdd2;
+    border-color:#c62828;
+    color:#b71c1c;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.feedback{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.feedback.right{
+    display:block;
+    background:#e8f5e9;
+    border-left:5px solid #2e7d32;
+}
+
+.feedback.wrong-feedback{
+    display:block;
+    background:#ffebee;
+    border-left:5px solid #c62828;
+}
+
+#scoreBox{
+    position:sticky;
+    bottom:10px;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    margin-top:20px;
+}
+
+.reset{
+    background:#0d47a1;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Grade 9 Physics</h1>
+    <p>Unit 2 — Physical Quantities</p>
+    <p>60 Multiple Choice Questions</p>
+</div>
+
+<div class="container">
+
+<div id="quiz"></div>
+
+<div id="scoreBox">
+    Score: <span id="score">0</span> / 60
+    <br>
+    <button class="reset" onclick="location.reload()">Restart Quiz</button>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"What is a physical quantity?",
+options:[
+"A quantity that can be measured",
+"A person's name",
+"A color only",
+"A sound only"
+],
+answer:0,
+explain:"A physical quantity is a measurable property of a physical object or phenomenon."
+},
+
+{
+q:"Which of the following is a physical quantity?",
+options:[
+"Length",
+"Beauty",
+"Kindness",
+"Honesty"
+],
+answer:0,
+explain:"Length can be measured using an appropriate measuring instrument, so it is a physical quantity."
+},
+
+{
+q:"What is measurement?",
+options:[
+"Comparing a quantity with an accepted standard",
+"Guessing a value",
+"Naming an object",
+"Drawing a picture"
+],
+answer:0,
+explain:"Measurement involves comparing an unknown physical quantity with an accepted standard unit."
+},
+
+{
+q:"Which is an SI base quantity?",
+options:[
+"Length",
+"Speed",
+"Force",
+"Density"
+],
+answer:0,
+explain:"Length is one of the seven SI base quantities."
+},
+
+{
+q:"Which of the following is NOT an SI base quantity?",
+options:[
+"Mass",
+"Time",
+"Temperature",
+"Speed"
+],
+answer:3,
+explain:"Speed is a derived quantity. Mass, time and thermodynamic temperature are SI base quantities."
+},
+
+{
+q:"The SI unit of length is:",
+options:[
+"Meter",
+"Kilogram",
+"Second",
+"Ampere"
+],
+answer:0,
+explain:"The SI base unit of length is the metre (m)."
+},
+
+{
+q:"The SI unit of mass is:",
+options:[
+"Kilogram",
+"Gram",
+"Newton",
+"Joule"
+],
+answer:0,
+explain:"The SI base unit of mass is the kilogram (kg)."
+},
+
+{
+q:"The SI unit of time is:",
+options:[
+"Second",
+"Minute",
+"Hour",
+"Day"
+],
+answer:0,
+explain:"The SI base unit of time is the second (s)."
+},
+
+{
+q:"The SI unit of temperature is:",
+options:[
+"Kelvin",
+"Celsius",
+"Fahrenheit",
+"Degree"
+],
+answer:0,
+explain:"The SI base unit of thermodynamic temperature is the kelvin (K)."
+},
+
+{
+q:"The SI unit of electric current is:",
+options:[
+"Ampere",
+"Volt",
+"Ohm",
+"Watt"
+],
+answer:0,
+explain:"The ampere (A) is the SI base unit of electric current."
+},
+
+{
+q:"Which instrument is used to measure length?",
+options:[
+"Ruler",
+"Thermometer",
+"Balance",
+"Stopwatch"
+],
+answer:0,
+explain:"A ruler or measuring tape is commonly used to measure length."
+},
+
+{
+q:"Which instrument measures mass?",
+options:[
+"Balance",
+"Ruler",
+"Thermometer",
+"Stopwatch"
+],
+answer:0,
+explain:"A balance is used to determine the mass of an object."
+},
+
+{
+q:"Which instrument measures time?",
+options:[
+"Stopwatch",
+"Balance",
+"Ruler",
+"Thermometer"
+],
+answer:0,
+explain:"A stopwatch or clock can be used to measure time intervals."
+},
+
+{
+q:"Which instrument measures temperature?",
+options:[
+"Thermometer",
+"Ruler",
+"Balance",
+"Stopwatch"
+],
+answer:0,
+explain:"A thermometer is used to measure temperature."
+},
+
+{
+q:"Which unit is commonly used for measuring length?",
+options:[
+"Meter",
+"Kilogram",
+"Second",
+"Kelvin"
+],
+answer:0,
+explain:"The metre is the SI unit of length."
+},
+
+{
+q:"Which one is a derived quantity?",
+options:[
+"Speed",
+"Length",
+"Mass",
+"Time"
+],
+answer:0,
+explain:"Speed is derived from length divided by time."
+},
+
+{
+q:"The SI unit of speed is:",
+options:[
+"m/s",
+"kg",
+"s",
+"N"
+],
+answer:0,
+explain:"Speed is distance divided by time, so its SI unit is metre per second (m/s)."
+},
+
+{
+q:"The SI unit of force is:",
+options:[
+"Newton",
+"Joule",
+"Watt",
+"Pascal"
+],
+answer:0,
+explain:"Force is measured in newtons (N)."
+},
+
+{
+q:"The SI unit of energy is:",
+options:[
+"Joule",
+"Newton",
+"Watt",
+"Pascal"
+],
+answer:0,
+explain:"The SI unit of energy and work is the joule (J)."
+},
+
+{
+q:"The SI unit of power is:",
+options:[
+"Watt",
+"Joule",
+"Newton",
+"Meter"
+],
+answer:0,
+explain:"Power is measured in watts (W)."
+},
+
+{
+q:"The SI unit of pressure is:",
+options:[
+"Pascal",
+"Newton",
+"Joule",
+"Watt"
+],
+answer:0,
+explain:"Pressure is measured in pascals (Pa)."
+},
+
+{
+q:"Which quantity is measured in newtons?",
+options:[
+"Force",
+"Mass",
+"Time",
+"Length"
+],
+answer:0,
+explain:"The newton is the SI unit of force."
+},
+
+{
+q:"Which quantity is measured in joules?",
+options:[
+"Energy",
+"Force",
+"Speed",
+"Length"
+],
+answer:0,
+explain:"Energy is measured in joules."
+},
+
+{
+q:"Which quantity is measured in watts?",
+options:[
+"Power",
+"Mass",
+"Length",
+"Time"
+],
+answer:0,
+explain:"Power is the rate of energy transfer and is measured in watts."
+},
+
+{
+q:"Which quantity is measured in pascals?",
+options:[
+"Pressure",
+"Mass",
+"Energy",
+"Speed"
+],
+answer:0,
+explain:"The pascal is the SI unit of pressure."
+},
+
+{
+q:"How many centimeters are in one meter?",
+options:[
+"10",
+"100",
+"1000",
+"1"
+],
+answer:1,
+explain:"1 metre = 100 centimetres."
+},
+
+{
+q:"How many millimeters are in one meter?",
+options:[
+"10",
+"100",
+"1000",
+"10000"
+],
+answer:2,
+explain:"1 metre = 1000 millimetres."
+},
+
+{
+q:"How many meters are in one kilometer?",
+options:[
+"10",
+"100",
+"1000",
+"10000"
+],
+answer:2,
+explain:"1 kilometre = 1000 metres."
+},
+
+{
+q:"1 kilogram is equal to:",
+options:[
+"100 g",
+"1000 g",
+"10 g",
+"1 g"
+],
+answer:1,
+explain:"1 kilogram = 1000 grams."
+},
+
+{
+q:"1 minute is equal to:",
+options:[
+"30 seconds",
+"60 seconds",
+"100 seconds",
+"120 seconds"
+],
+answer:1,
+explain:"One minute contains 60 seconds."
+},
+
+{
+q:"1 hour is equal to:",
+options:[
+"60 seconds",
+"600 seconds",
+"3600 seconds",
+"1000 seconds"
+],
+answer:2,
+explain:"1 hour = 60 minutes × 60 seconds = 3600 seconds."
+},
+
+{
+q:"Which prefix means 1000?",
+options:[
+"Kilo",
+"Cent",
+"Milli",
+"Micro"
+],
+answer:0,
+explain:"The prefix kilo- represents 1000 times the base unit."
+},
+
+{
+q:"Which prefix means one thousandth?",
+options:[
+"Kilo",
+"Cent",
+"Milli",
+"Mega"
+],
+answer:2,
+explain:"Milli- means one thousandth (1/1000) of the base unit."
+},
+
+{
+q:"Which prefix means one hundredth?",
+options:[
+"Centi",
+"Kilo",
+"Mega",
+"Nano"
+],
+answer:0,
+explain:"Centi- means one hundredth (1/100) of the base unit."
+},
+
+{
+q:"What is the symbol for meter?",
+options:[
+"m",
+"kg",
+"s",
+"K"
+],
+answer:0,
+explain:"The SI symbol for metre is m."
+},
+
+{
+q:"What is the symbol for kilogram?",
+options:[
+"kg",
+"km",
+"g",
+"K"
+],
+answer:0,
+explain:"The SI symbol for kilogram is kg."
+},
+
+{
+q:"What is the symbol for second?",
+options:[
+"s",
+"sec",
+"ss",
+"t"
+],
+answer:0,
+explain:"The SI symbol for second is s."
+},
+
+{
+q:"What is the symbol for Kelvin?",
+options:[
+"K",
+"°K",
+"Kel",
+"ke"
+],
+answer:0,
+explain:"The SI symbol for kelvin is K."
+},
+
+{
+q:"What is the symbol for ampere?",
+options:[
+"A",
+"amp",
+"Am",
+"a"
+],
+answer:0,
+explain:"The SI symbol for ampere is A."
+},
+
+{
+q:"Which of the following is a scalar quantity?",
+options:[
+"Mass",
+"Force",
+"Velocity",
+"Displacement"
+],
+answer:0,
+explain:"Mass has magnitude only, so it is a scalar quantity."
+},
+
+{
+q:"Which of the following is a vector quantity?",
+options:[
+"Force",
+"Mass",
+"Time",
+"Temperature"
+],
+answer:0,
+explain:"Force has both magnitude and direction, so it is a vector quantity."
+},
+
+{
+q:"A scalar quantity has:",
+options:[
+"Magnitude only",
+"Direction only",
+"Both magnitude and direction",
+"No value"
+],
+answer:0,
+explain:"A scalar quantity is completely described by its magnitude."
+},
+
+{
+q:"A vector quantity has:",
+options:[
+"Magnitude and direction",
+"Magnitude only",
+"Direction only",
+"No direction and no magnitude"
+],
+answer:0,
+explain:"A vector quantity requires both magnitude and direction."
+},
+
+{
+q:"Which is a vector quantity?",
+options:[
+"Displacement",
+"Distance",
+"Mass",
+"Time"
+],
+answer:0,
+explain:"Displacement has both magnitude and direction."
+},
+
+{
+q:"Which is a scalar quantity?",
+options:[
+"Distance",
+"Displacement",
+"Force",
+"Velocity"
+],
+answer:0,
+explain:"Distance has magnitude only and therefore is a scalar quantity."
+},
+
+{
+q:"Which measurement is most appropriate for the length of a classroom?",
+options:[
+"Meters",
+"Millimeters",
+"Kilometers",
+"Micrometers"
+],
+answer:0,
+explain:"Meters are a suitable unit for measuring the length of a classroom."
+},
+
+{
+q:"Which unit is most appropriate for the distance between two cities?",
+options:[
+"Kilometer",
+"Millimeter",
+"Centimeter",
+"Micrometer"
+],
+answer:0,
+explain:"Distances between cities are normally measured in kilometres."
+},
+
+{
+q:"Which unit is suitable for measuring the thickness of a coin?",
+options:[
+"Millimeter",
+"Kilometer",
+"Meter",
+"Hour"
+],
+answer:0,
+explain:"A small thickness such as the thickness of a coin is conveniently measured in millimetres."
+},
+
+{
+q:"Why are standard units important?",
+options:[
+"They make measurements comparable",
+"They make objects heavier",
+"They eliminate all instruments",
+"They change physical quantities"
+],
+answer:0,
+explain:"Standard units allow measurements made by different people and in different places to be compared consistently."
+},
+
+{
+q:"Which system is internationally used for scientific measurement?",
+options:[
+"SI",
+"English alphabet",
+"Roman system",
+"Local system only"
+],
+answer:0,
+explain:"The International System of Units, abbreviated SI, is the internationally accepted system of measurement."
+},
+
+{
+q:"How many SI base quantities are there?",
+options:[
+"5",
+"6",
+"7",
+"8"
+],
+answer:2,
+explain:"There are seven SI base quantities: length, mass, time, electric current, thermodynamic temperature, amount of substance and luminous intensity."
+},
+
+{
+q:"Which one is an SI base quantity?",
+options:[
+"Amount of substance",
+"Force",
+"Energy",
+"Power"
+],
+answer:0,
+explain:"Amount of substance is one of the seven SI base quantities."
+},
+
+{
+q:"Which one is an SI base quantity?",
+options:[
+"Luminous intensity",
+"Speed",
+"Pressure",
+"Density"
+],
+answer:0,
+explain:"Luminous intensity is one of the seven SI base quantities."
+},
+
+{
+q:"Density is a derived quantity because it depends on:",
+options:[
+"Mass and volume",
+"Time only",
+"Temperature only",
+"Length only"
+],
+answer:0,
+explain:"Density is calculated as mass divided by volume, so it is a derived quantity."
+},
+
+{
+q:"Which is the correct formula for speed?",
+options:[
+"Speed = distance ÷ time",
+"Speed = distance × time",
+"Speed = time ÷ distance",
+"Speed = mass ÷ time"
+],
+answer:0,
+explain:"Speed is calculated by dividing the distance travelled by the time taken."
+},
+
+{
+q:"If an object travels 100 m in 20 s, its speed is:",
+options:[
+"2 m/s",
+"5 m/s",
+"20 m/s",
+"100 m/s"
+],
+answer:1,
+explain:"Speed = distance ÷ time = 100 m ÷ 20 s = 5 m/s."
+},
+
+{
+q:"If a car travels 60 km in 2 hours, its average speed is:",
+options:[
+"20 km/h",
+"30 km/h",
+"60 km/h",
+"120 km/h"
+],
+answer:1,
+explain:"Average speed = distance ÷ time = 60 km ÷ 2 h = 30 km/h."
+},
+
+{
+q:"Which quantity tells us how much matter an object contains?",
+options:[
+"Mass",
+"Speed",
+"Force",
+"Power"
+],
+answer:0,
+explain:"Mass is a measure of the amount of matter in an object."
+},
+
+{
+q:"Which quantity describes how hot or cold an object is?",
+options:[
+"Temperature",
+"Mass",
+"Length",
+"Force"
+],
+answer:0,
+explain:"Temperature indicates how hot or cold a body is."
+},
+
+{
+q:"Which of the following is a unit of length?",
+options:[
+"Meter",
+"Newton",
+"Joule",
+"Watt"
+],
+answer:0,
+explain:"Meter is the SI unit of length."
+},
+
+{
+q:"Which of the following is a unit of mass?",
+options:[
+"Kilogram",
+"Newton",
+"Pascal",
+"Joule"
+],
+answer:0,
+explain:"Kilogram is the SI base unit of mass."
+},
+
+{
+q:"Which statement about measurement is correct?",
+options:[
+"Measurement requires a unit",
+"Measurement is always guessing",
+"Measurement has no standard",
+"Measurement cannot be compared"
+],
+answer:0,
+explain:"A measurement expresses a physical quantity using a numerical value and a unit."
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const box = document.createElement("div");
+    box.className = "question";
+
+    let html = `
+        <h3>${index+1}. ${item.q}</h3>
+        <div class="options">
+    `;
+
+    item.options.forEach((option,optIndex)=>{
+
+        html += `
+        <button
+            class="option"
+            onclick="checkAnswer(${index},${optIndex},this)">
+            ${String.fromCharCode(65+optIndex)}. ${option}
+        </button>
+        `;
+
+    });
+
+    html += `
+        </div>
+
+        <div id="feedback-${index}" class="feedback">
+            <strong id="result-${index}"></strong>
+            <div>
+                <b>Explanation:</b>
+                ${item.explain}
+            </div>
+        </div>
+    `;
+
+    box.innerHTML = html;
+    quiz.appendChild(box);
+
+});
+
+
+function checkAnswer(questionIndex,selected,button){
+
+    const question = questions[questionIndex];
+
+    const parent = button.parentElement;
+    const buttons = parent.querySelectorAll(".option");
+
+    buttons.forEach(btn=>{
+        btn.disabled = true;
+    });
+
+    const feedback =
+        document.getElementById("feedback-"+questionIndex);
+
+    const result =
+        document.getElementById("result-"+questionIndex);
+
+    if(selected === question.answer){
+
+        button.classList.add("correct");
+
+        result.innerHTML =
+            "✅ RIGHT! Correct Answer";
+
+        feedback.className =
+            "feedback right";
+
+        score++;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        buttons[question.answer].classList.add("correct");
+
+        result.innerHTML =
+            "❌ WRONG! Correct Answer: " +
+            String.fromCharCode(65+question.answer) +
+            ". " +
+            question.options[question.answer];
+
+        feedback.className =
+            "feedback wrong-feedback";
+    }
+
+    answered++;
+
+    document.getElementById("score").innerText = score;
+
+    if(answered === 60){
+
+        setTimeout(()=>{
+
+            alert(
+                "🎉 Quiz Completed!\n\nYour Score: " +
+                score +
+                " / 60"
+            );
+
+        },300);
+
+    }
+
+    feedback.scrollIntoView({
+        behavior:"smooth",
+        block:"nearest"
+    });
+}
+
+</script>
+
+</body>
+</html>
