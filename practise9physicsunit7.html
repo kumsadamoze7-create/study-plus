@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 7 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#dc2626,#f97316);
+    color:white;
+    text-align:center;
+    padding:32px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #dc2626;
+}
+
+.question h3{
+    color:#991b1b;
+    line-height:1.5;
+}
+
+.option{
+    width:100%;
+    background:#ea580c;
+    color:white;
+    border:none;
+    padding:14px;
+    margin:7px 0;
+    border-radius:9px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    opacity:.9;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.75;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:13px;
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    line-height:1.6;
+}
+
+#score{
+    display:none;
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+.button{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    background:#16a34a;
+}
+
+.notes{
+    background:#7c3aed;
+}
+
+.home{
+    background:#172554;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌡️ Grade 9 Physics</h1>
+
+<p>Unit 7 — Temperature and Thermometry</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📚 Unit 7 Practice</h2>
+
+<p>
+Choose the correct answer. After selecting an answer,
+you will see whether your answer is correct or wrong
+and an explanation.
+</p>
+
+</div>
+
+<div id="quiz"></div>
+
+<div id="score">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p id="scoreText"></p>
+
+<button class="button restart"
+onclick="location.reload()">
+
+🔄 Try Again
+
+</button>
+
+<button class="button notes"
+onclick="location.href='notes9physicsunit7.html'">
+
+📖 Review Unit 7 Notes
+
+</button>
+
+<button class="button home"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+<button class="button home"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is temperature?",
+options:[
+"A measure of how hot or cold a body is",
+"The amount of mass in a body",
+"The weight of an object",
+"The volume of a body"
+],
+answer:0,
+explanation:"Temperature tells us the degree of hotness or coldness of a body."
+},
+
+{
+q:"2. What is the SI unit of thermodynamic temperature?",
+options:[
+"Celsius",
+"Fahrenheit",
+"Kelvin",
+"Joule"
+],
+answer:2,
+explanation:"The SI unit of thermodynamic temperature is the kelvin (K)."
+},
+
+{
+q:"3. Which instrument is used to measure temperature?",
+options:[
+"Barometer",
+"Thermometer",
+"Speedometer",
+"Balance"
+],
+answer:1,
+explanation:"A thermometer is an instrument used to measure temperature."
+},
+
+{
+q:"4. Which temperature scale has 0°C as the freezing point of water?",
+options:[
+"Celsius",
+"Kelvin",
+"Fahrenheit",
+"Rankine"
+],
+answer:0,
+explanation:"On the Celsius scale, water freezes at 0°C under standard atmospheric pressure."
+},
+
+{
+q:"5. What is the boiling point of water on the Celsius scale at standard atmospheric pressure?",
+options:[
+"0°C",
+"32°C",
+"100°C",
+"212°C"
+],
+answer:2,
+explanation:"Water boils at 100°C at standard atmospheric pressure."
+},
+
+{
+q:"6. What is the freezing point of water on the Fahrenheit scale?",
+options:[
+"0°F",
+"32°F",
+"100°F",
+"212°F"
+],
+answer:1,
+explanation:"Water freezes at 32°F on the Fahrenheit scale."
+},
+
+{
+q:"7. What is the boiling point of water on the Fahrenheit scale?",
+options:[
+"32°F",
+"100°F",
+"180°F",
+"212°F"
+],
+answer:3,
+explanation:"Water boils at 212°F at standard atmospheric pressure."
+},
+
+{
+q:"8. What is the approximate relationship between Celsius and Kelvin?",
+options:[
+"K = °C + 273.15",
+"K = °C - 273.15",
+"K = °C × 273.15",
+"K = °C / 273.15"
+],
+answer:0,
+explanation:"Kelvin temperature is obtained by adding 273.15 to Celsius temperature."
+},
+
+{
+q:"9. Convert 0°C to Kelvin.",
+options:[
+"0 K",
+"100 K",
+"273.15 K",
+"373.15 K"
+],
+answer:2,
+explanation:"K = 0 + 273.15 = 273.15 K."
+},
+
+{
+q:"10. Convert 100°C to Kelvin.",
+options:[
+"100 K",
+"273.15 K",
+"300 K",
+"373.15 K"
+],
+answer:3,
+explanation:"K = 100 + 273.15 = 373.15 K."
+},
+
+{
+q:"11. Convert 25°C to Kelvin.",
+options:[
+"248.15 K",
+"273.15 K",
+"298.15 K",
+"325.15 K"
+],
+answer:2,
+explanation:"K = 25 + 273.15 = 298.15 K."
+},
+
+{
+q:"12. Convert 300 K to Celsius.",
+options:[
+"26.85°C",
+"273°C",
+"300°C",
+"573.15°C"
+],
+answer:0,
+explanation:"°C = 300 - 273.15 = 26.85°C."
+},
+
+{
+q:"13. What is the formula for Celsius to Fahrenheit?",
+options:[
+"°F = °C + 32",
+"°F = (9/5 × °C) + 32",
+"°F = (5/9 × °C) + 32",
+"°F = °C - 32"
+],
+answer:1,
+explanation:"The conversion formula is °F = (9/5 × °C) + 32."
+},
+
+{
+q:"14. What is 0°C in Fahrenheit?",
+options:[
+"0°F",
+"32°F",
+"100°F",
+"212°F"
+],
+answer:1,
+explanation:"°F = (9/5 × 0) + 32 = 32°F."
+},
+
+{
+q:"15. What is 100°C in Fahrenheit?",
+options:[
+"100°F",
+"180°F",
+"212°F",
+"273°F"
+],
+answer:2,
+explanation:"°F = (9/5 × 100) + 32 = 212°F."
+},
+
+{
+q:"16. What is 20°C in Fahrenheit?",
+options:[
+"52°F",
+"68°F",
+"72°F",
+"80°F"
+],
+answer:1,
+explanation:"°F = (9/5 × 20) + 32 = 68°F."
+},
+
+{
+q:"17. What is the formula for Fahrenheit to Celsius?",
+options:[
+"°C = °F + 32",
+"°C = (9/5)(°F - 32)",
+"°C = (5/9)(°F - 32)",
+"°C = °F - 273"
+],
+answer:2,
+explanation:"The formula is °C = (5/9)(°F - 32)."
+},
+
+{
+q:"18. What is 68°F in Celsius?",
+options:[
+"10°C",
+"20°C",
+"32°C",
+"40°C"
+],
+answer:1,
+explanation:"°C = (5/9)(68 - 32) = 20°C."
+},
+
+{
+q:"19. What is absolute zero approximately?",
+options:[
+"0°C",
+"-100°C",
+"-273.15°C",
+"273.15°C"
+],
+answer:2,
+explanation:"Absolute zero is approximately -273.15°C or 0 K."
+},
+
+{
+q:"20. What is the Kelvin temperature of absolute zero?",
+options:[
+"-273 K",
+"0 K",
+"100 K",
+"273 K"
+],
+answer:1,
+explanation:"Absolute zero corresponds to 0 K."
+},
+
+{
+q:"21. Heat is best described as:",
+options:[
+"The degree of hotness",
+"Energy transferred because of a temperature difference",
+"Mass of an object",
+"Temperature itself"
+],
+answer:1,
+explanation:"Heat is energy transferred from a hotter body to a colder body because of a temperature difference."
+},
+
+{
+q:"22. In which direction does heat naturally flow?",
+options:[
+"Cold to hot",
+"Hot to cold",
+"Both directions equally",
+"It never flows"
+],
+answer:1,
+explanation:"Heat naturally flows from a higher-temperature body to a lower-temperature body."
+},
+
+{
+q:"23. What is thermal equilibrium?",
+options:[
+"When two bodies have the same temperature",
+"When one body is always hotter",
+"When heat flows forever",
+"When temperature becomes infinite"
+],
+answer:0,
+explanation:"Two bodies are in thermal equilibrium when they have the same temperature and there is no net heat transfer between them."
+},
+
+{
+q:"24. What is a thermometric property?",
+options:[
+"A property that changes predictably with temperature",
+"The mass of an object",
+"The color of a substance only",
+"The weight of an object"
+],
+answer:0,
+explanation:"A thermometric property changes in a predictable way with temperature and can be used for temperature measurement."
+},
+
+{
+q:"25. Which is an example of a thermometric property?",
+options:[
+"Electrical resistance",
+"Mass",
+"Shape only",
+"Weight"
+],
+answer:0,
+explanation:"Electrical resistance changes with temperature and can be used in thermometers."
+},
+
+{
+q:"26. A liquid-in-glass thermometer works mainly because the liquid:",
+options:[
+"Freezes immediately",
+"Expands when heated",
+"Becomes heavier when heated",
+"Disappears when heated"
+],
+answer:1,
+explanation:"The liquid expands when heated and rises in the narrow tube."
+},
+
+{
+q:"27. Which liquid has traditionally been used in thermometers?",
+options:[
+"Mercury",
+"Water only",
+"Oil only",
+"Milk"
+],
+answer:0,
+explanation:"Mercury has traditionally been used because it expands predictably and is easy to see."
+},
+
+{
+q:"28. Why can colored alcohol be used in thermometers?",
+options:[
+"It expands when heated",
+"It never changes",
+"It is always hot",
+"It produces electricity"
+],
+answer:0,
+explanation:"Alcohol expands with increasing temperature, making it useful as a thermometric liquid."
+},
+
+{
+q:"29. Which thermometer is commonly used to measure body temperature?",
+options:[
+"Clinical thermometer",
+"Rain gauge",
+"Barometer",
+"Measuring cylinder"
+],
+answer:0,
+explanation:"A clinical thermometer is designed to measure human body temperature."
+},
+
+{
+q:"30. Which thermometer is commonly used in scientific experiments?",
+options:[
+"Laboratory thermometer",
+"Clinical thermometer only",
+"Compass",
+"Stopwatch"
+],
+answer:0,
+explanation:"Laboratory thermometers are used to measure temperatures during experiments."
+},
+
+{
+q:"31. What is thermal expansion?",
+options:[
+"Increase in size due to heating",
+"Decrease in size due to heating",
+"Change in mass",
+"Change in color only"
+],
+answer:0,
+explanation:"Thermal expansion is the increase in size of a substance when its temperature increases."
+},
+
+{
+q:"32. What generally happens to most substances when heated?",
+options:[
+"They expand",
+"They always shrink",
+"They disappear",
+"Their mass doubles"
+],
+answer:0,
+explanation:"Most substances expand when their temperature increases."
+},
+
+{
+q:"33. What generally happens when a substance is cooled?",
+options:[
+"It expands forever",
+"It contracts",
+"It becomes weightless",
+"It disappears"
+],
+answer:1,
+explanation:"Most substances contract when cooled."
+},
+
+{
+q:"34. Which state of matter generally shows thermal expansion?",
+options:[
+"Solids",
+"Liquids",
+"Gases",
+"All of these"
+],
+answer:3,
+explanation:"Solids, liquids and gases generally expand when heated, although by different amounts."
+},
+
+{
+q:"35. What is linear expansion?",
+options:[
+"Change in length due to temperature change",
+"Change in mass",
+"Change in color",
+"Change in pressure only"
+],
+answer:0,
+explanation:"Linear expansion refers specifically to the change in length of a solid."
+},
+
+{
+q:"36. Which formula represents linear expansion?",
+options:[
+"ΔL = αL₀ΔT",
+"F = ma",
+"v = fλ",
+"P = F/A"
+],
+answer:0,
+explanation:"The linear expansion formula is ΔL = αL₀ΔT."
+},
+
+{
+q:"37. In ΔL = αL₀ΔT, what does L₀ represent?",
+options:[
+"Final length",
+"Original length",
+"Temperature",
+"Density"
+],
+answer:1,
+explanation:"L₀ represents the original length before the temperature change."
+},
+
+{
+q:"38. In ΔL = αL₀ΔT, what does ΔT represent?",
+options:[
+"Change in temperature",
+"Original length",
+"Final mass",
+"Pressure"
+],
+answer:0,
+explanation:"ΔT represents the change in temperature."
+},
+
+{
+q:"39. In the equation ΔL = αL₀ΔT, α represents:",
+options:[
+"Coefficient of linear expansion",
+"Area",
+"Mass",
+"Temperature"
+],
+answer:0,
+explanation:"α is the coefficient of linear expansion of the material."
+},
+
+{
+q:"40. Why are gaps provided between some railway tracks?",
+options:[
+"To allow thermal expansion",
+"To make trains faster",
+"To reduce mass",
+"To increase friction"
+],
+answer:0,
+explanation:"Gaps allow the rails to expand when temperature increases and help prevent buckling."
+},
+
+{
+q:"41. Why are expansion joints used in bridges?",
+options:[
+"To allow expansion and contraction",
+"To increase the weight",
+"To stop all movement",
+"To reduce gravity"
+],
+answer:0,
+explanation:"Expansion joints provide room for materials to expand and contract with temperature changes."
+},
+
+{
+q:"42. What can happen to an overhead wire on a hot day?",
+options:[
+"It may expand and sag more",
+"It becomes completely rigid",
+"It disappears",
+"It becomes shorter"
+],
+answer:0,
+explanation:"Metal wires expand when heated, so overhead wires may sag more on hot days."
+},
+
+{
+q:"43. What is a bimetallic strip?",
+options:[
+"Two different metals joined together",
+"Two identical liquids",
+"A single wire",
+"A plastic tube"
+],
+answer:0,
+explanation:"A bimetallic strip consists of two different metals joined together."
+},
+
+{
+q:"44. Why does a bimetallic strip bend when heated?",
+options:[
+"The two metals expand by different amounts",
+"Both metals disappear",
+"The metals have no expansion",
+"The mass becomes zero"
+],
+answer:0,
+explanation:"Different metals have different coefficients of expansion, causing the strip to bend when heated."
+},
+
+{
+q:"45. One important application of a bimetallic strip is in:",
+options:[
+"Thermostats",
+"Books",
+"Glass cups",
+"Rulers only"
+],
+answer:0,
+explanation:"Bimetallic strips are commonly used in thermostats for automatic temperature control."
+},
+
+{
+q:"46. What does a thermostat do?",
+options:[
+"Automatically controls temperature",
+"Measures mass",
+"Measures distance",
+"Produces light"
+],
+answer:0,
+explanation:"A thermostat controls temperature by switching a heating or cooling system on or off."
+},
+
+{
+q:"47. Which temperature is highest?",
+options:[
+"10°C",
+"20°C",
+"50°C",
+"30°C"
+],
+answer:2,
+explanation:"50°C is greater than 30°C, 20°C and 10°C."
+},
+
+{
+q:"48. Which is colder?",
+options:[
+"0°C",
+"20°C",
+"50°C",
+"100°C"
+],
+answer:0,
+explanation:"0°C is the lowest temperature among the choices."
+},
+
+{
+q:"49. What is 37°C approximately in Fahrenheit?",
+options:[
+"80.6°F",
+"98.6°F",
+"100°F",
+"212°F"
+],
+answer:1,
+explanation:"°F = (9/5 × 37) + 32 = 98.6°F."
+},
+
+{
+q:"50. What is 98.6°F approximately in Celsius?",
+options:[
+"25°C",
+"37°C",
+"50°C",
+"60°C"
+],
+answer:1,
+explanation:"98.6°F corresponds approximately to 37°C, a typical human body temperature."
+},
+
+{
+q:"51. Which temperature is approximately equal to 273 K?",
+options:[
+"0°C",
+"100°C",
+"273°C",
+"-273°C"
+],
+answer:0,
+explanation:"273 K is approximately 0°C."
+},
+
+{
+q:"52. Which temperature is approximately equal to 373 K?",
+options:[
+"0°C",
+"50°C",
+"100°C",
+"273°C"
+],
+answer:2,
+explanation:"373 K is approximately 100°C."
+},
+
+{
+q:"53. Why is temperature measurement important in medicine?",
+options:[
+"To monitor body temperature",
+"To measure height",
+"To measure weight only",
+"To measure distance"
+],
+answer:0,
+explanation:"Body temperature is important for detecting fever and monitoring health conditions."
+},
+
+{
+q:"54. Which is an application of thermal expansion?",
+options:[
+"Thermometers",
+"Compass",
+"Magnet only",
+"Clock hands only"
+],
+answer:0,
+explanation:"Liquid thermometers use thermal expansion to indicate temperature."
+},
+
+{
+q:"55. Which statement is correct about heat and temperature?",
+options:[
+"They are exactly the same",
+"Heat is energy transfer while temperature describes thermal state",
+"Temperature is measured in joules",
+"Heat is measured in degrees Celsius"
+],
+answer:1,
+explanation:"Heat is energy transferred due to a temperature difference, while temperature describes the thermal state of a body."
+},
+
+{
+q:"56. A metal rod is heated. What happens to its length generally?",
+options:[
+"It increases",
+"It becomes zero",
+"It always decreases",
+"It does not change at all"
+],
+answer:0,
+explanation:"A metal rod generally expands and becomes longer when heated."
+},
+
+{
+q:"57. If the temperature change increases, the thermal expansion of a material generally:",
+options:[
+"Increases",
+"Becomes zero",
+"Always decreases",
+"Does not exist"
+],
+answer:0,
+explanation:"For a given material and original length, greater temperature change generally produces greater expansion."
+},
+
+{
+q:"58. Which scale is most commonly used as the SI thermodynamic temperature scale?",
+options:[
+"Kelvin",
+"Celsius",
+"Fahrenheit",
+"Centigrade only"
+],
+answer:0,
+explanation:"Kelvin is the SI base unit for thermodynamic temperature."
+},
+
+{
+q:"59. Which statement about absolute zero is correct?",
+options:[
+"It is approximately 0 K",
+"It is 100 K",
+"It is 273 K",
+"It is 100°C"
+],
+answer:0,
+explanation:"Absolute zero is defined as 0 K, approximately -273.15°C."
+},
+
+{
+q:"60. Which statement best summarizes thermal expansion?",
+options:[
+"Most materials expand when heated and contract when cooled",
+"All materials shrink when heated",
+"Temperature has no effect on materials",
+"Only gases can expand"
+],
+answer:0,
+explanation:"Most materials expand when heated and contract when cooled. This principle has many practical applications."
+}
+
+];
+
+
+const quiz = document.getElementById("quiz");
+
+let score = 0;
+let answered = 0;
+
+
+questions.forEach((question,index)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "card question";
+
+
+    const title = document.createElement("h3");
+
+    title.textContent = question.q;
+
+    card.appendChild(title);
+
+
+    const result = document.createElement("div");
+
+    result.className = "result";
+
+    result.style.display = "none";
+
+
+    const explanation = document.createElement("div");
+
+    explanation.className = "explanation";
+
+    explanation.style.display = "none";
+
+
+    question.options.forEach((option,optionIndex)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65 + optionIndex)
+        + ". " + option;
+
+
+        button.onclick = function(){
+
+            const buttons =
+            card.querySelectorAll(".option");
+
+
+            buttons.forEach(btn=>{
+                btn.disabled = true;
+            });
+
+
+            answered++;
+
+
+            if(optionIndex === question.answer){
+
+                score++;
+
+                result.className =
+                "result correct";
+
+                result.innerHTML =
+                "✅ Correct!";
+
+            }
+
+            else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ Wrong! Correct answer: "
+                + String.fromCharCode(65 + question.answer)
+                + ". "
+                + question.options[question.answer];
+
+            }
+
+
+            result.style.display = "block";
+
+
+            explanation.innerHTML =
+            "<b>💡 Explanation:</b> "
+            + question.explanation;
+
+
+            explanation.style.display = "block";
+
+
+            if(answered === questions.length){
+
+                showScore();
+
+            }
+
+        };
+
+
+        card.appendChild(button);
+
+    });
+
+
+    card.appendChild(result);
+
+    card.appendChild(explanation);
+
+    quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+    const scoreBox =
+    document.getElementById("score");
+
+    const scoreText =
+    document.getElementById("scoreText");
+
+
+    const percentage =
+    Math.round((score / questions.length) * 100);
+
+
+    let message = "";
+
+
+    if(percentage >= 90){
+
+        message = "🏆 Excellent work!";
+
+    }
+
+    else if(percentage >= 70){
+
+        message = "👏 Very good work!";
+
+    }
+
+    else if(percentage >= 50){
+
+        message = "👍 Good effort! Review the notes again.";
+
+    }
+
+    else{
+
+        message = "📖 Keep practicing and review Unit 7.";
+
+    }
+
+
+    scoreText.innerHTML =
+    "Your Score: <b>"
+    + score
+    + " / "
+    + questions.length
+    + "</b><br><br>"
+    + "Percentage: <b>"
+    + percentage
+    + "%</b><br><br>"
+    + message;
+
+
+    scoreBox.style.display = "block";
+
+
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
