@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Biology Unit 5 Practice</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#16a34a,#15803d);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #16a34a;
+}
+
+.option{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#f8fafc;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#dcfce7;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    display:none;
+    font-weight:bold;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:8px;
+    padding:12px;
+    background:#eff6ff;
+    color:#1e3a8a;
+    border-radius:8px;
+    display:none;
+}
+
+.scoreBox{
+    background:#14532d;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🧬 Grade 9 Biology</h1>
+<p>Unit 5 — Practice Test</p>
+<p>60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="scoreBox">
+Score: <span id="score">0</span> / 60
+</div>
+
+<div id="quiz"></div>
+
+<button class="back"
+onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is nutrition?",
+a:["The process of breathing","The process of obtaining and using food","The process of removing waste only","The process of reproduction"],
+c:1,
+e:"Nutrition is the process by which organisms obtain and use nutrients from food."
+},
+
+{
+q:"2. Which nutrient is the main source of energy for the body?",
+a:["Protein","Minerals","Carbohydrates","Vitamins"],
+c:2,
+e:"Carbohydrates are an important source of energy for the body."
+},
+
+{
+q:"3. Which nutrient is mainly needed for growth and repair of tissues?",
+a:["Protein","Water","Vitamin C","Carbohydrate"],
+c:0,
+e:"Proteins are essential for growth, development and repair of body tissues."
+},
+
+{
+q:"4. Which nutrient provides the most concentrated source of energy?",
+a:["Vitamins","Fats and oils","Minerals","Water"],
+c:1,
+e:"Fats and oils provide concentrated energy."
+},
+
+{
+q:"5. Which of the following is a source of protein?",
+a:["Sugar","Egg","Water","Salt"],
+c:1,
+e:"Eggs are rich sources of protein."
+},
+
+{
+q:"6. Which vitamin is important for normal vision?",
+a:["Vitamin A","Vitamin C","Vitamin D","Vitamin K"],
+c:0,
+e:"Vitamin A is important for normal vision and healthy tissues."
+},
+
+{
+q:"7. Deficiency of vitamin C can cause:",
+a:["Rickets","Scurvy","Goitre","Anaemia"],
+c:1,
+e:"Vitamin C deficiency can cause scurvy."
+},
+
+{
+q:"8. Deficiency of vitamin D in children can cause:",
+a:["Scurvy","Rickets","Goitre","Night blindness"],
+c:1,
+e:"Vitamin D deficiency can cause rickets, affecting bone development."
+},
+
+{
+q:"9. Which mineral is important in the formation of haemoglobin?",
+a:["Calcium","Iron","Iodine","Sodium"],
+c:1,
+e:"Iron is required for the formation of haemoglobin."
+},
+
+{
+q:"10. Iron deficiency may cause:",
+a:["Anaemia","Rickets","Scurvy","Goitre"],
+c:0,
+e:"Insufficient iron can lead to iron-deficiency anaemia."
+},
+
+{
+q:"11. Iodine deficiency can cause:",
+a:["Anaemia","Goitre","Scurvy","Rickets"],
+c:1,
+e:"Iodine deficiency can cause enlargement of the thyroid gland, called goitre."
+},
+
+{
+q:"12. Which substance is essential for transporting materials in the body?",
+a:["Water","Fibre","Fat only","Starch only"],
+c:0,
+e:"Water helps transport substances around the body."
+},
+
+{
+q:"13. Which part of food helps prevent constipation?",
+a:["Fibre","Protein","Fat","Sugar"],
+c:0,
+e:"Dietary fibre helps food move through the digestive tract and helps prevent constipation."
+},
+
+{
+q:"14. What is a balanced diet?",
+a:["A diet containing only carbohydrates","A diet containing appropriate amounts of required nutrients","A diet containing only fruits","A diet without water"],
+c:1,
+e:"A balanced diet supplies the nutrients and water needed by the body in appropriate amounts."
+},
+
+{
+q:"15. Which is NOT a major function of carbohydrates?",
+a:["Providing energy","Providing energy for activities","Mainly forming antibodies and muscles","Sparing protein for other functions"],
+c:2,
+e:"Protein is more directly involved in tissue growth, repair and formation of antibodies."
+},
+
+{
+q:"16. Which food is a good source of carbohydrates?",
+a:["Rice","Salt","Water","Egg shell"],
+c:0,
+e:"Rice is rich in carbohydrates."
+},
+
+{
+q:"17. Which food is a good source of dietary fibre?",
+a:["Vegetables","Cooking oil","Sugar","Butter"],
+c:0,
+e:"Vegetables provide dietary fibre."
+},
+
+{
+q:"18. What is malnutrition?",
+a:["Only eating vegetables","A condition caused by inadequate, excessive or imbalanced nutrition","Drinking enough water","Regular exercise"],
+c:1,
+e:"Malnutrition occurs when the body receives too little, too much or an inappropriate balance of nutrients."
+},
+
+{
+q:"19. Which is an example of undernutrition?",
+a:["Insufficient intake of nutrients","Eating a balanced diet","Drinking clean water","Regular exercise"],
+c:0,
+e:"Undernutrition occurs when nutrient or energy intake is insufficient."
+},
+
+{
+q:"20. Overnutrition is associated with:",
+a:["Excessive nutrient or energy intake","Lack of all food","Only vitamin deficiency","Lack of water"],
+c:0,
+e:"Overnutrition occurs when nutrient or energy intake is excessive."
+},
+
+{
+q:"21. Which of the following is an infectious disease?",
+a:["Diabetes","Malaria","Hypertension","Some cancers"],
+c:1,
+e:"Malaria is an infectious disease caused by Plasmodium parasites."
+},
+
+{
+q:"22. Which is a non-infectious disease?",
+a:["Cholera","Malaria","Diabetes","Measles"],
+c:2,
+e:"Diabetes is generally classified as a non-infectious disease."
+},
+
+{
+q:"23. Infectious diseases are caused by:",
+a:["Only lack of exercise","Infectious agents","Only old age","Only poor sleep"],
+c:1,
+e:"Infectious diseases are caused by infectious agents such as bacteria, viruses, fungi and parasites."
+},
+
+{
+q:"24. Which organism causes malaria?",
+a:["Plasmodium","Bacterium causing cholera","Fungus","Virus"],
+c:0,
+e:"Malaria is caused by Plasmodium parasites."
+},
+
+{
+q:"25. Malaria is commonly transmitted by:",
+a:["House flies only","Female Anopheles mosquitoes","Dogs","Water only"],
+c:1,
+e:"Malaria is transmitted mainly through the bites of infected female Anopheles mosquitoes."
+},
+
+{
+q:"26. Which disease is commonly associated with contaminated water?",
+a:["Cholera","Diabetes","Hypertension","Rickets"],
+c:0,
+e:"Cholera can spread through contaminated water and food."
+},
+
+{
+q:"27. Which practice helps prevent water-borne diseases?",
+a:["Drinking untreated water","Using safe drinking water","Leaving waste near water","Ignoring sanitation"],
+c:1,
+e:"Safe drinking water is important for preventing water-borne diseases."
+},
+
+{
+q:"28. Which is an example of a viral disease?",
+a:["Measles","Malaria","Scurvy","Anaemia"],
+c:0,
+e:"Measles is caused by a virus."
+},
+
+{
+q:"29. Which of the following can help prevent infectious diseases?",
+a:["Poor hygiene","Hand washing","Unsafe water","Sharing contaminated objects"],
+c:1,
+e:"Regular hand washing can reduce transmission of many infectious diseases."
+},
+
+{
+q:"30. Vaccination is mainly used to:",
+a:["Increase disease transmission","Help protect against certain infectious diseases","Cause malnutrition","Replace food"],
+c:1,
+e:"Vaccination prepares the immune system to help protect against specific infections."
+},
+
+{
+q:"31. Which is a possible route of infectious disease transmission?",
+a:["Respiratory droplets","Only sunlight","Only exercise","Only sleep"],
+c:0,
+e:"Some infectious diseases can spread through respiratory droplets or particles."
+},
+
+{
+q:"32. Which can transmit some infectious diseases?",
+a:["Contaminated food","Clean air only","Exercise","Balanced diet"],
+c:0,
+e:"Contaminated food can transmit certain infectious diseases."
+},
+
+{
+q:"33. What is a vector?",
+a:["An organism that can transmit a disease-causing agent","A vitamin","A nutrient","A type of food"],
+c:0,
+e:"A vector is an organism that can transmit an infectious agent between hosts."
+},
+
+{
+q:"34. Which organism is an important vector for malaria?",
+a:["Mosquito","Cow","Chicken","Fish"],
+c:0,
+e:"Mosquitoes, especially female Anopheles, transmit malaria parasites."
+},
+
+{
+q:"35. Which disease is caused by bacteria?",
+a:["Tuberculosis","Measles","Malaria","Rickets"],
+c:0,
+e:"Tuberculosis is caused by bacteria, mainly Mycobacterium tuberculosis."
+},
+
+{
+q:"36. Which of the following is a respiratory infectious disease?",
+a:["Tuberculosis","Diabetes","Anaemia","Rickets"],
+c:0,
+e:"Tuberculosis primarily affects the lungs and can spread through the air."
+},
+
+{
+q:"37. Which is a good personal hygiene practice?",
+a:["Regular hand washing","Sharing dirty towels","Not bathing","Drinking unsafe water"],
+c:0,
+e:"Regular hand washing is an important personal hygiene practice."
+},
+
+{
+q:"38. Proper waste disposal helps to:",
+a:["Increase disease transmission","Reduce environmental contamination and disease risks","Cause malnutrition","Increase mosquitoes"],
+c:1,
+e:"Proper waste disposal helps reduce contamination and breeding sites for some disease vectors."
+},
+
+{
+q:"39. Which is important for maintaining a healthy body?",
+a:["Balanced diet","Constant sleep deprivation","Substance abuse","Poor hygiene"],
+c:0,
+e:"A balanced diet provides nutrients required for normal body functions."
+},
+
+{
+q:"40. Regular physical activity can:",
+a:["Support physical health","Cause all infectious diseases","Replace all nutrients","Cause vitamin deficiency"],
+c:0,
+e:"Regular physical activity supports physical health and overall well-being."
+},
+
+{
+q:"41. Substance abuse means:",
+a:["Healthy eating","Harmful or inappropriate use of substances","Regular exercise","Drinking safe water"],
+c:1,
+e:"Substance abuse refers to harmful or inappropriate use of substances."
+},
+
+{
+q:"42. Which is an example of a harmful substance when misused?",
+a:["Tobacco","Water","Vegetables","Fruits"],
+c:0,
+e:"Tobacco use can seriously harm health and can lead to dependence."
+},
+
+{
+q:"43. Substance abuse can affect:",
+a:["Only hair","Physical and mental health","Only fingernails","Only height"],
+c:1,
+e:"Substance abuse can affect both physical and mental health."
+},
+
+{
+q:"44. Which habit helps reduce many health risks?",
+a:["Smoking","Healthy eating","Excessive alcohol use","Ignoring illness"],
+c:1,
+e:"Healthy eating supports normal growth, development and health."
+},
+
+{
+q:"45. Which is NOT an infectious disease?",
+a:["Cholera","Measles","Hypertension","Tuberculosis"],
+c:2,
+e:"Hypertension is a non-infectious condition and is not transmitted between people."
+},
+
+{
+q:"46. Which condition involves high blood pressure?",
+a:["Hypertension","Scurvy","Rickets","Goitre"],
+c:0,
+e:"Hypertension means persistently high blood pressure."
+},
+
+{
+q:"47. Which factor can increase the risk of some non-infectious diseases?",
+a:["Unhealthy lifestyle","Hand washing","Safe water","Vaccination"],
+c:0,
+e:"Some non-infectious diseases are associated with factors such as diet, inactivity and tobacco use."
+},
+
+{
+q:"48. COVID-19 is caused by:",
+a:["SARS-CoV-2 virus","Plasmodium","A bacterium causing TB","A vitamin"],
+c:0,
+e:"COVID-19 is caused by the SARS-CoV-2 virus."
+},
+
+{
+q:"49. COVID-19 mainly spreads through:",
+a:["Respiratory particles","Vitamin deficiency","Iron","Protein"],
+c:0,
+e:"SARS-CoV-2 can spread through respiratory particles, especially in close or poorly ventilated settings."
+},
+
+{
+q:"50. Which can reduce the risk of respiratory infection transmission?",
+a:["Good ventilation","Crowding","Sharing contaminated items","Ignoring symptoms"],
+c:0,
+e:"Good ventilation can reduce the concentration of infectious respiratory particles indoors."
+},
+
+{
+q:"51. Which nutrient is important for calcium absorption and bone development?",
+a:["Vitamin D","Vitamin C","Vitamin A","Vitamin B only"],
+c:0,
+e:"Vitamin D helps the body absorb calcium and supports healthy bones."
+},
+
+{
+q:"52. Which nutrient helps the body form and repair tissues?",
+a:["Protein","Water only","Fibre only","Salt only"],
+c:0,
+e:"Protein provides amino acids needed for tissue growth and repair."
+},
+
+{
+q:"53. Which of these is a mineral?",
+a:["Iron","Glucose","Protein","Vitamin C"],
+c:0,
+e:"Iron is an essential mineral."
+},
+
+{
+q:"54. Which of these is a vitamin?",
+a:["Vitamin C","Iron","Calcium","Iodine"],
+c:0,
+e:"Vitamin C is a vitamin; iron, calcium and iodine are minerals."
+},
+
+{
+q:"55. Which is an important function of water?",
+a:["Temperature regulation","Causing disease","Replacing all nutrients","Producing fibre"],
+c:0,
+e:"Water helps regulate body temperature and performs many other essential functions."
+},
+
+{
+q:"56. Which action is most appropriate when someone has symptoms of a serious disease?",
+a:["Ignore the symptoms","Seek appropriate medical care","Share medicine randomly","Avoid all food"],
+c:1,
+e:"Seeking appropriate medical care supports early diagnosis and treatment."
+},
+
+{
+q:"57. Which statement about infectious diseases is correct?",
+a:["They can never spread between people","They are caused by infectious agents","They are always genetic","They are always caused by poor nutrition"],
+c:1,
+e:"Infectious diseases are caused by infectious agents and many can be transmitted between hosts."
+},
+
+{
+q:"58. Which combination best supports good health?",
+a:["Balanced diet, hygiene and physical activity","Smoking and poor diet","Unsafe water and poor hygiene","Substance abuse and inactivity"],
+c:0,
+e:"Balanced nutrition, hygiene and regular physical activity are important parts of a healthy lifestyle."
+},
+
+{
+q:"59. Which nutrient is especially important for preventing iron-deficiency anaemia?",
+a:["Iron","Vitamin D","Fibre","Water"],
+c:0,
+e:"Adequate iron intake helps prevent iron-deficiency anaemia."
+},
+
+{
+q:"60. What is the best overall description of disease prevention?",
+a:["Only taking medicine after becoming sick","Actions that reduce the risk of disease and its transmission","Avoiding all physical activity","Eating only one type of food"],
+c:1,
+e:"Disease prevention includes actions such as hygiene, safe water and food, vaccination where appropriate, healthy lifestyles and disease-control measures."
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const card = document.createElement("div");
+    card.className = "card question";
+
+    const title = document.createElement("h3");
+    title.textContent = item.q;
+
+    card.appendChild(title);
+
+    item.a.forEach((answer,i)=>{
+
+        const button = document.createElement("button");
+        button.className = "option";
+        button.textContent =
+            String.fromCharCode(65+i) + ". " + answer;
+
+        button.onclick = function(){
+
+            if(card.dataset.answered === "yes"){
+                return;
+            }
+
+            card.dataset.answered = "yes";
+            answered++;
+
+            const result = document.createElement("div");
+            const explanation = document.createElement("div");
+
+            explanation.className = "explanation";
+            explanation.innerHTML =
+                "💡 Explanation: " + item.e;
+
+            if(i === item.c){
+
+                score++;
+
+                result.className = "result right";
+                result.innerHTML =
+                    "✅ RIGHT!";
+
+            }else{
+
+                result.className = "result wrong";
+                result.innerHTML =
+                    "❌ WRONG!<br>" +
+                    "Correct answer: " +
+                    String.fromCharCode(65+item.c) +
+                    ". " + item.a[item.c];
+
+            }
+
+            result.style.display = "block";
+            explanation.style.display = "block";
+
+            card.appendChild(result);
+            card.appendChild(explanation);
+
+            document.getElementById("score").textContent = score;
+
+            document.querySelectorAll(
+                ".option"
+            ).forEach(btn=>{
+                btn.disabled = true;
+                btn.style.cursor = "default";
+            });
+
+        };
+
+        card.appendChild(button);
+
+    });
+
+    quiz.appendChild(card);
+
+});
+
+</script>
+
+</body>
+</html>
