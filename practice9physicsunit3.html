@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Physics - Unit 3 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#dc2626,#7f1d1d);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:8px 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:5px solid #dc2626;
+}
+
+.question h3{
+    color:#991b1b;
+    margin-top:0;
+}
+
+.option{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    margin:7px 0;
+    border-radius:9px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.option:hover{
+    opacity:.9;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+    opacity:.8;
+}
+
+.result{
+    margin-top:12px;
+    padding:14px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrong{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#f3f4f6;
+    border-left:4px solid #7c3aed;
+    color:#444;
+    line-height:1.6;
+}
+
+#score{
+    display:none;
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+#score h2{
+    margin-top:0;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    background:#16a34a;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>⚡ Grade 9 Physics</h1>
+
+<p>Unit 3 — Motion</p>
+
+<p>📝 60 Multiple Choice Questions</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>📚 Unit 3 Practice</h2>
+
+<p>
+Choose the correct answer. After selecting an answer,
+you will immediately see whether it is correct or wrong
+and an explanation.
+</p>
+
+</div>
+
+
+<div id="quiz"></div>
+
+
+<div id="score">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p id="scoreText"></p>
+
+<button
+class="back restart"
+onclick="location.reload()">
+
+🔄 Try Again
+
+</button>
+
+<button
+class="back"
+onclick="location.href='notes9physicsunit3.html'">
+
+📖 Review Unit 3 Notes
+
+</button>
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+</div>
+
+
+<button
+class="back"
+onclick="location.href='grade9.html'">
+
+← Back to Grade 9
+
+</button>
+
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is motion?",
+options:[
+"A change in position with time",
+"A change in mass",
+"A change in temperature only",
+"A change in colour"
+],
+answer:0,
+explanation:"Motion is the change in position of an object with respect to a reference point over time."
+},
+
+{
+q:"2. What is used to determine whether an object is moving?",
+options:[
+"Reference point",
+"Temperature",
+"Mass",
+"Density"
+],
+answer:0,
+explanation:"A reference point is used to determine whether the position of an object changes."
+},
+
+{
+q:"3. An object is at rest when its position ______.",
+options:[
+"Changes continuously",
+"Does not change with respect to a reference point",
+"Increases every second",
+"Decreases every second"
+],
+answer:1,
+explanation:"An object is at rest when its position does not change relative to a chosen reference point."
+},
+
+{
+q:"4. Which of the following is a scalar quantity?",
+options:[
+"Velocity",
+"Displacement",
+"Force",
+"Distance"
+],
+answer:3,
+explanation:"Distance has magnitude only, so it is a scalar quantity."
+},
+
+{
+q:"5. Which of the following is a vector quantity?",
+options:[
+"Distance",
+"Speed",
+"Time",
+"Displacement"
+],
+answer:3,
+explanation:"Displacement has both magnitude and direction, so it is a vector."
+},
+
+{
+q:"6. What is distance?",
+options:[
+"Change in position with direction",
+"Total length of the path travelled",
+"Rate of change of velocity",
+"Final position only"
+],
+answer:1,
+explanation:"Distance is the total length of the path travelled by an object."
+},
+
+{
+q:"7. What is displacement?",
+options:[
+"Total path travelled",
+"Change in position with direction",
+"Distance divided by time",
+"Mass divided by volume"
+],
+answer:1,
+explanation:"Displacement is the change from the initial position to the final position with direction."
+},
+
+{
+q:"8. What is the SI unit of distance?",
+options:[
+"Second",
+"Kilogram",
+"Metre",
+"Newton"
+],
+answer:2,
+explanation:"The SI unit of length and distance is the metre (m)."
+},
+
+{
+q:"9. Which formula gives speed?",
+options:[
+"Speed = time × distance",
+"Speed = distance ÷ time",
+"Speed = mass ÷ volume",
+"Speed = velocity × time"
+],
+answer:1,
+explanation:"Speed is calculated by dividing distance by time."
+},
+
+{
+q:"10. What is the SI unit of speed?",
+options:[
+"m",
+"m/s",
+"m/s²",
+"kg"
+],
+answer:1,
+explanation:"The SI unit of speed is metre per second (m/s)."
+},
+
+{
+q:"11. A car travels 100 m in 20 s. What is its speed?",
+options:[
+"2 m/s",
+"5 m/s",
+"20 m/s",
+"2000 m/s"
+],
+answer:1,
+explanation:"Speed = distance ÷ time = 100 ÷ 20 = 5 m/s."
+},
+
+{
+q:"12. What is average speed?",
+options:[
+"Total distance ÷ total time",
+"Total time ÷ total distance",
+"Displacement ÷ time",
+"Velocity ÷ time"
+],
+answer:0,
+explanation:"Average speed equals total distance travelled divided by total time taken."
+},
+
+{
+q:"13. What is velocity?",
+options:[
+"Distance per unit time",
+"Displacement per unit time",
+"Mass per unit volume",
+"Change in mass per time"
+],
+answer:1,
+explanation:"Velocity is the rate of change of displacement with time."
+},
+
+{
+q:"14. Velocity is a ______ quantity.",
+options:[
+"Scalar",
+"Vector",
+"Unitless",
+"Constant"
+],
+answer:1,
+explanation:"Velocity has both magnitude and direction, so it is a vector quantity."
+},
+
+{
+q:"15. Which quantity requires direction?",
+options:[
+"Speed",
+"Distance",
+"Velocity",
+"Time"
+],
+answer:2,
+explanation:"Velocity requires both magnitude and direction."
+},
+
+{
+q:"16. A car travels 100 m east in 20 s. What is its velocity?",
+options:[
+"5 m/s",
+"5 m/s east",
+"20 m/s east",
+"100 m/s"
+],
+answer:1,
+explanation:"Velocity = displacement ÷ time = 100 ÷ 20 = 5 m/s east."
+},
+
+{
+q:"17. What is acceleration?",
+options:[
+"Rate of change of velocity",
+"Rate of change of mass",
+"Distance travelled",
+"Total time"
+],
+answer:0,
+explanation:"Acceleration is the rate at which velocity changes with time."
+},
+
+{
+q:"18. What is the SI unit of acceleration?",
+options:[
+"m",
+"m/s",
+"m/s²",
+"kg/m³"
+],
+answer:2,
+explanation:"The SI unit of acceleration is metre per second squared (m/s²)."
+},
+
+{
+q:"19. Which formula is used to calculate acceleration?",
+options:[
+"a = d/t",
+"a = (v-u)/t",
+"a = m/V",
+"a = d×t"
+],
+answer:1,
+explanation:"Acceleration = change in velocity ÷ time = (v-u)/t."
+},
+
+{
+q:"20. What does u represent in the equation a = (v-u)/t?",
+options:[
+"Final velocity",
+"Initial velocity",
+"Distance",
+"Time"
+],
+answer:1,
+explanation:"In the equation, u represents the initial velocity."
+},
+
+{
+q:"21. What does v represent in the equation a = (v-u)/t?",
+options:[
+"Initial velocity",
+"Final velocity",
+"Volume",
+"Distance"
+],
+answer:1,
+explanation:"v represents the final velocity."
+},
+
+{
+q:"22. A car changes velocity from 10 m/s to 30 m/s in 5 s. What is its acceleration?",
+options:[
+"2 m/s²",
+"4 m/s²",
+"5 m/s²",
+"8 m/s²"
+],
+answer:1,
+explanation:"a = (30-10)/5 = 20/5 = 4 m/s²."
+},
+
+{
+q:"23. What is deceleration?",
+options:[
+"Increase in velocity",
+"Decrease in velocity",
+"Increase in mass",
+"Constant distance"
+],
+answer:1,
+explanation:"Deceleration is a decrease in velocity with time."
+},
+
+{
+q:"24. What is uniform motion?",
+options:[
+"Equal distances in equal time intervals",
+"Unequal distances in equal times",
+"No movement",
+"Changing mass"
+],
+answer:0,
+explanation:"Uniform motion means an object travels equal distances in equal intervals of time."
+},
+
+{
+q:"25. What is non-uniform motion?",
+options:[
+"Equal distances in equal times",
+"Changing speed or direction",
+"No acceleration",
+"Constant position"
+],
+answer:1,
+explanation:"Non-uniform motion occurs when speed or direction changes."
+},
+
+{
+q:"26. Which graph shows distance against time?",
+options:[
+"Distance-time graph",
+"Mass-time graph",
+"Temperature-time graph",
+"Force-mass graph"
+],
+answer:0,
+explanation:"A distance-time graph shows how distance changes with time."
+},
+
+{
+q:"27. In a distance-time graph, time is normally placed on the ______ axis.",
+options:[
+"Vertical",
+"Horizontal",
+"Diagonal",
+"No axis"
+],
+answer:1,
+explanation:"Time is normally plotted on the horizontal x-axis."
+},
+
+{
+q:"28. In a distance-time graph, distance is normally placed on the ______ axis.",
+options:[
+"Horizontal",
+"Vertical",
+"Both",
+"Neither"
+],
+answer:1,
+explanation:"Distance is normally plotted on the vertical y-axis."
+},
+
+{
+q:"29. What does the slope of a distance-time graph represent?",
+options:[
+"Acceleration",
+"Speed",
+"Mass",
+"Density"
+],
+answer:1,
+explanation:"The slope of a distance-time graph gives speed."
+},
+
+{
+q:"30. What is the formula for the slope of a graph?",
+options:[
+"Rise ÷ Run",
+"Run ÷ Rise",
+"Mass ÷ Volume",
+"Distance × Time"
+],
+answer:0,
+explanation:"Slope = change in vertical quantity ÷ change in horizontal quantity, commonly called rise ÷ run."
+},
+
+{
+q:"31. What does a horizontal line on a distance-time graph mean?",
+options:[
+"Object is moving faster",
+"Object is at rest",
+"Object is accelerating",
+"Object is falling"
+],
+answer:1,
+explanation:"A horizontal distance-time graph means distance is not changing, so the object is at rest."
+},
+
+{
+q:"32. What does a steeper distance-time graph indicate?",
+options:[
+"Lower speed",
+"Higher speed",
+"No motion",
+"Zero distance"
+],
+answer:1,
+explanation:"A steeper slope means a greater speed."
+},
+
+{
+q:"33. What does a velocity-time graph show?",
+options:[
+"Velocity changes with time",
+"Mass changes with volume",
+"Distance changes with mass",
+"Temperature changes with density"
+],
+answer:0,
+explanation:"A velocity-time graph represents how velocity changes over time."
+},
+
+{
+q:"34. What does the slope of a velocity-time graph represent?",
+options:[
+"Speed",
+"Distance",
+"Acceleration",
+"Mass"
+],
+answer:2,
+explanation:"The slope of a velocity-time graph gives acceleration."
+},
+
+{
+q:"35. What does the area under a velocity-time graph represent?",
+options:[
+"Mass",
+"Displacement",
+"Temperature",
+"Density"
+],
+answer:1,
+explanation:"The area under a velocity-time graph represents displacement."
+},
+
+{
+q:"36. Which equation is correct for uniformly accelerated motion?",
+options:[
+"v = u + at",
+"v = u - at²",
+"v = d/t",
+"v = m/V"
+],
+answer:0,
+explanation:"For constant acceleration, v = u + at."
+},
+
+{
+q:"37. In v = u + at, what does a represent?",
+options:[
+"Acceleration",
+"Area",
+"Distance",
+"Mass"
+],
+answer:0,
+explanation:"a represents acceleration."
+},
+
+{
+q:"38. In v = u + at, what does t represent?",
+options:[
+"Temperature",
+"Time",
+"Total mass",
+"Travel distance"
+],
+answer:1,
+explanation:"t represents time."
+},
+
+{
+q:"39. Which equation gives displacement for constant acceleration?",
+options:[
+"s = ut + ½at²",
+"s = m/V",
+"s = d/t",
+"s = v/t"
+],
+answer:0,
+explanation:"The equation s = ut + ½at² gives displacement for constant acceleration."
+},
+
+{
+q:"40. Which equation relates final velocity, initial velocity, acceleration and displacement?",
+options:[
+"v² = u² + 2as",
+"v = d/t",
+"ρ = m/V",
+"a = d/t"
+],
+answer:0,
+explanation:"v² = u² + 2as is one of the equations of uniformly accelerated motion."
+},
+
+{
+q:"41. A car starts from rest. What is its initial velocity?",
+options:[
+"0 m/s",
+"1 m/s",
+"10 m/s",
+"100 m/s"
+],
+answer:0,
+explanation:"An object starting from rest has an initial velocity of 0 m/s."
+},
+
+{
+q:"42. A car starts from rest and accelerates at 2 m/s² for 5 s. What is its final velocity?",
+options:[
+"5 m/s",
+"7 m/s",
+"10 m/s",
+"20 m/s"
+],
+answer:2,
+explanation:"v = u + at = 0 + (2×5) = 10 m/s."
+},
+
+{
+q:"43. What is free fall?",
+options:[
+"Motion under gravity alone",
+"Motion without time",
+"Motion with constant mass only",
+"Motion in a vacuum only"
+],
+answer:0,
+explanation:"Free fall is motion under the influence of gravity alone, ignoring air resistance."
+},
+
+{
+q:"44. What is the approximate acceleration due to gravity near Earth's surface?",
+options:[
+"2.8 m/s²",
+"5 m/s²",
+"9.8 m/s²",
+"20 m/s²"
+],
+answer:2,
+explanation:"The acceleration due to gravity near Earth's surface is approximately 9.8 m/s²."
+},
+
+{
+q:"45. What value of g is often used as an approximation in school calculations?",
+options:[
+"1 m/s²",
+"5 m/s²",
+"10 m/s²",
+"100 m/s²"
+],
+answer:2,
+explanation:"For simple calculations, g is often approximated as 10 m/s²."
+},
+
+{
+q:"46. Which quantity can be zero even when an object has travelled some distance?",
+options:[
+"Distance",
+"Displacement",
+"Time",
+"Mass"
+],
+answer:1,
+explanation:"If an object returns to its starting point, its displacement is zero even though it travelled a distance."
+},
+
+{
+q:"47. A person walks 10 m east and then 10 m west. What is the displacement?",
+options:[
+"20 m east",
+"20 m west",
+"10 m",
+"0 m"
+],
+answer:3,
+explanation:"The person returns to the starting point, so the displacement is zero."
+},
+
+{
+q:"48. In the same situation, what is the total distance travelled?",
+options:[
+"0 m",
+"10 m",
+"20 m",
+"100 m"
+],
+answer:2,
+explanation:"Distance = 10 m + 10 m = 20 m."
+},
+
+{
+q:"49. Which of the following is NOT a vector quantity?",
+options:[
+"Velocity",
+"Acceleration",
+"Displacement",
+"Speed"
+],
+answer:3,
+explanation:"Speed is a scalar quantity because it has magnitude only."
+},
+
+{
+q:"50. Which of the following is NOT a scalar quantity?",
+options:[
+"Distance",
+"Time",
+"Speed",
+"Velocity"
+],
+answer:3,
+explanation:"Velocity is a vector quantity because it has magnitude and direction."
+},
+
+{
+q:"51. If an object moves at constant velocity, its acceleration is:",
+options:[
+"Zero",
+"10 m/s²",
+"100 m/s²",
+"Always increasing"
+],
+answer:0,
+explanation:"Constant velocity means there is no change in velocity, so acceleration is zero."
+},
+
+{
+q:"52. If velocity changes from 20 m/s to 20 m/s in 5 s, acceleration is:",
+options:[
+"0 m/s²",
+"4 m/s²",
+"5 m/s²",
+"20 m/s²"
+],
+answer:0,
+explanation:"There is no change in velocity, so acceleration is zero."
+},
+
+{
+q:"53. An object travels 60 m in 12 s. What is its speed?",
+options:[
+"2 m/s",
+"5 m/s",
+"12 m/s",
+"72 m/s"
+],
+answer:1,
+explanation:"Speed = 60 ÷ 12 = 5 m/s."
+},
+
+{
+q:"54. An object has a displacement of 80 m in 10 s. What is its average velocity?",
+options:[
+"4 m/s",
+"8 m/s",
+"10 m/s",
+"80 m/s"
+],
+answer:1,
+explanation:"Average velocity = displacement ÷ time = 80 ÷ 10 = 8 m/s."
+},
+
+{
+q:"55. Which equation can be used when acceleration is constant?",
+options:[
+"v = u + at",
+"m = d/t",
+"ρ = V/m",
+"t = mV"
+],
+answer:0,
+explanation:"v = u + at is an equation for uniformly accelerated motion."
+},
+
+{
+q:"56. What happens to speed when the slope of a distance-time graph increases?",
+options:[
+"Speed decreases",
+"Speed increases",
+"Speed becomes zero",
+"Mass increases"
+],
+answer:1,
+explanation:"A greater slope on a distance-time graph means greater speed."
+},
+
+{
+q:"57. What does a zero slope on a distance-time graph indicate?",
+options:[
+"Maximum speed",
+"Constant acceleration",
+"Rest",
+"Free fall"
+],
+answer:2,
+explanation:"Zero slope means distance is not changing with time, so the object is at rest."
+},
+
+{
+q:"58. What is the SI unit of velocity?",
+options:[
+"m",
+"m/s",
+"m/s²",
+"kg"
+],
+answer:1,
+explanation:"Velocity is measured in metres per second (m/s)."
+},
+
+{
+q:"59. What is the SI unit of displacement?",
+options:[
+"m",
+"m/s",
+"m/s²",
+"s"
+],
+answer:0,
+explanation:"Displacement is a length, so its SI unit is metre (m)."
+},
+
+{
+q:"60. Which statement is correct?",
+options:[
+"Speed has direction",
+"Distance is a vector",
+"Velocity has magnitude and direction",
+"Time is a vector"
+],
+answer:2,
+explanation:"Velocity is a vector quantity, so it has both magnitude and direction."
+}
+
+];
+
+
+const quiz = document.getElementById("quiz");
+
+let score = 0;
+let answered = 0;
+
+
+questions.forEach((question,index)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "card question";
+
+    const title = document.createElement("h3");
+
+    title.textContent = question.q;
+
+    card.appendChild(title);
+
+
+    const result = document.createElement("div");
+
+    result.className = "result";
+
+    result.style.display = "none";
+
+
+    const explanation = document.createElement("div");
+
+    explanation.className = "explanation";
+
+    explanation.style.display = "none";
+
+
+    question.options.forEach((option,optionIndex)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+        String.fromCharCode(65 + optionIndex) +
+        ". " + option;
+
+
+        button.onclick = function(){
+
+            const buttons =
+            card.querySelectorAll(".option");
+
+
+            buttons.forEach(btn=>{
+                btn.disabled = true;
+            });
+
+
+            answered++;
+
+
+            if(optionIndex === question.answer){
+
+                score++;
+
+                result.className =
+                "result correct";
+
+                result.innerHTML =
+                "✅ Correct!";
+
+            }else{
+
+                result.className =
+                "result wrong";
+
+                result.innerHTML =
+                "❌ Wrong! Correct answer: " +
+                String.fromCharCode(65 + question.answer) +
+                ". " +
+                question.options[question.answer];
+
+            }
+
+
+            result.style.display = "block";
+
+
+            explanation.innerHTML =
+            "<b>💡 Explanation:</b> " +
+            question.explanation;
+
+            explanation.style.display = "block";
+
+
+            if(answered === questions.length){
+
+                showScore();
+
+            }
+
+        };
+
+
+        card.appendChild(button);
+
+    });
+
+
+    card.appendChild(result);
+
+    card.appendChild(explanation);
+
+    quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+    const scoreBox =
+    document.getElementById("score");
+
+    const scoreText =
+    document.getElementById("scoreText");
+
+
+    const percentage =
+    Math.round((score / questions.length) * 100);
+
+
+    scoreText.innerHTML =
+    "You scored <b>" +
+    score +
+    " / " +
+    questions.length +
+    "</b><br><br>" +
+    "Percentage: <b>" +
+    percentage +
+    "%</b>";
+
+
+    scoreBox.style.display = "block";
+
+
+    scoreBox.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
