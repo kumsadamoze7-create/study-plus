@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 History Unit 3 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#14532d,#16a34a);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{margin:0;font-size:27px}
+header p{margin:7px}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
+}
+
+.progress{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:13px;
+    text-align:center;
+    font-weight:bold;
+    border-radius:10px;
+    box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #16a34a;
+}
+
+.question h3{
+    color:#166534;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:6px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fafafa;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#f0fdf4;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.result{
+    display:none;
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:7px;
+}
+
+.score{
+    text-align:center;
+    border-left:6px solid #ea580c;
+    background:#fff7ed;
+}
+
+.main{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    background:#14532d;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.back{
+    background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 3 PRACTICE</p>
+<p>🌍 Peoples and States in Ethiopia and the Horn</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+<h2>🏆 Final Result</h2>
+<h2 id="finalScore">0 / 60</h2>
+<p id="message">Answer all questions to see your result.</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit3.html'">
+📖 Unit 3 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+</div>
+
+</div>
+
+<script>
+
+const questions=[
+
+{
+q:"Which major language super-family is widely represented in Ethiopia and the Horn?",
+o:["Afro-Asiatic","Romance","Germanic","Slavic"],
+a:0,
+e:"Afro-Asiatic is one of the major language super-families represented in Ethiopia and the Horn."
+},
+
+{
+q:"Which of the following is a branch of Afro-Asiatic languages?",
+o:["Cushitic","Germanic","Romance","Celtic"],
+a:0,
+e:"Cushitic is one of the major branches of the Afro-Asiatic language family represented in the region."
+},
+
+{
+q:"Which language family is strongly represented in southwestern Ethiopia?",
+o:["Omotic","Romance","Germanic","Slavic"],
+a:0,
+e:"Omotic languages are mainly spoken in southwestern Ethiopia."
+},
+
+{
+q:"Why have many different peoples settled in Ethiopia and the Horn?",
+o:["Migration and interaction over long periods","Only modern tourism","Only European colonization","Only industrialization"],
+a:0,
+e:"The diversity of peoples developed through long-term migration, settlement, trade, intermarriage, warfare and cultural interaction."
+},
+
+{
+q:"Which factor strongly influenced settlement patterns?",
+o:["Availability of water","Availability of airplanes","Modern factories","Internet access"],
+a:0,
+e:"Water availability was an important factor influencing where communities settled."
+},
+
+{
+q:"Which religion became firmly established in the northern Ethiopian highlands during the Aksumite period?",
+o:["Christianity","Buddhism","Shinto","Hinduism"],
+a:0,
+e:"Christianity became firmly established in the northern Ethiopian highlands during the Aksumite period."
+},
+
+{
+q:"Which religion entered the Horn of Africa very early through refugees and later trade?",
+o:["Islam","Buddhism","Shinto","Confucianism"],
+a:0,
+e:"Islam reached the Horn very early, including through Muslims seeking refuge from persecution in Arabia."
+},
+
+{
+q:"Which group is historically associated with Jewish traditions in Ethiopia?",
+o:["Beta Israel","Romans","Sumerians","Maya"],
+a:0,
+e:"Beta Israel is the Ethiopian Jewish community historically associated with Jewish traditions in Ethiopia."
+},
+
+{
+q:"Which ancient center is especially associated with the Pre-Aksumite period?",
+o:["Yeha","Rome","Athens","Cusco"],
+a:0,
+e:"Yeha was an important political, religious and economic center before the rise of Aksum."
+},
+
+{
+q:"Where is Yeha located?",
+o:["Northern Ethiopia","Southern Mexico","Central Italy","Western China"],
+a:0,
+e:"Yeha is located in northern Ethiopia."
+},
+
+{
+q:"What is one famous monument at Yeha?",
+o:["The Great Temple","Colosseum","Parthenon","Great Wall"],
+a:0,
+e:"The Great Temple of Yeha is one of the most important surviving monuments of the Pre-Aksumite period."
+},
+
+{
+q:"What helped connect Pre-Aksumite societies with Arabia?",
+o:["Red Sea trade routes","Atlantic Ocean routes","Pacific routes","Arctic routes"],
+a:0,
+e:"The Red Sea connected northern Ethiopia and Eritrea with southern Arabia and other trading regions."
+},
+
+{
+q:"Which activity was important to Pre-Aksumite economies?",
+o:["Agriculture","Only hunting","Only warfare","Only fishing"],
+a:0,
+e:"Agriculture, animal husbandry, craft production and trade were important economic activities."
+},
+
+{
+q:"Aksum developed mainly in which region?",
+o:["Northern Ethiopia and Eritrea","Southern Africa","Central America","Western Europe"],
+a:0,
+e:"Aksum developed in northern Ethiopia and Eritrea."
+},
+
+{
+q:"What was the main political center of the Aksumite Kingdom?",
+o:["Aksum","Rome","Athens","Cairo"],
+a:0,
+e:"The city of Aksum became the political center of the kingdom."
+},
+
+{
+q:"Which port was very important to Aksumite international trade?",
+o:["Adulis","Alexandria","Athens","Carthage"],
+a:0,
+e:"Adulis was an important Aksumite port on the Red Sea and connected Aksum to international trade."
+},
+
+{
+q:"What was Adulis mainly known for?",
+o:["International trade","Gold mining only","Military training","Religious pilgrimage only"],
+a:0,
+e:"Adulis served as an important trading port connecting Aksum with the Red Sea and wider international markets."
+},
+
+{
+q:"Which activity was important to the Aksumite economy?",
+o:["Agriculture and trade","Only hunting","Only fishing","Only warfare"],
+a:0,
+e:"Aksum's economy depended on agriculture, animal husbandry, crafts, taxation and international trade."
+},
+
+{
+q:"Which metals were used for Aksumite coins?",
+o:["Gold, silver and bronze","Only iron","Only copper","Only lead"],
+a:0,
+e:"Aksum produced coins made from gold, silver and bronze."
+},
+
+{
+q:"What does Aksumite coinage demonstrate?",
+o:["Economic sophistication and international trade","Lack of trade","No political organization","No technology"],
+a:0,
+e:"The production of coins demonstrates Aksum's economic sophistication and participation in international trade."
+},
+
+{
+q:"Which writing language became important in Aksum?",
+o:["Ge'ez","Latin","Greek only","Arabic only"],
+a:0,
+e:"Ge'ez became an important written language of Aksum."
+},
+
+{
+q:"What were Aksum's famous large stone monuments called?",
+o:["Stelae","Ziggurats","Pyramids","Colosseums"],
+a:0,
+e:"Aksum is famous for its huge stone monuments called stelae."
+},
+
+{
+q:"What do Aksumite stelae demonstrate?",
+o:["Advanced architecture and engineering","Lack of technology","Only agricultural skills","Only military power"],
+a:0,
+e:"The stelae demonstrate the architectural and engineering abilities of the Aksumites."
+},
+
+{
+q:"Who was one of the most famous Aksumite kings?",
+o:["Ezana","Confucius","Cyrus","Hammurabi"],
+a:0,
+e:"Ezana was one of the most famous Aksumite rulers."
+},
+
+{
+q:"Which religion is strongly associated with King Ezana?",
+o:["Christianity","Buddhism","Islam","Confucianism"],
+a:0,
+e:"Ezana is traditionally associated with the adoption of Christianity in Aksum."
+},
+
+{
+q:"During which century was Christianity introduced into Aksum?",
+o:["4th century AD","1st century BC","10th century AD","15th century AD"],
+a:0,
+e:"Christianity was introduced and became established in Aksum during the fourth century AD."
+},
+
+{
+q:"Who is traditionally associated with the introduction of Christianity into Aksum?",
+o:["Frumentius","Julius Caesar","Confucius","Alexander"],
+a:0,
+e:"Frumentius is traditionally credited with helping introduce and establish Christianity in Aksum."
+},
+
+{
+q:"What position did Frumentius later hold?",
+o:["Bishop","Pharaoh","Roman emperor","Sultan"],
+a:0,
+e:"Frumentius became the first bishop associated with the Ethiopian church tradition."
+},
+
+{
+q:"Which Aksumite king is famous for an expedition to South Arabia?",
+o:["Kaleb","Ezana","Endubis","Lalibela"],
+a:0,
+e:"King Kaleb is especially known for his military expedition to South Arabia."
+},
+
+{
+q:"Which Roman-era region was an important trading partner of Aksum?",
+o:["Roman Empire","Maya Empire","Inca Empire","Aztec Empire"],
+a:0,
+e:"Aksum maintained trade connections with the Roman world through Red Sea trade."
+},
+
+{
+q:"Which of the following was NOT a major Aksumite achievement?",
+o:["Invention of the steam engine","Coinage","Stelae","International trade"],
+a:0,
+e:"The steam engine was not an Aksumite achievement. Coinage, stelae and trade were important Aksumite achievements."
+},
+
+{
+q:"Which factor contributed to the decline of Aksum?",
+o:["Changes in trade routes","Invention of electricity","Industrial Revolution","European colonization"],
+a:0,
+e:"Changes in international trade routes and the decline of Red Sea trade contributed to Aksum's decline."
+},
+
+{
+q:"Which environmental problem could weaken Aksum's agricultural base?",
+o:["Land degradation","Modern pollution only","Industrial smoke","Nuclear radiation"],
+a:0,
+e:"Environmental and agricultural problems could weaken the economic foundation of Aksum."
+},
+
+{
+q:"Which dynasty rose after the decline of Aksumite political power?",
+o:["Zagwe","Mamluk","Ming","Ottoman"],
+a:0,
+e:"The Zagwe Dynasty emerged after the decline of Aksumite political power."
+},
+
+{
+q:"What religion was strongly supported by the Zagwe rulers?",
+o:["Christianity","Buddhism","Shinto","Confucianism"],
+a:0,
+e:"The Zagwe rulers strongly supported Christianity and Christian institutions."
+},
+
+{
+q:"Which Zagwe ruler is most famous for rock-hewn churches?",
+o:["Lalibela","Ezana","Kaleb","Cyrus"],
+a:0,
+e:"King Lalibela is famous for the construction of the rock-hewn churches at Lalibela."
+},
+
+{
+q:"What makes the churches of Lalibela special?",
+o:["They were carved directly from rock","They were made only of wood","They were floating buildings","They were Roman amphitheaters"],
+a:0,
+e:"The churches were carved directly into solid rock, demonstrating remarkable engineering and architectural skill."
+},
+
+{
+q:"Which church is famous for its cross-shaped design?",
+o:["Biete Giorgis","Parthenon","St. Peter's Basilica","Great Temple of Yeha"],
+a:0,
+e:"Biete Giorgis is famous for its distinctive cross-shaped design."
+},
+
+{
+q:"Which dynasty replaced the Zagwe Dynasty?",
+o:["Solomonic Dynasty","Makhzumite Dynasty","Roman Dynasty","Ptolemaic Dynasty"],
+a:0,
+e:"The Solomonic Dynasty replaced the Zagwe Dynasty in 1270 AD."
+},
+
+{
+q:"In which year was the Zagwe Dynasty replaced?",
+o:["1270 AD","1000 BC","313 AD","476 AD"],
+a:0,
+e:"The Zagwe Dynasty was replaced by the Solomonic Dynasty in 1270 AD."
+},
+
+{
+q:"Which Muslim state developed in central Ethiopia?",
+o:["Sultanate of Shewa","Roman Empire","Aksum","Zagwe"],
+a:0,
+e:"The Sultanate of Shewa was an early Muslim state that developed in central Ethiopia."
+},
+
+{
+q:"Which dynasty initially ruled the Sultanate of Shewa?",
+o:["Makhzumite","Solomonic","Zagwe","Aksumite"],
+a:0,
+e:"The Makhzumite Dynasty initially ruled the Sultanate of Shewa."
+},
+
+{
+q:"What religion was associated with the Sultanate of Shewa?",
+o:["Islam","Christianity only","Buddhism","Hinduism"],
+a:0,
+e:"The Sultanate of Shewa was a Muslim state and Islam played an important role in its development."
+},
+
+{
+q:"What was especially important to the Sultanate of Shewa?",
+o:["Trade","Only farming","Only warfare","Only mining"],
+a:0,
+e:"Trade was an important factor in the development and prosperity of the Sultanate of Shewa."
+},
+
+{
+q:"How did Islam spread in the Horn of Africa?",
+o:["Trade, migration and religious activities","Only warfare","Only agriculture","Only kings"],
+a:0,
+e:"Islam spread through trade, migration, religious teaching and the development of Muslim communities and states."
+},
+
+{
+q:"What kinds of relations existed between Christian and Muslim states?",
+o:["Trade, diplomacy and conflict","Only permanent war","No contact","Only religious ceremonies"],
+a:0,
+e:"Christian and Muslim states interacted through trade, diplomacy, political competition and conflict."
+},
+
+{
+q:"Which dynasty succeeded the Makhzumite rulers of Shewa?",
+o:["Walsama dynasty of Ifat","Solomonic Dynasty","Zagwe Dynasty","Aksumite Dynasty"],
+a:0,
+e:"The Makhzumite Sultanate of Shewa was succeeded by the Walsama dynasty of Ifat."
+},
+
+{
+q:"According to the textbook, when did the Walsama dynasty of Ifat succeed the Makhzumites?",
+o:["1285 AD","1270 AD","350 AD","313 AD"],
+a:0,
+e:"The textbook gives 1285 AD as the date associated with the succession of the Walsama dynasty of Ifat."
+},
+
+{
+q:"Which statement correctly matches Aksum and Adulis?",
+o:["Aksum — Adulis was its important port","Aksum — capital of China","Aksum — capital of Rome","Aksum — Inca city"],
+a:0,
+e:"Adulis was an important port through which Aksum participated in Red Sea and international trade."
+},
+
+{
+q:"Which statement correctly matches Ezana?",
+o:["Ezana — Christianity","Ezana — Confucianism","Ezana — Buddhism","Ezana — Roman Republic"],
+a:0,
+e:"Ezana is strongly associated with the adoption of Christianity in Aksum."
+},
+
+{
+q:"Which statement correctly matches Lalibela?",
+o:["Lalibela — rock-hewn churches","Lalibela — Roman roads","Lalibela — cuneiform","Lalibela — Greek democracy"],
+a:0,
+e:"Lalibela is famous for the rock-hewn churches constructed during the Zagwe period."
+},
+
+{
+q:"Which statement correctly matches Yeha?",
+o:["Yeha — Pre-Aksumite center","Yeha — Roman capital","Yeha — Inca capital","Yeha — Aztec capital"],
+a:0,
+e:"Yeha was an important Pre-Aksumite political, religious and economic center."
+},
+
+{
+q:"Which statement correctly matches Ge'ez?",
+o:["Ge'ez — Aksumite written language","Ge'ez — Roman law","Ge'ez — Inca road system","Ge'ez — Egyptian pyramid"],
+a:0,
+e:"Ge'ez became an important written language of Aksum."
+},
+
+{
+q:"Which statement correctly matches Aksumite coins?",
+o:["They included gold, silver and bronze coins","They were made only from paper","They were made only from wood","Aksum had no coins"],
+a:0,
+e:"Aksum produced coins from gold, silver and bronze."
+},
+
+{
+q:"Which of the following best explains why Aksum became powerful?",
+o:["Trade, agriculture, political organization and military power","Only hunting","Only fishing","Only religious ceremonies"],
+a:0,
+e:"Aksum's power was supported by agriculture, trade, taxation, political organization and military strength."
+},
+
+{
+q:"Which geographical feature greatly helped Aksum's international trade?",
+o:["Red Sea","Atlantic Ocean","Pacific Ocean","Arctic Ocean"],
+a:0,
+e:"Aksum's position near the Red Sea helped it participate in international maritime trade."
+},
+
+{
+q:"Which of these is an example of cultural achievement in Aksum?",
+o:["Ge'ez writing and monumental architecture","Steam engines","Modern computers","Gunpowder weapons"],
+a:0,
+e:"Ge'ez writing and monumental architecture such as stelae were important Aksumite cultural achievements."
+},
+
+{
+q:"Which factor was important in the development of different settlement patterns?",
+o:["Climate and topography","Modern airports","Internet networks","Factories"],
+a:0,
+e:"Climate, topography, water, fertile land and pasture influenced settlement patterns."
+},
+
+{
+q:"What helped different peoples of Ethiopia and the Horn interact?",
+o:["Trade and migration","Only modern technology","Only colonization","Only industrialization"],
+a:0,
+e:"Trade, migration, intermarriage, warfare and cultural exchange encouraged interaction."
+},
+
+{
+q:"Which state is associated with the famous rock-hewn churches of Lalibela?",
+o:["Zagwe","Aksum","Shewa Sultanate","Pre-Aksumite Yeha"],
+a:0,
+e:"The rock-hewn churches of Lalibela were constructed during the Zagwe period."
+},
+
+{
+q:"Which state was an early Muslim state in Ethiopia?",
+o:["Sultanate of Shewa","Aksum","Zagwe","Yeha"],
+a:0,
+e:"The Sultanate of Shewa was one of the earliest Muslim states in the region."
+},
+
+{
+q:"Which pair is correctly matched?",
+o:["Aksum — Christianity and coinage","Zagwe — Roman Republic","Shewa — Greek democracy","Yeha — Inca roads"],
+a:0,
+e:"Aksum is correctly associated with Christianity and coinage."
+},
+
+{
+q:"Which pair is correctly matched?",
+o:["Zagwe — Lalibela","Aksum — Confucius","Shewa — Caesar","Yeha — Alexander"],
+a:0,
+e:"The Zagwe Dynasty is correctly associated with King Lalibela."
+},
+
+{
+q:"Which pair is correctly matched?",
+o:["Shewa Sultanate — Makhzumite Dynasty","Aksum — Ming Dynasty","Zagwe — Roman Senate","Yeha — Aztec Dynasty"],
+a:0,
+e:"The Makhzumite Dynasty initially ruled the Sultanate of Shewa."
+},
+
+{
+q:"What was one major reason for the historical importance of Adulis?",
+o:["It connected Aksum to international trade","It was the capital of Rome","It was a Chinese city","It was a Greek democratic assembly"],
+a:0,
+e:"Adulis was a major port connecting Aksum to international Red Sea trade."
+},
+
+{
+q:"What is the best overall description of Unit 3?",
+o:["Peoples, states, religions and historical developments in Ethiopia and the Horn up to the end of the 13th century","European history only","Modern African politics only","World War history"],
+a:0,
+e:"Unit 3 focuses on peoples, languages, religions, settlement patterns and states in Ethiopia and the Horn up to the end of the 13th century."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+    card.className="card question";
+
+    card.innerHTML=`
+        <h3>Question ${index+1} / ${questions.length}</h3>
+        <p><strong>${item.q}</strong></p>
+        <div id="options${index}"></div>
+        <div id="result${index}" class="result"></div>
+    `;
+
+    quiz.appendChild(card);
+
+    const box=document.getElementById("options"+index);
+
+    item.o.forEach((option,i)=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="option";
+
+        btn.innerText=
+        String.fromCharCode(65+i)+". "+option;
+
+        btn.onclick=()=>{
+            checkAnswer(index,i,btn,box);
+        };
+
+        box.appendChild(btn);
+
+    });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+    const result=document.getElementById("result"+index);
+
+    if(result.dataset.done==="true"){
+        return;
+    }
+
+    result.dataset.done="true";
+
+    answered++;
+
+    const correct=questions[index].a;
+
+    const buttons=box.querySelectorAll(".option");
+
+    buttons.forEach((btn,i)=>{
+
+        btn.disabled=true;
+
+        if(i===correct){
+            btn.classList.add("correct");
+        }
+
+    });
+
+
+    if(selected===correct){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <div class="explanation">
+        <strong>Explanation:</strong>
+        ${questions[index].e}
+        </div>
+        `;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        result.className="result wrongResult";
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <div class="explanation">
+        <strong>Correct Answer:</strong>
+        ${questions[index].o[correct]}
+        <br><br>
+        <strong>Explanation:</strong>
+        ${questions[index].e}
+        </div>
+        `;
+
+    }
+
+    result.style.display="block";
+
+    updateProgress();
+
+    if(answered===questions.length){
+        showFinal();
+    }
+
+}
+
+
+function updateProgress(){
+
+    document.getElementById("progress").innerText=
+    "Answered: "+answered+
+    " / "+questions.length+
+    " | Score: "+score;
+
+}
+
+
+function showFinal(){
+
+    const percent=
+    Math.round((score/questions.length)*100);
+
+    document.getElementById("finalScore").innerText=
+    score+" / "+questions.length;
+
+    let message;
+
+    if(percent>=90){
+
+        message="🏆 Excellent! You mastered Unit 3.";
+
+    }else if(percent>=75){
+
+        message="👏 Very Good! Review the questions you missed.";
+
+    }else if(percent>=50){
+
+        message="👍 Good effort! Read the Unit 3 notes again.";
+
+    }else{
+
+        message="📖 Keep studying! Review Unit 3 carefully and try again.";
+
+    }
+
+    document.getElementById("message").innerText=
+    percent+"% — "+message;
+
+}
+
+</script>
+
+</body>
+</html>
