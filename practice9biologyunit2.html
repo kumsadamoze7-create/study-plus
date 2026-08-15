@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Biology Unit 2 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#16a34a,#15803d);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:18px 0;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:9px;
+    background:#f8fafc;
+    text-align:left;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.option:hover{
+    background:#dcfce7;
+}
+
+.correct{
+    background:#bbf7d0 !important;
+    border:2px solid #16a34a;
+}
+
+.wrong{
+    background:#fecaca !important;
+    border:2px solid #dc2626;
+}
+
+.explanation{
+    display:none;
+    margin-top:12px;
+    padding:13px;
+    border-radius:10px;
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    line-height:1.6;
+}
+
+#scoreBox{
+    display:none;
+    background:#dcfce7;
+    border-left:6px solid #16a34a;
+    padding:20px;
+    border-radius:12px;
+    margin:20px 0;
+    text-align:center;
+}
+
+button.main{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#16a34a;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧬 Grade 9 Biology</h1>
+
+<p>Unit 2 Practice — Classification of Organisms</p>
+
+<p>60 Multiple Choice Questions</p>
+
+</header>
+
+
+<div class="container">
+
+<div id="scoreBox"></div>
+
+<div id="quiz"></div>
+
+<button class="main"
+onclick="showScore()">
+
+🏆 Show Final Score
+
+</button>
+
+<button class="back"
+onclick="history.back()">
+
+← Back
+
+</button>
+
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"1. What is Biology?",
+a:[
+"Study of rocks",
+"Study of life",
+"Study of stars",
+"Study of weather"
+],
+c:1,
+e:"Biology is the scientific study of life and living organisms."
+},
+
+{
+q:"2. What is classification?",
+a:[
+"Destroying organisms",
+"Grouping organisms according to similarities and differences",
+"Changing organisms",
+"Measuring organisms"
+],
+c:1,
+e:"Classification is the systematic grouping of organisms based on similarities and differences."
+},
+
+{
+q:"3. Which branch of biology deals with plants?",
+a:[
+"Zoology",
+"Botany",
+"Ecology",
+"Genetics"
+],
+c:1,
+e:"Botany is the branch of biology concerned with the study of plants."
+},
+
+{
+q:"4. Which branch studies animals?",
+a:[
+"Botany",
+"Zoology",
+"Taxonomy",
+"Anatomy"
+],
+c:1,
+e:"Zoology is the scientific study of animals."
+},
+
+{
+q:"5. What is taxonomy?",
+a:[
+"Study of energy",
+"Science of identification, naming and classification",
+"Study of weather",
+"Study of rocks"
+],
+c:1,
+e:"Taxonomy deals with identification, naming and classification of organisms."
+},
+
+{
+q:"6. Which is the basic unit of biological classification?",
+a:[
+"Kingdom",
+"Family",
+"Species",
+"Order"
+],
+c:2,
+e:"Species is generally considered the basic unit of biological classification."
+},
+
+{
+q:"7. Who made one of the earliest attempts to classify animals?",
+a:[
+"Aristotle",
+"Whittaker",
+"Linnaeus",
+"Copeland"
+],
+c:0,
+e:"Aristotle made one of the earliest systematic attempts to classify animals."
+},
+
+{
+q:"8. Who is known as the Father of Botany?",
+a:[
+"Aristotle",
+"Theophrastus",
+"Whittaker",
+"Haeckel"
+],
+c:1,
+e:"Theophrastus is commonly known as the Father of Botany."
+},
+
+{
+q:"9. Who introduced the widespread use of binomial nomenclature?",
+a:[
+"Robert Whittaker",
+"Carolus Linnaeus",
+"Ernst Haeckel",
+"Herbert Copeland"
+],
+c:1,
+e:"Carolus Linnaeus established the widespread use of binomial nomenclature."
+},
+
+{
+q:"10. Binomial nomenclature gives each species a:",
+a:[
+"One-part name",
+"Two-part scientific name",
+"Three-part name",
+"Four-part name"
+],
+c:1,
+e:"Binomial nomenclature uses two parts: genus and specific epithet."
+},
+
+{
+q:"11. Which part of a scientific name starts with a capital letter?",
+a:[
+"Specific epithet",
+"Genus",
+"Species",
+"Family"
+],
+c:1,
+e:"The genus name begins with a capital letter."
+},
+
+{
+q:"12. In Homo sapiens, Homo represents the:",
+a:[
+"Species",
+"Genus",
+"Family",
+"Kingdom"
+],
+c:1,
+e:"Homo is the genus name, while sapiens is the specific epithet."
+},
+
+{
+q:"13. Who proposed the Five Kingdom classification system?",
+a:[
+"Aristotle",
+"Robert H. Whittaker",
+"Carolus Linnaeus",
+"Theophrastus"
+],
+c:1,
+e:"Robert H. Whittaker proposed the Five Kingdom classification system in 1969."
+},
+
+{
+q:"14. In which year did Whittaker propose the Five Kingdom system?",
+a:[
+"1758",
+"1866",
+"1969",
+"1990"
+],
+c:2,
+e:"Whittaker proposed the Five Kingdom classification system in 1969."
+},
+
+{
+q:"15. Which is NOT one of Whittaker's five kingdoms?",
+a:[
+"Monera",
+"Protista",
+"Fungi",
+"Archaea"
+],
+c:3,
+e:"Whittaker's five kingdoms were Monera, Protista, Fungi, Plantae and Animalia."
+},
+
+{
+q:"16. Which kingdom contains prokaryotic organisms?",
+a:[
+"Plantae",
+"Animalia",
+"Monera",
+"Fungi"
+],
+c:2,
+e:"Monera contains prokaryotic organisms."
+},
+
+{
+q:"17. Prokaryotic cells lack a:",
+a:[
+"Cell membrane",
+"True nucleus",
+"Ribosome",
+"DNA"
+],
+c:1,
+e:"Prokaryotic cells do not have a membrane-bound true nucleus."
+},
+
+{
+q:"18. Which kingdom contains mostly unicellular eukaryotes?",
+a:[
+"Protista",
+"Animalia",
+"Plantae",
+"Fungi"
+],
+c:0,
+e:"Protista consists mainly of unicellular eukaryotic organisms."
+},
+
+{
+q:"19. Which organism belongs to Protista?",
+a:[
+"Amoeba",
+"Human",
+"Mushroom",
+"Maize"
+],
+c:0,
+e:"Amoeba is a unicellular eukaryotic organism classified in Protista."
+},
+
+{
+q:"20. Which organism belongs to Monera?",
+a:[
+"Mushroom",
+"Bacterium",
+"Rose",
+"Fish"
+],
+c:1,
+e:"Bacteria are prokaryotic organisms and are placed in Monera in the Five Kingdom system."
+},
+
+{
+q:"21. Which kingdom contains fungi?",
+a:[
+"Monera",
+"Protista",
+"Fungi",
+"Animalia"
+],
+c:2,
+e:"Mushrooms, yeasts and moulds belong to Kingdom Fungi."
+},
+
+{
+q:"22. The cell wall of fungi mainly contains:",
+a:[
+"Cellulose",
+"Chitin",
+"Protein only",
+"Starch"
+],
+c:1,
+e:"Fungal cell walls are mainly made of chitin."
+},
+
+{
+q:"23. Which organism is a fungus?",
+a:[
+"Yeast",
+"Amoeba",
+"Euglena",
+"Maize"
+],
+c:0,
+e:"Yeast is a unicellular fungus."
+},
+
+{
+q:"24. Fungi obtain food mainly by:",
+a:[
+"Photosynthesis",
+"Absorbing digested nutrients",
+"Eating with a mouth",
+"Making oxygen"
+],
+c:1,
+e:"Fungi digest organic material externally and absorb the resulting nutrients."
+},
+
+{
+q:"25. Which kingdom contains multicellular photosynthetic organisms?",
+a:[
+"Plantae",
+"Monera",
+"Animalia",
+"Fungi"
+],
+c:0,
+e:"Plantae contains multicellular organisms that are mainly photosynthetic."
+},
+
+{
+q:"26. The cell wall of plants mainly contains:",
+a:[
+"Chitin",
+"Cellulose",
+"Protein",
+"Fat"
+],
+c:1,
+e:"Plant cell walls are mainly composed of cellulose."
+},
+
+{
+q:"27. Plants are mainly:",
+a:[
+"Heterotrophic",
+"Autotrophic",
+"Parasitic only",
+"Decomposers only"
+],
+c:1,
+e:"Most plants produce their own food through photosynthesis, so they are mainly autotrophic."
+},
+
+{
+q:"28. Which kingdom contains animals?",
+a:[
+"Plantae",
+"Animalia",
+"Fungi",
+"Monera"
+],
+c:1,
+e:"All animals are classified in Kingdom Animalia."
+},
+
+{
+q:"29. Animal cells generally lack a:",
+a:[
+"Nucleus",
+"Cell membrane",
+"Cell wall",
+"Cytoplasm"
+],
+c:2,
+e:"Animal cells do not have a cell wall."
+},
+
+{
+q:"30. Animals obtain food mainly by:",
+a:[
+"Photosynthesis",
+"Consuming other organisms",
+"Absorbing sunlight",
+"Making minerals"
+],
+c:1,
+e:"Animals are heterotrophs and obtain nutrients by consuming other organisms or organic matter."
+},
+
+{
+q:"31. Which kingdom is prokaryotic?",
+a:[
+"Monera",
+"Protista",
+"Plantae",
+"Animalia"
+],
+c:0,
+e:"Monera is the prokaryotic kingdom in Whittaker's Five Kingdom system."
+},
+
+{
+q:"32. Which kingdoms contain eukaryotic organisms?",
+a:[
+"Only Monera",
+"Protista, Fungi, Plantae and Animalia",
+"Only Animalia",
+"Only Plantae"
+],
+c:1,
+e:"Protista, Fungi, Plantae and Animalia contain eukaryotic organisms."
+},
+
+{
+q:"33. Which kingdom may contain both autotrophic and heterotrophic organisms?",
+a:[
+"Protista",
+"Animalia only",
+"Plantae only",
+"Fungi only"
+],
+c:0,
+e:"Protists may be autotrophic or heterotrophic."
+},
+
+{
+q:"34. Which organism uses pseudopodia for movement?",
+a:[
+"Amoeba",
+"Yeast",
+"Maize",
+"Human"
+],
+c:0,
+e:"Amoeba moves using temporary extensions called pseudopodia."
+},
+
+{
+q:"35. Which organism commonly uses cilia for movement?",
+a:[
+"Paramecium",
+"Mushroom",
+"Rose",
+"Bacterium"
+],
+c:0,
+e:"Paramecium moves mainly using numerous cilia."
+},
+
+{
+q:"36. Which organism is a photosynthetic protist?",
+a:[
+"Euglena",
+"Human",
+"Mushroom",
+"Earthworm"
+],
+c:0,
+e:"Euglena contains chloroplasts and can perform photosynthesis."
+},
+
+{
+q:"37. What is a heterotroph?",
+a:[
+"An organism that makes its own food",
+"An organism that obtains food from other sources",
+"An organism without DNA",
+"An organism without cells"
+],
+c:1,
+e:"Heterotrophs cannot make all their own food and obtain nutrients from external sources."
+},
+
+{
+q:"38. What is an autotroph?",
+a:[
+"An organism that produces its own food",
+"An organism without a nucleus",
+"An organism that cannot reproduce",
+"An organism that lacks cells"
+],
+c:0,
+e:"Autotrophs can produce their own organic food, commonly using photosynthesis or chemosynthesis."
+},
+
+{
+q:"39. Which taxonomic rank comes directly after Kingdom?",
+a:[
+"Species",
+"Family",
+"Phylum",
+"Genus"
+],
+c:2,
+e:"The hierarchy begins Kingdom → Phylum → Class → Order → Family → Genus → Species."
+},
+
+{
+q:"40. Which is the correct taxonomic order?",
+a:[
+"Species → Kingdom → Genus → Family",
+"Kingdom → Phylum → Class → Order → Family → Genus → Species",
+"Kingdom → Species → Family → Genus",
+"Genus → Kingdom → Species → Order"
+],
+c:1,
+e:"This is the standard hierarchical order used in traditional biological classification."
+},
+
+{
+q:"41. Which rank is more specific than Family?",
+a:[
+"Kingdom",
+"Phylum",
+"Genus",
+"Class"
+],
+c:2,
+e:"Genus is directly below Family and is therefore more specific."
+},
+
+{
+q:"42. Why are scientific names useful?",
+a:[
+"They are different in every country",
+"They provide a universal naming system",
+"They are always shorter",
+"They describe only plants"
+],
+c:1,
+e:"Scientific names reduce confusion caused by different common names."
+},
+
+{
+q:"43. What is the main purpose of classification?",
+a:[
+"To make organisms disappear",
+"To organize and identify organisms",
+"To change organisms",
+"To stop reproduction"
+],
+c:1,
+e:"Classification organizes organisms and makes identification and study easier."
+},
+
+{
+q:"44. Which scientist proposed a three-kingdom system including Protista?",
+a:[
+"Ernst Haeckel",
+"Whittaker",
+"Linnaeus",
+"Aristotle"
+],
+c:0,
+e:"Ernst Haeckel proposed a three-kingdom system and recognized Protista."
+},
+
+{
+q:"45. Who proposed a four-kingdom classification system?",
+a:[
+"Herbert Copeland",
+"Theophrastus",
+"Aristotle",
+"Linnaeus"
+],
+c:0,
+e:"Herbert Copeland proposed a four-kingdom classification system."
+},
+
+{
+q:"46. Copeland emphasized the distinction between:",
+a:[
+"Plants and flowers",
+"Prokaryotes and eukaryotes",
+"Fish and birds",
+"Roots and stems"
+],
+c:1,
+e:"Copeland recognized the major difference between prokaryotic and eukaryotic organisms."
+},
+
+{
+q:"47. Which scientist developed the widespread use of binomial nomenclature?",
+a:[
+"Carolus Linnaeus",
+"Robert Whittaker",
+"Ernst Haeckel",
+"Herbert Copeland"
+],
+c:0,
+e:"Carolus Linnaeus developed and popularized the binomial naming system."
+},
+
+{
+q:"48. Which name is correctly written as a scientific name?",
+a:[
+"homo Sapiens",
+"Homo Sapiens",
+"Homo sapiens",
+"homo sapiens"
+],
+c:2,
+e:"The genus starts with a capital letter and the specific epithet starts with a lowercase letter."
+},
+
+{
+q:"49. What does the first word of a binomial name represent?",
+a:[
+"Family",
+"Genus",
+"Kingdom",
+"Order"
+],
+c:1,
+e:"The first word represents the genus."
+},
+
+{
+q:"50. What does the second part of a binomial name represent?",
+a:[
+"Kingdom",
+"Class",
+"Specific epithet",
+"Phylum"
+],
+c:2,
+e:"The second part is the specific epithet."
+},
+
+{
+q:"51. Which characteristic is common to all living organisms?",
+a:[
+"They all have the same shape",
+"They are all multicellular",
+"They are made of one or more cells",
+"They can all fly"
+],
+c:2,
+e:"Cellular organization is a fundamental characteristic of living organisms."
+},
+
+{
+q:"52. Which is NOT a characteristic of living organisms?",
+a:[
+"Growth",
+"Reproduction",
+"Response to stimuli",
+"Never changing"
+],
+c:3,
+e:"Living organisms grow, reproduce and respond to stimuli; they are not unchanging."
+},
+
+{
+q:"53. What is adaptation?",
+a:[
+"A characteristic that helps an organism survive",
+"Destruction of an organism",
+"Removal of cells",
+"An artificial chemical"
+],
+c:0,
+e:"Adaptations are characteristics that help organisms survive and reproduce in their environments."
+},
+
+{
+q:"54. Which group consists of animals without a backbone?",
+a:[
+"Vertebrates",
+"Invertebrates",
+"Mammals",
+"Birds"
+],
+c:1,
+e:"Invertebrates are animals that lack a backbone."
+},
+
+{
+q:"55. Which group has a backbone?",
+a:[
+"Invertebrates",
+"Vertebrates",
+"Fungi",
+"Protists"
+],
+c:1,
+e:"Vertebrates possess a backbone or vertebral column."
+},
+
+{
+q:"56. Which is an example of a vertebrate?",
+a:[
+"Earthworm",
+"Butterfly",
+"Fish",
+"Snail"
+],
+c:2,
+e:"Fish are vertebrates because they have a backbone."
+},
+
+{
+q:"57. Which is an example of an invertebrate?",
+a:[
+"Fish",
+"Bird",
+"Earthworm",
+"Human"
+],
+c:2,
+e:"Earthworms are invertebrates because they do not have a backbone."
+},
+
+{
+q:"58. Which kingdom has organisms with no true nucleus?",
+a:[
+"Monera",
+"Plantae",
+"Animalia",
+"Fungi"
+],
+c:0,
+e:"Moneran cells are prokaryotic and therefore lack a true membrane-bound nucleus."
+},
+
+{
+q:"59. Which kingdom contains organisms with chitin in their cell walls?",
+a:[
+"Plantae",
+"Fungi",
+"Animalia",
+"Protista"
+],
+c:1,
+e:"Chitin is the main structural material in fungal cell walls."
+},
+
+{
+q:"60. Which scientist is most directly associated with the Five Kingdom classification?",
+a:[
+"Aristotle",
+"Carolus Linnaeus",
+"Robert H. Whittaker",
+"Theophrastus"
+],
+c:2,
+e:"Robert H. Whittaker proposed the Five Kingdom classification system in 1969."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+const card=document.createElement("div");
+
+card.className="card";
+
+const q=document.createElement("div");
+
+q.className="question";
+
+q.innerText=item.q;
+
+card.appendChild(q);
+
+
+item.a.forEach((option,i)=>{
+
+const btn=document.createElement("button");
+
+btn.className="option";
+
+btn.innerText=
+String.fromCharCode(65+i)+". "+option;
+
+btn.onclick=()=>{
+
+if(card.dataset.answered==="yes"){
+    return;
+}
+
+card.dataset.answered="yes";
+
+answered++;
+
+const buttons=card.querySelectorAll(".option");
+
+buttons.forEach(b=>{
+    b.disabled=true;
+});
+
+if(i===item.c){
+
+btn.classList.add("correct");
+
+score++;
+
+}
+else{
+
+btn.classList.add("wrong");
+
+buttons[item.c].classList.add("correct");
+
+}
+
+
+const exp=document.createElement("div");
+
+exp.className="explanation";
+
+exp.style.display="block";
+
+if(i===item.c){
+
+exp.innerHTML=
+"✅ <strong>Right!</strong><br><br>"+
+"<strong>Explanation:</strong> "+
+item.e;
+
+}
+else{
+
+exp.innerHTML=
+"❌ <strong>Wrong!</strong><br><br>"+
+"<strong>Correct Answer:</strong> "+
+String.fromCharCode(65+item.c)+
+". "+item.a[item.c]+
+"<br><br><strong>Explanation:</strong> "+
+item.e;
+
+}
+
+card.appendChild(exp);
+
+};
+
+card.appendChild(btn);
+
+});
+
+
+quiz.appendChild(card);
+
+});
+
+
+function showScore(){
+
+const box=document.getElementById("scoreBox");
+
+box.style.display="block";
+
+let percent=Math.round((score/questions.length)*100);
+
+let message="";
+
+if(percent>=90){
+
+message="🏆 Excellent! You have mastered Unit 2.";
+
+}
+else if(percent>=75){
+
+message="👏 Very Good! Keep reviewing the difficult questions.";
+
+}
+else if(percent>=50){
+
+message="👍 Good effort! Review the notes and try again.";
+
+}
+else{
+
+message="📚 Keep studying. Review Unit 2 carefully and try again.";
+
+}
+
+box.innerHTML=
+
+"<h2>🎯 Final Score</h2>"+
+"<h1>"+score+" / "+questions.length+"</h1>"+
+"<h2>"+percent+"%</h2>"+
+"<p>"+message+"</p>";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
