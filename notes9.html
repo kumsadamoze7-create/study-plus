@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Grade 9 - Study Plus</title>
+<title>Unit 1 - Further on Sets | Study Plus</title>
 
 <style>
 
@@ -32,7 +31,7 @@ header{
 
 header h1{
     margin:0;
-    font-size:30px;
+    font-size:28px;
 }
 
 header p{
@@ -53,57 +52,48 @@ header p{
     box-shadow:0 3px 10px #ccc;
 }
 
-.math{
-    border-left:6px solid #2563eb;
-}
-
-.chemistry{
-    border-left:6px solid #9333ea;
-}
-
-.biology{
-    border-left:6px solid #16a34a;
-}
-
-.physics{
-    border-left:6px solid #dc2626;
-}
-
-.english{
-    border-left:6px solid #ea580c;
-}
-
-.unit{
-    border-left:5px solid #2563eb;
-}
-
-.chemUnit{
-    border-left:5px solid #9333ea;
-}
-
-.engUnit{
-    border-left:5px solid #ea580c;
-}
-
 h2{
+    color:#2563eb;
     margin-top:0;
 }
 
 h3{
-    color:#2563eb;
-}
-
-.chemUnit h3{
-    color:#9333ea;
-}
-
-.engUnit h3{
-    color:#ea580c;
+    color:#7c3aed;
 }
 
 p{
-    line-height:1.6;
+    line-height:1.7;
     color:#555;
+}
+
+ul,ol{
+    line-height:1.8;
+    color:#444;
+}
+
+.formula{
+    background:#eef2ff;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+    font-weight:bold;
+    color:#3730a3;
+}
+
+.example{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.tip{
+    background:#fff7ed;
+    border-left:5px solid #ea580c;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
 }
 
 button{
@@ -118,74 +108,48 @@ button{
     cursor:pointer;
 }
 
-button:hover{
-    opacity:.9;
-}
-
-.open{
-    background:#2563eb;
-}
-
-.chemOpen{
-    background:#9333ea;
-}
-
-.engOpen{
-    background:#ea580c;
-}
-
-.notes{
-    background:#7c3aed;
+.back{
+    background:#172554;
 }
 
 .practice{
     background:#16a34a;
 }
 
-.coming{
-    background:#9ca3af;
+button:hover{
+    opacity:.9;
 }
 
-.back{
-    background:#172554;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
 }
 
-#mathUnits,
-#chemistryUnits,
-#englishUnits{
-    display:none;
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:left;
 }
 
-.title{
-    text-align:center;
-    color:#2563eb;
-}
-
-.chemTitle{
-    text-align:center;
-    color:#9333ea;
-}
-
-.engTitle{
-    text-align:center;
-    color:#ea580c;
+th{
+    background:#2563eb;
+    color:white;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header>
 
-<h1>📚 Grade 9</h1>
+<h1>📐 Grade 9 Mathematics</h1>
 
-<p>Study Plus</p>
+<p>Unit 1 — Further on Sets</p>
 
-<p>Learn • Practice • Prepare</p>
+<p>📚 Study Plus</p>
 
 </header>
 
@@ -193,58 +157,453 @@ button:hover{
 <div class="container">
 
 
-<!-- ================================================= -->
-<!-- MATHEMATICS -->
-<!-- ================================================= -->
+<div class="card">
 
-<div class="card math">
-
-<h2>📐 Mathematics</h2>
+<h2>📘 Unit 1: Further on Sets</h2>
 
 <p>
-Complete Grade 9 Mathematics from
-Unit 1 to Unit 9 with Notes and Practice.
+This lesson introduces important ideas about sets,
+subsets, universal sets, operations on sets,
+Venn diagrams and applications of sets.
 </p>
-
-<button
-class="open"
-onclick="openMath()">
-
-📚 Open Mathematics
-
-</button>
 
 </div>
 
-
-<div id="mathUnits">
 
 <div class="card">
 
-<h2 class="title">
-📐 Grade 9 Mathematics
-</h2>
+<h2>1️⃣ What is a Set?</h2>
 
 <p>
-Choose a unit to study Notes or Practice.
+A <b>set</b> is a well-defined collection of distinct
+objects. The objects in a set are called
+<b>elements</b> or <b>members</b>.
+</p>
+
+<div class="example">
+
+<b>Example:</b>
+
+<p>
+A = {1, 2, 3, 4, 5}
+</p>
+
+<p>
+Here, 1, 2, 3, 4 and 5 are the elements of set A.
 </p>
 
 </div>
 
+<h3>Set notation</h3>
 
-<!-- MATH UNIT 1 -->
+<p>
+If x belongs to set A, we write:
+</p>
 
-<div class="card unit">
+<div class="formula">
+x ∈ A
+</div>
 
-<h3>📘 Unit 1 — Further on Sets</h3>
+<p>
+If x does not belong to A, we write:
+</p>
 
-<button
-class="notes"
-onclick="location.href='notes9.html'">
+<div class="formula">
+x ∉ A
+</div>
 
-📖 Unit 1 Notes
+</div>
 
-</button>
+
+<div class="card">
+
+<h2>2️⃣ Ways of Describing a Set</h2>
+
+<h3>A. Roster or Listing Method</h3>
+
+<p>
+The elements are listed inside curly brackets.
+</p>
+
+<div class="example">
+
+A = {2, 4, 6, 8, 10}
+
+</div>
+
+<h3>B. Set-Builder Method</h3>
+
+<p>
+The elements are described using a rule or property.
+</p>
+
+<div class="example">
+
+A = {x | x is an even natural number less than 12}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>3️⃣ Types of Sets</h2>
+
+<h3>Finite Set</h3>
+
+<p>
+A set containing a limited number of elements.
+</p>
+
+<div class="example">
+A = {1, 2, 3, 4}
+</div>
+
+<h3>Infinite Set</h3>
+
+<p>
+A set whose elements continue without end.
+</p>
+
+<div class="example">
+N = {1, 2, 3, 4, 5, ...}
+</div>
+
+<h3>Empty Set</h3>
+
+<p>
+A set containing no elements.
+</p>
+
+<div class="formula">
+∅ or { }
+</div>
+
+<h3>Singleton Set</h3>
+
+<p>
+A set containing exactly one element.
+</p>
+
+<div class="example">
+A = {7}
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>4️⃣ Cardinality of a Set</h2>
+
+<p>
+The number of elements in a set is called its
+<b>cardinality</b>.
+</p>
+
+<div class="formula">
+n(A) = number of elements in A
+</div>
+
+<div class="example">
+
+If:
+
+A = {2, 4, 6, 8}
+
+then:
+
+n(A) = 4
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>5️⃣ Subsets</h2>
+
+<p>
+Set A is a subset of set B if every element of A
+is also an element of B.
+</p>
+
+<div class="formula">
+A ⊆ B
+</div>
+
+<div class="example">
+
+A = {1, 2}
+
+B = {1, 2, 3, 4}
+
+Therefore:
+
+A ⊆ B
+
+</div>
+
+<h3>Proper Subset</h3>
+
+<p>
+A is a proper subset of B when A is a subset of B
+but A is not equal to B.
+</p>
+
+<div class="formula">
+A ⊂ B
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>6️⃣ Universal Set</h2>
+
+<p>
+The <b>universal set</b> contains all the elements
+under consideration in a particular problem.
+</p>
+
+<p>
+It is usually represented by U.
+</p>
+
+<div class="example">
+
+U = {1,2,3,4,5,6}
+
+A = {2,4,6}
+
+Here A is a subset of U.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>7️⃣ Complement of a Set</h2>
+
+<p>
+The complement of A contains all elements in the
+universal set that are not in A.
+</p>
+
+<div class="formula">
+A' = U − A
+</div>
+
+<div class="example">
+
+U = {1,2,3,4,5,6}
+
+A = {2,4,6}
+
+Therefore:
+
+A' = {1,3,5}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>8️⃣ Union of Sets</h2>
+
+<p>
+The union of two sets contains all elements that
+belong to either set, without repeating elements.
+</p>
+
+<div class="formula">
+A ∪ B
+</div>
+
+<div class="example">
+
+A = {1,2,3}
+
+B = {3,4,5}
+
+A ∪ B = {1,2,3,4,5}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>9️⃣ Intersection of Sets</h2>
+
+<p>
+The intersection contains elements that are common
+to both sets.
+</p>
+
+<div class="formula">
+A ∩ B
+</div>
+
+<div class="example">
+
+A = {1,2,3}
+
+B = {2,3,4}
+
+A ∩ B = {2,3}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔟 Difference of Sets</h2>
+
+<p>
+The difference A − B contains elements that belong
+to A but do not belong to B.
+</p>
+
+<div class="formula">
+A − B
+</div>
+
+<div class="example">
+
+A = {1,2,3,4}
+
+B = {3,4,5}
+
+A − B = {1,2}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Venn Diagrams</h2>
+
+<p>
+A Venn diagram is a visual representation of sets.
+Circles are commonly used to represent sets.
+</p>
+
+<ul>
+
+<li>Union → A ∪ B</li>
+
+<li>Intersection → A ∩ B</li>
+
+<li>Complement → A'</li>
+
+<li>Difference → A − B</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧠 Important Laws of Sets</h2>
+
+<table>
+
+<tr>
+<th>Law</th>
+<th>Relationship</th>
+</tr>
+
+<tr>
+<td>Identity</td>
+<td>A ∪ ∅ = A</td>
+</tr>
+
+<tr>
+<td>Identity</td>
+<td>A ∩ U = A</td>
+</tr>
+
+<tr>
+<td>Domination</td>
+<td>A ∪ U = U</td>
+</tr>
+
+<tr>
+<td>Domination</td>
+<td>A ∩ ∅ = ∅</td>
+</tr>
+
+<tr>
+<td>Complement</td>
+<td>A ∪ A' = U</td>
+</tr>
+
+<tr>
+<td>Complement</td>
+<td>A ∩ A' = ∅</td>
+</tr>
+
+<tr>
+<td>Idempotent</td>
+<td>A ∪ A = A</td>
+</tr>
+
+<tr>
+<td>Idempotent</td>
+<td>A ∩ A = A</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="card">
+
+<h2>🎯 Exam Tips</h2>
+
+<div class="tip">
+
+<ul>
+
+<li>Do not repeat an element when finding a union.</li>
+
+<li>Intersection means COMMON elements.</li>
+
+<li>Complement means elements OUTSIDE the set.</li>
+
+<li>Always check the universal set before finding a complement.</li>
+
+<li>Remember: ∪ means OR, while ∩ means AND.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>📝 Practice</h2>
+
+<p>
+Ready to test your understanding of Further on Sets?
+</p>
 
 <button
 class="practice"
@@ -257,679 +616,16 @@ onclick="location.href='practice9.html'">
 </div>
 
 
-<!-- MATH UNIT 2 -->
-
-<div class="card unit">
-
-<h3>🔢 Unit 2 — The Number System</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit2.html'">
-
-📖 Unit 2 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit2.html'">
-
-📝 Unit 2 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 3 -->
-
-<div class="card unit">
-
-<h3>📕 Unit 3 — Solving Equations</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit3.html'">
-
-📖 Unit 3 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit3.html'">
-
-📝 Unit 3 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 4 -->
-
-<div class="card unit">
-
-<h3>📗 Unit 4 — Solving Inequalities</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit4.html'">
-
-📖 Unit 4 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit4.html'">
-
-📝 Unit 4 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 5 -->
-
-<div class="card unit">
-
-<h3>📐 Unit 5 — Introduction to Trigonometry</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit5.html'">
-
-📖 Unit 5 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit5.html'">
-
-📝 Unit 5 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 6 -->
-
-<div class="card unit">
-
-<h3>🔷 Unit 6 — Regular Polygons</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit6.html'">
-
-📖 Unit 6 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit6.html'">
-
-📝 Unit 6 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 7 -->
-
-<div class="card unit">
-
-<h3>🔺 Unit 7 — Congruency and Similarity</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit7.html'">
-
-📖 Unit 7 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit7.html'">
-
-📝 Unit 7 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 8 -->
-
-<div class="card unit">
-
-<h3>➡️ Unit 8 — Vectors in Two Dimensions</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit8.html'">
-
-📖 Unit 8 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit8.html'">
-
-📝 Unit 8 Practice
-
-</button>
-
-</div>
-
-
-<!-- MATH UNIT 9 -->
-
-<div class="card unit">
-
-<h3>📊 Unit 9 — Statistics and Probability</h3>
-
-<button
-class="notes"
-onclick="location.href='notes9unit9.html'">
-
-📖 Unit 9 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9unit9.html'">
-
-📝 Unit 9 Practice
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- CHEMISTRY -->
-<!-- ================================================= -->
-
-<div class="card chemistry">
-
-<h2>🧪 Chemistry</h2>
-
-<p>
-Grade 9 Chemistry — Unit 1 to Unit 5 are available.
-</p>
-
-<button
-class="chemOpen"
-onclick="openChemistry()">
-
-🧪 Open Chemistry
-
-</button>
-
-</div>
-
-
-<div id="chemistryUnits">
-
-<div class="card">
-
-<h2 class="chemTitle">
-🧪 Grade 9 Chemistry
-</h2>
-
-<p>
-Choose a unit to study Notes or Practice.
-</p>
-
-</div>
-
-
-<!-- CHEMISTRY UNIT 1 -->
-
-<div class="card chemUnit">
-
-<h3>
-🧪 Unit 1 — Chemistry and Its Importance
-</h3>
-
-<p>
-Definition and scope of chemistry, matter, substance,
-properties, composition, branches of chemistry, relationship
-with other natural sciences, agriculture, food production,
-medicine, analgesics, antibiotics, disinfectants, construction
-materials and chemical industries.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9chemistryunit1.html'">
-
-📖 Unit 1 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9chemistryunit1.html'">
-
-📝 Unit 1 Practice — 60 Questions
-
-</button>
-
-</div>
-
-
-<!-- CHEMISTRY UNIT 2 -->
-
-<div class="card chemUnit">
-
-<h3>
-📏 Unit 2 — Measurement and Scientific Method
-</h3>
-
-<p>
-Measurement, SI units, fundamental and derived quantities,
-measuring instruments, density, accuracy, precision,
-significant figures, scientific notation, scientific method,
-variables, laboratory safety and experimental error.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9chemistryunit2.html'">
-
-📖 Unit 2 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9chemistryunit2.html'">
-
-📝 Unit 2 Practice — 60 Questions
-
-</button>
-
-</div>
-
-
-<!-- CHEMISTRY UNIT 3 -->
-
-<div class="card chemUnit">
-
-<h3>
-⚛️ Unit 3 — Structure of the Atom
-</h3>
-
-<p>
-Atomic theory, development of atomic models, subatomic
-particles, protons, neutrons and electrons, atomic number,
-mass number, isotopes, electron arrangement and ions.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9chemistryunit3.html'">
-
-📖 Unit 3 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9chemistryunit3.html'">
-
-📝 Unit 3 Practice — 60 Questions
-
-</button>
-
-</div>
-
-
-<!-- CHEMISTRY UNIT 4 -->
-
-<div class="card chemUnit">
-
-<h3>
-🧩 Unit 4 — Periodic Classification of Elements
-</h3>
-
-<p>
-Historical development, Dobereiner triads, Newlands law
-of octaves, Mendeleev periodic law, periodicity, modern
-periodic table, groups and periods, s-, p-, d-, f-blocks,
-representative elements, ionization energy, electron affinity
-and electronegativity.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9chemistryunit4.html'">
-
-📖 Unit 4 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9chemistryunit4.html'">
-
-📝 Unit 4 Practice — 60 Questions
-
-</button>
-
-</div>
-
-
-<!-- CHEMISTRY UNIT 5 -->
-
-<div class="card chemUnit">
-
-<h3>
-🔗 Unit 5 — Chemical Bonding
-</h3>
-
-<p>
-Chemical bonding, valence electrons, octet and duet rules,
-ionic and covalent bonding, single/double/triple covalent
-bonds, coordinate covalent bonding, metallic bonding,
-Lewis structures, electronegativity, polar and non-polar
-covalent bonds, ions and compounds.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9chemistryunit5.html'">
-
-📖 Unit 5 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9chemistryunit5.html'">
-
-📝 Unit 5 Practice — 60 Questions
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ENGLISH -->
-<!-- ================================================= -->
-
-<div class="card english">
-
-<h2>📖 English</h2>
-
-<p>
-Grade 9 English — Unit 1, Unit 2 and Unit 3.
-Notes and difficult Practice.
-</p>
-
-<button
-class="engOpen"
-onclick="openEnglish()">
-
-📖 Open English
-
-</button>
-
-</div>
-
-
-<div id="englishUnits">
-
-<div class="card">
-
-<h2 class="engTitle">
-🇬🇧 Grade 9 English
-</h2>
-
-<p>
-Choose a unit to study Notes or Practice.
-</p>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ENGLISH UNIT 1 -->
-<!-- ================================================= -->
-
-<div class="card engUnit">
-
-<h3>
-📚 Unit 1 — Tenses
-</h3>
-
-<p>
-Simple Present, Present Continuous, Present Perfect,
-Present Perfect Continuous, Simple Past, Past Continuous,
-Past Perfect, Past Perfect Continuous, Simple Future,
-Future Continuous, Future Perfect and Future Perfect
-Continuous.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9englishunit1.html'">
-
-📖 Unit 1 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9englishunit1_200-1.html'">
-
-📝 Unit 1 Practice — 200 Questions
-
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ENGLISH UNIT 2 -->
-<!-- ================================================= -->
-
-<div class="card engUnit">
-
-<h3>
-⚖️ Unit 2 — Conditional Sentences
-</h3>
-
-<p>
-Zero Conditional, First Conditional, Second Conditional,
-Third Conditional, Mixed Conditionals, unless, if,
-provided that, as long as, in case, and inverted
-conditionals such as Had I known, Were I you and
-Should you need.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9englishunit2.html'">
-
-📖 Unit 2 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9englishunit2_200.html'">
-
-📝 Unit 2 Practice — 200 Questions
-
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- ENGLISH UNIT 3 -->
-<!-- ================================================= -->
-
-<div class="card engUnit">
-
-<h3>
-📊 Unit 3 — Comparison
-</h3>
-
-<p>
-A complete study of comparison using adjectives,
-adverbs, nouns, verbs, tenses and modal verbs.
-Includes positive, comparative and superlative forms,
-irregular comparisons, equality, inequality, double
-comparatives, modifiers, comparison with different
-tenses, modal verbs in comparative structures, and
-advanced examination patterns.
-</p>
-
-<button
-class="notes"
-onclick="location.href='notes9englishunit3.html'">
-
-📖 Unit 3 Notes
-
-</button>
-
-<button
-class="practice"
-onclick="location.href='practice9englishunit3_100.html'">
-
-📝 Unit 3 Practice — 100 Questions
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- BIOLOGY -->
-<!-- ================================================= -->
-
-<div class="card biology">
-
-<h2>🧬 Biology</h2>
-
-<p>
-Grade 9 Biology lessons, Notes and Practice.
-</p>
-
-<button
-class="coming"
-disabled>
-
-🔒 Coming Soon
-
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- PHYSICS -->
-<!-- ================================================= -->
-
-<div class="card physics">
-
-<h2>⚡ Physics</h2>
-
-<p>
-Grade 9 Physics lessons, Notes and Practice.
-</p>
-
-<button
-class="coming"
-disabled>
-
-🔒 Coming Soon
-
-</button>
-
-</div>
-
-
-<!-- BACK -->
-
 <button
 class="back"
-onclick="location.href='index.html'">
+onclick="location.href='grade9.html'">
 
-← Back to Grades
+← Back to Grade 9
 
 </button>
 
 
 </div>
-
-
-<script>
-
-function openMath(){
-
-    const x =
-    document.getElementById("mathUnits");
-
-    x.style.display="block";
-
-    x.scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-function openChemistry(){
-
-    const x =
-    document.getElementById("chemistryUnits");
-
-    x.style.display="block";
-
-    x.scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-function openEnglish(){
-
-    const x =
-    document.getElementById("englishUnits");
-
-    x.style.display="block";
-
-    x.scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-</script>
-
 
 </body>
 
