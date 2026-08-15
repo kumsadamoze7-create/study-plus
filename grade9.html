@@ -85,8 +85,8 @@ header p{
     border-left:5px solid #ea580c;
 }
 
-.physicsUnit{
-    border-left:5px solid #dc2626;
+.bioUnit{
+    border-left:5px solid #16a34a;
 }
 
 h2{
@@ -105,8 +105,8 @@ h3{
     color:#ea580c;
 }
 
-.physicsUnit h3{
-    color:#dc2626;
+.bioUnit h3{
+    color:#16a34a;
 }
 
 p{
@@ -142,8 +142,8 @@ button:hover{
     background:#ea580c;
 }
 
-.physicsOpen{
-    background:#dc2626;
+.bioOpen{
+    background:#16a34a;
 }
 
 .notes{
@@ -165,7 +165,7 @@ button:hover{
 #mathUnits,
 #chemistryUnits,
 #englishUnits,
-#physicsUnits{
+#biologyUnits{
     display:none;
 }
 
@@ -184,9 +184,9 @@ button:hover{
     color:#ea580c;
 }
 
-.physicsTitle{
+.bioTitle{
     text-align:center;
-    color:#dc2626;
+    color:#16a34a;
 }
 
 </style>
@@ -840,7 +840,7 @@ onclick="location.href='practice9englishunit3.html'">
 
 
 <!-- ================================================= -->
-<!-- BIOLOGY -->
+<!-- BIOLOGY — ADDED UNIT 1 TO UNIT 4 -->
 <!-- ================================================= -->
 
 <div class="card biology">
@@ -848,16 +848,172 @@ onclick="location.href='practice9englishunit3.html'">
 <h2>🧬 Biology</h2>
 
 <p>
-Grade 9 Biology lessons, Notes and Practice.
+Grade 9 Biology — Unit 1 to Unit 4 with detailed Notes
+and Practice.
 </p>
 
 <button
-class="coming"
-disabled>
+class="bioOpen"
+onclick="openBiology()">
 
-🔒 Coming Soon
+🧬 Open Biology
 
 </button>
+
+</div>
+
+
+<div id="biologyUnits">
+
+
+<div class="card">
+
+<h2 class="bioTitle">
+🧬 Grade 9 Biology
+</h2>
+
+<p>
+Choose a unit to study Notes or Practice.
+</p>
+
+</div>
+
+
+<!-- BIOLOGY UNIT 1 -->
+
+<div class="card bioUnit">
+
+<h3>
+🔬 Unit 1 — Biology and Its History
+</h3>
+
+<p>
+Introduction to biology, characteristics of living things,
+branches of biology, scientific method, important scientists
+and their contributions, classification, taxonomy and
+development of biological knowledge.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9biologyunit1.html'">
+
+📖 Unit 1 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9biologyunit1.html'">
+
+📝 Unit 1 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- BIOLOGY UNIT 2 -->
+
+<div class="card bioUnit">
+
+<h3>
+🦠 Unit 2 — Classification of Living Organisms
+</h3>
+
+<p>
+Classification of organisms, taxonomy, taxonomic hierarchy,
+binomial nomenclature, kingdoms of life, characteristics of
+the major groups, and the Five Kingdom classification system.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9biologyunit2.html'">
+
+📖 Unit 2 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9biologyunit2.html'">
+
+📝 Unit 2 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- BIOLOGY UNIT 3 -->
+
+<div class="card bioUnit">
+
+<h3>
+🧫 Unit 3 — Cell Biology
+</h3>
+
+<p>
+Cell theory, prokaryotic and eukaryotic cells, plant and animal
+cells, cell structures and organelles, functions of organelles,
+cell membrane, cytoplasm, nucleus, mitochondria, chloroplasts,
+cell division and organization.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9biologyunit3.html'">
+
+📖 Unit 3 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9biologyunit3.html'">
+
+📝 Unit 3 Practice — 60 Questions
+
+</button>
+
+</div>
+
+
+<!-- BIOLOGY UNIT 4 -->
+
+<div class="card bioUnit">
+
+<h3>
+🌱 Unit 4 — Reproduction
+</h3>
+
+<p>
+Reproduction in living organisms, asexual and sexual
+reproduction, binary fission, budding, fragmentation,
+spore formation, vegetative propagation, reproductive organs,
+gametes, fertilization, zygote formation, human reproduction,
+pregnancy and reproductive health.
+</p>
+
+<button
+class="notes"
+onclick="location.href='notes9biologyunit4.html'">
+
+📖 Unit 4 Notes
+
+</button>
+
+<button
+class="practice"
+onclick="location.href='practice9biologyunit4.html'">
+
+📝 Unit 4 Practice — 60 Questions
+
+</button>
+
+</div>
+
 
 </div>
 
@@ -871,12 +1027,11 @@ disabled>
 <h2>⚡ Physics</h2>
 
 <p>
-Grade 9 Physics — Unit 1 to Unit 7.
-Notes and Practice.
+Grade 9 Physics lessons, Notes and Practice.
 </p>
 
 <button
-class="physicsOpen"
+class="open"
 onclick="openPhysics()">
 
 ⚡ Open Physics
@@ -891,7 +1046,7 @@ onclick="openPhysics()">
 
 <div class="card">
 
-<h2 class="physicsTitle">
+<h2 class="title">
 ⚡ Grade 9 Physics
 </h2>
 
@@ -902,19 +1057,11 @@ Choose a unit to study Notes or Practice.
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 1 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-📘 Unit 1 — Physics and Measurement
-</h3>
-
-<p>
-Grade 9 Physics Unit 1 Notes and Practice.
-</p>
+<h3>⚡ Unit 1 — Introduction to Physics</h3>
 
 <button
 class="notes"
@@ -935,19 +1082,11 @@ onclick="location.href='practice9physicsunit1.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 2 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-📗 Unit 2 — Motion
-</h3>
-
-<p>
-Study Unit 2 Physics Notes and practice questions.
-</p>
+<h3>📏 Unit 2 — Measurement</h3>
 
 <button
 class="notes"
@@ -968,19 +1107,11 @@ onclick="location.href='practice9physicsunit2.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 3 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-📕 Unit 3 — Force and Newton's Laws
-</h3>
-
-<p>
-Study Unit 3 Physics Notes and practice questions.
-</p>
+<h3>🏃 Unit 3 — Motion</h3>
 
 <button
 class="notes"
@@ -1001,19 +1132,11 @@ onclick="location.href='practice9physicsunit3.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 4 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-⚡ Unit 4 — Work, Energy and Power
-</h3>
-
-<p>
-Study Unit 4 Physics Notes and practice questions.
-</p>
+<h3>⚖️ Unit 4 — Force and Newton's Laws</h3>
 
 <button
 class="notes"
@@ -1034,19 +1157,11 @@ onclick="location.href='practice9physicsunit4.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 5 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-⚙️ Unit 5 — Simple Machines
-</h3>
-
-<p>
-Study Unit 5 Physics Notes and practice questions.
-</p>
+<h3>🔋 Unit 5 — Work, Energy and Power</h3>
 
 <button
 class="notes"
@@ -1067,19 +1182,11 @@ onclick="location.href='practice9physicsunit5.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 6 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-🌊 Unit 6 — Mechanical Oscillation and Sound Wave
-</h3>
-
-<p>
-Study Unit 6 Physics Notes and practice questions.
-</p>
+<h3>🌊 Unit 6 — Properties of Matter</h3>
 
 <button
 class="notes"
@@ -1100,21 +1207,11 @@ onclick="location.href='practice9physicsunit6.html'">
 </div>
 
 
-<!-- ================================================= -->
 <!-- PHYSICS UNIT 7 -->
-<!-- ================================================= -->
 
-<div class="card physicsUnit">
+<div class="card unit">
 
-<h3>
-🌡️ Unit 7 — Temperature and Thermometry
-</h3>
-
-<p>
-Temperature, temperature scales, thermometers,
-temperature conversion, thermal expansion and its
-applications.
-</p>
+<h3>🌍 Unit 7 — End Unit / Review</h3>
 
 <button
 class="notes"
@@ -1128,7 +1225,7 @@ onclick="location.href='notes9physicsunit7.html'">
 class="practice"
 onclick="location.href='practice9physicsunit7.html'">
 
-📝 Unit 7 Practice — 60 Questions
+📝 Unit 7 Practice
 
 </button>
 
@@ -1190,6 +1287,20 @@ function openEnglish(){
     english.style.display="block";
 
     english.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+function openBiology(){
+
+    const biology =
+    document.getElementById("biologyUnits");
+
+    biology.style.display="block";
+
+    biology.scrollIntoView({
         behavior:"smooth"
     });
 
