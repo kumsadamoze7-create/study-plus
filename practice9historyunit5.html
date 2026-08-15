@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 History Unit 5 Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#172554,#2563eb);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{margin:0;font-size:27px}
+header p{margin:7px}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
+}
+
+.progress{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:13px;
+    text-align:center;
+    font-weight:bold;
+    border-radius:10px;
+    box-shadow:0 2px 8px #bbb;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #2563eb;
+}
+
+.question h3{
+    color:#1e40af;
+}
+
+.option{
+    width:100%;
+    padding:13px;
+    margin:6px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fafafa;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.option:hover{
+    background:#eff6ff;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+}
+
+.result{
+    display:none;
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    line-height:1.6;
+}
+
+.right{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.wrongResult{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.score{
+    text-align:center;
+    border-left:6px solid #ea580c;
+    background:#fff7ed;
+}
+
+.main{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    background:#1e40af;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.back{
+    background:#172554;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📜 Grade 9 History</h1>
+<p>UNIT 5 PRACTICE</p>
+<p>🌍 Peoples and States of Africa to 1500</p>
+<p>📝 60 Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="progress" id="progress">
+Answered: 0 / 60 | Score: 0
+</div>
+
+<div id="quiz"></div>
+
+<div class="card score">
+<h2>🏆 Final Result</h2>
+<h2 id="finalScore">0 / 60</h2>
+<p id="message">Answer all questions to see your result.</p>
+
+<button class="main" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+<button class="main back"
+onclick="location.href='notes9historyunit5.html'">
+📖 Unit 5 Notes
+</button>
+
+<button class="main back"
+onclick="location.href='grade9.html'">
+← Grade 9 Home
+</button>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Which of the following is one of the major language super-families of Africa?",
+o:["Afro-Asiatic","Latin-American","Germanic","Sino-Tibetan"],
+a:0,
+e:"Afro-Asiatic is one of the major language super-families found in Africa."
+},
+
+{
+q:"Which language family includes many languages spoken in the Horn of Africa?",
+o:["Afro-Asiatic","Germanic","Romance","Slavic"],
+a:0,
+e:"Afro-Asiatic includes Cushitic, Omotic and Semitic languages spoken in the Horn of Africa."
+},
+
+{
+q:"Which Afro-Asiatic language group is mainly associated with the Horn of Africa?",
+o:["Cushitic","Germanic","Bantu","Khoisan"],
+a:0,
+e:"Cushitic languages are widely spoken in the Horn of Africa."
+},
+
+{
+q:"Which Afro-Asiatic language group is found mainly in Ethiopia?",
+o:["Omotic","Germanic","Bantu","Khoisan"],
+a:0,
+e:"Omotic languages are spoken mainly in southwestern Ethiopia."
+},
+
+{
+q:"Which major African language family includes Bantu languages?",
+o:["Niger-Congo","Afro-Asiatic only","Khoisan only","Indo-European"],
+a:0,
+e:"Bantu is a major branch of the Niger-Congo language family."
+},
+
+{
+q:"Which language is a Bantu language with strong Arabic influence?",
+o:["Swahili","Amharic","Arabic","Berber"],
+a:0,
+e:"Swahili is a Bantu language that developed strong Arabic influence through Indian Ocean trade."
+},
+
+{
+q:"Which groups are associated with the Khoisan language family?",
+o:["Khoikhoi and San","Mali and Ghana","Hausa and Kanuri","Berber and Arab"],
+a:0,
+e:"Khoikhoi and San are traditionally associated with Khoisan languages."
+},
+
+{
+q:"Where were Khoisan-speaking peoples historically concentrated?",
+o:["Southern Africa","Northern Europe","East Asia","South America"],
+a:0,
+e:"Khoisan-speaking peoples were historically concentrated in southern Africa."
+},
+
+{
+q:"Who ruled Egypt from 1250 to 1517?",
+o:["The Mamluks","The Romans","The Portuguese","The Songhay"],
+a:0,
+e:"The Mamluk dynasty ruled Egypt from 1250 until the Ottoman conquest in 1517."
+},
+
+{
+q:"What was one major economic activity of Mamluk Egypt?",
+o:["Agriculture and trade","Computer programming","Factory production","Air transportation"],
+a:0,
+e:"Agriculture and trade were important to the economy of Mamluk Egypt."
+},
+
+{
+q:"Which empire defeated the Mamluks in 1517?",
+o:["Ottoman Empire","Mali Empire","Songhay Empire","Ghana Empire"],
+a:0,
+e:"The Ottoman Turks defeated the Mamluks and occupied Egypt in 1517."
+},
+
+{
+q:"Where was the Funj Sultanate centered?",
+o:["Sennar in Sudan","Timbuktu","Gao","Kilwa"],
+a:0,
+e:"The Funj Sultanate established its capital at Sennar in present-day Sudan."
+},
+
+{
+q:"In which year was Sennar established as the capital of the Funj?",
+o:["1504","1250","1453","1591"],
+a:0,
+e:"The Funj Sultanate established Sennar as its capital in 1504."
+},
+
+{
+q:"Where did Islam originate?",
+o:["Arabian Peninsula","West Africa","Southern Africa","Europe"],
+a:0,
+e:"Islam originated in the Arabian Peninsula in the seventh century."
+},
+
+{
+q:"When did Islam originate?",
+o:["7th century AD","1st century BC","15th century AD","20th century AD"],
+a:0,
+e:"Islam emerged in the seventh century AD."
+},
+
+{
+q:"How did Islam spread into West Africa?",
+o:["Through trade, merchants and scholars","Only through European colonization","Only through farming","Through industrialization"],
+a:0,
+e:"Islam spread into West Africa largely through Trans-Saharan trade, merchants, scholars and rulers."
+},
+
+{
+q:"Which was an effect of Islam in West Africa?",
+o:["Growth of learning and trade","End of trade","End of cities","End of agriculture"],
+a:0,
+e:"Islam encouraged trade, literacy, scholarship and cultural connections."
+},
+
+{
+q:"Which West African empire became powerful through Trans-Saharan trade?",
+o:["Ghana","Rome","Byzantium","China"],
+a:0,
+e:"The Ghana Empire became wealthy and powerful partly by controlling Trans-Saharan trade."
+},
+
+{
+q:"Which two commodities were especially important in the Trans-Saharan trade?",
+o:["Gold and salt","Coal and oil","Tea and coffee","Silk and porcelain"],
+a:0,
+e:"Gold from West Africa and salt from the Sahara and North Africa were major trade goods."
+},
+
+{
+q:"Which people founded the Ghana Empire?",
+o:["Soninke","Shona","San","Khoikhoi"],
+a:0,
+e:"The Ghana Empire was founded by the Soninke people."
+},
+
+{
+q:"Which empire succeeded Ghana as a major West African power?",
+o:["Mali","Roman Empire","Mamluk Empire","Funj"],
+a:0,
+e:"The Mali Empire rose after the decline of Ghana."
+},
+
+{
+q:"Who founded the Mali Empire?",
+o:["Sundiata Keita","Mansa Musa","Askia Muhammad","Gutenberg"],
+a:0,
+e:"Sundiata Keita founded the Mali Empire in the 13th century."
+},
+
+{
+q:"Who was the most famous ruler of Mali?",
+o:["Mansa Musa","Sundiata only","Askia Muhammad","Sonni Ali"],
+a:0,
+e:"Mansa Musa was the most famous ruler of Mali."
+},
+
+{
+q:"When did Mansa Musa rule Mali?",
+o:["1312–1337","1250–1270","1453–1500","1591–1600"],
+a:0,
+e:"Mansa Musa ruled Mali from 1312 to 1337."
+},
+
+{
+q:"What famous journey did Mansa Musa make?",
+o:["Pilgrimage to Mecca","Voyage to China","Journey to Rome","Voyage to America"],
+a:0,
+e:"Mansa Musa made a famous pilgrimage to Mecca."
+},
+
+{
+q:"Which city became a major center of Islamic learning in Mali?",
+o:["Timbuktu","Rome","Cairo only","Sennar"],
+a:0,
+e:"Timbuktu became a famous center of Islamic scholarship and culture."
+},
+
+{
+q:"Which empire had its capital at Gao?",
+o:["Songhay","Mali","Ghana","Kongo"],
+a:0,
+e:"Gao was the capital and an important center of the Songhay Empire."
+},
+
+{
+q:"Which empire became powerful after Mali declined?",
+o:["Songhay","Mamluk","Funj","Kongo"],
+a:0,
+e:"Songhay became a major West African empire after Mali declined."
+},
+
+{
+q:"Which battle marked the defeat of Songhay by Moroccan forces?",
+o:["Battle of Tondibi","Battle of Adwa","Battle of Marathon","Battle of Hastings"],
+a:0,
+e:"Moroccan forces defeated Songhay at the Battle of Tondibi in 1591."
+},
+
+{
+q:"Which state developed around Lake Chad?",
+o:["Kanem-Bornu","Mali","Kongo","Great Zimbabwe"],
+a:0,
+e:"Kanem-Bornu developed around the Lake Chad region."
+},
+
+{
+q:"What was important to the economy of Kanem-Bornu?",
+o:["Trade","Industrial factories","Oil drilling","Modern banking"],
+a:0,
+e:"Trade was a major source of wealth and power for Kanem-Bornu."
+},
+
+{
+q:"Where did the Hausa city-states develop?",
+o:["Present-day northern Nigeria and surrounding areas","Southern Europe","East Asia","Southern America"],
+a:0,
+e:"Hausa city-states developed mainly in present-day northern Nigeria and nearby areas."
+},
+
+{
+q:"Which was a Hausa city-state?",
+o:["Kano","Cairo","Kilwa","Sennar"],
+a:0,
+e:"Kano was one of the major Hausa city-states."
+},
+
+{
+q:"Which activity was important among the Hausa?",
+o:["Textile and leather production","Shipbuilding only","Coal mining","Oil refining"],
+a:0,
+e:"Hausa economies included agriculture, trade, leatherwork and textile production."
+},
+
+{
+q:"Which kingdom developed along the lower Congo River?",
+o:["Kongo","Mali","Ghana","Songhay"],
+a:0,
+e:"The Kingdom of Kongo developed along the lower Congo River."
+},
+
+{
+q:"Who were the main people associated with the Kingdom of Kongo?",
+o:["Bantu-speaking peoples","San only","Berbers only","Arabs only"],
+a:0,
+e:"The Kingdom of Kongo was established by Bantu-speaking peoples."
+},
+
+{
+q:"What was an important economic activity in Kongo?",
+o:["Agriculture and trade","Industrial manufacturing","Oil production","Modern banking"],
+a:0,
+e:"Agriculture, trade, hunting and ironworking were important activities in Kongo."
+},
+
+{
+q:"What were the Swahili city-states located along?",
+o:["East African Indian Ocean coast","Atlantic coast of Europe","Mediterranean only","Nile Valley only"],
+a:0,
+e:"Swahili city-states developed along the East African Indian Ocean coast."
+},
+
+{
+q:"Which city was an important Swahili trading center?",
+o:["Kilwa","Gao","Kano","Sennar"],
+a:0,
+e:"Kilwa was one of the most important trading centers on the East African coast."
+},
+
+{
+q:"What was Kilwa especially famous for trading?",
+o:["Gold and ivory","Coal and oil","Silk and tea","Wheat and sugar only"],
+a:0,
+e:"Kilwa was strongly connected to the gold and ivory trade."
+},
+
+{
+q:"Swahili civilization developed mainly through interaction between:",
+o:["African, Arab and Persian peoples","European and American peoples only","Roman and Chinese peoples only","Indian and Japanese peoples only"],
+a:0,
+e:"Swahili civilization developed from African Bantu foundations and interactions with Arab and Persian traders."
+},
+
+{
+q:"Which African civilization is famous for massive stone structures?",
+o:["Great Zimbabwe","Ghana","Hausa","Mali"],
+a:0,
+e:"Great Zimbabwe is famous for its impressive stone walls and structures."
+},
+
+{
+q:"Which people built Great Zimbabwe?",
+o:["Shona-speaking Bantu peoples","Romans","Arabs","Berbers"],
+a:0,
+e:"Great Zimbabwe was built by Shona-speaking Bantu peoples."
+},
+
+{
+q:"Which activity contributed to Great Zimbabwe's wealth?",
+o:["Gold trade","Oil production","Industrial manufacturing","Modern banking"],
+a:0,
+e:"Gold mining and long-distance trade contributed greatly to Great Zimbabwe's wealth."
+},
+
+{
+q:"What does the name Zimbabwe refer to?",
+o:["Stone houses","Golden city","Great river","Land of salt"],
+a:0,
+e:"Zimbabwe is associated with a Shona term referring to stone houses."
+},
+
+{
+q:"Which state became important after Great Zimbabwe?",
+o:["Mwene Mutapa","Mali","Ghana","Songhay"],
+a:0,
+e:"Mwene Mutapa became a major Shona state after the period of Great Zimbabwe."
+},
+
+{
+q:"Which group traditionally practiced cattle and sheep herding in southern Africa?",
+o:["Khoikhoi","San","Songhay","Hausa"],
+a:0,
+e:"The Khoikhoi were traditionally pastoralists who kept cattle and sheep."
+},
+
+{
+q:"What was the traditional livelihood of the San?",
+o:["Hunting and gathering","Large-scale farming","Ocean trading","Industrial work"],
+a:0,
+e:"The San traditionally relied heavily on hunting and gathering."
+},
+
+{
+q:"What is one characteristic of many San languages?",
+o:["Clicking sounds","Latin grammar","Arabic script only","Chinese characters"],
+a:0,
+e:"Many San languages are known for their distinctive clicking sounds."
+},
+
+{
+q:"What does 'intra-continental' mean?",
+o:["Within a continent","Between continents","Outside Africa","Across oceans only"],
+a:0,
+e:"Intra-continental relations occur within the same continent."
+},
+
+{
+q:"What does 'inter-continental' mean?",
+o:["Between continents","Within one village","Within one kingdom","Inside one city"],
+a:0,
+e:"Inter-continental relations are relationships between different continents."
+},
+
+{
+q:"Which was an important form of African interregional relations?",
+o:["Trade","Only warfare","Only migration","Only religion"],
+a:0,
+e:"Trade was one of the most important forms of interaction among African regions."
+},
+
+{
+q:"What made desert caravan trade across the Sahara easier?",
+o:["Camels","Elephants only","Cars","Trains"],
+a:0,
+e:"Camels were especially useful because they could survive long periods with little water."
+},
+
+{
+q:"What was the main purpose of Trans-Saharan trade?",
+o:["Exchange of goods across the Sahara","Building factories","Air transportation","Modern tourism"],
+a:0,
+e:"Trans-Saharan trade connected North Africa with West and West-Central Africa through long-distance exchange."
+},
+
+{
+q:"Which region was especially famous for producing gold?",
+o:["West Africa","Northern Europe","Australia","East Asia"],
+a:0,
+e:"West Africa was an important source of gold for Trans-Saharan trade."
+},
+
+{
+q:"Which product was obtained in large quantities from the Sahara?",
+o:["Salt","Coffee","Rubber","Tea"],
+a:0,
+e:"Salt was a major product from the Sahara and was exchanged for gold and other goods."
+},
+
+{
+q:"What was one effect of Trans-Saharan trade?",
+o:["Growth of cities and states","End of political organization","Decline of all markets","End of Islam"],
+a:0,
+e:"Trade encouraged the growth of cities, wealth and powerful states."
+},
+
+{
+q:"Which religion spread strongly through Trans-Saharan trade?",
+o:["Islam","Buddhism","Shinto","Hinduism only"],
+a:0,
+e:"Muslim merchants and scholars helped spread Islam across West Africa."
+},
+
+{
+q:"Which outside peoples had long-standing trade contacts with East Africa?",
+o:["Arabs, Persians, Indians and Chinese","Only Romans","Only Americans","Only Australians"],
+a:0,
+e:"East African coastal communities participated in Indian Ocean trade with Arabs, Persians, Indians and Chinese."
+},
+
+{
+q:"Which European country became strongly involved in African coastal exploration in the 15th century?",
+o:["Portugal","Norway","Russia","Germany"],
+a:0,
+e:"Portugal became a major European power in African maritime exploration during the 15th century."
+},
+
+{
+q:"What was one major consequence of increasing Afro-European contact?",
+o:["Expansion of international trade","End of trade","End of African states immediately","End of navigation"],
+a:0,
+e:"Afro-European contact expanded international trade and eventually had major political and social consequences."
+},
+
+{
+q:"Which trade later expanded greatly as European overseas activity increased?",
+o:["Trans-Atlantic Slave Trade","Silk Road only","Spice trade only","Local cattle trade"],
+a:0,
+e:"European overseas expansion contributed to the development and expansion of the Trans-Atlantic Slave Trade."
+}
+
+];
+
+let score=0;
+let answered=0;
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+    card.className="card question";
+
+    card.innerHTML=`
+    <h3>Question ${index+1} / ${questions.length}</h3>
+    <p><strong>${item.q}</strong></p>
+    <div id="options${index}"></div>
+    <div id="result${index}" class="result"></div>
+    `;
+
+    quiz.appendChild(card);
+
+    const box=document.getElementById("options"+index);
+
+    item.o.forEach((option,i)=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="option";
+
+        btn.innerText=
+        String.fromCharCode(65+i)+". "+option;
+
+        btn.onclick=()=>{
+            checkAnswer(index,i,btn,box);
+        };
+
+        box.appendChild(btn);
+    });
+
+});
+
+
+function checkAnswer(index,selected,button,box){
+
+    const result=document.getElementById("result"+index);
+
+    if(result.dataset.done==="true") return;
+
+    result.dataset.done="true";
+
+    answered++;
+
+    const correct=questions[index].a;
+
+    const buttons=box.querySelectorAll(".option");
+
+    buttons.forEach((btn,i)=>{
+
+        btn.disabled=true;
+
+        if(i===correct){
+            btn.classList.add("correct");
+        }
+
+    });
+
+    if(selected===correct){
+
+        score++;
+
+        result.className="result right";
+
+        result.innerHTML=`
+        <strong>✅ RIGHT!</strong>
+        <div>
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        </div>
+        `;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        result.className="result wrongResult";
+
+        result.innerHTML=`
+        <strong>❌ WRONG!</strong>
+        <div>
+        <strong>Correct Answer:</strong>
+        ${questions[index].o[correct]}
+        <br><br>
+        <strong>Explanation:</strong><br>
+        ${questions[index].e}
+        </div>
+        `;
+    }
+
+    result.style.display="block";
+
+    updateProgress();
+
+    if(answered===questions.length){
+        showFinal();
+    }
+}
+
+
+function updateProgress(){
+
+    document.getElementById("progress").innerText=
+    "Answered: "+answered+
+    " / "+questions.length+
+    " | Score: "+score;
+}
+
+
+function showFinal(){
+
+    const percent=Math.round(
+        (score/questions.length)*100
+    );
+
+    document.getElementById("finalScore").innerText=
+    score+" / "+questions.length;
+
+    let message;
+
+    if(percent>=90){
+
+        message="🏆 Excellent! You mastered Unit 5.";
+
+    }else if(percent>=75){
+
+        message="👏 Very Good! Review the questions you missed.";
+
+    }else if(percent>=50){
+
+        message="👍 Good effort! Read Unit 5 again and practice.";
+
+    }else{
+
+        message="📖 Keep studying! Review the Unit 5 notes and try again.";
+    }
+
+    document.getElementById("message").innerText=
+    percent+"% — "+message;
+}
+
+</script>
+
+</body>
+</html>
