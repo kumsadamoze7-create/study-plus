@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 English Unit 3 - Comparison Practice</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#ea580c,#c2410c);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:18px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.question{
+    border-left:6px solid #ea580c;
+}
+
+.question h3{
+    color:#c2410c;
+    line-height:1.5;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:9px 0;
+    border:none;
+    border-radius:9px;
+    background:#f3f4f6;
+    color:#222;
+    text-align:left;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#fed7aa;
+}
+
+.correct{
+    background:#bbf7d0 !important;
+    color:#166534 !important;
+}
+
+.wrong{
+    background:#fecaca !important;
+    color:#991b1b !important;
+}
+
+.explanation{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    line-height:1.6;
+}
+
+.result{
+    font-weight:bold;
+    font-size:18px;
+    margin-top:10px;
+}
+
+.scoreBox{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 2px 8px #bbb;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.restart{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    background:#ea580c;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🇬🇧 Grade 9 English</h1>
+<p>Unit 3 — Comparison</p>
+<p>🔥 100 Difficult Multiple Choice Questions</p>
+</header>
+
+<div class="container">
+
+<div class="scoreBox">
+    <div>📊 Score: <span id="score">0</span> / 100</div>
+    <div>Answered: <span id="answered">0</span> / 100</div>
+</div>
+
+<div id="quiz"></div>
+
+<button class="restart" onclick="location.reload()">
+🔄 Restart Practice
+</button>
+
+<button class="back" onclick="location.href='grade9.html'">
+← Back to Grade 9
+</button>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"1. My brother is _____ than I expected him to be.",
+a:["more taller","taller","the tallest","most tall"],
+c:1,
+e:"The comparative form of 'tall' is 'taller'. We use the comparative when comparing two people or things."
+},
+
+{
+q:"2. This is _____ book I have ever read.",
+a:["more interesting","most interesting","the most interesting","the more interesting"],
+c:2,
+e:"When comparing one thing with all members of a group, use the superlative with 'the': the most interesting."
+},
+
+{
+q:"3. Sara is _____ intelligent than her sister.",
+a:["more","most","much","the most"],
+c:0,
+e:"'Intelligent' is a long adjective, so its comparative form is 'more intelligent'."
+},
+
+{
+q:"4. Which sentence is grammatically correct?",
+a:["He is more taller than me.","He is taller than me.","He is tallest than me.","He is more tall than me."],
+c:1,
+e:"For the short adjective 'tall', use 'taller', not 'more taller' or 'more tall'."
+},
+
+{
+q:"5. The second examination was _____ difficult than the first.",
+a:["most","more","the most","much most"],
+c:1,
+e:"Two examinations are being compared, so the comparative 'more difficult' is required."
+},
+
+{
+q:"6. Of all the students, Hana runs _____.",
+a:["faster","fastest","the fastest","more fast"],
+c:2,
+e:"'Of all the students' indicates a group of more than two, so the superlative 'the fastest' is correct."
+},
+
+{
+q:"7. This road is _____ than the old one.",
+a:["narrow","narrower","the narrowest","most narrow"],
+c:1,
+e:"'Narrow' commonly forms the comparative with '-er': narrower."
+},
+
+{
+q:"8. Addis Ababa is _____ than many other Ethiopian cities.",
+a:["large","larger","the largest","most largest"],
+c:1,
+e:"The sentence compares Addis Ababa with other cities, so the comparative 'larger' is appropriate."
+},
+
+{
+q:"9. This is one of _____ buildings in the city.",
+a:["tallest","the tallest","the taller","most tall"],
+c:1,
+e:"The structure is 'one of the + superlative + plural noun'."
+},
+
+{
+q:"10. Which is _____, mathematics or physics?",
+a:["difficult","more difficult","most difficult","the most difficult"],
+c:1,
+e:"Only two subjects are compared, so use the comparative 'more difficult'."
+},
+
+{
+q:"11. My new phone is _____ expensive than my old phone.",
+a:["less","least","the least","little"],
+c:0,
+e:"'Less expensive than' means that the new phone has a lower price."
+},
+
+{
+q:"12. This is _____ expensive phone in the shop.",
+a:["less","the less","least","the least"],
+c:3,
+e:"For the lowest degree among a group, use 'the least + adjective'."
+},
+
+{
+q:"13. The weather is becoming _____.",
+a:["hotter and hotter","more hotter","the hottest","hot and hot"],
+c:0,
+e:"Gradual change with a short adjective uses 'comparative + and + comparative': hotter and hotter."
+},
+
+{
+q:"14. The situation is becoming _____.",
+a:["more difficult and more difficult","more and more difficult","most and most difficult","difficultest"],
+c:1,
+e:"For long adjectives, gradual change is expressed with 'more and more + adjective'."
+},
+
+{
+q:"15. _____ you practice, _____ you become.",
+a:["The more / the better","More / better","The most / the best","More / the better"],
+c:0,
+e:"The correlative comparative structure is 'the + comparative, the + comparative'."
+},
+
+{
+q:"16. The harder you work, _____.",
+a:["you become better","the better you become","you better become","the best you become"],
+c:1,
+e:"The correct correlative structure is 'The harder..., the better...'."
+},
+
+{
+q:"17. Abebe is _____ as his brother.",
+a:["as tall","so tall","more tall","the tallest"],
+c:0,
+e:"Equal comparison uses 'as + adjective + as'."
+},
+
+{
+q:"18. This car is not _____ that one.",
+a:["as expensive as","more expensive as","so expensive than","as expensive than"],
+c:0,
+e:"Negative equal comparison is 'not as + adjective + as'."
+},
+
+{
+q:"19. She speaks English _____ than I do.",
+a:["more fluently","most fluently","more fluent","the most fluent"],
+c:0,
+e:"'Fluently' is an adverb, and the comparative is 'more fluently'."
+},
+
+{
+q:"20. He drives _____ than his father.",
+a:["careful","more carefully","most carefully","carefuller"],
+c:1,
+e:"'Carefully' is an adverb ending in -ly, so use 'more carefully'."
+},
+
+{
+q:"21. Of the three students, Dawit writes _____.",
+a:["more carefully","the most carefully","most careful","carefullest"],
+c:1,
+e:"Three students are compared, so use the superlative adverb 'the most carefully'."
+},
+
+{
+q:"22. She sings _____ than her sister.",
+a:["beautifully","more beautifully","most beautifully","more beautiful"],
+c:1,
+e:"'Beautifully' is an adverb. Its comparative form is 'more beautifully'."
+},
+
+{
+q:"23. He runs _____ than everyone else.",
+a:["fast","faster","the fastest","more fast"],
+c:2,
+e:"'Everyone else' indicates comparison with a whole group, requiring the superlative 'the fastest'."
+},
+
+{
+q:"24. Which is correct?",
+a:["She works more hard than me.","She works harder than me.","She works hardest than me.","She works more harder than me."],
+c:1,
+e:"The adverb 'hard' has the comparative form 'harder'."
+},
+
+{
+q:"25. My sister studies _____ than I do.",
+a:["harder","more hard","hardest","the harder"],
+c:0,
+e:"'Hard' is an adverb that takes '-er': harder."
+},
+
+{
+q:"26. She arrived _____ than everyone else.",
+a:["early","earlier","the earliest","more early"],
+c:1,
+e:"When comparing arrival times, 'earlier' is the comparative of 'early'."
+},
+
+{
+q:"27. Of all the runners, he arrived _____.",
+a:["earlier","the earliest","most early","more early"],
+c:1,
+e:"Among all runners requires the superlative 'the earliest'."
+},
+
+{
+q:"28. This problem is _____ than I thought.",
+a:["bad","worse","worst","the worst"],
+c:1,
+e:"The irregular comparative form of 'bad' is 'worse'."
+},
+
+{
+q:"29. That was _____ mistake I have ever made.",
+a:["bad","worse","the worst","worst than"],
+c:2,
+e:"The superlative form of 'bad' is 'the worst'."
+},
+
+{
+q:"30. Your answer is _____ than mine.",
+a:["good","better","best","the best"],
+c:1,
+e:"The irregular comparative of 'good' is 'better'."
+},
+
+{
+q:"31. She is _____ student in the class.",
+a:["better","the best","goodest","more good"],
+c:1,
+e:"The superlative of 'good' is 'the best'."
+},
+
+{
+q:"32. I have _____ money than you.",
+a:["less","fewer","least","few"],
+c:0,
+e:"Money is uncountable, so use 'less', not 'fewer'."
+},
+
+{
+q:"33. There are _____ students in this class than in that class.",
+a:["less","fewer","least","little"],
+c:1,
+e:"Students are countable, so use 'fewer'."
+},
+
+{
+q:"34. We have _____ time than we need.",
+a:["fewer","less","few","least"],
+c:1,
+e:"Time is uncountable, so 'less time' is correct."
+},
+
+{
+q:"35. There are _____ books on this shelf than on that shelf.",
+a:["less","fewer","little","least"],
+c:1,
+e:"Books are countable, therefore 'fewer books' is correct."
+},
+
+{
+q:"36. He can run _____ than his brother.",
+a:["fast","faster","fastest","the fastest"],
+c:1,
+e:"After a modal, use the base verb 'run', but the adverb can still be comparative: run faster."
+},
+
+{
+q:"37. She should study _____.",
+a:["harder","hardest","more harder","the hardest"],
+c:0,
+e:"After the modal 'should', use the base verb 'study'. The comparative adverb is 'harder'."
+},
+
+{
+q:"38. You must drive _____.",
+a:["more carefully","more careful","most carefully","carefuller"],
+c:0,
+e:"'Drive' requires an adverb. 'Carefully' becomes 'more carefully'."
+},
+
+{
+q:"39. He can speak English _____ than before.",
+a:["more fluently","more fluent","most fluently","fluentlyer"],
+c:0,
+e:"'Speak' is modified by the adverb 'fluently', whose comparative is 'more fluently'."
+},
+
+{
+q:"40. Which sentence is correct?",
+a:["He can runs faster.","He can run faster.","He can running faster.","He can ran faster."],
+c:1,
+e:"Modal verbs such as can are followed by the base form of the verb: can run."
+},
+
+{
+q:"41. This box is _____ heavy for the child to lift.",
+a:["too","enough","so enough","more"],
+c:0,
+e:"'Too + adjective + to-infinitive' expresses excessive degree."
+},
+
+{
+q:"42. The child is strong _____ to lift the box.",
+a:["too","enough","very enough","more"],
+c:1,
+e:"The correct structure is 'adjective + enough + to-infinitive'."
+},
+
+{
+q:"43. We have _____ food for everyone.",
+a:["enough","food enough","too enough","more enough"],
+c:0,
+e:"Before a noun, use 'enough + noun': enough food."
+},
+
+{
+q:"44. She is _____ intelligent to understand the problem.",
+a:["enough","intelligent enough","too enough","more enough"],
+c:1,
+e:"After an adjective, 'enough' comes after the adjective: intelligent enough."
+},
+
+{
+q:"45. It was _____ difficult problem that many students failed.",
+a:["so","such a","such","too"],
+c:1,
+e:"Before a singular countable noun phrase, use 'such a + adjective + noun'."
+},
+
+{
+q:"46. The problem was _____ difficult that many students failed.",
+a:["such","so","such a","too a"],
+c:1,
+e:"The structure is 'so + adjective + that'."
+},
+
+{
+q:"47. He is _____ better than he was last year.",
+a:["much","very","most","the most"],
+c:0,
+e:"'Much' can intensify a comparative adjective: much better."
+},
+
+{
+q:"48. This is _____ more difficult than the previous question.",
+a:["much","very","most","the most"],
+c:0,
+e:"'Much more difficult' is the correct intensive comparative structure."
+},
+
+{
+q:"49. The second question is _____ harder than the first.",
+a:["even","most","the most","very much most"],
+c:0,
+e:"'Even' can emphasize a comparative: even harder."
+},
+
+{
+q:"50. This is _____ by far the best solution.",
+a:["the","very","—","more"],
+c:2,
+e:"The phrase is 'by far the best'. The superlative already contains 'the', so no extra word is needed before 'by far'."
+},
+
+{
+q:"51. Which sentence correctly uses 'one of'?",
+a:["He is one of the best student.","He is one of best students.","He is one of the best students.","He is one of the better student."],
+c:2,
+e:"The structure is 'one of the + superlative + plural noun'."
+},
+
+{
+q:"52. Which is correct?",
+a:["This is one of the most beautiful place.","This is one of most beautiful places.","This is one of the most beautiful places.","This is one of the more beautiful place."],
+c:2,
+e:"After 'one of the most', use a plural noun: places."
+},
+
+{
+q:"53. Which sentence is correct?",
+a:["He is more taller than me.","He is much taller than me.","He is much more taller than me.","He is very taller than me."],
+c:1,
+e:"'Much' can modify a comparative, but do not use double comparative forms."
+},
+
+{
+q:"54. Which is correct?",
+a:["This is more easier.","This is much easier.","This is very easier.","This is most easier."],
+c:1,
+e:"The comparative of 'easy' is 'easier'. 'Much easier' is correct."
+},
+
+{
+q:"55. The word 'more' is normally used with _____.",
+a:["all short adjectives","long adjectives","only irregular adjectives","only nouns"],
+c:1,
+e:"Long adjectives commonly form comparisons with 'more' and 'most'."
+},
+
+{
+q:"56. Which adjective correctly changes from happy?",
+a:["happyer","more happy","happier","happiest than"],
+c:2,
+e:"Consonant + y changes y to i before -er: happier."
+},
+
+{
+q:"57. The comparative of 'big' is _____.",
+a:["biger","bigger","more big","biggest"],
+c:1,
+e:"'Big' follows the CVC rule, so the final consonant is doubled: bigger."
+},
+
+{
+q:"58. The superlative of 'hot' is _____.",
+a:["hotest","hottest","most hot","more hot"],
+c:1,
+e:"'Hot' follows the CVC rule: hottest."
+},
+
+{
+q:"59. Which is correct?",
+a:["largeer","larger","more larger","largest than"],
+c:1,
+e:"When an adjective ends in e, add only -r: larger."
+},
+
+{
+q:"60. The superlative of 'nice' is _____.",
+a:["niceest","the nicest","the most nice","more nicest"],
+c:1,
+e:"For adjectives ending in e, add -st: the nicest."
+},
+
+{
+q:"61. Which sentence correctly uses 'as ... as'?",
+a:["He is as taller as me.","He is as tall as me.","He is so tall than me.","He is more tall as me."],
+c:1,
+e:"Equal comparison uses 'as + base adjective + as'."
+},
+
+{
+q:"62. Which is correct?",
+a:["She is not as fast than him.","She is not as faster as him.","She is not as fast as him.","She is not faster as him."],
+c:2,
+e:"Negative equal comparison uses 'not as + base adjective + as'."
+},
+
+{
+q:"63. Which sentence compares two things correctly?",
+a:["A is the better than B.","A is better than B.","A is best than B.","A is more better than B."],
+c:1,
+e:"For two things, use the comparative: better than."
+},
+
+{
+q:"64. Which sentence compares three students correctly?",
+a:["Hana is taller than all.","Hana is the tallest of the three.","Hana is taller of the three.","Hana is more tallest of the three."],
+c:1,
+e:"When one member is highest among three, use the superlative 'the tallest'."
+},
+
+{
+q:"65. My car is _____ than yours, but yours is more comfortable.",
+a:["fast","faster","the fastest","more fast"],
+c:1,
+e:"Two cars are compared, so 'faster' is required."
+},
+
+{
+q:"66. Which is correct?",
+a:["The Nile is longer than any river.","The Nile is the longest river.","The Nile is longest than rivers.","The Nile is more longest river."],
+c:1,
+e:"When identifying the highest degree in a group, use 'the longest'."
+},
+
+{
+q:"67. Which sentence has an incorrect double comparative?",
+a:["This road is longer.","This book is more interesting.","He is much better.","This problem is more easier."],
+c:3,
+e:"'Easier' is already comparative. Do not say 'more easier'."
+},
+
+{
+q:"68. Which sentence has an incorrect double superlative?",
+a:["the most beautiful","the tallest","the most easiest","the best"],
+c:2,
+e:"'Easiest' is already superlative. The correct form is 'the easiest', not 'the most easiest'."
+},
+
+{
+q:"69. She works _____ than anyone in the office.",
+a:["more efficiently","most efficiently","efficient","the most efficient"],
+c:0,
+e:"'Works' needs an adverb. 'Efficiently' becomes 'more efficiently' for comparison."
+},
+
+{
+q:"70. She is _____ worker in the office.",
+a:["more efficient","the most efficient","most efficiently","efficienter"],
+c:1,
+e:"'Worker' is a noun, so it is described by the adjective 'efficient'. Superlative: the most efficient."
+},
+
+{
+q:"71. Which sentence correctly uses adjective and adverb?",
+a:["She is careful and drives carefully.","She is carefully and drives careful.","She is more carefully and drives more careful.","She is careful and drives careful."],
+c:0,
+e:"'Careful' describes the person; 'carefully' describes how she drives."
+},
+
+{
+q:"72. Which is correct?",
+a:["He speaks more fluent than me.","He speaks more fluently than me.","He speaks fluenter than me.","He speaks most fluent than me."],
+c:1,
+e:"The verb 'speaks' needs the adverb 'fluently'; comparative: more fluently."
+},
+
+{
+q:"73. Which is correct?",
+a:["She looks more beautiful than her sister.","She looks more beautifully than her sister.","She looks beautifuler than her sister.","She looks most beautiful than her sister."],
+c:0,
+e:"Here 'beautiful' describes how she appears/looks, so the adjective 'more beautiful' is correct."
+},
+
+{
+q:"74. Which sentence is correct?",
+a:["He feels badly than before.","He feels worse than before.","He feels more worse than before.","He feels worst than before."],
+c:1,
+e:"The irregular comparative of 'bad' is 'worse'."
+},
+
+{
+q:"75. She performed _____ than expected.",
+a:["better","best","the best","gooder"],
+c:0,
+e:"'Well' has the irregular comparative 'better'."
+},
+
+{
+q:"76. Of everyone in the competition, she performed _____.",
+a:["better","the best","best than","more better"],
+c:1,
+e:"Among a group, use the superlative 'the best'."
+},
+
+{
+q:"77. Which sentence is correct?",
+a:["He has less books than me.","He has fewer books than me.","He has least books than me.","He has little books than me."],
+c:1,
+e:"Books are countable, so 'fewer books' is correct."
+},
+
+{
+q:"78. Which sentence is correct?",
+a:["We need fewer water.","We need less water.","We need less waters.","We need the fewer water."],
+c:1,
+e:"Water is uncountable, so use 'less water'."
+},
+
+{
+q:"79. Which is correct?",
+a:["a fewer amount of money","a smaller amount of money","a less number of students","a fewer number of water"],
+c:1,
+e:"Money is uncountable, so 'a smaller amount of money' is appropriate."
+},
+
+{
+q:"80. Which is correct?",
+a:["a smaller number of students","a smaller amount of students","a less number of students","a fewer amount of students"],
+c:0,
+e:"Students are countable, so use 'a number of students'."
+},
+
+{
+q:"81. The more carefully you listen, _____.",
+a:["you understand more","the more you understand","you more understand","the most you understand"],
+c:1,
+e:"The correct correlative comparative structure is 'The more..., the more...'."
+},
+
+{
+q:"82. The less you sleep, _____.",
+a:["the more tired you become","more tired you become","you become the most tired","the most tired you become"],
+c:0,
+e:"The structure is 'The + comparative, the + comparative'."
+},
+
+{
+q:"83. Which sentence shows gradual increase?",
+a:["The weather is hot.","The weather is hotter.","The weather is getting hotter and hotter.","The weather is the hottest."],
+c:2,
+e:"'Comparative + and + comparative' expresses gradual change."
+},
+
+{
+q:"84. Which sentence shows gradual change with a long adjective?",
+a:["more difficult and difficult","difficult and difficult","more and more difficult","most and most difficult"],
+c:2,
+e:"Long adjectives use 'more and more + adjective'."
+},
+
+{
+q:"85. Which sentence is correct?",
+a:["The more expensive it is, the more good it is.","The more expensive it is, the better it is.","More expensive, more better.","The most expensive, the better."],
+c:1,
+e:"The correct correlative comparison uses 'the more..., the better...'."
+},
+
+{
+q:"86. Which sentence uses a modal correctly?",
+a:["You should to work harder.","You should working harder.","You should work harder.","You should worked harder."],
+c:2,
+e:"Modal verbs are followed by the base form: should work."
+},
+
+{
+q:"87. Which sentence is correct?",
+a:["He might be taller than me.","He might is taller than me.","He might be more taller than me.","He might being taller than me."],
+c:0,
+e:"After 'might', use the base verb 'be'. 'Taller' is the comparative."
+},
+
+{
+q:"88. Which sentence is correct?",
+a:["She must studies harder.","She must study harder.","She must studied harder.","She must studying harder."],
+c:1,
+e:"After 'must', use the base verb 'study'."
+},
+
+{
+q:"89. Which sentence correctly combines tense and comparison?",
+a:["He is taller than he was last year.","He taller than he was last year.","He is more taller than he was.","He is tallest than last year."],
+c:0,
+e:"The present simple 'is' describes the current state, while 'was' refers to the past."
+},
+
+{
+q:"90. Which sentence is grammatically correct?",
+a:["She has become more confident than before.","She has become more confidently than before.","She has became more confident than before.","She become more confident than before."],
+c:0,
+e:"Present perfect uses 'has + past participle': has become. 'Confident' is an adjective after 'become'."
+},
+
+{
+q:"91. Which sentence correctly uses the past tense and comparison?",
+a:["He was taller than his brother when they were young.","He were taller than his brother.","He was more taller than his brother.","He was tallest than his brother."],
+c:0,
+e:"Past simple 'was' is correct, and 'taller than' is the comparative structure."
+},
+
+{
+q:"92. Which sentence correctly uses future tense and comparison?",
+a:["She will be more successful than before.","She will more successful than before.","She will be most successful than before.","She will be successfuller than before."],
+c:0,
+e:"Future with 'will' uses 'will + base verb': will be. 'Successful' takes 'more'."
+},
+
+{
+q:"93. Which sentence is correct?",
+a:["This exam is difficult than the last one.","This exam is more difficult than the last one.","This exam is most difficult than the last one.","This exam is difficultest than the last one."],
+c:1,
+e:"'Difficult' is a long adjective, so use 'more difficult than'."
+},
+
+{
+q:"94. Which sentence is correct?",
+a:["He is the most intelligent student in the class.","He is more intelligent student in the class.","He is most intelligent than all.","He is the intelligentest student."],
+c:0,
+e:"The superlative of 'intelligent' is 'the most intelligent'."
+},
+
+{
+q:"95. Which sentence is correct?",
+a:["This is the less expensive of the three.","This is the least expensive of the three.","This is less expensive of the three.","This is least expensive than the three."],
+c:1,
+e:"For the lowest degree among three or more, use 'the least + adjective'."
+},
+
+{
+q:"96. Which sentence is correct?",
+a:["He is one of the fastest runner.","He is one of the fastest runners.","He is one of fastest runners.","He is one of the faster runners."],
+c:1,
+e:"The structure is 'one of the + superlative + plural noun'."
+},
+
+{
+q:"97. Which sentence is correct?",
+a:["This is by far the more difficult question.","This is by far the most difficult question.","This is by far difficultest question.","This is by far more difficultest question."],
+c:1,
+e:"'By far' strongly emphasizes a superlative: by far the most difficult."
+},
+
+{
+q:"98. Which sentence is correct?",
+a:["The new system is far more efficient than the old one.","The new system is far most efficient than the old one.","The new system is very more efficient than the old one.","The new system is far more efficiently than the old one."],
+c:0,
+e:"'Far more + adjective' correctly intensifies the comparative 'more efficient'."
+},
+
+{
+q:"99. Which sentence contains the correct comparison?",
+a:["Although both are good, this one is the better of the two.","Although both are good, this one is the best of the two.","Although both are good, this one is more best.","Although both are good, this one is goodest."],
+c:0,
+e:"When comparing two things, 'the better of the two' is correct."
+},
+
+{
+q:"100. Choose the grammatically correct sentence.",
+a:[
+"The more harder you study, the more better you become.",
+"The harder you study, the better you become.",
+"The hardest you study, the best you become.",
+"The more hard you study, the more good you become."
+],
+c:1,
+e:"The correct correlative comparative structure is 'The harder you study, the better you become.' Both 'harder' and 'better' are already comparative forms."
+}
+
+];
+
+
+let score=0;
+let answered=0;
+
+function loadQuiz(){
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+
+const card=document.createElement("div");
+
+card.className="card question";
+
+let html=`<h3>${item.q}</h3>`;
+
+item.a.forEach((option,i)=>{
+
+html+=`
+<button
+class="option"
+onclick="checkAnswer(${index},${i},this)">
+${String.fromCharCode(65+i)}. ${option}
+</button>
+`;
+
+});
+
+html+=`
+<div id="exp${index}" class="explanation">
+<strong>Explanation:</strong><br>
+${item.e}
+</div>
+
+<div id="res${index}" class="result"></div>
+`;
+
+card.innerHTML=html;
+
+quiz.appendChild(card);
+
+});
+
+}
+
+function checkAnswer(qIndex,selected,button){
+
+const card=button.closest(".question");
+
+const buttons=card.querySelectorAll(".option");
+
+const result=document.getElementById("res"+qIndex);
+
+const explanation=document.getElementById("exp"+qIndex);
+
+if(card.dataset.answered==="true"){
+return;
+}
+
+card.dataset.answered="true";
+
+answered++;
+
+document.getElementById("answered").textContent=answered;
+
+buttons.forEach((btn,i)=>{
+
+btn.disabled=true;
+
+if(i===questions[qIndex].c){
+btn.classList.add("correct");
+}
+
+});
+
+if(selected===questions[qIndex].c){
+
+score++;
+
+document.getElementById("score").textContent=score;
+
+result.innerHTML="✅ RIGHT!";
+
+result.style.color="#16a34a";
+
+}else{
+
+button.classList.add("wrong");
+
+result.innerHTML="❌ WRONG!";
+
+result.style.color="#dc2626";
+
+}
+
+explanation.style.display="block";
+
+}
+
+loadQuiz();
+
+</script>
+
+</body>
+</html>
