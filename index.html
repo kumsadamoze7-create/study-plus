@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Study Plus</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -14,419 +19,472 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#f5f7ff;
-    color:#172033;
+    background:#f4f7fb;
+    color:#222;
 }
 
 /* HEADER */
+
 header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
-    padding:42px 20px 65px;
     text-align:center;
-    border-radius:0 0 35px 35px;
+    padding:35px 20px;
+    border-radius:0 0 28px 28px;
 }
 
 .logo{
-    width:82px;
-    height:82px;
+    width:75px;
+    height:75px;
     margin:auto;
-    border-radius:24px;
+    border-radius:20px;
     background:white;
+    color:#2563eb;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:42px;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+    font-size:40px;
+    box-shadow:0 5px 15px #0003;
 }
 
 header h1{
-    margin:16px 0 8px;
-    font-size:34px;
+    margin:15px 0 5px;
+    font-size:32px;
 }
 
 header p{
-    margin:6px 0;
-    opacity:.95;
+    margin:5px 0;
+    opacity:.9;
 }
 
-/* MAIN */
+/* CONTAINER */
+
 .container{
     max-width:900px;
     margin:auto;
     padding:20px;
 }
 
-/* HERO */
-.hero{
-    background:white;
-    margin-top:-35px;
-    padding:28px 22px;
-    border-radius:24px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.10);
-}
-
-.hero h2{
-    margin-top:0;
-    color:#2563eb;
-    font-size:25px;
-}
-
-.hero p{
-    color:#64748b;
-    line-height:1.7;
-}
-
-.start{
-    width:100%;
-    padding:17px;
-    margin-top:12px;
-    border:0;
-    border-radius:14px;
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 6px 15px rgba(22,163,74,.25);
-}
-
-.start:active{
-    transform:scale(.98);
-}
-
-/* QUICK MENU */
-.quick-title{
-    margin:30px 0 15px;
-    font-size:21px;
-}
-
-.quick-menu{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-}
-
-.quick{
-    background:white;
-    padding:20px 12px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
-}
-
-.quick-icon{
-    font-size:30px;
-    display:block;
-    margin-bottom:8px;
-}
-
-.quick h3{
-    margin:5px 0;
-    font-size:16px;
-}
-
-.quick p{
-    margin:5px 0;
-    color:#64748b;
-    font-size:13px;
-}
-
-/* GRADES */
-.grades{
-    display:none;
-    margin-top:30px;
-}
+/* SECTION TITLE */
 
 .section-title{
-    text-align:center;
-    color:#2563eb;
-    margin-bottom:18px;
+    font-size:22px;
+    margin:10px 0 15px;
+    color:#172554;
 }
+
+/* CARDS */
+
+.card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:18px;
+    box-shadow:0 4px 12px #0002;
+}
+
+.card h2{
+    margin:0 0 8px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.5;
+}
+
+/* GRADE BUTTONS */
 
 .grade{
-    background:white;
-    padding:23px;
-    margin:15px 0;
-    border-radius:20px;
-    box-shadow:0 5px 16px rgba(0,0,0,.08);
-    border-left:6px solid #2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px;
+    margin:12px 0;
+    border-radius:15px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 4px 10px #0002;
 }
 
-.grade:nth-child(3){
-    border-left-color:#16a34a;
+.grade span{
+    font-size:17px;
 }
 
-.grade:nth-child(4){
-    border-left-color:#ea580c;
+.grade-icon{
+    font-size:28px;
 }
 
-.grade:nth-child(5){
-    border-left-color:#7c3aed;
+.grade9{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
 }
 
-.grade h3{
-    margin:0 0 10px;
-    font-size:22px;
+.grade10{
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
 }
 
-.grade p{
-    color:#64748b;
-    line-height:1.6;
+.grade11{
+    background:linear-gradient(135deg,#059669,#10b981);
 }
 
-.grade-button{
-    width:100%;
-    padding:14px;
-    border:0;
-    border-radius:12px;
-    background:#2563eb;
+.grade12{
+    background:linear-gradient(135deg,#dc2626,#f43f5e);
+}
+
+/* MAIN MENU */
+
+.menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.menu button{
+    border:none;
+    padding:20px 10px;
+    border-radius:16px;
     color:white;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    box-shadow:0 4px 10px #0002;
 }
 
-.grade-button:active{
-    transform:scale(.98);
+.menu button:hover{
+    opacity:.9;
 }
 
-.coming{
-    background:#f1f5f9;
-    color:#64748b;
-    padding:13px;
-    border-radius:10px;
-    text-align:center;
+.notes{
+    background:#7c3aed;
+}
+
+.practice{
+    background:#16a34a;
+}
+
+.exam{
+    background:#ea580c;
+}
+
+.home{
+    background:#2563eb;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:white;
+    border-top:1px solid #ddd;
+    display:flex;
+    justify-content:space-around;
+    padding:10px 5px;
+    box-shadow:0 -3px 10px #0002;
+}
+
+.bottom-nav button{
+    border:none;
+    background:none;
+    font-size:12px;
+    color:#555;
+    cursor:pointer;
+}
+
+.bottom-nav .active{
+    color:#2563eb;
     font-weight:bold;
 }
 
-/* FOOTER */
-footer{
-    margin-top:40px;
-    padding:30px 20px;
-    background:#172554;
-    color:white;
-    text-align:center;
+.nav-icon{
+    display:block;
+    font-size:22px;
+    margin-bottom:3px;
 }
 
-footer p{
-    margin:7px;
+/* FOOTER SPACE */
+
+.footer-space{
+    height:75px;
 }
 
 /* MOBILE */
-@media(max-width:500px){
+
+@media(max-width:600px){
 
     header h1{
-        font-size:30px;
+        font-size:28px;
     }
 
-    .quick-menu{
+    .menu{
         grid-template-columns:1fr 1fr;
     }
 
-    .hero{
-        padding:24px 18px;
-    }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-    <div class="logo">
-        📚
-    </div>
+<div class="logo">
+    📚
+</div>
 
-    <h1>Study Plus</h1>
+<h1>Study Plus</h1>
 
-    <p>Learn • Practice • Improve</p>
-
-    <p>Prepare Today • Succeed Tomorrow 🚀</p>
+<p>Learn • Practice • Prepare</p>
 
 </header>
 
 
 <div class="container">
 
-    <!-- HERO -->
 
-    <div class="hero">
+<!-- GRADES -->
 
-        <h2>🎓 Welcome to Study Plus</h2>
-
-        <p>
-            Your learning platform for Ethiopian students.
-            Study lessons, practice questions and prepare
-            yourself for your future.
-        </p>
-
-        <button
-            class="start"
-            onclick="showGrades()">
-
-            🚀 Start Learning
-
-        </button>
-
-    </div>
+<h2 class="section-title">
+🎓 Choose Your Grade
+</h2>
 
 
-    <!-- QUICK MENU -->
-
-    <h2 class="quick-title">
-        📌 Quick Menu
-    </h2>
-
-    <div class="quick-menu">
-
-        <div class="quick">
-            <span class="quick-icon">📖</span>
-            <h3>Notes</h3>
-            <p>Study your lessons</p>
-        </div>
-
-        <div class="quick">
-            <span class="quick-icon">📝</span>
-            <h3>Practice</h3>
-            <p>Test your knowledge</p>
-        </div>
-
-        <div class="quick">
-            <span class="quick-icon">📅</span>
-            <h3>Weekly Exam</h3>
-            <p>Coming Soon</p>
-        </div>
-
-        <div class="quick">
-            <span class="quick-icon">🎯</span>
-            <h3>UEE Exam</h3>
-            <p>Coming Soon</p>
-        </div>
-
-    </div>
+<div class="card">
 
 
-    <!-- GRADES -->
+<div
+class="grade grade9"
+onclick="location.href='grade9.html'">
 
-    <div
-        class="grades"
-        id="grades">
+<span>
+📘 Grade 9
+</span>
 
-        <h2 class="section-title">
-            🎓 Choose Your Grade
-        </h2>
-
-
-        <!-- GRADE 9 -->
-
-        <div class="grade">
-
-            <h3>📘 Grade 9</h3>
-
-            <p>
-                Mathematics, Biology, Physics,
-                Chemistry and English.
-            </p>
-
-            <button
-                class="grade-button"
-                onclick="location.href='grade9.html'">
-
-                📚 Open Grade 9
-
-            </button>
-
-        </div>
-
-
-        <!-- GRADE 10 -->
-
-        <div class="grade">
-
-            <h3>📗 Grade 10</h3>
-
-            <p>
-                Grade 10 lessons, notes and
-                practice questions.
-            </p>
-
-            <div class="coming">
-                🔒 Coming Soon
-            </div>
-
-        </div>
-
-
-        <!-- GRADE 11 -->
-
-        <div class="grade">
-
-            <h3>📕 Grade 11</h3>
-
-            <p>
-                Grade 11 Natural Science lessons,
-                notes and practice.
-            </p>
-
-            <div class="coming">
-                🔒 Coming Soon
-            </div>
-
-        </div>
-
-
-        <!-- GRADE 12 -->
-
-        <div class="grade">
-
-            <h3>📙 Grade 12</h3>
-
-            <p>
-                Grade 12 preparation, entrance exam
-                practice and complete lessons.
-            </p>
-
-            <div class="coming">
-                🔒 Coming Soon
-            </div>
-
-        </div>
-
-    </div>
+<span class="grade-icon">
+→
+</span>
 
 </div>
 
 
-<footer>
+<div
+class="grade grade10"
+onclick="location.href='grade10.html'">
 
-    <p>📚 <strong>Study Plus</strong></p>
+<span>
+📗 Grade 10
+</span>
 
-    <p>
-        Learn Today • Practice More • Succeed Tomorrow 🚀
-    </p>
+<span class="grade-icon">
+→
+</span>
 
-</footer>
+</div>
+
+
+<div
+class="grade grade11"
+onclick="location.href='grade11.html'">
+
+<span>
+📙 Grade 11
+</span>
+
+<span class="grade-icon">
+→
+</span>
+
+</div>
+
+
+<div
+class="grade grade12"
+onclick="location.href='grade12.html'">
+
+<span>
+📕 Grade 12
+</span>
+
+<span class="grade-icon">
+→
+</span>
+
+</div>
+
+
+</div>
+
+
+<!-- QUICK ACCESS -->
+
+<h2 class="section-title">
+⚡ Quick Access
+</h2>
+
+
+<div class="card">
+
+
+<div class="menu">
+
+
+<button
+class="notes"
+onclick="openNotes()">
+
+📖
+<br>
+Notes
+
+</button>
+
+
+<button
+class="practice"
+onclick="openPractice()">
+
+📝
+<br>
+Practice
+
+</button>
+
+
+<button
+class="exam"
+onclick="openExam()">
+
+🎯
+<br>
+P. Exam
+
+</button>
+
+
+<button
+class="home"
+onclick="location.href='index.html'">
+
+🏠
+<br>
+Home
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<div class="card">
+
+<h2>
+📚 Study Plus
+</h2>
+
+<p>
+Study Plus is an educational platform designed
+to help students learn, practice and prepare
+for examinations from Grade 9 to Grade 12.
+</p>
+
+</div>
+
+
+<div class="footer-space"></div>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+
+<button
+class="active"
+onclick="location.href='index.html'">
+
+<span class="nav-icon">🏠</span>
+Home
+
+</button>
+
+
+<button
+onclick="openNotes()">
+
+<span class="nav-icon">📖</span>
+Notes
+
+</button>
+
+
+<button
+onclick="openPractice()">
+
+<span class="nav-icon">📝</span>
+Practice
+
+</button>
+
+
+<button
+onclick="openExam()">
+
+<span class="nav-icon">🎯</span>
+Exam
+
+</button>
+
+
+</div>
 
 
 <script>
 
-function showGrades(){
 
-    const grades =
-        document.getElementById("grades");
+function openNotes(){
 
-    grades.style.display = "block";
-
-    grades.scrollIntoView({
-        behavior:"smooth"
-    });
+    alert(
+        "Choose your Grade first, then open Notes."
+    );
 
 }
 
+
+function openPractice(){
+
+    alert(
+        "Choose your Grade first, then open Practice."
+    );
+
+}
+
+
+function openExam(){
+
+    alert(
+        "Choose your Grade first, then open P. Exam."
+    );
+
+}
+
+
 </script>
 
+
 </body>
+
 </html>
