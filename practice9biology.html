@@ -25,7 +25,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#16a34a,#2563eb);
+    background:linear-gradient(135deg,#16a34a,#059669);
     color:white;
     text-align:center;
     padding:35px 15px;
@@ -46,24 +46,27 @@ header p{
     padding:20px;
 }
 
-.card{
+.unit-card{
     background:white;
-    margin:18px 0;
+    margin:16px 0;
     padding:22px;
     border-radius:16px;
     box-shadow:0 3px 10px #ccc;
-}
-
-.unit{
     border-left:6px solid #16a34a;
+    transition:0.25s;
 }
 
-.card h2{
+.unit-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px #bbb;
+}
+
+.unit-card h2{
     margin-top:0;
     color:#16a34a;
 }
 
-.card p{
+.unit-card p{
     color:#555;
     line-height:1.6;
 }
@@ -74,6 +77,7 @@ button{
     margin-top:10px;
     border:none;
     border-radius:10px;
+    background:#16a34a;
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -82,10 +86,6 @@ button{
 
 button:hover{
     opacity:.9;
-}
-
-.practice{
-    background:#16a34a;
 }
 
 .back{
@@ -97,13 +97,15 @@ button:hover{
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>🧬 Grade 9 Biology</h1>
 
-<p>Study Plus</p>
+<p>📝 Practice</p>
 
 <p>Choose a unit to practice</p>
 
@@ -115,18 +117,17 @@ button:hover{
 
 <!-- UNIT 1 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🧬 Unit 1 — Biology and Its Importance</h2>
+<h2>🧬 Unit 1 — Introduction to Biology</h2>
 
 <p>
-Practice questions about biology, living organisms,
-characteristics of life, branches of biology and the
-importance of biology in everyday life.
+Practice the basic concepts of biology,
+branches of biology, scientific methods,
+and the importance of biology.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9biologyunit1.html'">
 
 📝 Open Unit 1 Practice
@@ -138,18 +139,17 @@ onclick="location.href='practice9biologyunit1.html'">
 
 <!-- UNIT 2 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🔬 Unit 2 — Scientific Investigation</h2>
+<h2>🔬 Unit 2 — Characteristics and Classification of Organisms</h2>
 
 <p>
-Practice questions about scientific methods, observation,
-hypothesis, variables, experiments, data collection,
-analysis and laboratory safety.
+Practice characteristics of living organisms,
+classification, taxonomy, kingdoms,
+and biological classification systems.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9biologyunit2.html'">
 
 📝 Open Unit 2 Practice
@@ -161,18 +161,17 @@ onclick="location.href='practice9biologyunit2.html'">
 
 <!-- UNIT 3 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🦠 Unit 3 — Diversity of Living Organisms</h2>
+<h2>🧫 Unit 3 — Cells</h2>
 
 <p>
-Practice questions about classification of organisms,
-taxonomy, kingdoms, domains and characteristics used
-to classify living organisms.
+Practice cell structure, cell organelles,
+plant and animal cells, cell functions,
+and levels of organization.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9biologyunit3.html'">
 
 📝 Open Unit 3 Practice
@@ -184,18 +183,17 @@ onclick="location.href='practice9biologyunit3.html'">
 
 <!-- UNIT 4 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🌱 Unit 4 — Plants</h2>
+<h2>🌱 Unit 4 — Reproduction</h2>
 
 <p>
-Practice questions about plant characteristics,
-plant groups, structure, reproduction, photosynthesis
-and the importance of plants.
+Practice reproduction, types of reproduction,
+asexual and sexual reproduction,
+and reproductive processes.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9biologyunit4.html'">
 
 📝 Open Unit 4 Practice
@@ -207,21 +205,42 @@ onclick="location.href='practice9biologyunit4.html'">
 
 <!-- UNIT 5 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🐾 Unit 5 — Animals</h2>
+<h2>❤️ Unit 5 — Human Health, Nutrition, and Disease</h2>
 
 <p>
-Practice questions about animal characteristics,
-major animal groups, classification, adaptations
-and the importance of animals.
+Practice human health, nutrition,
+nutrients, balanced diet, diseases,
+prevention and healthy living.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9biologyunit5.html'">
 
 📝 Open Unit 5 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 6 -->
+
+<div class="unit-card">
+
+<h2>🌍 Unit 6 — Ecology</h2>
+
+<p>
+Practice ecosystems, organisms,
+food chains, food webs, energy flow,
+populations, communities and environment.
+</p>
+
+<button
+onclick="location.href='practice9biologyunit6.html'">
+
+📝 Open Unit 6 Practice
 
 </button>
 
@@ -238,7 +257,9 @@ onclick="location.href='practice9.html'">
 
 </button>
 
+
 </div>
+
 
 </body>
 
