@@ -25,7 +25,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#2563eb,#16a34a);
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
     padding:35px 15px;
@@ -46,24 +46,21 @@ header p{
     padding:20px;
 }
 
-.card{
+.unit-card{
     background:white;
-    margin:18px 0;
-    padding:22px;
+    margin:16px 0;
+    padding:20px;
     border-radius:16px;
     box-shadow:0 3px 10px #ccc;
+    border-left:6px solid #2563eb;
 }
 
-.unit{
-    border-left:6px solid #16a34a;
-}
-
-.card h2{
+.unit-card h2{
     margin-top:0;
     color:#2563eb;
 }
 
-.card p{
+.unit-card p{
     color:#555;
     line-height:1.6;
 }
@@ -74,6 +71,7 @@ button{
     margin-top:10px;
     border:none;
     border-radius:10px;
+    background:#2563eb;
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -82,10 +80,7 @@ button{
 
 button:hover{
     opacity:.9;
-}
-
-.practice{
-    background:#16a34a;
+    transform:scale(1.01);
 }
 
 .back{
@@ -99,11 +94,12 @@ button:hover{
 
 <body>
 
+
 <header>
 
 <h1>📐 Grade 9 Mathematics</h1>
 
-<p>Study Plus</p>
+<p>📝 Practice</p>
 
 <p>Choose a unit to practice</p>
 
@@ -115,20 +111,20 @@ button:hover{
 
 <!-- UNIT 1 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>📘 Unit 1 — Further on Sets</h2>
 
 <p>
-Practice sets, subsets, universal sets, union,
-intersection, complement and Venn diagrams.
+Practice questions on sets, subsets,
+universal sets, union, intersection,
+complement and Venn diagrams.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9.html'">
+onclick="location.href='practice9mathsunit1.html'">
 
-📝 Open Unit 1 Practice
+📝 Practice Unit 1
 
 </button>
 
@@ -137,20 +133,20 @@ onclick="location.href='practice9.html'">
 
 <!-- UNIT 2 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>🔢 Unit 2 — The Number System</h2>
 
 <p>
-Practice natural numbers, integers, rational numbers,
-irrational numbers, real numbers and operations.
+Practice questions on natural numbers,
+integers, rational numbers, irrational numbers
+and real numbers.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit2.html'">
+onclick="location.href='practice9mathsunit2.html'">
 
-📝 Open Unit 2 Practice
+📝 Practice Unit 2
 
 </button>
 
@@ -159,20 +155,19 @@ onclick="location.href='practice9unit2.html'">
 
 <!-- UNIT 3 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>📕 Unit 3 — Solving Equations</h2>
 
 <p>
-Practice linear equations and solving equations
-using algebraic methods.
+Practice linear equations, equations with brackets,
+fractions and applications of equations.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit3.html'">
+onclick="location.href='practice9mathsunit3.html'">
 
-📝 Open Unit 3 Practice
+📝 Practice Unit 3
 
 </button>
 
@@ -181,20 +176,19 @@ onclick="location.href='practice9unit3.html'">
 
 <!-- UNIT 4 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>📗 Unit 4 — Solving Inequalities</h2>
 
 <p>
-Practice linear inequalities, solution sets,
-number lines and inequality problems.
+Practice linear inequalities, number-line
+representation and applications.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit4.html'">
+onclick="location.href='practice9mathsunit4.html'">
 
-📝 Open Unit 4 Practice
+📝 Practice Unit 4
 
 </button>
 
@@ -203,20 +197,19 @@ onclick="location.href='practice9unit4.html'">
 
 <!-- UNIT 5 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>📐 Unit 5 — Introduction to Trigonometry</h2>
 
 <p>
-Practice sine, cosine, tangent and right-triangle
-trigonometry problems.
+Practice angles, right triangles, sine,
+cosine, tangent and trigonometric relationships.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit5.html'">
+onclick="location.href='practice9mathsunit5.html'">
 
-📝 Open Unit 5 Practice
+📝 Practice Unit 5
 
 </button>
 
@@ -225,20 +218,19 @@ onclick="location.href='practice9unit5.html'">
 
 <!-- UNIT 6 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>🔷 Unit 6 — Regular Polygons</h2>
 
 <p>
-Practice regular polygons, angles, sides,
-perimeter and related problems.
+Practice polygons, interior angles,
+exterior angles, perimeter and regular polygons.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit6.html'">
+onclick="location.href='practice9mathsunit6.html'">
 
-📝 Open Unit 6 Practice
+📝 Practice Unit 6
 
 </button>
 
@@ -247,20 +239,19 @@ onclick="location.href='practice9unit6.html'">
 
 <!-- UNIT 7 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>🔺 Unit 7 — Congruency and Similarity</h2>
 
 <p>
 Practice congruent figures, similar figures,
-ratios, scale factors and geometry problems.
+triangle congruency and similarity.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit7.html'">
+onclick="location.href='practice9mathsunit7.html'">
 
-📝 Open Unit 7 Practice
+📝 Practice Unit 7
 
 </button>
 
@@ -269,20 +260,19 @@ onclick="location.href='practice9unit7.html'">
 
 <!-- UNIT 8 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>➡️ Unit 8 — Vectors in Two Dimensions</h2>
 
 <p>
-Practice vectors, vector addition, subtraction,
-magnitude and representation in two dimensions.
+Practice vectors, magnitude, direction,
+addition, subtraction and vector representation.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit8.html'">
+onclick="location.href='practice9mathsunit8.html'">
 
-📝 Open Unit 8 Practice
+📝 Practice Unit 8
 
 </button>
 
@@ -291,20 +281,19 @@ onclick="location.href='practice9unit8.html'">
 
 <!-- UNIT 9 -->
 
-<div class="card unit">
+<div class="unit-card">
 
 <h2>📊 Unit 9 — Statistics and Probability</h2>
 
 <p>
-Practice data, statistics, averages, probability
-and interpretation of statistical information.
+Practice data, mean, median, mode, range,
+graphs and probability.
 </p>
 
 <button
-class="practice"
-onclick="location.href='practice9unit9.html'">
+onclick="location.href='practice9mathsunit9.html'">
 
-📝 Open Unit 9 Practice
+📝 Practice Unit 9
 
 </button>
 
