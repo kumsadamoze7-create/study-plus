@@ -83,6 +83,18 @@ header p{
     border-left:6px solid #ea580c;
 }
 
+.history{
+    border-left:6px solid #92400e;
+}
+
+.geography{
+    border-left:6px solid #0891b2;
+}
+
+.economics{
+    border-left:6px solid #7c3aed;
+}
+
 button{
     width:100%;
     padding:15px;
@@ -119,6 +131,15 @@ button:hover{
     background:#ea580c;
 }
 
+.historyBtn{
+    background:#92400e;
+}
+
+.comingSoon{
+    background:#64748b;
+    cursor:not-allowed;
+}
+
 .back{
     background:#172554;
     margin-top:20px;
@@ -129,6 +150,7 @@ button:hover{
 </head>
 
 <body>
+
 
 <header>
 
@@ -144,14 +166,14 @@ button:hover{
 <div class="container">
 
 
-<!-- ================= MATHEMATICS ================= -->
+<!-- MATHEMATICS -->
 
 <div class="card math">
 
 <h2>📐 Mathematics</h2>
 
 <p>
-Grade 9 Mathematics Practice from Unit 1 to Unit 9.
+Grade 9 Mathematics Practice — Unit 1 to Unit 9.
 </p>
 
 <button
@@ -165,14 +187,14 @@ onclick="location.href='practice9maths.html'">
 </div>
 
 
-<!-- ================= CHEMISTRY ================= -->
+<!-- CHEMISTRY -->
 
 <div class="card chemistry">
 
 <h2>🧪 Chemistry</h2>
 
 <p>
-Grade 9 Chemistry Practice from Unit 1 to Unit 5.
+Grade 9 Chemistry Practice — Unit 1 to Unit 5.
 </p>
 
 <button
@@ -186,7 +208,7 @@ onclick="location.href='practice9chemistry.html'">
 </div>
 
 
-<!-- ================= BIOLOGY ================= -->
+<!-- BIOLOGY -->
 
 <div class="card biology">
 
@@ -207,7 +229,7 @@ onclick="location.href='practice9biology.html'">
 </div>
 
 
-<!-- ================= PHYSICS ================= -->
+<!-- PHYSICS -->
 
 <div class="card physics">
 
@@ -228,7 +250,7 @@ onclick="location.href='practice9physics.html'">
 </div>
 
 
-<!-- ================= ENGLISH ================= -->
+<!-- ENGLISH -->
 
 <div class="card english">
 
@@ -249,7 +271,70 @@ onclick="location.href='practice9english.html'">
 </div>
 
 
-<!-- ================= BACK ================= -->
+<!-- HISTORY -->
+
+<div class="card history">
+
+<h2>📜 History</h2>
+
+<p>
+Grade 9 History Practice.
+</p>
+
+<button
+class="historyBtn"
+onclick="location.href='practice9history.html'">
+
+📜 Open History Practice
+
+</button>
+
+</div>
+
+
+<!-- GEOGRAPHY -->
+
+<div class="card geography">
+
+<h2>🌍 Geography</h2>
+
+<p>
+Grade 9 Geography Practice will be available soon.
+</p>
+
+<button
+class="comingSoon"
+disabled>
+
+🌍 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- ECONOMICS -->
+
+<div class="card economics">
+
+<h2>💰 Economics</h2>
+
+<p>
+Grade 9 Economics Practice will be available soon.
+</p>
+
+<button
+class="comingSoon"
+disabled>
+
+💰 Coming Soon
+
+</button>
+
+</div>
+
+
+<!-- BACK -->
 
 <button
 class="back"
