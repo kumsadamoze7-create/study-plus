@@ -25,7 +25,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#92400e,#dc2626);
+    background:linear-gradient(135deg,#92400e,#b45309);
     color:white;
     text-align:center;
     padding:35px 15px;
@@ -46,24 +46,28 @@ header p{
     padding:20px;
 }
 
-.card{
+.unit-card{
     background:white;
-    margin:18px 0;
+    margin:16px 0;
     padding:22px;
     border-radius:16px;
     box-shadow:0 3px 10px #ccc;
-}
-
-.unit{
     border-left:6px solid #92400e;
+    transition:.25s;
 }
 
-.card h2{
+.unit-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px #bbb;
+}
+
+.unit-card h2{
     margin-top:0;
     color:#92400e;
+    line-height:1.4;
 }
 
-.card p{
+.unit-card p{
     color:#555;
     line-height:1.6;
 }
@@ -74,6 +78,7 @@ button{
     margin-top:10px;
     border:none;
     border-radius:10px;
+    background:#92400e;
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -82,10 +87,7 @@ button{
 
 button:hover{
     opacity:.9;
-}
-
-.practice{
-    background:#92400e;
+    transform:scale(1.01);
 }
 
 .back{
@@ -97,13 +99,15 @@ button:hover{
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>📜 Grade 9 History</h1>
 
-<p>Study Plus</p>
+<p>📝 Practice</p>
 
 <p>Choose a unit to practice</p>
 
@@ -115,18 +119,16 @@ button:hover{
 
 <!-- UNIT 1 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🏺 Unit 1 — Introduction to History</h2>
+<h2>📖 Unit 1 — The Discipline of History and Human Evolution</h2>
 
 <p>
-Practice questions about the meaning of history,
-sources of history, historical evidence, chronology,
-and the importance of studying history.
+Practice the discipline of history, historical sources,
+historical interpretation and human evolution.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9historyunit1.html'">
 
 📝 Open Unit 1 Practice
@@ -138,18 +140,16 @@ onclick="location.href='practice9historyunit1.html'">
 
 <!-- UNIT 2 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🌍 Unit 2 — Human Evolution</h2>
+<h2>🏛️ Unit 2 — Ancient World Civilizations up to c. 500 A.D.</h2>
 
 <p>
-Practice questions about human origins, human evolution,
-early humans, archaeological evidence and the development
-of early societies.
+Practice ancient civilizations, their societies,
+cultures, political systems and achievements.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9historyunit2.html'">
 
 📝 Open Unit 2 Practice
@@ -161,18 +161,17 @@ onclick="location.href='practice9historyunit2.html'">
 
 <!-- UNIT 3 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🏛️ Unit 3 — Ancient Civilizations</h2>
+<h2>🌍 Unit 3 — Peoples, States and Historical Processes in Ethiopia and the Horn to the End of the 13th Century</h2>
 
 <p>
-Practice questions about ancient civilizations,
-their political systems, economies, cultures,
-religions and major achievements.
+Practice peoples, states and historical developments
+in Ethiopia and the Horn of Africa up to the end
+of the 13th century.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9historyunit3.html'">
 
 📝 Open Unit 3 Practice
@@ -184,18 +183,16 @@ onclick="location.href='practice9historyunit3.html'">
 
 <!-- UNIT 4 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>⚔️ Unit 4 — Medieval History</h2>
+<h2>🏰 Unit 4 — The Middle Ages and Early Modern World</h2>
 
 <p>
-Practice questions about medieval societies,
-kingdoms, empires, trade, religion and important
-historical developments.
+Practice major developments of the Middle Ages
+and the early modern world.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9historyunit4.html'">
 
 📝 Open Unit 4 Practice
@@ -207,20 +204,104 @@ onclick="location.href='practice9historyunit4.html'">
 
 <!-- UNIT 5 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>🇪🇹 Unit 5 — Ethiopian History</h2>
+<h2>🌍 Unit 5 — Africa up to 1500</h2>
 
 <p>
-Practice questions about important periods, kingdoms,
-peoples, leaders and major events in Ethiopian history.
+Practice African societies, states, civilizations,
+trade and major historical developments up to 1500.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9historyunit5.html'">
 
 📝 Open Unit 5 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 6 -->
+
+<div class="unit-card">
+
+<h2>🚢 Unit 6 — Africa and the External World, 1500–1880s</h2>
+
+<p>
+Practice African interactions with the external world,
+trade, exploration, slavery and major developments
+from 1500 to the 1880s.
+</p>
+
+<button
+onclick="location.href='practice9historyunit6.html'">
+
+📝 Open Unit 6 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 7 -->
+
+<div class="unit-card">
+
+<h2>👑 Unit 7 — States, Principalities, Population Movements and Interactions in Ethiopia</h2>
+
+<p>
+Practice Ethiopian states, principalities,
+population movements and interactions.
+</p>
+
+<button
+onclick="location.href='practice9historyunit7.html'">
+
+📝 Open Unit 7 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 8 -->
+
+<div class="unit-card">
+
+<h2>🇪🇹 Unit 8 — Political, Social and Economic Processes in Ethiopia, Mid-16th to Mid-19th Century</h2>
+
+<p>
+Practice political, social and economic processes
+in Ethiopia from the mid-16th to the mid-19th century.
+</p>
+
+<button
+onclick="location.href='practice9historyunit8.html'">
+
+📝 Open Unit 8 Practice
+
+</button>
+
+</div>
+
+
+<!-- UNIT 9 -->
+
+<div class="unit-card">
+
+<h2>🌎 Unit 9 — The Age of Revolutions, 1789–1815</h2>
+
+<p>
+Practice the major revolutions and political,
+social and economic changes between 1789 and 1815.
+</p>
+
+<button
+onclick="location.href='practice9historyunit9.html'">
+
+📝 Open Unit 9 Practice
 
 </button>
 
@@ -237,7 +318,9 @@ onclick="location.href='practice9.html'">
 
 </button>
 
+
 </div>
+
 
 </body>
 
