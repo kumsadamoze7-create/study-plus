@@ -2,11 +2,8 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Study Plus</title>
 
@@ -23,13 +20,11 @@ body{
     color:#222;
 }
 
-/* HEADER */
-
 header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
-    padding:42px 20px;
+    padding:45px 20px;
 }
 
 header h1{
@@ -39,10 +34,8 @@ header h1{
 
 header p{
     margin:10px 0 0;
-    font-size:16px;
+    font-size:17px;
 }
-
-/* CONTAINER */
 
 .container{
     max-width:900px;
@@ -50,40 +43,35 @@ header p{
     padding:20px;
 }
 
-/* HOME */
-
 .card{
     background:white;
-    margin:18px 0;
+    margin:20px 0;
     padding:25px;
     border-radius:18px;
-    box-shadow:0 4px 14px rgba(0,0,0,.10);
+    box-shadow:0 4px 12px #d5d5d5;
 }
 
-.intro{
+.introduction{
     text-align:center;
 }
 
-.intro h2{
+.introduction h2{
     color:#2563eb;
-    margin-top:0;
 }
 
-.intro p{
+.introduction p{
     line-height:1.8;
     color:#555;
 }
 
-/* MAIN BUTTONS */
-
 .mainButton{
     width:100%;
+    padding:17px;
+    margin-top:12px;
     border:none;
-    padding:18px;
-    margin-top:15px;
     border-radius:12px;
     color:white;
-    font-size:18px;
+    font-size:17px;
     font-weight:bold;
     cursor:pointer;
 }
@@ -96,11 +84,27 @@ header p{
     background:#16a34a;
 }
 
+.backButton{
+    background:#172554;
+}
+
+.gradeButton{
+    width:100%;
+    padding:16px;
+    margin:8px 0;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.gradeButton:hover,
 .mainButton:hover{
     opacity:.9;
 }
-
-/* GRADE SECTION */
 
 .section{
     display:none;
@@ -108,70 +112,18 @@ header p{
 
 .sectionTitle{
     text-align:center;
-    margin-top:0;
     color:#2563eb;
 }
 
-/* GRADE BUTTON */
-
-.grade{
-    width:100%;
-    border:none;
-    padding:18px;
-    margin-top:12px;
-    border-radius:12px;
-    background:#2563eb;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.grade:hover{
-    opacity:.9;
-}
-
-/* PRACTICE COLORS */
-
-.practiceGrade{
-    background:#16a34a;
-}
-
-/* BACK */
-
-.back{
-    width:100%;
-    border:none;
-    padding:15px;
-    margin-top:20px;
-    border-radius:12px;
-    background:#172554;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:25px;
-    color:#777;
-    font-size:14px;
+.practiceTitle{
+    color:#16a34a;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
-
-<!-- ========================= -->
-<!-- HEADER -->
-<!-- ========================= -->
 
 <header>
 
@@ -185,124 +137,106 @@ footer{
 <div class="container">
 
 
-<!-- ========================= -->
 <!-- HOME / INTRODUCTION -->
-<!-- ========================= -->
 
-<div id="home">
+<div class="card introduction">
 
-<div class="card intro">
-
-<h2>Welcome to Study Plus 👋</h2>
+<h2>Welcome to Study Plus</h2>
 
 <p>
-Study Plus is an educational platform designed
-to help students learn, review and practice
-their school subjects.
+Study Plus is an educational platform designed to help
+students learn, review their lessons, take notes and
+practice questions easily.
 </p>
 
 <p>
-Choose <b>Notes</b> to study lessons and explanations,
-or choose <b>Practice</b> to test your knowledge.
-</p>
-
-<p>
-Select your grade and start learning.
+Choose <b>Notes</b> to study lessons or choose
+<b>Practice</b> to test your knowledge.
 </p>
 
 </div>
 
 
-<!-- NOTES -->
+<!-- MAIN MENU -->
 
 <div class="card">
 
 <button
 class="mainButton notesButton"
-onclick="showNotes()">
+onclick="openNotes()">
 
-📖 Notes
+📖 NOTES
 
 </button>
 
-</div>
-
-
-<!-- PRACTICE -->
-
-<div class="card">
 
 <button
 class="mainButton practiceButton"
-onclick="showPractice()">
+onclick="openPractice()">
 
-📝 Practice
+📝 PRACTICE
 
 </button>
 
 </div>
 
-</div>
 
-
-<!-- ========================= -->
 <!-- NOTES GRADES -->
-<!-- ========================= -->
 
 <div id="notesSection" class="section">
 
 <div class="card">
 
 <h2 class="sectionTitle">
-📖 Choose Your Grade
+📖 Notes
 </h2>
 
-<p style="text-align:center;color:#666;">
-Select a grade to open the available notes.
+<p style="text-align:center;">
+Choose your Grade
 </p>
 
 
 <button
-class="grade"
+class="gradeButton"
 onclick="location.href='grade9.html'">
 
-🎓 Grade 9
+📘 Grade 9
 
 </button>
 
 
 <button
-class="grade"
+class="gradeButton"
 onclick="location.href='grade10.html'">
 
-🎓 Grade 10
+📗 Grade 10
 
 </button>
 
 
 <button
-class="grade"
+class="gradeButton"
 onclick="location.href='grade11.html'">
 
-🎓 Grade 11
+📕 Grade 11
 
 </button>
 
 
 <button
-class="grade"
+class="gradeButton"
 onclick="location.href='grade12.html'">
 
-🎓 Grade 12
+📙 Grade 12
 
 </button>
 
 
 <button
-class="back"
+class="mainButton backButton"
 onclick="goHome()">
 
-← Back to Home
+← Back
 
 </button>
 
@@ -311,68 +245,62 @@ onclick="goHome()">
 </div>
 
 
-<!-- ========================= -->
 <!-- PRACTICE GRADES -->
-<!-- ========================= -->
 
 <div id="practiceSection" class="section">
 
 <div class="card">
 
-<h2
-class="sectionTitle"
-style="color:#16a34a;">
-
-📝 Choose Your Grade
-
+<h2 class="sectionTitle practiceTitle">
+📝 Practice
 </h2>
 
-<p style="text-align:center;color:#666;">
-Select a grade to open practice questions.
+<p style="text-align:center;">
+Choose your Grade
 </p>
 
 
 <button
-class="grade practiceGrade"
-onclick="location.href='practice-grade9.html'">
+class="gradeButton"
+onclick="location.href='practice9.html'">
 
-🎓 Grade 9
-
-</button>
-
-
-<button
-class="grade practiceGrade"
-onclick="location.href='practice-grade10.html'">
-
-🎓 Grade 10
+📘 Grade 9
 
 </button>
 
 
 <button
-class="grade practiceGrade"
-onclick="location.href='practice-grade11.html'">
+class="gradeButton"
+onclick="location.href='practice10.html'">
 
-🎓 Grade 11
-
-</button>
-
-
-<button
-class="grade practiceGrade"
-onclick="location.href='practice-grade12.html'">
-
-🎓 Grade 12
+📗 Grade 10
 
 </button>
 
 
 <button
-class="back"
+class="gradeButton"
+onclick="location.href='practice11.html'">
+
+📕 Grade 11
+
+</button>
+
+
+<button
+class="gradeButton"
+onclick="location.href='practice12.html'">
+
+📙 Grade 12
+
+</button>
+
+
+<button
+class="mainButton backButton"
 onclick="goHome()">
 
-← Back to Home
+← Back
 
 </button>
 
@@ -382,79 +310,41 @@ onclick="goHome()">
 
 
 </div>
-
-
-<!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->
-
-<footer>
-
-Study Plus © 2026
-
-</footer>
 
 
 <script>
 
-/* SHOW NOTES */
+function openNotes(){
 
-function showNotes(){
+    document.getElementById("notesSection").style.display="block";
 
-    document.getElementById("home")
-    .style.display="none";
+    document.getElementById("practiceSection").style.display="none";
 
-    document.getElementById("practiceSection")
-    .style.display="none";
-
-    const notes =
-    document.getElementById("notesSection");
-
-    notes.style.display="block";
-
-    window.scrollTo({
-        top:0,
+    document.getElementById("notesSection").scrollIntoView({
         behavior:"smooth"
     });
 
 }
 
 
-/* SHOW PRACTICE */
+function openPractice(){
 
-function showPractice(){
+    document.getElementById("practiceSection").style.display="block";
 
-    document.getElementById("home")
-    .style.display="none";
+    document.getElementById("notesSection").style.display="none";
 
-    document.getElementById("notesSection")
-    .style.display="none";
-
-    const practice =
-    document.getElementById("practiceSection");
-
-    practice.style.display="block";
-
-    window.scrollTo({
-        top:0,
+    document.getElementById("practiceSection").scrollIntoView({
         behavior:"smooth"
     });
 
 }
 
-
-/* BACK HOME */
 
 function goHome(){
 
-    document.getElementById("notesSection")
-    .style.display="none";
+    document.getElementById("notesSection").style.display="none";
 
-    document.getElementById("practiceSection")
-    .style.display="none";
-
-    document.getElementById("home")
-    .style.display="block";
+    document.getElementById("practiceSection").style.display="none";
 
     window.scrollTo({
         top:0,
@@ -464,7 +354,6 @@ function goHome(){
 }
 
 </script>
-
 
 </body>
 
