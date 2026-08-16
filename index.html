@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Study Plus</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -21,10 +16,7 @@ body{
     font-family:Arial,sans-serif;
     background:#f4f7fb;
     color:#222;
-    padding-bottom:85px;
 }
-
-/* HEADER */
 
 header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
@@ -39,10 +31,8 @@ header h1{
 }
 
 header p{
-    margin:8px 0 0;
+    margin:8px 0;
 }
-
-/* CONTAINER */
 
 .container{
     max-width:900px;
@@ -50,513 +40,361 @@ header p{
     padding:20px;
 }
 
-/* HOME */
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.card h2{
+    margin-top:0;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    margin-top:12px;
+    border:0;
+    border-radius:12px;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.9;
+}
 
 .home{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 3px 12px #ccc;
-    text-align:center;
+    border-left:6px solid #2563eb;
 }
 
-.home h2{
-    color:#2563eb;
+.notes{
+    border-left:6px solid #7c3aed;
 }
 
-.home p{
-    color:#555;
-    line-height:1.8;
+.practice{
+    border-left:6px solid #16a34a;
 }
 
-/* SECTIONS */
+.exam{
+    border-left:6px solid #ea580c;
+}
+
+.homeBtn{
+    background:#2563eb;
+}
+
+.notesBtn{
+    background:#7c3aed;
+}
+
+.practiceBtn{
+    background:#16a34a;
+}
+
+.examBtn{
+    background:#ea580c;
+}
 
 .section{
     display:none;
 }
 
-.section.active{
-    display:block;
+.grade{
+    background:#fff;
+    border-left:5px solid #2563eb;
 }
 
-.section-title{
-    text-align:center;
-    color:#2563eb;
-    margin-bottom:20px;
-}
-
-/* GRADE CARDS */
-
-.grade-card{
-    background:white;
-    margin:15px 0;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 3px 10px #ccc;
-    text-align:center;
-}
-
-.grade-card h3{
-    margin-top:0;
-    color:#2563eb;
-    font-size:22px;
-}
-
-.grade-button{
-    width:100%;
-    border:none;
-    padding:15px;
-    margin-top:8px;
-    border-radius:10px;
+.gradeBtn{
     background:#2563eb;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
 }
 
-.grade-button:hover{
-    opacity:.9;
+.back{
+    background:#172554;
 }
 
-/* PRACTICE */
-
-.practice-title{
-    color:#16a34a;
-}
-
-/* WEB EXAM */
-
-.exam-title{
-    color:#dc2626;
-}
-
-/* BOTTOM NAVIGATION */
-
-.bottom-nav{
-
-    position:fixed;
-
-    bottom:0;
-    left:0;
-    right:0;
-
-    height:75px;
-
-    background:white;
-
-    box-shadow:0 -3px 12px #ccc;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    align-items:center;
-
-    z-index:999;
-}
-
-.nav-button{
-
-    border:none;
-
-    background:none;
-
-    font-size:13px;
-
-    font-weight:bold;
-
+.introduction{
+    line-height:1.7;
     color:#555;
-
-    padding:8px 10px;
-
 }
 
-.nav-button span{
-
-    display:block;
-
-    font-size:25px;
-
-    margin-bottom:3px;
-
+.title{
+    text-align:center;
 }
-
-.nav-button.active{
-
-    color:#2563eb;
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-<h1>📚 Study Plus</h1>
-
-<p>Learn • Practice • Prepare</p>
-
+    <h1>📚 Study Plus</h1>
+    <p>Learn • Practice • Prepare</p>
 </header>
-
 
 <div class="container">
 
+<!-- HOME -->
 
-<!-- ================= HOME ================= -->
+<div class="card home">
+    <h2>🏠 Home</h2>
 
-<div id="home" class="section active">
+    <div class="introduction">
+        <h3>Welcome to Study Plus</h3>
 
-<div class="home">
+        <p>
+            Study Plus is an educational platform designed to help
+            students learn, review lessons, practice questions and
+            prepare for examinations.
+        </p>
 
-<h2>Welcome to Study Plus</h2>
-
-<p>
-
-Study Plus is an educational platform designed
-to help students learn, review lessons and
-practice for examinations.
-
-</p>
-
-<p>
-
-Choose <b>Notes</b> to study your lessons,
-<b>Practice</b> to test your knowledge,
-or <b>Web Exam</b> to take online examinations.
-
-</p>
-
-</div>
-
+        <p>
+            Choose Notes to study lessons, Practice to test your
+            knowledge, or Web Exam to take examinations.
+        </p>
+    </div>
 </div>
 
 
-<!-- ================= NOTES ================= -->
+<!-- NOTES -->
 
-<div id="notes" class="section">
+<div class="card notes">
+    <h2>📖 Notes</h2>
 
-<h2 class="section-title">
-📖 Notes
-</h2>
+    <p>
+        Choose your grade to access lesson notes.
+    </p>
 
-
-<div class="grade-card">
-
-<h3>📘 Grade 9</h3>
-
-<button
-class="grade-button"
-onclick="location.href='grade9.html'">
-
-Open Grade 9 Notes
-
-</button>
-
+    <button class="notesBtn" onclick="showSection('notesGrades')">
+        📖 Open Notes
+    </button>
 </div>
 
 
-<div class="grade-card">
+<!-- PRACTICE -->
 
-<h3>📗 Grade 10</h3>
+<div class="card practice">
+    <h2>📝 Practice</h2>
 
-<button
-class="grade-button"
-onclick="location.href='grade10.html'">
+    <p>
+        Choose your grade to practice questions.
+    </p>
 
-Open Grade 10 Notes
-
-</button>
-
+    <button class="practiceBtn" onclick="showSection('practiceGrades')">
+        📝 Open Practice
+    </button>
 </div>
 
 
-<div class="grade-card">
+<!-- WEB EXAM -->
 
-<h3>📕 Grade 11</h3>
+<div class="card exam">
+    <h2>🌐 Web Exam</h2>
 
-<button
-class="grade-button"
-onclick="location.href='grade11.html'">
+    <p>
+        Choose your grade to take an online examination.
+    </p>
 
-Open Grade 11 Notes
-
-</button>
-
+    <button class="examBtn" onclick="showSection('examGrades')">
+        🌐 Open Web Exam
+    </button>
 </div>
 
 
-<div class="grade-card">
+<!-- ========================= -->
+<!-- NOTES GRADES -->
+<!-- ========================= -->
 
-<h3>📙 Grade 12</h3>
+<div id="notesGrades" class="section">
 
-<button
-class="grade-button"
-onclick="location.href='grade12.html'">
+    <div class="card">
+        <h2 class="title">📖 Notes</h2>
+        <p class="title">Choose Grade</p>
+    </div>
 
-Open Grade 12 Notes
+    <div class="card grade">
+        <h2>📘 Grade 9</h2>
 
-</button>
+        <button class="gradeBtn"
+        onclick="location.href='grade9notes.html'">
+            Open Grade 9 Notes
+        </button>
+    </div>
 
-</div>
+    <div class="card grade">
+        <h2>📗 Grade 10</h2>
 
-</div>
+        <button class="gradeBtn"
+        onclick="location.href='grade10notes.html'">
+            Open Grade 10 Notes
+        </button>
+    </div>
 
+    <div class="card grade">
+        <h2>📙 Grade 11</h2>
 
-<!-- ================= PRACTICE ================= -->
+        <button class="gradeBtn"
+        onclick="location.href='grade11notes.html'">
+            Open Grade 11 Notes
+        </button>
+    </div>
 
-<div id="practice" class="section">
+    <div class="card grade">
+        <h2>📕 Grade 12</h2>
 
-<h2 class="section-title practice-title">
-📝 Practice
-</h2>
+        <button class="gradeBtn"
+        onclick="location.href='grade12notes.html'">
+            Open Grade 12 Notes
+        </button>
+    </div>
 
-
-<div class="grade-card">
-
-<h3>📘 Grade 9</h3>
-
-<button
-class="grade-button"
-onclick="location.href='practice9.html'">
-
-Open Grade 9 Practice
-
-</button>
+    <button class="back" onclick="hideSections()">
+        ← Back
+    </button>
 
 </div>
 
 
-<div class="grade-card">
+<!-- ========================= -->
+<!-- PRACTICE GRADES -->
+<!-- ========================= -->
 
-<h3>📗 Grade 10</h3>
+<div id="practiceGrades" class="section">
 
-<button
-class="grade-button"
-onclick="location.href='practice10.html'">
+    <div class="card">
+        <h2 class="title">📝 Practice</h2>
+        <p class="title">Choose Grade</p>
+    </div>
 
-Open Grade 10 Practice
+    <div class="card grade">
+        <h2>📘 Grade 9</h2>
 
-</button>
+        <button class="gradeBtn"
+        onclick="location.href='grade9practice.html'">
+            Open Grade 9 Practice
+        </button>
+    </div>
 
-</div>
+    <div class="card grade">
+        <h2>📗 Grade 10</h2>
 
+        <button class="gradeBtn"
+        onclick="location.href='grade10practice.html'">
+            Open Grade 10 Practice
+        </button>
+    </div>
 
-<div class="grade-card">
+    <div class="card grade">
+        <h2>📙 Grade 11</h2>
 
-<h3>📕 Grade 11</h3>
+        <button class="gradeBtn"
+        onclick="location.href='grade11practice.html'">
+            Open Grade 11 Practice
+        </button>
+    </div>
 
-<button
-class="grade-button"
-onclick="location.href='practice11.html'">
+    <div class="card grade">
+        <h2>📕 Grade 12</h2>
 
-Open Grade 11 Practice
+        <button class="gradeBtn"
+        onclick="location.href='grade12practice.html'">
+            Open Grade 12 Practice
+        </button>
+    </div>
 
-</button>
-
-</div>
-
-
-<div class="grade-card">
-
-<h3>📙 Grade 12</h3>
-
-<button
-class="grade-button"
-onclick="location.href='practice12.html'">
-
-Open Grade 12 Practice
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================= WEB EXAM ================= -->
-
-<div id="exam" class="section">
-
-<h2 class="section-title exam-title">
-🌐 Web Exam
-</h2>
-
-
-<div class="grade-card">
-
-<h3>📘 Grade 9</h3>
-
-<button
-class="grade-button"
-onclick="location.href='webexam9.html'">
-
-Grade 9 Web Exam
-
-</button>
+    <button class="back" onclick="hideSections()">
+        ← Back
+    </button>
 
 </div>
 
 
-<div class="grade-card">
+<!-- ========================= -->
+<!-- WEB EXAM GRADES -->
+<!-- ========================= -->
 
-<h3>📗 Grade 10</h3>
+<div id="examGrades" class="section">
 
-<button
-class="grade-button"
-onclick="location.href='webexam10.html'">
+    <div class="card">
+        <h2 class="title">🌐 Web Exam</h2>
+        <p class="title">Choose Grade</p>
+    </div>
 
-Grade 10 Web Exam
+    <div class="card grade">
+        <h2>📘 Grade 9</h2>
 
-</button>
+        <button class="examBtn"
+        onclick="location.href='grade9exam.html'">
+            Open Grade 9 Exam
+        </button>
+    </div>
+
+    <div class="card grade">
+        <h2>📗 Grade 10</h2>
+
+        <button class="examBtn"
+        onclick="location.href='grade10exam.html'">
+            Open Grade 10 Exam
+        </button>
+    </div>
+
+    <div class="card grade">
+        <h2>📙 Grade 11</h2>
+
+        <button class="examBtn"
+        onclick="location.href='grade11exam.html'">
+            Open Grade 11 Exam
+        </button>
+    </div>
+
+    <div class="card grade">
+        <h2>📕 Grade 12</h2>
+
+        <button class="examBtn"
+        onclick="location.href='grade12exam.html'">
+            Open Grade 12 Exam
+        </button>
+    </div>
+
+    <button class="back" onclick="hideSections()">
+        ← Back
+    </button>
 
 </div>
-
-
-<div class="grade-card">
-
-<h3>📕 Grade 11</h3>
-
-<button
-class="grade-button"
-onclick="location.href='webexam11.html'">
-
-Grade 11 Web Exam
-
-</button>
-
-</div>
-
-
-<div class="grade-card">
-
-<h3>📙 Grade 12</h3>
-
-<button
-class="grade-button"
-onclick="location.href='webexam12.html'">
-
-Grade 12 Web Exam
-
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- ================= BOTTOM NAV ================= -->
-
-<div class="bottom-nav">
-
-
-<button
-id="navNotes"
-class="nav-button"
-onclick="showSection('notes','navNotes')">
-
-<span>📖</span>
-
-Notes
-
-</button>
-
-
-<button
-id="navHome"
-class="nav-button active"
-onclick="showSection('home','navHome')">
-
-<span>🏠</span>
-
-Home
-
-</button>
-
-
-<button
-id="navPractice"
-class="nav-button"
-onclick="showSection('practice','navPractice')">
-
-<span>📝</span>
-
-Practice
-
-</button>
-
-
-<button
-id="navExam"
-class="nav-button"
-onclick="showSection('exam','navExam')">
-
-<span>🌐</span>
-
-Web Exam
-
-</button>
-
 
 </div>
 
 
 <script>
 
-function showSection(sectionId,navId){
+function showSection(id){
 
-    const sections =
-    document.querySelectorAll(".section");
+    hideSections();
 
-    sections.forEach(function(section){
+    const section =
+        document.getElementById(id);
 
-        section.classList.remove("active");
+    section.style.display = "block";
 
-    });
-
-
-    document
-    .getElementById(sectionId)
-    .classList.add("active");
-
-
-    const navButtons =
-    document.querySelectorAll(".nav-button");
-
-    navButtons.forEach(function(button){
-
-        button.classList.remove("active");
-
-    });
-
-
-    document
-    .getElementById(navId)
-    .classList.add("active");
-
-
-    window.scrollTo({
-
-        top:0,
-
+    section.scrollIntoView({
         behavior:"smooth"
-
     });
+}
 
+
+function hideSections(){
+
+    document.getElementById("notesGrades").style.display="none";
+
+    document.getElementById("practiceGrades").style.display="none";
+
+    document.getElementById("examGrades").style.display="none";
 }
 
 </script>
 
-
 </body>
-
 </html>
