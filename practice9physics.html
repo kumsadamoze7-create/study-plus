@@ -46,24 +46,27 @@ header p{
     padding:20px;
 }
 
-.card{
+.unit-card{
     background:white;
-    margin:18px 0;
+    margin:16px 0;
     padding:22px;
     border-radius:16px;
     box-shadow:0 3px 10px #ccc;
-}
-
-.unit{
     border-left:6px solid #dc2626;
+    transition:0.25s;
 }
 
-.card h2{
+.unit-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px #bbb;
+}
+
+.unit-card h2{
     margin-top:0;
     color:#dc2626;
 }
 
-.card p{
+.unit-card p{
     color:#555;
     line-height:1.6;
 }
@@ -74,6 +77,7 @@ button{
     margin-top:10px;
     border:none;
     border-radius:10px;
+    background:#dc2626;
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -82,10 +86,97 @@ button{
 
 button:hover{
     opacity:.9;
+    transform:scale(1.01);
 }
 
-.practice{
-    background:#dc2626;
+.unit2{
+    border-left-color:#2563eb;
+}
+
+.unit2 h2,
+.unit2 button{
+    background:#2563eb;
+    color:white;
+}
+
+.unit2 h2{
+    background:none;
+    color:#2563eb;
+}
+
+.unit3{
+    border-left-color:#16a34a;
+}
+
+.unit3 h2,
+.unit3 button{
+    background:#16a34a;
+    color:white;
+}
+
+.unit3 h2{
+    background:none;
+    color:#16a34a;
+}
+
+.unit4{
+    border-left-color:#9333ea;
+}
+
+.unit4 h2,
+.unit4 button{
+    background:#9333ea;
+    color:white;
+}
+
+.unit4 h2{
+    background:none;
+    color:#9333ea;
+}
+
+.unit5{
+    border-left-color:#ea580c;
+}
+
+.unit5 h2,
+.unit5 button{
+    background:#ea580c;
+    color:white;
+}
+
+.unit5 h2{
+    background:none;
+    color:#ea580c;
+}
+
+.unit6{
+    border-left-color:#0891b2;
+}
+
+.unit6 h2,
+.unit6 button{
+    background:#0891b2;
+    color:white;
+}
+
+.unit6 h2{
+    background:none;
+    color:#0891b2;
+}
+
+.unit7{
+    border-left-color:#7c3aed;
+}
+
+.unit7 h2,
+.unit7 button{
+    background:#7c3aed;
+    color:white;
+}
+
+.unit7 h2{
+    background:none;
+    color:#7c3aed;
 }
 
 .back{
@@ -97,13 +188,15 @@ button:hover{
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>⚡ Grade 9 Physics</h1>
 
-<p>Study Plus</p>
+<p>📝 Practice</p>
 
 <p>Choose a unit to practice</p>
 
@@ -115,18 +208,17 @@ button:hover{
 
 <!-- UNIT 1 -->
 
-<div class="card unit">
+<div class="unit-card">
 
-<h2>📏 Unit 1 — Measurement</h2>
+<h2>⚛️ Unit 1 — Physics and Its Applications</h2>
 
 <p>
-Practice physical quantities, SI units, measuring
-instruments, accuracy, precision, significant figures
-and scientific notation.
+Practice the meaning of physics, branches of physics,
+scientific investigation and applications of physics
+in everyday life and technology.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit1.html'">
 
 📝 Open Unit 1 Practice
@@ -138,17 +230,17 @@ onclick="location.href='practice9physicsunit1.html'">
 
 <!-- UNIT 2 -->
 
-<div class="card unit">
+<div class="unit-card unit2">
 
-<h2>➡️ Unit 2 — Motion in One Dimension</h2>
+<h2>📏 Unit 2 — Physical Quantities and Measurement</h2>
 
 <p>
-Practice distance, displacement, speed, velocity,
-acceleration and motion graphs.
+Practice physical quantities, SI units, measurement,
+measuring instruments, accuracy, precision and
+measurement errors.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit2.html'">
 
 📝 Open Unit 2 Practice
@@ -160,17 +252,16 @@ onclick="location.href='practice9physicsunit2.html'">
 
 <!-- UNIT 3 -->
 
-<div class="card unit">
+<div class="unit-card unit3">
 
-<h2>💪 Unit 3 — Force and Newton's Laws</h2>
+<h2>🏃 Unit 3 — Motion</h2>
 
 <p>
-Practice force, inertia, Newton's laws of motion,
-mass, weight and applications of force.
+Practice distance, displacement, speed, velocity,
+acceleration and graphical representation of motion.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit3.html'">
 
 📝 Open Unit 3 Practice
@@ -182,17 +273,17 @@ onclick="location.href='practice9physicsunit3.html'">
 
 <!-- UNIT 4 -->
 
-<div class="card unit">
+<div class="unit-card unit4">
 
-<h2>⚙️ Unit 4 — Work, Energy and Power</h2>
+<h2>💪 Unit 4 — Force and Newton's Laws</h2>
 
 <p>
-Practice work, energy, kinetic energy, potential energy,
-mechanical energy and power.
+Practice force, balanced and unbalanced forces,
+Newton's laws of motion, mass, weight and
+applications of force.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit4.html'">
 
 📝 Open Unit 4 Practice
@@ -204,17 +295,17 @@ onclick="location.href='practice9physicsunit4.html'">
 
 <!-- UNIT 5 -->
 
-<div class="card unit">
+<div class="unit-card unit5">
 
-<h2>🌊 Unit 5 — Properties of Matter</h2>
+<h2>⚙️ Unit 5 — Simple Machines</h2>
 
 <p>
-Practice mass, volume, density, pressure and the
-physical properties of matter.
+Practice levers, pulleys, inclined planes,
+mechanical advantage, velocity ratio and
+efficiency of simple machines.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit5.html'">
 
 📝 Open Unit 5 Practice
@@ -226,17 +317,17 @@ onclick="location.href='practice9physicsunit5.html'">
 
 <!-- UNIT 6 -->
 
-<div class="card unit">
+<div class="unit-card unit6">
 
-<h2>🌡️ Unit 6 — Heat and Temperature</h2>
+<h2>🔊 Unit 6 — Mechanical Oscillation and Sound Wave</h2>
 
 <p>
-Practice temperature, heat transfer, thermal expansion,
-specific heat and changes caused by heat.
+Practice oscillatory motion, vibration, amplitude,
+frequency, period, sound waves, wavelength,
+frequency and wave speed.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit6.html'">
 
 📝 Open Unit 6 Practice
@@ -248,64 +339,20 @@ onclick="location.href='practice9physicsunit6.html'">
 
 <!-- UNIT 7 -->
 
-<div class="card unit">
+<div class="unit-card unit7">
 
-<h2>💡 Unit 7 — Light</h2>
+<h2>🌡️ Unit 7 — Temperature and Thermometer</h2>
 
 <p>
-Practice reflection, refraction, mirrors, lenses,
-images and basic properties of light.
+Practice temperature, thermometers, temperature
+scales, Celsius, Fahrenheit and measurement
+of temperature.
 </p>
 
 <button
-class="practice"
 onclick="location.href='practice9physicsunit7.html'">
 
 📝 Open Unit 7 Practice
-
-</button>
-
-</div>
-
-
-<!-- UNIT 8 -->
-
-<div class="card unit">
-
-<h2>🔊 Unit 8 — Sound</h2>
-
-<p>
-Practice sound waves, frequency, wavelength, amplitude,
-speed of sound and characteristics of sound.
-</p>
-
-<button
-class="practice"
-onclick="location.href='practice9physicsunit8.html'">
-
-📝 Open Unit 8 Practice
-
-</button>
-
-</div>
-
-
-<!-- UNIT 9 -->
-
-<div class="card unit">
-
-<h2>⚡ Unit 9 — Electricity</h2>
-
-<p>
-Practice electric charge, current, voltage, resistance,
-circuits and basic electrical relationships.
-</p>
-
-<button
-class="practice"
-onclick="location.href='practice9physicsunit9.html'">
-
-📝 Open Unit 9 Practice
 
 </button>
 
@@ -324,6 +371,7 @@ onclick="location.href='practice9.html'">
 
 
 </div>
+
 
 </body>
 
