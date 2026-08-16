@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Grade 9 Mathematics Unit 1 Practice</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    padding-bottom:40px;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:27px;
+}
+
+header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:20px;
+}
+
+.info{
+    background:white;
+    padding:16px;
+    border-radius:14px;
+    box-shadow:0 3px 10px #ddd;
+    margin-bottom:18px;
+    text-align:center;
+}
+
+.progress{
+    height:10px;
+    background:#e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:12px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#2563eb;
+    transition:.3s;
+}
+
+.question-card{
+    background:white;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 4px 12px #d1d5db;
+}
+
+.question{
+    font-size:19px;
+    font-weight:bold;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.option{
+    width:100%;
+    padding:15px;
+    margin:9px 0;
+    border:2px solid #e5e7eb;
+    border-radius:11px;
+    background:#fff;
+    color:#222;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#eff6ff;
+    border-color:#2563eb;
+}
+
+.option.correct{
+    background:#dcfce7;
+    border-color:#16a34a;
+    color:#166534;
+}
+
+.option.wrong{
+    background:#fee2e2;
+    border-color:#dc2626;
+    color:#991b1b;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+.result{
+    margin-top:18px;
+    padding:16px;
+    border-radius:12px;
+    display:none;
+    line-height:1.6;
+}
+
+.result.correct-result{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.result.wrong-result{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:10px;
+    padding:12px;
+    background:#f8fafc;
+    border-radius:10px;
+    color:#374151;
+}
+
+.next{
+    background:#7c3aed;
+    color:white;
+    border:none;
+    width:100%;
+    padding:15px;
+    border-radius:11px;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:15px;
+    cursor:pointer;
+    display:none;
+}
+
+.next:hover{
+    opacity:.9;
+}
+
+.finish{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 4px 12px #d1d5db;
+    text-align:center;
+    display:none;
+}
+
+.score{
+    font-size:32px;
+    font-weight:bold;
+    color:#2563eb;
+    margin:15px 0;
+}
+
+.restart{
+    background:#16a34a;
+    color:white;
+    border:none;
+    width:100%;
+    padding:15px;
+    border-radius:11px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.back{
+    background:#172554;
+    color:white;
+    border:none;
+    width:100%;
+    padding:15px;
+    border-radius:11px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>📘 Grade 9 Mathematics</h1>
+
+<p>Unit 1 — Further on Sets</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="info">
+
+<div id="questionNumber">
+Question 1 of 20
+</div>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="question-card"
+id="questionCard">
+
+<div
+class="question"
+id="question">
+</div>
+
+<div id="options"></div>
+
+<div
+class="result"
+id="result">
+
+<div id="resultText"></div>
+
+<div
+class="explanation"
+id="explanation">
+</div>
+
+</div>
+
+<button
+class="next"
+id="nextButton"
+onclick="nextQuestion()">
+
+Next Question →
+
+</button>
+
+</div>
+
+
+<div
+class="finish"
+id="finish">
+
+<h2>🎉 Practice Complete!</h2>
+
+<p>Your final score is:</p>
+
+<div
+class="score"
+id="finalScore">
+</div>
+
+<p id="finalMessage"></p>
+
+<button
+class="restart"
+onclick="restartQuiz()">
+
+🔄 Practice Again
+
+</button>
+
+</div>
+
+
+<button
+class="back"
+onclick="location.href='practice9maths.html'">
+
+← Back to Mathematics Units
+
+</button>
+
+
+</div>
+
+
+<script>
+
+
+const questions = [
+
+{
+q:"Which of the following is a set?",
+options:[
+"All beautiful students",
+"Vowels in the English alphabet",
+"Good people",
+"Interesting books"
+],
+answer:1,
+explanation:"The vowels {a, e, i, o, u} form a well-defined set because we can clearly determine whether an element belongs to the set."
+},
+
+{
+q:"If A = {1, 2, 3, 4}, which statement is true?",
+options:[
+"5 ∈ A",
+"2 ∈ A",
+"6 ∈ A",
+"0 ∈ A"
+],
+answer:1,
+explanation:"2 is an element of A, so 2 ∈ A."
+},
+
+{
+q:"If A = {2, 4, 6, 8}, what is the number of elements in A?",
+options:[
+"2",
+"4",
+"6",
+"8"
+],
+answer:1,
+explanation:"A has four distinct elements: 2, 4, 6 and 8. Therefore n(A) = 4."
+},
+
+{
+q:"Which symbol means 'is an element of'?",
+options:[
+"⊂",
+"∈",
+"∪",
+"∩"
+],
+answer:1,
+explanation:"The symbol ∈ means 'is an element of'."
+},
+
+{
+q:"Which symbol means 'is a subset of'?",
+options:[
+"∈",
+"⊂",
+"∪",
+"∩"
+],
+answer:1,
+explanation:"The symbol ⊂ means that one set is a subset of another set."
+},
+
+{
+q:"If A = {1,2,3} and B = {3,4,5}, what is A ∪ B?",
+options:[
+"{3}",
+"{1,2,3,4,5}",
+"{1,2}",
+"{4,5}"
+],
+answer:1,
+explanation:"The union contains all elements that are in A or B. Therefore A ∪ B = {1,2,3,4,5}."
+},
+
+{
+q:"If A = {1,2,3} and B = {3,4,5}, what is A ∩ B?",
+options:[
+"{1,2,3,4,5}",
+"{1,2}",
+"{3}",
+"{4,5}"
+],
+answer:2,
+explanation:"The intersection contains only elements common to both sets. The only common element is 3."
+},
+
+{
+q:"If U = {1,2,3,4,5} and A = {1,3,5}, what is A′?",
+options:[
+"{1,3,5}",
+"{2,4}",
+"{1,2,3}",
+"{4,5}"
+],
+answer:1,
+explanation:"The complement of A contains elements in the universal set that are not in A. Therefore A′ = {2,4}."
+},
+
+{
+q:"Which set is a subset of A = {1,2,3}?",
+options:[
+"{1,4}",
+"{2,3}",
+"{4,5}",
+"{0,3}"
+],
+answer:1,
+explanation:"Every element of {2,3} is found in A, so {2,3} ⊂ A."
+},
+
+{
+q:"What is the empty set?",
+options:[
+"A set with one element",
+"A set with no elements",
+"A set with all elements",
+"A set with two elements"
+],
+answer:1,
+explanation:"An empty set is a set containing no elements. It is written as ∅ or {}."
+},
+
+{
+q:"If A = {a,b,c}, how many subsets does A have?",
+options:[
+"3",
+"6",
+"8",
+"9"
+],
+answer:2,
+explanation:"A set with n elements has 2ⁿ subsets. Here n = 3, so 2³ = 8."
+},
+
+{
+q:"Which of the following represents the intersection of two sets?",
+options:[
+"A ∪ B",
+"A ∩ B",
+"A − B",
+"A′"
+],
+answer:1,
+explanation:"A ∩ B represents the elements common to both A and B."
+},
+
+{
+q:"If A and B have no common elements, they are called:",
+options:[
+"Equal sets",
+"Universal sets",
+"Disjoint sets",
+"Equivalent sets"
+],
+answer:2,
+explanation:"Two sets with no common elements are called disjoint sets."
+},
+
+{
+q:"If A = {1,2,3} and B = {1,2,3}, then A and B are:",
+options:[
+"Disjoint",
+"Equal",
+"Empty",
+"Universal"
+],
+answer:1,
+explanation:"Two sets are equal when they contain exactly the same elements."
+},
+
+{
+q:"What does a Venn diagram help us to show?",
+options:[
+"Only numbers",
+"Relationships between sets",
+"Only multiplication",
+"Only equations"
+],
+answer:1,
+explanation:"Venn diagrams use circles to show relationships such as union, intersection and complement."
+},
+
+{
+q:"If n(A) = 5 and n(B) = 3, and A and B are disjoint, what is n(A ∪ B)?",
+options:[
+"2",
+"3",
+"5",
+"8"
+],
+answer:3,
+explanation:"For disjoint sets, n(A ∪ B) = n(A) + n(B) = 5 + 3 = 8."
+},
+
+{
+q:"Which of the following is NOT a well-defined set?",
+options:[
+"Prime numbers less than 20",
+"Days of the week",
+"Beautiful flowers",
+"Even numbers"
+],
+answer:2,
+explanation:"'Beautiful flowers' is subjective because different people may have different opinions about what is beautiful."
+},
+
+{
+q:"If A ⊂ B, then:",
+options:[
+"Every element of A is in B",
+"Every element of B is in A",
+"A and B have no elements",
+"A is empty"
+],
+answer:0,
+explanation:"A ⊂ B means every element of A is also an element of B."
+},
+
+{
+q:"Which operation gives elements that belong to A or B?",
+options:[
+"Intersection",
+"Union",
+"Complement",
+"Difference"
+],
+answer:1,
+explanation:"Union, A ∪ B, contains all elements belonging to A or B."
+},
+
+{
+q:"If U = {1,2,3,4,5,6} and A = {2,4,6}, which is true?",
+options:[
+"A′ = {2,4,6}",
+"A′ = {1,3,5}",
+"A = U",
+"A has no elements"
+],
+answer:1,
+explanation:"The elements of U that are not in A are {1,3,5}. Therefore A′ = {1,3,5}."
+}
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion(){
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1) +
+        " of " + questions.length;
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion + 1) / questions.length * 100) + "%";
+
+    document.getElementById("question").textContent = q.q;
+
+    const optionsDiv =
+        document.getElementById("options");
+
+    optionsDiv.innerHTML = "";
+
+    q.options.forEach((option,index)=>{
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.textContent =
+            String.fromCharCode(65 + index) +
+            ". " + option;
+
+        button.onclick = () =>
+            checkAnswer(index,button);
+
+        optionsDiv.appendChild(button);
+
+    });
+
+    document.getElementById("result").style.display = "none";
+
+    document.getElementById("nextButton").style.display = "none";
+
+}
+
+
+function checkAnswer(selected,clickedButton){
+
+    if(answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+    buttons.forEach((button,index)=>{
+
+        button.disabled = true;
+
+        if(index === q.answer){
+            button.classList.add("correct");
+        }
+
+    });
+
+
+    if(selected === q.answer){
+
+        score++;
+
+        clickedButton.classList.add("correct");
+
+        document.getElementById("result").className =
+            "result correct-result";
+
+        document.getElementById("resultText").innerHTML =
+            "✅ Correct! Well done.";
+
+    }else{
+
+        clickedButton.classList.add("wrong");
+
+        document.getElementById("result").className =
+            "result wrong-result";
+
+        document.getElementById("resultText").innerHTML =
+            "❌ Wrong! The correct answer is " +
+            String.fromCharCode(65 + q.answer) +
+            ".";
+
+    }
+
+
+    document.getElementById("explanation").innerHTML =
+        "💡 <strong>Explanation:</strong> " +
+        q.explanation;
+
+    document.getElementById("result").style.display =
+        "block";
+
+    document.getElementById("nextButton").style.display =
+        "block";
+
+}
+
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+    if(currentQuestion < questions.length){
+
+        loadQuestion();
+
+    }else{
+
+        showFinish();
+
+    }
+
+}
+
+
+function showFinish(){
+
+    document.getElementById("questionCard").style.display =
+        "none";
+
+    document.getElementById("finish").style.display =
+        "block";
+
+    document.getElementById("finalScore").textContent =
+        score + " / " + questions.length;
+
+    const percentage =
+        (score / questions.length) * 100;
+
+    let message = "";
+
+    if(percentage >= 90){
+
+        message =
+            "🏆 Excellent! You have a very strong understanding of Sets.";
+
+    }else if(percentage >= 70){
+
+        message =
+            "👏 Very good! Keep practicing to become even stronger.";
+
+    }else if(percentage >= 50){
+
+        message =
+            "👍 Good effort! Review the explanations and try again.";
+
+    }else{
+
+        message =
+            "📚 Keep studying! Review Unit 1 Notes and practice again.";
+
+    }
+
+    document.getElementById("finalMessage").textContent =
+        message;
+
+}
+
+
+function restartQuiz(){
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    document.getElementById("finish").style.display =
+        "none";
+
+    document.getElementById("questionCard").style.display =
+        "block";
+
+    loadQuestion();
+
+}
+
+
+loadQuestion();
+
+</script>
+
+
+</body>
+
+</html>
