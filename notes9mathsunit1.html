@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Unit 1 - Further on Sets | Study Plus</title>
+<title>Grade 9 Mathematics Unit 1 - Study Plus</title>
 
 <style>
 
@@ -20,6 +21,8 @@ body{
     font-family:Arial,sans-serif;
     background:#f4f7fb;
     color:#222;
+    line-height:1.7;
+    padding-bottom:30px;
 }
 
 header{
@@ -31,93 +34,79 @@ header{
 
 header h1{
     margin:0;
-    font-size:28px;
+    font-size:29px;
 }
 
 header p{
-    margin:8px 0;
+    margin:7px 0 0;
 }
 
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     padding:20px;
 }
 
-.card{
+.topic{
     background:white;
-    margin:18px 0;
-    padding:22px;
+    margin:20px 0;
+    padding:23px;
     border-radius:16px;
     box-shadow:0 3px 10px #ccc;
 }
 
-h2{
+.topic h2{
     color:#2563eb;
     margin-top:0;
 }
 
-h3{
+.topic h3{
     color:#7c3aed;
 }
 
-p{
-    line-height:1.7;
-    color:#555;
-}
-
-ul,ol{
-    line-height:1.8;
-    color:#444;
-}
-
-.formula{
-    background:#eef2ff;
+.definition{
+    background:#eef4ff;
+    border-left:5px solid #2563eb;
     padding:15px;
-    border-radius:10px;
-    margin:12px 0;
-    font-weight:bold;
-    color:#3730a3;
+    margin:15px 0;
+    border-radius:8px;
 }
 
 .example{
     background:#f0fdf4;
     border-left:5px solid #16a34a;
     padding:15px;
-    border-radius:8px;
     margin:15px 0;
+    border-radius:8px;
 }
 
-.tip{
+.trick{
     background:#fff7ed;
     border-left:5px solid #ea580c;
     padding:15px;
-    border-radius:8px;
     margin:15px 0;
+    border-radius:8px;
 }
 
-button{
-    width:100%;
+.exam{
+    background:#fef2f2;
+    border-left:5px solid #dc2626;
     padding:15px;
-    margin-top:10px;
-    border:none;
-    border-radius:10px;
-    color:white;
-    font-size:16px;
+    margin:15px 0;
+    border-radius:8px;
+}
+
+.formula{
+    background:#f5f3ff;
+    border-left:5px solid #7c3aed;
+    padding:15px;
+    margin:15px 0;
+    border-radius:8px;
     font-weight:bold;
-    cursor:pointer;
 }
 
-.back{
-    background:#172554;
-}
-
-.practice{
-    background:#16a34a;
-}
-
-button:hover{
-    opacity:.9;
+ul{
+    padding-left:25px;
 }
 
 table{
@@ -137,6 +126,19 @@ th{
     color:white;
 }
 
+.back{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#172554;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
 </style>
 
 </head>
@@ -149,7 +151,7 @@ th{
 
 <p>Unit 1 — Further on Sets</p>
 
-<p>📚 Study Plus</p>
+<p>📚 Study Plus Detailed Notes</p>
 
 </header>
 
@@ -157,27 +159,48 @@ th{
 <div class="container">
 
 
-<div class="card">
+<!-- INTRODUCTION -->
 
-<h2>📘 Unit 1: Further on Sets</h2>
+<div class="topic">
+
+<h2>📘 Unit 1 Overview</h2>
 
 <p>
-This lesson introduces important ideas about sets,
-subsets, universal sets, operations on sets,
-Venn diagrams and applications of sets.
+In this unit, we study sets and the different ways
+sets can be described and represented. We also learn
+how to compare sets and perform operations such as
+union, intersection and complement.
+</p>
+
+<p>
+Sets are important because they provide a mathematical
+way of grouping objects that have a common property.
+They are also used in probability, statistics, logic,
+computer science and many other areas of mathematics.
 </p>
 
 </div>
 
 
-<div class="card">
+<!-- TOPIC 1 -->
 
-<h2>1️⃣ What is a Set?</h2>
+<div class="topic">
+
+<h2>1.1 Sets and Elements</h2>
+
+<h3>What is a Set?</h3>
+
+<div class="definition">
+
+<b>Definition:</b><br>
+
+A set is a well-defined collection of distinct objects.
+
+</div>
 
 <p>
-A <b>set</b> is a well-defined collection of distinct
-objects. The objects in a set are called
-<b>elements</b> or <b>members</b>.
+The objects in a set are called <b>elements</b> or
+<b>members</b> of the set.
 </p>
 
 <div class="example">
@@ -185,100 +208,173 @@ objects. The objects in a set are called
 <b>Example:</b>
 
 <p>
+Let
+<b>A = {2, 4, 6, 8}</b>
+</p>
+
+<p>
+Then 2, 4, 6 and 8 are the elements of A.
+</p>
+
+</div>
+
+<h3>Membership Symbols</h3>
+
+<ul>
+
+<li><b>∈</b> means "is an element of"</li>
+
+<li><b>∉</b> means "is not an element of"</li>
+
+</ul>
+
+<div class="example">
+
+For A = {2, 4, 6, 8}:
+
+<p>
+4 ∈ A ✔️
+</p>
+
+<p>
+5 ∉ A ✔️
+</p>
+
+</div>
+
+<h3>Important Properties</h3>
+
+<ul>
+
+<li>The order of elements does not matter.</li>
+
+<li>Repeated elements are counted only once.</li>
+
+<li>A set must be well-defined.</li>
+
+</ul>
+
+<div class="trick">
+
+<b>⚡ Short Trick:</b><br>
+
+Remember:
+
+<b>Set = Collection + Well-defined + No repetition</b>
+
+</div>
+
+</div>
+
+
+<!-- TOPIC 2 -->
+
+<div class="topic">
+
+<h2>1.2 Ways of Describing a Set</h2>
+
+<p>
+There are several common ways to describe a set.
+</p>
+
+<h3>1. Roster / Listing Method</h3>
+
+<p>
+The elements are written inside curly brackets.
+</p>
+
+<div class="example">
+
 A = {1, 2, 3, 4, 5}
-</p>
-
-<p>
-Here, 1, 2, 3, 4 and 5 are the elements of set A.
-</p>
 
 </div>
 
-<h3>Set notation</h3>
+<h3>2. Descriptive Method</h3>
 
 <p>
-If x belongs to set A, we write:
-</p>
-
-<div class="formula">
-x ∈ A
-</div>
-
-<p>
-If x does not belong to A, we write:
-</p>
-
-<div class="formula">
-x ∉ A
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>2️⃣ Ways of Describing a Set</h2>
-
-<h3>A. Roster or Listing Method</h3>
-
-<p>
-The elements are listed inside curly brackets.
+The set is described using words.
 </p>
 
 <div class="example">
 
-A = {2, 4, 6, 8, 10}
+A = the set of positive even integers less than 10.
 
 </div>
 
-<h3>B. Set-Builder Method</h3>
+<h3>3. Set-Builder Method</h3>
 
 <p>
-The elements are described using a rule or property.
+A rule or property is used to describe the elements.
 </p>
 
 <div class="example">
 
-A = {x | x is an even natural number less than 12}
+A = {x : x is a positive even integer less than 10}
+
+</div>
+
+<p>
+The symbol <b>:</b> can be read as
+"such that".
+</p>
+
+<div class="trick">
+
+<b>⚡ Short Trick:</b><br>
+
+<b>Roster</b> → list the elements.<br>
+<b>Descriptive</b> → describe with words.<br>
+<b>Set-builder</b> → give a rule.
 
 </div>
 
 </div>
 
 
-<div class="card">
+<!-- TOPIC 3 -->
 
-<h2>3️⃣ Types of Sets</h2>
+<div class="topic">
+
+<h2>1.3 Types of Sets</h2>
 
 <h3>Finite Set</h3>
 
-<p>
-A set containing a limited number of elements.
-</p>
+<div class="definition">
+
+A set containing a limited number of elements is called
+a finite set.
+
+</div>
 
 <div class="example">
-A = {1, 2, 3, 4}
+
+A = {1,2,3,4}
+
 </div>
 
 <h3>Infinite Set</h3>
 
 <p>
-A set whose elements continue without end.
+A set that continues without ending is an infinite set.
 </p>
 
 <div class="example">
-N = {1, 2, 3, 4, 5, ...}
+
+N = {1,2,3,4,5,...}
+
 </div>
 
 <h3>Empty Set</h3>
 
 <p>
-A set containing no elements.
+A set with no elements is called an empty set or null set.
 </p>
 
-<div class="formula">
-∅ or { }
-</div>
+<p>
+Symbols:
+
+<b>∅</b> or <b>{ }</b>
+</p>
 
 <h3>Singleton Set</h3>
 
@@ -287,117 +383,156 @@ A set containing exactly one element.
 </p>
 
 <div class="example">
+
 A = {7}
-</div>
 
 </div>
 
-
-<div class="card">
-
-<h2>4️⃣ Cardinality of a Set</h2>
+<h3>Equal Sets</h3>
 
 <p>
-The number of elements in a set is called its
-<b>cardinality</b>.
+Two sets are equal if they contain exactly the same elements.
 </p>
-
-<div class="formula">
-n(A) = number of elements in A
-</div>
 
 <div class="example">
 
-If:
+A = {1,2,3}
 
-A = {2, 4, 6, 8}
-
-then:
-
-n(A) = 4
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>5️⃣ Subsets</h2>
-
-<p>
-Set A is a subset of set B if every element of A
-is also an element of B.
-</p>
-
-<div class="formula">
-A ⊆ B
-</div>
-
-<div class="example">
-
-A = {1, 2}
-
-B = {1, 2, 3, 4}
+B = {3,2,1}
 
 Therefore:
 
-A ⊆ B
+<b>A = B</b>
+
+</div>
+
+<div class="trick">
+
+<b>⚡ Remember:</b><br>
+
+Order does NOT matter in a set.
+
+{1,2,3} = {3,1,2}
+
+</div>
+
+</div>
+
+
+<!-- TOPIC 4 -->
+
+<div class="topic">
+
+<h2>1.4 Subsets</h2>
+
+<div class="definition">
+
+Set A is a subset of set B if every element of A
+is also an element of B.
+
+Symbol:
+
+<b>A ⊆ B</b>
+
+</div>
+
+<div class="example">
+
+Let:
+
+A = {1,2}
+
+B = {1,2,3,4}
+
+Since every element of A is in B:
+
+<b>A ⊆ B</b>
 
 </div>
 
 <h3>Proper Subset</h3>
 
 <p>
-A is a proper subset of B when A is a subset of B
+A is a proper subset of B if A is a subset of B
 but A is not equal to B.
 </p>
 
-<div class="formula">
-A ⊂ B
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>6️⃣ Universal Set</h2>
-
 <p>
-The <b>universal set</b> contains all the elements
+Symbol:
+
+<b>A ⊂ B</b>
+</p>
+
+<h3>Important Facts</h3>
+
+<ul>
+
+<li>Every set is a subset of itself.</li>
+
+<li>The empty set is a subset of every set.</li>
+
+<li>A proper subset must be smaller than the original set.</li>
+
+</ul>
+
+<div class="trick">
+
+<b>⚡ Short Trick:</b><br>
+
+To check A ⊆ B:
+
+Take <b>every element of A</b> and ask:
+
+"Is it inside B?"
+
+If all are YES → A ⊆ B.
+
+</div>
+
+</div>
+
+
+<!-- TOPIC 5 -->
+
+<div class="topic">
+
+<h2>1.5 Universal Set</h2>
+
+<div class="definition">
+
+The universal set is the set containing all objects
 under consideration in a particular problem.
-</p>
 
-<p>
-It is usually represented by U.
-</p>
+It is usually represented by <b>U</b>.
+
+</div>
 
 <div class="example">
+
+Suppose:
 
 U = {1,2,3,4,5,6}
 
 A = {2,4,6}
 
-Here A is a subset of U.
+Then A is a subset of U.
 
 </div>
 
-</div>
-
-
-<div class="card">
-
-<h2>7️⃣ Complement of a Set</h2>
+<h3>Complement of a Set</h3>
 
 <p>
-The complement of A contains all elements in the
-universal set that are not in A.
+The complement of A contains all elements of U
+that are not in A.
 </p>
 
-<div class="formula">
-A' = U − A
-</div>
+<p>
+
+Symbol:
+
+<b>A′</b> or <b>Aᶜ</b>
+
+</p>
 
 <div class="example">
 
@@ -407,24 +542,40 @@ A = {2,4,6}
 
 Therefore:
 
-A' = {1,3,5}
+<b>A′ = {1,3,5}</b>
+
+</div>
+
+<div class="trick">
+
+<b>⚡ Short Trick:</b><br>
+
+Complement means:
+
+<b>"Everything in U except A."</b>
 
 </div>
 
 </div>
 
 
-<div class="card">
+<!-- TOPIC 6 -->
 
-<h2>8️⃣ Union of Sets</h2>
+<div class="topic">
 
-<p>
-The union of two sets contains all elements that
-belong to either set, without repeating elements.
-</p>
+<h2>1.6 Operations on Sets</h2>
 
-<div class="formula">
-A ∪ B
+<h3>Union</h3>
+
+<div class="definition">
+
+The union of A and B contains every element
+that belongs to A or B or both.
+
+Symbol:
+
+<b>A ∪ B</b>
+
 </div>
 
 <div class="example">
@@ -437,51 +588,39 @@ A ∪ B = {1,2,3,4,5}
 
 </div>
 
-</div>
+<h3>Intersection</h3>
 
+<div class="definition">
 
-<div class="card">
+The intersection contains elements common to both sets.
 
-<h2>9️⃣ Intersection of Sets</h2>
+Symbol:
 
-<p>
-The intersection contains elements that are common
-to both sets.
-</p>
+<b>A ∩ B</b>
 
-<div class="formula">
-A ∩ B
 </div>
 
 <div class="example">
 
 A = {1,2,3}
 
-B = {2,3,4}
+B = {3,4,5}
 
-A ∩ B = {2,3}
-
-</div>
+A ∩ B = {3}
 
 </div>
 
-
-<div class="card">
-
-<h2>🔟 Difference of Sets</h2>
+<h3>Difference</h3>
 
 <p>
-The difference A − B contains elements that belong
-to A but do not belong to B.
-</p>
 
-<div class="formula">
-A − B
-</div>
+A − B contains elements that are in A but not in B.
+
+</p>
 
 <div class="example">
 
-A = {1,2,3,4}
+A = {1,2,3}
 
 B = {3,4,5}
 
@@ -489,82 +628,319 @@ A − B = {1,2}
 
 </div>
 
+<div class="formula">
+
+Union → ∪ → Put everything together.<br><br>
+
+Intersection → ∩ → Common elements.<br><br>
+
+Difference → − → Keep the first set's elements
+that are not in the second.
+
+</div>
+
+<div class="trick">
+
+<b>⚡ Easy Memory Trick:</b>
+
+<p>
+
+<b>∪ = OR</b>
+
+</p>
+
+<p>
+
+<b>∩ = AND</b>
+
+</p>
+
+</div>
+
 </div>
 
 
-<div class="card">
+<!-- TOPIC 7 -->
 
-<h2>📊 Venn Diagrams</h2>
+<div class="topic">
+
+<h2>1.7 Venn Diagrams</h2>
 
 <p>
-A Venn diagram is a visual representation of sets.
-Circles are commonly used to represent sets.
+A Venn diagram represents relationships between sets
+using circles.
 </p>
+
+<h3>Basic Interpretation</h3>
 
 <ul>
 
-<li>Union → A ∪ B</li>
+<li>Inside a circle → elements belonging to the set.</li>
 
-<li>Intersection → A ∩ B</li>
+<li>Overlap → intersection.</li>
 
-<li>Complement → A'</li>
+<li>Combined circles → union.</li>
 
-<li>Difference → A − B</li>
+<li>Outside the circle but inside U → complement.</li>
+
+</ul>
+
+<div class="example">
+
+For two sets A and B:
+
+<p>
+
+The overlapping region represents:
+
+<b>A ∩ B</b>
+
+</p>
+
+<p>
+
+Both circles together represent:
+
+<b>A ∪ B</b>
+
+</p>
+
+</div>
+
+<div class="trick">
+
+<b>⚡ Exam Trick:</b><br>
+
+When you see a Venn diagram:
+
+<b>Overlap = Intersection</b><br>
+
+<b>All selected regions = Union</b><br>
+
+<b>Outside A but inside U = A′</b>
+
+</div>
+
+</div>
+
+
+<!-- TOPIC 8 -->
+
+<div class="topic">
+
+<h2>1.8 Cardinality of Sets</h2>
+
+<div class="definition">
+
+The number of elements in a set is called
+the cardinality of the set.
+
+It is written as <b>n(A)</b> or <b>|A|</b>.
+
+</div>
+
+<div class="example">
+
+A = {2,4,6,8}
+
+Therefore:
+
+<b>n(A) = 4</b>
+
+</div>
+
+<h3>Union Formula</h3>
+
+<div class="formula">
+
+n(A ∪ B)
+=
+n(A) + n(B) − n(A ∩ B)
+
+</div>
+
+<p>
+We subtract the intersection because common elements
+were counted twice.
+</p>
+
+<div class="example">
+
+n(A) = 20
+
+n(B) = 15
+
+n(A ∩ B) = 5
+
+Therefore:
+
+n(A ∪ B)
+
+= 20 + 15 − 5
+
+= <b>30</b>
+
+</div>
+
+<div class="trick">
+
+<b>⚡ Short Trick:</b><br>
+
+For two sets remember:
+
+<b>Total = A + B − Common</b>
+
+</div>
+
+</div>
+
+
+<!-- TOPIC 9 -->
+
+<div class="topic">
+
+<h2>1.9 Applications of Sets</h2>
+
+<p>
+Sets are useful in real-life situations where objects
+need to be grouped or compared.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Suppose 30 students study Mathematics,
+20 study Physics, and 10 study both.
+</p>
+
+<p>
+
+Number studying at least one:
+
+<b>
+
+30 + 20 − 10 = 40
+
+</b>
+
+</p>
+
+<p>
+This type of problem can be represented using a
+Venn diagram.
+</p>
+
+<div class="example">
+
+<b>Important words:</b>
+
+<ul>
+
+<li>"A or B" → A ∪ B</li>
+
+<li>"A and B" → A ∩ B</li>
+
+<li>"not A" → A′</li>
+
+<li>"only A" → A − B</li>
+
+<li>"at least one" → Union</li>
+
+<li>"both" → Intersection</li>
 
 </ul>
 
 </div>
 
+</div>
 
-<div class="card">
 
-<h2>🧠 Important Laws of Sets</h2>
+<!-- QUICK REVISION -->
+
+<div class="topic">
+
+<h2>🧠 Quick Revision</h2>
 
 <table>
 
 <tr>
-<th>Law</th>
-<th>Relationship</th>
+
+<th>Concept</th>
+
+<th>Symbol</th>
+
+<th>Meaning</th>
+
 </tr>
 
 <tr>
-<td>Identity</td>
-<td>A ∪ ∅ = A</td>
+
+<td>Element</td>
+
+<td>∈</td>
+
+<td>Belongs to</td>
+
 </tr>
 
 <tr>
-<td>Identity</td>
-<td>A ∩ U = A</td>
+
+<td>Not element</td>
+
+<td>∉</td>
+
+<td>Does not belong to</td>
+
 </tr>
 
 <tr>
-<td>Domination</td>
-<td>A ∪ U = U</td>
+
+<td>Subset</td>
+
+<td>⊆</td>
+
+<td>Every element is contained</td>
+
 </tr>
 
 <tr>
-<td>Domination</td>
-<td>A ∩ ∅ = ∅</td>
+
+<td>Union</td>
+
+<td>∪</td>
+
+<td>All elements from both sets</td>
+
 </tr>
 
 <tr>
+
+<td>Intersection</td>
+
+<td>∩</td>
+
+<td>Common elements</td>
+
+</tr>
+
+<tr>
+
 <td>Complement</td>
-<td>A ∪ A' = U</td>
+
+<td>A′</td>
+
+<td>Everything in U but not A</td>
+
 </tr>
 
 <tr>
-<td>Complement</td>
-<td>A ∩ A' = ∅</td>
-</tr>
 
-<tr>
-<td>Idempotent</td>
-<td>A ∪ A = A</td>
-</tr>
+<td>Cardinality</td>
 
-<tr>
-<td>Idempotent</td>
-<td>A ∩ A = A</td>
+<td>n(A)</td>
+
+<td>Number of elements</td>
+
 </tr>
 
 </table>
@@ -572,23 +948,29 @@ Circles are commonly used to represent sets.
 </div>
 
 
-<div class="card">
+<!-- EXAM TIPS -->
 
-<h2>🎯 Exam Tips</h2>
+<div class="topic">
 
-<div class="tip">
+<h2>🎯 Unit 1 Exam Tips</h2>
+
+<div class="exam">
 
 <ul>
 
-<li>Do not repeat an element when finding a union.</li>
+<li>Do not count repeated elements twice.</li>
 
-<li>Intersection means COMMON elements.</li>
+<li>Remember that order does not matter in sets.</li>
 
-<li>Complement means elements OUTSIDE the set.</li>
+<li>Always identify the universal set before finding a complement.</li>
 
-<li>Always check the universal set before finding a complement.</li>
+<li>For union, combine elements without repetition.</li>
 
-<li>Remember: ∪ means OR, while ∩ means AND.</li>
+<li>For intersection, take only common elements.</li>
+
+<li>For cardinality of two sets, subtract the common part once.</li>
+
+<li>In Venn diagrams, carefully read what each region represents.</li>
 
 </ul>
 
@@ -597,30 +979,13 @@ Circles are commonly used to represent sets.
 </div>
 
 
-<div class="card">
-
-<h2>📝 Practice</h2>
-
-<p>
-Ready to test your understanding of Further on Sets?
-</p>
-
-<button
-class="practice"
-onclick="location.href='practice9.html'">
-
-📝 Unit 1 Practice
-
-</button>
-
-</div>
-
+<!-- BACK -->
 
 <button
 class="back"
-onclick="location.href='grade9.html'">
+onclick="location.href='grade9mathsnote.html'">
 
-← Back to Grade 9
+← Back to Mathematics Units
 
 </button>
 
