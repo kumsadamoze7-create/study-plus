@@ -53,8 +53,6 @@ header p{
     box-shadow:0 3px 10px #ccc;
 }
 
-/* SUBJECT COLORS */
-
 .math{
     border-left:6px solid #2563eb;
 }
@@ -79,16 +77,10 @@ header p{
     border-left:6px solid #0891b2;
 }
 
-.geography{
-    border-left:6px solid #64748b;
-}
-
+.geography,
 .economics{
     border-left:6px solid #64748b;
 }
-
-
-/* UNIT COLORS */
 
 .unit{
     border-left:5px solid #2563eb;
@@ -147,9 +139,6 @@ p{
     color:#555;
 }
 
-
-/* BUTTONS */
-
 button{
     width:100%;
     padding:15px;
@@ -207,9 +196,6 @@ button:hover{
     background:#172554;
 }
 
-
-/* HIDDEN UNIT AREAS */
-
 #mathUnits,
 #chemistryUnits,
 #englishUnits,
@@ -218,9 +204,6 @@ button:hover{
 #historyUnits{
     display:none;
 }
-
-
-/* TITLES */
 
 .title{
     text-align:center;
@@ -252,9 +235,6 @@ button:hover{
     color:#0891b2;
 }
 
-
-/* COMING SOON */
-
 .comingBox{
     text-align:center;
     padding:20px;
@@ -269,9 +249,7 @@ button:hover{
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -283,13 +261,9 @@ button:hover{
 
 </header>
 
-
 <div class="container">
 
-
-<!-- ================================================= -->
 <!-- MATHEMATICS -->
-<!-- ================================================= -->
 
 <div class="card math">
 
@@ -300,19 +274,13 @@ Complete Grade 9 Mathematics from
 Unit 1 to Unit 9 with Notes and Practice.
 </p>
 
-<button
-class="open"
-onclick="openMath()">
-
+<button class="open" onclick="openMath()">
 📚 Open Mathematics
-
 </button>
 
 </div>
 
-
 <div id="mathUnits">
-
 
 <div class="card">
 
@@ -326,17 +294,13 @@ Choose a unit to study Notes or Practice.
 
 </div>
 
-
 <div class="card unit">
 
 <h3>📘 Unit 1 — Further on Sets</h3>
 
-<button
-class="notes"
+<button class="notes"
 onclick="location.href='notes9mathsunit1.html'">
-
 📖 Unit 1 Notes
-
 </button>
 
 <button class="practice"
@@ -345,7 +309,6 @@ onclick="location.href='practice9.html'">
 </button>
 
 </div>
-
 
 <div class="card unit">
 
@@ -363,7 +326,6 @@ onclick="location.href='practice9unit2.html'">
 
 </div>
 
-
 <div class="card unit">
 
 <h3>📕 Unit 3 — Solving Equations</h3>
@@ -379,7 +341,6 @@ onclick="location.href='practice9unit3.html'">
 </button>
 
 </div>
-
 
 <div class="card unit">
 
@@ -397,7 +358,6 @@ onclick="location.href='practice9unit4.html'">
 
 </div>
 
-
 <div class="card unit">
 
 <h3>📐 Unit 5 — Introduction to Trigonometry</h3>
@@ -413,7 +373,6 @@ onclick="location.href='practice9unit5.html'">
 </button>
 
 </div>
-
 
 <div class="card unit">
 
@@ -431,7 +390,6 @@ onclick="location.href='practice9unit6.html'">
 
 </div>
 
-
 <div class="card unit">
 
 <h3>🔺 Unit 7 — Congruency and Similarity</h3>
@@ -447,7 +405,6 @@ onclick="location.href='practice9unit7.html'">
 </button>
 
 </div>
-
 
 <div class="card unit">
 
@@ -465,7 +422,6 @@ onclick="location.href='practice9unit8.html'">
 
 </div>
 
-
 <div class="card unit">
 
 <h3>📊 Unit 9 — Statistics and Probability</h3>
@@ -482,13 +438,9 @@ onclick="location.href='practice9unit9.html'">
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- CHEMISTRY -->
-<!-- ================================================= -->
 
 <div class="card chemistry">
 
@@ -499,19 +451,13 @@ Grade 9 Chemistry — Unit 1 to Unit 5
 with Notes and Practice.
 </p>
 
-<button
-class="chemOpen"
-onclick="openChemistry()">
-
+<button class="chemOpen" onclick="openChemistry()">
 🧪 Open Chemistry
-
 </button>
 
 </div>
 
-
 <div id="chemistryUnits">
-
 
 <div class="card">
 
@@ -524,7 +470,6 @@ Choose a unit to study Notes or Practice.
 </p>
 
 </div>
-
 
 <div class="card chemUnit">
 
@@ -542,7 +487,6 @@ onclick="location.href='practice9chemistryunit1.html'">
 
 </div>
 
-
 <div class="card chemUnit">
 
 <h3>📏 Unit 2 — Measurement and Scientific Method</h3>
@@ -558,7 +502,6 @@ onclick="location.href='practice9chemistryunit2.html'">
 </button>
 
 </div>
-
 
 <div class="card chemUnit">
 
@@ -576,7 +519,6 @@ onclick="location.href='practice9chemistryunit3.html'">
 
 </div>
 
-
 <div class="card chemUnit">
 
 <h3>🧩 Unit 4 — Periodic Classification of Elements</h3>
@@ -592,7 +534,6 @@ onclick="location.href='practice9chemistryunit4.html'">
 </button>
 
 </div>
-
 
 <div class="card chemUnit">
 
@@ -610,13 +551,9 @@ onclick="location.href='practice9chemistryunit5.html'">
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- ENGLISH -->
-<!-- ================================================= -->
 
 <div class="card english">
 
@@ -627,19 +564,13 @@ Grade 9 English — Unit 1 to Unit 3
 with Notes and Practice.
 </p>
 
-<button
-class="engOpen"
-onclick="openEnglish()">
-
+<button class="engOpen" onclick="openEnglish()">
 📖 Open English
-
 </button>
 
 </div>
 
-
 <div id="englishUnits">
-
 
 <div class="card">
 
@@ -652,7 +583,6 @@ Choose a unit to study Notes or Practice.
 </p>
 
 </div>
-
 
 <div class="card engUnit">
 
@@ -670,7 +600,6 @@ onclick="location.href='practice9englishunit1_200-1.html'">
 
 </div>
 
-
 <div class="card engUnit">
 
 <h3>⚖️ Unit 2 — Conditional Sentences</h3>
@@ -686,7 +615,6 @@ onclick="location.href='practice9englishunit2_200.html'">
 </button>
 
 </div>
-
 
 <div class="card engUnit">
 
@@ -704,13 +632,9 @@ onclick="location.href='practice9englishunit3.html'">
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- BIOLOGY -->
-<!-- ================================================= -->
 
 <div class="card biology">
 
@@ -731,9 +655,7 @@ onclick="openBiology()">
 
 </div>
 
-
 <div id="biologyUnits">
-
 
 <div class="card">
 
@@ -747,23 +669,25 @@ Choose a unit to study Notes or Practice.
 
 </div>
 
-
 <div class="card bioUnit">
 
 <h3>🧬 Unit 1 — Biology</h3>
 
 <button class="notes"
 onclick="location.href='notes9biologyunit1.html'">
+
 📖 Unit 1 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit1.html'">
+
 📝 Unit 1 Practice
+
 </button>
 
 </div>
-
 
 <div class="card bioUnit">
 
@@ -771,16 +695,19 @@ onclick="location.href='practice9biologyunit1.html'">
 
 <button class="notes"
 onclick="location.href='notes9biologyunit2.html'">
+
 📖 Unit 2 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit2.html'">
+
 📝 Unit 2 Practice
+
 </button>
 
 </div>
-
 
 <div class="card bioUnit">
 
@@ -788,16 +715,19 @@ onclick="location.href='practice9biologyunit2.html'">
 
 <button class="notes"
 onclick="location.href='notes9biologyunit3.html'">
+
 📖 Unit 3 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit3.html'">
+
 📝 Unit 3 Practice
+
 </button>
 
 </div>
-
 
 <div class="card bioUnit">
 
@@ -805,16 +735,19 @@ onclick="location.href='practice9biologyunit3.html'">
 
 <button class="notes"
 onclick="location.href='notes9biologyunit4.html'">
+
 📖 Unit 4 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit4.html'">
+
 📝 Unit 4 Practice
+
 </button>
 
 </div>
-
 
 <div class="card bioUnit">
 
@@ -822,16 +755,19 @@ onclick="location.href='practice9biologyunit4.html'">
 
 <button class="notes"
 onclick="location.href='notes9biologyunit5.html'">
+
 📖 Unit 5 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit5.html'">
+
 📝 Unit 5 Practice
+
 </button>
 
 </div>
-
 
 <div class="card bioUnit">
 
@@ -839,23 +775,23 @@ onclick="location.href='practice9biologyunit5.html'">
 
 <button class="notes"
 onclick="location.href='notes9biologyunit6.html'">
+
 📖 Unit 6 Notes
+
 </button>
 
 <button class="practice"
 onclick="location.href='practice9biologyunit6.html'">
+
 📝 Unit 6 Practice
+
 </button>
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- PHYSICS -->
-<!-- ================================================= -->
 
 <div class="card physics">
 
@@ -866,19 +802,13 @@ Grade 9 Physics — Unit 1 to Unit 7
 with Notes and Practice.
 </p>
 
-<button
-class="physicsOpen"
-onclick="openPhysics()">
-
+<button class="physicsOpen" onclick="openPhysics()">
 ⚡ Open Physics
-
 </button>
 
 </div>
 
-
 <div id="physicsUnits">
-
 
 <div class="card">
 
@@ -891,7 +821,6 @@ Choose a unit to study Notes or Practice.
 </p>
 
 </div>
-
 
 <div class="card physicsUnit">
 
@@ -909,7 +838,6 @@ onclick="location.href='practice9physicsunit1.html'">
 
 </div>
 
-
 <div class="card physicsUnit">
 
 <h3>📏 Unit 2 — Motion</h3>
@@ -925,7 +853,6 @@ onclick="location.href='practice9physicsunit2.html'">
 </button>
 
 </div>
-
 
 <div class="card physicsUnit">
 
@@ -943,7 +870,6 @@ onclick="location.href='practice9physicsunit3.html'">
 
 </div>
 
-
 <div class="card physicsUnit">
 
 <h3>⚖️ Unit 4 — Work, Energy and Power</h3>
@@ -959,7 +885,6 @@ onclick="location.href='practice9physicsunit4.html'">
 </button>
 
 </div>
-
 
 <div class="card physicsUnit">
 
@@ -977,7 +902,6 @@ onclick="location.href='practice9physicsunit5.html'">
 
 </div>
 
-
 <div class="card physicsUnit">
 
 <h3>💡 Unit 6 — Electricity</h3>
@@ -993,7 +917,6 @@ onclick="location.href='practice9physicsunit6.html'">
 </button>
 
 </div>
-
 
 <div class="card physicsUnit">
 
@@ -1011,13 +934,9 @@ onclick="location.href='practice9physicsunit7.html'">
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- HISTORY -->
-<!-- ================================================= -->
 
 <div class="card history">
 
@@ -1028,19 +947,13 @@ Grade 9 History — Unit 1 to Unit 9
 with detailed Notes and Practice.
 </p>
 
-<button
-class="historyOpen"
-onclick="openHistory()">
-
+<button class="historyOpen" onclick="openHistory()">
 📜 Open History
-
 </button>
 
 </div>
 
-
 <div id="historyUnits">
-
 
 <div class="card">
 
@@ -1053,7 +966,6 @@ Choose a unit to study detailed Notes or Practice.
 </p>
 
 </div>
-
 
 <div class="card historyUnit">
 
@@ -1071,7 +983,6 @@ onclick="location.href='practice9historyunit1.html'">
 
 </div>
 
-
 <div class="card historyUnit">
 
 <h3>🏺 Unit 2 — Ancient Civilizations</h3>
@@ -1087,7 +998,6 @@ onclick="location.href='practice9historyunit2.html'">
 </button>
 
 </div>
-
 
 <div class="card historyUnit">
 
@@ -1105,7 +1015,6 @@ onclick="location.href='practice9historyunit3.html'">
 
 </div>
 
-
 <div class="card historyUnit">
 
 <h3>⛵ Unit 4 — The Age of Exploration</h3>
@@ -1121,7 +1030,6 @@ onclick="location.href='practice9historyunit4.html'">
 </button>
 
 </div>
-
 
 <div class="card historyUnit">
 
@@ -1139,7 +1047,6 @@ onclick="location.href='practice9historyunit5.html'">
 
 </div>
 
-
 <div class="card historyUnit">
 
 <h3>👑 Unit 6 — States and Societies</h3>
@@ -1155,7 +1062,6 @@ onclick="location.href='practice9historyunit6.html'">
 </button>
 
 </div>
-
 
 <div class="card historyUnit">
 
@@ -1173,7 +1079,6 @@ onclick="location.href='practice9historyunit7.html'">
 
 </div>
 
-
 <div class="card historyUnit">
 
 <h3>🌍 Unit 8 — Africa and the Wider World</h3>
@@ -1189,7 +1094,6 @@ onclick="location.href='practice9historyunit8.html'">
 </button>
 
 </div>
-
 
 <div class="card historyUnit">
 
@@ -1207,13 +1111,9 @@ onclick="location.href='practice9historyunit9.html'">
 
 </div>
 
-
 </div>
 
-
-<!-- ================================================= -->
 <!-- GEOGRAPHY -->
-<!-- ================================================= -->
 
 <div class="card geography">
 
@@ -1229,10 +1129,7 @@ Grade 9 Geography will be added soon.
 
 </div>
 
-
-<!-- ================================================= -->
 <!-- ECONOMICS -->
-<!-- ================================================= -->
 
 <div class="card economics">
 
@@ -1248,7 +1145,6 @@ Grade 9 Economics will be added soon.
 
 </div>
 
-
 <!-- BACK -->
 
 <button
@@ -1259,9 +1155,7 @@ onclick="location.href='index.html'">
 
 </button>
 
-
 </div>
-
 
 <script>
 
@@ -1270,47 +1164,56 @@ function showSection(id){
     const section =
     document.getElementById(id);
 
-    section.style.display="block";
+    if(section){
 
-    section.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+        section.style.display="block";
+
+        section.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
 
 }
-
 
 function openMath(){
-    showSection("mathUnits");
-}
 
+    showSection("mathUnits");
+
+}
 
 function openChemistry(){
-    showSection("chemistryUnits");
-}
 
+    showSection("chemistryUnits");
+
+}
 
 function openEnglish(){
-    showSection("englishUnits");
-}
 
+    showSection("englishUnits");
+
+}
 
 function openBiology(){
-    showSection("biologyUnits");
-}
 
+    showSection("biologyUnits");
+
+}
 
 function openPhysics(){
+
     showSection("physicsUnits");
+
 }
 
-
 function openHistory(){
+
     showSection("historyUnits");
+
 }
 
 </script>
-
 
 </body>
 
