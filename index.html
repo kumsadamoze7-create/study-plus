@@ -12,8 +12,16 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* =========================
+   BASIC
+========================= */
+
 *{
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -22,27 +30,82 @@ body{
     background:#f4f7fb;
     color:#222;
     padding-bottom:85px;
+    overflow-x:hidden;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed,
+        #9333ea,
+        #2563eb
+    );
+
+    background-size:300% 300%;
+
     color:white;
     text-align:center;
     padding:40px 15px;
+
+    animation:gradientMove 8s ease infinite;
 }
 
 header h1{
     margin:0;
     font-size:32px;
+    animation:fadeDown 1s ease;
 }
 
 header p{
     margin:8px 0 0;
+    animation:fadeUp 1s ease;
 }
 
-/* CONTAINER */
+
+/* =========================
+   HEADER PARTICLES
+========================= */
+
+header::before,
+header::after{
+    content:"";
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    animation:float 5s ease-in-out infinite;
+}
+
+header::before{
+    left:-50px;
+    top:-50px;
+}
+
+header::after{
+    right:-50px;
+    bottom:-60px;
+    animation-delay:2s;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     max-width:900px;
@@ -50,18 +113,77 @@ header p{
     padding:20px;
 }
 
-/* HOME */
+
+/* =========================
+   HOME
+========================= */
 
 .home{
+    position:relative;
+
     background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 3px 12px #ccc;
+
+    padding:30px 22px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 8px 25px rgba(37,99,235,.15);
+
     text-align:center;
+
+    overflow:hidden;
+
+    animation:homeEnter 1s ease;
+}
+
+.home::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.07);
+
+    top:-80px;
+    left:-70px;
+
+    animation:float 6s ease-in-out infinite;
+}
+
+.home::after{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.07);
+
+    bottom:-70px;
+    right:-60px;
+
+    animation:float 5s ease-in-out infinite reverse;
+}
+
+.home-content{
+    position:relative;
+    z-index:2;
 }
 
 .home h2{
     color:#2563eb;
+    font-size:28px;
+    margin:5px 0 12px;
+
+    animation:pulseText 2.5s ease-in-out infinite;
 }
 
 .home p{
@@ -69,7 +191,146 @@ header p{
     line-height:1.8;
 }
 
-/* SECTIONS */
+
+/* =========================
+   WELCOME ICON
+========================= */
+
+.book-icon{
+    font-size:65px;
+
+    display:inline-block;
+
+    margin-bottom:5px;
+
+    animation:
+    bookFloat 3s ease-in-out infinite,
+    bookRotate 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATED TEXT
+========================= */
+
+.tagline{
+    font-size:18px;
+    font-weight:bold;
+
+    color:#7c3aed;
+
+    margin:15px 0;
+
+    animation:fadeUp 1.5s ease;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.feature{
+    background:#f8fafc;
+
+    padding:18px 10px;
+
+    border-radius:16px;
+
+    transition:
+    transform .3s,
+    box-shadow .3s;
+
+    animation:cardAppear .8s ease both;
+}
+
+.feature:nth-child(1){
+    animation-delay:.2s;
+}
+
+.feature:nth-child(2){
+    animation-delay:.4s;
+}
+
+.feature:nth-child(3){
+    animation-delay:.6s;
+}
+
+.feature:hover{
+    transform:
+    translateY(-8px)
+    scale(1.03);
+
+    box-shadow:
+    0 10px 25px
+    rgba(37,99,235,.15);
+}
+
+.feature-icon{
+    font-size:35px;
+
+    display:block;
+
+    margin-bottom:8px;
+
+    animation:iconBounce 2s infinite;
+}
+
+.feature:nth-child(2)
+.feature-icon{
+    animation-delay:.3s;
+}
+
+.feature:nth-child(3)
+.feature-icon{
+    animation-delay:.6s;
+}
+
+.feature strong{
+    color:#2563eb;
+}
+
+
+/* =========================
+   MOTIVATION
+========================= */
+
+.motivation{
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #f5f3ff
+    );
+
+    color:#334155;
+
+    font-weight:bold;
+
+    animation:
+    softGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
     display:none;
@@ -85,52 +346,90 @@ header p{
     margin-bottom:20px;
 }
 
-/* GRADE CARDS */
-
-.grade-card{
-    background:white;
-    margin:15px 0;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 3px 10px #ccc;
-    text-align:center;
-}
-
-.grade-card h3{
-    margin-top:0;
-    color:#2563eb;
-    font-size:22px;
-}
-
-.grade-button{
-    width:100%;
-    border:none;
-    padding:15px;
-    margin-top:8px;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-}
-
-.grade-button:hover{
-    opacity:.9;
-}
-
-/* PRACTICE */
-
 .practice-title{
     color:#16a34a;
 }
-
-/* WEB EXAM */
 
 .exam-title{
     color:#dc2626;
 }
 
-/* BOTTOM NAVIGATION */
+
+/* =========================
+   GRADE CARDS
+========================= */
+
+.grade-card{
+    background:white;
+
+    margin:15px 0;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 3px 10px #ccc;
+
+    text-align:center;
+
+    transition:
+    transform .3s,
+    box-shadow .3s;
+
+    animation:slideCard .6s ease;
+}
+
+.grade-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.12);
+}
+
+.grade-card h3{
+    margin-top:0;
+
+    color:#2563eb;
+
+    font-size:22px;
+}
+
+.grade-button{
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    margin-top:8px;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:
+    transform .2s,
+    opacity .2s;
+}
+
+.grade-button:hover{
+    opacity:.9;
+
+    transform:scale(1.02);
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
 
 .bottom-nav{
 
@@ -144,7 +443,8 @@ header p{
 
     background:white;
 
-    box-shadow:0 -3px 12px #ccc;
+    box-shadow:
+    0 -3px 12px #ccc;
 
     display:flex;
 
@@ -169,6 +469,13 @@ header p{
 
     padding:8px 10px;
 
+    transition:
+    transform .2s,
+    color .2s;
+}
+
+.nav-button:hover{
+    transform:translateY(-3px);
 }
 
 .nav-button span{
@@ -187,6 +494,214 @@ header p{
 
 }
 
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes homeEnter{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(30px)
+        scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+@keyframes bookFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+@keyframes bookRotate{
+
+    0%,100%{
+        rotate:0deg;
+    }
+
+    50%{
+        rotate:3deg;
+    }
+
+}
+
+@keyframes pulseText{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slideCard{
+
+    from{
+        opacity:0;
+        transform:translateX(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes iconBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}
+
+@keyframes softGlow{
+
+    0%,100%{
+        box-shadow:
+        0 0 0 rgba(37,99,235,0);
+    }
+
+    50%{
+        box-shadow:
+        0 5px 25px
+        rgba(37,99,235,.12);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    header{
+        padding:35px 12px;
+    }
+
+    header h1{
+        font-size:28px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .home{
+        padding:28px 16px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .feature{
+        padding:15px;
+    }
+
+    .book-icon{
+        font-size:58px;
+    }
+
+}
+
 </style>
 
 </head>
@@ -195,7 +710,7 @@ header p{
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -215,23 +730,97 @@ header p{
 
 <div class="home">
 
-<h2>Welcome to Study Plus</h2>
+<div class="home-content">
+
+<div class="book-icon">
+📚
+</div>
+
+<h2>
+Welcome to Study Plus
+</h2>
+
+<div class="tagline">
+✨ Learn today. Practice today. Succeed tomorrow. ✨
+</div>
 
 <p>
-
 Study Plus is an educational platform designed
 to help students learn, review lessons and
 practice for examinations.
-
 </p>
 
 <p>
-
-Choose <b>Notes</b> to study your lessons,
-<b>Practice</b> to test your knowledge,
-or <b>Web Exam</b> to take online examinations.
-
+Choose <b>📖 Notes</b> to study your lessons,
+<b>📝 Practice</b> to test your knowledge,
+or <b>🌐 Web Exam</b> to take online examinations.
 </p>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+<div class="feature">
+
+<span class="feature-icon">
+📖
+</span>
+
+<strong>Learn</strong>
+
+<p>
+Study detailed notes
+and understand lessons.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<span class="feature-icon">
+📝
+</span>
+
+<strong>Practice</strong>
+
+<p>
+Test your knowledge
+with practice questions.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<span class="feature-icon">
+🎯
+</span>
+
+<strong>Prepare</strong>
+
+<p>
+Prepare yourself
+for examinations.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- MOTIVATION -->
+
+<div class="motivation">
+
+🚀 Keep learning. Keep practicing.
+Your success starts here!
+
+</div>
+
+</div>
 
 </div>
 
@@ -254,6 +843,7 @@ or <b>Web Exam</b> to take online examinations.
 <button
 class="grade-button"
 onclick="location.href='grade9notes.html'">
+
 Open Grade 9 Notes
 
 </button>
@@ -267,7 +857,7 @@ Open Grade 9 Notes
 
 <button
 class="grade-button"
-onclick="location.href='grade10.html'">
+onclick="location.href='grade10notes.html'">
 
 Open Grade 10 Notes
 
@@ -282,7 +872,7 @@ Open Grade 10 Notes
 
 <button
 class="grade-button"
-onclick="location.href='grade11.html'">
+onclick="location.href='grade11notes.html'">
 
 Open Grade 11 Notes
 
@@ -297,7 +887,7 @@ Open Grade 11 Notes
 
 <button
 class="grade-button"
-onclick="location.href='grade12.html'">
+onclick="location.href='grade12notes.html'">
 
 Open Grade 12 Notes
 
@@ -508,6 +1098,8 @@ Web Exam
 
 </div>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
