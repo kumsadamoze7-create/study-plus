@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -27,7 +28,7 @@ header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
-    padding:35px 15px;
+    padding:38px 15px;
 }
 
 header h1{
@@ -37,6 +38,7 @@ header h1{
 
 header p{
     margin:8px 0;
+    font-size:16px;
 }
 
 .container{
@@ -48,26 +50,33 @@ header p{
 .unit-card{
     background:white;
     margin:16px 0;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 3px 10px #ccc;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 4px 12px #d1d5db;
     border-left:6px solid #2563eb;
     transition:0.25s;
 }
 
 .unit-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 7px 18px #bbb;
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px #cbd5e1;
 }
 
 .unit-card h2{
     margin-top:0;
     color:#2563eb;
+    font-size:21px;
 }
 
 .unit-card p{
     color:#555;
-    line-height:1.6;
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+.unit-icon{
+    font-size:30px;
+    margin-bottom:5px;
 }
 
 button{
@@ -75,7 +84,7 @@ button{
     padding:15px;
     margin-top:10px;
     border:none;
-    border-radius:10px;
+    border-radius:11px;
     background:#2563eb;
     color:white;
     font-size:16px;
@@ -85,8 +94,104 @@ button{
 }
 
 button:hover{
-    opacity:.9;
+    opacity:.92;
     transform:scale(1.01);
+}
+
+.unit2{
+    border-left-color:#16a34a;
+}
+
+.unit2 h2{
+    color:#16a34a;
+}
+
+.unit2 button{
+    background:#16a34a;
+}
+
+.unit3{
+    border-left-color:#9333ea;
+}
+
+.unit3 h2{
+    color:#9333ea;
+}
+
+.unit3 button{
+    background:#9333ea;
+}
+
+.unit4{
+    border-left-color:#dc2626;
+}
+
+.unit4 h2{
+    color:#dc2626;
+}
+
+.unit4 button{
+    background:#dc2626;
+}
+
+.unit5{
+    border-left-color:#ea580c;
+}
+
+.unit5 h2{
+    color:#ea580c;
+}
+
+.unit5 button{
+    background:#ea580c;
+}
+
+.unit6{
+    border-left-color:#0891b2;
+}
+
+.unit6 h2{
+    color:#0891b2;
+}
+
+.unit6 button{
+    background:#0891b2;
+}
+
+.unit7{
+    border-left-color:#db2777;
+}
+
+.unit7 h2{
+    color:#db2777;
+}
+
+.unit7 button{
+    background:#db2777;
+}
+
+.unit8{
+    border-left-color:#4f46e5;
+}
+
+.unit8 h2{
+    color:#4f46e5;
+}
+
+.unit8 button{
+    background:#4f46e5;
+}
+
+.unit9{
+    border-left-color:#ca8a04;
+}
+
+.unit9 h2{
+    color:#ca8a04;
+}
+
+.unit9 button{
+    background:#ca8a04;
 }
 
 .back{
@@ -95,6 +200,7 @@ button:hover{
 }
 
 </style>
+
 </head>
 
 
@@ -107,7 +213,7 @@ button:hover{
 
 <p>📝 Practice</p>
 
-<p>Choose a unit to practice</p>
+<p>Choose a unit to start practicing</p>
 
 </header>
 
@@ -119,14 +225,18 @@ button:hover{
 
 <div class="unit-card">
 
-<h2>📘 Unit 1 — Further on Sets</h2>
+<div class="unit-icon">📘</div>
+
+<h2>Unit 1 — Further on Sets</h2>
 
 <p>
-Sets, subsets, universal sets, union,
-intersection, complement and Venn diagrams.
+Practice sets, subsets, universal sets,
+union, intersection, complement and
+Venn diagrams.
 </p>
 
-<button onclick="location.href='practice9mathsunit1.html'">
+<button
+onclick="location.href='practice9unit1.html'">
 
 📝 Open Unit 1 Practice
 
@@ -137,16 +247,20 @@ intersection, complement and Venn diagrams.
 
 <!-- UNIT 2 -->
 
-<div class="unit-card">
+<div class="unit-card unit2">
 
-<h2>🔢 Unit 2 — The Number System</h2>
+<div class="unit-icon">🔢</div>
+
+<h2>Unit 2 — The Number System</h2>
 
 <p>
-Natural numbers, integers, rational numbers,
-irrational numbers and real numbers.
+Practice natural numbers, integers,
+rational numbers, irrational numbers
+and real numbers.
 </p>
 
-<button onclick="location.href='practice9mathsunit2.html'">
+<button
+onclick="location.href='practice9unit2.html'">
 
 📝 Open Unit 2 Practice
 
@@ -157,16 +271,19 @@ irrational numbers and real numbers.
 
 <!-- UNIT 3 -->
 
-<div class="unit-card">
+<div class="unit-card unit3">
 
-<h2>📕 Unit 3 — Solving Equations</h2>
+<div class="unit-icon">📕</div>
+
+<h2>Unit 3 — Solving Equations</h2>
 
 <p>
-Linear equations, brackets, fractions
-and applications of equations.
+Practice linear equations, equations
+with brackets, fractions and applications.
 </p>
 
-<button onclick="location.href='practice9mathsunit3.html'">
+<button
+onclick="location.href='practice9unit3.html'">
 
 📝 Open Unit 3 Practice
 
@@ -177,16 +294,19 @@ and applications of equations.
 
 <!-- UNIT 4 -->
 
-<div class="unit-card">
+<div class="unit-card unit4">
 
-<h2>📗 Unit 4 — Solving Inequalities</h2>
+<div class="unit-icon">📗</div>
+
+<h2>Unit 4 — Solving Inequalities</h2>
 
 <p>
-Linear inequalities, number-line representation
-and applications.
+Practice linear inequalities, number-line
+representation and applications.
 </p>
 
-<button onclick="location.href='practice9mathsunit4.html'">
+<button
+onclick="location.href='practice9unit4.html'">
 
 📝 Open Unit 4 Practice
 
@@ -197,16 +317,20 @@ and applications.
 
 <!-- UNIT 5 -->
 
-<div class="unit-card">
+<div class="unit-card unit5">
 
-<h2>📐 Unit 5 — Introduction to Trigonometry</h2>
+<div class="unit-icon">📐</div>
+
+<h2>Unit 5 — Introduction to Trigonometry</h2>
 
 <p>
-Angles, right triangles, sine, cosine,
-tangent and basic trigonometric relationships.
+Practice angles, right triangles, sine,
+cosine, tangent and basic trigonometric
+relationships.
 </p>
 
-<button onclick="location.href='practice9mathsunit5.html'">
+<button
+onclick="location.href='practice9unit5.html'">
 
 📝 Open Unit 5 Practice
 
@@ -217,16 +341,20 @@ tangent and basic trigonometric relationships.
 
 <!-- UNIT 6 -->
 
-<div class="unit-card">
+<div class="unit-card unit6">
 
-<h2>🔷 Unit 6 — Regular Polygons</h2>
+<div class="unit-icon">🔷</div>
+
+<h2>Unit 6 — Regular Polygons</h2>
 
 <p>
-Polygons, regular polygons, interior angles,
-exterior angles and perimeter.
+Practice polygons, regular polygons,
+interior angles, exterior angles and
+perimeter.
 </p>
 
-<button onclick="location.href='practice9mathsunit6.html'">
+<button
+onclick="location.href='practice9unit6.html'">
 
 📝 Open Unit 6 Practice
 
@@ -237,16 +365,20 @@ exterior angles and perimeter.
 
 <!-- UNIT 7 -->
 
-<div class="unit-card">
+<div class="unit-card unit7">
 
-<h2>🔺 Unit 7 — Congruency and Similarity</h2>
+<div class="unit-icon">🔺</div>
+
+<h2>Unit 7 — Congruency and Similarity</h2>
 
 <p>
-Congruent figures, similar figures,
-triangle congruency and similarity.
+Practice congruent figures, similar
+figures, triangle congruency and
+similarity relationships.
 </p>
 
-<button onclick="location.href='practice9mathsunit7.html'">
+<button
+onclick="location.href='practice9unit7.html'">
 
 📝 Open Unit 7 Practice
 
@@ -257,16 +389,20 @@ triangle congruency and similarity.
 
 <!-- UNIT 8 -->
 
-<div class="unit-card">
+<div class="unit-card unit8">
 
-<h2>➡️ Unit 8 — Vectors in Two Dimensions</h2>
+<div class="unit-icon">➡️</div>
+
+<h2>Unit 8 — Vectors in Two Dimensions</h2>
 
 <p>
-Vectors, magnitude, direction,
-addition, subtraction and representation.
+Practice vectors, magnitude, direction,
+vector addition, subtraction and
+representation.
 </p>
 
-<button onclick="location.href='practice9mathsunit8.html'">
+<button
+onclick="location.href='practice9unit8.html'">
 
 📝 Open Unit 8 Practice
 
@@ -277,16 +413,19 @@ addition, subtraction and representation.
 
 <!-- UNIT 9 -->
 
-<div class="unit-card">
+<div class="unit-card unit9">
 
-<h2>📊 Unit 9 — Statistics and Probability</h2>
+<div class="unit-icon">📊</div>
+
+<h2>Unit 9 — Statistics and Probability</h2>
 
 <p>
-Data collection, mean, median, mode,
-range, graphs and probability.
+Practice data collection, mean, median,
+mode, range, graphs and probability.
 </p>
 
-<button onclick="location.href='practice9mathsunit9.html'">
+<button
+onclick="location.href='practice9unit9.html'">
 
 📝 Open Unit 9 Practice
 
@@ -307,6 +446,7 @@ onclick="location.href='practice9.html'">
 
 
 </div>
+
 
 </body>
 
