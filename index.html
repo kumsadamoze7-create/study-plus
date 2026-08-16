@@ -29,32 +29,17 @@ header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
-    padding:35px 20px;
-    border-radius:0 0 28px 28px;
-}
-
-.logo{
-    width:75px;
-    height:75px;
-    margin:auto;
-    border-radius:20px;
-    background:white;
-    color:#2563eb;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-    box-shadow:0 5px 15px #0003;
+    padding:42px 20px;
 }
 
 header h1{
-    margin:15px 0 5px;
-    font-size:32px;
+    margin:0;
+    font-size:34px;
 }
 
 header p{
-    margin:5px 0;
-    opacity:.9;
+    margin:10px 0 0;
+    font-size:16px;
 }
 
 /* CONTAINER */
@@ -65,163 +50,115 @@ header p{
     padding:20px;
 }
 
-/* SECTION TITLE */
-
-.section-title{
-    font-size:22px;
-    margin:10px 0 15px;
-    color:#172554;
-}
-
-/* CARDS */
+/* HOME */
 
 .card{
     background:white;
-    padding:20px;
-    margin:15px 0;
+    margin:18px 0;
+    padding:25px;
     border-radius:18px;
-    box-shadow:0 4px 12px #0002;
+    box-shadow:0 4px 14px rgba(0,0,0,.10);
 }
 
-.card h2{
-    margin:0 0 8px;
+.intro{
+    text-align:center;
 }
 
-.card p{
-    color:#666;
-    line-height:1.5;
+.intro h2{
+    color:#2563eb;
+    margin-top:0;
 }
 
-/* GRADE BUTTONS */
+.intro p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* MAIN BUTTONS */
+
+.mainButton{
+    width:100%;
+    border:none;
+    padding:18px;
+    margin-top:15px;
+    border-radius:12px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.notesButton{
+    background:#7c3aed;
+}
+
+.practiceButton{
+    background:#16a34a;
+}
+
+.mainButton:hover{
+    opacity:.9;
+}
+
+/* GRADE SECTION */
+
+.section{
+    display:none;
+}
+
+.sectionTitle{
+    text-align:center;
+    margin-top:0;
+    color:#2563eb;
+}
+
+/* GRADE BUTTON */
 
 .grade{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px;
-    margin:12px 0;
-    border-radius:15px;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-    box-shadow:0 4px 10px #0002;
-}
-
-.grade span{
-    font-size:17px;
-}
-
-.grade-icon{
-    font-size:28px;
-}
-
-.grade9{
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-}
-
-.grade10{
-    background:linear-gradient(135deg,#7c3aed,#9333ea);
-}
-
-.grade11{
-    background:linear-gradient(135deg,#059669,#10b981);
-}
-
-.grade12{
-    background:linear-gradient(135deg,#dc2626,#f43f5e);
-}
-
-/* MAIN MENU */
-
-.menu{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.menu button{
+    width:100%;
     border:none;
-    padding:20px 10px;
-    border-radius:16px;
+    padding:18px;
+    margin-top:12px;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.grade:hover{
+    opacity:.9;
+}
+
+/* PRACTICE COLORS */
+
+.practiceGrade{
+    background:#16a34a;
+}
+
+/* BACK */
+
+.back{
+    width:100%;
+    border:none;
+    padding:15px;
+    margin-top:20px;
+    border-radius:12px;
+    background:#172554;
     color:white;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    box-shadow:0 4px 10px #0002;
 }
 
-.menu button:hover{
-    opacity:.9;
-}
+/* FOOTER */
 
-.notes{
-    background:#7c3aed;
-}
-
-.practice{
-    background:#16a34a;
-}
-
-.exam{
-    background:#ea580c;
-}
-
-.home{
-    background:#2563eb;
-}
-
-/* BOTTOM NAVIGATION */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:white;
-    border-top:1px solid #ddd;
-    display:flex;
-    justify-content:space-around;
-    padding:10px 5px;
-    box-shadow:0 -3px 10px #0002;
-}
-
-.bottom-nav button{
-    border:none;
-    background:none;
-    font-size:12px;
-    color:#555;
-    cursor:pointer;
-}
-
-.bottom-nav .active{
-    color:#2563eb;
-    font-weight:bold;
-}
-
-.nav-icon{
-    display:block;
-    font-size:22px;
-    margin-bottom:3px;
-}
-
-/* FOOTER SPACE */
-
-.footer-space{
-    height:75px;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:28px;
-    }
-
-    .menu{
-        grid-template-columns:1fr 1fr;
-    }
-
+footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+    font-size:14px;
 }
 
 </style>
@@ -232,15 +169,13 @@ header p{
 <body>
 
 
+<!-- ========================= -->
 <!-- HEADER -->
+<!-- ========================= -->
 
 <header>
 
-<div class="logo">
-    📚
-</div>
-
-<h1>Study Plus</h1>
+<h1>📚 Study Plus</h1>
 
 <p>Learn • Practice • Prepare</p>
 
@@ -250,237 +185,283 @@ header p{
 <div class="container">
 
 
-<!-- GRADES -->
+<!-- ========================= -->
+<!-- HOME / INTRODUCTION -->
+<!-- ========================= -->
 
-<h2 class="section-title">
-🎓 Choose Your Grade
-</h2>
+<div id="home">
 
+<div class="card intro">
 
-<div class="card">
-
-
-<div
-class="grade grade9"
-onclick="location.href='grade9.html'">
-
-<span>
-📘 Grade 9
-</span>
-
-<span class="grade-icon">
-→
-</span>
-
-</div>
-
-
-<div
-class="grade grade10"
-onclick="location.href='grade10.html'">
-
-<span>
-📗 Grade 10
-</span>
-
-<span class="grade-icon">
-→
-</span>
-
-</div>
-
-
-<div
-class="grade grade11"
-onclick="location.href='grade11.html'">
-
-<span>
-📙 Grade 11
-</span>
-
-<span class="grade-icon">
-→
-</span>
-
-</div>
-
-
-<div
-class="grade grade12"
-onclick="location.href='grade12.html'">
-
-<span>
-📕 Grade 12
-</span>
-
-<span class="grade-icon">
-→
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- QUICK ACCESS -->
-
-<h2 class="section-title">
-⚡ Quick Access
-</h2>
-
-
-<div class="card">
-
-
-<div class="menu">
-
-
-<button
-class="notes"
-onclick="openNotes()">
-
-📖
-<br>
-Notes
-
-</button>
-
-
-<button
-class="practice"
-onclick="openPractice()">
-
-📝
-<br>
-Practice
-
-</button>
-
-
-<button
-class="exam"
-onclick="openExam()">
-
-🎯
-<br>
-P. Exam
-
-</button>
-
-
-<button
-class="home"
-onclick="location.href='index.html'">
-
-🏠
-<br>
-Home
-
-</button>
-
-
-</div>
-
-</div>
-
-
-<!-- ABOUT -->
-
-<div class="card">
-
-<h2>
-📚 Study Plus
-</h2>
+<h2>Welcome to Study Plus 👋</h2>
 
 <p>
 Study Plus is an educational platform designed
-to help students learn, practice and prepare
-for examinations from Grade 9 to Grade 12.
+to help students learn, review and practice
+their school subjects.
+</p>
+
+<p>
+Choose <b>Notes</b> to study lessons and explanations,
+or choose <b>Practice</b> to test your knowledge.
+</p>
+
+<p>
+Select your grade and start learning.
 </p>
 
 </div>
 
 
-<div class="footer-space"></div>
+<!-- NOTES -->
+
+<div class="card">
+
+<button
+class="mainButton notesButton"
+onclick="showNotes()">
+
+📖 Notes
+
+</button>
 
 </div>
 
 
-<!-- BOTTOM NAV -->
+<!-- PRACTICE -->
 
-<div class="bottom-nav">
+<div class="card">
+
+<button
+class="mainButton practiceButton"
+onclick="showPractice()">
+
+📝 Practice
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- NOTES GRADES -->
+<!-- ========================= -->
+
+<div id="notesSection" class="section">
+
+<div class="card">
+
+<h2 class="sectionTitle">
+📖 Choose Your Grade
+</h2>
+
+<p style="text-align:center;color:#666;">
+Select a grade to open the available notes.
+</p>
 
 
 <button
-class="active"
-onclick="location.href='index.html'">
+class="grade"
+onclick="location.href='grade9.html'">
 
-<span class="nav-icon">🏠</span>
-Home
+🎓 Grade 9
 
 </button>
 
 
 <button
-onclick="openNotes()">
+class="grade"
+onclick="location.href='grade10.html'">
 
-<span class="nav-icon">📖</span>
-Notes
-
-</button>
-
-
-<button
-onclick="openPractice()">
-
-<span class="nav-icon">📝</span>
-Practice
+🎓 Grade 10
 
 </button>
 
 
 <button
-onclick="openExam()">
+class="grade"
+onclick="location.href='grade11.html'">
 
-<span class="nav-icon">🎯</span>
-Exam
+🎓 Grade 11
 
 </button>
+
+
+<button
+class="grade"
+onclick="location.href='grade12.html'">
+
+🎓 Grade 12
+
+</button>
+
+
+<button
+class="back"
+onclick="goHome()">
+
+← Back to Home
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PRACTICE GRADES -->
+<!-- ========================= -->
+
+<div id="practiceSection" class="section">
+
+<div class="card">
+
+<h2
+class="sectionTitle"
+style="color:#16a34a;">
+
+📝 Choose Your Grade
+
+</h2>
+
+<p style="text-align:center;color:#666;">
+Select a grade to open practice questions.
+</p>
+
+
+<button
+class="grade practiceGrade"
+onclick="location.href='practice-grade9.html'">
+
+🎓 Grade 9
+
+</button>
+
+
+<button
+class="grade practiceGrade"
+onclick="location.href='practice-grade10.html'">
+
+🎓 Grade 10
+
+</button>
+
+
+<button
+class="grade practiceGrade"
+onclick="location.href='practice-grade11.html'">
+
+🎓 Grade 11
+
+</button>
+
+
+<button
+class="grade practiceGrade"
+onclick="location.href='practice-grade12.html'">
+
+🎓 Grade 12
+
+</button>
+
+
+<button
+class="back"
+onclick="goHome()">
+
+← Back to Home
+
+</button>
+
+</div>
+
+</div>
 
 
 </div>
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+Study Plus © 2026
+
+</footer>
 
 
 <script>
 
+/* SHOW NOTES */
 
-function openNotes(){
+function showNotes(){
 
-    alert(
-        "Choose your Grade first, then open Notes."
-    );
+    document.getElementById("home")
+    .style.display="none";
+
+    document.getElementById("practiceSection")
+    .style.display="none";
+
+    const notes =
+    document.getElementById("notesSection");
+
+    notes.style.display="block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* SHOW PRACTICE */
+
+function showPractice(){
+
+    document.getElementById("home")
+    .style.display="none";
+
+    document.getElementById("notesSection")
+    .style.display="none";
+
+    const practice =
+    document.getElementById("practiceSection");
+
+    practice.style.display="block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-function openPractice(){
+/* BACK HOME */
 
-    alert(
-        "Choose your Grade first, then open Practice."
-    );
+function goHome(){
+
+    document.getElementById("notesSection")
+    .style.display="none";
+
+    document.getElementById("practiceSection")
+    .style.display="none";
+
+    document.getElementById("home")
+    .style.display="block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
-
-
-function openExam(){
-
-    alert(
-        "Choose your Grade first, then open P. Exam."
-    );
-
-}
-
 
 </script>
 
