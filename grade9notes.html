@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Grade 9 Notes - Study Plus</title>
+<title>Grade 9 Geography Notes - Study Plus</title>
 
 <style>
 
@@ -21,89 +21,143 @@ body{
     font-family:Arial,sans-serif;
     background:#f4f7fb;
     color:#222;
-    padding-bottom:30px;
+    padding-bottom:40px;
 }
 
 /* HEADER */
 
 header{
-    background:linear-gradient(135deg,#16a34a,#2563eb);
+    background:linear-gradient(135deg,#0891b2,#166534,#2563eb);
+    background-size:300% 300%;
+    animation:gradientMove 8s ease infinite;
     color:white;
     text-align:center;
-    padding:40px 15px;
+    padding:45px 15px;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
 
 header h1{
     margin:0;
-    font-size:30px;
+    font-size:32px;
 }
 
 header p{
     margin:8px 0;
+    font-size:17px;
 }
 
 
 /* CONTAINER */
 
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     padding:20px;
 }
 
 
-/* CARD */
+/* INTRO */
 
-.card{
+.intro{
     background:white;
-    margin:18px 0;
-    padding:22px;
-    border-radius:16px;
-    box-shadow:0 3px 10px #ccc;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px #d1d5db;
+    text-align:center;
 }
 
-.card h2{
+.intro h2{
+    color:#166534;
     margin-top:0;
 }
 
-.card p{
+.intro p{
+    color:#555;
+    line-height:1.7;
+}
+
+
+/* UNIT CARD */
+
+.unit{
+    background:white;
+    margin:18px 0;
+    padding:23px;
+    border-radius:18px;
+    box-shadow:0 4px 12px #d1d5db;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.unit:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 22px #bfc5cc;
+}
+
+
+/* UNIT COLORS */
+
+.unit1{
+    border-left:7px solid #2563eb;
+}
+
+.unit2{
+    border-left:7px solid #16a34a;
+}
+
+.unit3{
+    border-left:7px solid #0891b2;
+}
+
+.unit4{
+    border-left:7px solid #9333ea;
+}
+
+.unit5{
+    border-left:7px solid #ea580c;
+}
+
+.unit6{
+    border-left:7px solid #dc2626;
+}
+
+.unit7{
+    border-left:7px solid #92400e;
+}
+
+.unit8{
+    border-left:7px solid #166534;
+}
+
+
+/* HEADINGS */
+
+.unit h2{
+    margin-top:0;
+    font-size:22px;
+}
+
+.unit p{
     color:#555;
     line-height:1.6;
-}
-
-
-/* SUBJECT COLORS */
-
-.math{
-    border-left:6px solid #2563eb;
-}
-
-.chemistry{
-    border-left:6px solid #9333ea;
-}
-
-.biology{
-    border-left:6px solid #16a34a;
-}
-
-.physics{
-    border-left:6px solid #dc2626;
-}
-
-.english{
-    border-left:6px solid #ea580c;
-}
-
-.history{
-    border-left:6px solid #92400e;
-}
-
-.geography{
-    border-left:6px solid #0891b2;
-}
-
-.economics{
-    border-left:6px solid #7c3aed;
 }
 
 
@@ -112,61 +166,102 @@ header p{
 button{
     width:100%;
     padding:15px;
-    margin-top:10px;
+    margin-top:12px;
+
     border:none;
-    border-radius:10px;
+    border-radius:12px;
+
     color:white;
+
     font-size:16px;
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
 }
 
 button:hover{
+    transform:scale(1.02);
     opacity:.9;
 }
 
 
 /* BUTTON COLORS */
 
-.mathBtn{
+.btn1{
     background:#2563eb;
 }
 
-.chemBtn{
-    background:#9333ea;
-}
-
-.bioBtn{
+.btn2{
     background:#16a34a;
 }
 
-.physicsBtn{
-    background:#dc2626;
-}
-
-.englishBtn{
-    background:#ea580c;
-}
-
-.historyBtn{
-    background:#92400e;
-}
-
-.geographyBtn{
+.btn3{
     background:#0891b2;
 }
 
-.comingSoon{
-    background:#64748b;
-    cursor:not-allowed;
+.btn4{
+    background:#9333ea;
+}
+
+.btn5{
+    background:#ea580c;
+}
+
+.btn6{
+    background:#dc2626;
+}
+
+.btn7{
+    background:#92400e;
+}
+
+.btn8{
+    background:#166534;
 }
 
 
-/* BACK */
+/* BACK BUTTON */
 
 .back{
     background:#172554;
-    margin-top:20px;
+    margin-top:25px;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#64748b;
+    padding:25px 10px;
+    font-size:14px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+        padding:35px 12px;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .unit{
+        padding:20px;
+    }
+
 }
 
 </style>
@@ -181,11 +276,11 @@ button:hover{
 
 <header>
 
-<h1>📚 Grade 9 Notes</h1>
+<h1>🌍 Grade 9 Geography</h1>
+
+<p>📚 Complete Notes</p>
 
 <p>Study Plus</p>
-
-<p>Choose a subject to study</p>
 
 </header>
 
@@ -193,168 +288,206 @@ button:hover{
 <div class="container">
 
 
-<!-- MATHEMATICS -->
+<!-- INTRO -->
 
-<div class="card math">
+<div class="intro">
 
-<h2>📐 Mathematics</h2>
+<h2>📖 Grade 9 Geography Notes</h2>
 
 <p>
-Grade 9 Mathematics Notes — Unit 1 to Unit 9.
+Welcome to Grade 9 Geography Notes.
+Choose any unit below to study the lesson
+in detail.
+</p>
+
+<p>
+The notes are organized according to the
+Grade 9 Geography curriculum.
+</p>
+
+</div>
+
+
+<!-- UNIT 1 -->
+
+<div class="unit unit1">
+
+<h2>🌍 Unit 1 — Geography and Its Concepts</h2>
+
+<p>
+Study the basic concepts of geography,
+geographical location, place, environment,
+interaction and spatial relationships.
 </p>
 
 <button
-class="mathBtn"
-onclick="location.href='notes9maths.html'">
+class="btn1"
+onclick="location.href='notes9geographyunit1.html'">
 
-📐 Open Mathematics
+📖 Open Unit 1
 
 </button>
 
 </div>
 
 
-<!-- CHEMISTRY -->
+<!-- UNIT 2 -->
 
-<div class="card chemistry">
+<div class="unit unit2">
 
-<h2>🧪 Chemistry</h2>
+<h2>🗺️ Unit 2 — Map Reading and Interpretation</h2>
 
 <p>
-Grade 9 Chemistry Notes — Unit 1 to Unit 5.
+Learn about maps, map symbols, direction,
+scale, coordinates and interpretation of
+geographic information.
 </p>
 
 <button
-class="chemBtn"
-onclick="location.href='notes9chemistry.html'">
+class="btn2"
+onclick="location.href='notes9geographyunit2.html'">
 
-🧪 Open Chemistry
+📖 Open Unit 2
 
 </button>
 
 </div>
 
 
-<!-- BIOLOGY -->
+<!-- UNIT 3 -->
 
-<div class="card biology">
+<div class="unit unit3">
 
-<h2>🧬 Biology</h2>
+<h2>🌎 Unit 3 — Physical Geography of Ethiopia</h2>
 
 <p>
-Grade 9 Biology Notes — Unit 1 to Unit 5.
+Study the physical environment of Ethiopia,
+including relief, drainage, climate, soils and
+natural vegetation.
 </p>
 
 <button
-class="bioBtn"
-onclick="location.href='notes9biology.html'">
+class="btn3"
+onclick="location.href='notes9geographyunit3.html'">
 
-🧬 Open Biology
+📖 Open Unit 3
 
 </button>
 
 </div>
 
 
-<!-- PHYSICS -->
+<!-- UNIT 4 -->
 
-<div class="card physics">
+<div class="unit unit4">
 
-<h2>⚡ Physics</h2>
+<h2>🌦️ Unit 4 — Climate of Ethiopia</h2>
 
 <p>
-Grade 9 Physics Notes — Unit 1 to Unit 7.
+Learn about the climate of Ethiopia,
+temperature, rainfall, climatic controls,
+seasons and climatic regions.
 </p>
 
 <button
-class="physicsBtn"
-onclick="location.href='notes9physics.html'">
+class="btn4"
+onclick="location.href='notes9geographyunit4.html'">
 
-⚡ Open Physics
+📖 Open Unit 4
 
 </button>
 
 </div>
 
 
-<!-- ENGLISH -->
+<!-- UNIT 5 -->
 
-<div class="card english">
+<div class="unit unit5">
 
-<h2>🇬🇧 English</h2>
+<h2>🌱 Unit 5 — Natural Resources and Environment</h2>
 
 <p>
-Grade 9 English Notes — Unit 1 to Unit 3.
+Study Ethiopia's natural resources,
+environmental management, conservation and
+the relationship between people and nature.
 </p>
 
 <button
-class="englishBtn"
-onclick="location.href='notes9english.html'">
+class="btn5"
+onclick="location.href='notes9geographyunit5.html'">
 
-🇬🇧 Open English
+📖 Open Unit 5
 
 </button>
 
 </div>
 
 
-<!-- HISTORY -->
+<!-- UNIT 6 -->
 
-<div class="card history">
+<div class="unit unit6">
 
-<h2>📜 History</h2>
+<h2>👥 Unit 6 — Population and Settlement</h2>
 
 <p>
-Grade 9 History Notes — Unit 1 to Unit 9.
+Learn about population distribution,
+population growth, migration, settlements
+and related geographic issues.
 </p>
 
 <button
-class="historyBtn"
-onclick="location.href='notes9history.html'">
+class="btn6"
+onclick="location.href='notes9geographyunit6.html'">
 
-📜 Open History
+📖 Open Unit 6
 
 </button>
 
 </div>
 
 
-<!-- GEOGRAPHY -->
+<!-- UNIT 7 -->
 
-<div class="card geography">
+<div class="unit unit7">
 
-<h2>🌍 Geography</h2>
+<h2>🌿 Unit 7 — Contemporary Geographic Issues</h2>
 
 <p>
-Grade 9 Geography Notes — Unit 1 to Unit 8.
+Study contemporary geographic and environmental
+issues including land degradation, deforestation,
+soil erosion, biodiversity, climate change,
+pollution and environmental conservation.
 </p>
 
 <button
-class="geographyBtn"
-onclick="location.href='notes9geography.html'">
+class="btn7"
+onclick="location.href='notes9geographyunit7.html'">
 
-🌍 Open Geography
+📖 Open Unit 7
 
 </button>
 
 </div>
 
 
-<!-- ECONOMICS -->
+<!-- UNIT 8 -->
 
-<div class="card economics">
+<div class="unit unit8">
 
-<h2>💰 Economics</h2>
+<h2>🧭 Unit 8 — Geographical Skills and Techniques</h2>
 
 <p>
-Grade 9 Economics Notes will be available soon.
+Learn geographical enquiry, map skills, scale,
+distance and area measurement, grid references,
+map sketching, fieldwork and interpretation of
+maps, graphs and tables.
 </p>
 
 <button
-class="comingSoon"
-disabled>
+class="btn8"
+onclick="location.href='notes9geographyunit8.html'">
 
-💰 Coming Soon
+📖 Open Unit 8
 
 </button>
 
@@ -365,14 +498,29 @@ disabled>
 
 <button
 class="back"
-onclick="location.href='index.html'">
+onclick="location.href='grade9notes.html'">
 
-← Back to Home
+← Back to Grade 9 Notes
 
 </button>
 
 
 </div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Study Plus
+</p>
+
+<p>
+Grade 9 Geography • Learn • Practice • Improve
+</p>
+
+</footer>
 
 
 </body>
