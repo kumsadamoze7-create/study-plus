@@ -24,11 +24,13 @@ body{
     padding-bottom:30px;
 }
 
+/* HEADER */
+
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    background:linear-gradient(135deg,#16a34a,#2563eb);
     color:white;
     text-align:center;
-    padding:35px 15px;
+    padding:40px 15px;
 }
 
 header h1{
@@ -37,8 +39,11 @@ header h1{
 }
 
 header p{
-    margin:8px 0 0;
+    margin:8px 0;
 }
+
+
+/* CONTAINER */
 
 .container{
     max-width:900px;
@@ -46,7 +51,10 @@ header p{
     padding:20px;
 }
 
-.subject-card{
+
+/* CARD */
+
+.card{
     background:white;
     margin:18px 0;
     padding:22px;
@@ -54,14 +62,17 @@ header p{
     box-shadow:0 3px 10px #ccc;
 }
 
-.subject-card h2{
+.card h2{
     margin-top:0;
 }
 
-.subject-card p{
+.card p{
     color:#555;
     line-height:1.6;
 }
+
+
+/* SUBJECT COLORS */
 
 .math{
     border-left:6px solid #2563eb;
@@ -84,7 +95,7 @@ header p{
 }
 
 .history{
-    border-left:6px solid #b45309;
+    border-left:6px solid #92400e;
 }
 
 .geography{
@@ -92,8 +103,11 @@ header p{
 }
 
 .economics{
-    border-left:6px solid #059669;
+    border-left:6px solid #7c3aed;
 }
+
+
+/* BUTTON */
 
 button{
     width:100%;
@@ -110,6 +124,9 @@ button{
 button:hover{
     opacity:.9;
 }
+
+
+/* BUTTON COLORS */
 
 .mathBtn{
     background:#2563eb;
@@ -132,13 +149,20 @@ button:hover{
 }
 
 .historyBtn{
-    background:#b45309;
+    background:#92400e;
 }
 
-.comingBtn{
+.geographyBtn{
+    background:#0891b2;
+}
+
+.comingSoon{
     background:#64748b;
     cursor:not-allowed;
 }
+
+
+/* BACK */
 
 .back{
     background:#172554;
@@ -149,12 +173,15 @@ button:hover{
 
 </head>
 
+
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
-<h1>📖 Grade 9 Notes</h1>
+<h1>📚 Grade 9 Notes</h1>
 
 <p>Study Plus</p>
 
@@ -166,165 +193,165 @@ button:hover{
 <div class="container">
 
 
-<!-- ================= MATHEMATICS ================= -->
+<!-- MATHEMATICS -->
 
-<div class="subject-card math">
+<div class="card math">
 
 <h2>📐 Mathematics</h2>
 
 <p>
-Grade 9 Mathematics notes from Unit 1 to Unit 9.
+Grade 9 Mathematics Notes — Unit 1 to Unit 9.
 </p>
 
 <button
 class="mathBtn"
-onclick="location.href='grade9mathsnotes.html'">
+onclick="location.href='notes9maths.html'">
 
-📐 Open Mathematics Notes
+📐 Open Mathematics
 
 </button>
 
 </div>
 
 
-<!-- ================= CHEMISTRY ================= -->
+<!-- CHEMISTRY -->
 
-<div class="subject-card chemistry">
+<div class="card chemistry">
 
 <h2>🧪 Chemistry</h2>
 
 <p>
-Grade 9 Chemistry notes from Unit 1 to Unit 5.
+Grade 9 Chemistry Notes — Unit 1 to Unit 5.
 </p>
 
 <button
 class="chemBtn"
-onclick="location.href='grade9chemistrynotes.html'">
+onclick="location.href='notes9chemistry.html'">
 
-🧪 Open Chemistry Notes
+🧪 Open Chemistry
 
 </button>
 
 </div>
 
 
-<!-- ================= BIOLOGY ================= -->
+<!-- BIOLOGY -->
 
-<div class="subject-card biology">
+<div class="card biology">
 
 <h2>🧬 Biology</h2>
 
 <p>
-Grade 9 Biology notes from Unit 1 to Unit 6.
+Grade 9 Biology Notes — Unit 1 to Unit 5.
 </p>
 
 <button
 class="bioBtn"
-onclick="location.href='grade9biologynotes.html'">
+onclick="location.href='notes9biology.html'">
 
-🧬 Open Biology Notes
+🧬 Open Biology
 
 </button>
 
 </div>
 
 
-<!-- ================= PHYSICS ================= -->
+<!-- PHYSICS -->
 
-<div class="subject-card physics">
+<div class="card physics">
 
 <h2>⚡ Physics</h2>
 
 <p>
-Grade 9 Physics notes from Unit 1 to Unit 7.
+Grade 9 Physics Notes — Unit 1 to Unit 7.
 </p>
 
 <button
 class="physicsBtn"
-onclick="location.href='grade9physicsnotes.html'">
+onclick="location.href='notes9physics.html'">
 
-⚡ Open Physics Notes
+⚡ Open Physics
 
 </button>
 
 </div>
 
 
-<!-- ================= ENGLISH ================= -->
+<!-- ENGLISH -->
 
-<div class="subject-card english">
+<div class="card english">
 
 <h2>🇬🇧 English</h2>
 
 <p>
-Grade 9 English notes from Unit 1 to Unit 3.
+Grade 9 English Notes — Unit 1 to Unit 3.
 </p>
 
 <button
 class="englishBtn"
-onclick="location.href='grade9englishnotes.html'">
+onclick="location.href='notes9english.html'">
 
-🇬🇧 Open English Notes
+🇬🇧 Open English
 
 </button>
 
 </div>
 
 
-<!-- ================= HISTORY ================= -->
+<!-- HISTORY -->
 
-<div class="subject-card history">
+<div class="card history">
 
 <h2>📜 History</h2>
 
 <p>
-Grade 9 History notes from Unit 1 to Unit 9.
+Grade 9 History Notes — Unit 1 to Unit 9.
 </p>
 
 <button
 class="historyBtn"
-onclick="location.href='grade9historynotes.html'">
+onclick="location.href='notes9history.html'">
 
-📜 Open History Notes
+📜 Open History
 
 </button>
 
 </div>
 
 
-<!-- ================= GEOGRAPHY ================= -->
+<!-- GEOGRAPHY -->
 
-<div class="subject-card geography">
+<div class="card geography">
 
 <h2>🌍 Geography</h2>
 
 <p>
-Grade 9 Geography notes are currently being prepared.
+Grade 9 Geography Notes — Unit 1 to Unit 8.
 </p>
 
 <button
-class="comingBtn"
-disabled>
+class="geographyBtn"
+onclick="location.href='notes9geography.html'">
 
-🌍 Coming Soon
+🌍 Open Geography
 
 </button>
 
 </div>
 
 
-<!-- ================= ECONOMICS ================= -->
+<!-- ECONOMICS -->
 
-<div class="subject-card economics">
+<div class="card economics">
 
 <h2>💰 Economics</h2>
 
 <p>
-Grade 9 Economics notes are currently being prepared.
+Grade 9 Economics Notes will be available soon.
 </p>
 
 <button
-class="comingBtn"
+class="comingSoon"
 disabled>
 
 💰 Coming Soon
@@ -334,18 +361,19 @@ disabled>
 </div>
 
 
-<!-- ================= BACK ================= -->
+<!-- BACK -->
 
 <button
 class="back"
 onclick="location.href='index.html'">
 
-← Back to Notes
+← Back to Home
 
 </button>
 
 
 </div>
+
 
 </body>
 
