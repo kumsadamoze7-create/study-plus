@@ -106,6 +106,10 @@ header p{
     border-left:5px solid #0891b2;
 }
 
+.economicsUnit{
+    border-left:5px solid #64748b;
+}
+
 h2{
     margin-top:0;
 }
@@ -132,6 +136,10 @@ h3{
 
 .historyUnit h3{
     color:#0891b2;
+}
+
+.economicsUnit h3{
+    color:#64748b;
 }
 
 p{
@@ -179,6 +187,10 @@ button:hover{
     background:#0891b2;
 }
 
+.economicsOpen{
+    background:#64748b;
+}
+
 .notes{
     background:#7c3aed;
 }
@@ -196,7 +208,8 @@ button:hover{
 #englishUnits,
 #biologyUnits,
 #physicsUnits,
-#historyUnits{
+#historyUnits,
+#economicsUnits{
     display:none;
 }
 
@@ -228,6 +241,11 @@ button:hover{
 .historyTitle{
     text-align:center;
     color:#0891b2;
+}
+
+.economicsTitle{
+    text-align:center;
+    color:#64748b;
 }
 
 .comingBox{
@@ -743,8 +761,6 @@ onclick="location.href='practice9englishunit3.html'">
 Grade 9 Biology — Unit 1 to Unit 6
 with Notes and Practice.
 </p>
-
-<!-- FIXED BIOLOGY BUTTON -->
 
 <button
 class="bioOpen"
@@ -1339,11 +1355,201 @@ Grade 9 Geography will be added soon.
 <h2>💰 Economics</h2>
 
 <p>
-Grade 9 Economics will be added soon.
+Grade 9 Economics — Unit 1 to Unit 8
+with detailed Notes and Practice.
 </p>
 
-<div class="comingBox">
-🔒 COMING SOON
+<button
+class="economicsOpen"
+onclick="openEconomics()">
+
+💰 Open Economics
+
+</button>
+
+</div>
+
+
+<div id="economicsUnits">
+
+<div class="card">
+
+<h2 class="economicsTitle">
+💰 Grade 9 Economics
+</h2>
+
+<p>
+Choose a unit to study detailed Notes or Practice.
+</p>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>📘 Unit 1 — Introduction to Economics</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit1.html'">
+
+📖 Unit 1 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit1.html'">
+
+📝 Unit 1 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>📗 Unit 2 — Basic Economic Concepts</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit2.html'">
+
+📖 Unit 2 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit2.html'">
+
+📝 Unit 2 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>📙 Unit 3 — Demand and Supply</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit3.html'">
+
+📖 Unit 3 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit3.html'">
+
+📝 Unit 3 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>📕 Unit 4 — Production</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit4.html'">
+
+📖 Unit 4 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit4.html'">
+
+📝 Unit 4 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>📊 Unit 5 — Market and Price</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit5.html'">
+
+📖 Unit 5 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit5.html'">
+
+📝 Unit 5 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>💰 Unit 6 — Money and Banking</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit6.html'">
+
+📖 Unit 6 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit6.html'">
+
+📝 Unit 6 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>🌍 Unit 7 — National Economy</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit7.html'">
+
+📖 Unit 7 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit7.html'">
+
+📝 Unit 7 Practice
+
+</button>
+
+</div>
+
+
+<div class="card economicsUnit">
+
+<h3>🌐 Unit 8 — International Economics</h3>
+
+<button class="notes"
+onclick="location.href='notes9economicsunit8.html'">
+
+📖 Unit 8 Notes
+
+</button>
+
+<button class="practice"
+onclick="location.href='practice9economicsunit8.html'">
+
+📝 Unit 8 Practice
+
+</button>
+
 </div>
 
 </div>
@@ -1414,6 +1620,13 @@ function openPhysics(){
 function openHistory(){
 
     showSection("historyUnits");
+
+}
+
+
+function openEconomics(){
+
+    showSection("economicsUnits");
 
 }
 
